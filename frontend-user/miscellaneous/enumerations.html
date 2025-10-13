@@ -1,0 +1,1741 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>TeamUp 前端程式文件</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+        <link rel="stylesheet" href="../styles/Vagrant.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">TeamUp 前端程式文件</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-enumerations">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Enumerations</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#ActionType" title="projects/common/src/lib/pages/blocklist/blocklist.component.ts" ><b>ActionType</b>&nbsp;&nbsp;&nbsp;(projects/.../blocklist.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ActivityDifficultyType" title="projects/common/src/lib/models/Enums.ts" ><b>ActivityDifficultyType</b>&nbsp;&nbsp;&nbsp;(projects/.../Enums.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ActivityPrivateType" title="projects/common/src/lib/models/Enums.ts" ><b>ActivityPrivateType</b>&nbsp;&nbsp;&nbsp;(projects/.../Enums.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ActivityStatus" title="projects/common/src/lib/components/activity-item/activity-item.component.ts" ><b>ActivityStatus</b>&nbsp;&nbsp;&nbsp;(projects/.../activity-item.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ActivityStatus" title="projects/common/src/lib/pages/activity-detail/activity-detail.component.ts" ><b>ActivityStatus</b>&nbsp;&nbsp;&nbsp;(projects/.../activity-detail.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#AudienceType" title="projects/common/src/lib/models/Enums.ts" ><b>AudienceType</b>&nbsp;&nbsp;&nbsp;(projects/.../Enums.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#CtrlType" title="projects/common/src/lib/pages/team-details/team-details.component.ts" ><b>CtrlType</b>&nbsp;&nbsp;&nbsp;(projects/.../team-details.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#CtrlType" title="projects/common/src/lib/dialogs/chat-dialog/chat-room/chat-room.component.ts" ><b>CtrlType</b>&nbsp;&nbsp;&nbsp;(projects/.../chat-room.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#DayOfWeek" title="projects/common/src/lib/models/Enums.ts" ><b>DayOfWeek</b>&nbsp;&nbsp;&nbsp;(projects/.../Enums.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#DeviceType" title="projects/common/src/lib/models/Enums.ts" ><b>DeviceType</b>&nbsp;&nbsp;&nbsp;(projects/.../Enums.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#FaqType" title="projects/common/src/lib/models/Enums.ts" ><b>FaqType</b>&nbsp;&nbsp;&nbsp;(projects/.../Enums.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#MapPointType" title="projects/common/src/lib/models/Enums.ts" ><b>MapPointType</b>&nbsp;&nbsp;&nbsp;(projects/.../Enums.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#MeasureUnitType" title="projects/common/src/lib/models/Enums.ts" ><b>MeasureUnitType</b>&nbsp;&nbsp;&nbsp;(projects/.../Enums.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#NotifyMessageType" title="projects/common/src/lib/models/Enums.ts" ><b>NotifyMessageType</b>&nbsp;&nbsp;&nbsp;(projects/.../Enums.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PostAttachmentType" title="projects/common/src/lib/models/Enums.ts" ><b>PostAttachmentType</b>&nbsp;&nbsp;&nbsp;(projects/.../Enums.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PostType" title="projects/common/src/lib/models/Enums.ts" ><b>PostType</b>&nbsp;&nbsp;&nbsp;(projects/.../Enums.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PrivacyType" title="projects/common/src/lib/models/Enums.ts" ><b>PrivacyType</b>&nbsp;&nbsp;&nbsp;(projects/.../Enums.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ResumeTime" title="projects/common/src/lib/pages/chat/chat.component.ts" ><b>ResumeTime</b>&nbsp;&nbsp;&nbsp;(projects/.../chat.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SexType" title="projects/common/src/lib/models/Enums.ts" ><b>SexType</b>&nbsp;&nbsp;&nbsp;(projects/.../Enums.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SortType" title="projects/common/src/lib/components/route-comment-list/route-comment-list.component.ts" ><b>SortType</b>&nbsp;&nbsp;&nbsp;(projects/.../route-comment-list.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#StopwatchStatus" title="projects/common/src/lib/models/Enums.ts" ><b>StopwatchStatus</b>&nbsp;&nbsp;&nbsp;(projects/.../Enums.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#StopwatchType" title="projects/common/src/lib/models/Enums.ts" ><b>StopwatchType</b>&nbsp;&nbsp;&nbsp;(projects/.../Enums.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#TeamPermissionType" title="projects/common/src/lib/models/Enums.ts" ><b>TeamPermissionType</b>&nbsp;&nbsp;&nbsp;(projects/.../Enums.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#TemperatureUnitType" title="projects/common/src/lib/models/Enums.ts" ><b>TemperatureUnitType</b>&nbsp;&nbsp;&nbsp;(projects/.../Enums.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#TimePeriod" title="projects/common/src/lib/models/Enums.ts" ><b>TimePeriod</b>&nbsp;&nbsp;&nbsp;(projects/.../Enums.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#UserCtrlAction" title="projects/common/src/lib/pages/chat/chat.component.ts" ><b>UserCtrlAction</b>&nbsp;&nbsp;&nbsp;(projects/.../chat.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#UserPermissionType" title="projects/common/src/lib/models/Enums.ts" ><b>UserPermissionType</b>&nbsp;&nbsp;&nbsp;(projects/.../Enums.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>projects/common/src/lib/pages/blocklist/blocklist.component.ts</h3>
+    <section data-compodoc="block-enums">
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ActionType"></a>
+                        <span class="name "><b>ActionType</b><a href="#ActionType"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>行為類型列舉項目</p>
+<ul>
+<li>查看用戶個人頁</li>
+<li>解除封鎖</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;查看用戶個人頁
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;解除封鎖
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <h3>projects/common/src/lib/models/Enums.ts</h3>
+    <section data-compodoc="block-enums">
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ActivityDifficultyType"></a>
+                        <span class="name "><b>ActivityDifficultyType</b><a href="#ActivityDifficultyType"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>活動運動程度(難度) </p>
+<ul>
+<li><code>Casual (1)</code>: 休閒</li>
+<li><code>Beginner (2)</code>: 初階</li>
+<li><code>Advanced (3)</code>: 進階</li>
+<li><code>Challenge (4)</code>: 挑戰</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Casual
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>1</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Beginner
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>2</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Advanced
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>3</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Challenge
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>4</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ActivityPrivateType"></a>
+                        <span class="name "><b>ActivityPrivateType</b><a href="#ActivityPrivateType"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>活動隱私政策 </p>
+<ul>
+<li><code>IsPublic (1)</code>: 公開活動</li>
+<li><code>OnlyInvite (2)</code>: 僅限邀請</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;IsPublic
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>1</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;OnlyInvite
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>2</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="AudienceType"></a>
+                        <span class="name "><b>AudienceType</b><a href="#AudienceType"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>碼表定位分享用戶類型</p>
+<ul>
+<li><code>None (0)</code>: 每次詢問(未設定)</li>
+<li><code>Custom (1)</code>: 自訂用戶</li>
+<li><code>Follow (2)</code>: 關注者/我的粉絲</li>
+<li><code>All (3)</code>: 所有人</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;None
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Custom
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>1</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Follow
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>2</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;All
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>3</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="DayOfWeek"></a>
+                        <span class="name "><b>DayOfWeek</b><a href="#DayOfWeek"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>星期幾</p>
+<ul>
+<li><code>Sunday (0)</code>: 星期日</li>
+<li><code>Monday (1)</code>: 星期一</li>
+<li><code>Tuesday (2)</code>: 星期二</li>
+<li><code>Wednesday (3)</code>: 星期三</li>
+<li><code>Thursday (4)</code>: 星期四</li>
+<li><code>Friday (5)</code>: 星期五</li>
+<li><code>Saturday (6)</code>: 星期六</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Sunday
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Monday
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>1</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Tuesday
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>2</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Wednesday
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>3</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Thursday
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>4</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Friday
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>5</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Saturday
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>6</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="DeviceType"></a>
+                        <span class="name "><b>DeviceType</b><a href="#DeviceType"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>裝置類型 </p>
+<ul>
+<li><code>Android (1)</code></li>
+<li><code>iOS (2)</code></li>
+<li><code>PWA (3)</code>: 包含Web</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Android
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>1</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;iOS
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>2</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;PWA
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>3</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="FaqType"></a>
+                        <span class="name "><b>FaqType</b><a href="#FaqType"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>常見問題項目類型</p>
+<ul>
+<li><code>Menu (1)</code>: 選單項目</li>
+<li><code>QA (2)</code>: 一般常見問答</li>
+<li><code>HtmlQA (3)</code>: 客製化 html 內容的問答</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Menu
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>1</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;QA
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>2</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;HtmlQA
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>3</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="MapPointType"></a>
+                        <span class="name "><b>MapPointType</b><a href="#MapPointType"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>地圖座標點類型 </p>
+<ul>
+<li><code>Start (1)</code>: 起點</li>
+<li><code>End (2)</code>: 終點</li>
+<li><code>Middle (3)</code>: 中間點</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Start
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>1</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;End
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>2</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Middle
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>3</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="MeasureUnitType"></a>
+                        <span class="name "><b>MeasureUnitType</b><a href="#MeasureUnitType"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>測量單位類型</p>
+<ul>
+<li><code>Metric (1)</code>: 公制</li>
+<li><code>Imperial (2)</code>: 英制</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Metric
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>1</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Imperial
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>2</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="NotifyMessageType"></a>
+                        <span class="name "><b>NotifyMessageType</b><a href="#NotifyMessageType"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>通知訊息列表類型 (enum flag) </p>
+<ul>
+<li><code>All (0)</code>: 所有類型</li>
+<li><code>Common (1)</code>: 一般訊息通知</li>
+<li><code>Team (2)</code>: 隊伍訊息訊息通知</li>
+<li><code>Activity (4)</code>: 活動訊息通知</li>
+<li><code>Activity (8)</code>: 待審核通知</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;All
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Common
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Team
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Activity
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Approve
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="PostAttachmentType"></a>
+                        <span class="name "><b>PostAttachmentType</b><a href="#PostAttachmentType"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>貼文附加內容項目類型 </p>
+<ul>
+<li><code>Image (0)</code>: 一般圖片</li>
+<li><code>Route (1)</code>: 運動紀錄</li>
+<li><code>Activity (2)</code>: 活動</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Image
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Route
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>1</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Activity
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>2</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="PostType"></a>
+                        <span class="name "><b>PostType</b><a href="#PostType"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>貼文內容類型 </p>
+<ul>
+<li><code>UserPost (0)</code>: 一般用戶貼文</li>
+<li><code>TeamPost (1)</code>: 隊伍貼文</li>
+<li><code>UserMapRouteComment (2)</code>: 路線評論資料(非貼文)</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;UserPost
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;TeamPost
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>1</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;UserMapRouteComment
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>2</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="PrivacyType"></a>
+                        <span class="name "><b>PrivacyType</b><a href="#PrivacyType"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>貼文隱私類型 (僅限個人貼文會有)</p>
+<ul>
+<li><code>Public (1)</code>: 公開</li>
+<li><code>OnlyFollow (2)</code>: 限關注者</li>
+<li><code>Private (3)</code>: 私人的(不公開)</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Public
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>1</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;OnlyFollow
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>2</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Private
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>3</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="SexType"></a>
+                        <span class="name "><b>SexType</b><a href="#SexType"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>性別類型</p>
+<ul>
+<li><code>Male (1)</code>: 男性</li>
+<li><code>Female (2)</code>: 女性</li>
+<li><code>Other (3)</code>: 非二元 / 不限定</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Male
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>1</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Female
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>2</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Other
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>3</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="StopwatchStatus"></a>
+                        <span class="name "><b>StopwatchStatus</b><a href="#StopwatchStatus"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>碼表狀態</p>
+<ul>
+<li><code>Ready (1)</code>: 已準備好</li>
+<li><code>Start (2)</code>: 開始</li>
+<li><code>Pause (3)</code>: 暫停</li>
+<li><code>Resume (4)</code>: 繼續</li>
+<li><code>AutoPause (5)</code>: 自動暫停</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Ready
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>1</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Start
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Pause
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Resume
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;AutoPause
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="StopwatchType"></a>
+                        <span class="name "><b>StopwatchType</b><a href="#StopwatchType"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>碼表顯示區塊類型 </p>
+<ul>
+<li><code>Time (1)</code>: 騎乘時間 HH:mm:ss</li>
+<li><code>Speed (2)</code>: 即時速率 (km/h)</li>
+<li><code>AverageSpeed (3)</code>: 平均速率</li>
+<li><code>Slope (4)</code>: 坡度</li>
+<li><code>Distance (5)</code>: 移動距離</li>
+<li><code>Calorie (7)</code>: 卡路里</li>
+<li><code>HeartRate (8)</code>: 心率</li>
+<li><code>PedalingFrequency (9)</code>: 踩踏頻率</li>
+<li><code>Power (10)</code>: 功率</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Time
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>1</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Speed
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>2</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;AverageSpeed
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>3</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Slope
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>4</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Distance
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>5</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Calorie
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>7</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;HeartRate
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>8</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;PedalingFrequency
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>9</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Power
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>10</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="TeamPermissionType"></a>
+                        <span class="name "><b>TeamPermissionType</b><a href="#TeamPermissionType"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>隊伍權限類型 </p>
+<ul>
+<li><code>Everyone (0)</code>: 所有人</li>
+<li><code>Manager (1)</code>: 隊伍管理者/版主(建立者)</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Everyone
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Manager
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>1</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="TemperatureUnitType"></a>
+                        <span class="name "><b>TemperatureUnitType</b><a href="#TemperatureUnitType"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>溫度單位類型</p>
+<ul>
+<li><code>Celsius (1)</code>: 攝氏</li>
+<li><code>Fahrenheit (2)</code>: 華氏</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Celsius
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>1</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Fahrenheit
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>2</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="TimePeriod"></a>
+                        <span class="name "><b>TimePeriod</b><a href="#TimePeriod"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>時段</p>
+<ul>
+<li><code>AM (1)</code>: 上午</li>
+<li><code>PM (2)</code>: 下午</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;AM
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>1</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;PM
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>2</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="UserPermissionType"></a>
+                        <span class="name "><b>UserPermissionType</b><a href="#UserPermissionType"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>通知提醒開關類型 </p>
+<ul>
+<li><code>None (0)</code>: 關閉</li>
+<li><code>Everyone (1)</code>: 任何人</li>
+<li><code>Follower (2)</code>: 粉絲/關注者</li>
+<li><code>FollowByUser (3)</code>: 我關注的人</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;None
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Everyone
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>1</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Follower
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>2</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;FollowByUser
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>3</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <h3>projects/common/src/lib/components/activity-item/activity-item.component.ts</h3>
+    <section data-compodoc="block-enums">
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ActivityStatus"></a>
+                        <span class="name "><b>ActivityStatus</b><a href="#ActivityStatus"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>列表活動狀態</p>
+<ul>
+<li><code>Soon (1)</code>: 即將開始</li>
+<li><code>Running (2)</code>: 進行中</li>
+<li><code>Completed (3)</code>: 已完成/已結束</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Soon
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>1</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Running
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>2</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Completed
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>3</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <h3>projects/common/src/lib/pages/activity-detail/activity-detail.component.ts</h3>
+    <section data-compodoc="block-enums">
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ActivityStatus"></a>
+                        <span class="name "><b>ActivityStatus</b><a href="#ActivityStatus"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>使用者在活動的加入狀態 </p>
+<ul>
+<li><code>None (1)</code>: 未報名</li>
+<li><code>RegistEnded (2)</code>: 未報名且已在開始前1小時內, 顯示 &quot;已截止報名&quot;</li>
+<li><code>IsApply (3)</code>: 已報名等待審核確認</li>
+<li><code>IsJoin (4)</code>: 已參加等待開始</li>
+<li><code>StartBefore (5)</code>: 開始前1個小時內</li>
+<li><code>Start (6)</code>: 活動已開始</li>
+<li><code>JoinFinish (7)</code>: 參加者自行結束, 已完賽</li>
+<li><code>Cancel (8)</code>: 活動已取消</li>
+<li><code>Finish (9)</code>: 活動已結束(領騎者結束)</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;None
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>1</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;RegistEnded
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;IsApply
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;IsJoin
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;StartBefore
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Start
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;JoinFinish
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Cancel
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Finish
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <h3>projects/common/src/lib/pages/team-details/team-details.component.ts</h3>
+    <section data-compodoc="block-enums">
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="CtrlType"></a>
+                        <span class="name "><b>CtrlType</b><a href="#CtrlType"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;邀請至隊伍
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>700</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;設為主要隊伍
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;解除主要隊伍
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;隊伍設定
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;編輯隊伍資訊
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;退出隊伍
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;檢舉隊伍
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <h3>projects/common/src/lib/dialogs/chat-dialog/chat-room/chat-room.component.ts</h3>
+    <section data-compodoc="block-enums">
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="CtrlType"></a>
+                        <span class="name "><b>CtrlType</b><a href="#CtrlType"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>聊天室的 Menu 選單類型</p>
+<ul>
+<li>靜音(關閉通知)</li>
+<li>解除靜音 (僅關閉通知的聊天室會有)</li>
+<li>影像附件</li>
+<li>退出聊天群組 (僅群組聊天會有)</li>
+<li>封鎖 (僅私人聊天會有)</li>
+<li>檢舉 (僅私人聊天會有)</li>
+<li>關注 (僅私人聊天會有)</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;靜音
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;解除靜音
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;影像附件
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;退出群組
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;封鎖
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;檢舉
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;關注
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <h3>projects/common/src/lib/pages/chat/chat.component.ts</h3>
+    <section data-compodoc="block-enums">
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ResumeTime"></a>
+                        <span class="name "><b>ResumeTime</b><a href="#ResumeTime"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>聊天室通知關閉選項</p>
+<ul>
+<li>關閉 30分鐘後開啟</li>
+<li>關閉 2小時後開啟</li>
+<li>關閉 6小時後開啟</li>
+<li>永久關閉直到開啟</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;30分鐘
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>30</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;2小時
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>120</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;6小時
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>360</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;直到再次開啟
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="UserCtrlAction"></a>
+                        <span class="name "><b>UserCtrlAction</b><a href="#UserCtrlAction"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>更多操作選項</p>
+<ul>
+<li>開啟通知</li>
+<li>關閉通知</li>
+<li>封鎖名單</li>
+<li>聊天設定</li>
+</ul>
+</div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;開啟通知
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;關閉通知
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;封鎖名單
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;聊天設定
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <h3>projects/common/src/lib/components/route-comment-list/route-comment-list.component.ts</h3>
+    <section data-compodoc="block-enums">
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="SortType"></a>
+                        <span class="name "><b>SortType</b><a href="#SortType"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;MostLikeDesc
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>1</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;TimeDesc
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>2</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-enumerations';
+            var COMPODOC_CURRENT_PAGE_URL = 'enumerations.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

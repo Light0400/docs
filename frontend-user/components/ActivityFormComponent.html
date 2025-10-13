@@ -1,0 +1,3911 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>TeamUp 前端程式文件</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+        <link rel="stylesheet" href="../styles/Vagrant.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">TeamUp 前端程式文件</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ActivityFormComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/common/src/lib/pages/activity-form/activity-form.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>活動編輯(新增/修改)頁面</p>
+
+    </p>
+
+    <p class="comment">
+        <h3>Extends</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="../directives/BaseFormComponent.html" target="_self" >BaseFormComponent</a></code>
+    </p>
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+                <code>AfterViewInit</code>
+                <code>OnDestroy</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">host</td>
+                <td class="col-md-9"><code>{<br>}</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-activity-form</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                            <code>ReactiveFormsModule</code>
+                            <code>DragDropModule</code>
+                            <code>MatIconModule</code>
+                            <code>MatButtonModule</code>
+                            <code>TranslatePipe</code>
+                            <code>EnumOptionsPipe</code>
+                            <code>EnumTranslatePipe</code>
+                                <code><a href="../directives/BackgroundImageDirective.html" target="_self" >BackgroundImageDirective</a></code>
+                                <code><a href="../components/DatetimeInputComponent.html" target="_self" >DatetimeInputComponent</a></code>
+                                <code><a href="../components/OptionComponent.html" target="_self" >OptionComponent</a></code>
+                                <code><a href="../components/SelectInputComponent.html" target="_self" >SelectInputComponent</a></code>
+                                <code><a href="../components/SlideToggleInputComponent.html" target="_self" >SlideToggleInputComponent</a></code>
+                                <code><a href="../components/HeaderComponent.html" target="_self" >HeaderComponent</a></code>
+                                <code><a href="../components/TeamLogoComponent.html" target="_self" >TeamLogoComponent</a></code>
+                                <code><a href="../components/UserAvaterGroupComponent.html" target="_self" >UserAvaterGroupComponent</a></code>
+                                <code><a href="../components/FileComponent.html" target="_self" >FileComponent</a></code>
+                                <code><a href="../components/StepProcessComponent.html" target="_self" >StepProcessComponent</a></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./activity-form.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./activity-form.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#badwords" >badwords</a>
+                            </li>
+                            <li>
+                                <a href="#difficultyType" >difficultyType</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#fm" >fm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#leadRidersList" >leadRidersList</a>
+                            </li>
+                            <li>
+                                <a href="#limitPeople" >limitPeople</a>
+                            </li>
+                            <li>
+                                <a href="#mapRouteSubMsg" >mapRouteSubMsg</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#mapService" >mapService</a>
+                            </li>
+                            <li>
+                                <a href="#minActivityDate" >minActivityDate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#startPoint" >startPoint</a>
+                            </li>
+                            <li>
+                                <a href="#stepInfo" >stepInfo</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#teams" >teams</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#dataId" >dataId</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#formGroup" >formGroup</a>
+                            </li>
+                            <li>
+                                <a href="#isLoaded" >isLoaded</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#orignalModel" >orignalModel</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#state" >state</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#errors" >errors</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#destroy" >destroy</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#destroySubject" >destroySubject</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#back" >back</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#chooseStartPoint" >chooseStartPoint</a>
+                            </li>
+                            <li>
+                                <a href="#editRoute" >editRoute</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#isSame" >isSame</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#loadData" >loadData</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onAddBreakPoint" >onAddBreakPoint</a>
+                            </li>
+                            <li>
+                                <a href="#onChooseHostTeam" >onChooseHostTeam</a>
+                            </li>
+                            <li>
+                                <a href="#onDrop" >onDrop</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#onPrivacyChange" >onPrivacyChange</a>
+                            </li>
+                            <li>
+                                <a href="#onRemoveBreakPoint" >onRemoveBreakPoint</a>
+                            </li>
+                            <li>
+                                <a href="#onRemoveHostTeam" >onRemoveHostTeam</a>
+                            </li>
+                            <li>
+                                <a href="#onRemoveIntroImage" >onRemoveIntroImage</a>
+                            </li>
+                            <li>
+                                <a href="#onRemoveLeadRider" >onRemoveLeadRider</a>
+                            </li>
+                            <li>
+                                <a href="#onSelectLeadRider" >onSelectLeadRider</a>
+                            </li>
+                            <li>
+                                <a href="#onSetForm" >onSetForm</a>
+                            </li>
+                            <li>
+                                <a href="#onSetLevel" >onSetLevel</a>
+                            </li>
+                            <li>
+                                <a href="#onSetStartPoint" >onSetStartPoint</a>
+                            </li>
+                            <li>
+                                <a href="#onSubmit" >onSubmit</a>
+                            </li>
+                            <li>
+                                <a href="#openCreateRouteDialog" >openCreateRouteDialog</a>
+                            </li>
+                            <li>
+                                <a href="#openMyRouteDialog" >openMyRouteDialog</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#postServer" >postServer</a>
+                            </li>
+                            <li>
+                                <a href="#removeRoute" >removeRoute</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#transferToStartPoint" >transferToStartPoint</a>
+                            </li>
+                            <li>
+                                <a href="#uploadGpx" >uploadGpx</a>
+                            </li>
+                            <li>
+                                <a href="#pageLoaded" >pageLoaded</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dataId" >dataId</a>
+                            </li>
+                            <li>
+                                <a href="#dialogRef" >dialogRef</a>
+                            </li>
+                            <li>
+                                <a href="#mapRoute" >mapRoute</a>
+                            </li>
+                            <li>
+                                <a href="#team" >team</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#introImages" >introImages</a>
+                                </li>
+                                <li>
+                                    <a href="#canNextStep" >canNextStep</a>
+                                </li>
+                                <li>
+                                    <a href="#currStep" >currStep</a>
+                                </li>
+                                <li>
+                                    <a href="#privateTypeText" >privateTypeText</a>
+                                </li>
+                                <li>
+                                    <a href="#stopPoints" >stopPoints</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: <a href="../injectables/CustomHttpService.html" target="_self">CustomHttpService</a>, route: ActivatedRoute, hs: <a href="../injectables/HeaderService.html" target="_self">HeaderService</a>, translate: TranslateService, basicDialog: <a href="../injectables/BasicDialogService.html" target="_self">BasicDialogService</a>, dialog: <a href="../injectables/TeamUpDialogService.html" target="_self">TeamUpDialogService</a>, errorService: <a href="../injectables/ErrorService.html" target="_self">ErrorService</a>, fm: <a href="../classes/FileManager.html" target="_self">FileManager</a>, mapService: <a href="../injectables/GoogleMapService.html" target="_self">GoogleMapService</a>, mapRouteService: <a href="../injectables/MapRouteService.html" target="_self">MapRouteService</a>, snackbarService: <a href="../injectables/SnackbarService.html" target="_self">SnackbarService</a>, ocs: <a href="../injectables/ObjectComparisonService.html" target="_self">ObjectComparisonService</a>, activityService: <a href="../injectables/ActivityService.html" target="_self">ActivityService</a>, loginUserService: <a href="../injectables/LoginUserService.html" target="_self">LoginUserService</a>, zone: NgZone)</code>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CustomHttpService.html" target="_self" >CustomHttpService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>hs</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/HeaderService.html" target="_self" >HeaderService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>translate</td>
+                                                  
+                                                        <td>
+                                                                    <code>TranslateService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>basicDialog</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/BasicDialogService.html" target="_self" >BasicDialogService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TeamUpDialogService.html" target="_self" >TeamUpDialogService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>errorService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ErrorService.html" target="_self" >ErrorService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>fm</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/FileManager.html" target="_self" >FileManager</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>mapService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/GoogleMapService.html" target="_self" >GoogleMapService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>mapRouteService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MapRouteService.html" target="_self" >MapRouteService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>snackbarService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SnackbarService.html" target="_self" >SnackbarService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>ocs</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ObjectComparisonService.html" target="_self" >ObjectComparisonService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>activityService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ActivityService.html" target="_self" >ActivityService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>loginUserService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LoginUserService.html" target="_self" >LoginUserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>zone</td>
+                                                  
+                                                        <td>
+                                                                    <code>NgZone</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataId"></a>
+                        <b>dataId</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>活動Id</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dialogRef"></a>
+                        <b>dialogRef</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatDialogRef&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>彈出視窗控制元件 (若元件以彈出視窗方式開啟才會有值)</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mapRoute"></a>
+                        <b>mapRoute</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/MapRoute.html" target="_self" >MapRoute</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>活動路線</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="team"></a>
+                        <b>team</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Team.html" target="_self" >Team</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>主辦隊伍</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="back"></a>
+                    <span class="name">
+                        <span ><b>back</b></span>
+                        <a href="#back"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>back()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>回上一頁
+若步驟不為 0, 則返回上一步驟
+若元件有 dialogRef 視窗參考提供，則關閉視窗而不是返回頁面</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="chooseStartPoint"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>chooseStartPoint</b></span>
+                        <a href="#chooseStartPoint"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>chooseStartPoint()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>使用地圖選擇集合點</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editRoute"></a>
+                    <span class="name">
+                        <span ><b>editRoute</b></span>
+                        <a href="#editRoute"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>editRoute()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>編輯路線</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isSame"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>isSame</b></span>
+                        <a href="#isSame"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isSame()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>判斷表單資料與Server撈取資料是否相同</p>
+<ul>
+<li>判斷資料是否異動</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>是否相同</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadData"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>loadData</b></span>
+                        <a href="#loadData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loadData()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>載入資料</p>
+<ul>
+<li>活動資料(state == &#39;edit&#39;)</li>
+<li>不雅字詞清單</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <span ><b>ngAfterViewInit</b></span>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Angular 元件生命週期: 檢視初始化事件</p>
+<ul>
+<li>活動開始時間異動同步更新報名截止時間</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Angular 元件生命週期: 初始化事件</p>
+<ul>
+<li>載入資料</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onAddBreakPoint"></a>
+                    <span class="name">
+                        <span ><b>onAddBreakPoint</b></span>
+                        <a href="#onAddBreakPoint"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onAddBreakPoint()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>設定中途停靠點</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onChooseHostTeam"></a>
+                    <span class="name">
+                        <span ><b>onChooseHostTeam</b></span>
+                        <a href="#onChooseHostTeam"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onChooseHostTeam()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>選擇主辦隊伍</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDrop"></a>
+                    <span class="name">
+                        <span ><b>onDrop</b></span>
+                        <a href="#onDrop"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onDrop(event: CdkDragDrop<ActivityStopPoint[]>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>中途停靠點拖曳排序更新</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>CdkDragDrop&lt;ActivityStopPoint[]&gt;</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>拖曳事件</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPrivacyChange"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>onPrivacyChange</b></span>
+                        <a href="#onPrivacyChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onPrivacyChange(v: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>活動隱私權異動事件</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>v</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>隱私權 (true: 表示公開活動, false: 表示僅限邀請)</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onRemoveBreakPoint"></a>
+                    <span class="name">
+                        <span ><b>onRemoveBreakPoint</b></span>
+                        <a href="#onRemoveBreakPoint"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onRemoveBreakPoint(point: <a href="../classes/ActivityStopPoint.html" target="_self">ActivityStopPoint</a>, index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>移除停靠點</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>point</td>
+                                            <td>
+                                                            <code><a href="../classes/ActivityStopPoint.html" target="_self" >ActivityStopPoint</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>index</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onRemoveHostTeam"></a>
+                    <span class="name">
+                        <span ><b>onRemoveHostTeam</b></span>
+                        <a href="#onRemoveHostTeam"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onRemoveHostTeam()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>移除主辦隊伍</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onRemoveIntroImage"></a>
+                    <span class="name">
+                        <span ><b>onRemoveIntroImage</b></span>
+                        <a href="#onRemoveIntroImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onRemoveIntroImage(url: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>移除活動介紹圖片</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>url</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>index</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onRemoveLeadRider"></a>
+                    <span class="name">
+                        <span ><b>onRemoveLeadRider</b></span>
+                        <a href="#onRemoveLeadRider"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onRemoveLeadRider()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>移除所有領騎者</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSelectLeadRider"></a>
+                    <span class="name">
+                        <span ><b>onSelectLeadRider</b></span>
+                        <a href="#onSelectLeadRider"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSelectLeadRider()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>開啟領騎手選擇視窗</p>
+<ul>
+<li>新增 / 變更領騎者</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSetForm"></a>
+                    <span class="name">
+                        <span ><b>onSetForm</b></span>
+                        <a href="#onSetForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSetForm(formName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, val: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, emitEvent)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>設定表單值</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Default value</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>formName</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                                <td>val</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                                <td>emitEvent</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                                    <code>true</code>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSetLevel"></a>
+                    <span class="name">
+                        <span ><b>onSetLevel</b></span>
+                        <a href="#onSetLevel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSetLevel(item: literal type)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>設定運動程度</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>item</td>
+                                            <td>
+                                                        <code>literal type</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>運動程度項目</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSetStartPoint"></a>
+                    <span class="name">
+                        <span ><b>onSetStartPoint</b></span>
+                        <a href="#onSetStartPoint"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSetStartPoint()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>設定集合點</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                        <span ><b>onSubmit</b></span>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSubmit()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>若為新增則繼續下一步，若已是最後一步則呼叫Server API 執行儲存
+若為編輯則直接呼叫 Server API 儲存</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openCreateRouteDialog"></a>
+                    <span class="name">
+                        <span ><b>openCreateRouteDialog</b></span>
+                        <a href="#openCreateRouteDialog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openCreateRouteDialog()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>開啟建立路線頁面</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openMyRouteDialog"></a>
+                    <span class="name">
+                        <span ><b>openMyRouteDialog</b></span>
+                        <a href="#openMyRouteDialog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openMyRouteDialog()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>打開我的路線庫</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="postServer"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>postServer</b></span>
+                        <a href="#postServer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>postServer()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>呼叫 Server API 執行儲存</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeRoute"></a>
+                    <span class="name">
+                        <span ><b>removeRoute</b></span>
+                        <a href="#removeRoute"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeRoute()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>移除路線</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="transferToStartPoint"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>transferToStartPoint</b></span>
+                        <a href="#transferToStartPoint"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>transferToStartPoint()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>將路線起點轉換為集合點</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="uploadGpx"></a>
+                    <span class="name">
+                        <span ><b>uploadGpx</b></span>
+                        <a href="#uploadGpx"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>uploadGpx(e: Event)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>gpx 或 fit 上傳建立路線</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>e</td>
+                                            <td>
+                                                        <code>Event</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>input event</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pageLoaded"></a>
+                    <span class="name">
+                        <span ><b>pageLoaded</b></span>
+                        <a href="#pageLoaded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>pageLoaded()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>標記頁面已載入完成</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>元件銷毀事件</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="badwords"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>badwords</b></span>
+                        <a href="#badwords"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>不雅字詞</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="difficultyType"></a>
+                    <span class="name">
+                        <span ><b>difficultyType</b></span>
+                        <a href="#difficultyType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>ActivityDifficultyType</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>運動程度列舉物件</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fm"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>fm</b></span>
+                        <a href="#fm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/FileManager.html" target="_self" >FileManager</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="leadRidersList"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>leadRidersList</b></span>
+                        <a href="#leadRidersList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/User.html" target="_self" >User[]</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>邀請的領騎手名單</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="limitPeople"></a>
+                    <span class="name">
+                        <span ><b>limitPeople</b></span>
+                        <a href="#limitPeople"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number[]</code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>活動限制人數項目清單</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapRouteSubMsg"></a>
+                    <span class="name">
+                        <span ><b>mapRouteSubMsg</b></span>
+                        <a href="#mapRouteSubMsg"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>路線副標文字</p>
+<ul>
+<li>顯示路線距離與爬升高度</li>
+</ul>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>mapService</b></span>
+                        <a href="#mapService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/GoogleMapService.html" target="_self" >GoogleMapService</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="minActivityDate"></a>
+                    <span class="name">
+                        <span ><b>minActivityDate</b></span>
+                        <a href="#minActivityDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Date()</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>活動開始日期的最小值限制</p>
+<ul>
+<li>不能小於當下時間</li>
+</ul>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startPoint"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>startPoint</b></span>
+                        <a href="#startPoint"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>活動起始點</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stepInfo"></a>
+                    <span class="name">
+                        <span ><b>stepInfo</b></span>
+                        <a href="#stepInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+      curr: 0,
+      maxStep: 4
+    }</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>新增步驟資訊</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="teams"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>teams</b></span>
+                        <a href="#teams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Team.html" target="_self" >Team[]</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>使用者有權限建立隊伍活動的隊伍</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataId"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>dataId</b></span>
+                        <a href="#dataId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>資料Id</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formGroup"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>formGroup</b></span>
+                        <a href="#formGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>表單 FormGroup</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoaded"></a>
+                    <span class="name">
+                        <span ><b>isLoaded</b></span>
+                        <a href="#isLoaded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>是否載入完成</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="orignalModel"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>orignalModel</b></span>
+                        <a href="#orignalModel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>T</code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>原始模型</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="state"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>state</b></span>
+                        <a href="#state"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>&quot;new&quot; | &quot;edit&quot;</code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>元件狀態：&#39;new&#39; 新建 / &#39;edit&#39; 編輯</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="errors"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>errors</b></span>
+                        <a href="#errors"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new ErrorHelper()</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>錯誤訊息存放物件</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroy"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>destroy</b></span>
+                        <a href="#destroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;void&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.destroySubject.asObservable()</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>元件銷毀通知 Observable，可供訂閱</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroySubject"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>destroySubject</b></span>
+                        <a href="#destroySubject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subject&lt;void&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;void&gt;()</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>元件銷毀通知主體</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="introImages"></a>
+                        <span class="name"><b>introImages</b><a href="#introImages"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>introImages()</code></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>已上傳的活動圖片key清單</p>
+</div>
+
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="canNextStep"></a>
+                        <span class="name"><b>canNextStep</b><a href="#canNextStep"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>canNextStep()</code></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>是否可以繼續下一步資料編輯</p>
+<ul>
+<li>只有新增畫面使用</li>
+</ul>
+</div>
+
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="currStep"></a>
+                        <span class="name"><b>currStep</b><a href="#currStep"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>currStep()</code></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>取得當前步驟</p>
+</div>
+
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="privateTypeText"></a>
+                        <span class="name"><b>privateTypeText</b><a href="#privateTypeText"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>privateTypeText()</code></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>取得是否僅限邀請
+<code>private</code>: 表示僅限邀請
+<code>public</code>: 表示活動公開</p>
+</div>
+
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="stopPoints"></a>
+                        <span class="name"><b>stopPoints</b><a href="#stopPoints"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>stopPoints()</code></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>活動中途點清單</p>
+</div>
+
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>ActivityStopPoint[]</code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">@if(dataId !&#x3D;&#x3D;undefined || currStep &#x3D;&#x3D;&#x3D; 0){
+&lt;lib-header [isDialog]&#x3D;&quot;true&quot; [show]&#x3D;&quot;true&quot; [backNotShow]&#x3D;&quot;true&quot;&gt;
+  &lt;ng-container ngProjectAs&#x3D;&quot;[h-left]&quot;&gt;
+    &lt;button mat-icon-button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;back()&quot;&gt;
+      &lt;mat-icon class&#x3D;&quot;fs-20&quot; svgIcon&#x3D;&quot;close&quot;&gt; &lt;/mat-icon&gt;
+    &lt;/button&gt;
+  &lt;/ng-container&gt;
+  &lt;ng-container ngProjectAs&#x3D;&quot;[h-title]&quot;&gt;
+    {{&quot;pages.activity-form.title.&quot; + (dataId !&#x3D;&#x3D; undefined ? &quot;edit&quot; : &quot;new&quot;)| translate}}
+  &lt;/ng-container&gt;
+&lt;/lib-header&gt;
+} @else {
+&lt;lib-header [isDialog]&#x3D;&quot;true&quot; [show]&#x3D;&quot;true&quot; (backClick)&#x3D;&quot;back()&quot;&gt; &lt;/lib-header&gt;
+}
+@if(formGroup){
+&lt;form class&#x3D;&quot;column&quot; [formGroup]&#x3D;&quot;formGroup&quot;&gt;
+  @if(dataId !&#x3D;&#x3D;undefined){
+  &lt;div class&#x3D;&quot;column content&quot;&gt;
+    &lt;ng-container *ngTemplateOutlet&#x3D;&quot;initStep&quot;&gt; &lt;/ng-container&gt;
+    &lt;ng-container *ngTemplateOutlet&#x3D;&quot;stepOne&quot;&gt; &lt;/ng-container&gt;
+    &lt;ng-container *ngTemplateOutlet&#x3D;&quot;stepTwo&quot;&gt; &lt;/ng-container&gt;
+    &lt;ng-container *ngTemplateOutlet&#x3D;&quot;stepThree&quot;&gt; &lt;/ng-container&gt;
+    &lt;ng-container *ngTemplateOutlet&#x3D;&quot;stepFour&quot;&gt; &lt;/ng-container&gt;
+  &lt;/div&gt;
+  } @else if(currStep &#x3D;&#x3D;&#x3D; 0){
+  &lt;div class&#x3D;&quot;column content&quot;&gt;
+    &lt;ng-container *ngTemplateOutlet&#x3D;&quot;initStep&quot;&gt; &lt;/ng-container&gt;
+  &lt;/div&gt;
+  } @else {
+  &lt;div class&#x3D;&quot;column content stepPage&quot;&gt;
+    &lt;div class&#x3D;&quot;column header&quot;&gt;
+      &lt;span&gt;
+        {{ &quot;pages.activity-form.step-&quot; + currStep + &quot;.title&quot; | translate }}&lt;/span&gt;
+      &lt;span&gt;
+        {{ &quot;pages.activity-form.step-&quot; + currStep + &quot;.intro&quot; | translate }}&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;lib-step-process [currStep]&#x3D;&quot;currStep&quot; [maxStep]&#x3D;&quot;stepInfo.maxStep&quot;&gt;
+    &lt;/lib-step-process&gt;
+
+    @switch (currStep) {
+    @case (1) {
+    &lt;ng-container *ngTemplateOutlet&#x3D;&quot;stepOne&quot;&gt; &lt;/ng-container&gt;
+    }
+    @case (2) {
+    &lt;ng-container *ngTemplateOutlet&#x3D;&quot;stepTwo&quot;&gt; &lt;/ng-container&gt;
+    }
+    @case (3) {
+    &lt;ng-container *ngTemplateOutlet&#x3D;&quot;stepThree&quot;&gt; &lt;/ng-container&gt;
+    }
+    @case (4) {
+    &lt;ng-container *ngTemplateOutlet&#x3D;&quot;stepFour&quot;&gt; &lt;/ng-container&gt;
+    }
+    }
+  &lt;/div&gt;
+  }
+
+  &lt;div class&#x3D;&quot;footer&quot;&gt;
+    &lt;button class&#x3D;&quot;tmup-btn-l&quot; [disabled]&#x3D;&quot;!canNextStep&quot; (click)&#x3D;&quot;onSubmit()&quot;&gt;
+
+      {{ (dataId !&#x3D;&#x3D; undefined ? &quot;common.save&quot; : (currStep &#x3D;&#x3D;&#x3D; 4 ? &quot;pages.activity-form.release-event&quot; :
+      &quot;common.continue&quot;)) | translate }}
+    &lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;ng-template #initStep&gt;
+    &lt;div class&#x3D;&quot;item&quot;&gt;
+      &lt;span class&#x3D;&quot;title&quot;&gt;{{ &quot;pages.activity-form.StartTime&quot; | translate }}&lt;/span&gt;
+      &lt;lib-datetime-input formControlName&#x3D;&quot;StartTime&quot; [placeholder]&#x3D;&quot;&#x27;pages.activity-form.date-placeholder&#x27; | translate&quot;
+        [onlySelect]&#x3D;&quot;true&quot; [min]&#x3D;&quot;minActivityDate&quot;&gt;
+      &lt;/lib-datetime-input&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;item&quot;&gt;
+      &lt;span class&#x3D;&quot;title&quot;&gt;{{ &quot;pages.activity-form.LastRegistrationTime&quot; | translate }}&lt;/span&gt;
+      &lt;lib-datetime-input formControlName&#x3D;&quot;LastRegistrationTime&quot;
+        [placeholder]&#x3D;&quot;&#x27;pages.activity-form.registrationTime-placeholder&#x27; | translate&quot; [onlySelect]&#x3D;&quot;true&quot;
+        [min]&#x3D;&quot;minActivityDate&quot; [max]&#x3D;&quot;formGroup.get(&#x27;StartTime&#x27;)?.value&quot;&gt;
+      &lt;/lib-datetime-input&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;item&quot;&gt;
+      &lt;span class&#x3D;&quot;title&quot;&gt;
+        {{ &quot;pages.activity-form.LimitPeople&quot; | translate }}
+      &lt;/span&gt;
+      &lt;lib-select-input type&#x3D;&quot;Common&quot; [showCancel]&#x3D;&quot;false&quot;
+        [title]&#x3D;&quot;&#x27;pages.activity-form.limitCount-placeholder&#x27; | translate&quot; openType&#x3D;&quot;CircleTag&quot;
+        formControlName&#x3D;&quot;LimitPeople&quot;&gt;
+        &lt;lib-option [value]&#x3D;&quot;-1&quot; [selectText]&#x3D;&quot;&#x27;pages.activity-form.unlimitCount&#x27; | translate&quot;&gt;
+          {{ &quot;pages.activity-form.unlimitCount&quot; | translate }}
+        &lt;/lib-option&gt;
+        @for (item of limitPeople; track $index) {
+        &lt;lib-option [value]&#x3D;&quot;item&quot; [selectText]&#x3D;&quot;item.toString()&quot;&gt;
+          {{item}}
+        &lt;/lib-option&gt;
+        }
+        &lt;mat-icon class&#x3D;&quot;common-suffix fs-16&quot; svgIcon&#x3D;&quot;arrow_down_1&quot;&gt;
+        &lt;/mat-icon&gt;
+      &lt;/lib-select-input&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;item&quot;&gt;
+      &lt;span class&#x3D;&quot;title&quot;&gt;{{ &quot;pages.activity-form.level&quot; | translate }}&lt;/span&gt;
+      &lt;div class&#x3D;&quot;row tags&quot;&gt;
+        @for (item of difficultyType | enumOptions; track $index) {
+        &lt;span class&#x3D;&quot;tag&quot; [class.checked]&#x3D;&quot;item.value &#x3D;&#x3D; this.formGroup.get(&#x27;DifficultyType&#x27;)?.value&quot;
+          (click)&#x3D;&quot;onSetLevel(item)&quot;&gt;{{ item.text | enumTranslate: &#x27;ActivityDifficultyType&#x27; }}&lt;/span&gt;
+        }
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;item&quot;&gt;
+      &lt;span class&#x3D;&quot;title&quot;&gt;
+        {{ &quot;pages.activity-form.add-host-team&quot; | translate }}
+        &lt;span&gt;{{ &quot;pages.activity-form.optional&quot; | translate }}&lt;/span&gt;
+      &lt;/span&gt;
+      @if(team){
+      &lt;div class&#x3D;&quot;main-team&quot;&gt;
+        &lt;div class&#x3D;&quot;row&quot;&gt;
+          &lt;span&gt;{{ &quot;pages.activity-form.host-team&quot; | translate }}&lt;/span&gt;
+          &lt;mat-icon svgIcon&#x3D;&quot;edit&quot; class&#x3D;&quot;fs-24&quot; (click)&#x3D;&quot;onChooseHostTeam()&quot;&gt;&lt;/mat-icon&gt;
+          &lt;mat-icon svgIcon&#x3D;&quot;delete&quot; class&#x3D;&quot;fs-24 red&quot; (click)&#x3D;&quot;onRemoveHostTeam()&quot;&gt;&lt;/mat-icon&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;row team-logo tmup-align-center&quot;&gt;
+          &lt;lib-team-logo [logo]&#x3D;&quot;team.Logo&quot;&gt;&lt;/lib-team-logo&gt;
+          &lt;span&gt;{{ team.Name }}&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;span class&#x3D;&quot;desc&quot;&gt;{{ team.Desc }}&lt;/span&gt;
+      &lt;/div&gt;
+      } @else {
+      &lt;div class&#x3D;&quot;main-team&quot; (click)&#x3D;&quot;onChooseHostTeam()&quot;&gt;
+        &lt;div class&#x3D;&quot;row&quot;&gt;
+          &lt;span&gt;{{ &quot;pages.activity-form.add-host-team2&quot; | translate }}&lt;/span&gt;
+          &lt;mat-icon svgIcon&#x3D;&quot;add-post&quot; class&#x3D;&quot;fs-24&quot;&gt;&lt;/mat-icon&gt;
+        &lt;/div&gt;
+        &lt;span&gt;{{ &quot;pages.activity-form.add-host-team-tip&quot; | translate }}&lt;/span&gt;
+      &lt;/div&gt;
+      }
+    &lt;/div&gt;
+  &lt;/ng-template&gt;
+  &lt;ng-template #stepOne&gt;
+    &lt;div class&#x3D;&quot;item&quot;&gt;
+      &lt;span class&#x3D;&quot;title&quot;&gt;{{
+        &quot;pages.activity-form.Name&quot; | translate
+        }}&lt;/span&gt;
+      &lt;div class&#x3D;&quot;input-area&quot;&gt;
+        &lt;input type&#x3D;&quot;text&quot; [placeholder]&#x3D;&quot;
+            &#x27;pages.activity-form.step-1.activity-name-placeholder&#x27; | translate
+          &quot; formControlName&#x3D;&quot;Name&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;item&quot;&gt;
+      &lt;span class&#x3D;&quot;title&quot;&gt;
+        {{ &quot;pages.activity-form.Desc&quot; | translate}}
+      &lt;/span&gt;
+      &lt;div class&#x3D;&quot;text-area&quot;&gt;
+        &lt;textarea type&#x3D;&quot;text&quot; [placeholder]&#x3D;&quot;
+            &#x27;pages.activity-form.step-1.activity-intro-placeholder&#x27; | translate
+          &quot; formControlName&#x3D;&quot;Desc&quot;&gt;&lt;/textarea&gt;
+
+        &lt;lib-file type&#x3D;&quot;Custom&quot; formControlName&#x3D;&quot;CoverImage&quot; [multiple]&#x3D;&quot;true&quot; dirPath&#x3D;&quot;Activity&quot; [maxResolution]&#x3D;&quot;500&quot;
+          [cropperSettings]&#x3D;&quot;{aspectRatio: 1}&quot; [accept]&#x3D;&quot;&#x27;image/*&#x27;&quot; [maxFileCount]&#x3D;&quot;10&quot;&gt;
+          &lt;button type&#x3D;&quot;button&quot; custom-file-input mat-icon-button&gt;
+            &lt;mat-icon svgIcon&#x3D;&quot;image&quot;&gt;&lt;/mat-icon&gt;
+          &lt;/button&gt;
+        &lt;/lib-file&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;row item uploadImgsView&quot;&gt;
+      @for (img of introImages; track $index) {
+      &lt;div class&#x3D;&quot;image&quot; [isApiImage]&#x3D;&quot;true&quot; [appBackgroundImage]&#x3D;&quot;img&quot;&gt;
+        &lt;mat-icon svgIcon&#x3D;&quot;clear&quot; class&#x3D;&quot;fs-16&quot; (click)&#x3D;&quot;onRemoveIntroImage(img, $index)&quot;&gt;&lt;/mat-icon&gt;
+      &lt;/div&gt;
+      }
+    &lt;/div&gt;
+  &lt;/ng-template&gt;
+  &lt;ng-template #stepTwo&gt;
+    &lt;div class&#x3D;&quot;group&quot;&gt;
+      &lt;span class&#x3D;&quot;title&quot;&gt;{{
+        &quot;pages.activity-form.step-2.setting&quot; | translate
+        }}&lt;/span&gt;
+      &lt;div class&#x3D;&quot;row slider&quot;&gt;
+        &lt;div class&#x3D;&quot;column info&quot;&gt;
+          &lt;span&gt;
+            {{&quot;pages.activity-form.step-2.privacy.title&quot; | translate}}
+          &lt;/span&gt;
+          &lt;span&gt;
+            {{&quot;pages.activity-form.step-2.privacy.&quot; + privateTypeText + &quot;-sub&quot; | translate}}
+          &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;span&gt;
+          {{&quot;pages.activity-form.step-2.privacy.&quot; + privateTypeText | translate }}
+        &lt;/span&gt;
+        &lt;lib-slide-toggle-input formControlName&#x3D;&quot;IsPublic&quot;&gt;&lt;/lib-slide-toggle-input&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;row slider&quot;&gt;
+        &lt;div class&#x3D;&quot;column info&quot;&gt;
+          &lt;span&gt;
+            {{&quot;pages.activity-form.step-2.join-review.title&quot; | translate}}
+          &lt;/span&gt;
+          &lt;span&gt;
+            {{&quot;pages.activity-form.step-2.join-review.sub-&quot; + formGroup.get(&#x27;IsNeedReview&#x27;)?.value| translate}}
+          &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;span&gt;
+          {{&quot;pages.activity-form.step-2.join-review.&quot; + formGroup.get(&#x27;IsNeedReview&#x27;)?.value | translate}}
+        &lt;/span&gt;
+        &lt;lib-slide-toggle-input formControlName&#x3D;&quot;IsNeedReview&quot;&gt;&lt;/lib-slide-toggle-input&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;row slider&quot;&gt;
+        &lt;div class&#x3D;&quot;column info&quot;&gt;
+          &lt;span&gt;
+            {{&quot;pages.activity-form.step-2.guest-join.title&quot; | translate}}
+          &lt;/span&gt;
+          &lt;span&gt;
+            {{&quot;pages.activity-form.step-2.guest-join.sub-&quot; + formGroup.get(&#x27;OpenForVisitor&#x27;)?.value | translate}}
+          &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;span&gt;
+          {{&quot;pages.activity-form.step-2.guest-join.&quot; + formGroup.get(&#x27;OpenForVisitor&#x27;)?.value | translate}}
+        &lt;/span&gt;
+        &lt;lib-slide-toggle-input formControlName&#x3D;&quot;OpenForVisitor&quot;&gt;&lt;/lib-slide-toggle-input&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/ng-template&gt;
+  &lt;ng-template #stepThree&gt;
+    &lt;div class&#x3D;&quot;row radio-group&quot;&gt;
+      &lt;div class&#x3D;&quot;row radio&quot; [class.selected]&#x3D;&quot;formGroup.get(&#x27;IsMapRoute&#x27;)?.value&quot;
+        (click)&#x3D;&quot;onSetForm(&#x27;IsMapRoute&#x27;, true)&quot;&gt;
+        {{ &quot;pages.activity-form.step-3.specificRoute.true&quot; | translate }}
+        &lt;mat-icon svgIcon&#x3D;&quot;start&quot;&gt;&lt;/mat-icon&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;row radio&quot; [class.selected]&#x3D;&quot;!formGroup.get(&#x27;IsMapRoute&#x27;)?.value&quot;
+        (click)&#x3D;&quot;onSetForm(&#x27;IsMapRoute&#x27;, false)&quot;&gt;
+        {{ &quot;pages.activity-form.step-3.specificRoute.false&quot; | translate }}
+        &lt;mat-icon svgIcon&#x3D;&quot;start&quot;&gt;&lt;/mat-icon&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    @if(formGroup.get(&#x27;IsMapRoute&#x27;)?.value){
+    @if(!mapRoute){
+    &lt;div class&#x3D;&quot;item&quot;&gt;
+      &lt;span class&#x3D;&quot;title&quot;&gt;
+        {{&quot;pages.activity-form.step-3.route-generate.title&quot; | translate}}
+      &lt;/span&gt;
+      &lt;div class&#x3D;&quot;row opt-list&quot;&gt;
+        &lt;div class&#x3D;&quot;option column tmup-center c-pointer&quot; (click)&#x3D;&quot;openMyRouteDialog()&quot;&gt;
+          &lt;mat-icon class&#x3D;&quot;fs-20&quot; svgIcon&#x3D;&quot;bookmark&quot;&gt;&lt;/mat-icon&gt;
+          &lt;p&gt;
+            {{&quot;pages.activity-form.step-3.route-generate.myroute&quot; | translate}}
+          &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;option column tmup-center c-pointer&quot; (click)&#x3D;&quot;openCreateRouteDialog()&quot;&gt;
+          &lt;mat-icon class&#x3D;&quot;fs-20&quot; svgIcon&#x3D;&quot;edit&quot;&gt;&lt;/mat-icon&gt;
+          &lt;p&gt;
+            {{&quot;pages.activity-form.step-3.route-generate.newroute&quot; | translate}}
+          &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;option column tmup-center c-pointer&quot; (click)&#x3D;&quot;uploadRoute.value&#x3D;&#x27;&#x27;;uploadRoute.click()&quot;&gt;
+          &lt;mat-icon class&#x3D;&quot;fs-20&quot; svgIcon&#x3D;&quot;upload&quot;&gt;&lt;/mat-icon&gt;
+          &lt;p&gt;
+            {{ &quot;pages.activity-form.step-3.route-generate.upload&quot; | translate }}
+          &lt;/p&gt;
+          &lt;input type&#x3D;&quot;file&quot; #uploadRoute accept&#x3D;&quot;.gpx,.fit&quot; [hidden]&#x3D;&quot;true&quot; (change)&#x3D;&quot;uploadGpx($event)&quot; /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    }@else{
+    &lt;div class&#x3D;&quot;item&quot;&gt;
+      &lt;span class&#x3D;&quot;title&quot;&gt;
+        {{&quot;pages.activity-form.step-3.title&quot; | translate}}&lt;/span&gt;
+      &lt;div class&#x3D;&quot;column route&quot;&gt;
+        &lt;div class&#x3D;&quot;routeMap&quot; [isApiImage]&#x3D;&quot;true&quot; [appBackgroundImage]&#x3D;&quot;mapRoute.Image&quot;&gt;
+
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;row routeInfo tmup-gap-4&quot;&gt;
+          &lt;div class&#x3D;&quot;route-text column flex tmup-gap-8&quot;&gt;
+            &lt;span&gt;{{ mapRoute.Name }}&lt;/span&gt;
+            &lt;span&gt;{{ mapRouteSubMsg }}&lt;/span&gt;
+          &lt;/div&gt;
+
+          &lt;div&gt;
+            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-ss-warn-bg&quot; (click)&#x3D;&quot;editRoute()&quot;&gt;
+              {{ &quot;common.edit&quot; | translate }}
+            &lt;/button&gt;
+          &lt;/div&gt;
+
+          &lt;div&gt;
+            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-ss-warn-bg&quot; (click)&#x3D;&quot;removeRoute()&quot;&gt;
+              {{ &quot;common.remove&quot; | translate }}
+            &lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    }
+
+    }
+
+
+    &lt;div class&#x3D;&quot;item&quot;&gt;
+      &lt;span class&#x3D;&quot;title&quot;&gt;
+        {{ &quot;pages.activity-form.step-3.routeleader&quot; | translate }}
+      &lt;/span&gt;
+      @if(leadRidersList?.length){
+      &lt;div class&#x3D;&quot;main-team leader&quot;&gt;
+        &lt;div class&#x3D;&quot;row&quot;&gt;
+          &lt;span&gt;{{ &quot;pages.activity-form.step-3.lead-rider&quot; | translate }}&lt;/span&gt;
+          &lt;mat-icon svgIcon&#x3D;&quot;edit&quot; class&#x3D;&quot;fs-24&quot; (click)&#x3D;&quot;onSelectLeadRider()&quot;&gt;&lt;/mat-icon&gt;
+          &lt;mat-icon svgIcon&#x3D;&quot;delete&quot; class&#x3D;&quot;fs-24 red&quot; (click)&#x3D;&quot;onRemoveLeadRider()&quot;&gt;&lt;/mat-icon&gt;
+        &lt;/div&gt;
+        &lt;span&gt;
+          {{&quot;pages.activity-form.step-3.lead-rider-tip&quot; | translate}}
+        &lt;/span&gt;
+        &lt;lib-user-avater-group [users]&#x3D;&quot;leadRidersList!&quot; [maxItem]&#x3D;&quot;10&quot; size&#x3D;&quot;medium&quot;&gt;&lt;/lib-user-avater-group&gt;
+        &lt;div class&#x3D;&quot;row team-logo&quot;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      } @else {
+      &lt;div class&#x3D;&quot;main-team leader c-pointer&quot; (click)&#x3D;&quot;onSelectLeadRider()&quot;&gt;
+        &lt;div class&#x3D;&quot;row&quot;&gt;
+          &lt;span&gt;
+            {{&quot;pages.activity-form.step-3.add-lead-rider&quot; | translate}}
+          &lt;/span&gt;
+          &lt;mat-icon svgIcon&#x3D;&quot;add-post&quot; class&#x3D;&quot;fs-24&quot;&gt;&lt;/mat-icon&gt;
+        &lt;/div&gt;
+        &lt;span&gt;
+          {{&quot;pages.activity-form.step-3.add-lead-rider-tip&quot; | translate}}
+        &lt;/span&gt;
+      &lt;/div&gt;
+      }
+    &lt;/div&gt;
+    @if(!formGroup.get(&#x27;IsMapRoute&#x27;)?.value){
+    &lt;div class&#x3D;&quot;item row alert&quot;&gt;
+      &lt;mat-icon svgIcon&#x3D;&quot;tip&quot; class&#x3D;&quot;fs-16&quot;&gt;&lt;/mat-icon&gt;
+      &lt;span&gt;
+        {{ &quot;pages.activity-form.step-3.freeRoute&quot; | translate }}
+      &lt;/span&gt;
+    &lt;/div&gt;
+    }
+
+  &lt;/ng-template&gt;
+  &lt;ng-template #stepFour&gt;
+    &lt;div class&#x3D;&quot;item&quot;&gt;
+      &lt;span class&#x3D;&quot;title&quot;&gt;
+        {{ &quot;pages.activity-form.step-4.startpoint&quot; | translate }}
+      &lt;/span&gt;
+      @if(startPoint){
+      &lt;div class&#x3D;&quot;row addpoint ready-point&quot; (click)&#x3D;&quot;onSetStartPoint()&quot;&gt;
+        &lt;mat-icon svgIcon&#x3D;&quot;startPoint&quot;&gt;&lt;/mat-icon&gt;
+        &lt;div class&#x3D;&quot;column&quot;&gt;
+          &lt;p&gt;{{ startPoint.StartPointName }}&lt;/p&gt;
+          &lt;p&gt;{{ startPoint.StartPointAddress }}&lt;/p&gt;
+          &lt;p&gt;{{ &quot;pages.activity-form.step-4.startpoint2&quot; | translate }}&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;mat-icon svgIcon&#x3D;&quot;edit&quot; class&#x3D;&quot;c-pointer&quot;&gt;&lt;/mat-icon&gt;
+      &lt;/div&gt;
+      } @else {
+      &lt;div class&#x3D;&quot;row addpoint main-point c-pointer&quot; (click)&#x3D;&quot;onSetStartPoint()&quot;&gt;
+        &lt;p&gt;{{ &quot;pages.activity-form.step-4.add-startpoint&quot; | translate }}&lt;/p&gt;
+        &lt;mat-icon svgIcon&#x3D;&quot;add-post&quot;&gt;&lt;/mat-icon&gt;
+      &lt;/div&gt;
+      }
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;item break-point-container&quot; cdkDropList [cdkDropListData]&#x3D;&quot;stopPoints&quot;
+      (cdkDropListDropped)&#x3D;&quot;onDrop($event)&quot;&gt;
+      &lt;span class&#x3D;&quot;title&quot;&gt;
+        {{ &quot;pages.activity-form.step-4.breakpoint&quot; | translate }}
+      &lt;/span&gt;
+
+      @if(stopPoints.length &gt; 0){
+      &lt;span class&#x3D;&quot;tip&quot;&gt;
+        {{ &quot;pages.activity-form.step-4.drag-item-tip&quot; | translate }}
+      &lt;/span&gt;
+      }
+
+      @for(point of stopPoints;let i&#x3D; $index; track $index) 
+      {
+      &lt;div class&#x3D;&quot;row break-point&quot;&gt;
+        &lt;div class&#x3D;&quot;column number-point&quot;&gt;
+          &lt;span&gt;{{ i + 1 }}&lt;/span&gt;
+          &lt;span&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div #dragItem class&#x3D;&quot;column break-point-info tmup-no-select&quot; 
+        cdkDrag 
+        [cdkDragStartDelay]&#x3D;&quot;300&quot;
+        cdkDragLockAxis&#x3D;&quot;y&quot;
+        cdkDragBoundary&#x3D;&quot;.break-point-container&quot;
+        &gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div&gt;
+              &lt;p&gt;{{ point.Name }}&lt;/p&gt;
+              &lt;p&gt;{{ point.Address }}&lt;/p&gt;
+              &lt;p&gt;{{ point.Distance }}&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;mat-icon svgIcon&#x3D;&quot;delete&quot; (click)&#x3D;&quot;onRemoveBreakPoint(point, i)&quot;&gt;&lt;/mat-icon&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;row tmup-center&quot;&gt;
+            &lt;div class&#x3D;&quot;tmup-drag-icon&quot;&gt;&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      }
+      @if(stopPoints.length &gt; 0){
+      &lt;div class&#x3D;&quot;row addpoint c-pointer&quot; (click)&#x3D;&quot;onAddBreakPoint()&quot;&gt;
+        &lt;p&gt;
+          {{ &quot;pages.activity-form.step-4.add-edit-breakpoint&quot; | translate }}
+        &lt;/p&gt;
+        &lt;mat-icon svgIcon&#x3D;&quot;add-post&quot;&gt;&lt;/mat-icon&gt;
+      &lt;/div&gt;
+      }@else{
+      &lt;div class&#x3D;&quot;row addpoint c-pointer&quot; (click)&#x3D;&quot;onAddBreakPoint()&quot;&gt;
+        &lt;p&gt;
+          {{ &quot;pages.activity-form.step-4.add-breakpoint&quot; | translate }}
+          &lt;span&gt;
+            ({{ &quot;common.optional&quot; | translate }})
+          &lt;/span&gt;
+        &lt;/p&gt;
+        &lt;mat-icon svgIcon&#x3D;&quot;add-post&quot;&gt;&lt;/mat-icon&gt;
+      &lt;/div&gt;
+      }
+    &lt;/div&gt;
+  &lt;/ng-template&gt;
+&lt;/form&gt;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./activity-form.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">:host {
+  display: flex;
+  flex-direction: column;
+
+  form {
+    flex: 1;
+    overflow: hidden;
+
+    &gt;.content {
+      flex: 1;
+      gap: 8px;
+      overflow: auto;
+    }
+
+    &gt;.stepPage {
+      .header {
+        padding: var(--app-x-space) var(--app-x-space) var(--app-y-space);
+        gap: 8px;
+
+        &gt;span {
+          color: var(--app-text-color);
+
+          &amp;:first-child {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 24px;
+            /* 100% */
+          }
+
+          &amp;:last-child {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: 0.28px;
+          }
+        }
+      }
+    }
+
+    .item {
+      padding: 0 var(--app-x-space);
+
+      .title {
+        display: flex;
+        height: 50px;
+        align-items: center;
+        color: var(--app-text-color);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+
+        &gt;span {
+          color: var(--app-color-949494);
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: 0.24px;
+        }
+      }
+
+      .tip {
+        display: block;
+        margin: var(--app-y-space) 0;
+        padding-bottom: var(--app-x-space);
+        color: var(--app-color-949494);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.24px;
+      }
+
+      .tags {
+        gap: 16px;
+        flex-wrap: wrap;
+
+        .tag {
+          color: var(--app-text-color);
+          font-size: 14px;
+          font-weight: 400;
+          display: flex;
+          align-items: center;
+          height: 28px;
+          padding: 8px 12px;
+          border-radius: 14px;
+          background: var(--app-secondary-gray-7);
+
+          &amp;.checked {
+            color: var(--app-bg-color);
+            background: var(--app-text-color);
+          }
+        }
+      }
+
+      .main-team {
+        padding: var(--app-x-space);
+        border-radius: 12px;
+        border: 1px solid var(--app-secondary-gray-7);
+        background: var(--app-bg-color);
+
+        &gt;div {
+          display: flex;
+          align-items: center;
+          margin-bottom: 12px;
+          gap: 8px;
+
+          &gt;span {
+            flex: 1;
+            color: var(--app-text-color);
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 18px;
+          }
+
+          .red {
+            color: var(--app-warn);
+          }
+        }
+
+        &gt;lib-user-avater-group {
+          margin-top: 8px;
+        }
+
+        &gt;span {
+          color: var(--app-color-949494);
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: 0.24px;
+          display: block;
+          padding-right: 24px;
+        }
+
+        .desc {
+          color: var(--app-color-494949);
+        }
+
+        .team-logo {
+          gap: 4px;
+
+          lib-team-logo {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            border: 1px solid var(--app-secondary-gray-7);
+          }
+        }
+      }
+
+      lib-select-input {
+        mat-icon {
+          color: var(--app-text-color);
+        }
+
+        ::ng-deep div {
+          border-radius: 8px;
+        }
+      }
+
+      .text-area,
+      .input-area {
+        position: relative;
+        border-radius: 8px;
+        border: 1px solid var(--app-secondary-gray-5);
+        background: var(--app-bg-color);
+        display: flex;
+        width: 100%;
+
+        padding: var(--app-y-space) var(--app-x-space);
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        row-gap: 10px;
+        flex-wrap: wrap;
+
+        &amp;.input-area {
+          height: 44px;
+        }
+
+        &gt;input {
+          padding: 0;
+          flex: 1;
+          border: 0;
+          outline: unset;
+        }
+
+        &gt;textarea {
+          padding: 0;
+          border: 0;
+          outline: unset;
+          height: 236px;
+          flex: 1;
+        }
+
+        &gt;lib-file {
+          position: absolute;
+          bottom: var(--app-y-space);
+          right: var(--app-y-space);
+
+          button {
+            background: var(--app-secondary-gray-8);
+          }
+        }
+      }
+
+      &amp;.uploadImgsView {
+        gap: 8px;
+        flex-wrap: wrap;
+
+        .image {
+          border-radius: 4px;
+          width: 60px;
+          height: 60px;
+          overflow: hidden;
+          position: relative;
+
+          background-position: center;
+          background-size: cover;
+
+          &gt;img {
+            width: 100%;
+            height: 100%;
+          }
+
+          &gt;mat-icon {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+          }
+        }
+      }
+
+      &amp;.alert {
+        color: var(--app-warn);
+        font-size: 12px;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.24px;
+        gap: 4px;
+        margin-top: 4px;
+
+        mat-icon {
+          display: block;
+        }
+
+        span {
+          display: block;
+          flex: 1;
+        }
+      }
+
+      .opt-list {
+        gap: 16px;
+
+        .option {
+          border-radius: 12px;
+          border: 1px solid var(--app-secondary-gray-7);
+          background: var(--app-bg-color);
+          padding: 31px 12px;
+          gap: 10px;
+          flex: 1;
+
+          p {
+            margin: 0;
+            overflow: hidden;
+            display: -webkit-box;
+            color: var(--app-text-color);
+            text-overflow: ellipsis;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.28px;
+          }
+
+          &amp;:hover {
+            background: var(--app-secondary-gray-8);
+          }
+
+          &amp;:active {
+            background: var(--app-secondary-gray-6);
+          }
+        }
+      }
+
+      .route {
+        gap: 16px;
+
+        .routeMap {
+          border-radius: 12px;
+          aspect-ratio: 358 / 297;
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+        }
+
+        .routeInfo {
+          .route-text {
+            align-items: flex-start;
+            
+            &gt;span {
+              color: var(--app-text-color);
+              line-height: 18px;
+
+              &amp;:first-child {
+                font-size: 16px;
+                font-weight: 500;
+              }
+
+              &amp;:last-child {
+                font-size: 14px;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+      }
+
+      .addpoint {
+        padding: 16px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        border-radius: 12px;
+        border: 1px solid var(--app-secondary-gray-8);
+        box-shadow: var(--app-shadow-400);
+
+        &gt;p {
+          color: var(--app-text-color);
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          letter-spacing: 0.28px;
+          margin: 0;
+
+          span {
+            color: var(--app-color-949494);
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 0.24px;
+          }
+        }
+
+        &amp;.main-point&gt;p {
+          color: var(--app-blue);
+        }
+
+        &amp;.ready-point {
+          gap: 0px;
+          align-items: flex-start;
+
+          &gt;div {
+            margin: 0 8px 0 10px;
+            flex: 1;
+
+            p {
+              margin: 0;
+
+              &amp;:nth-child(1) {
+                color: var(--app-text-color);
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                letter-spacing: 0.28px;
+              }
+
+              &amp;:nth-child(2) {
+                color: var(--app-text-color);
+
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: 0.24px;
+              }
+
+              &amp;:nth-child(3) {
+                color: var(--app-blue);
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: 0.24px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .group {
+      &gt;.title {
+        display: flex;
+        padding-top: 10px;
+        padding-left: 16px;
+
+        color: var(--app-text-color);
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      &gt;.slider {
+        display: flex;
+        padding: 12px 16px 20px 16px;
+        align-items: center;
+        gap: 10px;
+
+        &gt;div.info {
+          flex: 1;
+          gap: 4px;
+
+          &gt;span {
+            line-height: normal;
+            font-style: normal;
+
+            &amp;:first-child {
+              color: var(--app-text-color);
+              font-size: 16px;
+              font-weight: 500;
+              letter-spacing: 0.32px;
+            }
+
+            &amp;:last-child {
+              color: var(--app-color-949494);
+              font-size: 12px;
+              font-weight: 400;
+              letter-spacing: 0.24px;
+            }
+          }
+        }
+
+        &gt;span {
+          line-height: normal;
+          font-style: normal;
+          color: var(--app-color-949494);
+          font-size: 12px;
+          font-weight: 400;
+          letter-spacing: 0.24px;
+        }
+
+        &gt;lib-slide-toggle-input {
+          flex: unset;
+          width: unset;
+        }
+      }
+    }
+
+    .radio-group {
+      padding: 24px 16px 16px 16px;
+      align-items: flex-start;
+      gap: 8px;
+
+      .radio {
+        cursor: pointer;
+        display: flex;
+        padding: 12px 16px;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        row-gap: 53px;
+        flex: 1 0 0;
+        flex-wrap: wrap;
+        border-radius: 12px;
+        background: var(--app-bg-color);
+        color: var(--app-text-color);
+        border: 1px solid var(--app-secondary-gray-7);
+
+        mat-icon {
+          color: var(--app-secondary-gray-6);
+        }
+
+        &amp;:hover {
+          background: var(--app-secondary-gray-8);
+        }
+
+        &amp;.selected,
+        &amp;:active {
+          border: unset;
+          background: var(--app-secondary-teal-7);
+          color: var(--app-text-color);
+
+          mat-icon {
+            color: var(--app-secondary-teal-2);
+          }
+        }
+      }
+    }
+
+    &gt;.footer {
+      padding: var(--app-x-space);
+    }
+  }
+}
+
+// work solution for drag / drop
+.break-point-container {
+  .break-point {
+    gap: 10px;
+
+    .number-point {
+      align-items: center;
+      gap: 10px;
+
+      span {
+        &amp;:first-child {
+          width: 24px;
+          height: 24px;
+          color: var(--app-bg-color);
+          background-color: var(--app-text-color);
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          text-align: center;
+          letter-spacing: 0.28px;
+          border-radius: 100%;
+        }
+
+        &amp;:last-child {
+          width: 2px;
+          height: 28px;
+          background: var(--app-secondary-gray-5);
+        }
+      }
+    }
+
+    &amp;:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &amp;.cdk-drop-list-dragging .break-point-info:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.break-point-info {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--app-secondary-gray-7);
+  background: var(--app-bg-color);
+  box-shadow: var(--app-shadow-400);
+  flex: 1;
+  user-select: none;
+  gap: 12px;
+
+  div.row {
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    &gt;div:first-child {
+      flex: 1;
+
+      p {
+        margin: 0;
+
+        &amp;:nth-child(1) {
+          color: var(--app-text-color);
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          letter-spacing: 0.28px;
+        }
+
+        &amp;:nth-child(2) {
+          color: var(--app-text-color);
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: 0.24px;
+        }
+
+        &amp;:nth-child(3) {
+          color: var(--app-secondary-gray-3);
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: 0.24px;
+        }
+      }
+    }
+
+    mat-icon {
+      color: var(--app-warn);
+    }
+  }
+
+  &amp;:active {
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.075);
+  }
+
+  &amp;.active {
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  }
+
+  &amp;.cdk-drag-preview {
+    box-sizing: border-box;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+      0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
+
+  &amp;.cdk-drag-placeholder {
+    opacity: 0;
+  }
+
+  &amp;.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div>@if(dataId !==undefined || currStep === 0){<lib-header [isDialog]="true" [show]="true" [backNotShow]="true">  <ng-container ngProjectAs="[h-left]">    <button mat-icon-button type="button" (click)="back()">      <mat-icon class="fs-20" svgIcon="close"> </mat-icon>    </button>  </ng-container>  <ng-container ngProjectAs="[h-title]">    {{"pages.activity-form.title." + (dataId !== undefined ? "edit" : "new")| translate}}  </ng-container></lib-header>} @else {<lib-header [isDialog]="true" [show]="true" (backClick)="back()"> </lib-header>}@if(formGroup){<form class="column" [formGroup]="formGroup">  @if(dataId !==undefined){  <div class="column content">    <ng-container *ngTemplateOutlet="initStep"> </ng-container>    <ng-container *ngTemplateOutlet="stepOne"> </ng-container>    <ng-container *ngTemplateOutlet="stepTwo"> </ng-container>    <ng-container *ngTemplateOutlet="stepThree"> </ng-container>    <ng-container *ngTemplateOutlet="stepFour"> </ng-container>  </div>  } @else if(currStep === 0){  <div class="column content">    <ng-container *ngTemplateOutlet="initStep"> </ng-container>  </div>  } @else {  <div class="column content stepPage">    <div class="column header">      <span>        {{ "pages.activity-form.step-" + currStep + ".title" | translate }}</span>      <span>        {{ "pages.activity-form.step-" + currStep + ".intro" | translate }}</span>    </div>    <lib-step-process [currStep]="currStep" [maxStep]="stepInfo.maxStep">    </lib-step-process>    @switch (currStep) {    @case (1) {    <ng-container *ngTemplateOutlet="stepOne"> </ng-container>    }    @case (2) {    <ng-container *ngTemplateOutlet="stepTwo"> </ng-container>    }    @case (3) {    <ng-container *ngTemplateOutlet="stepThree"> </ng-container>    }    @case (4) {    <ng-container *ngTemplateOutlet="stepFour"> </ng-container>    }    }  </div>  }  <div class="footer">    <button class="tmup-btn-l" [disabled]="!canNextStep" (click)="onSubmit()">      {{ (dataId !== undefined ? "common.save" : (currStep === 4 ? "pages.activity-form.release-event" :      "common.continue")) | translate }}    </button>  </div>  <ng-template #initStep>    <div class="item">      <span class="title">{{ "pages.activity-form.StartTime" | translate }}</span>      <lib-datetime-input formControlName="StartTime" [placeholder]="\'pages.activity-form.date-placeholder\' | translate"        [onlySelect]="true" [min]="minActivityDate">      </lib-datetime-input>    </div>    <div class="item">      <span class="title">{{ "pages.activity-form.LastRegistrationTime" | translate }}</span>      <lib-datetime-input formControlName="LastRegistrationTime"        [placeholder]="\'pages.activity-form.registrationTime-placeholder\' | translate" [onlySelect]="true"        [min]="minActivityDate" [max]="formGroup.get(\'StartTime\')?.value">      </lib-datetime-input>    </div>    <div class="item">      <span class="title">        {{ "pages.activity-form.LimitPeople" | translate }}      </span>      <lib-select-input type="Common" [showCancel]="false"        [title]="\'pages.activity-form.limitCount-placeholder\' | translate" openType="CircleTag"        formControlName="LimitPeople">        <lib-option [value]="-1" [selectText]="\'pages.activity-form.unlimitCount\' | translate">          {{ "pages.activity-form.unlimitCount" | translate }}        </lib-option>        @for (item of limitPeople; track $index) {        <lib-option [value]="item" [selectText]="item.toString()">          {{item}}        </lib-option>        }        <mat-icon class="common-suffix fs-16" svgIcon="arrow_down_1">        </mat-icon>      </lib-select-input>    </div>    <div class="item">      <span class="title">{{ "pages.activity-form.level" | translate }}</span>      <div class="row tags">        @for (item of difficultyType | enumOptions; track $index) {        <span class="tag" [class.checked]="item.value == this.formGroup.get(\'DifficultyType\')?.value"          (click)="onSetLevel(item)">{{ item.text | enumTranslate: \'ActivityDifficultyType\' }}</span>        }      </div>    </div>    <div class="item">      <span class="title">        {{ "pages.activity-form.add-host-team" | translate }}        <span>{{ "pages.activity-form.optional" | translate }}</span>      </span>      @if(team){      <div class="main-team">        <div class="row">          <span>{{ "pages.activity-form.host-team" | translate }}</span>          <mat-icon svgIcon="edit" class="fs-24" (click)="onChooseHostTeam()"></mat-icon>          <mat-icon svgIcon="delete" class="fs-24 red" (click)="onRemoveHostTeam()"></mat-icon>        </div>        <div class="row team-logo tmup-align-center">          <lib-team-logo [logo]="team.Logo"></lib-team-logo>          <span>{{ team.Name }}</span>        </div>        <span class="desc">{{ team.Desc }}</span>      </div>      } @else {      <div class="main-team" (click)="onChooseHostTeam()">        <div class="row">          <span>{{ "pages.activity-form.add-host-team2" | translate }}</span>          <mat-icon svgIcon="add-post" class="fs-24"></mat-icon>        </div>        <span>{{ "pages.activity-form.add-host-team-tip" | translate }}</span>      </div>      }    </div>  </ng-template>  <ng-template #stepOne>    <div class="item">      <span class="title">{{        "pages.activity-form.Name" | translate        }}</span>      <div class="input-area">        <input type="text" [placeholder]="            \'pages.activity-form.step-1.activity-name-placeholder\' | translate          " formControlName="Name" />      </div>    </div>    <div class="item">      <span class="title">        {{ "pages.activity-form.Desc" | translate}}      </span>      <div class="text-area">        <textarea type="text" [placeholder]="            \'pages.activity-form.step-1.activity-intro-placeholder\' | translate          " formControlName="Desc"></textarea>        <lib-file type="Custom" formControlName="CoverImage" [multiple]="true" dirPath="Activity" [maxResolution]="500"          [cropperSettings]="{aspectRatio: 1}" [accept]="\'image/*\'" [maxFileCount]="10">          <button type="button" custom-file-input mat-icon-button>            <mat-icon svgIcon="image"></mat-icon>          </button>        </lib-file>      </div>    </div>    <div class="row item uploadImgsView">      @for (img of introImages; track $index) {      <div class="image" [isApiImage]="true" [appBackgroundImage]="img">        <mat-icon svgIcon="clear" class="fs-16" (click)="onRemoveIntroImage(img, $index)"></mat-icon>      </div>      }    </div>  </ng-template>  <ng-template #stepTwo>    <div class="group">      <span class="title">{{        "pages.activity-form.step-2.setting" | translate        }}</span>      <div class="row slider">        <div class="column info">          <span>            {{"pages.activity-form.step-2.privacy.title" | translate}}          </span>          <span>            {{"pages.activity-form.step-2.privacy." + privateTypeText + "-sub" | translate}}          </span>        </div>        <span>          {{"pages.activity-form.step-2.privacy." + privateTypeText | translate }}        </span>        <lib-slide-toggle-input formControlName="IsPublic"></lib-slide-toggle-input>      </div>      <div class="row slider">        <div class="column info">          <span>            {{"pages.activity-form.step-2.join-review.title" | translate}}          </span>          <span>            {{"pages.activity-form.step-2.join-review.sub-" + formGroup.get(\'IsNeedReview\')?.value| translate}}          </span>        </div>        <span>          {{"pages.activity-form.step-2.join-review." + formGroup.get(\'IsNeedReview\')?.value | translate}}        </span>        <lib-slide-toggle-input formControlName="IsNeedReview"></lib-slide-toggle-input>      </div>      <div class="row slider">        <div class="column info">          <span>            {{"pages.activity-form.step-2.guest-join.title" | translate}}          </span>          <span>            {{"pages.activity-form.step-2.guest-join.sub-" + formGroup.get(\'OpenForVisitor\')?.value | translate}}          </span>        </div>        <span>          {{"pages.activity-form.step-2.guest-join." + formGroup.get(\'OpenForVisitor\')?.value | translate}}        </span>        <lib-slide-toggle-input formControlName="OpenForVisitor"></lib-slide-toggle-input>      </div>    </div>  </ng-template>  <ng-template #stepThree>    <div class="row radio-group">      <div class="row radio" [class.selected]="formGroup.get(\'IsMapRoute\')?.value"        (click)="onSetForm(\'IsMapRoute\', true)">        {{ "pages.activity-form.step-3.specificRoute.true" | translate }}        <mat-icon svgIcon="start"></mat-icon>      </div>      <div class="row radio" [class.selected]="!formGroup.get(\'IsMapRoute\')?.value"        (click)="onSetForm(\'IsMapRoute\', false)">        {{ "pages.activity-form.step-3.specificRoute.false" | translate }}        <mat-icon svgIcon="start"></mat-icon>      </div>    </div>    @if(formGroup.get(\'IsMapRoute\')?.value){    @if(!mapRoute){    <div class="item">      <span class="title">        {{"pages.activity-form.step-3.route-generate.title" | translate}}      </span>      <div class="row opt-list">        <div class="option column tmup-center c-pointer" (click)="openMyRouteDialog()">          <mat-icon class="fs-20" svgIcon="bookmark"></mat-icon>          <p>            {{"pages.activity-form.step-3.route-generate.myroute" | translate}}          </p>        </div>        <div class="option column tmup-center c-pointer" (click)="openCreateRouteDialog()">          <mat-icon class="fs-20" svgIcon="edit"></mat-icon>          <p>            {{"pages.activity-form.step-3.route-generate.newroute" | translate}}          </p>        </div>        <div class="option column tmup-center c-pointer" (click)="uploadRoute.value=\'\';uploadRoute.click()">          <mat-icon class="fs-20" svgIcon="upload"></mat-icon>          <p>            {{ "pages.activity-form.step-3.route-generate.upload" | translate }}          </p>          <input type="file" #uploadRoute accept=".gpx,.fit" [hidden]="true" (change)="uploadGpx($event)" />        </div>      </div>    </div>    }@else{    <div class="item">      <span class="title">        {{"pages.activity-form.step-3.title" | translate}}</span>      <div class="column route">        <div class="routeMap" [isApiImage]="true" [appBackgroundImage]="mapRoute.Image">        </div>        <div class="row routeInfo tmup-gap-4">          <div class="route-text column flex tmup-gap-8">            <span>{{ mapRoute.Name }}</span>            <span>{{ mapRouteSubMsg }}</span>          </div>          <div>            <button type="button" class="tmup-btn-ss-warn-bg" (click)="editRoute()">              {{ "common.edit" | translate }}            </button>          </div>          <div>            <button type="button" class="tmup-btn-ss-warn-bg" (click)="removeRoute()">              {{ "common.remove" | translate }}            </button>          </div>        </div>      </div>    </div>    }    }    <div class="item">      <span class="title">        {{ "pages.activity-form.step-3.routeleader" | translate }}      </span>      @if(leadRidersList?.length){      <div class="main-team leader">        <div class="row">          <span>{{ "pages.activity-form.step-3.lead-rider" | translate }}</span>          <mat-icon svgIcon="edit" class="fs-24" (click)="onSelectLeadRider()"></mat-icon>          <mat-icon svgIcon="delete" class="fs-24 red" (click)="onRemoveLeadRider()"></mat-icon>        </div>        <span>          {{"pages.activity-form.step-3.lead-rider-tip" | translate}}        </span>        <lib-user-avater-group [users]="leadRidersList!" [maxItem]="10" size="medium"></lib-user-avater-group>        <div class="row team-logo"></div>      </div>      } @else {      <div class="main-team leader c-pointer" (click)="onSelectLeadRider()">        <div class="row">          <span>            {{"pages.activity-form.step-3.add-lead-rider" | translate}}          </span>          <mat-icon svgIcon="add-post" class="fs-24"></mat-icon>        </div>        <span>          {{"pages.activity-form.step-3.add-lead-rider-tip" | translate}}        </span>      </div>      }    </div>    @if(!formGroup.get(\'IsMapRoute\')?.value){    <div class="item row alert">      <mat-icon svgIcon="tip" class="fs-16"></mat-icon>      <span>        {{ "pages.activity-form.step-3.freeRoute" | translate }}      </span>    </div>    }  </ng-template>  <ng-template #stepFour>    <div class="item">      <span class="title">        {{ "pages.activity-form.step-4.startpoint" | translate }}      </span>      @if(startPoint){      <div class="row addpoint ready-point" (click)="onSetStartPoint()">        <mat-icon svgIcon="startPoint"></mat-icon>        <div class="column">          <p>{{ startPoint.StartPointName }}</p>          <p>{{ startPoint.StartPointAddress }}</p>          <p>{{ "pages.activity-form.step-4.startpoint2" | translate }}</p>        </div>        <mat-icon svgIcon="edit" class="c-pointer"></mat-icon>      </div>      } @else {      <div class="row addpoint main-point c-pointer" (click)="onSetStartPoint()">        <p>{{ "pages.activity-form.step-4.add-startpoint" | translate }}</p>        <mat-icon svgIcon="add-post"></mat-icon>      </div>      }    </div>    <div class="item break-point-container" cdkDropList [cdkDropListData]="stopPoints"      (cdkDropListDropped)="onDrop($event)">      <span class="title">        {{ "pages.activity-form.step-4.breakpoint" | translate }}      </span>      @if(stopPoints.length > 0){      <span class="tip">        {{ "pages.activity-form.step-4.drag-item-tip" | translate }}      </span>      }      @for(point of stopPoints;let i= $index; track $index)       {      <div class="row break-point">        <div class="column number-point">          <span>{{ i + 1 }}</span>          <span></span>        </div>        <div #dragItem class="column break-point-info tmup-no-select"         cdkDrag         [cdkDragStartDelay]="300"        cdkDragLockAxis="y"        cdkDragBoundary=".break-point-container"        >          <div class="row">            <div>              <p>{{ point.Name }}</p>              <p>{{ point.Address }}</p>              <p>{{ point.Distance }}</p>            </div>            <mat-icon svgIcon="delete" (click)="onRemoveBreakPoint(point, i)"></mat-icon>          </div>          <div class="row tmup-center">            <div class="tmup-drag-icon"></div>          </div>        </div>      </div>      }      @if(stopPoints.length > 0){      <div class="row addpoint c-pointer" (click)="onAddBreakPoint()">        <p>          {{ "pages.activity-form.step-4.add-edit-breakpoint" | translate }}        </p>        <mat-icon svgIcon="add-post"></mat-icon>      </div>      }@else{      <div class="row addpoint c-pointer" (click)="onAddBreakPoint()">        <p>          {{ "pages.activity-form.step-4.add-breakpoint" | translate }}          <span>            ({{ "common.optional" | translate }})          </span>        </p>        <mat-icon svgIcon="add-post"></mat-icon>      </div>      }    </div>  </ng-template></form>}</div>'
+    var COMPONENTS = [{'name': 'ActivityApplyListComponent', 'selector': 'lib-activity-apply-list'},{'name': 'ActivityCancelDialogComponent', 'selector': 'lib-activity-cancel-dialog'},{'name': 'ActivityComponent', 'selector': 'app-activity'},{'name': 'ActivityDetailComponent', 'selector': 'lib-activity-detail'},{'name': 'ActivityFormComponent', 'selector': 'app-activity-form'},{'name': 'ActivityGpsShareComponent', 'selector': 'lib-activity-gps-share'},{'name': 'ActivityGpsShareDialogComponent', 'selector': 'lib-activity-gps-share-dialog'},{'name': 'ActivityInvitingListComponent', 'selector': 'lib-activity-inviting-list'},{'name': 'ActivityItemComponent', 'selector': 'lib-activity-item'},{'name': 'ActivityJoinListComponent', 'selector': 'lib-activity-join-list'},{'name': 'ActivityLogListComponent', 'selector': 'lib-activity-log-list'},{'name': 'ActivityOnMapComponent', 'selector': 'lib-activity-on-map'},{'name': 'ActivityParticipantListDialogComponent', 'selector': 'lib-activity-participant-list-dialog'},{'name': 'ActivityPointsSelectDialogComponent', 'selector': 'lib-activity-points-select-dialog'},{'name': 'ActivitySearchComponent', 'selector': 'lib-activity-search'},{'name': 'ActivitySelectDialogComponent', 'selector': 'lib-activity-select-dialog'},{'name': 'ActivityUserListComponent', 'selector': 'lib-activity-user-list'},{'name': 'AddressInputComponent', 'selector': 'lib-address-input'},{'name': 'AlertDialogComponent', 'selector': 'lib-alert-dialog'},{'name': 'ArrangePointsDialogComponent', 'selector': 'lib-arrange-points-dialog'},{'name': 'BackgroundChooseComponent', 'selector': 'lib-background-choose'},{'name': 'BlocklistComponent', 'selector': 'lib-blocklist'},{'name': 'CalorieExchangeComponent', 'selector': 'lib-calorie-exchange'},{'name': 'ChatAvatarComponent', 'selector': 'lib-chat-avatar'},{'name': 'ChatComponent', 'selector': 'lib-chat'},{'name': 'ChatItemComponent', 'selector': 'lib-chat-item'},{'name': 'ChatListComponent', 'selector': 'lib-chat-list'},{'name': 'ChatReplyMessageItemComponent', 'selector': 'lib-chat-reply-message-item'},{'name': 'ChatRoomComponent', 'selector': 'lib-chat-room'},{'name': 'ChatRoomItemComponent', 'selector': 'lib-chat-room-item'},{'name': 'ChatRoomItemTemplateComponent', 'selector': 'lib-chat-room-item-template'},{'name': 'ChatRoomMediaListComponent', 'selector': 'lib-chat-room-media-list'},{'name': 'ChatSelectDialogComponent', 'selector': 'lib-chat-select-dialog'},{'name': 'ChatUserComponent', 'selector': 'lib-chat-user'},{'name': 'ConfirmDialogComponent', 'selector': 'lib-confirm-dialog'},{'name': 'CreateActivitySuccessDialogComponent', 'selector': 'lib-create-activity-success-dialog'},{'name': 'CreateRouteSuccessDialogComponent', 'selector': 'lib-create-route-success-dialog'},{'name': 'CreateSuccessComponent', 'selector': 'lib-create-success'},{'name': 'CustomPageComponent', 'selector': 'lib-custom-page'},{'name': 'DateInputComponent', 'selector': 'lib-date-input'},{'name': 'DatetimeInputComponent', 'selector': 'lib-datetime-input'},{'name': 'DeviceSeekingComponent', 'selector': 'lib-device-seeking'},{'name': 'DownloadAppDialogComponent', 'selector': 'lib-download-app-dialog'},{'name': 'DownloadComponent', 'selector': 'lib-download'},{'name': 'DraggableListComponent', 'selector': 'lib-draggable-list'},{'name': 'EmptyDataComponent', 'selector': 'lib-empty-data'},{'name': 'ErrorDialogComponent', 'selector': 'lib-error-dialog'},{'name': 'ErrorSummaryComponent', 'selector': 'lib-error-summary'},{'name': 'ExerciseReadyStartComponent', 'selector': 'lib-exercise-ready-start'},{'name': 'FaqComponent', 'selector': 'lib-faq'},{'name': 'FileComponent', 'selector': 'lib-file'},{'name': 'FindResultComponent', 'selector': 'lib-find-result'},{'name': 'FollowComponent', 'selector': 'app-follow'},{'name': 'FollowersComponent', 'selector': 'lib-followers'},{'name': 'FollowReqComponent', 'selector': 'lib-follow-req'},{'name': 'FooterMenuComponent', 'selector': 'lib-footer-menu'},{'name': 'HeaderComponent', 'selector': 'lib-header'},{'name': 'HomeActivityInviteComponent', 'selector': 'lib-home-activity-invite'},{'name': 'HomeAddBtnComponent', 'selector': 'lib-home-add-btn'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeMenuComponent', 'selector': 'lib-home-menu'},{'name': 'ImageCropperDialogComponent', 'selector': 'lib-image-cropper-dialog'},{'name': 'ImageListDialogComponent', 'selector': 'lib-image-list-dialog'},{'name': 'InviteFriendsComponent', 'selector': 'lib-invite-friends'},{'name': 'LeadRiderForRouteDialogComponent', 'selector': 'lib-lead-rider-for-route-dialog'},{'name': 'LikeCommentDialogComponent', 'selector': 'lib-like-comment-dialog'},{'name': 'LoadingComponent', 'selector': 'lib-loading'},{'name': 'LocationDialogComponent', 'selector': 'lib-location-dialog'},{'name': 'LocationSelectDialogComponent', 'selector': 'lib-location-select-dialog'},{'name': 'LocationShareComponent', 'selector': 'lib-location-share'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapClMarkerComponent', 'selector': 'lib-map-cl-marker'},{'name': 'MapCompassComponent', 'selector': 'lib-map-compass'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'MoreMenuComponent', 'selector': 'lib-more-menu'},{'name': 'MyRouteCollectionComponent', 'selector': 'lib-my-route-collection'},{'name': 'NoticeMsgItemComponent', 'selector': 'lib-notice-msg-item'},{'name': 'NotifyMessageListComponent', 'selector': 'lib-notify-message-list'},{'name': 'OptionComponent', 'selector': 'lib-option'},{'name': 'PageDialogComponent', 'selector': 'lib-page-dialog'},{'name': 'PositionFilterDialogComponent', 'selector': 'lib-position-filter-dialog'},{'name': 'PostAttachmentItemComponent', 'selector': 'lib-post-attachment-item'},{'name': 'PostCommentListComponent', 'selector': 'lib-post-comment-list'},{'name': 'PostFormComponent', 'selector': 'lib-post-form'},{'name': 'PostItemComponent', 'selector': 'lib-post-item'},{'name': 'PostLikeListComponent', 'selector': 'lib-post-like-list'},{'name': 'ProgressBarComponent', 'selector': 'lib-progress-bar'},{'name': 'RecommendTeamListComponent', 'selector': 'lib-recommend-team-list'},{'name': 'RecommendUserListComponent', 'selector': 'lib-recommend-user-list'},{'name': 'RecordSelectDialogComponent', 'selector': 'lib-record-select-dialog'},{'name': 'ReportDialogComponent', 'selector': 'lib-report-dialog'},{'name': 'ReportListComponent', 'selector': 'lib-report-list'},{'name': 'ReportSuccessDialogComponent', 'selector': 'lib-report-success-dialog'},{'name': 'RoadDescDialogComponent', 'selector': 'lib-road-desc-dialog'},{'name': 'RouteActivityListComponent', 'selector': 'lib-route-activity-list'},{'name': 'RouteCollectComponent', 'selector': 'lib-route-collect'},{'name': 'RouteCommentFormComponent', 'selector': 'lib-route-comment-form'},{'name': 'RouteCommentItemComponent', 'selector': 'lib-route-comment-item'},{'name': 'RouteCommentListComponent', 'selector': 'lib-route-comment-list'},{'name': 'RouteDetailComponent', 'selector': 'lib-route-detail'},{'name': 'RouteDetailDialogComponent', 'selector': 'lib-route-detail-dialog'},{'name': 'RouteElevationMapComponent', 'selector': 'lib-route-elevation-map'},{'name': 'RouteExploreComponent', 'selector': 'lib-route-explore'},{'name': 'RouteFormComponent', 'selector': 'lib-route-form'},{'name': 'RouteFromFilterDialogComponent', 'selector': 'lib-route-from-filter-dialog'},{'name': 'RouteInfoComponent', 'selector': 'lib-route-info'},{'name': 'RouteItemComponent', 'selector': 'lib-route-item'},{'name': 'RouteMapExploreComponent', 'selector': 'lib-route-map-explore'},{'name': 'RouteReportInfoComponent', 'selector': 'lib-route-report-info'},{'name': 'RouteSearchComponent', 'selector': 'lib-route-search'},{'name': 'RouteSelectReportConfirmDialogComponent', 'selector': 'lib-route-select-report-confirm-dialog'},{'name': 'RouteShareDialogComponent', 'selector': 'lib-route-share-dialog'},{'name': 'RouteTagFilterDialogComponent', 'selector': 'lib-route-tag-filter-dialog'},{'name': 'SearchDialogComponent', 'selector': 'lib-search-dialog'},{'name': 'SearchInputComponent', 'selector': 'lib-search-input'},{'name': 'SearchRecordComponent', 'selector': 'lib-search-record'},{'name': 'SearchUsersComponent', 'selector': 'lib-search-users'},{'name': 'SelectDialogComponent', 'selector': 'lib-select-dialog'},{'name': 'SelectInputComponent', 'selector': 'lib-select-input'},{'name': 'ShareToDialogComponent', 'selector': 'lib-share-to-dialog'},{'name': 'SingleInputDialogComponent', 'selector': 'lib-single-input-dialog'},{'name': 'SlideToggleInputComponent', 'selector': 'lib-slide-toggle-input'},{'name': 'SportingShareItemComponent', 'selector': 'lib-sporting-share-item'},{'name': 'SportingShareListComponent', 'selector': 'lib-sporting-share-list'},{'name': 'SportLiveChatComponent', 'selector': 'lib-sport-live-chat'},{'name': 'SportLiveComponent', 'selector': 'lib-sport-live'},{'name': 'StepProcessComponent', 'selector': 'lib-step-process'},{'name': 'StopwatchComponent', 'selector': 'lib-stopwatch'},{'name': 'StopwatchFinishedComponent', 'selector': 'lib-stopwatch-finished'},{'name': 'StopwatchInfoSelectDialogComponent', 'selector': 'lib-stopwatch-info-select-dialog'},{'name': 'StopwatchSettingComponent', 'selector': 'lib-stopwatch-setting'},{'name': 'StreamimgChatDialogComponent', 'selector': 'lib-streamimg-chat-dialog'},{'name': 'TagUserInputComponent', 'selector': 'lib-tag-user-input'},{'name': 'TeamActivityDialogComponent', 'selector': 'lib-team-activity-dialog'},{'name': 'TeamAliasEditComponent', 'selector': 'lib-team-alias-edit'},{'name': 'TeamBaseareaEditComponent', 'selector': 'lib-team-basearea-edit'},{'name': 'TeamComponent', 'selector': 'lib-team'},{'name': 'TeamCreateFinishComponent', 'selector': 'lib-team-create-finish'},{'name': 'TeamDetailsComponent', 'selector': 'lib-team-details'},{'name': 'TeamFormComponent', 'selector': 'lib-team-form'},{'name': 'TeamFormEditComponent', 'selector': 'lib-team-form-edit'},{'name': 'TeamIntroDialogComponent', 'selector': 'lib-team-intro-dialog'},{'name': 'TeamItemComponent', 'selector': 'lib-team-item'},{'name': 'TeamLogoComponent', 'selector': 'lib-team-logo'},{'name': 'TeamMapComponent', 'selector': 'lib-team-map'},{'name': 'TeamMemberAliasComponent', 'selector': 'lib-team-member-alias'},{'name': 'TeamMemberComponent', 'selector': 'lib-team-member'},{'name': 'TeamMemberCtrlDialogComponent', 'selector': 'lib-team-member-ctrl-dialog'},{'name': 'TeamOnMapComponent', 'selector': 'lib-team-on-map'},{'name': 'TeamSearchComponent', 'selector': 'lib-team-search'},{'name': 'TeamSettingComponent', 'selector': 'lib-team-setting'},{'name': 'TeamTagEditComponent', 'selector': 'lib-team-tag-edit'},{'name': 'TextareaInputComponent', 'selector': 'lib-textarea-input'},{'name': 'TextboxInputComponent', 'selector': 'lib-textbox-input'},{'name': 'ThirdAuthComponent', 'selector': 'lib-third-auth'},{'name': 'TimeInputComponent', 'selector': 'lib-time-input'},{'name': 'TimePeriodFilterDialogComponent', 'selector': 'lib-time-period-filter-dialog'},{'name': 'TipInfoDialogComponent', 'selector': 'lib-tip-info-dialog'},{'name': 'UpdateScreenComponent', 'selector': 'lib-update-screen'},{'name': 'UserAccountComponent', 'selector': 'lib-user-account'},{'name': 'UserAccountFormComponent', 'selector': 'lib-user-account-form'},{'name': 'UserApplyTeamDialogComponent', 'selector': 'lib-user-apply-team-dialog'},{'name': 'UserAvatarComponent', 'selector': 'lib-user-avatar'},{'name': 'UserAvaterGroupComponent', 'selector': 'lib-user-avater-group'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserFormComponent', 'selector': 'app-user-form'},{'name': 'UserItemComponent', 'selector': 'lib-user-item'},{'name': 'UserNotificationSettingComponent', 'selector': 'lib-user-notification-setting'},{'name': 'UserPostListComponent', 'selector': 'lib-user-post-list'},{'name': 'UserRouteRecordItemComponent', 'selector': 'lib-user-route-record-item'},{'name': 'UserRouteRecordListComponent', 'selector': 'lib-user-route-record-list'},{'name': 'UserSelectDialogComponent', 'selector': 'lib-user-select-dialog'},{'name': 'UserSettingComponent', 'selector': 'app-user-setting'},{'name': 'UsersFollowingComponent', 'selector': 'lib-users-following'},{'name': 'UserShareDialogComponent', 'selector': 'lib-user-share-dialog'},{'name': 'ValidCodeInputComponent', 'selector': 'lib-valid-code-input'},{'name': 'VisitRegDialogComponent', 'selector': 'lib-visit-reg-dialog'},{'name': 'WeatherViewDialogComponent', 'selector': 'lib-weather-view-dialog'},{'name': 'WebHomeComponent', 'selector': 'lib-web-home'}];
+    var DIRECTIVES = [{'name': 'AppOnDestory', 'selector': ''},{'name': 'BackgroundImageDirective', 'selector': '[appBackgroundImage]'},{'name': 'BaseComponent', 'selector': ''},{'name': 'BaseFormComponent', 'selector': ''},{'name': 'BaseListComponent', 'selector': ''},{'name': 'HeaderTitleDirective', 'selector': '[libHeaderTitle]'},{'name': 'OpenSettingDirective', 'selector': '[libOpenSetting]'},{'name': 'PageHostDirective', 'selector': '[libPageHost]'},{'name': 'TextReadMoreDirective', 'selector': '[libTextReadMore]'}];
+    var ACTUAL_COMPONENT = {'name': 'ActivityFormComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ActivityFormComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

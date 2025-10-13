@@ -1,0 +1,3055 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>TeamUp 前端程式文件</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+        <link rel="stylesheet" href="../styles/Vagrant.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">TeamUp 前端程式文件</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  TeamFormComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/common/src/lib/pages/team-form/team-form.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>隊伍新增頁面元件</p>
+<p>此元件負責隊伍的新增流程，包含：</p>
+<ul>
+<li>基本資料（名稱、公開設定）</li>
+<li>隊伍介紹</li>
+<li>圖像與背景設定</li>
+<li>標籤選擇</li>
+<li>據點位置</li>
+</ul>
+<p>支援：</p>
+<ul>
+<li>頁面模式與 Dialog 模式開啟</li>
+<li>多步驟表單驗證</li>
+</ul>
+
+    </p>
+
+    <p class="comment">
+        <h3>Extends</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="../directives/BaseFormComponent.html" target="_self" >BaseFormComponent</a></code>
+    </p>
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+                <code>OnDestroy</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">host</td>
+                <td class="col-md-9"><code>{<br>}</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>lib-team-form</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                            <code>ReactiveFormsModule</code>
+                            <code>MatIconModule</code>
+                            <code>MatButtonModule</code>
+                            <code>TranslatePipe</code>
+                            <code>TranslateDirective</code>
+                                <code><a href="../components/HeaderComponent.html" target="_self" >HeaderComponent</a></code>
+                                <code><a href="../components/TextboxInputComponent.html" target="_self" >TextboxInputComponent</a></code>
+                                <code><a href="../components/TextareaInputComponent.html" target="_self" >TextareaInputComponent</a></code>
+                                <code><a href="../components/FileComponent.html" target="_self" >FileComponent</a></code>
+                                <code><a href="../components/TeamLogoComponent.html" target="_self" >TeamLogoComponent</a></code>
+                                <code><a href="../components/BackgroundChooseComponent.html" target="_self" >BackgroundChooseComponent</a></code>
+                                <code><a href="../components/OptionComponent.html" target="_self" >OptionComponent</a></code>
+                                <code><a href="../components/SelectInputComponent.html" target="_self" >SelectInputComponent</a></code>
+                                <code><a href="../components/StepProcessComponent.html" target="_self" >StepProcessComponent</a></code>
+                                <code><a href="../components/SlideToggleInputComponent.html" target="_self" >SlideToggleInputComponent</a></code>
+                                <code><a href="../components/LoadingComponent.html" target="_self" >LoadingComponent</a></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./team-form.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./team-form.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addLastStep" >addLastStep</a>
+                            </li>
+                            <li>
+                                <a href="#addStep" >addStep</a>
+                            </li>
+                            <li>
+                                <a href="#allCountries" >allCountries</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#badwords" >badwords</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#bgImages" >bgImages</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#bgType" >bgType</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#bgTypes" >bgTypes</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#citys" >citys</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#countrys" >countrys</a>
+                            </li>
+                            <li>
+                                <a href="#loading" >loading</a>
+                            </li>
+                            <li>
+                                <a href="#tags" >tags</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#dataId" >dataId</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#formGroup" >formGroup</a>
+                            </li>
+                            <li>
+                                <a href="#isLoaded" >isLoaded</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#orignalModel" >orignalModel</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#state" >state</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#errors" >errors</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#destroy" >destroy</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#destroySubject" >destroySubject</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#back" >back</a>
+                            </li>
+                            <li>
+                                <a href="#changeBgImage" >changeBgImage</a>
+                            </li>
+                            <li>
+                                <a href="#changeCity" >changeCity</a>
+                            </li>
+                            <li>
+                                <a href="#changeCountry" >changeCountry</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getCityId" >getCityId</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getCountryId" >getCountryId</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#loadCountrys" >loadCountrys</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#loadData" >loadData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#loadedAfter" >loadedAfter</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#next" >next</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#openDifferentTip" >openDifferentTip</a>
+                            </li>
+                            <li>
+                                <a href="#openLocationSelectDialog" >openLocationSelectDialog</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#postToServer" >postToServer</a>
+                            </li>
+                            <li>
+                                <a href="#pressTag" >pressTag</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#sameCity" >sameCity</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#sameCountry" >sameCountry</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#storePlace" >storePlace</a>
+                            </li>
+                            <li>
+                                <a href="#pageLoaded" >pageLoaded</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dialogRef" >dialogRef</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#tagsMap" >tagsMap</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: <a href="../injectables/CustomHttpService.html" target="_self">CustomHttpService</a>, router: Router, basicDialog: <a href="../injectables/BasicDialogService.html" target="_self">BasicDialogService</a>, dialog: <a href="../injectables/TeamUpDialogService.html" target="_self">TeamUpDialogService</a>, errorService: <a href="../injectables/ErrorService.html" target="_self">ErrorService</a>, cacheService: <a href="../injectables/PageCacheService.html" target="_self">PageCacheService</a>, mapService: <a href="../injectables/GoogleMapService.html" target="_self">GoogleMapService</a>, fm: <a href="../classes/FileManager.html" target="_self">FileManager</a>, teamService: <a href="../injectables/TeamService.html" target="_self">TeamService</a>, hs: <a href="../injectables/HeaderService.html" target="_self">HeaderService</a>, storageService: <a href="../injectables/StorageService.html" target="_self">StorageService</a>, zone: NgZone)</code>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CustomHttpService.html" target="_self" >CustomHttpService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>basicDialog</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/BasicDialogService.html" target="_self" >BasicDialogService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TeamUpDialogService.html" target="_self" >TeamUpDialogService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>errorService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ErrorService.html" target="_self" >ErrorService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cacheService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PageCacheService.html" target="_self" >PageCacheService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>mapService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/GoogleMapService.html" target="_self" >GoogleMapService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>fm</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/FileManager.html" target="_self" >FileManager</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>teamService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TeamService.html" target="_self" >TeamService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>hs</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/HeaderService.html" target="_self" >HeaderService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>storageService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/StorageService.html" target="_self" >StorageService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>zone</td>
+                                                  
+                                                        <td>
+                                                                    <code>NgZone</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dialogRef"></a>
+                        <b>dialogRef</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatDialogRef&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>彈出視窗控制元件 (若元件以彈出視窗方式開啟才會有值)</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="back"></a>
+                    <span class="name">
+                        <span ><b>back</b></span>
+                        <a href="#back"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>back()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>回上一頁
+若 addStep 目前步驟索引不為 0 則返回上一步驟
+若 addStep == 0 則 若元件有 dialogRef 視窗參考提供，則關閉視窗而不是返回頁面</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeBgImage"></a>
+                    <span class="name">
+                        <span ><b>changeBgImage</b></span>
+                        <a href="#changeBgImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changeBgImage(e: <a href="../interfaces/IBgChangeEvent.html" target="_self">IBgChangeEvent</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>處理背景圖片變更事件</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>e</td>
+                                            <td>
+                                                            <code><a href="../interfaces/IBgChangeEvent.html" target="_self" >IBgChangeEvent</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>背景圖片變更事件</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeCity"></a>
+                    <span class="name">
+                        <span ><b>changeCity</b></span>
+                        <a href="#changeCity"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changeCity()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>據點位置(縣市) 異動更新</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeCountry"></a>
+                    <span class="name">
+                        <span ><b>changeCountry</b></span>
+                        <a href="#changeCountry"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changeCountry(v: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>據點位置(國家) 異動更新</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>v</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>國家Id</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCityId"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>getCityId</b></span>
+                        <a href="#getCityId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getCityId(code?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>取得縣市Id</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>code</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                            <td>
+                                                    <p>縣市代碼</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>number | undefined</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>縣市Id</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCountryId"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>getCountryId</b></span>
+                        <a href="#getCountryId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getCountryId(code?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>取得國家Id</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>code</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                            <td>
+                                                    <p>國家代碼</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>number | undefined</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>國家Id</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadCountrys"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>loadCountrys</b></span>
+                        <a href="#loadCountrys"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loadCountrys(c: <a href="../classes/CountryCity.html" target="_self">CountryCity[]</a>, saveSqlite: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>載入國家縣市區域資料後，放置前端 js 物件</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>c</td>
+                                            <td>
+                                                            <code><a href="../classes/CountryCity.html" target="_self" >CountryCity[]</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>國家縣市區域資料</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>saveSqlite</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>是否將國家縣市區域資料寫入前端 sqlite</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadData"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>loadData</b></span>
+                        <a href="#loadData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loadData()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>載入初始化資料（背景、標籤、位置、禁用字詞等）</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadedAfter"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>loadedAfter</b></span>
+                        <a href="#loadedAfter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loadedAfter(v: literal type, saveSqlite: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>載入資料完成後執行初始化</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Default value</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>v</td>
+                                            <td>
+                                                        <code>literal type</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    <p>載入的資料內容</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>saveSqlite</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                                    <code>true</code>
+                                            </td>
+
+                                            <td>
+                                                    <p>是否將國家縣市區域資料寫入前端 sqlite</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="next"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>next</b></span>
+                        <a href="#next"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>next(skip)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>進入下一步或完成建立</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                                <td>Default value</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>skip</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                                    <code>false</code>
+                                            </td>
+
+                                            <td>
+                                                    <p>是否略過驗證直接跳下一步</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Angular 元件生命周期：初始化事件</p>
+<ul>
+<li>載入資料</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openDifferentTip"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>openDifferentTip</b></span>
+                        <a href="#openDifferentTip"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>openDifferentTip()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>顯示 所選位置 與 原本設定的國家縣市 不同的提醒訊息</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openLocationSelectDialog"></a>
+                    <span class="name">
+                        <span ><b>openLocationSelectDialog</b></span>
+                        <a href="#openLocationSelectDialog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openLocationSelectDialog()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>開啟地點選擇 Dialog</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="postToServer"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>postToServer</b></span>
+                        <a href="#postToServer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>postToServer(postData: <a href="../classes/Team.html" target="_self">Team</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>將隊伍資料送至伺服器儲存</p>
+<ul>
+<li>儲存成功後顯示成功畫面</li>
+</ul>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>postData</td>
+                                            <td>
+                                                            <code><a href="../classes/Team.html" target="_self" >Team</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>隊伍資料</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pressTag"></a>
+                    <span class="name">
+                        <span ><b>pressTag</b></span>
+                        <a href="#pressTag"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>pressTag(tag: <a href="../classes/CodeTable.html" target="_self">CodeTable</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>點擊標籤以選擇/取消</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>tag</td>
+                                            <td>
+                                                            <code><a href="../classes/CodeTable.html" target="_self" >CodeTable</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>標籤項目</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sameCity"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>sameCity</b></span>
+                        <a href="#sameCity"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sameCity(selectCityCode?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>判斷已選縣市是否 與 選擇的座標 是否相同縣市</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>selectCityCode</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                            <td>
+                                                    <p>選擇的縣市代碼</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>是否相同</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sameCountry"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>sameCountry</b></span>
+                        <a href="#sameCountry"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sameCountry(selectCountryCode?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>判斷已選國家是否 與 選擇的座標 是否相同國家</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>selectCountryCode</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                            <td>
+                                                    <p>選擇的國家代碼</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>是否相同</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="storePlace"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>storePlace</b></span>
+                        <a href="#storePlace"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>storePlace(place: <a href="../classes/PlaceResult.html" target="_self">PlaceResult</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>將所選擇的座標位置放置於表單欄位</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>place</td>
+                                            <td>
+                                                            <code><a href="../classes/PlaceResult.html" target="_self" >PlaceResult</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>位置資訊</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pageLoaded"></a>
+                    <span class="name">
+                        <span ><b>pageLoaded</b></span>
+                        <a href="#pageLoaded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>pageLoaded()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>標記頁面已載入完成</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>元件銷毀事件</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addLastStep"></a>
+                    <span class="name">
+                        <span ><b>addLastStep</b></span>
+                        <a href="#addLastStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>4</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>最後一個步驟索引</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addStep"></a>
+                    <span class="name">
+                        <span ><b>addStep</b></span>
+                        <a href="#addStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>目前步驟索引</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allCountries"></a>
+                    <span class="name">
+                        <span ><b>allCountries</b></span>
+                        <a href="#allCountries"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/CountryCity.html" target="_self" >CountryCity[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>所有國家城市資料</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="badwords"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>badwords</b></span>
+                        <a href="#badwords"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>禁用字詞清單</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="bgImages"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>bgImages</b></span>
+                        <a href="#bgImages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/BgImage.html" target="_self" >BgImage[]</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>背景圖片清單</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="bgType"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>bgType</b></span>
+                        <a href="#bgType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/CodeTable.html" target="_self" >CodeTable</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>目前選擇的背景種類</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="bgTypes"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>bgTypes</b></span>
+                        <a href="#bgTypes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/CodeTable.html" target="_self" >CodeTable[]</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>背景類型清單</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="citys"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>citys</b></span>
+                        <a href="#citys"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/CountryCity.html" target="_self" >CountryCity[] | null</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>城市清單（依選擇國家而變化）</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="countrys"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>countrys</b></span>
+                        <a href="#countrys"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/CountryCity.html" target="_self" >CountryCity[] | null</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>國家清單</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loading"></a>
+                    <span class="name">
+                        <span ><b>loading</b></span>
+                        <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>是否顯示載入中狀態</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tags"></a>
+                    <span class="name">
+                        <span ><b>tags</b></span>
+                        <a href="#tags"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Map&lt;number | literal type&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Map()</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>標籤分類 Map，key 為父類別 Id，value 為分類內容</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataId"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>dataId</b></span>
+                        <a href="#dataId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>資料Id</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formGroup"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>formGroup</b></span>
+                        <a href="#formGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>表單 FormGroup</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoaded"></a>
+                    <span class="name">
+                        <span ><b>isLoaded</b></span>
+                        <a href="#isLoaded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>是否載入完成</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="orignalModel"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>orignalModel</b></span>
+                        <a href="#orignalModel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>T</code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>原始模型</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="state"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>state</b></span>
+                        <a href="#state"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>&quot;new&quot; | &quot;edit&quot;</code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>元件狀態：&#39;new&#39; 新建 / &#39;edit&#39; 編輯</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="errors"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>errors</b></span>
+                        <a href="#errors"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new ErrorHelper()</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>錯誤訊息存放物件</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroy"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>destroy</b></span>
+                        <a href="#destroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;void&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.destroySubject.asObservable()</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>元件銷毀通知 Observable，可供訂閱</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroySubject"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>destroySubject</b></span>
+                        <a href="#destroySubject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subject&lt;void&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;void&gt;()</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>元件銷毀通知主體</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="tagsMap"></a>
+                        <span class="name"><b>tagsMap</b><a href="#tagsMap"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>tagsMap()</code></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>標籤 Map 的 values() 快速存取器</p>
+</div>
+
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;lib-header [isDialog]&#x3D;&quot;true&quot; [show]&#x3D;&quot;true&quot; [backNotShow]&#x3D;&quot;true&quot; (backClick)&#x3D;&quot;back()&quot;&gt;
+  &lt;ng-container ngProjectAs&#x3D;&quot;[h-left]&quot;&gt;
+    @if (addStep &#x3D;&#x3D; 0) {
+    &lt;button mat-icon-button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;back()&quot;&gt;
+      &lt;mat-icon svgIcon&#x3D;&quot;close&quot;&gt; &lt;/mat-icon&gt;
+    &lt;/button&gt;
+    }@else {
+    &lt;button class&#x3D;&quot;tmup-btn-icon fs-20&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;back()&quot;&gt;
+      &lt;mat-icon class&#x3D;&quot;fs-20&quot; svgIcon&#x3D;&quot;arrow_back&quot;&gt;&lt;/mat-icon&gt;
+    &lt;/button&gt;
+    }
+  &lt;/ng-container&gt;
+
+  &lt;ng-container ngProjectAs&#x3D;&quot;[h-title]&quot;&gt;
+    @if (addStep &#x3D;&#x3D; 0) {
+    &lt;ng-container&gt;
+      {{ &quot;pages.team.add-team.title&quot; | translate }}
+    &lt;/ng-container&gt;
+    }
+  &lt;/ng-container&gt;
+
+  &lt;ng-container ngProjectAs&#x3D;&quot;[h-right]&quot;&gt;
+    @if (addStep !&#x3D; 0) {
+    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-text&quot; mat-button (click)&#x3D;&quot;next(true)&quot;&gt;
+      @if(addStep &#x3D;&#x3D; addLastStep){
+      &lt;ng-container&gt;
+        {{ &quot;common.skip-complete&quot; | translate }}
+      &lt;/ng-container&gt;
+      }@else{
+      &lt;ng-container&gt;
+        {{ &quot;common.skip&quot; | translate }}
+      &lt;/ng-container&gt;
+      }
+    &lt;/button&gt;
+    }
+  &lt;/ng-container&gt;
+&lt;/lib-header&gt;
+
+@if(formGroup){
+&lt;form class&#x3D;&quot;scroll-main&quot; [formGroup]&#x3D;&quot;formGroup&quot;&gt;
+  &lt;div class&#x3D;&quot;scroll-main&quot;&gt;
+    &lt;div class&#x3D;&quot;column padding-x tmup-gap-20&quot; [hidden]&#x3D;&quot;addStep !&#x3D; 0&quot; formGroupName&#x3D;&quot;0&quot;&gt;
+      &lt;div class&#x3D;&quot;column&quot;&gt;
+        &lt;lib-textbox-input formControlName&#x3D;&quot;Name&quot; [maxlength]&#x3D;&quot;50&quot;
+          [placeholder]&#x3D;&quot;&#x27;pages.team.NamePlaceholder&#x27; | translate&quot;&gt;
+          &lt;label&gt;{{ &quot;pages.team.Name&quot; | translate }}&lt;/label&gt;
+        &lt;/lib-textbox-input&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;row between&quot;&gt;
+        &lt;div class&#x3D;&quot;column flex&quot;&gt;
+          &lt;label id&#x3D;&quot;IsPublic-label&quot; class&#x3D;&quot;info&quot;&gt;{{
+            &quot;pages.team.IsPublic&quot; | translate
+            }}&lt;/label&gt;
+          &lt;label class&#x3D;&quot;sub-info&quot;&gt;{{
+            &quot;pages.team.IsPublicMemo.&quot; +
+            (formGroup!.get(&quot;0&quot;)?.get(&quot;IsPublic&quot;)?.value ?? false) | translate
+            }}&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;tip row tmup-align-center&quot;&gt;
+          &lt;lib-slide-toggle-input formControlName&#x3D;&quot;IsPublic&quot;&gt;
+            &lt;ng-container ngProjectAs&#x3D;&quot;.left&quot;&gt;
+              &lt;label class&#x3D;&quot;sub-info switch&quot;&gt;{{
+                &quot;pages.team.IsPublicValue.&quot; +
+                (formGroup!.get(&quot;0&quot;)?.get(&quot;IsPublic&quot;)?.value ?? false)
+                | translate
+                }}&lt;/label&gt;
+            &lt;/ng-container&gt;
+          &lt;/lib-slide-toggle-input&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;row between&quot;&gt;
+        &lt;div class&#x3D;&quot;column flex&quot;&gt;
+          &lt;label id&#x3D;&quot;NeedReviewRequest-label&quot; class&#x3D;&quot;info&quot; translate&gt;pages.team.NeedReviewRequest&lt;/label&gt;
+          &lt;label class&#x3D;&quot;sub-info&quot;&gt;{{
+            &quot;pages.team.NeedReviewRequestMemo.&quot; +
+            (formGroup!.get(&quot;0&quot;)?.get(&quot;NeedReviewRequest&quot;)?.value ?? false)
+            | translate
+            }}&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;tip row tmup-align-center&quot;&gt;
+          &lt;lib-slide-toggle-input formControlName&#x3D;&quot;NeedReviewRequest&quot;&gt;
+            &lt;ng-container ngProjectAs&#x3D;&quot;.left&quot;&gt;
+              &lt;label class&#x3D;&quot;sub-info switch&quot;&gt;{{
+                &quot;pages.team.NeedReviewRequestValue.&quot; +
+                (formGroup!.get(&quot;0&quot;)?.get(&quot;NeedReviewRequest&quot;)?.value ??
+                false) | translate
+                }}&lt;/label&gt;
+            &lt;/ng-container&gt;
+          &lt;/lib-slide-toggle-input&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;row between&quot;&gt;
+        &lt;div class&#x3D;&quot;column flex&quot;&gt;
+          &lt;label id&#x3D;&quot;EveryCanCreatePost-label&quot; class&#x3D;&quot;info&quot; translate&gt;pages.team.EveryCanCreatePost&lt;/label&gt;
+          &lt;label class&#x3D;&quot;sub-info&quot;&gt;
+            {{ &quot;pages.team.EveryCanCreatePostMemo.&quot; + (formGroup!.get(&quot;0&quot;)?.get(&quot;EveryCanCreatePost&quot;)?.value ?? false) | translate }}
+          &lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;tip row tmup-align-center&quot;&gt;
+          &lt;lib-slide-toggle-input formControlName&#x3D;&quot;EveryCanCreatePost&quot;&gt;
+            &lt;ng-container ngProjectAs&#x3D;&quot;.left&quot;&gt;
+              &lt;label class&#x3D;&quot;sub-info switch&quot;&gt;
+                {{ &quot;pages.team.EveryCanCreatePostValue.&quot; + (formGroup!.get(&quot;0&quot;)?.get(&quot;EveryCanCreatePost&quot;)?.value ?? false) | translate }}
+              &lt;/label&gt;
+            &lt;/ng-container&gt;
+          &lt;/lib-slide-toggle-input&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;row between&quot;&gt;
+        &lt;div class&#x3D;&quot;column flex&quot;&gt;
+          &lt;label id&#x3D;&quot;EveryCanCreateActivity-label&quot; class&#x3D;&quot;info&quot; translate&gt;pages.team.EveryCanCreateActivity&lt;/label&gt;
+          &lt;label class&#x3D;&quot;sub-info&quot;&gt;{{
+            &quot;pages.team.EveryCanCreateActivityMemo.&quot; +
+            (formGroup!.get(&quot;0&quot;)?.get(&quot;EveryCanCreateActivity&quot;)?.value ??
+            false) | translate
+            }}&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;tip row tmup-align-center&quot;&gt;
+          &lt;lib-slide-toggle-input formControlName&#x3D;&quot;EveryCanCreateActivity&quot;&gt;
+            &lt;ng-container ngProjectAs&#x3D;&quot;.left&quot;&gt;
+              &lt;label class&#x3D;&quot;sub-info switch&quot;&gt;{{
+                &quot;pages.team.EveryCanCreateActivityValue.&quot; +
+                (formGroup!.get(&quot;0&quot;)?.get(&quot;EveryCanCreateActivity&quot;)?.value ??
+                false) | translate
+                }}&lt;/label&gt;
+            &lt;/ng-container&gt;
+          &lt;/lib-slide-toggle-input&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;column&quot; [hidden]&#x3D;&quot;addStep !&#x3D; 1&quot; formGroupName&#x3D;&quot;1&quot;&gt;
+      &lt;div class&#x3D;&quot;column-title&quot;&gt;
+        &lt;div class&#x3D;&quot;title&quot;&gt;
+          {{ &quot;pages.team.Desc&quot; | translate }}
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;memo&quot;&gt;
+          {{ &quot;pages.team.DescMemo&quot; | translate }}
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;ng-container *ngTemplateOutlet&#x3D;&quot;stepProcess; context: { full: 1 }&quot;&gt;
+      &lt;/ng-container&gt;
+
+      &lt;div class&#x3D;&quot;column padding-x&quot;&gt;
+        &lt;lib-textarea-input formControlName&#x3D;&quot;Desc&quot; [placeholder]&#x3D;&quot;&#x27;pages.team.DescPlaceholder&#x27; | translate&quot;
+          [height]&#x3D;&quot;236&quot;&gt;
+        &lt;/lib-textarea-input&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;column&quot; [hidden]&#x3D;&quot;addStep !&#x3D; 2&quot; formGroupName&#x3D;&quot;2&quot;&gt;
+      &lt;div class&#x3D;&quot;column-title&quot;&gt;
+        &lt;div class&#x3D;&quot;title&quot;&gt;
+          {{ &quot;pages.team.TeamViewTitle&quot; | translate }}
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;memo&quot;&gt;
+          {{ &quot;pages.team.TeamViewMemo&quot; | translate }}
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;ng-container *ngTemplateOutlet&#x3D;&quot;stepProcess; context: { full: 2 }&quot;&gt;
+      &lt;/ng-container&gt;
+
+      @if(loading){
+      &lt;lib-loading&gt;&lt;/lib-loading&gt;
+      }
+
+
+      &lt;div class&#x3D;&quot;column tmup-gap-8&quot; [hidden]&#x3D;&quot;loading&quot;&gt;
+        &lt;lib-textbox-input class&#x3D;&quot;padding-x&quot; type&#x3D;&quot;color&quot; formControlName&#x3D;&quot;Color&quot;&gt;
+          &lt;label&gt;{{ &quot;pages.team.Color&quot; | translate }}&lt;/label&gt;
+        &lt;/lib-textbox-input&gt;
+
+        &lt;div class&#x3D;&quot;column team-logo padding-x&quot;&gt;
+          &lt;div class&#x3D;&quot;row between&quot;&gt;
+            &lt;label class&#x3D;&quot;text logo-title&quot;&gt;{{
+              &quot;pages.team.Logo&quot; | translate
+              }}&lt;/label&gt;
+            &lt;lib-file [maxResolution]&#x3D;&quot;500&quot; type&#x3D;&quot;Custom&quot; [accept]&#x3D;&quot;&#x27;image/*&#x27;&quot; [dirPath]&#x3D;&quot;&#x27;Team&#x27;&quot; formControlName&#x3D;&quot;Logo&quot;
+              [cropperSettings]&#x3D;&quot;{ aspectRatio: 1 }&quot;&gt;
+              &lt;span custom-file-input class&#x3D;&quot;c-pointer text logo-change&quot;&gt;{{
+                &quot;common.change&quot; | translate
+                }}&lt;/span&gt;
+            &lt;/lib-file&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;column tmup-center&quot;&gt;
+            &lt;lib-team-logo [logo]&#x3D;&quot;formGroup.get([&#x27;2&#x27;, &#x27;Logo&#x27;])?.value&quot;&gt;&lt;/lib-team-logo&gt;
+            &lt;p [innerHTML]&#x3D;&quot;&#x27;pages.team.Logo-Memo&#x27; | translate&quot;&gt;&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;lib-background-choose #bgChoose [dirPath]&#x3D;&quot;&#x27;Team&#x27;&quot; [bgTypes]&#x3D;&quot;bgTypes&quot; [bgImages]&#x3D;&quot;bgImages&quot; [bgType]&#x3D;&quot;bgType&quot;
+          [bgImageId]&#x3D;&quot;bgType?.Id&quot; (changeImage)&#x3D;&quot;changeBgImage($event)&quot;&gt;
+        &lt;/lib-background-choose&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;column&quot; [hidden]&#x3D;&quot;addStep !&#x3D; 3&quot; formGroupName&#x3D;&quot;3&quot;&gt;
+      &lt;div class&#x3D;&quot;column-title&quot;&gt;
+        &lt;div class&#x3D;&quot;title&quot;&gt;
+          {{ &quot;pages.team-edit.tags&quot; | translate }}
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;memo&quot;&gt;
+          {{ &quot;pages.team.TeamTagMemo&quot; | translate }}
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;ng-container *ngTemplateOutlet&#x3D;&quot;stepProcess; context: { full: 3 }&quot;&gt;
+      &lt;/ng-container&gt;
+
+      @if(loading){
+      &lt;lib-loading&gt;&lt;/lib-loading&gt;
+      }
+
+      @for (item of tagsMap; track $index) {
+      &lt;div class&#x3D;&quot;tags-group padding-x&quot;&gt;
+        &lt;div class&#x3D;&quot;tag-title&quot;&gt;{{ item.Text }}&lt;/div&gt;
+        &lt;div class&#x3D;&quot;tag row&quot;&gt;
+          @for (tag of item.tags; track $index) {
+          &lt;span (click)&#x3D;&quot;pressTag(tag)&quot; [class.active]&#x3D;&quot;tag.checked&quot;&gt;
+            {{ tag.Text }}
+          &lt;/span&gt;
+          }
+        &lt;/div&gt;
+      &lt;/div&gt;
+      }
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;column&quot; [hidden]&#x3D;&quot;addStep !&#x3D; 4&quot; formGroupName&#x3D;&quot;4&quot;&gt;
+      &lt;div class&#x3D;&quot;column-title&quot;&gt;
+        &lt;div class&#x3D;&quot;title&quot;&gt;
+          {{ &quot;pages.team.TeamLocationTitle&quot; | translate }}
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;memo&quot;&gt;
+          {{ &quot;pages.team.TeamLocationMemo&quot; | translate }}
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;ng-container *ngTemplateOutlet&#x3D;&quot;stepProcess; context: { full: 4 }&quot;&gt;
+      &lt;/ng-container&gt;
+
+      @if(loading){
+      &lt;lib-loading&gt;&lt;/lib-loading&gt;
+      }
+
+      &lt;div class&#x3D;&quot;column localation-select padding-x tmup-gap-16&quot; [hidden]&#x3D;&quot;loading&quot;&gt;
+        &lt;lib-select-input [showSearch]&#x3D;&quot;true&quot; [showCancel]&#x3D;&quot;false&quot;
+          [title]&#x3D;&quot;&#x27;pages.login.register-2.select-empty.country&#x27;&quot; type&#x3D;&quot;Common&quot; openType&#x3D;&quot;CircleTag&quot;
+          formControlName&#x3D;&quot;CountryId&quot;&gt;
+          &lt;lib-option [value]&#x3D;&quot;null&quot; [selectText]&#x3D;&quot;
+              &#x27;pages.login.register-2.select-empty.country&#x27; | translate
+            &quot;&gt;
+            {{ &quot;pages.login.register-2.select-empty.country&quot; | translate }}
+          &lt;/lib-option&gt;
+          @for(item of countrys; track item.Id){
+          &lt;lib-option [value]&#x3D;&quot;item.Id&quot; [selectText]&#x3D;&quot;item.Name&quot;&gt;
+            {{ item.Name }}
+          &lt;/lib-option&gt;
+          }
+
+
+          &lt;mat-icon class&#x3D;&quot;common-suffix fs-16&quot; svgIcon&#x3D;&quot;arrow_down_1&quot;&gt;
+          &lt;/mat-icon&gt;
+        &lt;/lib-select-input&gt;
+        &lt;lib-select-input [showSearch]&#x3D;&quot;true&quot; [showCancel]&#x3D;&quot;false&quot; [title]&#x3D;&quot;&#x27;pages.login.register-2.select-empty.city&#x27;&quot;
+          type&#x3D;&quot;Common&quot; openType&#x3D;&quot;CircleTag&quot; formControlName&#x3D;&quot;CityId&quot;&gt;
+          &lt;lib-option [value]&#x3D;&quot;null&quot; [selectText]&#x3D;&quot;&#x27;pages.login.register-2.select-empty.city&#x27; | translate&quot;&gt;
+            {{ &quot;pages.login.register-2.select-empty.city&quot; | translate }}
+          &lt;/lib-option&gt;
+          @for(item of citys; track item.Id){
+          &lt;lib-option [value]&#x3D;&quot;item.Id&quot; [selectText]&#x3D;&quot;item.Name&quot;&gt;
+            {{ item.Name }}
+          &lt;/lib-option&gt;
+          }
+          &lt;mat-icon class&#x3D;&quot;common-suffix fs-16&quot; svgIcon&#x3D;&quot;arrow_down_1&quot;&gt;
+          &lt;/mat-icon&gt;
+        &lt;/lib-select-input&gt;
+
+        &lt;div class&#x3D;&quot;mock-lib-select-input tmup-align-center c-pointer&quot; (click)&#x3D;&quot;openLocationSelectDialog()&quot;&gt;
+          &lt;span&gt;
+            {{ formGroup.get([&quot;4&quot;, &quot;Address&quot;])?.value || (&quot;pages.team.chooseAddressPlaceHolder&quot; | translate) }}
+          &lt;/span&gt;
+          &lt;mat-icon class&#x3D;&quot;common-suffix fs-18&quot; svgIcon&#x3D;&quot;location&quot;&gt;
+          &lt;/mat-icon&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;footer&quot;&gt;
+    &lt;button class&#x3D;&quot;btn-next tmup-btn-l&quot; type&#x3D;&quot;submit&quot; (click)&#x3D;&quot;next()&quot;&gt;
+      @if(addStep &#x3D;&#x3D;&#x3D; addLastStep){
+      &lt;ng-container&gt;
+        {{ &quot;common.complete&quot; | translate }}
+      &lt;/ng-container&gt;
+      } @else {
+      &lt;ng-container&gt;
+        {{ &quot;common.continue&quot; | translate }}
+      &lt;/ng-container&gt;
+
+      }
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+}
+
+
+&lt;ng-template #stepProcess let-full&#x3D;&quot;full&quot;&gt;
+  &lt;lib-step-process [currStep]&#x3D;&quot;full&quot; [maxStep]&#x3D;&quot;4&quot;&gt;&lt;/lib-step-process&gt;
+&lt;/ng-template&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./team-form.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">:host {
+  .footer {
+    padding: 20px var(--app-x-space);
+  }
+
+  .padding-x {
+    padding: 0px var(--app-x-space);
+  }
+
+  .between {
+    justify-content: space-between;
+  }
+
+  .info {
+    color: var(--app-text-color);
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.32px;
+  }
+
+  .sub-info {
+    color: var(--app-color-949494);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.24px;
+
+    &amp;.switch {
+      margin: 0px 10px;
+    }
+  }
+
+  .column-title {
+    padding: var(--app-x-space);
+
+    &gt;div {
+      color: var(--app-text-color);
+    }
+
+    &gt;.title {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 24px;
+      margin-bottom: var(--app-y-space);
+    }
+
+    &gt;.memo {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.28px;
+    }
+  }
+
+  lib-step-process {
+    margin-bottom: 20px;
+  }
+
+  .team-logo {
+    margin-bottom: 10px;
+
+    &gt;div:first-child {
+      height: 50px;
+
+      .text {
+        padding: 13px 0;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0.32px;
+
+        &amp;.logo-title {
+          color: var(--app-text-color);
+        }
+
+        &amp;.logo-change {
+          color: var(--app-blue);
+        }
+      }
+    }
+
+    &gt;div:last-child {
+      lib-team-logo {
+        margin: var(--app-y-space) 0px;
+        width: 140px;
+        height: 140px;
+        border-radius: 32px;
+        overflow: hidden;
+      }
+
+      p {
+        padding: 6px 0;
+        margin: 0px;
+        text-align: center;
+        color: var(--app-color-949494);
+        font-size: 12px;
+        letter-spacing: 0.24px;
+      }
+    }
+  }
+
+  .tags-group {
+    &amp;:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    .tag-title {
+      padding-top: 10px;
+      color: var(--app-text-color);
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.32px;
+    }
+
+    .tag {
+      margin: 10px 0 8px;
+      gap: 8px;
+      flex-wrap: wrap;
+
+      &gt;span {
+        border-radius: 14px;
+        background: var(--app-secondary-gray-7);
+        color: var(--app-text-color);
+        font-size: 14px;
+        font-weight: 400;
+        height: 28px;
+        padding: 8px 12px;
+        display: flex;
+        align-items: center;
+
+        &amp;.active {
+          color: var(--app-bg-color);
+          background: var(--app-text-color);
+        }
+      }
+    }
+  }
+
+  .localation-select {
+    &gt;lib-select-input {
+      margin: 0;
+
+      mat-icon {
+        color: var(--app-text-color);
+      }
+    }
+
+    .mock-lib-select-input {
+      flex: 1;
+      padding: 12px 16px;
+      border-radius: 5px;
+      border: 1px solid var(--app-secondary-gray-5);
+      background: var(--app-bg-color);
+      height: 44px;
+      color: var(--app-text-color);
+      font-size: 0.875rem;
+      display: flex;
+      justify-content: space-between;
+      line-height: 18px;
+
+      &gt;span {
+        width: calc(100% - 18px);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      &gt;img {
+        flex-shrink: 0;
+      }
+    }
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><lib-header [isDialog]="true" [show]="true" [backNotShow]="true" (backClick)="back()">  <ng-container ngProjectAs="[h-left]">    @if (addStep == 0) {    <button mat-icon-button type="button" (click)="back()">      <mat-icon svgIcon="close"> </mat-icon>    </button>    }@else {    <button class="tmup-btn-icon fs-20" type="button" (click)="back()">      <mat-icon class="fs-20" svgIcon="arrow_back"></mat-icon>    </button>    }  </ng-container>  <ng-container ngProjectAs="[h-title]">    @if (addStep == 0) {    <ng-container>      {{ "pages.team.add-team.title" | translate }}    </ng-container>    }  </ng-container>  <ng-container ngProjectAs="[h-right]">    @if (addStep != 0) {    <button type="button" class="tmup-btn-text" mat-button (click)="next(true)">      @if(addStep == addLastStep){      <ng-container>        {{ "common.skip-complete" | translate }}      </ng-container>      }@else{      <ng-container>        {{ "common.skip" | translate }}      </ng-container>      }    </button>    }  </ng-container></lib-header>@if(formGroup){<form class="scroll-main" [formGroup]="formGroup">  <div class="scroll-main">    <div class="column padding-x tmup-gap-20" [hidden]="addStep != 0" formGroupName="0">      <div class="column">        <lib-textbox-input formControlName="Name" [maxlength]="50"          [placeholder]="\'pages.team.NamePlaceholder\' | translate">          <label>{{ "pages.team.Name" | translate }}</label>        </lib-textbox-input>      </div>      <div class="row between">        <div class="column flex">          <label id="IsPublic-label" class="info">{{            "pages.team.IsPublic" | translate            }}</label>          <label class="sub-info">{{            "pages.team.IsPublicMemo." +            (formGroup!.get("0")?.get("IsPublic")?.value ?? false) | translate            }}</label>        </div>        <div class="tip row tmup-align-center">          <lib-slide-toggle-input formControlName="IsPublic">            <ng-container ngProjectAs=".left">              <label class="sub-info switch">{{                "pages.team.IsPublicValue." +                (formGroup!.get("0")?.get("IsPublic")?.value ?? false)                | translate                }}</label>            </ng-container>          </lib-slide-toggle-input>        </div>      </div>      <div class="row between">        <div class="column flex">          <label id="NeedReviewRequest-label" class="info" translate>pages.team.NeedReviewRequest</label>          <label class="sub-info">{{            "pages.team.NeedReviewRequestMemo." +            (formGroup!.get("0")?.get("NeedReviewRequest")?.value ?? false)            | translate            }}</label>        </div>        <div class="tip row tmup-align-center">          <lib-slide-toggle-input formControlName="NeedReviewRequest">            <ng-container ngProjectAs=".left">              <label class="sub-info switch">{{                "pages.team.NeedReviewRequestValue." +                (formGroup!.get("0")?.get("NeedReviewRequest")?.value ??                false) | translate                }}</label>            </ng-container>          </lib-slide-toggle-input>        </div>      </div>      <div class="row between">        <div class="column flex">          <label id="EveryCanCreatePost-label" class="info" translate>pages.team.EveryCanCreatePost</label>          <label class="sub-info">            {{ "pages.team.EveryCanCreatePostMemo." + (formGroup!.get("0")?.get("EveryCanCreatePost")?.value ?? false) | translate }}          </label>        </div>        <div class="tip row tmup-align-center">          <lib-slide-toggle-input formControlName="EveryCanCreatePost">            <ng-container ngProjectAs=".left">              <label class="sub-info switch">                {{ "pages.team.EveryCanCreatePostValue." + (formGroup!.get("0")?.get("EveryCanCreatePost")?.value ?? false) | translate }}              </label>            </ng-container>          </lib-slide-toggle-input>        </div>      </div>      <div class="row between">        <div class="column flex">          <label id="EveryCanCreateActivity-label" class="info" translate>pages.team.EveryCanCreateActivity</label>          <label class="sub-info">{{            "pages.team.EveryCanCreateActivityMemo." +            (formGroup!.get("0")?.get("EveryCanCreateActivity")?.value ??            false) | translate            }}</label>        </div>        <div class="tip row tmup-align-center">          <lib-slide-toggle-input formControlName="EveryCanCreateActivity">            <ng-container ngProjectAs=".left">              <label class="sub-info switch">{{                "pages.team.EveryCanCreateActivityValue." +                (formGroup!.get("0")?.get("EveryCanCreateActivity")?.value ??                false) | translate                }}</label>            </ng-container>          </lib-slide-toggle-input>        </div>      </div>    </div>    <div class="column" [hidden]="addStep != 1" formGroupName="1">      <div class="column-title">        <div class="title">          {{ "pages.team.Desc" | translate }}        </div>        <div class="memo">          {{ "pages.team.DescMemo" | translate }}        </div>      </div>      <ng-container *ngTemplateOutlet="stepProcess; context: { full: 1 }">      </ng-container>      <div class="column padding-x">        <lib-textarea-input formControlName="Desc" [placeholder]="\'pages.team.DescPlaceholder\' | translate"          [height]="236">        </lib-textarea-input>      </div>    </div>    <div class="column" [hidden]="addStep != 2" formGroupName="2">      <div class="column-title">        <div class="title">          {{ "pages.team.TeamViewTitle" | translate }}        </div>        <div class="memo">          {{ "pages.team.TeamViewMemo" | translate }}        </div>      </div>      <ng-container *ngTemplateOutlet="stepProcess; context: { full: 2 }">      </ng-container>      @if(loading){      <lib-loading></lib-loading>      }      <div class="column tmup-gap-8" [hidden]="loading">        <lib-textbox-input class="padding-x" type="color" formControlName="Color">          <label>{{ "pages.team.Color" | translate }}</label>        </lib-textbox-input>        <div class="column team-logo padding-x">          <div class="row between">            <label class="text logo-title">{{              "pages.team.Logo" | translate              }}</label>            <lib-file [maxResolution]="500" type="Custom" [accept]="\'image/*\'" [dirPath]="\'Team\'" formControlName="Logo"              [cropperSettings]="{ aspectRatio: 1 }">              <span custom-file-input class="c-pointer text logo-change">{{                "common.change" | translate                }}</span>            </lib-file>          </div>          <div class="column tmup-center">            <lib-team-logo [logo]="formGroup.get([\'2\', \'Logo\'])?.value"></lib-team-logo>            <p [innerHTML]="\'pages.team.Logo-Memo\' | translate"></p>          </div>        </div>        <lib-background-choose #bgChoose [dirPath]="\'Team\'" [bgTypes]="bgTypes" [bgImages]="bgImages" [bgType]="bgType"          [bgImageId]="bgType?.Id" (changeImage)="changeBgImage($event)">        </lib-background-choose>      </div>    </div>    <div class="column" [hidden]="addStep != 3" formGroupName="3">      <div class="column-title">        <div class="title">          {{ "pages.team-edit.tags" | translate }}        </div>        <div class="memo">          {{ "pages.team.TeamTagMemo" | translate }}        </div>      </div>      <ng-container *ngTemplateOutlet="stepProcess; context: { full: 3 }">      </ng-container>      @if(loading){      <lib-loading></lib-loading>      }      @for (item of tagsMap; track $index) {      <div class="tags-group padding-x">        <div class="tag-title">{{ item.Text }}</div>        <div class="tag row">          @for (tag of item.tags; track $index) {          <span (click)="pressTag(tag)" [class.active]="tag.checked">            {{ tag.Text }}          </span>          }        </div>      </div>      }    </div>    <div class="column" [hidden]="addStep != 4" formGroupName="4">      <div class="column-title">        <div class="title">          {{ "pages.team.TeamLocationTitle" | translate }}        </div>        <div class="memo">          {{ "pages.team.TeamLocationMemo" | translate }}        </div>      </div>      <ng-container *ngTemplateOutlet="stepProcess; context: { full: 4 }">      </ng-container>      @if(loading){      <lib-loading></lib-loading>      }      <div class="column localation-select padding-x tmup-gap-16" [hidden]="loading">        <lib-select-input [showSearch]="true" [showCancel]="false"          [title]="\'pages.login.register-2.select-empty.country\'" type="Common" openType="CircleTag"          formControlName="CountryId">          <lib-option [value]="null" [selectText]="              \'pages.login.register-2.select-empty.country\' | translate            ">            {{ "pages.login.register-2.select-empty.country" | translate }}          </lib-option>          @for(item of countrys; track item.Id){          <lib-option [value]="item.Id" [selectText]="item.Name">            {{ item.Name }}          </lib-option>          }          <mat-icon class="common-suffix fs-16" svgIcon="arrow_down_1">          </mat-icon>        </lib-select-input>        <lib-select-input [showSearch]="true" [showCancel]="false" [title]="\'pages.login.register-2.select-empty.city\'"          type="Common" openType="CircleTag" formControlName="CityId">          <lib-option [value]="null" [selectText]="\'pages.login.register-2.select-empty.city\' | translate">            {{ "pages.login.register-2.select-empty.city" | translate }}          </lib-option>          @for(item of citys; track item.Id){          <lib-option [value]="item.Id" [selectText]="item.Name">            {{ item.Name }}          </lib-option>          }          <mat-icon class="common-suffix fs-16" svgIcon="arrow_down_1">          </mat-icon>        </lib-select-input>        <div class="mock-lib-select-input tmup-align-center c-pointer" (click)="openLocationSelectDialog()">          <span>            {{ formGroup.get(["4", "Address"])?.value || ("pages.team.chooseAddressPlaceHolder" | translate) }}          </span>          <mat-icon class="common-suffix fs-18" svgIcon="location">          </mat-icon>        </div>      </div>    </div>  </div>  <div class="footer">    <button class="btn-next tmup-btn-l" type="submit" (click)="next()">      @if(addStep === addLastStep){      <ng-container>        {{ "common.complete" | translate }}      </ng-container>      } @else {      <ng-container>        {{ "common.continue" | translate }}      </ng-container>      }    </button>  </div></form>}<ng-template #stepProcess let-full="full">  <lib-step-process [currStep]="full" [maxStep]="4"></lib-step-process></ng-template></div>'
+    var COMPONENTS = [{'name': 'ActivityApplyListComponent', 'selector': 'lib-activity-apply-list'},{'name': 'ActivityCancelDialogComponent', 'selector': 'lib-activity-cancel-dialog'},{'name': 'ActivityComponent', 'selector': 'app-activity'},{'name': 'ActivityDetailComponent', 'selector': 'lib-activity-detail'},{'name': 'ActivityFormComponent', 'selector': 'app-activity-form'},{'name': 'ActivityGpsShareComponent', 'selector': 'lib-activity-gps-share'},{'name': 'ActivityGpsShareDialogComponent', 'selector': 'lib-activity-gps-share-dialog'},{'name': 'ActivityInvitingListComponent', 'selector': 'lib-activity-inviting-list'},{'name': 'ActivityItemComponent', 'selector': 'lib-activity-item'},{'name': 'ActivityJoinListComponent', 'selector': 'lib-activity-join-list'},{'name': 'ActivityLogListComponent', 'selector': 'lib-activity-log-list'},{'name': 'ActivityOnMapComponent', 'selector': 'lib-activity-on-map'},{'name': 'ActivityParticipantListDialogComponent', 'selector': 'lib-activity-participant-list-dialog'},{'name': 'ActivityPointsSelectDialogComponent', 'selector': 'lib-activity-points-select-dialog'},{'name': 'ActivitySearchComponent', 'selector': 'lib-activity-search'},{'name': 'ActivitySelectDialogComponent', 'selector': 'lib-activity-select-dialog'},{'name': 'ActivityUserListComponent', 'selector': 'lib-activity-user-list'},{'name': 'AddressInputComponent', 'selector': 'lib-address-input'},{'name': 'AlertDialogComponent', 'selector': 'lib-alert-dialog'},{'name': 'ArrangePointsDialogComponent', 'selector': 'lib-arrange-points-dialog'},{'name': 'BackgroundChooseComponent', 'selector': 'lib-background-choose'},{'name': 'BlocklistComponent', 'selector': 'lib-blocklist'},{'name': 'CalorieExchangeComponent', 'selector': 'lib-calorie-exchange'},{'name': 'ChatAvatarComponent', 'selector': 'lib-chat-avatar'},{'name': 'ChatComponent', 'selector': 'lib-chat'},{'name': 'ChatItemComponent', 'selector': 'lib-chat-item'},{'name': 'ChatListComponent', 'selector': 'lib-chat-list'},{'name': 'ChatReplyMessageItemComponent', 'selector': 'lib-chat-reply-message-item'},{'name': 'ChatRoomComponent', 'selector': 'lib-chat-room'},{'name': 'ChatRoomItemComponent', 'selector': 'lib-chat-room-item'},{'name': 'ChatRoomItemTemplateComponent', 'selector': 'lib-chat-room-item-template'},{'name': 'ChatRoomMediaListComponent', 'selector': 'lib-chat-room-media-list'},{'name': 'ChatSelectDialogComponent', 'selector': 'lib-chat-select-dialog'},{'name': 'ChatUserComponent', 'selector': 'lib-chat-user'},{'name': 'ConfirmDialogComponent', 'selector': 'lib-confirm-dialog'},{'name': 'CreateActivitySuccessDialogComponent', 'selector': 'lib-create-activity-success-dialog'},{'name': 'CreateRouteSuccessDialogComponent', 'selector': 'lib-create-route-success-dialog'},{'name': 'CreateSuccessComponent', 'selector': 'lib-create-success'},{'name': 'CustomPageComponent', 'selector': 'lib-custom-page'},{'name': 'DateInputComponent', 'selector': 'lib-date-input'},{'name': 'DatetimeInputComponent', 'selector': 'lib-datetime-input'},{'name': 'DeviceSeekingComponent', 'selector': 'lib-device-seeking'},{'name': 'DownloadAppDialogComponent', 'selector': 'lib-download-app-dialog'},{'name': 'DownloadComponent', 'selector': 'lib-download'},{'name': 'DraggableListComponent', 'selector': 'lib-draggable-list'},{'name': 'EmptyDataComponent', 'selector': 'lib-empty-data'},{'name': 'ErrorDialogComponent', 'selector': 'lib-error-dialog'},{'name': 'ErrorSummaryComponent', 'selector': 'lib-error-summary'},{'name': 'ExerciseReadyStartComponent', 'selector': 'lib-exercise-ready-start'},{'name': 'FaqComponent', 'selector': 'lib-faq'},{'name': 'FileComponent', 'selector': 'lib-file'},{'name': 'FindResultComponent', 'selector': 'lib-find-result'},{'name': 'FollowComponent', 'selector': 'app-follow'},{'name': 'FollowersComponent', 'selector': 'lib-followers'},{'name': 'FollowReqComponent', 'selector': 'lib-follow-req'},{'name': 'FooterMenuComponent', 'selector': 'lib-footer-menu'},{'name': 'HeaderComponent', 'selector': 'lib-header'},{'name': 'HomeActivityInviteComponent', 'selector': 'lib-home-activity-invite'},{'name': 'HomeAddBtnComponent', 'selector': 'lib-home-add-btn'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeMenuComponent', 'selector': 'lib-home-menu'},{'name': 'ImageCropperDialogComponent', 'selector': 'lib-image-cropper-dialog'},{'name': 'ImageListDialogComponent', 'selector': 'lib-image-list-dialog'},{'name': 'InviteFriendsComponent', 'selector': 'lib-invite-friends'},{'name': 'LeadRiderForRouteDialogComponent', 'selector': 'lib-lead-rider-for-route-dialog'},{'name': 'LikeCommentDialogComponent', 'selector': 'lib-like-comment-dialog'},{'name': 'LoadingComponent', 'selector': 'lib-loading'},{'name': 'LocationDialogComponent', 'selector': 'lib-location-dialog'},{'name': 'LocationSelectDialogComponent', 'selector': 'lib-location-select-dialog'},{'name': 'LocationShareComponent', 'selector': 'lib-location-share'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapClMarkerComponent', 'selector': 'lib-map-cl-marker'},{'name': 'MapCompassComponent', 'selector': 'lib-map-compass'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'MoreMenuComponent', 'selector': 'lib-more-menu'},{'name': 'MyRouteCollectionComponent', 'selector': 'lib-my-route-collection'},{'name': 'NoticeMsgItemComponent', 'selector': 'lib-notice-msg-item'},{'name': 'NotifyMessageListComponent', 'selector': 'lib-notify-message-list'},{'name': 'OptionComponent', 'selector': 'lib-option'},{'name': 'PageDialogComponent', 'selector': 'lib-page-dialog'},{'name': 'PositionFilterDialogComponent', 'selector': 'lib-position-filter-dialog'},{'name': 'PostAttachmentItemComponent', 'selector': 'lib-post-attachment-item'},{'name': 'PostCommentListComponent', 'selector': 'lib-post-comment-list'},{'name': 'PostFormComponent', 'selector': 'lib-post-form'},{'name': 'PostItemComponent', 'selector': 'lib-post-item'},{'name': 'PostLikeListComponent', 'selector': 'lib-post-like-list'},{'name': 'ProgressBarComponent', 'selector': 'lib-progress-bar'},{'name': 'RecommendTeamListComponent', 'selector': 'lib-recommend-team-list'},{'name': 'RecommendUserListComponent', 'selector': 'lib-recommend-user-list'},{'name': 'RecordSelectDialogComponent', 'selector': 'lib-record-select-dialog'},{'name': 'ReportDialogComponent', 'selector': 'lib-report-dialog'},{'name': 'ReportListComponent', 'selector': 'lib-report-list'},{'name': 'ReportSuccessDialogComponent', 'selector': 'lib-report-success-dialog'},{'name': 'RoadDescDialogComponent', 'selector': 'lib-road-desc-dialog'},{'name': 'RouteActivityListComponent', 'selector': 'lib-route-activity-list'},{'name': 'RouteCollectComponent', 'selector': 'lib-route-collect'},{'name': 'RouteCommentFormComponent', 'selector': 'lib-route-comment-form'},{'name': 'RouteCommentItemComponent', 'selector': 'lib-route-comment-item'},{'name': 'RouteCommentListComponent', 'selector': 'lib-route-comment-list'},{'name': 'RouteDetailComponent', 'selector': 'lib-route-detail'},{'name': 'RouteDetailDialogComponent', 'selector': 'lib-route-detail-dialog'},{'name': 'RouteElevationMapComponent', 'selector': 'lib-route-elevation-map'},{'name': 'RouteExploreComponent', 'selector': 'lib-route-explore'},{'name': 'RouteFormComponent', 'selector': 'lib-route-form'},{'name': 'RouteFromFilterDialogComponent', 'selector': 'lib-route-from-filter-dialog'},{'name': 'RouteInfoComponent', 'selector': 'lib-route-info'},{'name': 'RouteItemComponent', 'selector': 'lib-route-item'},{'name': 'RouteMapExploreComponent', 'selector': 'lib-route-map-explore'},{'name': 'RouteReportInfoComponent', 'selector': 'lib-route-report-info'},{'name': 'RouteSearchComponent', 'selector': 'lib-route-search'},{'name': 'RouteSelectReportConfirmDialogComponent', 'selector': 'lib-route-select-report-confirm-dialog'},{'name': 'RouteShareDialogComponent', 'selector': 'lib-route-share-dialog'},{'name': 'RouteTagFilterDialogComponent', 'selector': 'lib-route-tag-filter-dialog'},{'name': 'SearchDialogComponent', 'selector': 'lib-search-dialog'},{'name': 'SearchInputComponent', 'selector': 'lib-search-input'},{'name': 'SearchRecordComponent', 'selector': 'lib-search-record'},{'name': 'SearchUsersComponent', 'selector': 'lib-search-users'},{'name': 'SelectDialogComponent', 'selector': 'lib-select-dialog'},{'name': 'SelectInputComponent', 'selector': 'lib-select-input'},{'name': 'ShareToDialogComponent', 'selector': 'lib-share-to-dialog'},{'name': 'SingleInputDialogComponent', 'selector': 'lib-single-input-dialog'},{'name': 'SlideToggleInputComponent', 'selector': 'lib-slide-toggle-input'},{'name': 'SportingShareItemComponent', 'selector': 'lib-sporting-share-item'},{'name': 'SportingShareListComponent', 'selector': 'lib-sporting-share-list'},{'name': 'SportLiveChatComponent', 'selector': 'lib-sport-live-chat'},{'name': 'SportLiveComponent', 'selector': 'lib-sport-live'},{'name': 'StepProcessComponent', 'selector': 'lib-step-process'},{'name': 'StopwatchComponent', 'selector': 'lib-stopwatch'},{'name': 'StopwatchFinishedComponent', 'selector': 'lib-stopwatch-finished'},{'name': 'StopwatchInfoSelectDialogComponent', 'selector': 'lib-stopwatch-info-select-dialog'},{'name': 'StopwatchSettingComponent', 'selector': 'lib-stopwatch-setting'},{'name': 'StreamimgChatDialogComponent', 'selector': 'lib-streamimg-chat-dialog'},{'name': 'TagUserInputComponent', 'selector': 'lib-tag-user-input'},{'name': 'TeamActivityDialogComponent', 'selector': 'lib-team-activity-dialog'},{'name': 'TeamAliasEditComponent', 'selector': 'lib-team-alias-edit'},{'name': 'TeamBaseareaEditComponent', 'selector': 'lib-team-basearea-edit'},{'name': 'TeamComponent', 'selector': 'lib-team'},{'name': 'TeamCreateFinishComponent', 'selector': 'lib-team-create-finish'},{'name': 'TeamDetailsComponent', 'selector': 'lib-team-details'},{'name': 'TeamFormComponent', 'selector': 'lib-team-form'},{'name': 'TeamFormEditComponent', 'selector': 'lib-team-form-edit'},{'name': 'TeamIntroDialogComponent', 'selector': 'lib-team-intro-dialog'},{'name': 'TeamItemComponent', 'selector': 'lib-team-item'},{'name': 'TeamLogoComponent', 'selector': 'lib-team-logo'},{'name': 'TeamMapComponent', 'selector': 'lib-team-map'},{'name': 'TeamMemberAliasComponent', 'selector': 'lib-team-member-alias'},{'name': 'TeamMemberComponent', 'selector': 'lib-team-member'},{'name': 'TeamMemberCtrlDialogComponent', 'selector': 'lib-team-member-ctrl-dialog'},{'name': 'TeamOnMapComponent', 'selector': 'lib-team-on-map'},{'name': 'TeamSearchComponent', 'selector': 'lib-team-search'},{'name': 'TeamSettingComponent', 'selector': 'lib-team-setting'},{'name': 'TeamTagEditComponent', 'selector': 'lib-team-tag-edit'},{'name': 'TextareaInputComponent', 'selector': 'lib-textarea-input'},{'name': 'TextboxInputComponent', 'selector': 'lib-textbox-input'},{'name': 'ThirdAuthComponent', 'selector': 'lib-third-auth'},{'name': 'TimeInputComponent', 'selector': 'lib-time-input'},{'name': 'TimePeriodFilterDialogComponent', 'selector': 'lib-time-period-filter-dialog'},{'name': 'TipInfoDialogComponent', 'selector': 'lib-tip-info-dialog'},{'name': 'UpdateScreenComponent', 'selector': 'lib-update-screen'},{'name': 'UserAccountComponent', 'selector': 'lib-user-account'},{'name': 'UserAccountFormComponent', 'selector': 'lib-user-account-form'},{'name': 'UserApplyTeamDialogComponent', 'selector': 'lib-user-apply-team-dialog'},{'name': 'UserAvatarComponent', 'selector': 'lib-user-avatar'},{'name': 'UserAvaterGroupComponent', 'selector': 'lib-user-avater-group'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserFormComponent', 'selector': 'app-user-form'},{'name': 'UserItemComponent', 'selector': 'lib-user-item'},{'name': 'UserNotificationSettingComponent', 'selector': 'lib-user-notification-setting'},{'name': 'UserPostListComponent', 'selector': 'lib-user-post-list'},{'name': 'UserRouteRecordItemComponent', 'selector': 'lib-user-route-record-item'},{'name': 'UserRouteRecordListComponent', 'selector': 'lib-user-route-record-list'},{'name': 'UserSelectDialogComponent', 'selector': 'lib-user-select-dialog'},{'name': 'UserSettingComponent', 'selector': 'app-user-setting'},{'name': 'UsersFollowingComponent', 'selector': 'lib-users-following'},{'name': 'UserShareDialogComponent', 'selector': 'lib-user-share-dialog'},{'name': 'ValidCodeInputComponent', 'selector': 'lib-valid-code-input'},{'name': 'VisitRegDialogComponent', 'selector': 'lib-visit-reg-dialog'},{'name': 'WeatherViewDialogComponent', 'selector': 'lib-weather-view-dialog'},{'name': 'WebHomeComponent', 'selector': 'lib-web-home'}];
+    var DIRECTIVES = [{'name': 'AppOnDestory', 'selector': ''},{'name': 'BackgroundImageDirective', 'selector': '[appBackgroundImage]'},{'name': 'BaseComponent', 'selector': ''},{'name': 'BaseFormComponent', 'selector': ''},{'name': 'BaseListComponent', 'selector': ''},{'name': 'HeaderTitleDirective', 'selector': '[libHeaderTitle]'},{'name': 'OpenSettingDirective', 'selector': '[libOpenSetting]'},{'name': 'PageHostDirective', 'selector': '[libPageHost]'},{'name': 'TextReadMoreDirective', 'selector': '[libTextReadMore]'}];
+    var ACTUAL_COMPONENT = {'name': 'TeamFormComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TeamFormComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

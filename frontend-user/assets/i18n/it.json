@@ -1,0 +1,2137 @@
+{
+    "notify": {
+        "types": {
+            "image": "{{name}} ha condiviso un'immagine in {{groupName}}",
+            "text": "{{name}} ha inviato un nuovo messaggio in {{groupName}}",
+            "location": "{{name}} ha condiviso una posizione in {{groupName}}"
+        }
+    },
+    "errors": {
+        "required": "Obbligatorio",
+        "minlength": "Almeno {{requiredLength}} caratteri",
+        "maxlength": "Fino a {{requiredLength}} caratteri",
+        "maxFileCount": "Limite di file superato, massimo {{max}} file",
+        "email": "Deve essere un formato email valido",
+        "sameAs": "Deve essere lo stesso di {{control}}",
+        "leastOneRequired": "Per {{Name}} è richiesto almeno un campo compilato",
+        "duplicate": "Duplicato",
+        "reference": "Esistono dati correlati a {{data.title}}, impossibile eliminare",
+        "allreference": "Ci sono ({{data.count}}) record correlati a {{data.title}}, impossibile eliminare",
+        "matDatepickerParse": "Deve essere in formato data",
+        "min": "Non può essere inferiore a {{min}}",
+        "max": "Non può essere superiore a {{max}}",
+        "arrayMaxLength": "Massimo {{max}} elementi",
+        "arrayMinLength": "Almeno {{min}} elementi",
+        "pattern": "Formato non corretto",
+        "hasUse": "Già in uso",
+        "hasExist": "Esiste già, per favore reinserisci",
+        "notValidToken": "Il token di autorizzazione del login di terze parti è scaduto, per favore effettua nuovamente il login",
+        "noThirdProvider": "Il servizio di login di {{Service}} non è ancora supportato",
+        "systemTimeout": "Il sistema è occupato, per favore riprova più tardi, grazie~",
+        "notExists": "Non esiste",
+        "incorrect": "Errato",
+        "needLogin": "Login richiesto",
+        "serverNotConnect": "Impossibile connettersi al server",
+        "parametersIncorrect": "Anomalia nei parametri dei dati",
+        "templateNotSetting": "Il template per {{SendType}} di {{TemplateType}} non è stato configurato. Per favore contatta l'amministratore. Grazie~",
+        "dateGreaterThanNow": "Deve essere successivo all'ora attuale",
+        "noPermission": "Non hai il permesso per eseguire questa azione",
+        "login-failed": {
+            "th3rd-service": "Il login tramite terze parti non è riuscito. La pagina web non supporta il login diretto per account di terze parti non registrati."
+        },
+        "activity": {
+            "overStartTime": "L'attività è già iniziata e non può essere annullata!",
+            "overRegistTime": "La scadenza per la registrazione è passata. Non puoi registrarti!",
+            "hasCancel": "L'attività è stata già annullata!",
+            "hasJoin": "Ti sei già unito a questa attività, non è necessario unirsi di nuovo.",
+            "isPrivate": "Questa attività è solo su invito. Se desideri partecipare, hai bisogno di un invito oppure devi essere membro del team organizzatore.",
+            "running": "L'attività è già in corso.",
+            "inviteLimit": "Il numero di partecipanti invitati supera il limite.",
+            "joinLimit": "Il numero di partecipanti ha raggiunto il limite dell'attività, impossibile registrarsi.",
+            "notReject": "Il creatore dell'attività non può lasciare l'attività.",
+            "re-invite": "È già stato inviato un invito per questa attività, non è possibile reinviare!",
+            "re-cancel-apply": "Hai già annullato la richiesta di partecipazione per questa attività, non è necessario annullarla di nuovo.",
+            "start-before-cancel-apply": "Nell'ora precedente all'inizio dell'attività non è possibile annullare la richiesta.",
+            "reapply-limit": "Non è possibile ripresentare la domanda entro 7 giorni dall'annullamento della registrazione dell'attività.",
+            "remove-creator": "Non è possibile rimuovere l'organizzatore dalla lista dei partecipanti!",
+            "apply-cancel": "L'utente ha annullato la richiesta",
+            "apply-has-viewed-agree": "La richiesta dell'utente è già stata confermata da un altro amministratore, non è necessaria un'ulteriore revisione",
+            "apply-has-viewed-reject": "La richiesta dell'utente è già stata confermata da un altro amministratore, non è necessaria un'ulteriore revisione",
+            "notGuest": "La registrazione come ospite non è disponibile per questa attività. Per favore scarica l'APP per registrarti.",
+            "team-close": "Questo team è stato sciolto e non puoi aggiungere o modificare eventi.",
+            "team-close-over": "Il team è stato archiviato e si prevede che venga sciolto entro 14 giorni. Non puoi creare eventi oltre i 14 giorni. Per favore contatta il manager del team per richiedere la riattivazione.",
+            "only-team-manager": "Solo il manager del team può creare eventi per il team.",
+            "team-user": "Non sei membro del team {{teamName}} e non puoi creare eventi per questo team.",
+            "follow-invite": "Le impostazioni dell'invitato consentono solo inviti da parte di utenti che lo seguono. Per favore, segui l'utente prima di inviare un invito.",
+            "people-limit": "Il numero di partecipanti supera il limite dell'attività.",
+            "last-registration-over": "La scadenza per l'iscrizione non può essere successiva all'orario di inizio dell'evento.",
+            "invite-over-time": "Questa attività è terminata, non puoi invitare altri utenti.",
+            "finished": "L'evento è terminato, non è possibile iscriversi!",
+            "cancel-join": "L'utente ha annullato la partecipazione all'evento!",
+            "isGuest": "L'utente è un ospite!"
+        },
+        "chatMessage": {
+            "activityNotExist": "L'attività non esiste, impossibile aprire la chat di gruppo",
+            "notActivityUser": "Non sei un partecipante dell'attività, impossibile aprire la chat di gruppo di questa attività",
+            "notExist": "Questa chat di gruppo non esiste",
+            "notReceiveStranger": "L'altra parte ha disabilitato la ricezione di messaggi da sconosciuti, quindi la chat non può essere avviata."
+        },
+        "pageNotFound": "Pagina non trovata.",
+        "serverError": "Errore del server.",
+        "fileSize": "Il file {{name}} di dimensione {{size}}KB supera il limite massimo di {{max}}KB.",
+        "register": {
+            "code-validate": "L'email di verifica della registrazione è scaduta, per favore registrati nuovamente per inviare l'email di verifica",
+            "token-valid": "A causa di un lungo inserimento dei dati di registrazione, il token di login di terze parti è scaduto, per favore effettua nuovamente il login per registrarti",
+            "3rd-has-binding": "{{service}} ha già un account collegato, non è necessario registrarsi. Per favore effettua il login direttamente"
+        },
+        "forget": {
+            "code-validate": "L'email di verifica per il recupero della password è scaduta, per favore invia nuovamente l'email di verifica tramite 'Password dimenticata'",
+            "code-error": "Codice di verifica errato, hai commesso {{count}} errori. Se superi 5 errori, l'account verrà bloccato per 24 ore e la verifica non sarà possibile. Per favore riprova dopo 24 ore.",
+            "code-error-lock": "Gli errori nel codice di verifica hanno raggiunto il limite. Per favore attendi 24 ore prima di inviare nuovamente l'email di verifica",
+            "code-lock": "A causa di ripetuti errori nel codice di verifica, l'account è stato bloccato. Per favore riprova dopo 24 ore."
+        },
+        "email-bind": {
+            "code-validate": "L'email di verifica per collegare l'account email è scaduta, per favore invia nuovamente l'email di verifica"
+        },
+        "badword": "Per favore non usare termini che contengono parole volgari.",
+        "spacialWord": "Per favore non includere caratteri speciali \"!@#$%^&*\"",
+        "teamOnlyManager": "Sei l'unico manager del team, non puoi abbandonare il team.",
+        "newPwdSameOld": "La nuova password non può essere uguale a quella vecchia",
+        "nameChangeWhinIn30Days": "Non puoi cambiare il tuo titolo di nuovo entro 30 giorni",
+        "team": {
+            "apply-cancel": "L'utente ha annullato la richiesta",
+            "apply-has-viewed-agree": "La richiesta dell'utente è già stata confermata da un altro amministratore, non è necessaria una revisione ulteriore",
+            "apply-has-viewed-reject": "La richiesta dell'utente è già stata confermata da un altro amministratore, non è necessaria una revisione ulteriore",
+            "title-count-limit": "È possibile impostare al massimo 20 titoli, non è possibile aggiungerne altri",
+            "not-remove-self": "Non puoi rimuovere te stesso dal team",
+            "not-change-permission": "Non puoi cambiare i tuoi stessi permessi",
+            "location-update-limit": "La posizione del team può essere aggiornata solo ogni 14 giorni. Mancano ancora {{days}} giorni per il prossimo aggiornamento",
+            "reapply-limit": "Non puoi ripresentare la domanda per unirti al team entro 7 giorni dall'annullamento della richiesta. Mancano ancora {{days}} giorni per la prossima domanda",
+            "re-invite": "È già stato inviato un invito al team, non è possibile reinviarlo. Per favore condividi direttamente il link di invito",
+            "follow-invite": "L'utente è limitato all'invito solo di coloro che lo seguono"
+        },
+        "user-has-block": "Questo utente è nella lista dei bloccati, pertanto non puoi seguirlo. Per seguirlo, rimuovilo dalla lista dei bloccati.",
+        "private-not-share-all": "Le impostazioni di privacy dell'utente non sono pubbliche, quindi la posizione non può essere condivisa con tutti",
+        "post": {
+            "team-close": "Questo team è stato sciolto, impossibile pubblicare post",
+            "only-manager": "Solo il manager del team può pubblicare aggiornamenti per il team.",
+            "not-exist": "Questo post non esiste più."
+        },
+        "route": {
+            "least-two-points": "La rotta richiede almeno un punto di partenza e uno di arrivo"
+        },
+        "live": {
+            "close": "L'evento live dell'utente è terminato!"
+        },
+        "user-disabled": "L'account è stato sospeso e non può essere utilizzato per il login o per operazioni. Se hai domande, contatta il servizio clienti.",
+        "user-disabled-reason": "L'account è stato sospeso e non può essere utilizzato per il login o per operazioni a causa del seguente motivo: {{reason}}.<br/>Se hai domande, contatta il servizio clienti.",
+        "report": {
+            "post-exist": "Hai già segnalato questo post. Lo gestiremo il prima possibile.",
+            "comment-exist": "Hai già segnalato questo commento. Lo gestiremo il prima possibile.",
+            "user-exist": "Hai già segnalato questo utente. Lo gestiremo il prima possibile.",
+            "chat-message-exist": "Hai già segnalato questo messaggio. Lo gestiremo il prima possibile.",
+            "team-exist": "Hai già segnalato questa squadra. Lo gestiremo il prima possibile.",
+            "activity-exist": "Hai già segnalato questa attività. Lo gestiremo il prima possibile."
+        },
+        "bluetooth": {
+            "device-not-connect": "Il dispositivo non è attualmente connesso. Assicurati che sia acceso e che il Bluetooth sia attivo, poi riprova!"
+        }
+    },
+    "common": {
+        "guest": "Ospite",
+        "yes": "Sì",
+        "no": "No",
+        "none": "Nessuno",
+        "edit": "Modifica",
+        "save": "Salva",
+        "finish": "Completa",
+        "complete": "Completa",
+        "confirm": "Conferma",
+        "cancel": "Annulla",
+        "blockade": "Blocca",
+        "openEnable": "Apri",
+        "close": "Chiudi",
+        "setting": "Impostazioni",
+        "login": "Accedi",
+        "logout": "Esci",
+        "enroll": "Registrati",
+        "search": "Cerca",
+        "forgetPassword": "Password dimenticata",
+        "unlimited": "Illimitato",
+        "share": "Condividi",
+        "share-to": "Condividi su",
+        "copy-url": "Copia link",
+        "invite-friend": "Invita un amico",
+        "following": "In segui",
+        "follower": "Follower",
+        "follow-me": "Fan",
+        "follow": "Segui",
+        "followed": "Seguito",
+        "followed-name": "Segui {{name}}",
+        "req-follow": "Richiesta di follow inviata",
+        "req-follow-name": "È stata inviata una richiesta di follow per {{name}}, in attesa di conferma.",
+        "unfollow": "Smetti di seguire",
+        "administrator": "Amministratore",
+        "choose": "Scegli",
+        "optional": "Opzionale",
+        "delete-user": {
+            "title": "Elimina il tuo account",
+            "confirmTitle": "Sei sicuro di voler eliminare il tuo account?",
+            "confirmMessage": "Il processo di eliminazione dell'account è irreversibile:<br/>Il tuo account e i dati saranno eliminati permanentemente. Verrai rimosso da tutti i team e chat correlati. Potremmo conservare alcuni dati che hai creato (come le rotte pubbliche)."
+        },
+        "exitApp": {
+            "title": "Avviso",
+            "message": "Sei sicuro di voler uscire dall'applicazione?"
+        },
+        "language": {
+            "title": "Lingua",
+            "zh-tw": "中文(繁體)",
+            "zh-cn": "中文(简体)",
+            "de": "Deutsch",
+            "es": "español",
+            "fr": "Français",
+            "pt": "Português",
+            "ru": "Русский",
+            "en": "English",
+            "en-gb": "English(UK)",
+            "ja": "日本語",
+            "th": "ไทย",
+            "it": "Italiano"
+        },
+        "leader": "Leader",
+        "participant": "Partecipante",
+        "join": "Partecipa",
+        "joined": "Partecipato",
+        "accepted": "Accettato",
+        "reject": "Rifiuta",
+        "rejected": "Rifiutato",
+        "newNotify": "Hai una nuova notifica",
+        "distance": "Distanza",
+        "route-length": "Lunghezza {{number}}",
+        "stop": "Pausa",
+        "manual-stop": "Fermare",
+        "nodata": "Nessun dato corrispondente trovato",
+        "release": "Pubblica",
+        "leave": "Lascia",
+        "open-setting": "Apri impostazioni",
+        "goto-setting": "Vai alle impostazioni",
+        "after-next": "Chiedi la prossima volta",
+        "dont-ask": "Non chiedere più",
+        "add-in": "Aggiungi",
+        "mute": "Disattiva suono",
+        "leave-chat-group": "Esci dal gruppo",
+        "permission": {
+            "photo": {
+                "title": "Consenti a TeamUp di accedere alle tue foto",
+                "desc": "Per favore abilita prima il permesso per l'album. Puoi andare in<br/>\"Impostazioni\" - \"TeamUp\" per attivarlo."
+            },
+            "camera": {
+                "desc": "Per favore abilita prima il permesso per la fotocamera. Puoi andare in<br/>\"Impostazioni\" - \"TeamUp\" per attivarlo."
+            },
+            "location": {
+                "desc": "Per favore abilita il permesso per la posizione per ottenere il tuo luogo. Puoi toccare \"Vai alle impostazioni\" qui sotto per configurarlo nelle impostazioni di permesso."
+            },
+            "filesystem": {
+                "title": "L'accesso ai file non è attualmente consentito",
+                "desc": "Per favore consenti l'accesso ai file prima di procedere con il download"
+            },
+            "bluetooth": {
+                "title": "Il Bluetooth sul dispositivo deve essere abilitato",
+                "location": "Poiché il Bluetooth richiede il permesso per la posizione, per favore abilita prima il permesso per la posizione."
+            },
+            "stopwatch-location": {
+                "title": "Permesso per la posizione necessario",
+                "desc": "Questa funzione non funzionerà correttamente senza il permesso per la posizione."
+            }
+        },
+        "page-next": "Pagina successiva",
+        "start-using": "Inizia ad usare",
+        "back": "Indietro",
+        "skip": "Salta",
+        "send-valid-mail": "Invia email di verifica",
+        "setting-completed": "Impostazioni completate",
+        "skip-complete": "Salta e completa",
+        "resend": "Invia di nuovo",
+        "valid-email": "Verifica email",
+        "continue": "Continua",
+        "view": "Visualizza",
+        "time-label": {
+            "recently": "Proprio ora",
+            "minute": "{{minute}} minuti",
+            "hours": "{{hour}} ore",
+            "days": "{{day}} giorni"
+        },
+        "read-more": "...Leggi di più",
+        "add-to": "Aggiungi",
+        "team": "Team",
+        "remove": "Rimuovi",
+        "copied-to-clipboard": "Copiato negli appunti",
+        "accept": "Accetta",
+        "delete": "Elimina",
+        "total-distance": "Distanza totale",
+        "total-duration": "Durata totale",
+        "estimated-duration": "Durata stimata",
+        "max-elevation-gain": "Massimo guadagno di quota",
+        "max-elevation": "Quota massima",
+        "elevation-gain-amount": "Guadagno di quota",
+        "max-slope": "Pendenza massima",
+        "average-climbing-slope": "Pendenza media in salita",
+        "slope": "Pendenza",
+        "terrain": "Tipo di strada",
+        "change": "Cambia",
+        "download": "Scarica",
+        "album-select": "Seleziona dall'album",
+        "take-photo": "Scatta una foto",
+        "take-video": "Registra un video",
+        "more": "Altro",
+        "understand": "Ho capito",
+        "connect": "Connetti",
+        "connecting": "Connessione in corso",
+        "disconnect": "Disconnetti",
+        "default": "Predefinito",
+        "ok": "OK",
+        "background": "Sfondo",
+        "exit-team": "Lascia il team",
+        "archive-team": "Archivia il team",
+        "create": "Crea",
+        "apply-use": "Applica",
+        "clear": "Cancella",
+        "nearby": "Vicino",
+        "my-collection": "La mia raccolta",
+        "hours": "Ore",
+        "report-about-route": "Segnala questa rotta",
+        "send-to-chat": "Invia alla chat",
+        "download-gpx": "Scarica GPX",
+        "details": "Dettagli",
+        "report-route": "Segnala rotta",
+        "start-exercising": "Inizia l'allenamento",
+        "stay-on-page": "Rimani sulla pagina",
+        "ready": "Pronto",
+        "readied": "Pronto",
+        "checkin": "Check-in",
+        "confirmed": "Confermato",
+        "free-download": "Download gratuito",
+        "bg-location": {
+            "title": "Utilizzo attuale della posizione in background",
+            "message": "Aiuta gli utenti a rilevare automaticamente la posizione corrente quando l'attività è in corso e l'APP non è aperta. Se l'attività è in corso, per favore non disattivarla per evitare registrazioni errate dell'attività!"
+        },
+        "pwa-update": {
+            "message": "È disponibile una nuova versione del software! Il sistema potrebbe non funzionare correttamente se non viene aggiornato. Premi OK per riavviare immediatamente"
+        },
+        "app-update": {
+            "title": "Aggiornamento disponibile",
+            "message": "È disponibile una nuova versione dell'app. Vuoi aggiornare?",
+            "confirm": "Vai ad aggiornare",
+            "cancel": "Non ora"
+        },
+        "app-web-update": {
+            "title": "È stata rilevata una nuova versione dell’interfaccia. Si prega di aggiornare per caricare i contenuti più recenti.",
+            "action": "Aggiorna",
+            "downloading": "Download in corso del contenuto della schermata, attendere prego"
+        },
+        "theme-mode": {
+            "title": "Impostazioni del tema",
+            "light": "Modalità chiara",
+            "dark": "Modalità scura",
+            "system": "Predefinito di sistema"
+        },
+        "app-info": {
+            "app-version": "Versione app:<br/>{{version}} (Build {{build}})",
+            "content-version": "Versione dei contenuti:<br/>{{version}}",
+            "check-update": "Controlla aggiornamenti",
+            "has-checked": "Controllo aggiornamenti in background",
+            "already-latest-version": "Stai già utilizzando l’ultima versione"
+        }
+    },
+    "enums": {
+        "ActivityDifficultyType": {
+            "Casual": "Tempo libero",
+            "Beginner": "Allenamento per principianti",
+            "Advanced": "Allenamento avanzato",
+            "Challenge": "Allenamento impegnativo"
+        },
+        "ActivityDifficultyType_short": {
+            "Casual": "Tempo libero",
+            "Beginner": "Principiante",
+            "Advanced": "Avanzato",
+            "Challenge": "Impegnativo"
+        },
+        "TemperatureUnitType": {
+            "Celsius": "Celsius",
+            "Fahrenheit": "Fahrenheit"
+        },
+        "MeasureUnitType": {
+            "Metric": "Metrico",
+            "Imperial": "Imperiale"
+        },
+        "SexType": {
+            "Male": "Maschile",
+            "Female": "Femminile",
+            "Other": "Non binario/Altro",
+            "Unknown": "Preferisco non dirlo"
+        },
+        "DayOfWeek": {
+            "Sunday": "Dom",
+            "Monday": "Lun",
+            "Tuesday": "Mar",
+            "Wednesday": "Mer",
+            "Thursday": "Gio",
+            "Friday": "Ven",
+            "Saturday": "Sab"
+        },
+        "DayOfWeek_weekday": {
+            "Sunday": "Domenica",
+            "Monday": "Lunedì",
+            "Tuesday": "Martedì",
+            "Wednesday": "Mercoledì",
+            "Thursday": "Giovedì",
+            "Friday": "Venerdì",
+            "Saturday": "Sabato"
+        },
+        "TimePeriod": {
+            "AM": "Mattina (AM)",
+            "PM": "Pomeriggio (PM)"
+        },
+        "CreatedBy": {
+            "Follow": "Utenti seguiti",
+            "Team": "Team"
+        },
+        "CustomPageType": {
+            "PrivacyPolicy": "Informativa sulla privacy",
+            "UserTerms": "Termini di servizio",
+            "PrivacyPolicyAndUserTerms": "Informativa e termini di servizio",
+            "DeletePolicy": "Descrizione dell'eliminazione dell'account"
+        },
+        "PrivacyType": {
+            "Public": "Tutti",
+            "Private": "Non pubblico",
+            "OnlyFollow": "Solo follower"
+        },
+        "PrivacyTypeSelect": {
+            "Public": "Pubblico per tutti",
+            "Private": "Non pubblico",
+            "OnlyFollow": "Solo follower"
+        },
+        "TeamPermissionType": {
+            "Everyone": "Tutti i membri",
+            "Manager": "Manager"
+        },
+        "UserPermissionType": {
+            "None": "Non abilitato",
+            "Everyone": "Tutti",
+            "Follower": "I miei follower",
+            "FollowByUser": "Utenti che seguo"
+        },
+        "UserPermissionType2": {
+            "None": "Disattiva notifiche",
+            "Everyone": "Tutti",
+            "Follower": "I miei follower",
+            "FollowByUser": "Utenti che seguo"
+        },
+        "UserPermissionType_team": {
+            "None": "Disattiva notifiche",
+            "Everyone": "Tutti i membri",
+            "Follower": "Membri che mi seguono",
+            "FollowByUser": "Membri che seguo"
+        },
+        "AudienceType": {
+            "None": "Nessuno (chiedi ogni volta)",
+            "Custom": "Utenti personalizzati",
+            "Follow": "I miei fan",
+            "All": "Tutti"
+        },
+        "StopwatchType": {
+            "Time": "Tempo di pedalata",
+            "Speed": "Velocità attuale",
+            "AverageSpeed": "Velocità media",
+            "Slope": "Pendenza",
+            "Distance": "Distanza percorsa",
+            "Pace": "Andatura",
+            "Calorie": "Calorie",
+            "HeartRate": "Frequenza cardiaca",
+            "PedalingFrequency": "Cadenza",
+            "Power": "Potenza"
+        },
+        "StopwatchType-Unit-Metric": {
+            "Time": "Tempo di pedalata",
+            "Speed": "Velocità (km/h)",
+            "AverageSpeed": "Velocità media (km/h)",
+            "Slope": "Pendenza (%)",
+            "Distance": "Distanza (km)",
+            "Pace": "Andatura (min/km)",
+            "Calorie": "Calorie (kcal)",
+            "HeartRate": "Frequenza cardiaca (bpm)",
+            "PedalingFrequency": "Cadenza (rpm)",
+            "Power": "Potenza (W)"
+        },
+        "StopwatchType-Unit-Imperial": {
+            "Time": "Tempo di pedalata",
+            "Speed": "Velocità (mph)",
+            "AverageSpeed": "Velocità media (mph)",
+            "Slope": "Pendenza (%)",
+            "Distance": "Distanza (mi)",
+            "Pace": "Andatura (min/mi)",
+            "Calorie": "Calorie (kcal)",
+            "HeartRate": "Frequenza cardiaca (bpm)",
+            "PedalingFrequency": "Cadenza (rpm)",
+            "Power": "Potenza (W)"
+        },
+        "RouteRatingTag": {
+            "GoodRating": "Stile",
+            "RouteMainSurface": "Tipo di strada",
+            "RouteDifficulty": "Difficoltà"
+        },
+        "RouteCommentSortType": {
+            "MostLikeDesc": "Più apprezzati",
+            "TimeDesc": "Più recenti"
+        }
+    },
+    "dialog": {
+        "alert": {
+            "title": "Messaggio di sistema"
+        },
+        "weather-view": {
+            "title": "Condizioni meteo"
+        },
+        "error-dialog": {
+            "title": "Messaggio di errore"
+        },
+        "messager": {
+            "file": "Seleziona dai file",
+            "camera": "Apri fotocamera",
+            "leave-sent": "Occupato, chat temporaneamente disabilitata"
+        },
+        "activity-map": {
+            "import-btn": "Carica rotta",
+            "save-btn": "Fatto"
+        },
+        "image": {
+            "title": "Visualizzatore immagini",
+            "prev": "Precedente",
+            "next": "Successivo"
+        },
+        "position-filter": {
+            "distance": {
+                "Metric": "Entro {{number}} km",
+                "Imperial": "Entro {{number}} miglia"
+            }
+        },
+        "activity-invite": {
+            "title": "Invita"
+        },
+        "activity-users": {
+            "title": "Partecipanti",
+            "invitees": "Invitati"
+        },
+        "photo-library": {
+            "dir-items": {
+                "all": "Tutte le immagini"
+            },
+            "selectCount": "{{count}} selezionate"
+        },
+        "activity-select": {
+            "title": "Aggiungi attività",
+            "rgistered-title": "Registrato",
+            "recent-title": "Partecipazioni recenti",
+            "recent-desc": "Vengono visualizzate solo le attività completate negli ultimi tre mesi",
+            "nodata": "Sembra che tu non abbia attività recenti"
+        },
+        "record-select": {
+            "title": "Aggiungi registro allenamento",
+            "nodata": {
+                "post": "Sembra che tu non abbia registri allenamento recenti",
+                "message": "Nessun registro allenamento trovato"
+            },
+            "memo": "*Possono essere caricati solo i registri degli ultimi tre mesi",
+            "search-placeholder": "Cerca"
+        },
+        "location-select": {
+            "title": "Informazioni sulla posizione",
+            "search-placeholder": "Cerca posizione",
+            "target-position": "Posizione obiettivo"
+        },
+        "search": {
+            "keyword-placeholder": "Cerca utenti",
+            "search-keyword": "Cerca \"{{keyword}}\"",
+            "maybe-you-want": "Forse stai cercando",
+            "related-users": "Utenti correlati",
+            "nodata": "Nessun risultato trovato per \"{{keyword}}\".",
+            "result-title": "Risultati di ricerca"
+        },
+        "chat": {
+            "page-title": "Messaggi",
+            "title1": "Tutti",
+            "title2": "Amici",
+            "title3": "Attività",
+            "title4": "Team",
+            "title5": "Messaggi da sconosciuti",
+            "menu": {
+                "option1": "Disattiva notifiche fino a",
+                "option2": "Lista bloccati",
+                "option3": "Impostazioni",
+                "open-notify": "Abilita notifiche",
+                "close-notify": "Disabilita notifiche"
+            },
+            "mute-title": "Disattiva notifiche",
+            "mute-prompts": "Disattiva tutte le notifiche dei messaggi a meno che tu non venga menzionato.<br/>Gli altri vedranno che sei in modalità silenziosa.",
+            "mute-options": {
+                "item1": "30 minuti",
+                "item2": "2 ore",
+                "item3": "6 ore",
+                "item4": "Fino a riattivazione"
+            },
+            "block-list": {
+                "title": "Lista bloccati",
+                "prompts": "Non riceverai messaggi dagli utenti bloccati.",
+                "message": "Utente bloccato il {{date}}",
+                "unlock": "Conferma sblocco?",
+                "unlock-prompts": "Una volta sbloccato, l'altra persona potrà vedere il tuo profilo\ne contattarti. Confermi di sbloccare?"
+            },
+            "chat-setting": {
+                "title": "Impostazioni chat"
+            },
+            "chat-room": {
+                "typing-msg-placeholder": "Invia un messaggio...",
+                "reply-user": "Rispondi a {{ name }}",
+                "image": "Immagine",
+                "record": "Registro di pedalata: {{name}}",
+                "location": "Posizione: {{name}}",
+                "route": "Rotta: {{name}}",
+                "ctrl-mute": "Disattiva",
+                "ctrl-unmute": "Attiva",
+                "ctrl-add-file": "Allega immagine",
+                "ctrl-leave": "Lascia il gruppo",
+                "ctrl-report": "Segnala",
+                "has-lock-user": "Promemoria di blocco",
+                "has-lock-user-sub": "Questa chat contiene utenti che hai bloccato. Se continui, vedranno i tuoi messaggi.",
+                "keep-open-room": "Apri chat",
+                "look-black-list": "Visualizza lista bloccati",
+                "user-not-exist": "Questo utente non esiste",
+                "cannot-pass-msg": "Impossibile inviare messaggi",
+                "cannot-pass-msg-sub": "Questa chat è chiusa e non possono essere inviati ulteriori messaggi.",
+                "alread-lock": "Hai bloccato questo utente",
+                "alread-lock-subtitle": "Non puoi inviare messaggi privati o inviti ad attività/team finché non lo sblocchi.",
+                "receive-from": "Ricevere messaggi da {{ name }}?",
+                "receive-from-subtitle": "Se accetti, l'altra parte potrà inviarti messaggi privati e vedere se li hai letti.",
+                "receive-from-reject": "Blocca e rifiuta",
+                "receive-from-unlock": "Sblocca",
+                "receive-reject-title": "Sei sicuro di voler bloccare?",
+                "receive-reject-subtitle": "Questo utente verrà bloccato finché non sarà sbloccato. Non riceverai messaggi da lui. L'utente non saprà della tua decisione.",
+                "receive-from-allow": "Accetta",
+                "share-location": "Condividi posizione",
+                "share-sport-record": "Registro allenamento",
+                "share-route": "Condividi rotta GPX",
+                "total-estimated-duration": "Durata stimata",
+                "total-terrain": "Tipo di strada",
+                "accept-message": "{{name}} può ora inviarti messaggi privati e vedere se li hai letti."
+            },
+            "media-list": {
+                "title": "Tutte le immagini",
+                "cancel": "Annulla",
+                "select": "Seleziona",
+                "nodata": "Nessuna immagine disponibile"
+            },
+            "instant-search": {
+                "not-enough-words": "Non ci sono abbastanza lettere per cercare",
+                "not-enough-words-desc": "Per favore inserisci almeno 2 lettere per cercare nei messaggi",
+                "nodata": "Nessun messaggio trovato per \"{{keyword}}\"",
+                "nodata-desc": "Prova un'altra parola chiave"
+            }
+        },
+        "like-comment": {
+            "tabComment": {
+                "title": "Commenti {{number}}",
+                "nodata": "Nessuno ha ancora commentato",
+                "input-placeholder": "Commenta..."
+            },
+            "tabLike": {
+                "title": "Mi piace {{number}}",
+                "nodata": "Nessuno ha ancora messo Mi piace"
+            }
+        },
+        "post-comment-list": {
+            "Body": "Commento",
+            "menu-item": {
+                "report-comment": "Segnala commento"
+            }
+        },
+        "user-share": {
+            "title": "Condividi profilo"
+        },
+        "route-share": {
+            "title": "Seleziona rotta",
+            "tab-explore": "Esplora",
+            "tab-collect": "Raccolta"
+        },
+        "route-explore": {
+            "recent": "Recenti",
+            "popular-route": "Rotte popolari nelle vicinanze",
+            "location-permission": "Per trovare rotte popolari vicino a te, dobbiamo conoscere la tua posizione."
+        },
+        "route-from-filter": {
+            "route-count": "{{count}} rotte"
+        },
+        "route-detail": {
+            "createdTime": "Data di creazione",
+            "use-count-title": "Numero di completamenti validi",
+            "use-count": "{{count}} volte",
+            "created-user": "Creato da",
+            "created-route-count": "Questo utente ha creato {{count}} rotte"
+        },
+        "report": {
+            "title": "Per favore fornisci una descrizione più dettagliata",
+            "user-sub-title": "Dopo l'invio, l'altro utente verrà bloccato. Potrai sbloccarlo successivamente dalla tua lista dei bloccati.",
+            "text-placeholder": "Descrizione del problema (obbligatoria)",
+            "route-title": "Segnala questa rotta",
+            "route-sub-title": "Per favore aiutaci a chiarire il problema",
+            "user-title": "Segnala {{name}}",
+            "user-type-sub-title": "Per favore aiutaci a chiarire il problema.<br/>Non preoccuparti, l'altro utente non saprà le tue informazioni.",
+            "post-title": "Perché stai segnalando questo post?",
+            "post-comment-title": "Perché stai segnalando questo commento al post?",
+            "route-comment-title": "Perché stai segnalando questo commento al percorso?",
+            "chat-message-title": "Perché stai segnalando questo messaggio della chat?",
+            "record-comment-title": "Perché stai segnalando questo commento?",
+            "team-title": "Perché stai segnalando questa squadra?",
+            "activity-title": "Perché stai segnalando questa attività?",
+            "submit": "Invia",
+            "report-user-submit": "Invia e blocca",
+            "report-type-title": "Tipo di problema della rotta: {{name}}",
+            "report-message": "Questa rotta è stata segnalata da altri utenti per i seguenti problemi:",
+            "report-completed": "Problema risolto",
+            "report-completed-memo": "Se il problema sopra indicato è stato risolto, puoi rimuovere la segnalazione per contribuire alla community!",
+            "route-success-info": {
+                "title": "La tua segnalazione della rotta è stata ricevuta,<br/>il nostro staff la esaminerà in seguito.",
+                "message": "Grazie per il tuo contributo alla community.<br/>Creiamo insieme una migliore esperienza outdoor!"
+            },
+            "user-success-info": {
+                "title": "Grazie per aver segnalato,<br/>manteniamo insieme un'atmosfera positiva nella community!"
+            },
+            "post-success": "Abbiamo ricevuto la tua segnalazione. Questo contenuto non sarà più visibile per te.",
+            "wating-report-success": "Abbiamo ricevuto la tua segnalazione e la gestiremo il prima possibile.",
+            "Message": "Descrizione del problema"
+        },
+        "device-seeking": {
+            "title": "Connetti dispositivo",
+            "your-device-title": "Il tuo dispositivo",
+            "no-link-device": "Nessun dispositivo collegato",
+            "nearby-bluetooth-device": "Dispositivi Bluetooth nelle vicinanze",
+            "not-find": "Dispositivo non trovato",
+            "seeking": "Ricerca in corso...",
+            "seek-again": "Cerca di nuovo",
+            "your-device": "Il tuo dispositivo",
+            "question": {
+                "title": "Non trovi il dispositivo Bluetooth?",
+                "resolution1": "1. Assicurati che il dispositivo Bluetooth non sia troppo distante dal tuo telefono",
+                "resolution2": "2. Spegni e riaccendi l'accessorio Bluetooth",
+                "resolution3": "3. Assicurati che l'accessorio Bluetooth sia acceso e completamente carico o collegato",
+                "resolution4": "4. Se l'accessorio è alimentato a batteria, controlla se la batteria necessita di essere sostituita"
+            },
+            "not-linking": "Nessun dispositivo collegato",
+            "nearby-device": "Dispositivi Bluetooth nelle vicinanze"
+        },
+        "stopwatch-info": {
+            "title": "Modifica informazioni cronometro",
+            "need-link-device": "Richiede un sensore {{deviceName}} collegato",
+            "linked-device": "Collegato: {{deviceName}}"
+        },
+        "share-to": {
+            "title": "Scegli destinazione",
+            "nodata": "Nessun dato corrispondente trovato",
+            "no-friend": "Nessuno nella tua lista di seguiti",
+            "no-friend-desc": "Sembra che tu non segua nessuno. Invita amici, scopri nuovi ciclisti e crea ricordi insieme!"
+        },
+        "user-apply": {
+            "title": "Richiesta di adesione al team"
+        },
+        "team-activity": {
+            "team": "Team",
+            "activity": "Attività"
+        },
+        "invite-friends": {
+            "title": "Invita follower",
+            "ride-partner-title": "Invita un compagno di pedalata",
+            "search-placeholder": "Inserisci il nome utente",
+            "invite-by-link": "Invita tramite link",
+            "already-send": "Già inviato",
+            "send": "Invia",
+            "re-send": "Reinvia invito",
+            "re-send-success": "La notifica di invito è stata reinviata!"
+        },
+        "leave-team": {
+            "title": "Sei sicuro di voler lasciare {{teamName}}?",
+            "confirm": "Lascia il team",
+            "message": "Lasciare il team ti rimuoverà anche dal canale chat del team.",
+            "toast": "Hai lasciato {{teamName}}"
+        },
+        "team-only-manager": {
+            "title": "Sei l'unico manager",
+            "message": "Se desideri lasciare il team, assegna il ruolo di manager a un altro membro o archivia il team.",
+            "cancel": "Gestisci membri",
+            "confirm": "Archivia il team"
+        },
+        "team-archive": {
+            "title": "Sei sicuro di voler archiviare il team?",
+            "message": "Una volta archiviato, non potranno essere aggiunti nuovi membri e le richieste di adesione correnti verranno rimosse. Se il team non ha nuove attività o post entro 14 giorni dopo l'archiviazione, verrà sciolto.",
+            "confirm": "Archivia"
+        },
+        "main-team-set": {
+            "set": "Imposta come team principale",
+            "remove": "Rimuovi team principale",
+            "set-main": "Sei sicuro di voler impostare {{teamName}} come team principale?",
+            "set-tip": "Questo nome di team verrà mostrato sotto il tuo nome per indicare il team che rappresenti.",
+            "finish": "{{teamName}} è ora il tuo team principale",
+            "finish-tip": "Inizia a divertirti esplorando lo sport outdoor con i tuoi compagni. Supera i tuoi limiti!",
+            "remove-main": "Sei sicuro di voler rimuovere {{teamName}} dal tuo team principale?",
+            "remove-tip": "Questo nome di team non verrà più mostrato sotto il tuo nome"
+        },
+        "member-ctrl": {
+            "set-permissions": "Modifica permessi",
+            "change-alias": "Cambia titolo",
+            "remove-member": "Rimuovi membro",
+            "ask-remove-member": "Rimuovere questo membro dal team?",
+            "ask-remove-member-tip": "Dopo la rimozione, le attività a cui ha partecipato non saranno più conteggiate per il team.",
+            "remove-member-success": "{{name}} è stato rimosso dal team",
+            "confirm-remove": "Conferma rimozione",
+            "setpermissions": "Modifica permessi",
+            "setpermissions-tip": "Modificare i permessi di {{name}} in?",
+            "changealias": "Modifica titolo",
+            "changealias-tip": "Cambia il titolo di {{name}} in?",
+            "changealias-success": "Il titolo di {{name}} è stato cambiato in {{alias}}",
+            "revmoe-alias": "Il titolo di {{name}} è stato rimosso",
+            "as-administrator": "Imposta come manager",
+            "as-administrator-success": "{{name}} è ora un manager",
+            "as-memeber": "Imposta come membro",
+            "as-memeber-success": "{{name}} è ora un membro",
+            "empty-alias": "Nessuno"
+        },
+        "user-select": {
+            "title": "Aggiungi membri",
+            "search-placeholder": "Cerca nome membro"
+        },
+        "my-route-collection": "Le mie rotte",
+        "lead-rider": {
+            "title": "Aggiungi lead rider",
+            "search-placeholder": "Cerca"
+        },
+        "activity-points": {
+            "title-start": "Punto di ritrovo dell'attività",
+            "title-break": "Aggiungi sosta intermedia",
+            "rest-points": {
+                "7-11": "Minimarket",
+                "coffee": "Caffetteria",
+                "view": "Punto panoramico"
+            },
+            "too-far": "Attualmente troppo lontano dal percorso dell'attività",
+            "tip-remove-points-on-map": "Tocca per rimuovere questa sosta"
+        },
+        "create-activity-success": {
+            "already-release": "{{name}}<br/>L'attività è stata pubblicata",
+            "congratulation": "Congratulazioni! L'attività è ora aperta per le iscrizioni. Condividi questa nuova attività con tutti!",
+            "add-to-calendar": "Aggiungi al calendario",
+            "share-page": "Condividi pagina attività"
+        },
+        "create-route-success": {
+            "title": "{{name}}<br/>è stata aggiunta alle mie rotte",
+            "text": "Lascia un commento su questa rotta così anche gli altri possono scoprirla!",
+            "addActivity": "Crea un'attività",
+            "leaveComment": "Lascia un commento"
+        },
+        "tip-info": {
+            "sticky-note-example-text": "Contenuto della nota adesiva",
+            "title": "Cos'è una nota adesiva di team?",
+            "message": "Qualsiasi manager di un team pubblico può utilizzare la funzione Nota Adesiva di Team per aggiornare lo stato attuale del team, ad esempio annunciare nuove attività, reclutare nuovi membri, ecc. Se il contenuto non cambia, il post rimarrà sulla mappa per 7 giorni.<br/><br/>Naturalmente, in un ambiente che rispetta ed abbraccia tutti, Team Up non limita il contenuto che un team desidera pubblicare.",
+            "check-text": "Non mostrare più questo messaggio"
+        },
+        "arrange-route": {
+            "title": "Disegna nuova rotta",
+            "ask-leave": "Sei sicuro di voler uscire da 'Disegna nuova rotta'?",
+            "ask-leave-tip": "Uscire ora comporterà la perdita dei progressi non salvati.",
+            "sure-leave": "Conferma uscita",
+            "loading": "Ricerca della posizione nella vista mappa in corso",
+            "point-select": "Fai clic per aggiungere o impostare le coordinate del percorso",
+            "total-distance-time": "Tempo totale del percorso: {{time}} ({{distance}} {{unit}})",
+            "select-pos-name": "Seleziona destinazione",
+            "select-pos-memo": "Sposta e ingrandisci la mappa attorno al segnaposto"
+        },
+        "team-intro": {
+            "view-detail": "Visualizza homepage"
+        },
+        "chat-select": {
+            "title": "Seleziona una chat",
+            "send": "Invia",
+            "search-placeholder": "Cerca chat",
+            "nodata": {
+                "title": "Nessuna chat disponibile",
+                "text": "Sembra che tu non sia iscritto a nessun team o non segua nessun ciclista. Esplora nuovi ciclisti e team e crea insieme dei ricordi!"
+            }
+        },
+        "road-desc": {
+            "title": {
+                "Asphalt": "Strada asfaltata",
+                "Gravel": "Strada sterrata",
+                "Dirt": "Strada di terra"
+            },
+            "text": {
+                "Asphalt": "Le strade asfaltate sono generalmente più lisce e stabili, offrendo un'esperienza di guida confortevole ed efficiente. In generale, le strade asfaltate sono ideali per viaggi a lunga distanza o ad alta velocità.",
+                "Gravel": "Le strade sterrate sono solitamente coperte di pietre o ghiaia, richiedendo più abilità e attenzione. Tali superfici aumentano anche il rischio di scivolamento e l'usura dei mezzi.",
+                "Dirt": "Le strade di terra possono diventare fangose e scivolose in condizioni di pioggia. Guidare su strade di terra richiede più equilibrio e controllo, oltre a gestire possibili variazioni di trazione."
+            }
+        },
+        "route-select-report-confirm": {
+            "list-title": "Gli utenti hanno segnalato che questa rotta presenta i seguenti problemi:",
+            "choose-another": "Scegli un'altra rotta",
+            "confirm": "Conferma scelta",
+            "memo": "Se decidi comunque per questa rotta, presta attenzione alla sicurezza. È consigliabile preparare un piano alternativo. Buon giro!"
+        },
+        "activity-cancel": {
+            "title": "Motivo annullamento",
+            "sub-title": "Seleziona il motivo per annullare l'attività. Il contenuto verrà inviato ai partecipanti.",
+            "desc-title": "Descrivi il motivo dell'annullamento",
+            "cancel-reason-title": "Questa attività è stata annullata per il seguente motivo",
+            "cancel-reason": {
+                "BadWeather": "<div style='font-size:64px;line-height: initial;'>⛈️</div><div>Maltempo</div>",
+                "NotEnoughPeople": "<div style='font-size:64px;line-height: initial;'>🙈</div><div>Partecipanti insufficienti</div>",
+                "PersonalReason": "<div style='font-size:64px;line-height: initial;'>😣</div><div>Motivi personali</div>",
+                "Other": "{{reason}}"
+            },
+            "explore-more-activities": "Esplora altre attività"
+        },
+        "exercise-raedy-start": "Pronto per partire",
+        "activity-participant-list": {
+            "title": "Partecipanti {{count}}",
+            "cancel-confirm": {
+                "title": "Sei sicuro di voler annullare lo stato 'Pronto'?",
+                "message": "Questo utente è attualmente segnato come pronto. Sei sicuro di voler annullare?",
+                "confirm": "Conferma annullamento",
+                "cancel": "Mantieni stato pronto"
+            },
+            "guest-cancel-confirm": {
+                "title": "Sei sicuro di voler annullare il check-in?",
+                "message": "Questo utente ha effettuato il check-in. Sei sicuro di voler annullare?",
+                "confirm": "Conferma annullamento",
+                "cancel": "Mantieni check-in"
+            },
+            "sort": {
+                "Default": "Predefinito",
+                "Speed": "Velocità",
+                "Power": "Potenza",
+                "HeartRate": "Frequenza cardiaca",
+                "PedalingFrequency": "Cadenza"
+            },
+            "no-share": "Non condiviso",
+            "set-leader": "Imposta come leader",
+            "set-leader-confirm": {
+                "title": "Impostare come leader?",
+                "message": "Confermi di voler impostare \"{{name}}\" come leader?<br/>Questa azione non può essere annullata!"
+            }
+        },
+        "activity-gps-share": {
+            "title": "Impostazioni di condivisione della posizione dell'attività"
+        },
+        "download-app": {
+            "title": "Agisci, sfrutta la nostra influenza",
+            "sub-title": "Costruiamo un futuro migliore",
+            "qrcode-title": "Scansiona con il tuo telefono per scaricare subito",
+            "qrcode-memo": "Supporta sia iOS che Android",
+            "download": "Scarica APP"
+        },
+        "visit-reg": {
+            "title": "Registrazione attività per visitatori",
+            "sign-up": "Registrati",
+            "FirstNamePlaceholder": "Inserisci il nome",
+            "FirstName": "Nome",
+            "LastNamePlaceholder": "Inserisci il cognome",
+            "LastName": "Cognome",
+            "Phone": "Numero di contatto",
+            "PhonePlaceholder": "Inserisci il tuo numero di telefono"
+        }
+    },
+    "pages": {
+        "login": {
+            "title": "Accedi / Registrati",
+            "description": "Registrandoti o accedendo, accetti i <br/><span class='tmup-term link-underline c-pointer'>Termini di Servizio di TeamUp</span> e l'<span class='tmup-private link-underline c-pointer'>Informativa sulla Privacy</span>.",
+            "logo-memo": "Divertiti insieme, condividi una splendida vita outdoor",
+            "Code": "Codice di verifica",
+            "Email": "Email",
+            "Password": "Password",
+            "FirstName": "Nome",
+            "FirstNamePlaceholder": "Il tuo nome",
+            "LastName": "Cognome",
+            "LastNamePlaceholder": "Il tuo cognome",
+            "ConfirmPassword": "Conferma password",
+            "EmailPlaceholder": "Per favore inserisci l'email",
+            "PasswordPlaceholder": "Per favore inserisci la password",
+            "ConfirmPasswordPlaceholder": "Per favore reinserisci la password",
+            "slide-item": {
+                "title1": "Unisciti a team, organizza attività",
+                "title2": "Interagisci, incoraggia",
+                "title3": "Esplora, scopri, parti",
+                "title4": "Condividi una meravigliosa vita outdoor"
+            },
+            "btn": {
+                "facebook": "Continua con Facebook",
+                "google": "Continua con Google",
+                "apple": "Continua con Apple",
+                "email": "Continua con Email",
+                "wait-confirm": "In attesa di conferma",
+                "forget-password": "Password dimenticata?",
+                "merge-account": "Unisci questo account",
+                "create-account": "Crea nuovo account",
+                "merge-completed": "Completa e accedi"
+            },
+            "register-1": {
+                "title": "Come dovremmo chiamarti?",
+                "description": "Per favore imposta un nome utente in modo che gli altri possano riconoscerti.<br/>Non preoccuparti, potrai cambiarlo in seguito."
+            },
+            "register-2": {
+                "title": "Imposta la tua posizione abituale",
+                "description": "Seleziona la regione in cui ti trovi di solito, così riceverai suggerimenti per attività e utenti in quella zona.",
+                "select-empty": {
+                    "country": "Seleziona paese",
+                    "city": "Seleziona città"
+                }
+            },
+            "register-3": {
+                "title": "Utenti che potrebbero interessarti"
+            },
+            "email-login": {
+                "title": "Registrati o accedi con Email",
+                "web-title": "Accedi con Email"
+            },
+            "email-register": {
+                "title": "Verifica la tua email",
+                "description": "Verifica la tua email per ricevere notifiche rilevanti e servizi di recupero account."
+            },
+            "email-register-pwd": {
+                "title": "Imposta la tua password",
+                "description": "Imposta la password per il login. Per favore inserisci almeno 8 lettere o cifre."
+            },
+            "forget": {
+                "title": "Recupera la password via email"
+            },
+            "forget-pwd": {
+                "title": "Imposta una nuova password",
+                "description": "Imposta la password per il login. Per favore inserisci almeno 8 lettere o cifre.",
+                "save-completed": "Password cambiata con successo. Per favore accedi con la nuova password."
+            },
+            "email-register-valid": {
+                "title": "Inserisci il codice di verifica",
+                "description": "Una email di verifica è stata inviata alla tua casella, <br/>per favore controlla il codice nella tua inbox. (valido per 30 minuti)"
+            },
+            "forget-valid": {
+                "title": "Inserisci il codice di verifica",
+                "description": "Una email di verifica è stata inviata alla tua casella, <br/>per favore controlla il codice nella tua inbox. (valido per 30 minuti)"
+            },
+            "resend-code-title": "Non hai ricevuto il codice di verifica?",
+            "cancel-register-confirm": {
+                "title": "Terminare il processo di registrazione",
+                "message": "Tornare indietro terminerà il processo di registrazione dell'account.<br/>Vuoi continuare la registrazione?",
+                "continue": "Continua la registrazione"
+            },
+            "login-binding": {
+                "title": "Email già in uso",
+                "description": "L'email di questo account di accesso è già collegata. Vuoi unirla all'account email seguente?"
+            },
+            "login-binding-pwd": {
+                "title": "Inserisci la password",
+                "description": "Per favore inserisci la password dell'account per \"{{email}}\". Una volta completato, accederai a quell'account."
+            },
+            "cancelDelete": "Accedi nuovamente all'account archiviato per annullare la cancellazione."
+        },
+        "home": {
+            "title": "Home",
+            "nodata": "Nessun post disponibile"
+        },
+        "activity": {
+            "title": "Esplora attività",
+            "loc-permission-btn": "Vai alle impostazioni della posizione",
+            "location-permission": "Il permesso per la posizione non è abilitato, impossibile ottenere la tua posizione per esplorare attività nelle vicinanze. Per favore specifica la tua posizione o abilita il permesso per la posizione.",
+            "follow": "{{count}} utenti seguiti stanno partecipando",
+            "filter": {
+                "time-period": "Periodo",
+                "multiple-time-period": "Molteplici periodi",
+                "difficulty-type": "Intensità",
+                "multiple-difficulty": "Molteplici livelli di intensità",
+                "popular": "Popolari",
+                "upcoming": "In arrivo"
+            },
+            "accept-join": "{{name}} si è unito alla tua attività {{actName}}"
+        },
+        "activity-form": {
+            "title": {
+                "new": "Crea attività",
+                "edit": "Modifica attività"
+            },
+            "Name": "Nome attività",
+            "Desc": "Descrizione attività",
+            "CoverImage": "Immagine di copertina",
+            "StartTime": "Data attività",
+            "LastRegistrationTime": "Scadenza per la registrazione",
+            "DifficultyType": "Livello di intensità",
+            "MapRouteId": "Rotta",
+            "date-placeholder": "Seleziona data e ora dell'attività",
+            "registrationTime-placeholder": "Seleziona la data e l’ora di scadenza della registrazione",
+            "LimitPeople": "Limite",
+            "limitCount-placeholder": "Limite partecipanti",
+            "unlimitCount": "Illimitato",
+            "level": "Intensità",
+            "add-host-team": "Aggiungi team organizzatore",
+            "add-host-team-tip": "Includi il tuo team come organizzatore. Una volta creata l'attività, tutti i membri del team verranno notificati e il record dell'attività e i chilometri verranno aggiunti al team.",
+            "optional": "(Opzionale)",
+            "add-host-team2": "Aggiungi team organizzatore",
+            "host-team": "Team organizzatore",
+            "ask-remove-host-team": "Sei sicuro di voler rimuovere il team organizzatore?",
+            "ask-remove-host-team-tip": "Dopo la rimozione, il record dell'attività e i chilometri non verranno aggiunti a quel team.",
+            "sure-remove-host-team": "Rimuovi team",
+            "release-event": "Pubblica attività",
+            "step-1": {
+                "title": "Introduzione attività",
+                "intro": "Presenta la tua attività agli altri.",
+                "activity-name-placeholder": "Nome attività",
+                "activity-intro-placeholder": "Dettagli, procedimento, preparazione e note sull'attività"
+            },
+            "step-2": {
+                "title": "Impostazioni attività",
+                "intro": "Presenta la tua attività agli altri.",
+                "setting": "Impostazioni",
+                "privacy": {
+                    "title": "Impostazioni privacy",
+                    "private": "Solo su invito",
+                    "public": "Pubblica",
+                    "private-sub": "Solo l'organizzatore o i partecipanti del team organizzatore possono invitare utenti a visualizzare e iscriversi all'attività.",
+                    "public-sub": "Chiunque può visualizzare e iscriversi a questa attività"
+                },
+                "join-review": {
+                    "title": "Approvazione iscrizione",
+                    "true": "Richiede approvazione",
+                    "sub-true": "I richiedenti necessitano dell'approvazione dell'organizzatore per partecipare.",
+                    "false": "Nessuna approvazione richiesta",
+                    "sub-false": "I richiedenti possono partecipare immediatamente senza approvazione."
+                },
+                "guest-join": {
+                    "title": "Consenti iscrizione ospiti",
+                    "true": "Consenti",
+                    "sub-true": "Gli utenti non TeamUp possono registrarsi tramite la pagina del link condiviso",
+                    "false": "Non consentire",
+                    "sub-false": "Solo gli utenti TeamUp possono registrarsi"
+                }
+            },
+            "step-3": {
+                "title": "Rotta",
+                "intro": "Imposta la rotta per questa attività.",
+                "specificRoute": {
+                    "true": "Specifica rotta",
+                    "false": "Nessuna rotta"
+                },
+                "freeRoute": "Questa attività non ha una rotta fissa, ma i partecipanti possono comunque vedere la posizione degli altri una volta iniziata l'attività.",
+                "routeleader": "Leader della rotta",
+                "add-lead-rider": "Aggiungi lead rider",
+                "add-lead-rider-tip": "Imposta un lead rider per la tua attività",
+                "lead-rider": "Lead rider",
+                "lead-rider-tip": "Dopo aver creato l'attività, inviterai i seguenti utenti come lead rider:",
+                "route-generate": {
+                    "title": "Metodo di creazione rotta",
+                    "myroute": "Le mie rotte",
+                    "newroute": "Disegna una nuova rotta",
+                    "upload": "Carica da file"
+                }
+            },
+            "step-4": {
+                "title": "Procedimento",
+                "intro": "Imposta il punto di ritrovo e le soste intermedie per questa attività.",
+                "startpoint": "Punto di ritrovo dell'attività",
+                "startpoint2": "Punto di ritrovo",
+                "breakpoint": "Sosta intermedia",
+                "add-startpoint": "Aggiungi punto di ritrovo",
+                "add-breakpoint": "Aggiungi sosta intermedia",
+                "add-edit-breakpoint": "Aggiungi o modifica sosta intermedia",
+                "set-startpoint-by-route": "Usa il punto di partenza della rotta come punto di ritrovo",
+                "set-startpoint-by-other": "Imposta un altro punto di ritrovo",
+                "drag-item-tip": "Tieni premuto sulla scheda della sosta per trascinarla e riordinarla."
+            },
+            "edit-success": "Attività {{name}} aggiornata con successo!"
+        },
+        "acitvity-search": {
+            "search-placeholder": "Trova attività"
+        },
+        "activity-detail": {
+            "creator": "Organizzatore",
+            "main-team": "Team organizzatore",
+            "join-users": "Totale {{count}} partecipanti",
+            "leader-users": "{{name}} <span class='sub-text'>come lead rider</span>",
+            "points": "Punti di ritrovo e soste",
+            "sign-up": "Iscriviti",
+            "join": "Partecipa all’attività",
+            "registration-deadline": "Le iscrizioni terminano il {{date}}",
+            "registration-ended": "Iscrizioni chiuse",
+            "registered-wait": "Iscritto, in attesa di approvazione",
+            "finish": "Attività terminata",
+            "verifyApply": "La tua iscrizione è in attesa dell'approvazione dell'organizzatore, per favore attendi.",
+            "cancel-apply": "Annulla iscrizione",
+            "cancel-apply-confirm": {
+                "title": "Sei sicuro di voler annullare?",
+                "message": "Dopo l'annullamento, non potrai iscriverti nuovamente per 7 giorni",
+                "cancel-text": "Mantieni iscrizione"
+            },
+            "joined": "Ti sei già iscritto a questa attività",
+            "countdown-begins": "L'attività inizia tra {{time}}",
+            "start-before-title": "L'attività sta per iniziare",
+            "start-before-text": "Aspettando che i partecipanti siano pronti...",
+            "participants-are-ready": "+{{count}} partecipanti pronti",
+            "start-title": "L'attività è iniziata!",
+            "start-activity": "Entra nell'attività",
+            "more-item": {
+                "invite": "Invita follower",
+                "share-post": "Condividi sul post",
+                "share": "Condividi su",
+                "edit": "Modifica attività",
+                "location-share": "Impostazioni di condivisione della posizione",
+                "cancel": "Annulla attività",
+                "report-activity": "Segnala attività"
+            },
+            "cancel-confirm": {
+                "title": "{{count}} partecipanti si sono iscritti. Sei sicuro di voler annullare questa attività?",
+                "message": "Dopo l'annullamento, i partecipanti riceveranno una notifica di annullamento.",
+                "confirm-cancel": "Annulla attività",
+                "close": "Mantieni attività"
+            },
+            "joined-chat-message": "Ora puoi aprire la chat di gruppo dell'attività per comunicare con gli altri partecipanti!",
+            "open-chat": "Vai alla chat",
+            "guest-join-confirm": {
+                "title": "Scaricare l'APP?",
+                "guest-message": "Questa attività consente la registrazione come ospite, ma per ottenere registrazioni complete e condivisioni, per favore scarica e registrati nell'APP.",
+                "not-guest-message": "Questa attività non consente la registrazione come ospite. Per favore scarica e registrati nell'APP.",
+                "download": "Scarica APP",
+                "continue": "Continua con la registrazione ospite"
+            }
+        },
+        "activity-user-list": {
+            "title": "Partecipanti",
+            "tab-title1": "Iscritti",
+            "tab-title2": "Invitati",
+            "tab-title3": "Richiedenti"
+        },
+        "activity-join-list": {
+            "founder-title": "Organizzatore",
+            "rider-title": "Lead rider",
+            "user-title": "Membri",
+            "guest-title": "Ospiti",
+            "guest-join-text": "E altri {{count}} ospiti hanno partecipato a questa attività",
+            "guest-no-phone": "Nessun contatto disponibile",
+            "remove-user-confirm": {
+                "title": "Rimuovere questo partecipante?",
+                "message": "{{name}}<br/>Non saprà che l'hai rimosso",
+                "confirm-text": "Rimuovi partecipante",
+                "cancel-text": "Mantieni partecipante"
+            },
+            "stop": "In pausa",
+            "running": "In corso",
+            "ended": "Terminata",
+            "not-start": "Non iniziata"
+        },
+        "activity-inviting-list": {
+            "nodata": "Nessun utente invitato"
+        },
+        "activity-apply-list": {
+            "nodata": "Nessuno si sta candidando per l'attività"
+        },
+        "route-form": {
+            "title": "Crea rotta",
+            "edit-title": "Modifica percorso",
+            "Name": "Nome rotta",
+            "route-name-tip": "Il nome della rotta deve avere al massimo 50 caratteri",
+            "create-method": "Metodo di creazione rotta",
+            "new-route": "Disegna una nuova rotta",
+            "upload": "Carica da file",
+            "route": "Rotta",
+            "auto-collect": "Dopo l'aggiunta, la rotta verrà salvata automaticamente",
+            "public-explore": "Una volta che la rotta è stata percorsa da altri utenti, può essere esplorata pubblicamente",
+            "ask-leave": "Sei sicuro di voler uscire da 'Crea rotta'?",
+            "ask-leave-tip": "Uscendo ora perderai i progressi non salvati.",
+            "sure-leave": "Conferma uscita"
+        },
+        "route-search": {
+            "search-placeholder": "Trova rotte"
+        },
+        "route-comment-form": {
+            "add-title": "Pubblica commento",
+            "edit-title": "Il mio commento",
+            "Rating": "Soddisfazione rotta",
+            "RouteDifficulty": "La difficoltà di questa rotta è",
+            "RouteMainSurface": "La superficie principale di questa rotta è",
+            "Desc": "Condividi i tuoi pensieri",
+            "GoodRating": "Motivi per cui sei soddisfatto",
+            "BadRating": "Motivi per cui non sei soddisfatto",
+            "Desc-placeholder": "Scrivi un commento",
+            "submit": "Pubblica commento",
+            "back-confirm": {
+                "new": {
+                    "title": "Sei sicuro di voler annullare il commento?",
+                    "message": "Il tuo commento è in fase di modifica.<br/>Sei sicuro di volerlo scartare?",
+                    "confirm": "Annulla commento"
+                },
+                "edit": {
+                    "title": "Sei sicuro di voler annullare l'aggiornamento del commento?",
+                    "message": "Il tuo commento è in fase di modifica.<br/>Sei sicuro di voler scartare l'aggiornamento?",
+                    "confirm": "Annulla aggiornamento"
+                }
+            },
+            "save": {
+                "new": {
+                    "saving": "Pubblicazione commento in corso...",
+                    "saved": "Commento pubblicato con successo! Grazie per il tuo contributo alla community."
+                },
+                "edit": {
+                    "saving": "Aggiornamento commento in corso...",
+                    "saved": "Commento aggiornato con successo! Grazie per il tuo contributo alla community."
+                }
+            }
+        },
+        "report-list": {
+            "route-title": "Segnala problemi della rotta"
+        },
+        "user": {
+            "title": "Profilo",
+            "editTitle": "Modifica profilo",
+            "tab-title1": "Post",
+            "tab-title2": "Registri allenamento",
+            "edit-tab-title1": "Su di me",
+            "edit-tab-title2": "Aspetto homepage",
+            "edit-tab-title3": "Posizione abituale",
+            "Name": "Titolo",
+            "name-memo": "Hai modificato il tuo titolo di recente. Devi attendere {{day}} giorni prima di poterlo cambiare nuovamente.",
+            "FirstName": "Nome",
+            "FirstNamePlaceholder": "Per favore inserisci il tuo nome",
+            "LastName": "Cognome",
+            "LastNamePlaceholder": "Per favore inserisci il tuo cognome",
+            "Intro": "Presentazione",
+            "IntroPlaceholder": "Per favore inserisci una breve presentazione",
+            "Sex": "Sesso",
+            "Weight": "Peso",
+            "CityName": "Città",
+            "Avatar": "Immagine profilo",
+            "BgImg": "Sfondo",
+            "friendFollowingMemo": "<span class='name'>{{name}}</span><span class='text'>&nbsp;ti sta seguendo</span>",
+            "teams": {
+                "title": "Team"
+            },
+            "edit-back-conform": {
+                "title": "Vuoi salvare le modifiche?",
+                "message": "Se lasci questa pagina, le modifiche non salvate andranno perse.",
+                "confirm": "Lascia la pagina"
+            },
+            "post-nodata": "Nessun post disponibile",
+            "menu": {
+                "item1": "Condividi profilo",
+                "item2": "Smetti di seguire",
+                "item3": "Blocca"
+            },
+            "private-lock-text": "L'account di questo utente è privato",
+            "private-lock-memo": "Segui per vedere i post e i registri allenamento di questo utente"
+        },
+        "user-setting": {
+            "account-title": "Account",
+            "account-manager": "Gestione account",
+            "language": "Lingua",
+            "sporting": "Durante l'allenamento",
+            "stopwatch-setting": "Impostazioni cronometro",
+            "location-share-setting": "Impostazioni condivisione posizione",
+            "common-title": "Generale",
+            "notification-setting": "Gestione notifiche",
+            "privacy-safe": "Privacy e sicurezza",
+            "privacy-setting": "Impostazioni privacy",
+            "private-warn": "Solo le persone che ti seguono possono vedere le tue informazioni complete.<br/>Gli utenti devono essere approvati per seguirti.",
+            "blocklist": "Lista bloccati",
+            "blocklist-number": "{{number}} persone",
+            "AllowStrangeMessage": "Messaggi da sconosciuti",
+            "AllowStrangeMessage-warn": "I messaggi da utenti sconosciuti saranno salvati nella cartella dei messaggi da sconosciuti",
+            "AllowStrangeMessage-confirm-title": "Sei sicuro di voler disattivare i messaggi da sconosciuti?",
+            "AllowStrangeMessage-confirm-msg": "Dopo la disattivazione non riceverai più messaggi da sconosciuti.<br/>Confermi la disattivazione?",
+            "InviteActivityPermission": "Inviti alle attività",
+            "InviteTeamPermission": "Inviti al team",
+            "ViewRoutePermission": "Visualizza le mie rotte salvate",
+            "isStrangeMessage": {
+                "true": "Accetta",
+                "false": "Chiudi"
+            },
+            "IsPublic-confirm-title": "Sei sicuro di voler rendere privato il tuo account?",
+            "IsPublic-confirm-msg": "Dopo la disattivazione solo le persone che ti seguono potranno menzionarti.<br/>Confermi la disattivazione?",
+            "is-public": {
+                "true": "Pubblico",
+                "false": "Privato"
+            }
+        },
+        "user-notification-setting": {
+            "title": "Impostazioni notifiche",
+            "memo": "Se disattivi una notifica, la troverai comunque nel centro notifiche.",
+            "post-title": "Post",
+            "PostLike": "Qualcuno ha messo Mi piace al tuo contenuto",
+            "PostComment": "Qualcuno ha risposto al tuo contenuto",
+            "PostTag": "Qualcuno ti ha menzionato",
+            "team-title": "Team",
+            "TeamActivity": "Qualcuno ha creato una nuova attività",
+            "TeamPost": "Qualcuno ha pubblicato un nuovo post",
+            "activity-title": "Attività",
+            "ActivityInvite": "Qualcuno ti ha invitato a partecipare a un'attività",
+            "ActivityJoin": "Qualcuno si è unito alla tua attività",
+            "ActivityTimeStart": "Promemoria inizio attività",
+            "ActivityTimeBeforeHour": "Promemoria un giorno prima dell’inizio dell’attività",
+            "ActivityTimeBeforeDay": "Promemoria un’ora prima dell’inizio dell’attività",
+            "follow-me-title": "Fan",
+            "FollowApply": "È arrivata una nuova richiesta di follow",
+            "Following": "Qualcuno ha iniziato a seguirti",
+            "FollowAccept": "La tua richiesta di follow è stata accettata",
+            "follower-title": "Persone che segui",
+            "FollowerActivity": "Un utente che segui ha iniziato un allenamento live",
+            "FollowerCommentRoute": "Un utente che segui ha commentato una rotta",
+            "FollowerCreateRoute": "Un utente che segui ha creato una rotta nella tua zona",
+            "FollowerCreatePost": "Un utente che segui ha creato un post",
+            "notification-title": "Messaggi di chat",
+            "TagNotice": "Notifica di menzione",
+            "TagNotice-memo": "Anche se la chat è in modalità silenziosa o le notifiche sono disattivate,<br/>quando vieni menzionato in un gruppo riceverai comunque un promemoria.",
+            "DisplayFullMessage": "Mostra messaggio completo",
+            "DisplayFullMessage-memo": "Quando arriva un nuovo messaggio,<br/>il contenuto completo verrà mostrato nella notifica.",
+            "DisplayUnknownMessage": "Mostra messaggi da sconosciuti",
+            "DisplayUnknownMessage-memo": "Le notifiche per i messaggi da sconosciuti saranno nascoste."
+        },
+        "user-account": {
+            "title": "Gestione account",
+            "email-account": "Account email",
+            "email-account-title": "Account email",
+            "email-memo": "Non hai ancora collegato un account email. È consigliabile impostarne uno per il login e il recupero.",
+            "email": "Email",
+            "pwd": "Password",
+            "pwd-setting-complete": "Completato",
+            "setting-email-act": "Vai a impostare l'account",
+            "third3rd-title": "Login di terze parti",
+            "third3rd-sub": "Una volta collegato, puoi accedere a TeamUp con quell'account.",
+            "facebook": "Facebook",
+            "google": "Google",
+            "apple": "Apple",
+            "delete": "Elimina account",
+            "delete-confirm-title": "Vuoi rimuovere questo account?",
+            "delete-confirm-msg": "Dopo la conferma, il tuo account entrerà in uno stato di archivio di 30 giorni.<br/>Se cambi idea, puoi accedere durante il periodo di archivio per ripristinarlo.",
+            "delete-confirm-title2": "Confermi di eliminare definitivamente questo account?",
+            "delete-confirm-msg2": "Continuando, il tuo account verrà archiviato,<br/>gli altri utenti non potranno trovarti su TeamUp.<br/>L'archiviazione durerà fino al <span class='red'>{{date}}</span>.<br/>Successivamente, il tuo account verrà eliminato definitivamente dal database.",
+            "delete-confirm-text": "Conferma rimozione",
+            "third3rd-unsync": {
+                "title": "Sincronizzato con {{service}}",
+                "message": "Sincronizzato il {{date}}, ora puoi accedere con quell'account.",
+                "confirm": "Annulla sincronizzazione"
+            },
+            "third3rd-sync": {
+                "true": "Sincronizzato",
+                "false": "Sincronizza",
+                "title": "Non ancora sincronizzato con {{service}}",
+                "message": "Dopo il collegamento, puoi accedere a TeamUp con quell'account."
+            },
+            "third3rd-unsync-fail": {
+                "message": "Impossibile annullare la sincronizzazione<br/>Devi prima impostare un account email<br/>altrimenti non puoi annullare la sincronizzazione."
+            }
+        },
+        "user-account-form": {
+            "email-title": "Account email",
+            "EmailPlaceholder": "Inserisci email",
+            "Email": "Indirizzo email",
+            "Code": "Codice di verifica",
+            "email-reset-memo": "Inserisci una nuova email per ricollegare l'account",
+            "pwd-reset-memo": "Inserisci la tua password per apportare modifiche. Consigliamo di cambiare la password ogni tre mesi per garantire la sicurezza dell'account.",
+            "pwd-reset-memo2": "Imposta la password per il login. Per favore inserisci almeno 8 lettere o cifre.",
+            "PasswordPlaceholder": "Password attuale",
+            "NewPassword": "Nuova password",
+            "NewPasswordPlaceholder": "Inserisci la nuova password",
+            "Password": "Password",
+            "ConfirmPassword": "Conferma password",
+            "ConfirmNewPassword": "Conferma nuova password",
+            "ConfirmNewPasswordPlaceholder": "Reinserisci la nuova password",
+            "email-binding-confirm": {
+                "title": "Terminare il processo di configurazione dell'account email",
+                "message": "Tornare indietro terminerà il processo di configurazione dell'account email.<br/>Vuoi continuare?",
+                "continue": "Continua la configurazione"
+            }
+        },
+        "blocklist": {
+            "nodata": "Nessun utente bloccato",
+            "menu": {
+                "show-user-profile": "Visualizza profilo",
+                "unblocking": "Sblocca"
+            },
+            "unlock-success": "{{name}} è stato sbloccato"
+        },
+        "message": {
+            "title": "Centro notifiche",
+            "tabs": {
+                "all": "Tutti",
+                "common": "Generale",
+                "team": "Team",
+                "activity": "Attività",
+                "waiting": "In attesa"
+            }
+        },
+        "followers": {
+            "title": "Fan",
+            "nodata": "Nessun follower",
+            "remove-confirm": {
+                "title": "Sei sicuro di voler rimuovere il follow di {{name}}?"
+            }
+        },
+        "users-following": {
+            "title": "Seguiti",
+            "nodata": "Nessuno",
+            "unfollow-confirm": {
+                "title": "Smesso di seguire {{name}}?",
+                "message": "Non vedrai più alcuna informazione su {{name}}."
+            }
+        },
+        "follow-req": {
+            "title": "Richieste",
+            "nodata": "Nessuna richiesta di follow"
+        },
+        "unit-setting": {
+            "title": "Visualizzazione",
+            "MeasureUnit": "Unità",
+            "TemperatureUnit": "Temperatura"
+        },
+        "faq": {
+            "title": "FAQ"
+        },
+        "team": {
+            "search-team": "Cerca team",
+            "title": "Team",
+            "my-team": "Il mio team",
+            "waiting-approval": "In attesa di approvazione",
+            "no-data": {
+                "title": "Esplora, comunica<br/>Viaggia con un team",
+                "desc": "Unisciti ai team che ti interessano, condividi le tue esperienze con gli altri.<br/>Dopotutto, ami la vita e il ciclismo."
+            },
+            "build-team": {
+                "maybe": "Oppure potresti...",
+                "btn-title": "Crea un team"
+            },
+            "add-team": {
+                "title": "Crea team",
+                "btn": {
+                    "start-create": "Inizia a creare un team",
+                    "create-complete": "Creazione completata"
+                }
+            },
+            "Name": "Nome team",
+            "NamePlaceholder": "Nome team (massimo 50 caratteri)",
+            "IsPublic": "Team pubblico",
+            "IsPublicMemo": {
+                "false": "Solo i membri possono vedere le ultime attività e post del team",
+                "true": "Chiunque può vedere le ultime attività e post del team"
+            },
+            "IsPublicValue": {
+                "true": "Pubblico",
+                "false": "Privato"
+            },
+            "NeedReviewRequest": "Richiede approvazione",
+            "NeedReviewRequestMemo": {
+                "false": "Chiunque può unirsi al team",
+                "true": "Richiede l'approvazione di un manager per unirsi"
+            },
+            "NeedReviewRequestValue": {
+                "false": "Non richiede approvazione",
+                "true": "Richiede approvazione"
+            },
+            "EveryCanCreatePost": "Tutti possono creare post",
+            "EveryCanCreatePostMemo": {
+                "true": "Tutti i membri del team possono pubblicare post",
+                "false": "Solo i manager possono pubblicare post"
+            },
+            "EveryCanCreatePostValue": {
+                "true": "Tutti",
+                "false": "Manager"
+            },
+            "EveryCanCreateActivity": "Tutti possono creare attività",
+            "EveryCanCreateActivityMemo": {
+                "true": "Tutti i membri del team possono creare attività",
+                "false": "Solo i manager possono creare attività"
+            },
+            "EveryCanCreateActivityValue": {
+                "true": "Tutti",
+                "false": "Manager"
+            },
+            "PostitNoteText": "Nota adesiva",
+            "Desc": "Presentazione team",
+            "DescMemo": "Presenta il tuo team agli altri.",
+            "DescPlaceholder": "Presentazione, regole, slogan, ecc.",
+            "TeamViewTitle": "Aspetto team",
+            "TeamViewMemo": "Imposta lo stile riconoscibile del tuo team.",
+            "TeamTagTitle": "Tag team",
+            "TeamTagMemo": "Descrivi le caratteristiche del team in modo che sia più facile trovarlo.",
+            "TeamLocationTitle": "Base team",
+            "TeamLocation": "Base",
+            "TeamLocationMemo": "Scegli la regione in cui il team è situato. Puoi anche fornire punti di riferimento dettagliati.",
+            "Logo": "Logo team",
+            "Logo-Memo": "Si consiglia di caricare un'immagine con una risoluzione di almeno 500x500,<br/>per una visualizzazione chiara del team!",
+            "Color": "Colore principale della squadra",
+            "BgImage": "Sfondo",
+            "Tag": "Tag",
+            "TeamTags": "Tag team",
+            "CountryId": "Base team - Paese",
+            "CityId": "Base team - Città",
+            "Address": "Base team - Indirizzo",
+            "team-search-keyword": "Cerca \"{{keyword}}\"",
+            "nodata": "Nessun risultato per \"{{keyword}}\".",
+            "result-title": "Risultati ricerca",
+            "featured-team": "Team in evidenza",
+            "apply-nodata": "Nessuno si sta candidando per il team",
+            "differentPlace": {
+                "title": "Conferma cambio posizione?",
+                "message": "Il punto di riferimento o l'indirizzo selezionato non corrisponde alla città precedentemente scelta. Vuoi cambiare la città per farla corrispondere alla posizione dell'indirizzo?"
+            },
+            "chooseAddressPlaceHolder": "Seleziona un punto di riferimento o un indirizzo (opzionale)",
+            "buildTeamSuccess": "Team creato!",
+            "buildTeamSuccessInfo": "Il tuo team è stato creato con successo! Ora puoi iniziare a invitare membri, pubblicare post e condividere la gioia dello sport con tutti per creare ricordi indimenticabili!",
+            "inviteFirstMember": "Invita il primo membro",
+            "postFirstMsg": "Pubblica il primo post",
+            "goToTeamPage": "Vai alla homepage del team",
+            "archived-mine": "Team archiviato",
+            "archived-other": "Team archiviato",
+            "archived": "Archiviato",
+            "manger": "Manager",
+            "member": "Membro",
+            "event-count": "Attività",
+            "season-distance": {
+                "Metric": "Distanza stagionale (km)",
+                "Imperial": "Distanza stagionale (mi)"
+            },
+            "monthly-distance": {
+                "Metric": "Questo mese (km)",
+                "Imperial": "Questo mese (mi)"
+            },
+            "from-joinTime": "Iscritto il {{date}}",
+            "inviteYouJoin": "{{name}} ti invita ad unirti a questo team",
+            "joinTeam": "Unisciti al team",
+            "applying": "Hai già richiesto di unirti a questo team",
+            "verifyApplying": "La tua richiesta è in attesa di revisione dal manager",
+            "verifyApplyingPlzWait": "Il manager sta esaminando la tua richiesta, per favore attendi.",
+            "cancelApply": "Annulla richiesta",
+            "checkCencalApply": "Sei sicuro di voler annullare la tua richiesta?",
+            "checkCencalApplyTip": "Dopo l'annullamento non potrai richiedere nuovamente per 7 giorni",
+            "keepApply": "Mantieni richiesta",
+            "recently-activity": "Attività recenti",
+            "tabs-post": "Post",
+            "tabs-activity": "Attività",
+            "tabs-about": "Su di noi",
+            "introduction": "Introduzione",
+            "requset-join": "{{number}} richieste di adesione",
+            "archived-team-tip": "Un team archiviato non può aggiungere nuovi membri.<br/>Se non ci sono nuove attività o post entro 14 giorni,<br/>il team verrà sciolto.",
+            "cencal-archived": "Rimuovi archiviazione",
+            "cencal-archived-success": "Archiviazione rimossa",
+            "cencal-archived-success-tip": "Ora puoi invitare nuovi membri.<br/>Divertiti!",
+            "accept-join": "{{name}} si è unito al team {{teamName}}",
+            "main-team": "{{teamName}} è ora il tuo team principale",
+            "main-team-tip": "Inizia a divertirti esplorando lo sport outdoor con i tuoi compagni. Sfida te stesso e supera i tuoi limiti!",
+            "invite-to-team": "Invita al team",
+            "edit-team-info": "Modifica informazioni team",
+            "tags": {
+                "new-activity": "Nuova attività",
+                "new-post": "Nuovo post",
+                "new-join-apply": "Nuova richiesta di adesione"
+            },
+            "report-team": "Segnala squadra"
+        },
+        "team-edit": {
+            "setting": "Impostazioni team",
+            "info-edit": "Modifica informazioni team",
+            "privacy-setting": "Impostazioni privacy",
+            "public": {
+                "true": "Pubblico",
+                "false": "Non pubblico"
+            },
+            "public-memo": {
+                "false": "Solo i membri possono vedere i post, i registri attività e le informazioni sulla posizione",
+                "true": "Tutti possono vedere le ultime attività e post del team"
+            },
+            "join-review": "Approvazione adesione",
+            "review-need": {
+                "true": "Richiede approvazione",
+                "false": "Non richiede approvazione"
+            },
+            "review-need-memo": {
+                "false": "Chiunque può unirsi al team",
+                "true": "Un team privato richiede l'approvazione del manager per unirsi"
+            },
+            "tags": "Tag",
+            "basearea": "Base team",
+            "management-access": "Gestione membri e permessi",
+            "management-alias": "Gestione titoli",
+            "management-member": "Gestisci membri",
+            "total-member": "{{number}} membri",
+            "post-access": "Chi può postare",
+            "activity-access": "Chi può creare attività",
+            "access-to": {
+                "everyone": "Tutti i membri",
+                "manager": "Manager"
+            },
+            "team-tag": "Tag team",
+            "team-tag-tip": "Imposta i tag del team in modo che sia più facile trovarlo."
+        },
+        "team-basearea": {
+            "title": "Base team",
+            "set-basearea-tip": "Una volta impostata la base del team, dovrai attendere 14 giorni prima di poterla cambiare nuovamente."
+        },
+        "team-member": {
+            "title": "Gestione membri",
+            "search-placeholder": "Cerca membri"
+        },
+        "team-member-alias": {
+            "title": "Gestione titoli del team",
+            "add-alias": "Aggiungi un titolo"
+        },
+        "team-alias-edit": {
+            "add-title": "Aggiungi un titolo",
+            "Title": "Nome titolo",
+            "alias-input-placeholder": "Fino a 10 caratteri",
+            "add-member": "Aggiungi membri",
+            "remove": "Rimuovi",
+            "delete": "Elimina questo titolo",
+            "ask-delete": "Sei sicuro di voler eliminare questo titolo?",
+            "ask-delete-tip": "Dopo aver eliminato questo titolo, i membri con questo titolo verranno reimpostati su nessuno.",
+            "sure-delete": "Conferma eliminazione"
+        },
+        "post-form": {
+            "add-title": "Nuovo post",
+            "edit-title": "Modifica post",
+            "user-share": "<span>{{name}}</span> ha condiviso",
+            "user-team-share": "<span>{{name}}</span> ha condiviso in <span>{{teamName}}</span>",
+            "edit-exit-confirm": "Stai per uscire dal post. I contenuti non salvati andranno persi. Sei sicuro di voler uscire?",
+            "saving": "Pubblicazione post in corso...",
+            "saved": "Pubblicato!",
+            "privacy-type-title": "Impostazioni privacy",
+            "location-title": "Aggiungi posizione",
+            "body-placeholder": "Inserisci testo (@menziona amici)",
+            "recommend-route-title": "Perché non condividere le tue recenti esperienze di allenamento?",
+            "Body": "Contenuto post",
+            "Attachments": "Allegati post"
+        },
+        "stopwatch-setting": {
+            "title": "Impostazioni cronometro",
+            "device-link": "Connessione dispositivo",
+            "calorie-convert": "Conversione calorie",
+            "unit-show": "Visualizzazione unità",
+            "auto-pause": "Pausa automatica in caso di fermo",
+            "stopwatch-info": "Informazioni cronometro"
+        },
+        "chat": {
+            "page-title": "Messaggi",
+            "title1": "Tutti",
+            "title2": "Messaggi privati",
+            "title3": "Attività",
+            "title4": "Team",
+            "title5": "Messaggi da sconosciuti",
+            "search-placeholer": "Cerca messaggi",
+            "instant-search": {
+                "not-enough-words": "Non ci sono abbastanza lettere per cercare",
+                "not-enough-words-desc": "Per favore inserisci almeno 2 lettere per cercare",
+                "nodata": "Nessun messaggio trovato per \"{{keyword}}\"",
+                "nodata-desc": "Prova con un'altra parola chiave",
+                "room-count": "Trovate {{count}} chat"
+            },
+            "nodata": "Nessun dato della chat",
+            "open-mute-success": "Notifiche disattivate",
+            "close-mute-success": "Notifiche attivate",
+            "silence-mode": "L'altra parte ha abilitato la modalità silenziosa e non riceverà notifiche per i messaggi temporaneamente",
+            "leave-confirm": {
+                "title": "Sei sicuro di voler lasciare la chat di gruppo {{name}}?",
+                "message": "Lasciare la chat non significa abbandonare l'attività/il team. Significa solo che non riceverai più messaggi da questo gruppo. Se desideri riunirti o riaprire in seguito, puoi farlo tramite il pulsante della chat dell'attività/team.",
+                "confirm": "Lascia il gruppo",
+                "cancel": "Annulla uscita"
+            },
+            "Body": "Messaggi",
+            "menu-item": {
+                "reply": "Rispondi",
+                "report": "Segnala"
+            }
+        },
+        "chat-user": {
+            "user-title": "Membri",
+            "search-placeholder": "Cerca membri",
+            "nodata": "Nessun dato corrispondente trovato"
+        },
+        "calorie-exchange": {
+            "title": "Conversione calorie",
+            "tip-p1": "Inserisci le tue informazioni biologiche per calcoli calorici più precisi",
+            "tip-p2": "Se non fornite, verrà utilizzato un valore predefinito",
+            "tip-p3": "Non preoccuparti, queste informazioni saranno usate solo per il calcolo delle calorie",
+            "sex": "Sesso biologico",
+            "Height": "Altezza",
+            "Weight": "Peso",
+            "Age": "Età",
+            "input-placeholder": "Inserisci il tuo {{placeholder}}",
+            "pop-up-title": "Ottieni dati calorici più precisi",
+            "pop-up-subtitle": "Imposta le tue informazioni biologiche per ottenere dati calorici più precisi durante l'allenamento. Se non impostate, verranno usati valori medi e i risultati sono solo indicativi."
+        },
+        "location-share": {
+            "title": "Condivisione posizione",
+            "default-share-target": "Destinazione di condivisione predefinita",
+            "auto-share": "Condividi automaticamente durante la pedalata",
+            "share-tip": "Condividi automaticamente la tua posizione, rotta e dati in tempo reale con i tuoi destinatari durante la pedalata",
+            "share-target": "Destinatari della condivisione",
+            "share-all-tip": "Il tuo profilo deve essere 'Pubblico'. Per favore vai su 'Impostazioni > Privacy' per cambiare.",
+            "share-cycling-memo": "Condividi i tuoi dati di allenamento con gli altri partecipanti",
+            "ShareCyclingData": "Dati",
+            "ShareSpeed": "Velocità",
+            "SharePower": "Potenza",
+            "ShareHeartRate": "Frequenza cardiaca",
+            "SharePedalingFrequency": "Cadenza",
+            "ShareGuest": "Condividi utente anonimo (utente non della piattaforma)"
+        },
+        "team-onmap": {
+            "open-map": "Apri mappa",
+            "explore-team": "Esplora tutti i team",
+            "add-note": "Aggiungi nota adesiva del team",
+            "switch-team": "Cambia team",
+            "search-team": "Cerca team"
+        },
+        "team-map": {
+            "title": "Mappa del team"
+        },
+        "route-map-explore": {
+            "title": "Esplora rotte",
+            "add-btn": "Crea rotta",
+            "filter": {
+                "from": "Da",
+                "from-name": "Da: {{name}}",
+                "tag": "Tag",
+                "tag-count": "Tag ({{count}})",
+                "popular": "Rotte popolari",
+                "recommend": "Alto punteggio"
+            }
+        },
+        "route-detail": {
+            "collect-follower": "{{count}} follower hanno salvato questa rotta",
+            "add-route": "Salva rotta",
+            "added-route": "Rotta salvata",
+            "tab-title1": "Commenti {{count}}",
+            "tab-title2": "Attività {{count}}",
+            "comment-count": "{{count}} utenti hanno commentato",
+            "add-comment-text": "Lascia un commento...",
+            "activity-slogen": "Hai voglia di provare questa rotta? Puoi anche...",
+            "add-activity-text": "Crea un'attività...",
+            "comment-has-published": "Hai commentato il {{date}}"
+        },
+        "stopwatch": {
+            "Running": "Attività in corso",
+            "running-alert": "Un'altra attività è già in corso. Completa quella in corso prima di iniziarne una nuova.",
+            "start": "Inizia",
+            "set-off": "Parti",
+            "not-arrive": "Non arrivato",
+            "remaining": "{{unit}} rimanenti per il traguardo",
+            "activity-starting": "L'attività è iniziata alle {{time}}",
+            "user-has-ready": "{{count}} Pronti",
+            "user-has-wait": "{{count}} in attesa",
+            "user-has-guest": "{{count}} ospiti",
+            "join-count": "Totale {{count}} partecipanti",
+            "move-near-meeting-point": "Per favore avvicinati al punto di ritrovo",
+            "wait-user-for-start": "Aspettiamo che tu inizi l'attività...",
+            "wait-leader-for-start": "Aspettiamo che l'organizzatore inizi l'attività...",
+            "location-share-to": "Posizione condivisa con",
+            "location-share-to-msg": "Non hai impostato una destinazione di condivisione predefinita. Vuoi impostarla ora?",
+            "stopwatch-setting": "Impostazioni cronometro",
+            "location-share-setting": "Impostazioni di condivisione della posizione",
+            "activity-location-setting": "Impostazioni posizione attività",
+            "profile-location-setting": "Impostazioni posizione profilo",
+            "share-live-url": "Condividi il tuo link di allenamento in diretta",
+            "invite-riding-partner": "Invita un compagno di pedalata",
+            "check-join-user": "Visualizza partecipanti",
+            "set-ride-leader": "Imposta il leader",
+            "close-location-share": "Termina condivisione posizione",
+            "view-viewer": "Visualizzatori",
+            "go-first": "Procedi",
+            "no-viewer-message": "Nessun dato di commento disponibile",
+            "act-user-open-share": {
+                "title": "Condividi la tua posizione con i membri dell'attività",
+                "message": "La posizione verrà condivisa solo quando l'attività inizierà e terminerà al termine dell'attività."
+            },
+            "share-together": {
+                "title": "Condividi l'evento live con l'organizzatore",
+                "message": "Se l'organizzatore abilita il live streaming per l'attività, potrai condividere i tuoi dati di allenamento con il pubblico durante l'attività (in base alle tue impostazioni)."
+            },
+            "activity-open-share": {
+                "title": "Consentire il live streaming di questa attività?",
+                "message": "Una volta abilitato, tutti i partecipanti accettati condivideranno automaticamente la loro attività live non appena inizierà. Gli spettatori potranno vedere informazioni dettagliate e la posizione di tutti i membri (in base alle impostazioni individuali)."
+            },
+            "profile-share": {
+                "title": "Condivisione personale della posizione durante l'attività",
+                "message": "In base alle tue impostazioni personali, la tua attività live verrà condivisa non appena l'attività inizierà.",
+                "share-to": "Condividi con: <span class='tmup-fc-blue'>{{shareUser}}</span>"
+            },
+            "unable-complete": {
+                "title": "Impossibile completare l'attività ora?",
+                "message": "Il tempo e la distanza dell'attività sono troppo brevi per essere completati. Per favore continua o riavvia.",
+                "confirm": "Scarta attività",
+                "cancel": "Continua"
+            },
+            "complete-confirm": {
+                "title": "Sei sicuro di voler completare l'attività?",
+                "message": "Una volta completata, non potrai più riprendere. Confermi il completamento?",
+                "confirm": "Completa attività",
+                "cancel": "Continua"
+            },
+            "leader-complete-message": "Sei il lead rider. Completare l'attività significherà terminarla per tutti. Confermi il completamento?",
+            "creator-complete-message": "Sei il creatore dell'attività. Completare l'attività significherà terminarla. Confermi il completamento?",
+            "record-title": {
+                "evening-ride": "Corsa serale",
+                "late-night-ride": "Corsa notturna",
+                "morning-ride": "Corsa mattutina",
+                "afternoon-ride": "Corsa pomeridiana"
+            },
+            "share-live-link": {
+                "title": "Vuoi condividere il link della tua attività in diretta?",
+                "message": "Chiunque abbia il link potrà vedere la tua attività in diretta.<br/>Se vuoi condividerlo con qualcuno che non è registrato sulla piattaforma, assicurati che l'opzione 'Condividi utente anonimo (utente non della piattaforma)' sia attivata (è attivata per impostazione predefinita).<br/>Puoi toccare 'Vai alle impostazioni' oppure controllare dalle 'Impostazioni di condivisione della posizione'."
+            },
+            "invite-cancel": {
+                "title": "Sei sicuro di voler uscire dal cronometro?",
+                "message": "Hai già invitato compagni di pedalata. Uscendo dal cronometro l’invito verrà annullato. Sei sicuro di voler uscire?"
+            }
+        },
+        "stopwatch-finished": {
+            "join-member": "Membri partecipanti",
+            "gain-encourage": "Incoraggiamenti ricevuti",
+            "data": "Dati",
+            "totalTime": "Tempo totale",
+            "totalDistance": "Distanza totale {{ unit }}",
+            "climbHeight": "Massimo guadagno di quota {{ unit }}",
+            "moveDistance": "Distanza percorsa {{ unit }}",
+            "pace": "Andatura {{ unit }}",
+            "media-log": "Registro multimediale",
+            "route": "Rotta",
+            "delete-record": "Elimina registro",
+            "delete-record-title": "Sei sicuro di voler eliminare il registro dell'allenamento?",
+            "delete-record-msg": "Una volta eliminato, tutti i dati relativi alla pedalata non saranno conservati",
+            "Name": "Nome registro allenamento"
+        },
+        "sport-live": {
+            "tab-title1": "Dati",
+            "tab-title2": "Commenti",
+            "tab-title3": "Profilo",
+            "search-placeholder": "Cerca utenti",
+            "search-result-text": "Cerca \"{{searchKey}}\": {{count}} risultati",
+            "join-users": "Partecipanti {{count}}",
+            "has-close": "L'evento live dell'utente è terminato!",
+            "close-guest": "L’utente ha disattivato l’opzione 'Condividi utente anonimo (utente non della piattaforma)'!"
+        },
+        "web-home": {
+            "explore-app": "Esplora l'APP",
+            "area1": {
+                "t1": "Unisciti al <div class='name'>nuovo esercizio sociale</div>",
+                "d1": "Team Up è una piattaforma sociale per il ciclismo su strada che consente agli appassionati di ciclismo di formare e gestire team, organizzare e partecipare ad attività outdoor e condividere le migliori esperienze ciclistiche."
+            },
+            "area3": {
+                "t1": "Sblocca la mappa ciclistica globale<div><span class='name'>Non sarai solo nel tuo allenamento</span></div>",
+                "tab1": "Oltre 120k<div>Attività in evidenza</div>",
+                "tab2": "Oltre 45k<div>Team</div>",
+                "tab3": "Oltre 23k<div>Rotte</div>",
+                "tab1-content": {
+                    "t1": "Dai,",
+                    "t2": "facciamo tendenza nel social sport",
+                    "btn-text": "Esplora attività →"
+                },
+                "tab2-content": {
+                    "t1": "Dai,",
+                    "t2": "creiamo culture di team diverse",
+                    "btn-text": "Esplora team →"
+                },
+                "tab3-content": {
+                    "t1": "Dai,",
+                    "t2": "scopri nuove esperienze di ciclismo",
+                    "btn-text": "Esplora rotte →"
+                }
+            },
+            "area4": {
+                "t1": "Gestione team, raduni ciclistici,<div>tutto in un unico posto</div>",
+                "item0": {
+                    "title": "Crea un team",
+                    "desc": "Organizza vari tipi di team e attività in base alle tue abitudini, area e obiettivi di allenamento"
+                },
+                "item1": {
+                    "title": "Raduno senza stress",
+                    "desc": "Non serve affidarsi a più piattaforme per organizzare i gruppi. Comodo per gli organizzatori per pianificare raduni"
+                }
+            },
+            "area5": {
+                "t1": "Pedala da solo, con i professionisti,<div>o guarda in diretta</div>",
+                "item0": {
+                    "title": "Computer da bici",
+                    "desc": "Utilizza la nostra funzione di computer da bici per registrare tutti i dati di pedalata. Puoi anche collegare più sensori e disporre liberamente le informazioni in tempo reale di cui hai bisogno"
+                },
+                "item1": {
+                    "title": "Live streaming",
+                    "desc": "Guarda le pedalate live degli utenti che segui. Oltre alla posizione in tempo reale, i dati del computer da bici vengono mostrati in tempo reale – è il momento di mostrare la tua forza!"
+                }
+            }
+        }
+    },
+    "components": {
+        "route-comment-list": {
+            "title": "Tutti i commenti",
+            "nodata": "Non ci sono ancora commenti per questa rotta"
+        },
+        "route-activity-list": {
+            "title": "Tutte le attività per questa rotta",
+            "nodata": "Non ci sono ancora attività per questa rotta"
+        },
+        "recommended-activity-list": {
+            "search-text": "Esplora attività nelle vicinanze →"
+        },
+        "recommend-user-list": {
+            "title": "Persone che potresti conoscere"
+        },
+        "recommend-route-item": {
+            "distance": "Lunghezza {{number}}"
+        },
+        "progress-bar": {
+            "resubmit": "Invia di nuovo"
+        },
+        "home-add-btn": {
+            "menu-item": {
+                "create-activity": "Crea attività",
+                "create-post": "Pubblica post",
+                "create-sticky-note": "Pubblica nota adesiva",
+                "create-route-comment": "Valuta questo percorso"
+            }
+        },
+        "search-record": {
+            "title": "Ricerche recenti",
+            "clearAll": "Cancella tutto"
+        },
+        "chat-stranger-list": {
+            "memo": "Questa è la cartella dei messaggi da sconosciuti. Qui puoi visualizzare e approvare i messaggi degli utenti non amici. L'utente non saprà della tua decisione."
+        },
+        "chat-item": {
+            "private-msg": "vuole inviarti un messaggio",
+            "no-name": "Questo utente non esiste",
+            "message": {
+                "not-show-message": "vuole inviarti un messaggio",
+                "route": "{{name}} ha condiviso una rotta",
+                "record": "{{name}} ha condiviso un registro allenamento",
+                "image": "{{name}} ha inviato un'immagine",
+                "leave": "{{name}} ha lasciato la chat",
+                "location": "{{name}} ha condiviso dati sulla posizione"
+            }
+        },
+        "home-activity-invite": {
+            "title": "Hai un nuovo invito ad attività!",
+            "desc": "Ci sono {{number}} inviti ad attività non letti"
+        },
+        "post-item": {
+            "comment": {
+                "title": "<span class='name'>{{name}}</span> ha commentato su <span class='route-name'>{{routeName}}</span>"
+            },
+            "team-post": {
+                "title": "<span class='name'>{{name}}</span> ha condiviso in <span class='team-name'>{{teamName}}</span>"
+            },
+            "like-comment-text": "{{likeCount}} Mi piace · {{commentCount}} Commenti",
+            "menu-item": {
+                "delete": "Rimuovi",
+                "edit": "Modifica contenuto",
+                "post-message": "Invia messaggio",
+                "leave-team": "Lascia team",
+                "cancel-follow": "Smetti di seguire",
+                "block-user": "Blocca utente",
+                "report": "Segnala problema",
+                "report-route-comment": "Segnala commento sul percorso",
+                "report-post": "Segnala post"
+            },
+            "delete": {
+                "title": "Sei sicuro di voler rimuovere questo post?",
+                "message": "Rimuovendo questo post verranno rimossi anche tutti i Mi piace e le risposte ad esso associate.",
+                "confirm": "Rimuovi",
+                "success": "Post rimosso"
+            },
+            "leave-team": {
+                "title": "Sei sicuro di voler lasciare {{teamName}}?",
+                "message": "Lasciare il team ti rimuoverà anche dal canale chat del team.",
+                "confirm": "Lascia team",
+                "success": "Hai lasciato il team {{teamName}}"
+            },
+            "team-only-manager": {
+                "title": "Sei l'unico manager",
+                "message": "Se vuoi lasciare il team, assegna prima a un altro membro il ruolo di manager oppure archivia il team.",
+                "cancel": "Gestisci membri",
+                "confirm": "Archivia team"
+            },
+            "block-user": {
+                "title": "Sei sicuro di voler bloccare {{name}}?",
+                "message": "Bloccare rimuoverà il follow e l'utente non potrà più seguirti, vedere i tuoi post, menzionarti o invitarti ad attività o team.",
+                "success": "{{name}} è stato bloccato"
+            },
+            "cancel-follow": {
+                "success": "Non segui più {{name}}"
+            }
+        },
+        "sporting-share-list": {
+            "title": "Allenamenti live"
+        },
+        "team-item": {
+            "user-count": "{{count}} membri",
+            "follow-user-count": "{{count}} follower",
+            "followers-joins": "+{{count}} follower si sono uniti"
+        },
+        "home-menu": {
+            "title": "Inizia la tua esplorazione outdoor!",
+            "text-1": "<div class='title'>Esplora<br/>Team</div><div class='subtitle'>Mappa team</div>",
+            "text-2": "<div class='title'>Esplora<br/>Attività</div><div class='subtitle'>Esplora attività</div>",
+            "text-3": "<div class='title'>Nuovo<br/>Allenamento</div><div class='subtitle'>Inizia allenamento</div>",
+            "text-4": "<div class='title'>Esplora<br/>Rotte</div><div class='subtitle'>Esplora rotte</div>"
+        },
+        "user-item": {
+            "memo": {
+                "fb-friend": "<div class='sub'>Il tuo</div><div class='text'>amico di Facebook</div>",
+                "city": "<div class='sub'>Entrambi vivete a</div><div class='text'>{{name}}</div>",
+                "activity": "<div class='sub'>Avete partecipato a</div><div class='text'>{{name}}</div>",
+                "route": "<div class='sub'>Avete percorso</div><div class='text'>{{name}}</div>"
+            }
+        },
+        "background-choose": {
+            "view": "Paesaggio",
+            "illustration": "Illustrazione",
+            "style": "Stile",
+            "from": "Dall'album"
+        },
+        "activity-item": {
+            "friendJoin": "{{number}} persone che segui hanno partecipato",
+            "startingSoon": "Sta per iniziare",
+            "status": {
+                "Soon": "Sta per iniziare",
+                "Running": "In corso",
+                "Completed": "Terminata"
+            }
+        },
+        "activity-log-list": {
+            "all-time": "Tutto il tempo"
+        },
+        "notice-message": {
+            "focus-on-you": "<span class='notice-msg'>{{name}}</span> ti sta seguendo",
+            "mention-on-teampost": "<span class='notice-msg'>{{name}}</span> ti ha menzionato in un post nel team <span class='notice-msg'>{{team}}</span>",
+            "mention-on-post": "<span class='notice-msg'>{{name}}</span> ti ha menzionato in un post",
+            "apply-join": "<span class='notice-msg'>{{name}}</span> ti invita ad unirti al team <span class='notice-msg'>{{team}}</span>",
+            "press-nice": "<span class='notice-msg'>{{name}}</span> ha messo Mi piace al tuo post"
+        },
+        "sport-live-chat": {
+            "no-follow": "Non segui questo utente, impossibile commentare",
+            "follow-user": "Segui questo utente",
+            "wait-user-agree-follow": "Richiesta inviata",
+            "msg-placeholder": "Commenta..."
+        },
+        "sport-live-comment": {
+            "Body": "Commento"
+        }
+    },
+    "unit": {
+        "centimeters": "cm",
+        "kilogram": "kg",
+        "years": "anni"
+    },
+    "share-text": {
+        "user": "Dai un'occhiata a {{name}} su TeamUp \n{{url}}",
+        "activity": "Condivido un'attività con te, dai un'occhiata!\n{{name}} ({{url}})",
+        "route": "Ho trovato una rotta fantastica, dai un'occhiata!\n{{name}} ({{url}})",
+        "record": "Condivido il mio registro allenamento di ({{date}})!",
+        "live-record": "Sto trasmettendo il mio allenamento in diretta – dai un’occhiata! ({{url}})"
+    }
+}

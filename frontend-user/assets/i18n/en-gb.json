@@ -1,0 +1,2137 @@
+{
+    "notify": {
+        "types": {
+            "image": "{{name}} shared an image in {{groupName}}",
+            "text": "{{name}} sent a new message in {{groupName}}",
+            "location": "{{name}} shared a location in {{groupName}}"
+        }
+    },
+    "errors": {
+        "required": "Required",
+        "minlength": "At least {{requiredLength}} characters",
+        "maxlength": "Up to {{requiredLength}} characters",
+        "maxFileCount": "Exceeded file limit, up to {{max}} files",
+        "email": "Must be a valid Email format",
+        "sameAs": "Must be the same as {{control}}",
+        "leastOneRequired": "{{Name}} requires at least one field to be filled in",
+        "duplicate": "Duplicate",
+        "reference": "Data related to {{data.title}} exists, cannot be deleted",
+        "allreference": "There are ({{data.count}}) records related to {{data.title}}, cannot be deleted",
+        "matDatepickerParse": "Must be in date format",
+        "min": "Cannot be less than {{min}}",
+        "max": "Cannot be greater than {{max}}",
+        "arrayMaxLength": "Up to {{max}} items",
+        "arrayMinLength": "At least {{min}} items",
+        "pattern": "Incorrect format",
+        "hasUse": "Already in use",
+        "hasExist": "Already exists, please re-enter",
+        "notValidToken": "Third-party login authorisation token has expired, please log in again",
+        "noThirdProvider": "{{Service}} login service is not supported yet",
+        "systemTimeout": "The system is busy, please try again later, thank you~",
+        "notExists": "Does not exist",
+        "incorrect": "Incorrect",
+        "needLogin": "Login required",
+        "serverNotConnect": "Server cannot be connected",
+        "parametersIncorrect": "Data parameter anomaly",
+        "templateNotSetting": "The template for {{SendType}} of {{TemplateType}} has not been set. Please contact the administrator. Thank you~",
+        "dateGreaterThanNow": "Must be later than the current time",
+        "noPermission": "No permission to perform this action",
+        "login-failed": {
+            "th3rd-service": "Third-party login failed. The webpage does not support direct registration login for unregistered third-party accounts."
+        },
+        "activity": {
+            "overStartTime": "The activity has passed its start time and cannot be cancelled!",
+            "overRegistTime": "The registration deadline has passed. You can't register!",
+            "hasCancel": "The activity has been cancelled!",
+            "hasJoin": "You have already joined this activity, no need to join again.",
+            "isPrivate": "This activity is by invitation only. If you wish to join, you need an invitation or be a member of the hosting team.",
+            "running": "The activity is already in progress.",
+            "inviteLimit": "The number of invited participants exceeds the limit.",
+            "joinLimit": "The number of participants has reached the activity limit and cannot be registered.",
+            "notReject": "The creator of the activity cannot leave the activity.",
+            "re-invite": "An invitation has already been sent for this activity, cannot send again!",
+            "re-cancel-apply": "You have already cancelled the registration application for this activity, no need to cancel again.",
+            "start-before-cancel-apply": "Within 1 hour before the activity starts, the application cannot be cancelled.",
+            "reapply-limit": "Cannot reapply within 7 days after cancelling the activity registration.",
+            "remove-creator": "Cannot remove the organiser from the participant list!",
+            "apply-cancel": "The user has cancelled the application",
+            "apply-has-viewed-agree": "The user's application has already been confirmed by another administrator, no need to review again",
+            "apply-has-viewed-reject": "The user's application has already been confirmed by another administrator, no need to review again",
+            "notGuest": "Visitor registration is not available for this activity. Please download the APP to register.",
+            "team-close": "This team has been dissolved and you cannot add or modify events.",
+            "team-close-over": "The team has been archived and is expected to be dissolved within 14 days. You cannot create events beyond 14 days. Please contact the team manager to enquire about unarchiving.",
+            "only-team-manager": "Only the team manager can create events for the team.",
+            "team-user": "You are not a member of the team {{teamName}} and cannot create events for this team.",
+            "follow-invite": "The invitee's settings only allow invitations from users who follow them. Please ensure you follow the user before sending an invitation.",
+            "people-limit": "The number of participants exceeds the activity limit.",
+            "last-registration-over": "The registration deadline cannot be after the event start time.",
+            "invite-over-time": "This activity has ended, and you can’t invite users.",
+            "finished": "The event has finished, registration is no longer possible!",
+            "cancel-join": "The user has cancelled participation in the event!",
+            "isGuest": "The user is a guest!"
+        },
+        "chatMessage": {
+            "activityNotExist": "The activity does not exist, cannot open group chat",
+            "notActivityUser": "You are not a participant of the activity, cannot open this activity’s group chat",
+            "notExist": "This group chat does not exist",
+            "notReceiveStranger": "The other party has disabled the feature to receive messages from strangers, so the chat cannot be started."
+        },
+        "pageNotFound": "Page not found.",
+        "serverError": "Server error.",
+        "fileSize": "File {{name}} with size {{size}}KB exceeds the maximum limit of {{max}}KB.",
+        "register": {
+            "code-validate": "The registration verification email has expired, please re-register to send the verification email",
+            "token-valid": "Due to a prolonged input of registration data, the third-party login token has expired, please log in again to register",
+            "3rd-has-binding": "{{service}} already has a bound account, no need to register. Please log in directly"
+        },
+        "forget": {
+            "code-validate": "The forgot password verification email has expired, please resend the verification email from 'Forgot Password'",
+            "code-error": "Incorrect verification code, you have made {{count}} errors. If you exceed 5 errors, the account will be locked for 24 hours and cannot be verified. Please try again after 24 hours.",
+            "code-error-lock": "The verification code errors have reached the limit. Please wait 24 hours before resending the verification email for verification",
+            "code-lock": "Due to multiple incorrect verification code entries, the account has been locked. Please try again after 24 hours."
+        },
+        "email-bind": {
+            "code-validate": "The verification email for binding the Email account has expired, please resend the verification email"
+        },
+        "badword": "Please do not use terms that contain vulgar words.",
+        "spacialWord": "Please do not include special characters \"!@#$%^&*\"",
+        "teamOnlyManager": "You are the only team manager, cannot leave the team.",
+        "newPwdSameOld": "The new password cannot be the same as the old password",
+        "nameChangeWhinIn30Days": "You cannot change your title again within 30 days",
+        "team": {
+            "apply-cancel": "The user has cancelled the application",
+            "apply-has-viewed-agree": "The user's application has already been confirmed by another administrator, no need to review again",
+            "apply-has-viewed-reject": "The user's application has already been confirmed by another administrator, no need to review again",
+            "title-count-limit": "A maximum of 20 titles can be set, cannot add more titles",
+            "not-remove-self": "Cannot remove yourself from the team",
+            "not-change-permission": "Cannot change your own permissions",
+            "location-update-limit": "The team location can only be updated once every 14 days. There are still {{days}} days left before the next update",
+            "reapply-limit": "Cannot reapply to join the team within 7 days after cancelling the application. There are still {{days}} days left before the next application",
+            "re-invite": "A team invitation has already been sent, cannot send again. Please directly share the invitation link",
+            "follow-invite": "The user is restricted to inviting only those who follow them"
+        },
+        "user-has-block": "This user is on the block list, so you cannot follow. To follow, please remove them from the block list.",
+        "private-not-share-all": "The user’s privacy settings are not public, unable to share the location with everyone",
+        "post": {
+            "team-close": "This team has been dissolved, cannot publish posts",
+            "only-manager": "Only the team manager is allowed to post updates for the team.",
+            "not-exist": "This post no longer exists"
+        },
+        "route": {
+            "least-two-points": "At least a start and end point are required for the route"
+        },
+        "live": {
+            "close": "The user’s live event has ended!"
+        },
+        "user-disabled": "The account has been suspended and cannot be logged into or operated. If you have any questions, please contact customer service.",
+        "user-disabled-reason": "The account has been suspended and cannot be logged into or operated due to the following reason: {{reason}}.<br/>If you have any questions, please contact customer service.",
+        "report": {
+            "post-exist": "You’ve already reported this post. We’ll deal with it as soon as possible.",
+            "comment-exist": "You’ve already reported this comment. We’ll deal with it as soon as possible.",
+            "user-exist": "You’ve already reported this user. We’ll deal with it as soon as possible.",
+            "chat-message-exist": "You’ve already reported this chat message. We’ll deal with it as soon as possible.",
+            "team-exist": "You’ve already reported this team. We’ll deal with it as soon as possible.",
+            "activity-exist": "You’ve already reported this activity. We’ll deal with it as soon as possible."
+        },
+        "bluetooth": {
+            "device-not-connect": "The device is currently not connected. Please ensure it is switched on and Bluetooth is enabled, then try again!"
+        }
+    },
+    "common": {
+        "guest": "Guest",
+        "yes": "Yes",
+        "no": "No",
+        "none": "None",
+        "edit": "Edit",
+        "save": "Save",
+        "finish": "Finish",
+        "complete": "Complete",
+        "confirm": "Confirm",
+        "cancel": "Cancel",
+        "blockade": "Block",
+        "openEnable": "Open",
+        "close": "Close",
+        "setting": "Settings",
+        "login": "Log In",
+        "logout": "Log Out",
+        "enroll": "Sign Up",
+        "search": "Search",
+        "forgetPassword": "Forgot Password",
+        "unlimited": "Unlimited",
+        "share": "Share",
+        "share-to": "Share to",
+        "copy-url": "Copy Link",
+        "invite-friend": "Invite Friend",
+        "following": "Following",
+        "follower": "Followers",
+        "follow-me": "Fans",
+        "follow": "Follow",
+        "followed": "Followed",
+        "followed-name": "Followed {{name}}",
+        "req-follow": "Follow request sent",
+        "req-follow-name": "A follow request for {{name}} has been sent, waiting for user to confirm.",
+        "unfollow": "Unfollow",
+        "administrator": "Administrator",
+        "choose": "Choose",
+        "optional": "Optional",
+        "delete-user": {
+            "title": "Delete Your Account",
+            "confirmTitle": "Are you sure you want to delete your account?",
+            "confirmMessage": "The account deletion process is irreversible:<br/>Your account and data will be permanently deleted. We will remove you from all related teams and chats. We may retain some data you created (like public routes)."
+        },
+        "exitApp": {
+            "title": "Prompt",
+            "message": "Are you sure you want to exit the application?"
+        },
+        "language": {
+            "title": "Language",
+            "zh-tw": "中文(繁體)",
+            "zh-cn": "中文(简体)",
+            "de": "Deutsch",
+            "es": "español",
+            "fr": "Français",
+            "pt": "Português",
+            "ru": "Русский",
+            "en": "English",
+            "en-gb": "English(UK)",
+            "ja": "日本語",
+            "th": "ไทย",
+            "it": "Italiano"
+        },
+        "leader": "Leader",
+        "participant": "Participant",
+        "join": "Join",
+        "joined": "Joined",
+        "accepted": "Accepted",
+        "reject": "Reject",
+        "rejected": "Rejected",
+        "newNotify": "You have a new notification",
+        "distance": "Distance",
+        "route-length": "Length {{number}}",
+        "stop": "Pause",
+        "manual-stop": "Stop",
+        "nodata": "No matching data found",
+        "release": "Publish",
+        "leave": "Leave",
+        "open-setting": "Open Settings",
+        "goto-setting": "Go to Settings",
+        "after-next": "Ask next time",
+        "dont-ask": "Don't ask again",
+        "add-in": "Add",
+        "mute": "Mute",
+        "leave-chat-group": "Leave Group",
+        "permission": {
+            "photo": {
+                "title": "Allow TeamUp to access your photos",
+                "desc": "Please enable album permission first. You can go to<br/>\"Settings\" - \"TeamUp\" to turn it on."
+            },
+            "camera": {
+                "desc": "Please enable camera permission first. You can go to<br/>\"Settings\" - \"TeamUp\" to turn it on."
+            },
+            "location": {
+                "desc": "Please enable location permission to get your location. You can tap \"Go to Settings\" below to set it in permission management."
+            },
+            "filesystem": {
+                "title": "File access is not allowed currently",
+                "desc": "Please allow file access first to proceed with download"
+            },
+            "bluetooth": {
+                "title": "Bluetooth on the device must be enabled",
+                "location": "Because Bluetooth requires location permission, please enable location permission first."
+            },
+            "stopwatch-location": {
+                "title": "Location Permission Needed",
+                "desc": "This feature will not function properly without location permission."
+            }
+        },
+        "page-next": "Next Page",
+        "start-using": "Start Using",
+        "back": "Back",
+        "skip": "Skip",
+        "send-valid-mail": "Send Verification Email",
+        "setting-completed": "Setting Completed",
+        "skip-complete": "Skip and Complete",
+        "resend": "Resend",
+        "valid-email": "Verify Email",
+        "continue": "Continue",
+        "view": "View",
+        "time-label": {
+            "recently": "Just now",
+            "minute": "{{minute}} minutes",
+            "hours": "{{hour}} hours",
+            "days": "{{day}} days"
+        },
+        "read-more": "...Read more",
+        "add-to": "Add",
+        "team": "Team",
+        "remove": "Remove",
+        "copied-to-clipboard": "Copied to clipboard",
+        "accept": "Accept",
+        "delete": "Delete",
+        "total-distance": "Total Distance",
+        "total-duration": "Total Duration",
+        "estimated-duration": "Estimated Duration",
+        "max-elevation-gain": "Max Elevation Gain",
+        "max-elevation": "Max Elevation",
+        "elevation-gain-amount": "Elevation Gain",
+        "max-slope": "Max Slope",
+        "average-climbing-slope": "Average Climbing Gradient",
+        "slope": "Slope",
+        "terrain": "Road Surface",
+        "change": "Change",
+        "download": "Download",
+        "album-select": "Select from Album",
+        "take-photo": "Take Photo",
+        "take-video": "Take Video",
+        "more": "More",
+        "understand": "Got It",
+        "connect": "Connect",
+        "connecting": "Connecting",
+        "disconnect": "Disconnect",
+        "default": "Default",
+        "ok": "OK",
+        "background": "Background",
+        "exit-team": "Leave Team",
+        "archive-team": "Archive Team",
+        "create": "Create",
+        "apply-use": "Apply",
+        "clear": "Clear",
+        "nearby": "Nearby",
+        "my-collection": "My Collection",
+        "hours": "Hours",
+        "report-about-route": "Report About This Route",
+        "send-to-chat": "Send to Chat",
+        "download-gpx": "Download GPX",
+        "details": "Details",
+        "report-route": "Report Route",
+        "start-exercising": "Start Exercising",
+        "stay-on-page": "Stay on Page",
+        "ready": "Ready",
+        "readied": "Readied",
+        "checkin": "Check-in",
+        "confirmed": "Confirmed",
+        "free-download": "Free Download",
+        "bg-location": {
+            "title": "Currently using background location",
+            "message": "Helps users automatically detect the current location when the activity is in progress and the APP is not opened. If the activity is in progress, please do not turn it off to avoid incorrect activity record judgements!"
+        },
+        "pwa-update": {
+            "message": "A new version of the software is available! The system may not function properly if not updated. Press OK to restart immediately"
+        },
+        "app-update": {
+            "title": "Update Available",
+            "message": "A new version of the app is available. Would you like to update?",
+            "confirm": "Go to Update",
+            "cancel": "Not Now"
+        },
+        "app-web-update": {
+            "title": "A new version of the interface has been detected. Please update to load the latest content.",
+            "action": "Update",
+            "downloading": "Downloading screen content, please wait a moment"
+        },
+        "theme-mode": {
+            "title": "Theme Settings",
+            "light": "Light Mode",
+            "dark": "Dark Mode",
+            "system": "System Default"
+        },
+        "app-info": {
+            "app-version": "App Version: {{version}} (Build {{build}})",
+            "content-version": "Content Version: {{version}}",
+            "check-update": "Check for Updates",
+            "has-checked": "Checking for updates in the background",
+            "already-latest-version": "You’re already using the latest version"
+        }
+    },
+    "enums": {
+        "ActivityDifficultyType": {
+            "Casual": "Leisure",
+            "Beginner": "Beginner Training",
+            "Advanced": "Advanced Training",
+            "Challenge": "Challenge Training"
+        },
+        "ActivityDifficultyType_short": {
+            "Casual": "Leisure",
+            "Beginner": "Beginner",
+            "Advanced": "Advanced",
+            "Challenge": "Challenge"
+        },
+        "TemperatureUnitType": {
+            "Celsius": "Celsius",
+            "Fahrenheit": "Fahrenheit"
+        },
+        "MeasureUnitType": {
+            "Metric": "Metric",
+            "Imperial": "Imperial"
+        },
+        "SexType": {
+            "Male": "Male",
+            "Female": "Female",
+            "Other": "Non-binary/Other",
+            "Unknown": "Prefer not to say"
+        },
+        "DayOfWeek": {
+            "Sunday": "Sun",
+            "Monday": "Mon",
+            "Tuesday": "Tue",
+            "Wednesday": "Wed",
+            "Thursday": "Thu",
+            "Friday": "Fri",
+            "Saturday": "Sat"
+        },
+        "DayOfWeek_weekday": {
+            "Sunday": "Sunday",
+            "Monday": "Monday",
+            "Tuesday": "Tuesday",
+            "Wednesday": "Wednesday",
+            "Thursday": "Thursday",
+            "Friday": "Friday",
+            "Saturday": "Saturday"
+        },
+        "TimePeriod": {
+            "AM": "Morning (AM)",
+            "PM": "Afternoon (PM)"
+        },
+        "CreatedBy": {
+            "Follow": "Followed Users",
+            "Team": "Team"
+        },
+        "CustomPageType": {
+            "PrivacyPolicy": "Privacy Policy",
+            "UserTerms": "Terms of Service",
+            "PrivacyPolicyAndUserTerms": "Privacy Policy and Terms of Service",
+            "DeletePolicy": "Account Deletion Description"
+        },
+        "PrivacyType": {
+            "Public": "Everyone",
+            "Private": "Not Public",
+            "OnlyFollow": "Followers Only"
+        },
+        "PrivacyTypeSelect": {
+            "Public": "Public to Everyone",
+            "Private": "Not Public",
+            "OnlyFollow": "Followers Only"
+        },
+        "TeamPermissionType": {
+            "Everyone": "All Members",
+            "Manager": "Managers"
+        },
+        "UserPermissionType": {
+            "None": "Not Open",
+            "Everyone": "Everyone",
+            "Follower": "My Followers",
+            "FollowByUser": "Users I Follow"
+        },
+        "UserPermissionType2": {
+            "None": "Mute Notification",
+            "Everyone": "Everyone",
+            "Follower": "My Followers",
+            "FollowByUser": "Users I Follow"
+        },
+        "UserPermissionType_team": {
+            "None": "Mute Notification",
+            "Everyone": "All Members",
+            "Follower": "Members Who Follow Me",
+            "FollowByUser": "Members I Follow"
+        },
+        "AudienceType": {
+            "None": "None (ask each time)",
+            "Custom": "Custom Users",
+            "Follow": "My Fans",
+            "All": "Everyone"
+        },
+        "StopwatchType": {
+            "Time": "Riding Time",
+            "Speed": "Current Speed",
+            "AverageSpeed": "Average Speed",
+            "Slope": "Slope",
+            "Distance": "Moving Distance",
+            "Pace": "Pace",
+            "Calorie": "Calorie",
+            "HeartRate": "Heart Rate",
+            "PedalingFrequency": "Cadence",
+            "Power": "Power"
+        },
+        "StopwatchType-Unit-Metric": {
+            "Time": "Riding Time",
+            "Speed": "Speed (km/h)",
+            "AverageSpeed": "Avg Speed (km/h)",
+            "Slope": "Slope (%)",
+            "Distance": "Distance (km)",
+            "Pace": "Pace (min/km)",
+            "Calorie": "Calorie (kcal)",
+            "HeartRate": "Heart Rate (bpm)",
+            "PedalingFrequency": "Cadence (rpm)",
+            "Power": "Power (W)"
+        },
+        "StopwatchType-Unit-Imperial": {
+            "Time": "Riding Time",
+            "Speed": "Speed (mph)",
+            "AverageSpeed": "Avg Speed (mph)",
+            "Slope": "Slope (%)",
+            "Distance": "Distance (mi)",
+            "Pace": "Pace (min/mi)",
+            "Calorie": "Calorie (kcal)",
+            "HeartRate": "Heart Rate (bpm)",
+            "PedalingFrequency": "Cadence (rpm)",
+            "Power": "Power (W)"
+        },
+        "RouteRatingTag": {
+            "GoodRating": "Style",
+            "RouteMainSurface": "Road Type",
+            "RouteDifficulty": "Difficulty"
+        },
+        "RouteCommentSortType": {
+            "MostLikeDesc": "Most Liked",
+            "TimeDesc": "Latest First"
+        }
+    },
+    "dialog": {
+        "alert": {
+            "title": "System Message"
+        },
+        "weather-view": {
+            "title": "Weather Status"
+        },
+        "error-dialog": {
+            "title": "Error Message"
+        },
+        "messager": {
+            "file": "Select from Files",
+            "camera": "Open Camera",
+            "leave-sent": "Busy, temporarily closing chat feature"
+        },
+        "activity-map": {
+            "import-btn": "Load Route",
+            "save-btn": "Done"
+        },
+        "image": {
+            "title": "Image Viewer",
+            "prev": "Previous",
+            "next": "Next"
+        },
+        "position-filter": {
+            "distance": {
+                "Metric": "Within {{number}} km",
+                "Imperial": "Within {{number}} miles"
+            }
+        },
+        "activity-invite": {
+            "title": "Invite"
+        },
+        "activity-users": {
+            "title": "Participants",
+            "invitees": "Invitees"
+        },
+        "photo-library": {
+            "dir-items": {
+                "all": "All Images"
+            },
+            "selectCount": "{{count}} selected"
+        },
+        "activity-select": {
+            "title": "Add Activity",
+            "rgistered-title": "Registered",
+            "recent-title": "Recent Participation",
+            "recent-desc": "Only activities completed within three months are displayed",
+            "nodata": "It seems you have no recent activities"
+        },
+        "record-select": {
+            "title": "Add Workout Record",
+            "nodata": {
+                "post": "It seems you have no recent workout records",
+                "message": "No workout record found"
+            },
+            "memo": "*Only workout records within three months can be uploaded",
+            "search-placeholder": "Search"
+        },
+        "location-select": {
+            "title": "Location Info",
+            "search-placeholder": "Search Location",
+            "target-position": "Target Location"
+        },
+        "search": {
+            "keyword-placeholder": "Search Users",
+            "search-keyword": "Search \"{{keyword}}\"",
+            "maybe-you-want": "Maybe you want to find",
+            "related-users": "Related Users",
+            "nodata": "No results found for \"{{keyword}}\".",
+            "result-title": "Search Results"
+        },
+        "chat": {
+            "page-title": "Messages",
+            "title1": "All",
+            "title2": "Friends",
+            "title3": "Activities",
+            "title4": "Teams",
+            "title5": "Stranger Messages",
+            "menu": {
+                "option1": "Mute notifications until",
+                "option2": "Blocked List",
+                "option3": "Settings",
+                "open-notify": "Enable Notifications",
+                "close-notify": "Disable Notifications"
+            },
+            "mute-title": "Mute Notifications",
+            "mute-prompts": "Mute all message notifications unless you are mentioned.<br/>Others can see that you are in silent mode.",
+            "mute-options": {
+                "item1": "30 minutes",
+                "item2": "2 hours",
+                "item3": "6 hours",
+                "item4": "Until re-enabled"
+            },
+            "block-list": {
+                "title": "Blocked List",
+                "prompts": "You will not receive messages from blocked users.",
+                "message": "Blocked this user on {{date}}",
+                "unlock": "Confirm Unblock?",
+                "unlock-prompts": "Once unblocked, the other person will be able to view your profile\nand contact you. Confirm to unblock?"
+            },
+            "chat-setting": {
+                "title": "Chat Settings"
+            },
+            "chat-room": {
+                "typing-msg-placeholder": "Send a message...",
+                "reply-user": "Reply to {{ name }}",
+                "image": "Image",
+                "record": "Riding Record: {{name}}",
+                "location": "Location: {{name}}",
+                "route": "Route: {{name}}",
+                "ctrl-mute": "Mute",
+                "ctrl-unmute": "Unmute",
+                "ctrl-add-file": "Attach Image",
+                "ctrl-leave": "Leave Group",
+                "ctrl-report": "Report",
+                "has-lock-user": "Block Reminder",
+                "has-lock-user-sub": "This chat room contains users you've blocked. If you continue, they will see your messages in the chat.",
+                "keep-open-room": "Open Chat",
+                "look-black-list": "View Blocked List",
+                "user-not-exist": "This user does not exist",
+                "cannot-pass-msg": "Cannot send messages",
+                "cannot-pass-msg-sub": "This chat room is closed and no more messages can be sent.",
+                "alread-lock": "You have blocked this user",
+                "alread-lock-subtitle": "You cannot send private messages or activity/team invitations until you unblock them.",
+                "receive-from": "Receive messages from {{ name }}?",
+                "receive-from-subtitle": "If accepted, the other party can send private messages to you and see if you’ve read them.",
+                "receive-from-reject": "Block and Reject",
+                "receive-from-unlock": "Unblock",
+                "receive-reject-title": "Are you sure you want to block?",
+                "receive-reject-subtitle": "This user will be blocked until unblocked. You will not receive any messages from them. The user will not know your decision.",
+                "receive-from-allow": "Accept",
+                "share-location": "Share Location",
+                "share-sport-record": "Workout Record",
+                "share-route": "Route GPX",
+                "total-estimated-duration": "Estimated Duration",
+                "total-terrain": "Road Surface",
+                "accept-message": "{{name}} can now send private messages to you and see if you have read them."
+            },
+            "media-list": {
+                "title": "All Images",
+                "cancel": "Cancel",
+                "select": "Select",
+                "nodata": "No images available"
+            },
+            "instant-search": {
+                "not-enough-words": "Not enough letters to search",
+                "not-enough-words-desc": "Please enter at least 2 letters to search messages",
+                "nodata": "No messages found for \"{{keyword}}\"",
+                "nodata-desc": "Try another keyword"
+            }
+        },
+        "like-comment": {
+            "tabComment": {
+                "title": "Comments {{number}}",
+                "nodata": "No one has commented yet",
+                "input-placeholder": "Comment..."
+            },
+            "tabLike": {
+                "title": "Likes {{number}}",
+                "nodata": "No one has liked it yet"
+            }
+        },
+        "post-comment-list": {
+            "Body": "Comment",
+            "menu-item": {
+                "report-comment": "Report Comment"
+            }
+        },
+        "user-share": {
+            "title": "Share Profile"
+        },
+        "route-share": {
+            "title": "Select Route",
+            "tab-explore": "Explore",
+            "tab-collect": "Collection"
+        },
+        "route-explore": {
+            "recent": "Just now",
+            "popular-route": "Popular Routes Nearby",
+            "location-permission": "To find popular routes near you, we must know your location."
+        },
+        "route-from-filter": {
+            "route-count": "{{count}} routes"
+        },
+        "route-detail": {
+            "createdTime": "Created Time",
+            "use-count-title": "Number of Valid Completions",
+            "use-count": "{{count}} times",
+            "created-user": "Created By",
+            "created-route-count": "This user has created {{count}} routes"
+        },
+        "report": {
+            "title": "Please provide a more detailed description",
+            "user-sub-title": "After submission, the other person will be blocked. You can unblock in your blocked list.",
+            "text-placeholder": "Issue Description (Required)",
+            "route-title": "Report This Route",
+            "route-sub-title": "Please help us clarify the relevant issues",
+            "user-title": "Report {{name}}",
+            "user-type-sub-title": "Please help us clarify the relevant issues.<br/>Don’t worry, the other person will not know your information.",
+            "post-title": "Why are you reporting this post?",
+            "post-comment-title": "Why are you reporting this post comment?",
+            "route-comment-title": "Why are you reporting this route comment?",
+            "chat-message-title": "Why are you reporting this chat message?",
+            "record-comment-title": "Why are you reporting this comment?",
+            "team-title": "Why are you reporting this team?",
+            "activity-title": "Why are you reporting this activity?",
+            "submit": "Submit",
+            "report-user-submit": "Submit and Block",
+            "report-type-title": "Route Issue Type: {{name}}",
+            "report-message": "This route has been reported by other users for the following issues:",
+            "report-completed": "Issue has been resolved",
+            "report-completed-memo": "If the above issue has been resolved, you can remove the report to contribute to the community!",
+            "route-success-info": {
+                "title": "Your route report has been received,<br/>our staff will review it later.",
+                "message": "Thank you for your contribution to the community.<br/>Let’s create a better outdoor sports experience together!"
+            },
+            "user-success-info": {
+                "title": "Thank you for reporting,<br/>let’s maintain a positive community atmosphere together!"
+            },
+            "post-success": "We have received your report. You will no longer see this content.",
+            "wating-report-success": "We’ve received your report and will deal with it as soon as possible.",
+            "Message": "Issue Description"
+        },
+        "device-seeking": {
+            "title": "Connect Device",
+            "your-device-title": "Your Device",
+            "no-link-device": "No device is connected",
+            "nearby-bluetooth-device": "Nearby Bluetooth Devices",
+            "not-find": "Cannot find device",
+            "seeking": "Searching...",
+            "seek-again": "Search Again",
+            "your-device": "Your Device",
+            "question": {
+                "title": "Can't find the Bluetooth device?",
+                "resolution1": "1. Make sure your Bluetooth device is not too far from your phone",
+                "resolution2": "2. Turn off the Bluetooth accessory and turn it back on",
+                "resolution3": "3. Make sure the Bluetooth accessory is on and fully charged or plugged in",
+                "resolution4": "4. If the accessory is battery-powered, check whether the battery needs replacement"
+            },
+            "not-linking": "No device is connected",
+            "nearby-device": "Nearby Bluetooth Devices"
+        },
+        "stopwatch-info": {
+            "title": "Change Stopwatch Info",
+            "need-link-device": "Needs a connected {{deviceName}} sensor",
+            "linked-device": "Connected: {{deviceName}}"
+        },
+        "share-to": {
+            "title": "Share Target",
+            "nodata": "No matching data found",
+            "no-friend": "No one in your following list",
+            "no-friend-desc": "It seems you have not followed anyone yet. Invite friends, discover new riders, and create riding memories together!"
+        },
+        "user-apply": {
+            "title": "Join Team Application"
+        },
+        "team-activity": {
+            "team": "Team",
+            "activity": "Activity"
+        },
+        "invite-friends": {
+            "title": "Invite Followers",
+            "ride-partner-title": "Invite a Riding Partner",
+            "search-placeholder": "Please enter user name",
+            "invite-by-link": "Invite via Link",
+            "already-send": "Already Sent",
+            "send": "Send",
+            "re-send": "Resend Invitation",
+            "re-send-success": "Invitation notification has been re-sent!"
+        },
+        "leave-team": {
+            "title": "Are you sure you want to leave {{teamName}}?",
+            "confirm": "Leave Team",
+            "message": "Leaving the team will also remove you from the team’s chat channel.",
+            "toast": "You have left {{teamName}}"
+        },
+        "team-only-manager": {
+            "title": "You are the only manager",
+            "message": "If you want to leave the team, please assign a new manager or archive the team.",
+            "cancel": "Manage Members",
+            "confirm": "Archive Team"
+        },
+        "team-archive": {
+            "title": "Are you sure you want to archive the team?",
+            "message": "Once archived, no new members can be added, and current join requests will be removed. If the team has no new activities or posts within 14 days after archiving, it will be disbanded.",
+            "confirm": "Archive"
+        },
+        "main-team-set": {
+            "set": "Set as Main Team",
+            "remove": "Remove Main Team",
+            "set-main": "Are you sure you want to set {{teamName}} as your main team?",
+            "set-tip": "This team name will be marked under your name to let others know your representing team.",
+            "finish": "{{teamName}} is now your main team",
+            "finish-tip": "Start enjoying endless fun exploring outdoor sports with your partners. Challenge your limits, surpass yourself!",
+            "remove-main": "Are you sure you want to remove {{teamName}} from your main team?",
+            "remove-tip": "This team name will no longer be marked under your name"
+        },
+        "member-ctrl": {
+            "set-permissions": "Change Permissions",
+            "change-alias": "Change Title",
+            "remove-member": "Remove Member",
+            "ask-remove-member": "Remove this member from the team?",
+            "ask-remove-member-tip": "After removal, any activities they participated in will no longer count towards the team's mileage.",
+            "remove-member-success": "{{name}} has been removed from the team",
+            "confirm-remove": "Confirm Removal",
+            "setpermissions": "Change Permissions",
+            "setpermissions-tip": "Change {{name}}’s permissions to?",
+            "changealias": "Change Title",
+            "changealias-tip": "Change {{name}}’s title to?",
+            "changealias-success": "{{name}}’s title has been changed to {{alias}}",
+            "revmoe-alias": "{{name}}’s title has been removed",
+            "as-administrator": "Set as Manager",
+            "as-administrator-success": "{{name}} is now a Manager",
+            "as-memeber": "Set as Member",
+            "as-memeber-success": "{{name}} is now a Member",
+            "empty-alias": "None"
+        },
+        "user-select": {
+            "title": "Add Members",
+            "search-placeholder": "Search member name"
+        },
+        "my-route-collection": "My Routes",
+        "lead-rider": {
+            "title": "Add Lead Rider",
+            "search-placeholder": "Search"
+        },
+        "activity-points": {
+            "title-start": "Activity Gathering Point",
+            "title-break": "Add Midpoint Stop",
+            "rest-points": {
+                "7-11": "Convenience Store",
+                "coffee": "Cafe",
+                "view": "Scenic Spot"
+            },
+            "too-far": "Currently too far from the activity route",
+            "tip-remove-points-on-map": "Tap to remove this stop"
+        },
+        "create-activity-success": {
+            "already-release": "{{name}}<br/>The activity is published",
+            "congratulation": "Congratulations! The activity is now open for registration. Share this new activity with everyone!",
+            "add-to-calendar": "Add to Calendar",
+            "share-page": "Share Activity Page"
+        },
+        "create-route-success": {
+            "title": "{{name}}<br/>has been added to My Routes",
+            "text": "Leave your comment on this route so others can explore it too!",
+            "addActivity": "Create an Activity",
+            "leaveComment": "Leave a Comment"
+        },
+        "tip-info": {
+            "sticky-note-example-text": "Sticky note content",
+            "title": "What is a Team Sticky Note?",
+            "message": "Any manager of a public team can use the Team Sticky Note feature to update the team's current status, such as announcing new activities, recruiting new members, etc. If the content is unchanged, the post will remain on the map for 7 days.<br/><br/>Of course, in a usage scenario that respects and embraces everyone, Team Up does not restrict the content that any team wants to publish.",
+            "check-text": "Do not show this prompt again"
+        },
+        "arrange-route": {
+            "title": "Draw New Route",
+            "ask-leave": "Are you sure you want to leave 'Draw New Route'?",
+            "ask-leave-tip": "Exiting now will discard any unsaved progress.",
+            "sure-leave": "Confirm Exit",
+            "loading": "Finding the location in the map view",
+            "point-select": "Click to add or set route coordinates",
+            "total-distance-time": "Total trip time: {{time}} ({{distance}} {{unit}})",
+            "select-pos-name": "Select Destination",
+            "select-pos-memo": "Pan and zoom the map around the pin"
+        },
+        "team-intro": {
+            "view-detail": "View Homepage"
+        },
+        "chat-select": {
+            "title": "Please select a chat room",
+            "send": "Send",
+            "search-placeholder": "Search chat rooms",
+            "nodata": {
+                "title": "No chat rooms available",
+                "text": "It seems you haven't joined any teams or followed any riders. Explore new riders and teams, and create riding memories with others!"
+            }
+        },
+        "road-desc": {
+            "title": {
+                "Asphalt": "Asphalt Road",
+                "Gravel": "Gravel Road",
+                "Dirt": "Dirt Road"
+            },
+            "text": {
+                "Asphalt": "Asphalt roads are typically smoother and more stable, providing a comfortable and efficient riding experience. Overall, asphalt roads are ideal for long-distance or high-speed rides.",
+                "Gravel": "Gravel roads are usually covered with small stones or gravel, requiring more skill and attention. Such surfaces also increase the risk of slipping and vehicle wear.",
+                "Dirt": "Dirt roads can become muddy and slippery in wet or rainy conditions. Riding on dirt roads requires more balance and control, as well as dealing with potential traction changes."
+            }
+        },
+        "route-select-report-confirm": {
+            "list-title": "Users have reported that this route has the following issues:",
+            "choose-another": "Choose Another Route",
+            "confirm": "Confirm Choice",
+            "memo": "If you still choose this route, pay attention to safety. It’s recommended to prepare an alternate plan. Enjoy your ride!"
+        },
+        "activity-cancel": {
+            "title": "Cancellation Reason",
+            "sub-title": "Please select the reason for cancelling the activity. The content will be sent to the participants.",
+            "desc-title": "Describe the Cancellation Reason",
+            "cancel-reason-title": "This activity has been cancelled due to the following reason",
+            "cancel-reason": {
+                "BadWeather": "<div style='font-size:64px;line-height: initial;'>⛈️</div><div>Bad Weather</div>",
+                "NotEnoughPeople": "<div style='font-size:64px;line-height: initial;'>🙈</div><div>Insufficient Participants</div>",
+                "PersonalReason": "<div style='font-size:64px;line-height: initial;'>😣</div><div>Personal Reasons</div>",
+                "Other": "{{reason}}"
+            },
+            "explore-more-activities": "Explore More Activities"
+        },
+        "exercise-raedy-start": "Ready to Go",
+        "activity-participant-list": {
+            "title": "Participants {{count}}",
+            "cancel-confirm": {
+                "title": "Are you sure you want to cancel Ready status?",
+                "message": "This user is currently marked as Ready. Are you sure you want to cancel?",
+                "confirm": "Confirm Cancel",
+                "cancel": "Keep Ready"
+            },
+            "guest-cancel-confirm": {
+                "title": "Are you sure you want to cancel Check-in?",
+                "message": "This user is currently checked in. Are you sure you want to cancel?",
+                "confirm": "Confirm Cancel",
+                "cancel": "Keep Check-in"
+            },
+            "sort": {
+                "Default": "Default",
+                "Speed": "Speed",
+                "Power": "Power",
+                "HeartRate": "Heart Rate",
+                "PedalingFrequency": "Cadence"
+            },
+            "no-share": "Not shared",
+            "set-leader": "Set as Ride Leader",
+            "set-leader-confirm": {
+                "title": "Set as Ride Leader?",
+                "message": "Please confirm if you want to set \"{{name}}\" as the ride leader.<br/>This action cannot be undone!"
+            }
+        },
+        "activity-gps-share": {
+            "title": "Activity Location Sharing Settings"
+        },
+        "download-app": {
+            "title": "Take Action, Use Our Influence",
+            "sub-title": "Create a better future",
+            "qrcode-title": "Scan with your phone to download now",
+            "qrcode-memo": "Supports both iOS and Android",
+            "download": "Download APP"
+        },
+        "visit-reg": {
+            "title": "Visitor Activity Registration",
+            "sign-up": "Sign Up",
+            "FirstNamePlaceholder": "Enter first name",
+            "FirstName": "First Name",
+            "LastNamePlaceholder": "Enter last name",
+            "LastName": "Last Name",
+            "Phone": "Contact Number",
+            "PhonePlaceholder": "Enter your contact number"
+        }
+    },
+    "pages": {
+        "login": {
+            "title": "Log In / Register",
+            "description": "By registering or logging in, you agree to the <br/><span class='tmup-term link-underline c-pointer'>TeamUp Terms of Service</span> and <span class='tmup-private link-underline c-pointer'>Privacy Policy</span>.",
+            "logo-memo": "Gathering fun, sharing a wonderful outdoor life",
+            "Code": "Verification Code",
+            "Email": "Email",
+            "Password": "Password",
+            "FirstName": "First Name",
+            "FirstNamePlaceholder": "Your first name",
+            "LastName": "Last Name",
+            "LastNamePlaceholder": "Your last name",
+            "ConfirmPassword": "Confirm Password",
+            "EmailPlaceholder": "Please enter Email",
+            "PasswordPlaceholder": "Please enter password",
+            "ConfirmPasswordPlaceholder": "Please re-enter password",
+            "slide-item": {
+                "title1": "Join Teams, Organise Activities",
+                "title2": "Interact, Encourage",
+                "title3": "Explore, Discover, Depart",
+                "title4": "Share a Wonderful Outdoor Life"
+            },
+            "btn": {
+                "facebook": "Continue with Facebook",
+                "google": "Continue with Google",
+                "apple": "Continue with Apple",
+                "email": "Continue with Email",
+                "wait-confirm": "Awaiting Confirmation",
+                "forget-password": "Forgot Password?",
+                "merge-account": "Merge This Account",
+                "create-account": "Create New Account",
+                "merge-completed": "Complete and Log In"
+            },
+            "register-1": {
+                "title": "How should we address you?",
+                "description": "Please set a username so others can recognise you.<br/>Don’t worry, you can still change it later."
+            },
+            "register-2": {
+                "title": "Set Your Usual Location",
+                "description": "Set the region you are often in, then you'll get activity and user recommendations in that region.",
+                "select-empty": {
+                    "country": "Select Country",
+                    "city": "Select City"
+                }
+            },
+            "register-3": {
+                "title": "Users You May Be Interested In"
+            },
+            "email-login": {
+                "title": "Register or Log In with Email",
+                "web-title": "Log In with Email"
+            },
+            "email-register": {
+                "title": "Verify Your Email",
+                "description": "Verify your Email to receive relevant notifications and account recovery services."
+            },
+            "email-register-pwd": {
+                "title": "Set Your Password",
+                "description": "Set your login password. Please enter at least 8 letters or digits."
+            },
+            "forget": {
+                "title": "Retrieve Password via Email"
+            },
+            "forget-pwd": {
+                "title": "Set New Password",
+                "description": "Set your login password. Please enter at least 8 letters or digits.",
+                "save-completed": "Password changed successfully. Please use your new password to log in."
+            },
+            "email-register-valid": {
+                "title": "Enter Verification Code",
+                "description": "A verification email has been sent to your mailbox,<br/>please retrieve the code in your inbox. (valid for 30 minutes)"
+            },
+            "forget-valid": {
+                "title": "Enter Verification Code",
+                "description": "A verification email has been sent to your mailbox,<br/>please retrieve the code in your inbox. (valid for 30 minutes)"
+            },
+            "resend-code-title": "Didn't receive the verification code?",
+            "cancel-register-confirm": {
+                "title": "End Registration Process",
+                "message": "Going back will end the account registration process.<br/>Do you want to continue registering?",
+                "continue": "Continue Registration"
+            },
+            "login-binding": {
+                "title": "Email Already in Use",
+                "description": "This login account's Email has already been bound. Would you like to merge it into the following Email account?"
+            },
+            "login-binding-pwd": {
+                "title": "Enter Password",
+                "description": "Please enter the account password for \"{{email}}\". Once completed, you will log in to that account."
+            },
+            "cancelDelete": "Log in to the archived account again, and the account deletion will be cancelled."
+        },
+        "home": {
+            "title": "Home",
+            "nodata": "No posts available"
+        },
+        "activity": {
+            "title": "Explore Activities",
+            "loc-permission-btn": "Go to Location Permission Settings",
+            "location-permission": "Location permission is not enabled, unable to get your location to explore nearby activities. Please specify your location or enable location permission.",
+            "follow": "{{count}} followed users are participating",
+            "filter": {
+                "time-period": "Time Period",
+                "multiple-time-period": "Multiple Time Periods",
+                "difficulty-type": "Intensity",
+                "multiple-difficulty": "Multiple Intensity Levels",
+                "popular": "Popular",
+                "upcoming": "Starting Soon"
+            },
+            "accept-join": "{{name}} joined your activity {{actName}}"
+        },
+        "activity-form": {
+            "title": {
+                "new": "Create Activity",
+                "edit": "Edit Activity"
+            },
+            "Name": "Activity Name",
+            "Desc": "Activity Description",
+            "CoverImage": "Cover Image",
+            "StartTime": "Activity Date",
+            "LastRegistrationTime": "Registration Deadline",
+            "DifficultyType": "Intensity Level",
+            "MapRouteId": "Route",
+            "date-placeholder": "Select activity date and time",
+            "registrationTime-placeholder": "Select the registration deadline date and time",
+            "LimitPeople": "Limit",
+            "limitCount-placeholder": "Participant limit",
+            "unlimitCount": "Unlimited",
+            "level": "Intensity",
+            "add-host-team": "Add Hosting Team",
+            "add-host-team-tip": "Include your team as the hosting unit. Once the activity is created, it will notify all team members and add the activity record and mileage to the team.",
+            "optional": "(Optional)",
+            "add-host-team2": "Add Hosting Team",
+            "host-team": "Hosting Team",
+            "ask-remove-host-team": "Are you sure you want to remove the hosting team?",
+            "ask-remove-host-team-tip": "After removing the team, the activity record and mileage will not be added to that team.",
+            "sure-remove-host-team": "Remove Team",
+            "release-event": "Publish Activity",
+            "step-1": {
+                "title": "Activity Introduction",
+                "intro": "Introduce your activity to others.",
+                "activity-name-placeholder": "Activity Name",
+                "activity-intro-placeholder": "Activity details, process, preparation, and notes, etc."
+            },
+            "step-2": {
+                "title": "Activity Settings",
+                "intro": "Introduce your activity to others.",
+                "setting": "Settings",
+                "privacy": {
+                    "title": "Privacy Settings",
+                    "private": "Invitation Only",
+                    "public": "Public",
+                    "private-sub": "Only the host or the hosting team’s participants can invite users to view and sign up for the activity.",
+                    "public-sub": "Anyone can view and sign up for this activity"
+                },
+                "join-review": {
+                    "title": "Join Approval",
+                    "true": "Approval Required",
+                    "sub-true": "Applicants need the host’s approval to join.",
+                    "false": "No Approval Required",
+                    "sub-false": "Applicants can join immediately without approval."
+                },
+                "guest-join": {
+                    "title": "Allow Visitor Sign Up",
+                    "true": "Allow",
+                    "sub-true": "Non-TeamUp users can register via the shared link page",
+                    "false": "Do Not Allow",
+                    "sub-false": "Only TeamUp users can register"
+                }
+            },
+            "step-3": {
+                "title": "Route",
+                "intro": "Set the route for this activity.",
+                "specificRoute": {
+                    "true": "Specify Route",
+                    "false": "No Route"
+                },
+                "freeRoute": "This activity does not have a fixed route, but participants can still see each other’s locations once the activity starts.",
+                "routeleader": "Route Leader",
+                "add-lead-rider": "Add Lead Rider",
+                "add-lead-rider-tip": "Set a lead rider for your activity",
+                "lead-rider": "Lead Rider",
+                "lead-rider-tip": "After creating the activity, you will invite the following users as the lead riders:",
+                "route-generate": {
+                    "title": "Route Creation Method",
+                    "myroute": "My Routes",
+                    "newroute": "Draw a New Route",
+                    "upload": "Upload from File"
+                }
+            },
+            "step-4": {
+                "title": "Process",
+                "intro": "Set the gathering point and midpoint stops for this activity.",
+                "startpoint": "Activity Gathering Point",
+                "startpoint2": "Gathering Point",
+                "breakpoint": "Midpoint Stop",
+                "add-startpoint": "Add Gathering Point",
+                "add-breakpoint": "Add Midpoint Stop",
+                "add-edit-breakpoint": "Add or Edit Midpoint Stop",
+                "set-startpoint-by-route": "Use the route's starting point as the gathering point",
+                "set-startpoint-by-other": "Set another gathering point",
+                "drag-item-tip": "Press and hold the stop card to drag and reorder."
+            },
+            "edit-success": "Activity {{name}} updated successfully!"
+        },
+        "acitvity-search": {
+            "search-placeholder": "Find Activities"
+        },
+        "activity-detail": {
+            "creator": "Organiser",
+            "main-team": "Hosting Team",
+            "join-users": "Total {{count}} participants",
+            "leader-users": "{{name}} <span class='sub-text'>as Lead Rider</span>",
+            "points": "Gathering & Stop Points",
+            "sign-up": "Sign Up",
+            "join": "Join Activity",
+            "registration-deadline": "Registration ends on {{date}}",
+            "registration-ended": "Registration closed",
+            "registered-wait": "Registered, pending approval",
+            "finish": "Activity has ended",
+            "verifyApply": "Your registration is pending host approval, please wait.",
+            "cancel-apply": "Cancel Registration",
+            "cancel-apply-confirm": {
+                "title": "Are you sure you want to cancel?",
+                "message": "You will not be able to reapply within 7 days",
+                "cancel-text": "Keep Registration"
+            },
+            "joined": "You have joined this activity",
+            "countdown-begins": "Activity starts in {{time}}",
+            "start-before-title": "The activity is about to start",
+            "start-before-text": "Waiting for participants to be ready...",
+            "participants-are-ready": "+{{count}} participants ready",
+            "start-title": "The activity has started!",
+            "start-activity": "Enter Activity",
+            "more-item": {
+                "invite": "Invite Followers",
+                "share-post": "Share to Post",
+                "share": "Share to",
+                "edit": "Edit Activity",
+                "location-share": "Activity Location Sharing Settings",
+                "cancel": "Cancel Activity",
+                "report-activity": "Report Activity"
+            },
+            "cancel-confirm": {
+                "title": "{{count}} participants have registered. Are you sure you want to cancel this activity?",
+                "message": "After cancellation, participants will receive a cancellation notice.",
+                "confirm-cancel": "Cancel Activity",
+                "close": "Keep Activity"
+            },
+            "joined-chat-message": "You can now open the activity chat room to communicate with other participants!",
+            "open-chat": "Go to Chat",
+            "guest-join-confirm": {
+                "title": "Download the APP?",
+                "guest-message": "This activity allows visitor registration, but to get complete activity records and sharing, please download and register on the APP to sign up.",
+                "not-guest-message": "This activity does not provide visitor registration. Please download and register on the APP to sign up.",
+                "download": "Download APP",
+                "continue": "Continue with Visitor Registration"
+            }
+        },
+        "activity-user-list": {
+            "title": "Participants",
+            "tab-title1": "Joined",
+            "tab-title2": "Invited",
+            "tab-title3": "Applicants"
+        },
+        "activity-join-list": {
+            "founder-title": "Organiser",
+            "rider-title": "Lead Rider",
+            "user-title": "Members",
+            "guest-title": "Guests",
+            "guest-join-text": "And another {{count}} guests joined this activity",
+            "guest-no-phone": "No contact info",
+            "remove-user-confirm": {
+                "title": "Remove this participant?",
+                "message": "{{name}}<br/>They won’t know you removed them",
+                "confirm-text": "Remove Participant",
+                "cancel-text": "Keep Participant"
+            },
+            "stop": "Paused",
+            "running": "In Progress",
+            "ended": "Ended",
+            "not-start": "Not Started"
+        },
+        "activity-inviting-list": {
+            "nodata": "No one is being invited"
+        },
+        "activity-apply-list": {
+            "nodata": "No one is applying to join the activity"
+        },
+        "route-form": {
+            "title": "Create Route",
+            "edit-title": "Edit Route",
+            "Name": "Route Name",
+            "route-name-tip": "Route name within 50 characters",
+            "create-method": "Route Creation Method",
+            "new-route": "Draw a New Route",
+            "upload": "Upload from File",
+            "route": "Route",
+            "auto-collect": "After the route is added, it will be automatically saved",
+            "public-explore": "Once the route is ridden by other users, it can be publicly explored",
+            "ask-leave": "Are you sure you want to leave 'Create Route'?",
+            "ask-leave-tip": "You will lose your current progress if you exit now.",
+            "sure-leave": "Confirm Exit"
+        },
+        "route-search": {
+            "search-placeholder": "Find Routes"
+        },
+        "route-comment-form": {
+            "add-title": "Post Comment",
+            "edit-title": "My Comment",
+            "Rating": "Route Satisfaction",
+            "RouteDifficulty": "This route’s difficulty is",
+            "RouteMainSurface": "The main road surface of this route is",
+            "Desc": "Share your thoughts",
+            "GoodRating": "Reasons you are satisfied",
+            "BadRating": "Reasons you are dissatisfied",
+            "Desc-placeholder": "Write a comment",
+            "submit": "Post Comment",
+            "back-confirm": {
+                "new": {
+                    "title": "Are you sure you want to cancel posting a comment?",
+                    "message": "Your comment is being edited.<br/>Are you sure you want to discard it?",
+                    "confirm": "Cancel Comment"
+                },
+                "edit": {
+                    "title": "Are you sure you want to cancel updating the comment?",
+                    "message": "Your comment is being edited.<br/>Are you sure you want to discard the update?",
+                    "confirm": "Cancel Update"
+                }
+            },
+            "save": {
+                "new": {
+                    "saving": "Posting comment...",
+                    "saved": "Comment posted successfully! Thank you for your contribution to the community."
+                },
+                "edit": {
+                    "saving": "Updating comment...",
+                    "saved": "Comment updated successfully! Thank you for your contribution to the community."
+                }
+            }
+        },
+        "report-list": {
+            "route-title": "Route Report Issues"
+        },
+        "user": {
+            "title": "Profile",
+            "editTitle": "Edit Profile",
+            "tab-title1": "Posts",
+            "tab-title2": "Workout Records",
+            "edit-tab-title1": "About Me",
+            "edit-tab-title2": "Homepage Appearance",
+            "edit-tab-title3": "Usual Location",
+            "Name": "Title",
+            "name-memo": "You recently edited your title. You need to wait {{day}} days to edit it again.",
+            "FirstName": "First Name",
+            "FirstNamePlaceholder": "Please enter your first name",
+            "LastName": "Last Name",
+            "LastNamePlaceholder": "Please enter your last name",
+            "Intro": "Introduction",
+            "IntroPlaceholder": "Please enter your self-introduction",
+            "Sex": "Gender",
+            "Weight": "Weight",
+            "CityName": "City",
+            "Avatar": "Avatar",
+            "BgImg": "Background",
+            "friendFollowingMemo": "<span class='name'>{{name}}</span><span class='text'>&nbsp;is following you</span>",
+            "teams": {
+                "title": "Teams"
+            },
+            "edit-back-conform": {
+                "title": "Would you like to keep the changes?",
+                "message": "If you leave this page, your unsaved changes will be lost.",
+                "confirm": "Leave This Page"
+            },
+            "post-nodata": "No posts available",
+            "menu": {
+                "item1": "Share Profile",
+                "item2": "Unfollow",
+                "item3": "Block"
+            },
+            "private-lock-text": "This user’s account is private",
+            "private-lock-memo": "Follow to see this user’s posts and workout records"
+        },
+        "user-setting": {
+            "account-title": "Account",
+            "account-manager": "Account Management",
+            "language": "Language",
+            "sporting": "In Workout",
+            "stopwatch-setting": "Stopwatch Settings",
+            "location-share-setting": "Location Sharing Settings",
+            "common-title": "General",
+            "notification-setting": "Notification Management",
+            "privacy-safe": "Privacy & Security",
+            "privacy-setting": "Privacy Settings",
+            "private-warn": "Only people who follow you can see your full info.<br/>Users must be approved to follow you.",
+            "blocklist": "Blocked List",
+            "blocklist-number": "{{number}} people",
+            "AllowStrangeMessage": "Stranger Messages",
+            "AllowStrangeMessage-warn": "Messages from unknown users will be saved in the stranger message folder",
+            "AllowStrangeMessage-confirm-title": "Are you sure you want to stop receiving messages from strangers?",
+            "AllowStrangeMessage-confirm-msg": "After disabling, you will not receive stranger messages.<br/>Confirm disable?",
+            "InviteActivityPermission": "Send you activity invitations",
+            "InviteTeamPermission": "Send you team invitations",
+            "ViewRoutePermission": "View my collected routes",
+            "isStrangeMessage": {
+                "true": "Accept",
+                "false": "Close"
+            },
+            "IsPublic-confirm-title": "Are you sure you want to make your account private?",
+            "IsPublic-confirm-msg": "After disabling, only people who follow you can mention you.<br/>Confirm disable?",
+            "is-public": {
+                "true": "Public",
+                "false": "Private"
+            }
+        },
+        "user-notification-setting": {
+            "title": "Notification Settings",
+            "memo": "If you disable any notification, you can still find it in the notification centre.",
+            "post-title": "Post",
+            "PostLike": "Someone liked your content",
+            "PostComment": "Someone replied to your content",
+            "PostTag": "Someone mentioned you",
+            "team-title": "Team",
+            "TeamActivity": "Someone created a new activity",
+            "TeamPost": "Someone published a new post",
+            "activity-title": "Activity",
+            "ActivityInvite": "Someone invited you to join an activity",
+            "ActivityJoin": "Someone joined your activity",
+            "ActivityTimeStart": "Activity Start Reminder",
+            "ActivityTimeBeforeHour": "Reminder One Day Before Activity Begins",
+            "ActivityTimeBeforeDay": "Reminder One Hour Before Activity Begins",
+            "follow-me-title": "Fans",
+            "FollowApply": "There is a new follow request",
+            "Following": "Someone started following you",
+            "FollowAccept": "Your follow request was accepted",
+            "follower-title": "Following",
+            "FollowerActivity": "A followed user started a live workout",
+            "FollowerCommentRoute": "A followed user commented on a route",
+            "FollowerCreateRoute": "A followed user created a route in your location",
+            "FollowerCreatePost": "A followed user created a post",
+            "notification-title": "Chat Messages",
+            "TagNotice": "Mention Notification",
+            "TagNotice-memo": "Even if the chat room is muted or notifications are off,<br/>when you are mentioned in a group, you will still receive a reminder.",
+            "DisplayFullMessage": "Show Full Message",
+            "DisplayFullMessage-memo": "When a new message arrives,<br/>the full content will be displayed in the notification.",
+            "DisplayUnknownMessage": "Show Stranger Message",
+            "DisplayUnknownMessage-memo": "Notifications for stranger messages will be hidden."
+        },
+        "user-account": {
+            "title": "Account Management",
+            "email-account": "Email Account",
+            "email-account-title": "Email Account",
+            "email-memo": "You have not bound an email account yet. It is recommended to set an account for login and recovery.",
+            "email": "Email",
+            "pwd": "Password",
+            "pwd-setting-complete": "Completed",
+            "setting-email-act": "Go to set account",
+            "third3rd-title": "Third-Party Logins",
+            "third3rd-sub": "Once bound, you can log in to TeamUp with that account.",
+            "facebook": "Facebook",
+            "google": "Google",
+            "apple": "Apple",
+            "delete": "Delete Account",
+            "delete-confirm-title": "Do you want to remove this account?",
+            "delete-confirm-msg": "After confirmation, your account will enter a 30-day archive state.<br/>If you change your mind, you can log in during the archive period to restore it.",
+            "delete-confirm-title2": "Confirm permanently removing this account?",
+            "delete-confirm-msg2": "Continuing will place your account in an archived state,<br/>other users will not be able to find you on TeamUp.<br/>Archiving will continue until <span class='red'>{{date}}</span>.<br/>At that time, your account will be permanently removed from the database.",
+            "delete-confirm-text": "Confirm Removal",
+            "third3rd-unsync": {
+                "title": "Synced with {{service}}",
+                "message": "Synced on {{date}}, you can now log in with that account.",
+                "confirm": "Unsync"
+            },
+            "third3rd-sync": {
+                "true": "Synced",
+                "false": "Sync",
+                "title": "Not yet synced with {{service}}",
+                "message": "After binding, you can log in to TeamUp with that account."
+            },
+            "third3rd-unsync-fail": {
+                "message": "Unable to unsync<br/>You need to set up an email account first<br/>Otherwise, you cannot unsync."
+            }
+        },
+        "user-account-form": {
+            "email-title": "Email Account",
+            "EmailPlaceholder": "Enter Email",
+            "Email": "Email Address",
+            "Code": "Verification Code",
+            "email-reset-memo": "Enter a new email to rebind",
+            "pwd-reset-memo": "Enter your password to make changes. We recommend changing your password every three months to ensure account security.",
+            "pwd-reset-memo2": "Set your login password. Please enter at least 8 letters or digits.",
+            "PasswordPlaceholder": "Current Password",
+            "NewPassword": "New Password",
+            "NewPasswordPlaceholder": "Enter new password",
+            "Password": "Password",
+            "ConfirmPassword": "Confirm Password",
+            "ConfirmNewPassword": "Confirm New Password",
+            "ConfirmNewPasswordPlaceholder": "Re-enter new password",
+            "email-binding-confirm": {
+                "title": "End the Email Account Setup Process",
+                "message": "Going back will end the email account setup process.<br/>Do you want to continue?",
+                "continue": "Continue Setup"
+            }
+        },
+        "blocklist": {
+            "nodata": "No blocked users",
+            "menu": {
+                "show-user-profile": "View Profile",
+                "unblocking": "Unblock"
+            },
+            "unlock-success": "{{name}} has been unblocked"
+        },
+        "message": {
+            "title": "Notification Centre",
+            "tabs": {
+                "all": "All",
+                "common": "General",
+                "team": "Team",
+                "activity": "Activity",
+                "waiting": "Pending"
+            }
+        },
+        "followers": {
+            "title": "Fans",
+            "nodata": "No followers",
+            "remove-confirm": {
+                "title": "Are you sure you want to remove {{name}}’s follow?"
+            }
+        },
+        "users-following": {
+            "title": "Following",
+            "nodata": "No following",
+            "unfollow-confirm": {
+                "title": "Unfollow {{name}}?",
+                "message": "You will no longer see any information about {{name}}."
+            }
+        },
+        "follow-req": {
+            "title": "Requests",
+            "nodata": "No follow requests"
+        },
+        "unit-setting": {
+            "title": "Display",
+            "MeasureUnit": "Units",
+            "TemperatureUnit": "Temperature"
+        },
+        "faq": {
+            "title": "FAQ"
+        },
+        "team": {
+            "search-team": "Search Teams",
+            "title": "Team",
+            "my-team": "My Team",
+            "waiting-approval": "Awaiting Approval",
+            "no-data": {
+                "title": "Explore, Communicate<br/>Travel with a Team",
+                "desc": "Join teams you are interested in, share your experiences with others.<br/>After all, you both love life and riding."
+            },
+            "build-team": {
+                "maybe": "Or you could...",
+                "btn-title": "Create a Team"
+            },
+            "add-team": {
+                "title": "Create Team",
+                "btn": {
+                    "start-create": "Start Creating a Team",
+                    "create-complete": "Creation Completed"
+                }
+            },
+            "Name": "Team Name",
+            "NamePlaceholder": "Team name within 50 characters",
+            "IsPublic": "Public Team",
+            "IsPublicMemo": {
+                "false": "Only members can view the team's recent activities and posts",
+                "true": "Everyone can view the team's recent activities and posts"
+            },
+            "IsPublicValue": {
+                "true": "Public",
+                "false": "Private"
+            },
+            "NeedReviewRequest": "Join Approval",
+            "NeedReviewRequestMemo": {
+                "false": "Everyone can join the team",
+                "true": "Approval from a manager is required to join"
+            },
+            "NeedReviewRequestValue": {
+                "false": "No Approval Needed",
+                "true": "Approval Required"
+            },
+            "EveryCanCreatePost": "Allow Everyone to Post",
+            "EveryCanCreatePostMemo": {
+                "true": "All team members can publish posts",
+                "false": "Only managers can publish posts"
+            },
+            "EveryCanCreatePostValue": {
+                "true": "Everyone",
+                "false": "Managers"
+            },
+            "EveryCanCreateActivity": "Allow Everyone to Create Activities",
+            "EveryCanCreateActivityMemo": {
+                "true": "All team members can create activities",
+                "false": "Only managers can create activities"
+            },
+            "EveryCanCreateActivityValue": {
+                "true": "Everyone",
+                "false": "Managers"
+            },
+            "PostitNoteText": "Sticky Note",
+            "Desc": "Team Introduction",
+            "DescMemo": "Introduce your team to others.",
+            "DescPlaceholder": "Introduction, regulations, slogan, etc.",
+            "TeamViewTitle": "Team Appearance",
+            "TeamViewMemo": "Set your team's recognisable style.",
+            "TeamTagTitle": "Team Tags",
+            "TeamTagMemo": "Describe the characteristics of the team so that people can find it more easily.",
+            "TeamLocationTitle": "Team Base",
+            "TeamLocation": "Base",
+            "TeamLocationMemo": "Choose the region where the team is located. You can also provide detailed landmarks.",
+            "Logo": "Team Logo",
+            "Logo-Memo": "It is recommended to upload an image with a resolution of at least 500x500,<br/>so your team can be displayed clearly!",
+            "Color": "Primary Color",
+            "BgImage": "Background",
+            "Tag": "Tag",
+            "TeamTags": "Team Tags",
+            "CountryId": "Team Base - Country",
+            "CityId": "Team Base - City",
+            "Address": "Team Base - Address",
+            "team-search-keyword": "Search \"{{keyword}}\"",
+            "nodata": "No results for \"{{keyword}}\".",
+            "result-title": "Search Results",
+            "featured-team": "Featured Teams",
+            "apply-nodata": "No one is applying to join the team",
+            "differentPlace": {
+                "title": "Confirm changing location?",
+                "message": "The landmark or address you selected does not match the city you previously chose. Confirm to change the city to match the address location?"
+            },
+            "chooseAddressPlaceHolder": "Select a landmark or address (optional)",
+            "buildTeamSuccess": "Team Created!",
+            "buildTeamSuccessInfo": "Your team has been successfully created! Next, you can start inviting members, publishing posts, and share the joy of sports with everyone to create unforgettable memories!",
+            "inviteFirstMember": "Invite the First Member",
+            "postFirstMsg": "Publish the First Post",
+            "goToTeamPage": "Go to the Team Homepage",
+            "archived-mine": "Team Archived",
+            "archived-other": "Team in Archive",
+            "archived": "Archived",
+            "manger": "Manager",
+            "member": "Member",
+            "event-count": "Activities",
+            "season-distance": {
+                "Metric": "Season Distance (km)",
+                "Imperial": "Season Distance (mi)"
+            },
+            "monthly-distance": {
+                "Metric": "This Month km",
+                "Imperial": "This Month mi"
+            },
+            "from-joinTime": "Joined on {{date}}",
+            "inviteYouJoin": "{{name}} invites you to join this team",
+            "joinTeam": "Join Team",
+            "applying": "You have applied to join this team",
+            "verifyApplying": "Your application is under review by the manager",
+            "verifyApplyingPlzWait": "The manager is reviewing your application, please wait patiently.",
+            "cancelApply": "Cancel Application",
+            "checkCencalApply": "Are you sure you want to cancel your application?",
+            "checkCencalApplyTip": "You will not be able to reapply within 7 days",
+            "keepApply": "Keep Application",
+            "recently-activity": "Recent Activities",
+            "tabs-post": "Posts",
+            "tabs-activity": "Activities",
+            "tabs-about": "About",
+            "introduction": "Introduction",
+            "requset-join": "{{number}} join requests",
+            "archived-team-tip": "An archived team cannot add new members.<br/>If there are no new activities or posts within 14 days<br/>the team will be disbanded.",
+            "cencal-archived": "Unarchive",
+            "cencal-archived-success": "Unarchived",
+            "cencal-archived-success-tip": "Now you can invite new members to join the team.<br/>Enjoy!",
+            "accept-join": "{{name}} joined the team {{teamName}}",
+            "main-team": "{{teamName}} is now your main team",
+            "main-team-tip": "Start enjoying endless fun exploring outdoor sports with your partners. Challenge yourself and go beyond!",
+            "invite-to-team": "Invite to Team",
+            "edit-team-info": "Edit Team Info",
+            "tags": {
+                "new-activity": "New Activity",
+                "new-post": "New Post",
+                "new-join-apply": "New Join Request"
+            },
+            "report-team": "Report Team"
+        },
+        "team-edit": {
+            "setting": "Team Settings",
+            "info-edit": "Edit Team Info",
+            "privacy-setting": "Privacy Settings",
+            "public": {
+                "true": "Public",
+                "false": "Not Public"
+            },
+            "public-memo": {
+                "false": "Only members can see the posts, activity records, and location info",
+                "true": "Everyone can see the team's recent activities and posts"
+            },
+            "join-review": "Join Approval",
+            "review-need": {
+                "true": "Approval Required",
+                "false": "No Approval Needed"
+            },
+            "review-need-memo": {
+                "false": "Everyone can join the team",
+                "true": "A private team requires manager approval to join"
+            },
+            "tags": "Tags",
+            "basearea": "Team Base",
+            "management-access": "Members & Permissions",
+            "management-alias": "Title Management",
+            "management-member": "Manage Members",
+            "total-member": "{{number}} members",
+            "post-access": "Who can post",
+            "activity-access": "Who can create activities",
+            "access-to": {
+                "everyone": "All Members",
+                "manager": "Managers"
+            },
+            "team-tag": "Team Tags",
+            "team-tag-tip": "Set team tags so more people can find your team."
+        },
+        "team-basearea": {
+            "title": "Team Base",
+            "set-basearea-tip": "Once you set the team base, you must wait 14 days before changing it again."
+        },
+        "team-member": {
+            "title": "Member Management",
+            "search-placeholder": "Search Members"
+        },
+        "team-member-alias": {
+            "title": "Team Title Management",
+            "add-alias": "Add a Title"
+        },
+        "team-alias-edit": {
+            "add-title": "Add a Title",
+            "Title": "Title Name",
+            "alias-input-placeholder": "Up to 10 characters",
+            "add-member": "Add Members",
+            "remove": "Remove",
+            "delete": "Delete This Title",
+            "ask-delete": "Are you sure you want to delete this title?",
+            "ask-delete-tip": "After deleting this title, members with this title will be reset to none.",
+            "sure-delete": "Confirm Delete"
+        },
+        "post-form": {
+            "add-title": "New Post",
+            "edit-title": "Edit Post",
+            "user-share": "<span>{{name}}</span> shared",
+            "user-team-share": "<span>{{name}}</span> shared in <span>{{teamName}}</span>",
+            "edit-exit-confirm": "You are about to leave the post. Unsaved content will be lost. Are you sure you want to leave?",
+            "saving": "Publishing post...",
+            "saved": "Published!",
+            "privacy-type-title": "Privacy Settings",
+            "location-title": "Add Location",
+            "body-placeholder": "Enter text (@mention friends)",
+            "recommend-route-title": "How about sharing your recent workout experiences?",
+            "Body": "Post Content",
+            "Attachments": "Post Attachments"
+        },
+        "stopwatch-setting": {
+            "title": "Stopwatch Settings",
+            "device-link": "Device Connection",
+            "calorie-convert": "Calorie Conversion",
+            "unit-show": "Unit Display",
+            "auto-pause": "Auto Pause When Stationary",
+            "stopwatch-info": "Stopwatch Information"
+        },
+        "chat": {
+            "page-title": "Messages",
+            "title1": "All",
+            "title2": "Private Messages",
+            "title3": "Activities",
+            "title4": "Teams",
+            "title5": "Stranger Messages",
+            "search-placeholer": "Search Messages",
+            "instant-search": {
+                "not-enough-words": "Not enough letters to search",
+                "not-enough-words-desc": "Please enter at least 2 letters to search",
+                "nodata": "No messages found for \"{{keyword}}\"",
+                "nodata-desc": "Try another keyword",
+                "room-count": "Found {{count}} chat rooms"
+            },
+            "nodata": "No chat room data",
+            "open-mute-success": "Notifications muted",
+            "close-mute-success": "Notifications enabled",
+            "silence-mode": "The other party has enabled silent mode and will not receive message notifications temporarily",
+            "leave-confirm": {
+                "title": "Are you sure you want to leave the chat group {{name}}?",
+                "message": "Leaving the chat group does not mean leaving the activity/team. It only indicates that you do not want to receive any messages from this group. If you wish to rejoin or reopen it later, you can do so through the activity/team’s chat button.",
+                "confirm": "Leave Group",
+                "cancel": "Cancel Leave"
+            },
+            "Body": "Messages",
+            "menu-item": {
+                "reply": "Reply",
+                "report": "Report"
+            }
+        },
+        "chat-user": {
+            "user-title": "Members",
+            "search-placeholder": "Search Members",
+            "nodata": "No matching data found"
+        },
+        "calorie-exchange": {
+            "title": "Calorie Conversion",
+            "tip-p1": "Enter your biological information for more accurate calorie calculations",
+            "tip-p2": "If not provided, a default value will be used",
+            "tip-p3": "Don’t worry, this info is only used for calorie calculations",
+            "sex": "Biological Sex",
+            "Height": "Height",
+            "Weight": "Weight",
+            "Age": "Age",
+            "input-placeholder": "Enter your {{placeholder}}",
+            "pop-up-title": "Obtain More Accurate Calorie Data",
+            "pop-up-subtitle": "Set your biological info to get more accurate calorie data during workouts. If not set, average values are used and results are for reference only."
+        },
+        "location-share": {
+            "title": "Location Sharing",
+            "default-share-target": "Default Sharing Target",
+            "auto-share": "Auto Share While Riding",
+            "share-tip": "Automatically share your location, route, and real-time data with your sharing targets when riding",
+            "share-target": "Sharing Targets",
+            "share-all-tip": "Your profile must be 'Public'. Please go to 'Settings > Privacy' to change.",
+            "share-cycling-memo": "Share your cycling data with fellow participants",
+            "ShareCyclingData": "Data",
+            "ShareSpeed": "Speed",
+            "SharePower": "Power",
+            "ShareHeartRate": "Heart Rate",
+            "SharePedalingFrequency": "Cadence",
+            "ShareGuest": "Share anonymous user (non-platform user)"
+        },
+        "team-onmap": {
+            "open-map": "Open Map",
+            "explore-team": "Explore All Teams",
+            "add-note": "Add Team Sticky Note",
+            "switch-team": "Switch Team",
+            "search-team": "Search Teams"
+        },
+        "team-map": {
+            "title": "Team Map"
+        },
+        "route-map-explore": {
+            "title": "Explore Routes",
+            "add-btn": "Create Route",
+            "filter": {
+                "from": "From",
+                "from-name": "From: {{name}}",
+                "tag": "Tag",
+                "tag-count": "Tag ({{count}})",
+                "popular": "Popular Routes",
+                "recommend": "High Ratings"
+            }
+        },
+        "route-detail": {
+            "collect-follower": "{{count}} followers have saved this route",
+            "add-route": "Save Route",
+            "added-route": "Route Saved",
+            "tab-title1": "Comments {{count}}",
+            "tab-title2": "Activities {{count}}",
+            "comment-count": "{{count}} people have commented",
+            "add-comment-text": "Leave your comment...",
+            "activity-slogen": "Are you eager to try this route? You can also...",
+            "add-activity-text": "Create an activity...",
+            "comment-has-published": "You commented on {{date}}"
+        },
+        "stopwatch": {
+            "Running": "Activity in Progress",
+            "running-alert": "Another activity is currently in progress. Please complete the ongoing one first.",
+            "start": "Start",
+            "set-off": "Set Off",
+            "not-arrive": "Not Arrived",
+            "remaining": "{{unit}} remaining to the finish",
+            "activity-starting": "The activity started at {{time}}",
+            "user-has-ready": "{{count}} Ready",
+            "user-has-wait": "{{count}} Waiting",
+            "user-has-guest": "{{count}} Visitors",
+            "join-count": "Total {{count}} participants",
+            "move-near-meeting-point": "Please move closer to the gathering point",
+            "wait-user-for-start": "Waiting for you to start the activity...",
+            "wait-leader-for-start": "Waiting for the organiser to start the activity...",
+            "location-share-to": "Location shared with",
+            "location-share-to-msg": "You have not set a default sharing target. Would you like to set it now?",
+            "stopwatch-setting": "Stopwatch Settings",
+            "location-share-setting": "Location Sharing Settings",
+            "activity-location-setting": "Activity Location Settings",
+            "profile-location-setting": "Profile Location Settings",
+            "share-live-url": "Share your live activity link",
+            "invite-riding-partner": "Invite a riding partner",
+            "check-join-user": "View Participants",
+            "set-ride-leader": "Set Ride Leader",
+            "close-location-share": "Stop Location Sharing",
+            "view-viewer": "Viewers",
+            "go-first": "Go Ahead",
+            "no-viewer-message": "No comment data available",
+            "act-user-open-share": {
+                "title": "Share your location with activity members",
+                "message": "Location will only be shared when the activity starts and will stop after the activity ends."
+            },
+            "share-together": {
+                "title": "Share the live event with the organiser",
+                "message": "If the organiser enables live broadcast for the activity, you can share your workout data with the audience during the activity (depending on your settings)."
+            },
+            "activity-open-share": {
+                "title": "Allow live broadcast of this activity?",
+                "message": "Once enabled, all accepted participants will automatically share the activity live after it starts. Viewers can see detailed info and all members' locations (per user settings)."
+            },
+            "profile-share": {
+                "title": "Personal Activity Location Sharing",
+                "message": "According to your personal sharing settings, share your live workout once the activity starts.",
+                "share-to": "Share with: <span class='tmup-fc-blue'>{{shareUser}}</span>"
+            },
+            "unable-complete": {
+                "title": "Unable to complete the activity now?",
+                "message": "The activity time and distance are too short to be completed. Please continue or restart.",
+                "confirm": "Discard Activity",
+                "cancel": "Keep Going"
+            },
+            "complete-confirm": {
+                "title": "Are you sure you want to complete the activity?",
+                "message": "Once completed, you cannot resume. Confirm completion?",
+                "confirm": "Complete Activity",
+                "cancel": "Keep Going"
+            },
+            "leader-complete-message": "You are the lead rider. Completing the activity means it will be ended for everyone. Confirm complete?",
+            "creator-complete-message": "You are the creator of the activity. Completing the activity means it will end. Confirm complete?",
+            "record-title": {
+                "evening-ride": "Evening Ride",
+                "late-night-ride": "Late Night Ride",
+                "morning-ride": "Morning Ride",
+                "afternoon-ride": "Afternoon Ride"
+            },
+            "share-live-link": {
+                "title": "Would you like to share your live activity link?",
+                "message": "Anyone with the link can view your live activity.<br/>To share with someone who isn’t registered on the platform, ensure the 'Share anonymous user (non-platform user)' option is enabled (it’s enabled by default).<br/>Tap 'Go to Settings' or check it in the 'Location Sharing Settings' screen."
+            },
+            "invite-cancel": {
+                "title": "Are you sure you want to leave the stopwatch?",
+                "message": "You have already invited riding partners. If you leave the stopwatch, the invitation will be cancelled. Are you sure you want to leave?"
+            }
+        },
+        "stopwatch-finished": {
+            "join-member": "Participating Members",
+            "gain-encourage": "Encouragement Received",
+            "data": "Data",
+            "totalTime": "Total Time",
+            "totalDistance": "Total Distance {{ unit }}",
+            "climbHeight": "Max Elevation Gain {{ unit }}",
+            "moveDistance": "Moving Distance {{ unit }}",
+            "pace": "Pace {{ unit }}",
+            "media-log": "Media Log",
+            "route": "Route",
+            "delete-record": "Delete Record",
+            "delete-record-title": "Are you sure you want to delete the workout record?",
+            "delete-record-msg": "Once removed, all riding data will not be retained",
+            "Name": "Workout Record Name"
+        },
+        "sport-live": {
+            "tab-title1": "Data",
+            "tab-title2": "Comments",
+            "tab-title3": "Profile",
+            "search-placeholder": "Search Users",
+            "search-result-text": "Search \"{{searchKey}}\": {{count}} results",
+            "join-users": "Participants {{count}}",
+            "has-close": "User’s live event has ended!",
+            "close-guest": "The user has disabled 'Share anonymous user (non-platform user)'!"
+        },
+        "web-home": {
+            "explore-app": "Explore the APP",
+            "area1": {
+                "t1": "Join forces in this <div class='name'>new social exercise</div>",
+                "d1": "Team Up is a road cycling social platform that allows cycling enthusiasts to form and manage teams, organise and participate in outdoor activities, and share the best cycling experiences."
+            },
+            "area3": {
+                "t1": "Unlock the global cycling map<div><span class='name'>You won't be alone in your workouts</span></div>",
+                "tab1": "120k+<div>Featured Activities</div>",
+                "tab2": "45k+<div>Teams</div>",
+                "tab3": "23k+<div>Routes</div>",
+                "tab1-content": {
+                    "t1": "Let’s",
+                    "t2": "Drive the sports social trend",
+                    "btn-text": "Explore Activities →"
+                },
+                "tab2-content": {
+                    "t1": "Let’s",
+                    "t2": "Establish diverse team cultures",
+                    "btn-text": "Explore Teams →"
+                },
+                "tab3-content": {
+                    "t1": "Let’s",
+                    "t2": "Discover new riding experiences",
+                    "btn-text": "Explore Routes →"
+                }
+            },
+            "area4": {
+                "t1": "Team operation, cycling meetup,<div>all done in one place</div>",
+                "item0": {
+                    "title": "Build a Team",
+                    "desc": "Organise various types of teams and activities according to your workout habits, area, and goals"
+                },
+                "item1": {
+                    "title": "Effortless Meetup",
+                    "desc": "No need to rely on multiple platforms for group planning. Convenient for organisers to plan meetups"
+                }
+            },
+            "area5": {
+                "t1": "Ride alone, ride with pros,<div>or watch online</div>",
+                "item0": {
+                    "title": "Bike Computer",
+                    "desc": "Use our bike computer feature to record complete riding data. You can also connect multiple sensors and freely arrange the real-time information you need"
+                },
+                "item1": {
+                    "title": "Live Broadcast",
+                    "desc": "Watch live rides of people you follow. Besides real-time positioning, bike computer data is also displayed in real-time—it's time to showcase your strength!"
+                }
+            }
+        }
+    },
+    "components": {
+        "route-comment-list": {
+            "title": "All Comments",
+            "nodata": "There are no comments for this route yet"
+        },
+        "route-activity-list": {
+            "title": "All Activities for This Route",
+            "nodata": "No activities for this route yet"
+        },
+        "recommended-activity-list": {
+            "search-text": "Explore Nearby Activities →"
+        },
+        "recommend-user-list": {
+            "title": "People You May Know"
+        },
+        "recommend-route-item": {
+            "distance": "Length {{number}}"
+        },
+        "progress-bar": {
+            "resubmit": "Resend"
+        },
+        "home-add-btn": {
+            "menu-item": {
+                "create-activity": "Create Activity",
+                "create-post": "Publish Post",
+                "create-sticky-note": "Publish Sticky Note",
+                "create-route-comment": "Rate this Route"
+            }
+        },
+        "search-record": {
+            "title": "Recent Searches",
+            "clearAll": "Clear All"
+        },
+        "chat-stranger-list": {
+            "memo": "This is the stranger messages folder. You can view and approve messages from non-friend users here. They will not know your decision."
+        },
+        "chat-item": {
+            "private-msg": "wants to send a message to you",
+            "no-name": "This user does not exist",
+            "message": {
+                "not-show-message": "wants to send a message to you",
+                "route": "{{name}} shared a route",
+                "record": "{{name}} shared a workout record",
+                "image": "{{name}} sent an image",
+                "leave": "{{name}} left the chat",
+                "location": "{{name}} shared location data"
+            }
+        },
+        "home-activity-invite": {
+            "title": "You have a new activity invitation!",
+            "desc": "There are {{number}} unread activity invitations"
+        },
+        "post-item": {
+            "comment": {
+                "title": "<span class='name'>{{name}}</span> commented on <span class='route-name'>{{routeName}}</span>"
+            },
+            "team-post": {
+                "title": "<span class='name'>{{name}}</span> shared in <span class='team-name'>{{teamName}}</span>"
+            },
+            "like-comment-text": "{{likeCount}} Likes · {{commentCount}} Comments",
+            "menu-item": {
+                "delete": "Remove",
+                "edit": "Edit Content",
+                "post-message": "Send Message",
+                "leave-team": "Leave Team",
+                "cancel-follow": "Unfollow",
+                "block-user": "Block User",
+                "report": "Report Issue",
+                "report-route-comment": "Report Route Comment",
+                "report-post": "Report Post"
+            },
+            "delete": {
+                "title": "Are you sure you want to remove this post?",
+                "message": "Removing this post will also remove all likes and replies associated with it.",
+                "confirm": "Remove",
+                "success": "Post removed"
+            },
+            "leave-team": {
+                "title": "Are you sure you want to leave {{teamName}}?",
+                "message": "Leaving the team will also remove you from the team’s chat channel.",
+                "confirm": "Leave Team",
+                "success": "You have left the team {{teamName}}"
+            },
+            "team-only-manager": {
+                "title": "You are the only manager",
+                "message": "If you want to leave the team, please assign a new manager or archive the team.",
+                "cancel": "Manage Members",
+                "confirm": "Archive Team"
+            },
+            "block-user": {
+                "title": "Are you sure you want to block {{name}}?",
+                "message": "Blocking will remove your follow on them, and they will be unable to follow you, view your posts, mention you, or invite you to activities or teams.",
+                "success": "Blocked {{name}}"
+            },
+            "cancel-follow": {
+                "success": "Unfollowed {{name}}"
+            }
+        },
+        "sporting-share-list": {
+            "title": "Live Workouts"
+        },
+        "team-item": {
+            "user-count": "{{count}} members",
+            "follow-user-count": "{{count}} followers",
+            "followers-joins": "+{{count}} followers have joined"
+        },
+        "home-menu": {
+            "title": "Start your outdoor exploration!",
+            "text-1": "<div class='title'>Explore<br/>Team</div><div class='subtitle'>Team Map</div>",
+            "text-2": "<div class='title'>Explore<br/>Activity</div><div class='subtitle'>Explore Activities</div>",
+            "text-3": "<div class='title'>New<br/>Exercise</div><div class='subtitle'>Start Workout</div>",
+            "text-4": "<div class='title'>Explore<br/>Route</div><div class='subtitle'>Explore Routes</div>"
+        },
+        "user-item": {
+            "memo": {
+                "fb-friend": "<div class='sub'>Your</div><div class='text'>Facebook Friend</div>",
+                "city": "<div class='sub'>You both live in</div><div class='text'>{{name}}</div>",
+                "activity": "<div class='sub'>You both participated in</div><div class='text'>{{name}}</div>",
+                "route": "<div class='sub'>You both rode</div><div class='text'>{{name}}</div>"
+            }
+        },
+        "background-choose": {
+            "view": "Landscape",
+            "illustration": "Illustration",
+            "style": "Style",
+            "from": "From Album"
+        },
+        "activity-item": {
+            "friendJoin": "{{number}} people you follow have joined",
+            "startingSoon": "Starting Soon",
+            "status": {
+                "Soon": "Starting Soon",
+                "Running": "In Progress",
+                "Completed": "Completed"
+            }
+        },
+        "activity-log-list": {
+            "all-time": "All Time"
+        },
+        "notice-message": {
+            "focus-on-you": "<span class='notice-msg'>{{name}}</span> is following you",
+            "mention-on-teampost": "<span class='notice-msg'>{{name}}</span> mentioned you in a post in <span class='notice-msg'>{{team}}</span> team",
+            "mention-on-post": "<span class='notice-msg'>{{name}}</span> mentioned you in a post",
+            "apply-join": "<span class='notice-msg'>{{name}}</span> wants to join <span class='notice-msg'>{{team}}</span>",
+            "press-nice": "<span class='notice-msg'>{{name}}</span> liked your post"
+        },
+        "sport-live-chat": {
+            "no-follow": "You are not following this user, unable to comment",
+            "follow-user": "Follow This User",
+            "wait-user-agree-follow": "Request sent",
+            "msg-placeholder": "Comment..."
+        },
+        "sport-live-comment": {
+            "Body": "Comment"
+        }
+    },
+    "unit": {
+        "centimeters": "cm",
+        "kilogram": "kg",
+        "years": "years"
+    },
+    "share-text": {
+        "user": "Check out {{name}} on TeamUp \n{{url}}",
+        "activity": "Sharing an activity with you, check it out!\n{{name}} ({{url}})",
+        "route": "I found a great route, check it out!\n{{name}} ({{url}})",
+        "record": "Sharing my workout record from ({{date}})!",
+        "live-record": "I'm sharing my live workout with you—come take a look! ({{url}})"
+    }
+}

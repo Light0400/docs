@@ -1,0 +1,23 @@
+<svg
+  width="28"
+  height="29"
+  viewBox="0 0 28 29"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+<rect y="0.5" width="28.0008" height="28.0008" rx="14.0004" fill="#F4F4F4" />
+<path
+    d="M11.7505 18.25L8.00049 14.5L11.7505 10.75"
+    stroke="#878787"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+<path
+    d="M20.0005 19V17.5C20.0005 16.7044 19.6844 15.9413 19.1218 15.3787C18.5592 14.8161 17.7961 14.5 17.0005 14.5H8.00049"
+    stroke="#878787"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

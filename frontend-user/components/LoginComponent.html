@@ -1,0 +1,3887 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>TeamUp 前端程式文件</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+        <link rel="stylesheet" href="../styles/Vagrant.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">TeamUp 前端程式文件</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  LoginComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/common/src/lib/pages/login/login.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>登入註冊畫面</p>
+<ul>
+<li>依照 screenType 呈現不同畫面</li>
+</ul>
+
+    </p>
+
+    <p class="comment">
+        <h3>Extends</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="../directives/BaseComponent.html" target="_self" >BaseComponent</a></code>
+    </p>
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnDestroy</code>
+                <code>AfterViewInit</code>
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">host</td>
+                <td class="col-md-9"><code>{<br>}</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-login</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>ReactiveFormsModule</code>
+                            <code>RouterModule</code>
+                            <code>MatIconModule</code>
+                            <code>MatButtonModule</code>
+                                <code><a href="../components/HeaderComponent.html" target="_self" >HeaderComponent</a></code>
+                            <code>TranslatePipe</code>
+                                <code><a href="../components/TextboxInputComponent.html" target="_self" >TextboxInputComponent</a></code>
+                                <code><a href="../components/ValidCodeInputComponent.html" target="_self" >ValidCodeInputComponent</a></code>
+                                <code><a href="../components/ErrorSummaryComponent.html" target="_self" >ErrorSummaryComponent</a></code>
+                                <code><a href="../components/OptionComponent.html" target="_self" >OptionComponent</a></code>
+                                <code><a href="../components/SelectInputComponent.html" target="_self" >SelectInputComponent</a></code>
+                                <code><a href="../components/UserItemComponent.html" target="_self" >UserItemComponent</a></code>
+                                <code><a href="../components/UserAvatarComponent.html" target="_self" >UserAvatarComponent</a></code>
+                            <code>GoogleMapsModule</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./login.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./login.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#allCountrys" >allCountrys</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#backUrl" >backUrl</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#badWords" >badWords</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#citys" >citys</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#codeType" >codeType</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#confirmUser" >confirmUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#countrys" >countrys</a>
+                            </li>
+                            <li>
+                                <a href="#existOthers" >existOthers</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#formArea" >formArea</a>
+                            </li>
+                            <li>
+                                <a href="#formGroup" >formGroup</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#isIOS" >isIOS</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#isWeb" >isWeb</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#loginTerm" >loginTerm</a>
+                            </li>
+                            <li>
+                                <a href="#loginType" >loginType</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#mapService" >mapService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#pageInfo" >pageInfo</a>
+                            </li>
+                            <li>
+                                <a href="#production" >production</a>
+                            </li>
+                            <li>
+                                <a href="#recommendList" >recommendList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#recommends" >recommends</a>
+                            </li>
+                            <li>
+                                <a href="#screenType" >screenType</a>
+                            </li>
+                            <li>
+                                <a href="#screenTypeChange" >screenTypeChange</a>
+                            </li>
+                            <li>
+                                <a href="#sendCodeCd" >sendCodeCd</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#sendCodeInterval" >sendCodeInterval</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#userLocation" >userLocation</a>
+                            </li>
+                            <li>
+                                <a href="#validType" >validType</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#video" >video</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#errors" >errors</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#destroy" >destroy</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#destroySubject" >destroySubject</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#back" >back</a>
+                            </li>
+                            <li>
+                                <a href="#changeCountry" >changeCountry</a>
+                            </li>
+                            <li>
+                                <a href="#checkBtnDisabled" >checkBtnDisabled</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#checkEmail" >checkEmail</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#clearCd" >clearCd</a>
+                            </li>
+                            <li>
+                                <a href="#follow" >follow</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#forgetValid" >forgetValid</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getRecommendUsers" >getRecommendUsers</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getRegInfo" >getRegInfo</a>
+                            </li>
+                            <li>
+                                <a href="#login" >login</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#loginCallback" >loginCallback</a>
+                            </li>
+                            <li>
+                                <a href="#next" >next</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#nextAfter" >nextAfter</a>
+                            </li>
+                            <li>
+                                <a href="#nextScreen" >nextScreen</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#register" >register</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#registerValid" >registerValid</a>
+                            </li>
+                            <li>
+                                <a href="#resendCode" >resendCode</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#sendCode" >sendCode</a>
+                            </li>
+                            <li>
+                                <a href="#setCd" >setCd</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#validate3rdloing" >validate3rdloing</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostBindings</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#class.login" >class.login</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#isLoginPage" >isLoginPage</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: <a href="../injectables/CustomHttpService.html" target="_self">CustomHttpService</a>, loginService: <a href="../injectables/LoginService.html" target="_self">LoginService</a>, lus: <a href="../injectables/LoginUserService.html" target="_self">LoginUserService</a>, basicDialog: <a href="../injectables/BasicDialogService.html" target="_self">BasicDialogService</a>, dialog: <a href="../injectables/TeamUpDialogService.html" target="_self">TeamUpDialogService</a>, router: Router, route: ActivatedRoute, errorService: <a href="../injectables/ErrorService.html" target="_self">ErrorService</a>, socialLoginService: <a href="../injectables/SocialLoginService.html" target="_self">SocialLoginService</a>, storageService: <a href="../injectables/StorageService.html" target="_self">StorageService</a>, langService: <a href="../injectables/LanguageService.html" target="_self">LanguageService</a>, cdr: ChangeDetectorRef, translate: TranslateService, passwordHash: <a href="../classes/PasswordHash.html" target="_self">PasswordHash</a>, mapService: <a href="../injectables/GoogleMapService.html" target="_self">GoogleMapService</a>, platform: <a href="../injectables/PlatformService.html" target="_self">PlatformService</a>, configService: <a href="../injectables/SystemConfigService.html" target="_self">SystemConfigService</a>, hs: <a href="../injectables/HeaderService.html" target="_self">HeaderService</a>, snackbarService: <a href="../injectables/SnackbarService.html" target="_self">SnackbarService</a>, translateService: TranslateService, environment: <a href="../classes/Environment.html" target="_self">Environment</a>)</code>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CustomHttpService.html" target="_self" >CustomHttpService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>loginService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LoginService.html" target="_self" >LoginService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>lus</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LoginUserService.html" target="_self" >LoginUserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>basicDialog</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/BasicDialogService.html" target="_self" >BasicDialogService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TeamUpDialogService.html" target="_self" >TeamUpDialogService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>errorService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ErrorService.html" target="_self" >ErrorService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>socialLoginService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SocialLoginService.html" target="_self" >SocialLoginService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>storageService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/StorageService.html" target="_self" >StorageService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>langService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LanguageService.html" target="_self" >LanguageService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cdr</td>
+                                                  
+                                                        <td>
+                                                                    <code>ChangeDetectorRef</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>translate</td>
+                                                  
+                                                        <td>
+                                                                    <code>TranslateService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>passwordHash</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/PasswordHash.html" target="_self" >PasswordHash</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>mapService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/GoogleMapService.html" target="_self" >GoogleMapService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>platform</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PlatformService.html" target="_self" >PlatformService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>configService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SystemConfigService.html" target="_self" >SystemConfigService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>hs</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/HeaderService.html" target="_self" >HeaderService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>snackbarService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SnackbarService.html" target="_self" >SnackbarService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>translateService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TranslateService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>environment</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/Environment.html" target="_self" >Environment</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section data-compodoc="block-properties">
+    <h3>HostBindings</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="class.login"></a>
+                    <span class="name">
+                        <span ><b>class.login</b></span>
+                        <a href="#class.login"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>目前是否呈現登入畫面</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="back"></a>
+                    <span class="name">
+                        <span ><b>back</b></span>
+                        <a href="#back"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>back()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>回上一畫面</p>
+<ul>
+<li>依照目前的 screenType 判斷要回到哪個畫面</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeCountry"></a>
+                    <span class="name">
+                        <span ><b>changeCountry</b></span>
+                        <a href="#changeCountry"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changeCountry(v: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>出沒區域國家異動事件</p>
+<ul>
+<li>依照所選的國家篩選縣市清單</li>
+</ul>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>v</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>目前出沒區域(CountryId)值</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkBtnDisabled"></a>
+                    <span class="name">
+                        <span ><b>checkBtnDisabled</b></span>
+                        <a href="#checkBtnDisabled"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>checkBtnDisabled()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>檢查目前的畫面是否可按下一步</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>是否可按下一步</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkEmail"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>checkEmail</b></span>
+                        <a href="#checkEmail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkEmail(ctrl: AbstractControl | null)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>欄位 驗證Email</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>ctrl</td>
+                                            <td>
+                                                        <code>AbstractControl | null</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>欄位 FormControl</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>驗證是否通過</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clearCd"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>clearCd</b></span>
+                        <a href="#clearCd"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>clearCd()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>清除倒數計時器</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="follow"></a>
+                    <span class="name">
+                        <span ><b>follow</b></span>
+                        <a href="#follow"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>follow(item: <a href="../classes/User.html" target="_self">User</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>關注/取消關注 推薦用戶 (純前端呈現，資料送出後才會更新)</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>item</td>
+                                            <td>
+                                                            <code><a href="../classes/User.html" target="_self" >User</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>用戶資料</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="forgetValid"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>forgetValid</b></span>
+                        <a href="#forgetValid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>forgetValid()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>忘記密碼驗證碼驗證</p>
+<ul>
+<li>驗證成功後，進入忘記密碼輸入畫面</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getRecommendUsers"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>getRecommendUsers</b></span>
+                        <a href="#getRecommendUsers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getRecommendUsers()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>取得推薦用戶資料</p>
+<ul>
+<li>依照使用者所選的出沒區域(國家縣市)做為推薦條件</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getRegInfo"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>getRegInfo</b></span>
+                        <a href="#getRegInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getRegInfo()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>取得註冊所需資訊</p>
+<ul>
+<li>不雅字詞</li>
+<li>國家縣市清單</li>
+<li>使用者IP位置</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>註冊所需資訊</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="login"></a>
+                    <span class="name">
+                        <span ><b>login</b></span>
+                        <a href="#login"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>login(type?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>登入</p>
+<ul>
+<li>若無 type 參數: 一般帳號登入</li>
+</ul>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>type</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                            <td>
+                                                    <p>第三方服務類型 (facebook/google/apple)</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginCallback"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>loginCallback</b></span>
+                        <a href="#loginCallback"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginCallback(success: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, result: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>登入後的 callback 事件</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>success</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>是否成功</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>result</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>結果資料</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="next"></a>
+                    <span class="name">
+                        <span ><b>next</b></span>
+                        <a href="#next"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>next(skip: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>執行下一步驟</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Default value</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>skip</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                                    <code>false</code>
+                                            </td>
+
+                                            <td>
+                                                    <p>是否略過欄位驗證</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nextAfter"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>nextAfter</b></span>
+                        <a href="#nextAfter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>nextAfter()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>進入下一步驟後的事件</p>
+<ul>
+<li>註冊第三步驟: 取得推薦用戶清單</li>
+<li>註冊第一步驟: 取得不雅字詞、國家縣市清單、使用者IP位置</li>
+<li>登入畫面: 重設表單、背景影片靜音、服務條款與隱私權說明連結事件綁定</li>
+<li>一般帳號登入畫面: 自動聚焦密碼欄位</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nextScreen"></a>
+                    <span class="name">
+                        <span ><b>nextScreen</b></span>
+                        <a href="#nextScreen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>nextScreen(type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>進入下一畫面</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>type</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>畫面類型</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <span ><b>ngAfterViewInit</b></span>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Angular 元件生命週期: 檢視初始化事件</p>
+<ul>
+<li>設定首頁狀態</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Angular 元件生命週期: 銷毀事件</p>
+<ul>
+<li>清除倒數計時器</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Angular 元件生命週期: 初始化事件</p>
+<ul>
+<li>screenTypeChange 事件綁定</li>
+<li>依照傳入的參數判斷顯示的畫面類型</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="register"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>register</b></span>
+                        <a href="#register"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>register()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>送出註冊資料</p>
+<ul>
+<li>包含關注的推薦用戶清單</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registerValid"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>registerValid</b></span>
+                        <a href="#registerValid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>registerValid()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>註冊 驗證碼驗證</p>
+<ul>
+<li>驗證成功後，進入註冊密碼輸入畫面</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resendCode"></a>
+                    <span class="name">
+                        <span ><b>resendCode</b></span>
+                        <a href="#resendCode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>resendCode()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>重送驗證碼</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendCode"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>sendCode</b></span>
+                        <a href="#sendCode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sendCode(type: "register" | "forget", retry)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>呼叫 API 寄送驗證碼</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Default value</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>type</td>
+                                            <td>
+                                                        <code>&quot;register&quot; | &quot;forget&quot;</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    <p>類型 (register/forget)</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>retry</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                                    <code>false</code>
+                                            </td>
+
+                                            <td>
+                                                    <p>是否重送</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setCd"></a>
+                    <span class="name">
+                        <span ><b>setCd</b></span>
+                        <a href="#setCd"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setCd()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>設定倒數計時器</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validate3rdloing"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>validate3rdloing</b></span>
+                        <a href="#validate3rdloing"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>validate3rdloing(loginData: <a href="../classes/ThirdLoginData.html" target="_self">ThirdLoginData</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>第三方服務登入驗證</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>loginData</td>
+                                            <td>
+                                                            <code><a href="../classes/ThirdLoginData.html" target="_self" >ThirdLoginData</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>第三方登入資料</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allCountrys"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>allCountrys</b></span>
+                        <a href="#allCountrys"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/CountryCity.html" target="_self" >CountryCity[] | null</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>國家縣市區域清單</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="backUrl"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>backUrl</b></span>
+                        <a href="#backUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>登入返回頁</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="badWords"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>badWords</b></span>
+                        <a href="#badWords"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>不雅字詞</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="citys"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>citys</b></span>
+                        <a href="#citys"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/CountryCity.html" target="_self" >CountryCity[] | null</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>縣市清單</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="codeType"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>codeType</b></span>
+                        <a href="#codeType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>&quot;register&quot; | &quot;forget&quot;</code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>驗證碼類型</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="confirmUser"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>confirmUser</b></span>
+                        <a href="#confirmUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/User.html" target="_self" >User</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>確認合併的用戶資訊</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="countrys"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>countrys</b></span>
+                        <a href="#countrys"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/CountryCity.html" target="_self" >CountryCity[] | null</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>國家清單</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="existOthers"></a>
+                    <span class="name">
+                        <span ><b>existOthers</b></span>
+                        <a href="#existOthers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>是否存在可推薦用戶</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formArea"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>formArea</b></span>
+                        <a href="#formArea"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef&lt;HTMLFormElement&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;formArea&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>表單元素參考</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formGroup"></a>
+                    <span class="name">
+                        <span ><b>formGroup</b></span>
+                        <a href="#formGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>表單 FormGroup</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isIOS"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>isIOS</b></span>
+                        <a href="#isIOS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>是否 iOS App</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isWeb"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>isWeb</b></span>
+                        <a href="#isWeb"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>是否 非 App</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginTerm"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>loginTerm</b></span>
+                        <a href="#loginTerm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef&lt;HTMLDivElement&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;loginTerm&#x27;, {static: false})<br />
+                        </code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>登入描述元素參考</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginType"></a>
+                    <span class="name">
+                        <span ><b>loginType</b></span>
+                        <a href="#loginType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;email-login&#x27;, &#x27;email-login-pwd&#x27;]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>一般帳號登入類型陣列</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>mapService</b></span>
+                        <a href="#mapService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/GoogleMapService.html" target="_self" >GoogleMapService</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pageInfo"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>pageInfo</b></span>
+                        <a href="#pageInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef&lt;HTMLDivElement&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;pageInfo&#x27;, {static: false})<br />
+                        </code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>頁面資訊元素參考</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="production"></a>
+                    <span class="name">
+                        <span ><b>production</b></span>
+                        <a href="#production"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>是否正式模式</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="recommendList"></a>
+                    <span class="name">
+                        <span ><b>recommendList</b></span>
+                        <a href="#recommendList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/User.html" target="_self" >User[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>推薦名單</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="recommends"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>recommends</b></span>
+                        <a href="#recommends"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef&lt;HTMLDivElement&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;recommends&#x27;, {static: false})<br />
+                        </code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>推薦用戶元素參考</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="screenType"></a>
+                    <span class="name">
+                        <span ><b>screenType</b></span>
+                        <a href="#screenType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | &quot;login&quot; | &quot;register-1&quot; | &quot;register-2&quot; | &quot;register-3&quot; | &quot;email-login&quot; | &quot;email-register&quot; | &quot;email-register-valid&quot; | &quot;email-register-pwd&quot; | &quot;email-login-pwd&quot; | &quot;forget&quot; | &quot;forget-pwd&quot; | &quot;forget-valid&quot; | &quot;login-binding&quot; | &quot;login-binding-pwd&quot;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;login&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>目前畫面類型</p>
+<ul>
+<li>login: 登入畫面</li>
+<li>register-1: 註冊畫面(基本資料)</li>
+<li>register-2: 註冊畫面(出沒區域)</li>
+<li>register-3: 註冊畫面(推薦用戶)</li>
+<li>email-login: 一般帳號登入(Email輸入)</li>
+<li>email-login-pwd: 一般帳號登入(密碼輸入)</li>
+<li>email-register: 一般帳號註冊(Email輸入)</li>
+<li>email-register-valid: 一般帳號註冊(驗證碼輸入)</li>
+<li>email-register-pwd: 一般帳號註冊(密碼輸入)</li>
+<li>forget: 忘記密碼(Email輸入)</li>
+<li>forget-valid: 忘記密碼(驗證碼輸入)</li>
+<li>forget-pwd: 忘記密碼(密碼輸入)</li>
+<li>login-binding: 第三方登入合併已存在帳號(基本資料)</li>
+<li>login-binding-pwd: 第三方登入合併已存在帳號(密碼輸入)
+預設值: login</li>
+</ul>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="screenTypeChange"></a>
+                    <span class="name">
+                        <span ><b>screenTypeChange</b></span>
+                        <a href="#screenTypeChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new BehaviorSubject&lt;string&gt;(this.screenType)</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>畫面類型異動監聽</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendCodeCd"></a>
+                    <span class="name">
+                        <span ><b>sendCodeCd</b></span>
+                        <a href="#sendCodeCd"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>驗證碼可重送 倒數秒數</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendCodeInterval"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>sendCodeInterval</b></span>
+                        <a href="#sendCodeInterval"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>驗證碼重送倒數計時器</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userLocation"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>userLocation</b></span>
+                        <a href="#userLocation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/UserIPLocation.html" target="_self" >UserIPLocation</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>用戶IP 位置</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validType"></a>
+                    <span class="name">
+                        <span ><b>validType</b></span>
+                        <a href="#validType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;email-register-valid&#x27;, &#x27;forget-valid&#x27;]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>驗證碼輸入類型陣列</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="video"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>video</b></span>
+                        <a href="#video"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef&lt;HTMLVideoElement&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;video&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>登入頁背景影片元素參考</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="errors"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>errors</b></span>
+                        <a href="#errors"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new ErrorHelper()</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>錯誤訊息存放物件</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroy"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>destroy</b></span>
+                        <a href="#destroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;void&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.destroySubject.asObservable()</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>元件銷毀通知 Observable，可供訂閱</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroySubject"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>destroySubject</b></span>
+                        <a href="#destroySubject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subject&lt;void&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;void&gt;()</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>元件銷毀通知主體</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isLoginPage"></a>
+                        <span class="name"><b>isLoginPage</b><a href="#isLoginPage"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>isLoginPage()</code></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>目前是否呈現登入畫面</p>
+</div>
+
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;video muted autoplay playsinline loop [hidden]&#x3D;&quot;screenType !&#x3D; &#x27;login&#x27;&quot; #video&gt;
+    &lt;source src&#x3D;&quot;assets/login.mp4&quot; type&#x3D;&quot;video/mp4&quot;&gt;
+&lt;/video&gt;
+
+&lt;lib-header [show]&#x3D;&quot;screenType !&#x3D; &#x27;login&#x27;&quot; [isDialog]&#x3D;&quot;true&quot; backType&#x3D;&quot;Big&quot; (backClick)&#x3D;&quot;back()&quot;&gt;
+    &lt;ng-container ngProjectAs&#x3D;&quot;[h-right]&quot;&gt;
+        @if(screenType &#x3D;&#x3D; &#x27;register-2&#x27;){
+        &lt;ng-container&gt;
+            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-text&quot; mat-button (click)&#x3D;&quot;next(true)&quot;&gt;
+                @if(existOthers){
+                &lt;ng-container&gt;
+                    {{ &#x27;common.skip&#x27; |translate}}
+                &lt;/ng-container&gt;
+                }@else{
+                &lt;ng-container&gt;
+                    {{ &#x27;common.skip-complete&#x27; |translate}}
+                &lt;/ng-container&gt;
+                }
+            &lt;/button&gt;
+        &lt;/ng-container&gt;
+        }
+
+        @if(screenType &#x3D;&#x3D; &#x27;register-3&#x27;){
+        &lt;button class&#x3D;&quot;tmup-btn-text&quot; type&#x3D;&quot;button&quot; mat-button (click)&#x3D;&quot;next()&quot;&gt;
+            {{ &#x27;common.complete&#x27; |translate}}
+        &lt;/button&gt;
+        }
+
+    &lt;/ng-container&gt;
+&lt;/lib-header&gt;
+
+&lt;form class&#x3D;&quot;main column flex&quot; [formGroup]&#x3D;&quot;formGroup&quot; #formArea&gt;
+
+
+    &lt;!-- #region 登入/註冊 選擇頁面 --&gt;
+    @if(screenType &#x3D;&#x3D; &#x27;login&#x27;){
+    &lt;ng-container&gt;
+        &lt;div class&#x3D;&quot;page-info column tmup-center flex&quot;&gt;
+            &lt;div class&#x3D;&quot;logo row tmup-center&quot;&gt;
+                &lt;img src&#x3D;&quot;assets/logo.svg&quot; /&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;logo-memo row tmup-center&quot; [innerHTML]&#x3D;&quot;&#x27;pages.login.logo-memo&#x27; |translate&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+
+        &lt;div class&#x3D;&quot;btn-container&quot;&gt;
+            &lt;button class&#x3D;&quot;btn-login row tmup-center&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;login(&#x27;facebook&#x27;)&quot;&gt;
+                &lt;mat-icon class&#x3D;&quot;fs-20 white&quot; svgIcon&#x3D;&quot;facebook&quot;&gt;&lt;/mat-icon&gt;
+                &lt;div class&#x3D;&quot;title&quot;&gt;
+                    {{ &#x27;pages.login.btn.facebook&#x27; |translate}}
+                &lt;/div&gt;
+            &lt;/button&gt;
+
+            &lt;button class&#x3D;&quot;btn-login row tmup-center&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;login(&#x27;google&#x27;)&quot;&gt;
+                &lt;mat-icon class&#x3D;&quot;fs-20 white&quot; svgIcon&#x3D;&quot;google&quot;&gt;&lt;/mat-icon&gt;
+                &lt;div class&#x3D;&quot;title&quot;&gt;
+                    {{ &#x27;pages.login.btn.google&#x27; |translate}}
+                &lt;/div&gt;
+            &lt;/button&gt;
+            @if(isIOS){
+            &lt;button class&#x3D;&quot;btn-login row tmup-center&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;login(&#x27;apple&#x27;)&quot;&gt;
+                &lt;mat-icon class&#x3D;&quot;fs-20 white&quot; svgIcon&#x3D;&quot;apple&quot;&gt;&lt;/mat-icon&gt;
+                &lt;div class&#x3D;&quot;title&quot;&gt;
+                    {{ &#x27;pages.login.btn.apple&#x27; |translate}}
+                &lt;/div&gt;
+            &lt;/button&gt;
+            }
+
+
+            &lt;button class&#x3D;&quot;btn-login row tmup-center&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;nextScreen(&#x27;email-login&#x27;)&quot;&gt;
+                &lt;mat-icon class&#x3D;&quot;fs-20 white&quot; svgIcon&#x3D;&quot;email&quot;&gt;&lt;/mat-icon&gt;
+                &lt;div class&#x3D;&quot;title&quot;&gt;
+                    {{ &#x27;pages.login.btn.email&#x27; |translate}}
+                &lt;/div&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;login-term&quot; #loginTerm [innerHTML]&#x3D;&quot;&#x27;pages.login.description&#x27; |translate&quot;&gt;
+
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;term-links&quot; [hidden]&#x3D;&quot;true&quot;&gt;
+            &lt;a class&#x3D;&quot;c-pointer&quot; [routerLink]&#x3D;&quot;[&#x27;/&#x27;, &#x27;legal&#x27;, &#x27;privacy&#x27;]&quot;&gt;
+                {{ &#x27;enums.CustomPageType.PrivacyPolicy&#x27; | translate}}
+            &lt;/a&gt;
+
+            &lt;a class&#x3D;&quot;c-pointer&quot; [routerLink]&#x3D;&quot;[&#x27;/&#x27;, &#x27;legal&#x27;, &#x27;terms&#x27;]&quot;&gt;
+                {{ &#x27;enums.CustomPageType.UserTerms&#x27; | translate}}
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/ng-container&gt;
+    }
+    &lt;!-- #endregion --&gt;
+
+    &lt;!-- #region Email 登入畫面 --&gt;
+    @if(loginType.indexOf(screenType) &gt; -1){
+    &lt;ng-container&gt;
+        &lt;div class&#x3D;&quot;page-info&quot;&gt;
+            &lt;div class&#x3D;&quot;title&quot; [innerHTML]&#x3D;&quot;&#x27;pages.login.email-login.&#x27;+ (isWeb ? &#x27;web-title&#x27; :&#x27;title&#x27;) |translate&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;form-columns flex&quot;&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;lib-textbox-input type&#x3D;&quot;email&quot; formControlName&#x3D;&quot;Email&quot;
+                    [placeholder]&#x3D;&quot; &#x27;pages.login.EmailPlaceholder&#x27; |translate&quot;&gt;
+                    &lt;mat-icon class&#x3D;&quot;suffix teal-2 fs-16&quot; svgIcon&#x3D;&quot;fill-check&quot;
+                        [hidden]&#x3D;&quot;screenType !&#x3D; &#x27;email-login-pwd&#x27;&quot;&gt;&lt;/mat-icon&gt;
+                &lt;/lib-textbox-input&gt;
+            &lt;/div&gt;
+
+            @if(screenType &#x3D;&#x3D; &#x27;email-login-pwd&#x27;){
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;lib-textbox-input type&#x3D;&quot;password&quot; formControlName&#x3D;&quot;Password&quot;
+                    [placeholder]&#x3D;&quot; &#x27;pages.login.PasswordPlaceholder&#x27; |translate&quot;&gt;
+                &lt;/lib-textbox-input&gt;
+            &lt;/div&gt;
+            }
+
+            @if(screenType &#x3D;&#x3D; &#x27;email-login-pwd&#x27;){
+            &lt;div class&#x3D;&quot;row forget c-pointer&quot;&gt;
+                &lt;a (click)&#x3D;&quot;nextScreen(&#x27;forget&#x27;)&quot;&gt;
+                    {{ &#x27;pages.login.btn.forget-password&#x27; |translate}}
+                &lt;/a&gt;
+            &lt;/div&gt;
+            }
+
+
+            &lt;lib-error-summary [errors]&#x3D;&quot;errors&quot;&gt;&lt;/lib-error-summary&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;btn-container&quot;&gt;
+            &lt;button class&#x3D;&quot;btn-next tmup-btn-l&quot; type&#x3D;&quot;submit&quot; [disabled]&#x3D;&quot;checkBtnDisabled()&quot; (click)&#x3D;&quot;next()&quot;&gt;
+                @if(screenType &#x3D;&#x3D; &#x27;email-login-pwd&#x27;){
+                &lt;ng-container&gt;
+                    {{ &#x27;common.login&#x27; | translate}}
+                &lt;/ng-container&gt;
+                }@else{
+                &lt;ng-container&gt;
+                    {{ &#x27;common.page-next&#x27; | translate}}
+                &lt;/ng-container&gt;
+                }
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/ng-container&gt;
+    }
+
+    &lt;!-- #endregion --&gt;
+
+    &lt;!-- #region Email 註冊畫面 --&gt;
+    @if(screenType &#x3D;&#x3D; &#x27;email-register&#x27;){
+    &lt;ng-container&gt;
+        &lt;div class&#x3D;&quot;page-info&quot;&gt;
+            &lt;div class&#x3D;&quot;title&quot; [innerHTML]&#x3D;&quot;&#x27;pages.login.email-register.title&#x27; |translate&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;description&quot; [innerHTML]&#x3D;&quot;&#x27;pages.login.email-register.description&#x27; |translate&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;form-columns flex&quot;&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;lib-textbox-input type&#x3D;&quot;email&quot; formControlName&#x3D;&quot;Email&quot;
+                    [placeholder]&#x3D;&quot; &#x27;pages.login.EmailPlaceholder&#x27; |translate&quot;&gt;
+                    &lt;mat-icon class&#x3D;&quot;suffix teal-2 fs-16&quot; svgIcon&#x3D;&quot;fill-check&quot;&gt;&lt;/mat-icon&gt;
+                &lt;/lib-textbox-input&gt;
+            &lt;/div&gt;
+
+            &lt;lib-error-summary [errors]&#x3D;&quot;errors&quot;&gt;&lt;/lib-error-summary&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;btn-container&quot;&gt;
+            &lt;button class&#x3D;&quot;btn-next tmup-btn-l&quot; type&#x3D;&quot;submit&quot; (click)&#x3D;&quot;next()&quot;&gt;
+                {{ &#x27;common.send-valid-mail&#x27; | translate}}
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/ng-container&gt;
+    }
+
+    &lt;!-- #endregion --&gt;
+
+    &lt;!-- #region Email 註冊密碼輸入畫面 --&gt;
+    @if(screenType &#x3D;&#x3D; &#x27;email-register-pwd&#x27;){
+    &lt;ng-container&gt;
+        &lt;div class&#x3D;&quot;page-info&quot;&gt;
+            &lt;div class&#x3D;&quot;title&quot; [innerHTML]&#x3D;&quot;&#x27;pages.login.email-register-pwd.title&#x27; |translate&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;description&quot; [innerHTML]&#x3D;&quot;&#x27;pages.login.email-register-pwd.description&#x27; |translate&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;form-columns flex&quot;&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;lib-textbox-input type&#x3D;&quot;password&quot; formControlName&#x3D;&quot;Password&quot;
+                    [placeholder]&#x3D;&quot; &#x27;pages.login.PasswordPlaceholder&#x27; |translate&quot;&gt;
+
+                    @if(formGroup.get(&#x27;Password&#x27;)?.valid){
+                    &lt;mat-icon class&#x3D;&quot;suffix teal-2 fs-16&quot; svgIcon&#x3D;&quot;fill-check&quot;&gt;&lt;/mat-icon&gt;
+                    }
+
+                &lt;/lib-textbox-input&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;lib-textbox-input type&#x3D;&quot;password&quot; formControlName&#x3D;&quot;ConfirmPassword&quot;
+                    [placeholder]&#x3D;&quot; &#x27;pages.login.ConfirmPasswordPlaceholder&#x27; |translate&quot;&gt;
+
+                    @if(formGroup.get(&#x27;ConfirmPassword&#x27;)?.valid){
+                    &lt;mat-icon class&#x3D;&quot;suffix teal-2 fs-16&quot; svgIcon&#x3D;&quot;fill-check&quot;&gt;&lt;/mat-icon&gt;
+                    }
+
+                &lt;/lib-textbox-input&gt;
+            &lt;/div&gt;
+
+            &lt;lib-error-summary [errors]&#x3D;&quot;errors&quot;&gt;&lt;/lib-error-summary&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;btn-container&quot;&gt;
+            &lt;button class&#x3D;&quot;btn-next tmup-btn-l&quot; type&#x3D;&quot;submit&quot; [disabled]&#x3D;&quot;checkBtnDisabled()&quot; (click)&#x3D;&quot;next()&quot;&gt;
+                &lt;ng-container&gt;
+                    {{ &#x27;common.page-next&#x27; | translate}}
+                &lt;/ng-container&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+
+    &lt;/ng-container&gt;
+    }
+
+    &lt;!-- #endregion --&gt;
+    @if(screenType &#x3D;&#x3D; &#x27;register-1&#x27;){
+    &lt;ng-container&gt;
+        &lt;div class&#x3D;&quot;page-info&quot;&gt;
+            &lt;div class&#x3D;&quot;title&quot;&gt;
+                {{ &#x27;pages.login.&#x27;+screenType+&#x27;.title&#x27; |translate}}
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;description&quot; [innerHTML]&#x3D;&quot;&#x27;pages.login.&#x27;+screenType+&#x27;.description&#x27; |translate&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;form-columns flex&quot;&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;lib-textbox-input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;FirstName&quot;
+                    [placeholder]&#x3D;&quot; &#x27;pages.login.FirstNamePlaceholder&#x27; |translate&quot;&gt;
+                &lt;/lib-textbox-input&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;lib-textbox-input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;LastName&quot;
+                    [placeholder]&#x3D;&quot; &#x27;pages.login.LastNamePlaceholder&#x27; |translate&quot;&gt;
+                &lt;/lib-textbox-input&gt;
+            &lt;/div&gt;
+
+            &lt;lib-error-summary [errors]&#x3D;&quot;errors&quot;&gt;&lt;/lib-error-summary&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;btn-container&quot;&gt;
+            &lt;button class&#x3D;&quot;btn-next tmup-btn-l&quot; type&#x3D;&quot;submit&quot; [disabled]&#x3D;&quot;checkBtnDisabled()&quot; (click)&#x3D;&quot;next()&quot;&gt;
+                &lt;ng-container&gt;
+                    {{ &#x27;common.page-next&#x27; | translate}}
+                &lt;/ng-container&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/ng-container&gt;
+    }
+
+    @if(screenType &#x3D;&#x3D; &#x27;register-2&#x27;){
+    &lt;ng-container&gt;
+        &lt;div class&#x3D;&quot;page-info&quot;&gt;
+            &lt;div class&#x3D;&quot;title&quot;&gt;
+                {{ &#x27;pages.login.&#x27;+screenType+&#x27;.title&#x27; |translate}}
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;description&quot; [innerHTML]&#x3D;&quot;&#x27;pages.login.&#x27;+screenType+&#x27;.description&#x27; |translate&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;form-columns flex&quot;&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;lib-select-input formControlName&#x3D;&quot;CountryId&quot; type&#x3D;&quot;Common&quot; [showSearch]&#x3D;&quot;true&quot; [showCancel]&#x3D;&quot;false&quot;
+                    [title]&#x3D;&quot;&#x27;pages.login.register-2.select-empty.country&#x27;&quot; openType&#x3D;&quot;CircleTag&quot;&gt;
+                    &lt;lib-option [value]&#x3D;&quot;null&quot; [selectText]&#x3D;&quot;&#x27;pages.login.register-2.select-empty.country&#x27; | translate&quot;&gt;
+                        {{&#x27;pages.login.register-2.select-empty.country&#x27; | translate}}
+                    &lt;/lib-option&gt;
+                    @for(item of countrys; track item.Id){
+                    &lt;lib-option [value]&#x3D;&quot;item.Id&quot; [selectText]&#x3D;&quot;item.Name&quot;&gt;
+                        {{item.Name}}
+                    &lt;/lib-option&gt;
+                    }
+                    &lt;mat-icon class&#x3D;&quot;common-suffix fs-16&quot; svgIcon&#x3D;&quot;arrow_down_1&quot;&gt;
+                    &lt;/mat-icon&gt;
+                &lt;/lib-select-input&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;lib-select-input formControlName&#x3D;&quot;CityId&quot; [showSearch]&#x3D;&quot;true&quot; [showCancel]&#x3D;&quot;false&quot;
+                    [title]&#x3D;&quot; &#x27;pages.login.register-2.select-empty.city&#x27;&quot; type&#x3D;&quot;Common&quot; openType&#x3D;&quot;CircleTag&quot;&gt;
+                    &lt;lib-option [value]&#x3D;&quot;null&quot; [selectText]&#x3D;&quot;&#x27;pages.login.register-2.select-empty.city&#x27; | translate&quot;&gt;
+                        {{&#x27;pages.login.register-2.select-empty.city&#x27; | translate}}
+                    &lt;/lib-option&gt;
+
+                    @for(item of citys; track item.Id){
+                    &lt;lib-option [value]&#x3D;&quot;item.Id&quot; [selectText]&#x3D;&quot;item.Name&quot;&gt;
+                        {{item.Name}}
+                    &lt;/lib-option&gt;
+                    }
+
+
+                    &lt;mat-icon class&#x3D;&quot;common-suffix fs-18&quot; svgIcon&#x3D;&quot;location&quot;&gt;
+                    &lt;/mat-icon&gt;
+                &lt;/lib-select-input&gt;
+            &lt;/div&gt;
+
+            &lt;lib-error-summary [errors]&#x3D;&quot;errors&quot;&gt;&lt;/lib-error-summary&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;btn-container&quot;&gt;
+            &lt;button class&#x3D;&quot;btn-next tmup-btn-l&quot; type&#x3D;&quot;submit&quot; [disabled]&#x3D;&quot;checkBtnDisabled()&quot; (click)&#x3D;&quot;next()&quot;&gt;
+                @if(existOthers){
+                &lt;ng-container&gt;
+                    {{ &#x27;common.page-next&#x27; | translate}}
+                &lt;/ng-container&gt;
+                }@else{
+                &lt;ng-container&gt;
+                    {{ &#x27;common.complete&#x27; | translate}}
+                &lt;/ng-container&gt;
+                }
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/ng-container&gt;
+    }
+
+    @if(screenType &#x3D;&#x3D; &#x27;register-3&#x27;){
+    &lt;ng-container&gt;
+        &lt;div class&#x3D;&quot;page-info register-3&quot; #pageInfo&gt;
+            &lt;div class&#x3D;&quot;logo-bottom row&quot;&gt;
+                &lt;img src&#x3D;&quot;assets/logo.svg&quot; /&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;title&quot; [innerHTML]&#x3D;&quot;&#x27;pages.login.&#x27;+screenType+&#x27;.title&#x27; |translate&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-columns recommends column flex&quot; #recommends&gt;
+            @for(item of recommendList; let x &#x3D; $index; track item.Id){
+            &lt;lib-user-item [item]&#x3D;&quot;item&quot; type&#x3D;&quot;Register&quot;&gt;
+                &lt;div class&#x3D;&quot;register-bottom&quot;&gt;
+                    &lt;button class&#x3D;&quot;tmup-btn-ss&quot; type&#x3D;&quot;button&quot; [class.active]&#x3D;&quot;item.Follow&quot;
+                        (click)&#x3D;&quot;follow(item)&quot;&gt;
+                        @if(!item.Follow){
+                        &lt;ng-container&gt;
+                            {{ &#x27;common.follow&#x27; |translate}}
+                        &lt;/ng-container&gt;
+                        }@else{
+                        &lt;ng-container&gt;
+                            {{ &#x27;common.followed&#x27; |translate}}
+                        &lt;/ng-container&gt;
+                        }
+
+
+
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/lib-user-item&gt;
+
+            }
+        &lt;/div&gt;
+    &lt;/ng-container&gt;
+    }
+
+    @if(screenType &#x3D;&#x3D; &#x27;forget&#x27;){
+    &lt;ng-container&gt;
+        &lt;div class&#x3D;&quot;page-info&quot;&gt;
+            &lt;div class&#x3D;&quot;title&quot; [innerHTML]&#x3D;&quot;&#x27;pages.login.&#x27;+screenType+&#x27;.title&#x27; |translate&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;form-columns flex&quot;&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;lib-textbox-input type&#x3D;&quot;email&quot; formControlName&#x3D;&quot;Email&quot;
+                    [placeholder]&#x3D;&quot; &#x27;pages.login.EmailPlaceholder&#x27; |translate&quot;&gt;
+
+                    &lt;mat-icon class&#x3D;&quot;suffix teal-2 fs-16&quot; svgIcon&#x3D;&quot;fill-check&quot;&gt;&lt;/mat-icon&gt;
+                &lt;/lib-textbox-input&gt;
+            &lt;/div&gt;
+
+            &lt;lib-error-summary [errors]&#x3D;&quot;errors&quot;&gt;&lt;/lib-error-summary&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;btn-container&quot;&gt;
+            &lt;button class&#x3D;&quot;btn-next tmup-btn-l&quot; [disabled]&#x3D;&quot;checkBtnDisabled()&quot; type&#x3D;&quot;submit&quot; (click)&#x3D;&quot;next()&quot;&gt;
+                &lt;ng-container&gt;
+                    {{ &#x27;common.send-valid-mail&#x27; | translate}}
+                &lt;/ng-container&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/ng-container&gt;
+    }
+
+    @if(screenType &#x3D;&#x3D; &#x27;forget-pwd&#x27;){
+    &lt;ng-container&gt;
+        &lt;div class&#x3D;&quot;page-info&quot;&gt;
+            &lt;div class&#x3D;&quot;title&quot; [innerHTML]&#x3D;&quot;&#x27;pages.login.forget-pwd.title&#x27; |translate&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;description&quot; [innerHTML]&#x3D;&quot;&#x27;pages.login.forget-pwd.description&#x27; |translate&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;form-columns flex&quot;&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;lib-textbox-input type&#x3D;&quot;password&quot; formControlName&#x3D;&quot;Password&quot;
+                    [placeholder]&#x3D;&quot; &#x27;pages.login.PasswordPlaceholder&#x27; |translate&quot;&gt;
+
+                    @if(formGroup.get(&#x27;Password&#x27;)?.valid){
+                    &lt;mat-icon class&#x3D;&quot;suffix teal-2 fs-16&quot; svgIcon&#x3D;&quot;fill-check&quot;&gt;&lt;/mat-icon&gt;
+                    }
+
+                &lt;/lib-textbox-input&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;lib-textbox-input type&#x3D;&quot;password&quot; formControlName&#x3D;&quot;ConfirmPassword&quot;
+                    [placeholder]&#x3D;&quot; &#x27;pages.login.ConfirmPasswordPlaceholder&#x27; |translate&quot;&gt;
+
+                    @if(formGroup.get(&#x27;ConfirmPassword&#x27;)?.valid){
+                    &lt;mat-icon class&#x3D;&quot;suffix teal-2 fs-16&quot; svgIcon&#x3D;&quot;fill-check&quot;&gt;&lt;/mat-icon&gt;
+                    }
+                &lt;/lib-textbox-input&gt;
+            &lt;/div&gt;
+
+            &lt;lib-error-summary [errors]&#x3D;&quot;errors&quot;&gt;&lt;/lib-error-summary&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;btn-container&quot;&gt;
+            &lt;button class&#x3D;&quot;btn-next tmup-btn-l&quot; type&#x3D;&quot;submit&quot; [disabled]&#x3D;&quot;checkBtnDisabled()&quot; (click)&#x3D;&quot;next()&quot;&gt;
+                &lt;ng-container&gt;
+                    {{ &#x27;common.setting-completed&#x27; | translate}}
+                &lt;/ng-container&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+
+    &lt;/ng-container&gt;
+    }
+
+    @if(validType.indexOf(screenType) &gt; -1){
+    &lt;ng-container&gt;
+        &lt;div class&#x3D;&quot;page-info&quot;&gt;
+            &lt;div class&#x3D;&quot;title&quot; [innerHTML]&#x3D;&quot;&#x27;pages.login.&#x27;+screenType+&#x27;.title&#x27; |translate&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;email row tmup-align-center&quot;&gt;
+                &lt;span&gt;{{this.formGroup.get(&#x27;Email&#x27;)?.value}}&lt;/span&gt;
+                &lt;mat-icon class&#x3D;&quot;fs-16 teal-2&quot; svgIcon&#x3D;&quot;fill-check&quot;&gt;&lt;/mat-icon&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;description&quot; [innerHTML]&#x3D;&quot;&#x27;pages.login.&#x27;+screenType+&#x27;.description&#x27; |translate&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;form-columns flex&quot;&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;lib-valid-code-input formControlName&#x3D;&quot;Code&quot;&gt;&lt;/lib-valid-code-input&gt;
+            &lt;/div&gt;
+
+            &lt;lib-error-summary [errors]&#x3D;&quot;errors&quot;&gt;&lt;/lib-error-summary&gt;
+
+            &lt;div class&#x3D;&quot;reset-code&quot;&gt;
+                &lt;span class&#x3D;&quot;title&quot;&gt;
+                    {{ &#x27;pages.login.resend-code-title&#x27; |translate}}
+                &lt;/span&gt;
+                &lt;a href&#x3D;&quot;javascript:void(0)&quot; (click)&#x3D;&quot;resendCode()&quot;&gt;{{ &#x27;common.resend&#x27; |translate}}&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;btn-container&quot;&gt;
+            &lt;button class&#x3D;&quot;btn-next tmup-btn-l&quot; type&#x3D;&quot;submit&quot; [disabled]&#x3D;&quot;checkBtnDisabled()&quot; (click)&#x3D;&quot;next()&quot;&gt;
+                &lt;ng-container&gt;
+                    {{ &#x27;common.valid-email&#x27; | translate}}
+                &lt;/ng-container&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+
+    &lt;/ng-container&gt;
+    }
+
+    @if(screenType &#x3D;&#x3D; &#x27;login-binding&#x27;){
+    &lt;ng-container&gt;
+        &lt;div class&#x3D;&quot;page-info&quot;&gt;
+            &lt;div class&#x3D;&quot;title&quot; [innerHTML]&#x3D;&quot;&#x27;pages.login.login-binding.title&#x27; |translate&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;description&quot; [innerHTML]&#x3D;&quot;&#x27;pages.login.login-binding.description&#x27; |translate&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;form-columns flex&quot;&gt;
+            &lt;div class&#x3D;&quot;row email-display flex tmup-align-center&quot;&gt;
+                &lt;lib-user-avatar [avatar]&#x3D;&quot;confirmUser?.Avatar&quot; [lastName]&#x3D;&quot;confirmUser?.LastName&quot;
+                    [firstName]&#x3D;&quot;confirmUser?.FirstName&quot;&gt;&lt;/lib-user-avatar&gt;
+                &lt;div&gt;
+                    {{confirmUser?.Email}}
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;lib-error-summary [errors]&#x3D;&quot;errors&quot;&gt;&lt;/lib-error-summary&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;btn-container login-binding-footer&quot;&gt;
+            &lt;button class&#x3D;&quot;tmup-btn-l&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;nextScreen(&#x27;login-binding-pwd&#x27;)&quot;&gt;
+                &lt;ng-container&gt;
+                    {{ &#x27;pages.login.btn.merge-account&#x27; | translate}}
+                &lt;/ng-container&gt;
+            &lt;/button&gt;
+            &lt;a class&#x3D;&quot;tmup-btn-l-nobg link-noline&quot; (click)&#x3D;&quot;nextScreen(&#x27;register-1&#x27;)&quot;&gt;
+                {{ &#x27;pages.login.btn.create-account&#x27; | translate}}
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/ng-container&gt;
+    }
+
+    @if(screenType &#x3D;&#x3D; &#x27;login-binding-pwd&#x27;){
+    &lt;ng-container&gt;
+        &lt;div class&#x3D;&quot;page-info&quot;&gt;
+            &lt;div class&#x3D;&quot;title&quot; [innerHTML]&#x3D;&quot;&#x27;pages.login.login-binding-pwd.title&#x27; |translate&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;description&quot;
+                [innerHTML]&#x3D;&quot;&#x27;pages.login.login-binding-pwd.description&#x27; |translate:({email: confirmUser?.Email})&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;form-columns flex&quot;&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;lib-textbox-input type&#x3D;&quot;password&quot; formControlName&#x3D;&quot;Password&quot;
+                    [placeholder]&#x3D;&quot; &#x27;pages.login.PasswordPlaceholder&#x27; |translate&quot;&gt;
+                &lt;/lib-textbox-input&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;row forget c-pointer&quot;&gt;
+                &lt;a (click)&#x3D;&quot;nextScreen(&#x27;forget&#x27;)&quot;&gt;
+                    {{ &#x27;pages.login.btn.forget-password&#x27; |translate}}
+                &lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;lib-error-summary [errors]&#x3D;&quot;errors&quot;&gt;&lt;/lib-error-summary&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;btn-container&quot;&gt;
+            &lt;button class&#x3D;&quot;btn-next tmup-btn-l&quot; type&#x3D;&quot;submit&quot; [disabled]&#x3D;&quot;checkBtnDisabled()&quot; (click)&#x3D;&quot;next()&quot;&gt;
+                &lt;ng-container&gt;
+                    {{ &#x27;pages.login.btn.merge-completed&#x27; | translate}}
+                &lt;/ng-container&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/ng-container&gt;
+    }
+
+    @if(mapService.loaded){
+    &lt;google-map [hidden]&#x3D;&quot;true&quot; class&#x3D;&quot;map&quot; #map&gt;&lt;/google-map&gt;
+    }
+
+&lt;/form&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./login.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">:host {
+    position: relative;
+
+    &amp;.login {
+        background: rgba(0, 0, 0, 0.45);
+    }
+
+
+    .main {
+        z-index: 1;
+        overflow-y: auto;
+
+        .page-info {
+            padding: 0px var(--app-x-space);
+            margin-top: 40px;
+            margin-bottom: 30px;
+
+            &amp;.register-3 {
+                margin-top: 24px;
+                margin-bottom: 20px;
+            }
+
+
+            &amp;.hide-top {
+                margin-top: 16px;
+            }
+
+            .logo-bottom {
+                opacity: 1;
+                margin-bottom: 32px;
+                height: 40px;
+                transition: opacity .8s ease-in-out, margin-bottom .8s ease-in-out;
+
+                &amp;.shorten {
+                    opacity: 0;
+                    margin-bottom: 0px;
+                }
+
+                &amp;.hide-height {
+                    height: 0;
+                }
+            }
+
+            .title {
+                font-size: 1.5rem;
+                font-weight: 700;
+                line-height: 1.5rem;
+                color: var(--app-text-color);
+                transition: color 1s ease-in-out;
+
+                &amp;.gray {
+                    font-size: 1.125rem;
+                    line-height: 1.25rem;
+                    color: var(--app-color-949494);
+                }
+            }
+
+            .description {
+                margin-top: 16px;
+                font-size: 0.875rem;
+                color: var(--app-color-494949);
+            }
+
+            .logo-memo {
+                margin-top: 32px;
+                font-size: 1rem;
+                font-weight: 500;
+                color: var(--app-white);
+            }
+
+            .email {
+                margin-top: 16px;
+                font-size: 0.875rem;
+                color: var(--app-text-color);
+
+                mat-icon {
+                    margin-left: 4px;
+                }
+            }
+        }
+
+        .login-term {
+            padding: 0px var(--app-x-space);
+            margin-top: 20px;
+            margin-bottom: 40px;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            letter-spacing: 0.0175rem;
+            text-align: center;
+            color: #949494;
+
+            ::ng-deep {
+                .tmup-term,
+                .tmup-private {
+                    color: var(--app-white);
+                }
+            }
+        }
+
+        .form-columns {
+            padding: 0px var(--app-x-space);
+
+            &amp;.recommends {
+                overflow-y: auto;
+            }
+
+
+            &gt;div {
+                margin-bottom: 12px;
+            }
+
+            .memo {
+                font-size: 0.625rem;
+                color: var(--app-black-gray-60);
+            }
+
+            .forget {
+                justify-content: flex-end;
+
+                a {
+                    font-size: 0.875rem;
+                    color: var(--app-primary);
+                    text-decoration: underline var(--app-primary);
+                }
+            }
+
+            lib-user-item {
+                width: 100%;
+                margin-bottom: 16px;
+
+                &amp;::ng-deep {
+                    .register-bottom {
+                        margin: 0 16px;
+                    }
+                }
+            }
+
+            .reset-code {
+                margin-top: 40px;
+                font-size: 0.875rem;
+
+                .title {
+                    color: var(--app-color-949494);
+                }
+
+                a {
+                    padding: 4px 8px 6px 8px;
+                    color: var(--app-primary);
+                    text-decoration: underline var(--app-primary);
+                }
+            }
+
+            .email-display {
+                padding: 8px 16px;
+                border-radius: 12px;
+                border: 1px solid var(--app-secondary-gray-7);
+                background: var(--app-bg-color);
+                font-size: 0.875rem;
+                font-weight: 500;
+
+                lib-user-avatar {
+                    width: 40px;
+                    height: 40px;
+                    margin-right: 12px;
+                }
+            }
+
+            lib-select-input{
+                mat-icon{
+                    color: var(--app-text-color);
+                }
+            }
+        }
+
+        .btn-next {
+            margin-bottom: 20px;
+        }
+
+        .btn-login {
+            height: 50px;
+            margin: 8px 0px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 25px;
+            backdrop-filter: blur(20px);
+            color: var(--app-white);
+            border: 0;
+
+            mat-icon {
+                margin-top: 2px;
+                margin-right: 16px;
+            }
+
+
+            &gt;.title {
+                width: 160px;
+                text-align: left;
+                font-size: 1rem;
+                font-weight: 600;
+                letter-spacing: 0.8px;
+                font-family: &#x27;Noto Sans TC&#x27;, sans-serif;
+            }
+        }
+
+        .btn-container {
+            padding: 0 var(--app-x-space);
+
+            &amp;.login-binding-footer {
+
+                button,
+                a {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+    video {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    &amp;.login{
+        &gt; .main{
+          touch-action: none;  
+        }
+    }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><video muted autoplay playsinline loop [hidden]="screenType != \'login\'" #video>    <source src="assets/login.mp4" type="video/mp4"></video><lib-header [show]="screenType != \'login\'" [isDialog]="true" backType="Big" (backClick)="back()">    <ng-container ngProjectAs="[h-right]">        @if(screenType == \'register-2\'){        <ng-container>            <button type="button" class="tmup-btn-text" mat-button (click)="next(true)">                @if(existOthers){                <ng-container>                    {{ \'common.skip\' |translate}}                </ng-container>                }@else{                <ng-container>                    {{ \'common.skip-complete\' |translate}}                </ng-container>                }            </button>        </ng-container>        }        @if(screenType == \'register-3\'){        <button class="tmup-btn-text" type="button" mat-button (click)="next()">            {{ \'common.complete\' |translate}}        </button>        }    </ng-container></lib-header><form class="main column flex" [formGroup]="formGroup" #formArea>    <!-- #region 登入/註冊 選擇頁面 -->    @if(screenType == \'login\'){    <ng-container>        <div class="page-info column tmup-center flex">            <div class="logo row tmup-center">                <img src="assets/logo.svg" />            </div>            <div class="logo-memo row tmup-center" [innerHTML]="\'pages.login.logo-memo\' |translate">            </div>        </div>        <div class="btn-container">            <button class="btn-login row tmup-center" type="button" (click)="login(\'facebook\')">                <mat-icon class="fs-20 white" svgIcon="facebook"></mat-icon>                <div class="title">                    {{ \'pages.login.btn.facebook\' |translate}}                </div>            </button>            <button class="btn-login row tmup-center" type="button" (click)="login(\'google\')">                <mat-icon class="fs-20 white" svgIcon="google"></mat-icon>                <div class="title">                    {{ \'pages.login.btn.google\' |translate}}                </div>            </button>            @if(isIOS){            <button class="btn-login row tmup-center" type="button" (click)="login(\'apple\')">                <mat-icon class="fs-20 white" svgIcon="apple"></mat-icon>                <div class="title">                    {{ \'pages.login.btn.apple\' |translate}}                </div>            </button>            }            <button class="btn-login row tmup-center" type="button" (click)="nextScreen(\'email-login\')">                <mat-icon class="fs-20 white" svgIcon="email"></mat-icon>                <div class="title">                    {{ \'pages.login.btn.email\' |translate}}                </div>            </button>        </div>        <div class="login-term" #loginTerm [innerHTML]="\'pages.login.description\' |translate">        </div>        <div class="term-links" [hidden]="true">            <a class="c-pointer" [routerLink]="[\'/\', \'legal\', \'privacy\']">                {{ \'enums.CustomPageType.PrivacyPolicy\' | translate}}            </a>            <a class="c-pointer" [routerLink]="[\'/\', \'legal\', \'terms\']">                {{ \'enums.CustomPageType.UserTerms\' | translate}}            </a>        </div>    </ng-container>    }    <!-- #endregion -->    <!-- #region Email 登入畫面 -->    @if(loginType.indexOf(screenType) > -1){    <ng-container>        <div class="page-info">            <div class="title" [innerHTML]="\'pages.login.email-login.\'+ (isWeb ? \'web-title\' :\'title\') |translate">            </div>        </div>        <div class="form-columns flex">            <div class="row">                <lib-textbox-input type="email" formControlName="Email"                    [placeholder]=" \'pages.login.EmailPlaceholder\' |translate">                    <mat-icon class="suffix teal-2 fs-16" svgIcon="fill-check"                        [hidden]="screenType != \'email-login-pwd\'"></mat-icon>                </lib-textbox-input>            </div>            @if(screenType == \'email-login-pwd\'){            <div class="row">                <lib-textbox-input type="password" formControlName="Password"                    [placeholder]=" \'pages.login.PasswordPlaceholder\' |translate">                </lib-textbox-input>            </div>            }            @if(screenType == \'email-login-pwd\'){            <div class="row forget c-pointer">                <a (click)="nextScreen(\'forget\')">                    {{ \'pages.login.btn.forget-password\' |translate}}                </a>            </div>            }            <lib-error-summary [errors]="errors"></lib-error-summary>        </div>        <div class="btn-container">            <button class="btn-next tmup-btn-l" type="submit" [disabled]="checkBtnDisabled()" (click)="next()">                @if(screenType == \'email-login-pwd\'){                <ng-container>                    {{ \'common.login\' | translate}}                </ng-container>                }@else{                <ng-container>                    {{ \'common.page-next\' | translate}}                </ng-container>                }            </button>        </div>    </ng-container>    }    <!-- #endregion -->    <!-- #region Email 註冊畫面 -->    @if(screenType == \'email-register\'){    <ng-container>        <div class="page-info">            <div class="title" [innerHTML]="\'pages.login.email-register.title\' |translate">            </div>            <div class="description" [innerHTML]="\'pages.login.email-register.description\' |translate">            </div>        </div>        <div class="form-columns flex">            <div class="row">                <lib-textbox-input type="email" formControlName="Email"                    [placeholder]=" \'pages.login.EmailPlaceholder\' |translate">                    <mat-icon class="suffix teal-2 fs-16" svgIcon="fill-check"></mat-icon>                </lib-textbox-input>            </div>            <lib-error-summary [errors]="errors"></lib-error-summary>        </div>        <div class="btn-container">            <button class="btn-next tmup-btn-l" type="submit" (click)="next()">                {{ \'common.send-valid-mail\' | translate}}            </button>        </div>    </ng-container>    }    <!-- #endregion -->    <!-- #region Email 註冊密碼輸入畫面 -->    @if(screenType == \'email-register-pwd\'){    <ng-container>        <div class="page-info">            <div class="title" [innerHTML]="\'pages.login.email-register-pwd.title\' |translate">            </div>            <div class="description" [innerHTML]="\'pages.login.email-register-pwd.description\' |translate">            </div>        </div>        <div class="form-columns flex">            <div class="row">                <lib-textbox-input type="password" formControlName="Password"                    [placeholder]=" \'pages.login.PasswordPlaceholder\' |translate">                    @if(formGroup.get(\'Password\')?.valid){                    <mat-icon class="suffix teal-2 fs-16" svgIcon="fill-check"></mat-icon>                    }                </lib-textbox-input>            </div>            <div class="row">                <lib-textbox-input type="password" formControlName="ConfirmPassword"                    [placeholder]=" \'pages.login.ConfirmPasswordPlaceholder\' |translate">                    @if(formGroup.get(\'ConfirmPassword\')?.valid){                    <mat-icon class="suffix teal-2 fs-16" svgIcon="fill-check"></mat-icon>                    }                </lib-textbox-input>            </div>            <lib-error-summary [errors]="errors"></lib-error-summary>        </div>        <div class="btn-container">            <button class="btn-next tmup-btn-l" type="submit" [disabled]="checkBtnDisabled()" (click)="next()">                <ng-container>                    {{ \'common.page-next\' | translate}}                </ng-container>            </button>        </div>    </ng-container>    }    <!-- #endregion -->    @if(screenType == \'register-1\'){    <ng-container>        <div class="page-info">            <div class="title">                {{ \'pages.login.\'+screenType+\'.title\' |translate}}            </div>            <div class="description" [innerHTML]="\'pages.login.\'+screenType+\'.description\' |translate">            </div>        </div>        <div class="form-columns flex">            <div class="row">                <lib-textbox-input type="text" formControlName="FirstName"                    [placeholder]=" \'pages.login.FirstNamePlaceholder\' |translate">                </lib-textbox-input>            </div>            <div class="row">                <lib-textbox-input type="text" formControlName="LastName"                    [placeholder]=" \'pages.login.LastNamePlaceholder\' |translate">                </lib-textbox-input>            </div>            <lib-error-summary [errors]="errors"></lib-error-summary>        </div>        <div class="btn-container">            <button class="btn-next tmup-btn-l" type="submit" [disabled]="checkBtnDisabled()" (click)="next()">                <ng-container>                    {{ \'common.page-next\' | translate}}                </ng-container>            </button>        </div>    </ng-container>    }    @if(screenType == \'register-2\'){    <ng-container>        <div class="page-info">            <div class="title">                {{ \'pages.login.\'+screenType+\'.title\' |translate}}            </div>            <div class="description" [innerHTML]="\'pages.login.\'+screenType+\'.description\' |translate">            </div>        </div>        <div class="form-columns flex">            <div class="row">                <lib-select-input formControlName="CountryId" type="Common" [showSearch]="true" [showCancel]="false"                    [title]="\'pages.login.register-2.select-empty.country\'" openType="CircleTag">                    <lib-option [value]="null" [selectText]="\'pages.login.register-2.select-empty.country\' | translate">                        {{\'pages.login.register-2.select-empty.country\' | translate}}                    </lib-option>                    @for(item of countrys; track item.Id){                    <lib-option [value]="item.Id" [selectText]="item.Name">                        {{item.Name}}                    </lib-option>                    }                    <mat-icon class="common-suffix fs-16" svgIcon="arrow_down_1">                    </mat-icon>                </lib-select-input>            </div>            <div class="row">                <lib-select-input formControlName="CityId" [showSearch]="true" [showCancel]="false"                    [title]=" \'pages.login.register-2.select-empty.city\'" type="Common" openType="CircleTag">                    <lib-option [value]="null" [selectText]="\'pages.login.register-2.select-empty.city\' | translate">                        {{\'pages.login.register-2.select-empty.city\' | translate}}                    </lib-option>                    @for(item of citys; track item.Id){                    <lib-option [value]="item.Id" [selectText]="item.Name">                        {{item.Name}}                    </lib-option>                    }                    <mat-icon class="common-suffix fs-18" svgIcon="location">                    </mat-icon>                </lib-select-input>            </div>            <lib-error-summary [errors]="errors"></lib-error-summary>        </div>        <div class="btn-container">            <button class="btn-next tmup-btn-l" type="submit" [disabled]="checkBtnDisabled()" (click)="next()">                @if(existOthers){                <ng-container>                    {{ \'common.page-next\' | translate}}                </ng-container>                }@else{                <ng-container>                    {{ \'common.complete\' | translate}}                </ng-container>                }            </button>        </div>    </ng-container>    }    @if(screenType == \'register-3\'){    <ng-container>        <div class="page-info register-3" #pageInfo>            <div class="logo-bottom row">                <img src="assets/logo.svg" />            </div>            <div class="title" [innerHTML]="\'pages.login.\'+screenType+\'.title\' |translate">            </div>        </div>        <div class="form-columns recommends column flex" #recommends>            @for(item of recommendList; let x = $index; track item.Id){            <lib-user-item [item]="item" type="Register">                <div class="register-bottom">                    <button class="tmup-btn-ss" type="button" [class.active]="item.Follow"                        (click)="follow(item)">                        @if(!item.Follow){                        <ng-container>                            {{ \'common.follow\' |translate}}                        </ng-container>                        }@else{                        <ng-container>                            {{ \'common.followed\' |translate}}                        </ng-container>                        }                    </button>                </div>            </lib-user-item>            }        </div>    </ng-container>    }    @if(screenType == \'forget\'){    <ng-container>        <div class="page-info">            <div class="title" [innerHTML]="\'pages.login.\'+screenType+\'.title\' |translate">            </div>        </div>        <div class="form-columns flex">            <div class="row">                <lib-textbox-input type="email" formControlName="Email"                    [placeholder]=" \'pages.login.EmailPlaceholder\' |translate">                    <mat-icon class="suffix teal-2 fs-16" svgIcon="fill-check"></mat-icon>                </lib-textbox-input>            </div>            <lib-error-summary [errors]="errors"></lib-error-summary>        </div>        <div class="btn-container">            <button class="btn-next tmup-btn-l" [disabled]="checkBtnDisabled()" type="submit" (click)="next()">                <ng-container>                    {{ \'common.send-valid-mail\' | translate}}                </ng-container>            </button>        </div>    </ng-container>    }    @if(screenType == \'forget-pwd\'){    <ng-container>        <div class="page-info">            <div class="title" [innerHTML]="\'pages.login.forget-pwd.title\' |translate">            </div>            <div class="description" [innerHTML]="\'pages.login.forget-pwd.description\' |translate">            </div>        </div>        <div class="form-columns flex">            <div class="row">                <lib-textbox-input type="password" formControlName="Password"                    [placeholder]=" \'pages.login.PasswordPlaceholder\' |translate">                    @if(formGroup.get(\'Password\')?.valid){                    <mat-icon class="suffix teal-2 fs-16" svgIcon="fill-check"></mat-icon>                    }                </lib-textbox-input>            </div>            <div class="row">                <lib-textbox-input type="password" formControlName="ConfirmPassword"                    [placeholder]=" \'pages.login.ConfirmPasswordPlaceholder\' |translate">                    @if(formGroup.get(\'ConfirmPassword\')?.valid){                    <mat-icon class="suffix teal-2 fs-16" svgIcon="fill-check"></mat-icon>                    }                </lib-textbox-input>            </div>            <lib-error-summary [errors]="errors"></lib-error-summary>        </div>        <div class="btn-container">            <button class="btn-next tmup-btn-l" type="submit" [disabled]="checkBtnDisabled()" (click)="next()">                <ng-container>                    {{ \'common.setting-completed\' | translate}}                </ng-container>            </button>        </div>    </ng-container>    }    @if(validType.indexOf(screenType) > -1){    <ng-container>        <div class="page-info">            <div class="title" [innerHTML]="\'pages.login.\'+screenType+\'.title\' |translate">            </div>            <div class="email row tmup-align-center">                <span>{{this.formGroup.get(\'Email\')?.value}}</span>                <mat-icon class="fs-16 teal-2" svgIcon="fill-check"></mat-icon>            </div>            <div class="description" [innerHTML]="\'pages.login.\'+screenType+\'.description\' |translate">            </div>        </div>        <div class="form-columns flex">            <div class="row">                <lib-valid-code-input formControlName="Code"></lib-valid-code-input>            </div>            <lib-error-summary [errors]="errors"></lib-error-summary>            <div class="reset-code">                <span class="title">                    {{ \'pages.login.resend-code-title\' |translate}}                </span>                <a href="javascript:void(0)" (click)="resendCode()">{{ \'common.resend\' |translate}}</a>            </div>        </div>        <div class="btn-container">            <button class="btn-next tmup-btn-l" type="submit" [disabled]="checkBtnDisabled()" (click)="next()">                <ng-container>                    {{ \'common.valid-email\' | translate}}                </ng-container>            </button>        </div>    </ng-container>    }    @if(screenType == \'login-binding\'){    <ng-container>        <div class="page-info">            <div class="title" [innerHTML]="\'pages.login.login-binding.title\' |translate">            </div>            <div class="description" [innerHTML]="\'pages.login.login-binding.description\' |translate">            </div>        </div>        <div class="form-columns flex">            <div class="row email-display flex tmup-align-center">                <lib-user-avatar [avatar]="confirmUser?.Avatar" [lastName]="confirmUser?.LastName"                    [firstName]="confirmUser?.FirstName"></lib-user-avatar>                <div>                    {{confirmUser?.Email}}                </div>            </div>            <lib-error-summary [errors]="errors"></lib-error-summary>        </div>        <div class="btn-container login-binding-footer">            <button class="tmup-btn-l" type="button" (click)="nextScreen(\'login-binding-pwd\')">                <ng-container>                    {{ \'pages.login.btn.merge-account\' | translate}}                </ng-container>            </button>            <a class="tmup-btn-l-nobg link-noline" (click)="nextScreen(\'register-1\')">                {{ \'pages.login.btn.create-account\' | translate}}            </a>        </div>    </ng-container>    }    @if(screenType == \'login-binding-pwd\'){    <ng-container>        <div class="page-info">            <div class="title" [innerHTML]="\'pages.login.login-binding-pwd.title\' |translate">            </div>            <div class="description"                [innerHTML]="\'pages.login.login-binding-pwd.description\' |translate:({email: confirmUser?.Email})">            </div>        </div>        <div class="form-columns flex">            <div class="row">                <lib-textbox-input type="password" formControlName="Password"                    [placeholder]=" \'pages.login.PasswordPlaceholder\' |translate">                </lib-textbox-input>            </div>            <div class="row forget c-pointer">                <a (click)="nextScreen(\'forget\')">                    {{ \'pages.login.btn.forget-password\' |translate}}                </a>            </div>            <lib-error-summary [errors]="errors"></lib-error-summary>        </div>        <div class="btn-container">            <button class="btn-next tmup-btn-l" type="submit" [disabled]="checkBtnDisabled()" (click)="next()">                <ng-container>                    {{ \'pages.login.btn.merge-completed\' | translate}}                </ng-container>            </button>        </div>    </ng-container>    }    @if(mapService.loaded){    <google-map [hidden]="true" class="map" #map></google-map>    }</form></div>'
+    var COMPONENTS = [{'name': 'ActivityApplyListComponent', 'selector': 'lib-activity-apply-list'},{'name': 'ActivityCancelDialogComponent', 'selector': 'lib-activity-cancel-dialog'},{'name': 'ActivityComponent', 'selector': 'app-activity'},{'name': 'ActivityDetailComponent', 'selector': 'lib-activity-detail'},{'name': 'ActivityFormComponent', 'selector': 'app-activity-form'},{'name': 'ActivityGpsShareComponent', 'selector': 'lib-activity-gps-share'},{'name': 'ActivityGpsShareDialogComponent', 'selector': 'lib-activity-gps-share-dialog'},{'name': 'ActivityInvitingListComponent', 'selector': 'lib-activity-inviting-list'},{'name': 'ActivityItemComponent', 'selector': 'lib-activity-item'},{'name': 'ActivityJoinListComponent', 'selector': 'lib-activity-join-list'},{'name': 'ActivityLogListComponent', 'selector': 'lib-activity-log-list'},{'name': 'ActivityOnMapComponent', 'selector': 'lib-activity-on-map'},{'name': 'ActivityParticipantListDialogComponent', 'selector': 'lib-activity-participant-list-dialog'},{'name': 'ActivityPointsSelectDialogComponent', 'selector': 'lib-activity-points-select-dialog'},{'name': 'ActivitySearchComponent', 'selector': 'lib-activity-search'},{'name': 'ActivitySelectDialogComponent', 'selector': 'lib-activity-select-dialog'},{'name': 'ActivityUserListComponent', 'selector': 'lib-activity-user-list'},{'name': 'AddressInputComponent', 'selector': 'lib-address-input'},{'name': 'AlertDialogComponent', 'selector': 'lib-alert-dialog'},{'name': 'ArrangePointsDialogComponent', 'selector': 'lib-arrange-points-dialog'},{'name': 'BackgroundChooseComponent', 'selector': 'lib-background-choose'},{'name': 'BlocklistComponent', 'selector': 'lib-blocklist'},{'name': 'CalorieExchangeComponent', 'selector': 'lib-calorie-exchange'},{'name': 'ChatAvatarComponent', 'selector': 'lib-chat-avatar'},{'name': 'ChatComponent', 'selector': 'lib-chat'},{'name': 'ChatItemComponent', 'selector': 'lib-chat-item'},{'name': 'ChatListComponent', 'selector': 'lib-chat-list'},{'name': 'ChatReplyMessageItemComponent', 'selector': 'lib-chat-reply-message-item'},{'name': 'ChatRoomComponent', 'selector': 'lib-chat-room'},{'name': 'ChatRoomItemComponent', 'selector': 'lib-chat-room-item'},{'name': 'ChatRoomItemTemplateComponent', 'selector': 'lib-chat-room-item-template'},{'name': 'ChatRoomMediaListComponent', 'selector': 'lib-chat-room-media-list'},{'name': 'ChatSelectDialogComponent', 'selector': 'lib-chat-select-dialog'},{'name': 'ChatUserComponent', 'selector': 'lib-chat-user'},{'name': 'ConfirmDialogComponent', 'selector': 'lib-confirm-dialog'},{'name': 'CreateActivitySuccessDialogComponent', 'selector': 'lib-create-activity-success-dialog'},{'name': 'CreateRouteSuccessDialogComponent', 'selector': 'lib-create-route-success-dialog'},{'name': 'CreateSuccessComponent', 'selector': 'lib-create-success'},{'name': 'CustomPageComponent', 'selector': 'lib-custom-page'},{'name': 'DateInputComponent', 'selector': 'lib-date-input'},{'name': 'DatetimeInputComponent', 'selector': 'lib-datetime-input'},{'name': 'DeviceSeekingComponent', 'selector': 'lib-device-seeking'},{'name': 'DownloadAppDialogComponent', 'selector': 'lib-download-app-dialog'},{'name': 'DownloadComponent', 'selector': 'lib-download'},{'name': 'DraggableListComponent', 'selector': 'lib-draggable-list'},{'name': 'EmptyDataComponent', 'selector': 'lib-empty-data'},{'name': 'ErrorDialogComponent', 'selector': 'lib-error-dialog'},{'name': 'ErrorSummaryComponent', 'selector': 'lib-error-summary'},{'name': 'ExerciseReadyStartComponent', 'selector': 'lib-exercise-ready-start'},{'name': 'FaqComponent', 'selector': 'lib-faq'},{'name': 'FileComponent', 'selector': 'lib-file'},{'name': 'FindResultComponent', 'selector': 'lib-find-result'},{'name': 'FollowComponent', 'selector': 'app-follow'},{'name': 'FollowersComponent', 'selector': 'lib-followers'},{'name': 'FollowReqComponent', 'selector': 'lib-follow-req'},{'name': 'FooterMenuComponent', 'selector': 'lib-footer-menu'},{'name': 'HeaderComponent', 'selector': 'lib-header'},{'name': 'HomeActivityInviteComponent', 'selector': 'lib-home-activity-invite'},{'name': 'HomeAddBtnComponent', 'selector': 'lib-home-add-btn'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeMenuComponent', 'selector': 'lib-home-menu'},{'name': 'ImageCropperDialogComponent', 'selector': 'lib-image-cropper-dialog'},{'name': 'ImageListDialogComponent', 'selector': 'lib-image-list-dialog'},{'name': 'InviteFriendsComponent', 'selector': 'lib-invite-friends'},{'name': 'LeadRiderForRouteDialogComponent', 'selector': 'lib-lead-rider-for-route-dialog'},{'name': 'LikeCommentDialogComponent', 'selector': 'lib-like-comment-dialog'},{'name': 'LoadingComponent', 'selector': 'lib-loading'},{'name': 'LocationDialogComponent', 'selector': 'lib-location-dialog'},{'name': 'LocationSelectDialogComponent', 'selector': 'lib-location-select-dialog'},{'name': 'LocationShareComponent', 'selector': 'lib-location-share'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapClMarkerComponent', 'selector': 'lib-map-cl-marker'},{'name': 'MapCompassComponent', 'selector': 'lib-map-compass'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'MoreMenuComponent', 'selector': 'lib-more-menu'},{'name': 'MyRouteCollectionComponent', 'selector': 'lib-my-route-collection'},{'name': 'NoticeMsgItemComponent', 'selector': 'lib-notice-msg-item'},{'name': 'NotifyMessageListComponent', 'selector': 'lib-notify-message-list'},{'name': 'OptionComponent', 'selector': 'lib-option'},{'name': 'PageDialogComponent', 'selector': 'lib-page-dialog'},{'name': 'PositionFilterDialogComponent', 'selector': 'lib-position-filter-dialog'},{'name': 'PostAttachmentItemComponent', 'selector': 'lib-post-attachment-item'},{'name': 'PostCommentListComponent', 'selector': 'lib-post-comment-list'},{'name': 'PostFormComponent', 'selector': 'lib-post-form'},{'name': 'PostItemComponent', 'selector': 'lib-post-item'},{'name': 'PostLikeListComponent', 'selector': 'lib-post-like-list'},{'name': 'ProgressBarComponent', 'selector': 'lib-progress-bar'},{'name': 'RecommendTeamListComponent', 'selector': 'lib-recommend-team-list'},{'name': 'RecommendUserListComponent', 'selector': 'lib-recommend-user-list'},{'name': 'RecordSelectDialogComponent', 'selector': 'lib-record-select-dialog'},{'name': 'ReportDialogComponent', 'selector': 'lib-report-dialog'},{'name': 'ReportListComponent', 'selector': 'lib-report-list'},{'name': 'ReportSuccessDialogComponent', 'selector': 'lib-report-success-dialog'},{'name': 'RoadDescDialogComponent', 'selector': 'lib-road-desc-dialog'},{'name': 'RouteActivityListComponent', 'selector': 'lib-route-activity-list'},{'name': 'RouteCollectComponent', 'selector': 'lib-route-collect'},{'name': 'RouteCommentFormComponent', 'selector': 'lib-route-comment-form'},{'name': 'RouteCommentItemComponent', 'selector': 'lib-route-comment-item'},{'name': 'RouteCommentListComponent', 'selector': 'lib-route-comment-list'},{'name': 'RouteDetailComponent', 'selector': 'lib-route-detail'},{'name': 'RouteDetailDialogComponent', 'selector': 'lib-route-detail-dialog'},{'name': 'RouteElevationMapComponent', 'selector': 'lib-route-elevation-map'},{'name': 'RouteExploreComponent', 'selector': 'lib-route-explore'},{'name': 'RouteFormComponent', 'selector': 'lib-route-form'},{'name': 'RouteFromFilterDialogComponent', 'selector': 'lib-route-from-filter-dialog'},{'name': 'RouteInfoComponent', 'selector': 'lib-route-info'},{'name': 'RouteItemComponent', 'selector': 'lib-route-item'},{'name': 'RouteMapExploreComponent', 'selector': 'lib-route-map-explore'},{'name': 'RouteReportInfoComponent', 'selector': 'lib-route-report-info'},{'name': 'RouteSearchComponent', 'selector': 'lib-route-search'},{'name': 'RouteSelectReportConfirmDialogComponent', 'selector': 'lib-route-select-report-confirm-dialog'},{'name': 'RouteShareDialogComponent', 'selector': 'lib-route-share-dialog'},{'name': 'RouteTagFilterDialogComponent', 'selector': 'lib-route-tag-filter-dialog'},{'name': 'SearchDialogComponent', 'selector': 'lib-search-dialog'},{'name': 'SearchInputComponent', 'selector': 'lib-search-input'},{'name': 'SearchRecordComponent', 'selector': 'lib-search-record'},{'name': 'SearchUsersComponent', 'selector': 'lib-search-users'},{'name': 'SelectDialogComponent', 'selector': 'lib-select-dialog'},{'name': 'SelectInputComponent', 'selector': 'lib-select-input'},{'name': 'ShareToDialogComponent', 'selector': 'lib-share-to-dialog'},{'name': 'SingleInputDialogComponent', 'selector': 'lib-single-input-dialog'},{'name': 'SlideToggleInputComponent', 'selector': 'lib-slide-toggle-input'},{'name': 'SportingShareItemComponent', 'selector': 'lib-sporting-share-item'},{'name': 'SportingShareListComponent', 'selector': 'lib-sporting-share-list'},{'name': 'SportLiveChatComponent', 'selector': 'lib-sport-live-chat'},{'name': 'SportLiveComponent', 'selector': 'lib-sport-live'},{'name': 'StepProcessComponent', 'selector': 'lib-step-process'},{'name': 'StopwatchComponent', 'selector': 'lib-stopwatch'},{'name': 'StopwatchFinishedComponent', 'selector': 'lib-stopwatch-finished'},{'name': 'StopwatchInfoSelectDialogComponent', 'selector': 'lib-stopwatch-info-select-dialog'},{'name': 'StopwatchSettingComponent', 'selector': 'lib-stopwatch-setting'},{'name': 'StreamimgChatDialogComponent', 'selector': 'lib-streamimg-chat-dialog'},{'name': 'TagUserInputComponent', 'selector': 'lib-tag-user-input'},{'name': 'TeamActivityDialogComponent', 'selector': 'lib-team-activity-dialog'},{'name': 'TeamAliasEditComponent', 'selector': 'lib-team-alias-edit'},{'name': 'TeamBaseareaEditComponent', 'selector': 'lib-team-basearea-edit'},{'name': 'TeamComponent', 'selector': 'lib-team'},{'name': 'TeamCreateFinishComponent', 'selector': 'lib-team-create-finish'},{'name': 'TeamDetailsComponent', 'selector': 'lib-team-details'},{'name': 'TeamFormComponent', 'selector': 'lib-team-form'},{'name': 'TeamFormEditComponent', 'selector': 'lib-team-form-edit'},{'name': 'TeamIntroDialogComponent', 'selector': 'lib-team-intro-dialog'},{'name': 'TeamItemComponent', 'selector': 'lib-team-item'},{'name': 'TeamLogoComponent', 'selector': 'lib-team-logo'},{'name': 'TeamMapComponent', 'selector': 'lib-team-map'},{'name': 'TeamMemberAliasComponent', 'selector': 'lib-team-member-alias'},{'name': 'TeamMemberComponent', 'selector': 'lib-team-member'},{'name': 'TeamMemberCtrlDialogComponent', 'selector': 'lib-team-member-ctrl-dialog'},{'name': 'TeamOnMapComponent', 'selector': 'lib-team-on-map'},{'name': 'TeamSearchComponent', 'selector': 'lib-team-search'},{'name': 'TeamSettingComponent', 'selector': 'lib-team-setting'},{'name': 'TeamTagEditComponent', 'selector': 'lib-team-tag-edit'},{'name': 'TextareaInputComponent', 'selector': 'lib-textarea-input'},{'name': 'TextboxInputComponent', 'selector': 'lib-textbox-input'},{'name': 'ThirdAuthComponent', 'selector': 'lib-third-auth'},{'name': 'TimeInputComponent', 'selector': 'lib-time-input'},{'name': 'TimePeriodFilterDialogComponent', 'selector': 'lib-time-period-filter-dialog'},{'name': 'TipInfoDialogComponent', 'selector': 'lib-tip-info-dialog'},{'name': 'UpdateScreenComponent', 'selector': 'lib-update-screen'},{'name': 'UserAccountComponent', 'selector': 'lib-user-account'},{'name': 'UserAccountFormComponent', 'selector': 'lib-user-account-form'},{'name': 'UserApplyTeamDialogComponent', 'selector': 'lib-user-apply-team-dialog'},{'name': 'UserAvatarComponent', 'selector': 'lib-user-avatar'},{'name': 'UserAvaterGroupComponent', 'selector': 'lib-user-avater-group'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserFormComponent', 'selector': 'app-user-form'},{'name': 'UserItemComponent', 'selector': 'lib-user-item'},{'name': 'UserNotificationSettingComponent', 'selector': 'lib-user-notification-setting'},{'name': 'UserPostListComponent', 'selector': 'lib-user-post-list'},{'name': 'UserRouteRecordItemComponent', 'selector': 'lib-user-route-record-item'},{'name': 'UserRouteRecordListComponent', 'selector': 'lib-user-route-record-list'},{'name': 'UserSelectDialogComponent', 'selector': 'lib-user-select-dialog'},{'name': 'UserSettingComponent', 'selector': 'app-user-setting'},{'name': 'UsersFollowingComponent', 'selector': 'lib-users-following'},{'name': 'UserShareDialogComponent', 'selector': 'lib-user-share-dialog'},{'name': 'ValidCodeInputComponent', 'selector': 'lib-valid-code-input'},{'name': 'VisitRegDialogComponent', 'selector': 'lib-visit-reg-dialog'},{'name': 'WeatherViewDialogComponent', 'selector': 'lib-weather-view-dialog'},{'name': 'WebHomeComponent', 'selector': 'lib-web-home'}];
+    var DIRECTIVES = [{'name': 'AppOnDestory', 'selector': ''},{'name': 'BackgroundImageDirective', 'selector': '[appBackgroundImage]'},{'name': 'BaseComponent', 'selector': ''},{'name': 'BaseFormComponent', 'selector': ''},{'name': 'BaseListComponent', 'selector': ''},{'name': 'HeaderTitleDirective', 'selector': '[libHeaderTitle]'},{'name': 'OpenSettingDirective', 'selector': '[libOpenSetting]'},{'name': 'PageHostDirective', 'selector': '[libPageHost]'},{'name': 'TextReadMoreDirective', 'selector': '[libTextReadMore]'}];
+    var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'LoginComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

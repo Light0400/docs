@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="200" height="95" viewBox="0 0 200 95" xml:space="preserve">
+<g transform="matrix(1 0 0 1 100 47.5)" id="3e70d4e9-6d4d-4d19-b10f-a0294eb071d9"  >
+<rect fill="#14E7CE" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  x="-100" y="-47.5" rx="0" ry="0" width="200" height="95" />
+</g>
+<g transform="matrix(Infinity NaN NaN Infinity 0 0)" id="e8d17a5b-2c6b-4c24-93b5-5f471655d859"  >
+</g>
+<g transform="matrix(NaN NaN NaN NaN 0 0)"  >
+<g style=""   >
+</g>
+</g>
+<g transform="matrix(1.04 0 0 1.04 47.17 47.5)"  >
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0.5; fill-rule: nonzero; opacity: 0.5;"  transform=" translate(-49.5, -46.08)" d="M -20 92.15 L -20 0 L 119 0" stroke-linecap="round" />
+</g>
+<g transform="matrix(1.14 0 0 1.14 233.25 159.45)"  >
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0.5; fill-rule: nonzero; opacity: 0.5;"  transform=" translate(-111.5, -143.93)" d="M 223 0 L 223 95.95 L 111.5 95.95 L 111.5 191.9 C 111.5 244.886 61.5735 287.85 6.83073e-7 287.85 L 6.83073e-7 95.95 C -0.0067434 42.9636 49.9265 0 111.5 0 L 223 0 Z" stroke-linecap="round" />
+</g>
+</svg>

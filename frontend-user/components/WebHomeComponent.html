@@ -1,0 +1,1824 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>TeamUp 前端程式文件</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+        <link rel="stylesheet" href="../styles/Vagrant.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">TeamUp 前端程式文件</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  WebHomeComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/common/src/lib/pages/web-home/web-home.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Web 導覽頁面</p>
+<ul>
+<li>介紹 APP</li>
+<li>顯示下載連結</li>
+<li>顯示聯絡資訊</li>
+</ul>
+
+    </p>
+
+    <p class="comment">
+        <h3>Extends</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="../directives/AppOnDestory.html" target="_self" >AppOnDestory</a></code>
+    </p>
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>AfterViewInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">host</td>
+                <td class="col-md-9"><code>{<br>}</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>lib-web-home</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>RouterModule</code>
+                            <code>TranslatePipe</code>
+                            <code>MatProgressBarModule</code>
+                                <code><a href="../directives/BackgroundImageDirective.html" target="_self" >BackgroundImageDirective</a></code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./web-home.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./web-home.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#androidAppUrl" >androidAppUrl</a>
+                            </li>
+                            <li>
+                                <a href="#area2Data" >area2Data</a>
+                            </li>
+                            <li>
+                                <a href="#area3Data" >area3Data</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#area3Tab" >area3Tab</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#area4" >area4</a>
+                            </li>
+                            <li>
+                                <a href="#area4Data" >area4Data</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#area5" >area5</a>
+                            </li>
+                            <li>
+                                <a href="#area5Data" >area5Data</a>
+                            </li>
+                            <li>
+                                <a href="#checkMSeconds" >checkMSeconds</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#contactEmail" >contactEmail</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#contactFacebook" >contactFacebook</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#contactInstagram" >contactInstagram</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#iosAppUrl" >iosAppUrl</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#scroller" >scroller</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#destroy" >destroy</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#destroySubject" >destroySubject</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#area3TabSelect" >area3TabSelect</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#area4Start" >area4Start</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#area4Stop" >area4Stop</a>
+                            </li>
+                            <li>
+                                <a href="#area4TabSelect" >area4TabSelect</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#area5Start" >area5Start</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#area5Stop" >area5Stop</a>
+                            </li>
+                            <li>
+                                <a href="#area5TabSelect" >area5TabSelect</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#openDownload" >openDownload</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fm: <a href="../classes/FileManager.html" target="_self">FileManager</a>, matDialog: MatDialog, configService: <a href="../injectables/SystemConfigService.html" target="_self">SystemConfigService</a>)</code>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Angular 元件 建構子</p>
+<ul>
+<li>載入初始資料</li>
+</ul>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fm</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/FileManager.html" target="_self" >FileManager</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>檔案管理服務</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>matDialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>彈出視窗服務</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>configService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SystemConfigService.html" target="_self" >SystemConfigService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>參數讀取服務</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="area3TabSelect"></a>
+                    <span class="name">
+                        <span ><b>area3TabSelect</b></span>
+                        <a href="#area3TabSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>area3TabSelect(tabIndex: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>區塊3 頁簽切換事件</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>tabIndex</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="area4Start"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>area4Start</b></span>
+                        <a href="#area4Start"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>area4Start()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>區塊4 資料自動切換開始</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="area4Stop"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>area4Stop</b></span>
+                        <a href="#area4Stop"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>area4Stop()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>區塊4 資料自動切換停止</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="area4TabSelect"></a>
+                    <span class="name">
+                        <span ><b>area4TabSelect</b></span>
+                        <a href="#area4TabSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>area4TabSelect(tabIndex: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>區塊4 頁簽切換事件</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>tabIndex</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="area5Start"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>area5Start</b></span>
+                        <a href="#area5Start"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>area5Start()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>區塊5 資料自動切換開始</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="area5Stop"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>area5Stop</b></span>
+                        <a href="#area5Stop"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>area5Stop()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>區塊5 資料自動切換停止</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="area5TabSelect"></a>
+                    <span class="name">
+                        <span ><b>area5TabSelect</b></span>
+                        <a href="#area5TabSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>area5TabSelect(tabIndex: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>區塊5 頁簽切換事件</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>tabIndex</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <span ><b>ngAfterViewInit</b></span>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Angular 元件生命週期: 檢視初始化事件</p>
+<ul>
+<li>監聽頁面元素被使用者檢視時, 開始自動計時顯示滑動資訊</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openDownload"></a>
+                    <span class="name">
+                        <span ><b>openDownload</b></span>
+                        <a href="#openDownload"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openDownload()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>開啟下載 App 的QRCode畫面</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>元件銷毀事件</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="androidAppUrl"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>androidAppUrl</b></span>
+                        <a href="#androidAppUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>android App 下載連結</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="area2Data"></a>
+                    <span class="name">
+                        <span ><b>area2Data</b></span>
+                        <a href="#area2Data"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>區塊2 資料</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="area3Data"></a>
+                    <span class="name">
+                        <span ><b>area3Data</b></span>
+                        <a href="#area3Data"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>區塊3 資料</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="area3Tab"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>area3Tab</b></span>
+                        <a href="#area3Tab"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef&lt;HTMLDivElement&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;area3Tab&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>區塊3 頁面內容元素</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="area4"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>area4</b></span>
+                        <a href="#area4"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef&lt;HTMLDivElement&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;area4&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>區塊4 頁面內容元素</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="area4Data"></a>
+                    <span class="name">
+                        <span ><b>area4Data</b></span>
+                        <a href="#area4Data"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>區塊4 資料</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="area5"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>area5</b></span>
+                        <a href="#area5"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef&lt;HTMLDivElement&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;area5&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>區塊5 頁面內容元素</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="area5Data"></a>
+                    <span class="name">
+                        <span ><b>area5Data</b></span>
+                        <a href="#area5Data"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>區塊5 資料</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkMSeconds"></a>
+                    <span class="name">
+                        <span ><b>checkMSeconds</b></span>
+                        <a href="#checkMSeconds"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>7000</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>頁面自動滑動資訊 毫秒數
+預設 7000 毫秒 = 7 秒</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="contactEmail"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>contactEmail</b></span>
+                        <a href="#contactEmail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>聯絡Email</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="contactFacebook"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>contactFacebook</b></span>
+                        <a href="#contactFacebook"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>facebook 連結</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="contactInstagram"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>contactInstagram</b></span>
+                        <a href="#contactInstagram"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>instagram 連結</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="iosAppUrl"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>iosAppUrl</b></span>
+                        <a href="#iosAppUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>iOS App 下載連結</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="scroller"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>scroller</b></span>
+                        <a href="#scroller"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef&lt;HTMLDivElement&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;scroller&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>頁面內容主要滑動元素</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroy"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>destroy</b></span>
+                        <a href="#destroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;void&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.destroySubject.asObservable()</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>元件銷毀通知 Observable，可供訂閱</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroySubject"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>destroySubject</b></span>
+                        <a href="#destroySubject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subject&lt;void&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;void&gt;()</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>元件銷毀通知主體</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;header row tmup-align-center&quot;&gt;
+    &lt;div class&#x3D;&quot;left&quot;&gt;
+        &lt;img src&#x3D;&quot;./assets/logo-black.svg&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;flex&quot;&gt;&lt;/div&gt;
+    &lt;div class&#x3D;&quot;right&quot;&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-l c-pointer&quot; (click)&#x3D;&quot;openDownload()&quot;&gt;
+            {{ &#x27;common.free-download&#x27; | translate}}
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;scroll-main&quot; #scroller&gt;
+    &lt;div class&#x3D;&quot;area1 row tmup-center&quot;&gt;
+        &lt;div class&#x3D;&quot;column tmup-center&quot;&gt;
+            &lt;div class&#x3D;&quot;title column tmup-center&quot; [innerHTML]&#x3D;&quot;&#x27;pages.web-home.area1.t1&#x27; | translate &quot;&gt;
+
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;desc&quot;&gt;
+                {{ &#x27;pages.web-home.area1.d1&#x27; | translate }}
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;download&quot;&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-l c-pointer&quot; (click)&#x3D;&quot;openDownload()&quot;&gt;
+                    {{ &#x27;common.free-download&#x27; | translate}}
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;area2 row tmup-center&quot;&gt;
+        &lt;div class&#x3D;&quot;desktop&quot; [isApiImage]&#x3D;&quot;false&quot; [appBackgroundImage]&#x3D;&quot;area2Data.img1&quot;&gt;&lt;/div&gt;
+        &lt;div class&#x3D;&quot;mobile&quot; [isApiImage]&#x3D;&quot;false&quot; [appBackgroundImage]&#x3D;&quot;area2Data.img2&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;area3 column&quot;&gt;
+        &lt;div class&#x3D;&quot;area-header&quot;&gt;
+            &lt;div class&#x3D;&quot;title&quot; [innerHTML]&#x3D;&quot;&#x27;pages.web-home.area3.t1&#x27; | translate&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;tab-group column&quot;&gt;
+            &lt;div class&#x3D;&quot;tab-header row&quot;&gt;
+                @for (item of area3Data.images; track $index) {
+                &lt;div class&#x3D;&quot;item column flex c-pointer&quot; [class.active]&#x3D;&quot;area3Data.tabIndex &#x3D;&#x3D; $index&quot;
+                    [innerHTML]&#x3D;&quot;&#x27;pages.web-home.area3.tab&#x27;+ ($index+1) | translate&quot; (click)&#x3D;&quot;area3TabSelect($index)&quot;&gt;
+                &lt;/div&gt;
+                }
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;tab-content row&quot; #area3Tab&gt;
+                @for (item of area3Data.images; track $index) {
+                &lt;div class&#x3D;&quot;item row&quot;&gt;
+                    &lt;div class&#x3D;&quot;image row tmup-center&quot;&gt;
+                        &lt;div [isApiImage]&#x3D;&quot;false&quot; [appBackgroundImage]&#x3D;&quot;item.web&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class&#x3D;&quot;content column&quot;&gt;
+                        &lt;div class&#x3D;&quot;title&quot;&gt;
+                            {{ &#x27;pages.web-home.area3.tab&#x27;+ ($index+1).toString() +&#x27;-content.t1&#x27; | translate }}
+                        &lt;/div&gt;
+                        &lt;div class&#x3D;&quot;sub-title&quot;&gt;
+                            {{ &#x27;pages.web-home.area3.tab&#x27;+ ($index+1).toString() +&#x27;-content.t2&#x27; | translate }}
+                        &lt;/div&gt;
+
+                        &lt;div class&#x3D;&quot;btns-area row&quot;&gt;
+                            &lt;div&gt;
+                                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-l&quot; (click)&#x3D;&quot;openDownload()&quot;&gt;
+                                    {{ &#x27;pages.web-home.area3.tab&#x27;+ ($index+1).toString() +&#x27;-content.btn-text&#x27; |
+                                    translate }}
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                }
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;column mobile-group&quot;&gt;
+            @for (item of area3Data.images; track $index) {
+            &lt;div class&#x3D;&quot;item column&quot;&gt;
+                &lt;div class&#x3D;&quot;image&quot; [isApiImage]&#x3D;&quot;false&quot; [appBackgroundImage]&#x3D;&quot;item.mobile&quot;&gt;&lt;/div&gt;
+                &lt;div class&#x3D;&quot;text-info row tmup-align-center&quot;&gt;
+                    &lt;div class&#x3D;&quot;title t-bold flex&quot; [innerHTML]&#x3D;&quot;&#x27;pages.web-home.area3.tab&#x27;+ ($index+1) | translate&quot;&gt;
+
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;btns row&quot;&gt;
+                        &lt;div&gt;
+                            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-ss-gray&quot; (click)&#x3D;&quot;openDownload()&quot;&gt;
+                                {{ &#x27;pages.web-home.explore-app&#x27; |translate}}
+                            &lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            }
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;area4 gray&quot; #area4&gt;
+        &lt;div class&#x3D;&quot;column text-info&quot;&gt;
+            &lt;div class&#x3D;&quot;title t-bold&quot; [innerHTML]&#x3D;&quot;&#x27;pages.web-home.area4.t1&#x27; | translate&quot;&gt;
+
+            &lt;/div&gt;
+            @for (item of area4Data.images; track $index) {
+            &lt;div class&#x3D;&quot;item column c-pointer&quot; [class.active]&#x3D;&quot;area4Data.tabIndex &#x3D;&#x3D;  $index&quot;
+                (click)&#x3D;&quot;area4TabSelect($index)&quot;&gt;
+                &lt;div class&#x3D;&quot;column&quot;&gt;
+                    &lt;div class&#x3D;&quot;title t-bold&quot;&gt;
+                        {{ &#x27;pages.web-home.area4.item&#x27;+ $index +&#x27;.title&#x27; | translate }}
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;desc t-bold-500&quot;&gt;
+                        {{ &#x27;pages.web-home.area4.item&#x27;+ $index +&#x27;.desc&#x27; | translate }}
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                @if(area4Data.tabIndex &#x3D;&#x3D; $index){
+                &lt;div class&#x3D;&quot;progress-bar&quot;&gt;
+                    &lt;mat-progress-bar mode&#x3D;&quot;determinate&quot; [value]&#x3D;&quot;area4Data.barValue&quot;&gt;&lt;/mat-progress-bar&gt;
+                &lt;/div&gt;
+                }
+
+            &lt;/div&gt;
+            }
+
+            &lt;div class&#x3D;&quot;btn-download row&quot;&gt;
+                &lt;div&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-l c-pointer&quot; (click)&#x3D;&quot;openDownload()&quot;&gt;
+                        {{ &#x27;common.free-download&#x27; | translate}}
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;column images tmup-align-center&quot;&gt;
+            @for (item of area4Data.images; track $index) {
+            &lt;div class&#x3D;&quot;item column tmup-align-center animate__animated animate__fadeIn&quot;
+                [class.active]&#x3D;&quot;area4Data.tabIndex &#x3D;&#x3D; $index&quot;&gt;
+                &lt;img [src]&#x3D;&quot;item&quot; /&gt;
+            &lt;/div&gt;
+            }
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;column mobile&quot;&gt;
+            @for (item of area4Data.images; track $index) {
+            &lt;div class&#x3D;&quot;item column&quot;&gt;
+                &lt;div class&#x3D;&quot;row image tmup-align-center&quot;&gt;
+                    &lt;img [src]&#x3D;&quot;item&quot; /&gt;
+                &lt;/div&gt;
+
+                &lt;div class&#x3D;&quot;text-info column&quot;&gt;
+                    &lt;div class&#x3D;&quot;title t-bold&quot;&gt;
+                        {{ &#x27;pages.web-home.area4.item&#x27;+ $index +&#x27;.title&#x27; | translate }}
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;desc&quot;&gt;
+                        {{ &#x27;pages.web-home.area4.item&#x27;+ $index +&#x27;.desc&#x27; | translate }}
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            }
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;area5&quot; #area5&gt;
+        &lt;div class&#x3D;&quot;column images tmup-align-center&quot;&gt;
+            @for (item of area5Data.images; track $index) {
+            &lt;div class&#x3D;&quot;item column tmup-align-center animate__animated animate__fadeIn&quot;
+                [class.active]&#x3D;&quot;area5Data.tabIndex &#x3D;&#x3D; $index&quot;&gt;
+                &lt;img [src]&#x3D;&quot;item&quot; /&gt;
+            &lt;/div&gt;
+            }
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;column text-info&quot;&gt;
+            &lt;div class&#x3D;&quot;title t-bold&quot; [innerHTML]&#x3D;&quot;&#x27;pages.web-home.area5.t1&#x27; | translate&quot;&gt;
+
+            &lt;/div&gt;
+            @for (item of area5Data.images; track $index) {
+            &lt;div class&#x3D;&quot;item column c-pointer&quot; [class.active]&#x3D;&quot;area5Data.tabIndex &#x3D;&#x3D;  $index&quot;
+                (click)&#x3D;&quot;area5TabSelect($index)&quot;&gt;
+                &lt;div class&#x3D;&quot;column&quot;&gt;
+                    &lt;div class&#x3D;&quot;title t-bold&quot;&gt;
+                        {{ &#x27;pages.web-home.area5.item&#x27;+ $index +&#x27;.title&#x27; | translate }}
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;desc t-bold-500&quot;&gt;
+                        {{ &#x27;pages.web-home.area5.item&#x27;+ $index +&#x27;.desc&#x27; | translate }}
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                @if(area5Data.tabIndex &#x3D;&#x3D; $index){
+                &lt;div class&#x3D;&quot;progress-bar&quot;&gt;
+                    &lt;mat-progress-bar mode&#x3D;&quot;determinate&quot; [value]&#x3D;&quot;area5Data.barValue&quot;&gt;&lt;/mat-progress-bar&gt;
+                &lt;/div&gt;
+                }
+
+            &lt;/div&gt;
+            }
+
+            &lt;div class&#x3D;&quot;btn-download row&quot;&gt;
+                &lt;div&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-l c-pointer&quot; (click)&#x3D;&quot;openDownload()&quot;&gt;
+                        {{ &#x27;common.free-download&#x27; | translate}}
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;column mobile&quot;&gt;
+            @for (item of area5Data.images; track $index) {
+            &lt;div class&#x3D;&quot;item column&quot;&gt;
+                &lt;div class&#x3D;&quot;row image tmup-align-center&quot;&gt;
+                    &lt;img [src]&#x3D;&quot;item&quot; /&gt;
+                &lt;/div&gt;
+
+                &lt;div class&#x3D;&quot;text-info column&quot;&gt;
+                    &lt;div class&#x3D;&quot;title t-bold&quot;&gt;
+                        {{ &#x27;pages.web-home.area5.item&#x27;+ $index +&#x27;.title&#x27; | translate }}
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;desc&quot;&gt;
+                        {{ &#x27;pages.web-home.area5.item&#x27;+ $index +&#x27;.desc&#x27; | translate }}
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            }
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+    &lt;div class&#x3D;&quot;footer row tmup-center&quot;&gt;
+        &lt;div class&#x3D;&quot;info column tmup-align-center&quot;&gt;
+            &lt;div class&#x3D;&quot;download&quot;&gt;
+                @if(androidAppUrl?.length){
+                &lt;div class&#x3D;&quot;item&quot;&gt;
+                    &lt;a [href]&#x3D;&quot;androidAppUrl&quot; target&#x3D;&quot;_blank&quot;&gt;
+                        &lt;img src&#x3D;&quot;./assets/download_android.svg&quot; /&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+                }
+
+                @if(iosAppUrl?.length){
+                &lt;div class&#x3D;&quot;item&quot;&gt;
+                    &lt;a [href]&#x3D;&quot;iosAppUrl&quot; target&#x3D;&quot;_blank&quot;&gt;
+                        &lt;img src&#x3D;&quot;./assets/download_ios.svg&quot; /&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+                }
+
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;logo column&quot;&gt;
+                &lt;div&gt;
+                    &lt;img src&#x3D;&quot;./assets/logo.svg&quot; /&gt;
+                &lt;/div&gt;
+
+                &lt;div class&#x3D;&quot;row policy-links&quot;&gt;
+                    &lt;a class&#x3D;&quot;c-pointer&quot; [routerLink]&#x3D;&quot;[&#x27;/&#x27;, &#x27;legal&#x27;, &#x27;privacy&#x27;]&quot;&gt;
+                        {{ &#x27;enums.CustomPageType.PrivacyPolicy&#x27; | translate}}
+                    &lt;/a&gt;
+
+                    &lt;a class&#x3D;&quot;c-pointer&quot; [routerLink]&#x3D;&quot;[&#x27;/&#x27;, &#x27;legal&#x27;, &#x27;terms&#x27;]&quot;&gt;
+                        {{ &#x27;enums.CustomPageType.UserTerms&#x27; | translate}}
+                    &lt;/a&gt;
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;contact row&quot;&gt;
+                @if(contactEmail?.length){
+                &lt;div class&#x3D;&quot;item&quot;&gt;
+                    &lt;a [href]&#x3D;&quot;&#x27;mailto:&#x27;+ contactEmail&quot; [title]&#x3D;&quot;contactEmail&quot; target&#x3D;&quot;_blank&quot;&gt;
+                        &lt;img src&#x3D;&quot;./assets/contact-mail.svg&quot; /&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+                }
+
+                @if(contactFacebook?.length){
+                &lt;div class&#x3D;&quot;item&quot;&gt;
+                    &lt;a [href]&#x3D;&quot;contactFacebook&quot; [title]&#x3D;&quot;contactFacebook&quot; target&#x3D;&quot;_blank&quot;&gt;
+                        &lt;img src&#x3D;&quot;./assets/contact-fb.svg&quot; /&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+                }
+
+                @if(contactInstagram?.length){
+                &lt;div class&#x3D;&quot;item&quot;&gt;
+                    &lt;a [href]&#x3D;&quot;contactInstagram&quot; [title]&#x3D;&quot;contactInstagram&quot; target&#x3D;&quot;_blank&quot;&gt;
+                        &lt;img src&#x3D;&quot;./assets/contact-ig.svg&quot; /&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+                }
+
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="header row tmup-align-center">    <div class="left">        <img src="./assets/logo-black.svg" />    </div>    <div class="flex"></div>    <div class="right">        <button type="button" class="tmup-btn-l c-pointer" (click)="openDownload()">            {{ \'common.free-download\' | translate}}        </button>    </div></div><div class="scroll-main" #scroller>    <div class="area1 row tmup-center">        <div class="column tmup-center">            <div class="title column tmup-center" [innerHTML]="\'pages.web-home.area1.t1\' | translate ">            </div>            <div class="desc">                {{ \'pages.web-home.area1.d1\' | translate }}            </div>            <div class="download">                <button type="button" class="tmup-btn-l c-pointer" (click)="openDownload()">                    {{ \'common.free-download\' | translate}}                </button>            </div>        </div>    </div>    <div class="area2 row tmup-center">        <div class="desktop" [isApiImage]="false" [appBackgroundImage]="area2Data.img1"></div>        <div class="mobile" [isApiImage]="false" [appBackgroundImage]="area2Data.img2"></div>    </div>    <div class="area3 column">        <div class="area-header">            <div class="title" [innerHTML]="\'pages.web-home.area3.t1\' | translate">            </div>        </div>        <div class="tab-group column">            <div class="tab-header row">                @for (item of area3Data.images; track $index) {                <div class="item column flex c-pointer" [class.active]="area3Data.tabIndex == $index"                    [innerHTML]="\'pages.web-home.area3.tab\'+ ($index+1) | translate" (click)="area3TabSelect($index)">                </div>                }            </div>            <div class="tab-content row" #area3Tab>                @for (item of area3Data.images; track $index) {                <div class="item row">                    <div class="image row tmup-center">                        <div [isApiImage]="false" [appBackgroundImage]="item.web"></div>                    </div>                    <div class="content column">                        <div class="title">                            {{ \'pages.web-home.area3.tab\'+ ($index+1).toString() +\'-content.t1\' | translate }}                        </div>                        <div class="sub-title">                            {{ \'pages.web-home.area3.tab\'+ ($index+1).toString() +\'-content.t2\' | translate }}                        </div>                        <div class="btns-area row">                            <div>                                <button type="button" class="tmup-btn-l" (click)="openDownload()">                                    {{ \'pages.web-home.area3.tab\'+ ($index+1).toString() +\'-content.btn-text\' |                                    translate }}                                </button>                            </div>                        </div>                    </div>                </div>                }            </div>        </div>        <div class="column mobile-group">            @for (item of area3Data.images; track $index) {            <div class="item column">                <div class="image" [isApiImage]="false" [appBackgroundImage]="item.mobile"></div>                <div class="text-info row tmup-align-center">                    <div class="title t-bold flex" [innerHTML]="\'pages.web-home.area3.tab\'+ ($index+1) | translate">                    </div>                    <div class="btns row">                        <div>                            <button type="button" class="tmup-btn-ss-gray" (click)="openDownload()">                                {{ \'pages.web-home.explore-app\' |translate}}                            </button>                        </div>                    </div>                </div>            </div>            }        </div>    </div>    <div class="area4 gray" #area4>        <div class="column text-info">            <div class="title t-bold" [innerHTML]="\'pages.web-home.area4.t1\' | translate">            </div>            @for (item of area4Data.images; track $index) {            <div class="item column c-pointer" [class.active]="area4Data.tabIndex ==  $index"                (click)="area4TabSelect($index)">                <div class="column">                    <div class="title t-bold">                        {{ \'pages.web-home.area4.item\'+ $index +\'.title\' | translate }}                    </div>                    <div class="desc t-bold-500">                        {{ \'pages.web-home.area4.item\'+ $index +\'.desc\' | translate }}                    </div>                </div>                @if(area4Data.tabIndex == $index){                <div class="progress-bar">                    <mat-progress-bar mode="determinate" [value]="area4Data.barValue"></mat-progress-bar>                </div>                }            </div>            }            <div class="btn-download row">                <div>                    <button type="button" class="tmup-btn-l c-pointer" (click)="openDownload()">                        {{ \'common.free-download\' | translate}}                    </button>                </div>            </div>        </div>        <div class="column images tmup-align-center">            @for (item of area4Data.images; track $index) {            <div class="item column tmup-align-center animate__animated animate__fadeIn"                [class.active]="area4Data.tabIndex == $index">                <img [src]="item" />            </div>            }        </div>        <div class="column mobile">            @for (item of area4Data.images; track $index) {            <div class="item column">                <div class="row image tmup-align-center">                    <img [src]="item" />                </div>                <div class="text-info column">                    <div class="title t-bold">                        {{ \'pages.web-home.area4.item\'+ $index +\'.title\' | translate }}                    </div>                    <div class="desc">                        {{ \'pages.web-home.area4.item\'+ $index +\'.desc\' | translate }}                    </div>                </div>            </div>            }        </div>    </div>    <div class="area5" #area5>        <div class="column images tmup-align-center">            @for (item of area5Data.images; track $index) {            <div class="item column tmup-align-center animate__animated animate__fadeIn"                [class.active]="area5Data.tabIndex == $index">                <img [src]="item" />            </div>            }        </div>        <div class="column text-info">            <div class="title t-bold" [innerHTML]="\'pages.web-home.area5.t1\' | translate">            </div>            @for (item of area5Data.images; track $index) {            <div class="item column c-pointer" [class.active]="area5Data.tabIndex ==  $index"                (click)="area5TabSelect($index)">                <div class="column">                    <div class="title t-bold">                        {{ \'pages.web-home.area5.item\'+ $index +\'.title\' | translate }}                    </div>                    <div class="desc t-bold-500">                        {{ \'pages.web-home.area5.item\'+ $index +\'.desc\' | translate }}                    </div>                </div>                @if(area5Data.tabIndex == $index){                <div class="progress-bar">                    <mat-progress-bar mode="determinate" [value]="area5Data.barValue"></mat-progress-bar>                </div>                }            </div>            }            <div class="btn-download row">                <div>                    <button type="button" class="tmup-btn-l c-pointer" (click)="openDownload()">                        {{ \'common.free-download\' | translate}}                    </button>                </div>            </div>        </div>        <div class="column mobile">            @for (item of area5Data.images; track $index) {            <div class="item column">                <div class="row image tmup-align-center">                    <img [src]="item" />                </div>                <div class="text-info column">                    <div class="title t-bold">                        {{ \'pages.web-home.area5.item\'+ $index +\'.title\' | translate }}                    </div>                    <div class="desc">                        {{ \'pages.web-home.area5.item\'+ $index +\'.desc\' | translate }}                    </div>                </div>            </div>            }        </div>    </div>    <div class="footer row tmup-center">        <div class="info column tmup-align-center">            <div class="download">                @if(androidAppUrl?.length){                <div class="item">                    <a [href]="androidAppUrl" target="_blank">                        <img src="./assets/download_android.svg" />                    </a>                </div>                }                @if(iosAppUrl?.length){                <div class="item">                    <a [href]="iosAppUrl" target="_blank">                        <img src="./assets/download_ios.svg" />                    </a>                </div>                }            </div>            <div class="logo column">                <div>                    <img src="./assets/logo.svg" />                </div>                <div class="row policy-links">                    <a class="c-pointer" [routerLink]="[\'/\', \'legal\', \'privacy\']">                        {{ \'enums.CustomPageType.PrivacyPolicy\' | translate}}                    </a>                    <a class="c-pointer" [routerLink]="[\'/\', \'legal\', \'terms\']">                        {{ \'enums.CustomPageType.UserTerms\' | translate}}                    </a>                </div>            </div>            <div class="contact row">                @if(contactEmail?.length){                <div class="item">                    <a [href]="\'mailto:\'+ contactEmail" [title]="contactEmail" target="_blank">                        <img src="./assets/contact-mail.svg" />                    </a>                </div>                }                @if(contactFacebook?.length){                <div class="item">                    <a [href]="contactFacebook" [title]="contactFacebook" target="_blank">                        <img src="./assets/contact-fb.svg" />                    </a>                </div>                }                @if(contactInstagram?.length){                <div class="item">                    <a [href]="contactInstagram" [title]="contactInstagram" target="_blank">                        <img src="./assets/contact-ig.svg" />                    </a>                </div>                }            </div>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'ActivityApplyListComponent', 'selector': 'lib-activity-apply-list'},{'name': 'ActivityCancelDialogComponent', 'selector': 'lib-activity-cancel-dialog'},{'name': 'ActivityComponent', 'selector': 'app-activity'},{'name': 'ActivityDetailComponent', 'selector': 'lib-activity-detail'},{'name': 'ActivityFormComponent', 'selector': 'app-activity-form'},{'name': 'ActivityGpsShareComponent', 'selector': 'lib-activity-gps-share'},{'name': 'ActivityGpsShareDialogComponent', 'selector': 'lib-activity-gps-share-dialog'},{'name': 'ActivityInvitingListComponent', 'selector': 'lib-activity-inviting-list'},{'name': 'ActivityItemComponent', 'selector': 'lib-activity-item'},{'name': 'ActivityJoinListComponent', 'selector': 'lib-activity-join-list'},{'name': 'ActivityLogListComponent', 'selector': 'lib-activity-log-list'},{'name': 'ActivityOnMapComponent', 'selector': 'lib-activity-on-map'},{'name': 'ActivityParticipantListDialogComponent', 'selector': 'lib-activity-participant-list-dialog'},{'name': 'ActivityPointsSelectDialogComponent', 'selector': 'lib-activity-points-select-dialog'},{'name': 'ActivitySearchComponent', 'selector': 'lib-activity-search'},{'name': 'ActivitySelectDialogComponent', 'selector': 'lib-activity-select-dialog'},{'name': 'ActivityUserListComponent', 'selector': 'lib-activity-user-list'},{'name': 'AddressInputComponent', 'selector': 'lib-address-input'},{'name': 'AlertDialogComponent', 'selector': 'lib-alert-dialog'},{'name': 'ArrangePointsDialogComponent', 'selector': 'lib-arrange-points-dialog'},{'name': 'BackgroundChooseComponent', 'selector': 'lib-background-choose'},{'name': 'BlocklistComponent', 'selector': 'lib-blocklist'},{'name': 'CalorieExchangeComponent', 'selector': 'lib-calorie-exchange'},{'name': 'ChatAvatarComponent', 'selector': 'lib-chat-avatar'},{'name': 'ChatComponent', 'selector': 'lib-chat'},{'name': 'ChatItemComponent', 'selector': 'lib-chat-item'},{'name': 'ChatListComponent', 'selector': 'lib-chat-list'},{'name': 'ChatReplyMessageItemComponent', 'selector': 'lib-chat-reply-message-item'},{'name': 'ChatRoomComponent', 'selector': 'lib-chat-room'},{'name': 'ChatRoomItemComponent', 'selector': 'lib-chat-room-item'},{'name': 'ChatRoomItemTemplateComponent', 'selector': 'lib-chat-room-item-template'},{'name': 'ChatRoomMediaListComponent', 'selector': 'lib-chat-room-media-list'},{'name': 'ChatSelectDialogComponent', 'selector': 'lib-chat-select-dialog'},{'name': 'ChatUserComponent', 'selector': 'lib-chat-user'},{'name': 'ConfirmDialogComponent', 'selector': 'lib-confirm-dialog'},{'name': 'CreateActivitySuccessDialogComponent', 'selector': 'lib-create-activity-success-dialog'},{'name': 'CreateRouteSuccessDialogComponent', 'selector': 'lib-create-route-success-dialog'},{'name': 'CreateSuccessComponent', 'selector': 'lib-create-success'},{'name': 'CustomPageComponent', 'selector': 'lib-custom-page'},{'name': 'DateInputComponent', 'selector': 'lib-date-input'},{'name': 'DatetimeInputComponent', 'selector': 'lib-datetime-input'},{'name': 'DeviceSeekingComponent', 'selector': 'lib-device-seeking'},{'name': 'DownloadAppDialogComponent', 'selector': 'lib-download-app-dialog'},{'name': 'DownloadComponent', 'selector': 'lib-download'},{'name': 'DraggableListComponent', 'selector': 'lib-draggable-list'},{'name': 'EmptyDataComponent', 'selector': 'lib-empty-data'},{'name': 'ErrorDialogComponent', 'selector': 'lib-error-dialog'},{'name': 'ErrorSummaryComponent', 'selector': 'lib-error-summary'},{'name': 'ExerciseReadyStartComponent', 'selector': 'lib-exercise-ready-start'},{'name': 'FaqComponent', 'selector': 'lib-faq'},{'name': 'FileComponent', 'selector': 'lib-file'},{'name': 'FindResultComponent', 'selector': 'lib-find-result'},{'name': 'FollowComponent', 'selector': 'app-follow'},{'name': 'FollowersComponent', 'selector': 'lib-followers'},{'name': 'FollowReqComponent', 'selector': 'lib-follow-req'},{'name': 'FooterMenuComponent', 'selector': 'lib-footer-menu'},{'name': 'HeaderComponent', 'selector': 'lib-header'},{'name': 'HomeActivityInviteComponent', 'selector': 'lib-home-activity-invite'},{'name': 'HomeAddBtnComponent', 'selector': 'lib-home-add-btn'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeMenuComponent', 'selector': 'lib-home-menu'},{'name': 'ImageCropperDialogComponent', 'selector': 'lib-image-cropper-dialog'},{'name': 'ImageListDialogComponent', 'selector': 'lib-image-list-dialog'},{'name': 'InviteFriendsComponent', 'selector': 'lib-invite-friends'},{'name': 'LeadRiderForRouteDialogComponent', 'selector': 'lib-lead-rider-for-route-dialog'},{'name': 'LikeCommentDialogComponent', 'selector': 'lib-like-comment-dialog'},{'name': 'LoadingComponent', 'selector': 'lib-loading'},{'name': 'LocationDialogComponent', 'selector': 'lib-location-dialog'},{'name': 'LocationSelectDialogComponent', 'selector': 'lib-location-select-dialog'},{'name': 'LocationShareComponent', 'selector': 'lib-location-share'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapClMarkerComponent', 'selector': 'lib-map-cl-marker'},{'name': 'MapCompassComponent', 'selector': 'lib-map-compass'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'MoreMenuComponent', 'selector': 'lib-more-menu'},{'name': 'MyRouteCollectionComponent', 'selector': 'lib-my-route-collection'},{'name': 'NoticeMsgItemComponent', 'selector': 'lib-notice-msg-item'},{'name': 'NotifyMessageListComponent', 'selector': 'lib-notify-message-list'},{'name': 'OptionComponent', 'selector': 'lib-option'},{'name': 'PageDialogComponent', 'selector': 'lib-page-dialog'},{'name': 'PositionFilterDialogComponent', 'selector': 'lib-position-filter-dialog'},{'name': 'PostAttachmentItemComponent', 'selector': 'lib-post-attachment-item'},{'name': 'PostCommentListComponent', 'selector': 'lib-post-comment-list'},{'name': 'PostFormComponent', 'selector': 'lib-post-form'},{'name': 'PostItemComponent', 'selector': 'lib-post-item'},{'name': 'PostLikeListComponent', 'selector': 'lib-post-like-list'},{'name': 'ProgressBarComponent', 'selector': 'lib-progress-bar'},{'name': 'RecommendTeamListComponent', 'selector': 'lib-recommend-team-list'},{'name': 'RecommendUserListComponent', 'selector': 'lib-recommend-user-list'},{'name': 'RecordSelectDialogComponent', 'selector': 'lib-record-select-dialog'},{'name': 'ReportDialogComponent', 'selector': 'lib-report-dialog'},{'name': 'ReportListComponent', 'selector': 'lib-report-list'},{'name': 'ReportSuccessDialogComponent', 'selector': 'lib-report-success-dialog'},{'name': 'RoadDescDialogComponent', 'selector': 'lib-road-desc-dialog'},{'name': 'RouteActivityListComponent', 'selector': 'lib-route-activity-list'},{'name': 'RouteCollectComponent', 'selector': 'lib-route-collect'},{'name': 'RouteCommentFormComponent', 'selector': 'lib-route-comment-form'},{'name': 'RouteCommentItemComponent', 'selector': 'lib-route-comment-item'},{'name': 'RouteCommentListComponent', 'selector': 'lib-route-comment-list'},{'name': 'RouteDetailComponent', 'selector': 'lib-route-detail'},{'name': 'RouteDetailDialogComponent', 'selector': 'lib-route-detail-dialog'},{'name': 'RouteElevationMapComponent', 'selector': 'lib-route-elevation-map'},{'name': 'RouteExploreComponent', 'selector': 'lib-route-explore'},{'name': 'RouteFormComponent', 'selector': 'lib-route-form'},{'name': 'RouteFromFilterDialogComponent', 'selector': 'lib-route-from-filter-dialog'},{'name': 'RouteInfoComponent', 'selector': 'lib-route-info'},{'name': 'RouteItemComponent', 'selector': 'lib-route-item'},{'name': 'RouteMapExploreComponent', 'selector': 'lib-route-map-explore'},{'name': 'RouteReportInfoComponent', 'selector': 'lib-route-report-info'},{'name': 'RouteSearchComponent', 'selector': 'lib-route-search'},{'name': 'RouteSelectReportConfirmDialogComponent', 'selector': 'lib-route-select-report-confirm-dialog'},{'name': 'RouteShareDialogComponent', 'selector': 'lib-route-share-dialog'},{'name': 'RouteTagFilterDialogComponent', 'selector': 'lib-route-tag-filter-dialog'},{'name': 'SearchDialogComponent', 'selector': 'lib-search-dialog'},{'name': 'SearchInputComponent', 'selector': 'lib-search-input'},{'name': 'SearchRecordComponent', 'selector': 'lib-search-record'},{'name': 'SearchUsersComponent', 'selector': 'lib-search-users'},{'name': 'SelectDialogComponent', 'selector': 'lib-select-dialog'},{'name': 'SelectInputComponent', 'selector': 'lib-select-input'},{'name': 'ShareToDialogComponent', 'selector': 'lib-share-to-dialog'},{'name': 'SingleInputDialogComponent', 'selector': 'lib-single-input-dialog'},{'name': 'SlideToggleInputComponent', 'selector': 'lib-slide-toggle-input'},{'name': 'SportingShareItemComponent', 'selector': 'lib-sporting-share-item'},{'name': 'SportingShareListComponent', 'selector': 'lib-sporting-share-list'},{'name': 'SportLiveChatComponent', 'selector': 'lib-sport-live-chat'},{'name': 'SportLiveComponent', 'selector': 'lib-sport-live'},{'name': 'StepProcessComponent', 'selector': 'lib-step-process'},{'name': 'StopwatchComponent', 'selector': 'lib-stopwatch'},{'name': 'StopwatchFinishedComponent', 'selector': 'lib-stopwatch-finished'},{'name': 'StopwatchInfoSelectDialogComponent', 'selector': 'lib-stopwatch-info-select-dialog'},{'name': 'StopwatchSettingComponent', 'selector': 'lib-stopwatch-setting'},{'name': 'StreamimgChatDialogComponent', 'selector': 'lib-streamimg-chat-dialog'},{'name': 'TagUserInputComponent', 'selector': 'lib-tag-user-input'},{'name': 'TeamActivityDialogComponent', 'selector': 'lib-team-activity-dialog'},{'name': 'TeamAliasEditComponent', 'selector': 'lib-team-alias-edit'},{'name': 'TeamBaseareaEditComponent', 'selector': 'lib-team-basearea-edit'},{'name': 'TeamComponent', 'selector': 'lib-team'},{'name': 'TeamCreateFinishComponent', 'selector': 'lib-team-create-finish'},{'name': 'TeamDetailsComponent', 'selector': 'lib-team-details'},{'name': 'TeamFormComponent', 'selector': 'lib-team-form'},{'name': 'TeamFormEditComponent', 'selector': 'lib-team-form-edit'},{'name': 'TeamIntroDialogComponent', 'selector': 'lib-team-intro-dialog'},{'name': 'TeamItemComponent', 'selector': 'lib-team-item'},{'name': 'TeamLogoComponent', 'selector': 'lib-team-logo'},{'name': 'TeamMapComponent', 'selector': 'lib-team-map'},{'name': 'TeamMemberAliasComponent', 'selector': 'lib-team-member-alias'},{'name': 'TeamMemberComponent', 'selector': 'lib-team-member'},{'name': 'TeamMemberCtrlDialogComponent', 'selector': 'lib-team-member-ctrl-dialog'},{'name': 'TeamOnMapComponent', 'selector': 'lib-team-on-map'},{'name': 'TeamSearchComponent', 'selector': 'lib-team-search'},{'name': 'TeamSettingComponent', 'selector': 'lib-team-setting'},{'name': 'TeamTagEditComponent', 'selector': 'lib-team-tag-edit'},{'name': 'TextareaInputComponent', 'selector': 'lib-textarea-input'},{'name': 'TextboxInputComponent', 'selector': 'lib-textbox-input'},{'name': 'ThirdAuthComponent', 'selector': 'lib-third-auth'},{'name': 'TimeInputComponent', 'selector': 'lib-time-input'},{'name': 'TimePeriodFilterDialogComponent', 'selector': 'lib-time-period-filter-dialog'},{'name': 'TipInfoDialogComponent', 'selector': 'lib-tip-info-dialog'},{'name': 'UpdateScreenComponent', 'selector': 'lib-update-screen'},{'name': 'UserAccountComponent', 'selector': 'lib-user-account'},{'name': 'UserAccountFormComponent', 'selector': 'lib-user-account-form'},{'name': 'UserApplyTeamDialogComponent', 'selector': 'lib-user-apply-team-dialog'},{'name': 'UserAvatarComponent', 'selector': 'lib-user-avatar'},{'name': 'UserAvaterGroupComponent', 'selector': 'lib-user-avater-group'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserFormComponent', 'selector': 'app-user-form'},{'name': 'UserItemComponent', 'selector': 'lib-user-item'},{'name': 'UserNotificationSettingComponent', 'selector': 'lib-user-notification-setting'},{'name': 'UserPostListComponent', 'selector': 'lib-user-post-list'},{'name': 'UserRouteRecordItemComponent', 'selector': 'lib-user-route-record-item'},{'name': 'UserRouteRecordListComponent', 'selector': 'lib-user-route-record-list'},{'name': 'UserSelectDialogComponent', 'selector': 'lib-user-select-dialog'},{'name': 'UserSettingComponent', 'selector': 'app-user-setting'},{'name': 'UsersFollowingComponent', 'selector': 'lib-users-following'},{'name': 'UserShareDialogComponent', 'selector': 'lib-user-share-dialog'},{'name': 'ValidCodeInputComponent', 'selector': 'lib-valid-code-input'},{'name': 'VisitRegDialogComponent', 'selector': 'lib-visit-reg-dialog'},{'name': 'WeatherViewDialogComponent', 'selector': 'lib-weather-view-dialog'},{'name': 'WebHomeComponent', 'selector': 'lib-web-home'}];
+    var DIRECTIVES = [{'name': 'AppOnDestory', 'selector': ''},{'name': 'BackgroundImageDirective', 'selector': '[appBackgroundImage]'},{'name': 'BaseComponent', 'selector': ''},{'name': 'BaseFormComponent', 'selector': ''},{'name': 'BaseListComponent', 'selector': ''},{'name': 'HeaderTitleDirective', 'selector': '[libHeaderTitle]'},{'name': 'OpenSettingDirective', 'selector': '[libOpenSetting]'},{'name': 'PageHostDirective', 'selector': '[libPageHost]'},{'name': 'TextReadMoreDirective', 'selector': '[libTextReadMore]'}];
+    var ACTUAL_COMPONENT = {'name': 'WebHomeComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'WebHomeComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

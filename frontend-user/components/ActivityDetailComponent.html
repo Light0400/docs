@@ -1,0 +1,3431 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>TeamUp 前端程式文件</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+        <link rel="stylesheet" href="../styles/Vagrant.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">TeamUp 前端程式文件</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ActivityDetailComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/common/src/lib/pages/activity-detail/activity-detail.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>活動內容明細頁面</p>
+<ul>
+<li>提供活動報名</li>
+<li>提供活動詳細資料檢視</li>
+<li>提供活動開始引導已加入成員開始活動碼錶</li>
+</ul>
+
+    </p>
+
+    <p class="comment">
+        <h3>Extends</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="../directives/BaseComponent.html" target="_self" >BaseComponent</a></code>
+    </p>
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+                <code>OnDestroy</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">host</td>
+                <td class="col-md-9"><code>{<br>}</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>lib-activity-detail</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>GoogleMapsModule</code>
+                            <code>MatIconModule</code>
+                            <code>TranslatePipe</code>
+                            <code>MetricConversionPipe</code>
+                            <code>MetricUnitConversionPipe</code>
+                            <code>SecondsHhmmssPipe</code>
+                                <code><a href="../miscellaneous/variables.html#cal" target="_self" >LocalDatePipe</a></code>
+                                <code><a href="../directives/BackgroundImageDirective.html" target="_self" >BackgroundImageDirective</a></code>
+                                <code><a href="../directives/TextReadMoreDirective.html" target="_self" >TextReadMoreDirective</a></code>
+                            <code>DisplayNamePipe</code>
+                                <code><a href="../components/HeaderComponent.html" target="_self" >HeaderComponent</a></code>
+                                <code><a href="../components/UserAvatarComponent.html" target="_self" >UserAvatarComponent</a></code>
+                                <code><a href="../components/TeamLogoComponent.html" target="_self" >TeamLogoComponent</a></code>
+                                <code><a href="../components/UserAvaterGroupComponent.html" target="_self" >UserAvaterGroupComponent</a></code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./activity-detail.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./activity-detail.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#activity" >activity</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#actStatus" >actStatus</a>
+                            </li>
+                            <li>
+                                <a href="#actStatusEnum" >actStatusEnum</a>
+                            </li>
+                            <li>
+                                <a href="#difficultyType" >difficultyType</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#footerIconImage" >footerIconImage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#inviteCode" >inviteCode</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#inviteValid" >inviteValid</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#isApp" >isApp</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#isCreator" >isCreator</a>
+                            </li>
+                            <li>
+                                <a href="#joinUsers" >joinUsers</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#leaderText" >leaderText</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#map" >map</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#mapInit" >mapInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#mapOption" >mapOption</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#noBorder" >noBorder</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#readyUsers" >readyUsers</a>
+                            </li>
+                            <li>
+                                <a href="#registTime" >registTime</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#scrollmain" >scrollmain</a>
+                            </li>
+                            <li>
+                                <a href="#shareUrl" >shareUrl</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#slopeText" >slopeText</a>
+                            </li>
+                            <li>
+                                <a href="#subText" >subText</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#swiperContainer" >swiperContainer</a>
+                            </li>
+                            <li>
+                                <a href="#time" >time</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#timeout" >timeout</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#uid" >uid</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#user" >user</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#errors" >errors</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#destroy" >destroy</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#destroySubject" >destroySubject</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#activityExpires" >activityExpires</a>
+                            </li>
+                            <li>
+                                <a href="#back" >back</a>
+                            </li>
+                            <li>
+                                <a href="#cancelApply" >cancelApply</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#checkActivityStatus" >checkActivityStatus</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#checkActivityStatusByHasJoin" >checkActivityStatusByHasJoin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#checkFooterRegisterImage" >checkFooterRegisterImage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#checkRegistTime" >checkRegistTime</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#checkSlope" >checkSlope</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#doubleConfirmCancel" >doubleConfirmCancel</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getLeaderText" >getLeaderText</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getMapView" >getMapView</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getRemainingTimeForRegistration" >getRemainingTimeForRegistration</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getRemainingTimeToStart" >getRemainingTimeToStart</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getSubText" >getSubText</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#loadDetail" >loadDetail</a>
+                            </li>
+                            <li>
+                                <a href="#more" >more</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#openChat" >openChat</a>
+                            </li>
+                            <li>
+                                <a href="#openCreator" >openCreator</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#openGpsShareSetting" >openGpsShareSetting</a>
+                            </li>
+                            <li>
+                                <a href="#openRoute" >openRoute</a>
+                            </li>
+                            <li>
+                                <a href="#openTeam" >openTeam</a>
+                            </li>
+                            <li>
+                                <a href="#openUserList" >openUserList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#setJoinUser" >setJoinUser</a>
+                            </li>
+                            <li>
+                                <a href="#share" >share</a>
+                            </li>
+                            <li>
+                                <a href="#signUp" >signUp</a>
+                            </li>
+                            <li>
+                                <a href="#start" >start</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#swiperInit" >swiperInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dataId" >dataId</a>
+                            </li>
+                            <li>
+                                <a href="#dialogRef" >dialogRef</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostBindings</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#class.hbtn-noborder" >class.hbtn-noborder</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#imageSlides" >imageSlides</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: <a href="../injectables/CustomHttpService.html" target="_self">CustomHttpService</a>, route: ActivatedRoute, hs: <a href="../injectables/HeaderService.html" target="_self">HeaderService</a>, shareService: <a href="../injectables/ShareService.html" target="_self">ShareService</a>, errorService: <a href="../injectables/ErrorService.html" target="_self">ErrorService</a>, cdr: ChangeDetectorRef, ls: <a href="../injectables/LoginService.html" target="_self">LoginService</a>, lus: <a href="../injectables/LoginUserService.html" target="_self">LoginUserService</a>, configService: <a href="../injectables/SystemConfigService.html" target="_self">SystemConfigService</a>, translate: TranslateService, displayNameService: <a href="../injectables/DisplayNameService.html" target="_self">DisplayNameService</a>, reportService: <a href="../injectables/ReportService.html" target="_self">ReportService</a>, mapService: <a href="../injectables/GoogleMapService.html" target="_self">GoogleMapService</a>, fm: <a href="../classes/FileManager.html" target="_self">FileManager</a>, basicDialog: <a href="../injectables/BasicDialogService.html" target="_self">BasicDialogService</a>, dialog: <a href="../injectables/TeamUpDialogService.html" target="_self">TeamUpDialogService</a>, router: Router, matDialog: MatDialog, hub: <a href="../injectables/HubService.html" target="_self">HubService</a>, activityService: <a href="../injectables/ActivityService.html" target="_self">ActivityService</a>, stopwatchService: <a href="../injectables/StopwatchService.html" target="_self">StopwatchService</a>, storageService: <a href="../injectables/StorageService.html" target="_self">StorageService</a>, platform: <a href="../injectables/PlatformService.html" target="_self">PlatformService</a>, pathParser: <a href="../injectables/PathParserService.html" target="_self">PathParserService</a>, environment: <a href="../classes/Environment.html" target="_self">Environment</a>)</code>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CustomHttpService.html" target="_self" >CustomHttpService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>hs</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/HeaderService.html" target="_self" >HeaderService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>shareService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ShareService.html" target="_self" >ShareService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>errorService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ErrorService.html" target="_self" >ErrorService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cdr</td>
+                                                  
+                                                        <td>
+                                                                    <code>ChangeDetectorRef</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>ls</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LoginService.html" target="_self" >LoginService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>lus</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LoginUserService.html" target="_self" >LoginUserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>configService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SystemConfigService.html" target="_self" >SystemConfigService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>translate</td>
+                                                  
+                                                        <td>
+                                                                    <code>TranslateService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>displayNameService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DisplayNameService.html" target="_self" >DisplayNameService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>reportService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ReportService.html" target="_self" >ReportService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>mapService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/GoogleMapService.html" target="_self" >GoogleMapService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>fm</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/FileManager.html" target="_self" >FileManager</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>basicDialog</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/BasicDialogService.html" target="_self" >BasicDialogService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TeamUpDialogService.html" target="_self" >TeamUpDialogService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>matDialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>hub</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/HubService.html" target="_self" >HubService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>activityService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ActivityService.html" target="_self" >ActivityService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>stopwatchService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/StopwatchService.html" target="_self" >StopwatchService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>storageService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/StorageService.html" target="_self" >StorageService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>platform</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PlatformService.html" target="_self" >PlatformService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>pathParser</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PathParserService.html" target="_self" >PathParserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>environment</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/Environment.html" target="_self" >Environment</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataId"></a>
+                        <b>dataId</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>活動Id</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dialogRef"></a>
+                        <b>dialogRef</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatDialogRef&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>彈出視窗控制元件 (若元件以彈出視窗方式開啟才會有值)</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-properties">
+    <h3>HostBindings</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="class.hbtn-noborder"></a>
+                    <span class="name">
+                        <span ><b>class.hbtn-noborder</b></span>
+                        <a href="#class.hbtn-noborder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>是否不顯示上方的外框</p>
+<ul>
+<li>會依據活動是否有上傳圖片 以及</li>
+<li>往下滑動的高度判斷</li>
+</ul>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="activityExpires"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>activityExpires</b></span>
+                        <a href="#activityExpires"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>activityExpires()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>活動已失效或不存在</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="back"></a>
+                    <span class="name">
+                        <span ><b>back</b></span>
+                        <a href="#back"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>back()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>回上一頁
+若元件有 dialogRef 視窗參考提供，則關閉視窗而不是返回頁面</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cancelApply"></a>
+                    <span class="name">
+                        <span ><b>cancelApply</b></span>
+                        <a href="#cancelApply"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cancelApply()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>取消報名</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkActivityStatus"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>checkActivityStatus</b></span>
+                        <a href="#checkActivityStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkActivityStatus()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>檢查使用者在活動的狀態</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkActivityStatusByHasJoin"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>checkActivityStatusByHasJoin</b></span>
+                        <a href="#checkActivityStatusByHasJoin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkActivityStatusByHasJoin()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>檢查使用者在活動的狀態 (使用者已經有加入的情況)</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../miscellaneous/enumerations.html#ActivityStatus" target="_self" >ActivityStatus</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>活動狀態</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkFooterRegisterImage"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>checkFooterRegisterImage</b></span>
+                        <a href="#checkFooterRegisterImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkFooterRegisterImage()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>判斷下方狀態圖示連結的呈現</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkRegistTime"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>checkRegistTime</b></span>
+                        <a href="#checkRegistTime"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkRegistTime()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>計時器判斷</p>
+<ul>
+<li>判斷活動是否開始</li>
+<li>判斷報名時間是否已經結束</li>
+<li>判斷使用者在活動狀態</li>
+<li>判斷下方狀態圖示連結的呈現</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkSlope"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>checkSlope</b></span>
+                        <a href="#checkSlope"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkSlope()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>平均爬升坡度顯示文字判斷</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="doubleConfirmCancel"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>doubleConfirmCancel</b></span>
+                        <a href="#doubleConfirmCancel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>doubleConfirmCancel()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>再次確認取消報名參加活動</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getLeaderText"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>getLeaderText</b></span>
+                        <a href="#getLeaderText"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getLeaderText()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>領旗手訊息文字</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getMapView"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>getMapView</b></span>
+                        <a href="#getMapView"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getMapView()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>活動地圖呈現</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getRemainingTimeForRegistration"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>getRemainingTimeForRegistration</b></span>
+                        <a href="#getRemainingTimeForRegistration"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getRemainingTimeForRegistration()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>取得報名剩餘時間</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getRemainingTimeToStart"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>getRemainingTimeToStart</b></span>
+                        <a href="#getRemainingTimeToStart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getRemainingTimeToStart()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>取得距離活動開始的剩餘時間</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSubText"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>getSubText</b></span>
+                        <a href="#getSubText"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getSubText()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>整合顯示字串</p>
+<ul>
+<li>判斷是否有路線名稱</li>
+<li>判斷活動的運動程度顯示字串</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadDetail"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>loadDetail</b></span>
+                        <a href="#loadDetail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loadDetail()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>載入資料</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="more"></a>
+                    <span class="name">
+                        <span ><b>more</b></span>
+                        <a href="#more"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>more()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>顯示更多控制項選單按鈕</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Angular 元件生命週期: 銷毀事件</p>
+<ul>
+<li>若計時器還存在則銷毀計時器</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Angular 元件生命週期: 初始化事件</p>
+<ul>
+<li>載入資料</li>
+<li>相關資料異動事件監聽綁定</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openChat"></a>
+                    <span class="name">
+                        <span ><b>openChat</b></span>
+                        <a href="#openChat"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openChat()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>開啟活動聊天室</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openCreator"></a>
+                    <span class="name">
+                        <span ><b>openCreator</b></span>
+                        <a href="#openCreator"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openCreator()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>開啟主辦者的個人資訊頁面</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openGpsShareSetting"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>openGpsShareSetting</b></span>
+                        <a href="#openGpsShareSetting"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>openGpsShareSetting()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>開啟使用者在活動的定位分享設定</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openRoute"></a>
+                    <span class="name">
+                        <span ><b>openRoute</b></span>
+                        <a href="#openRoute"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openRoute()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>開啟路線明細資訊</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openTeam"></a>
+                    <span class="name">
+                        <span ><b>openTeam</b></span>
+                        <a href="#openTeam"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openTeam()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>開啟主辦隊伍頁面</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openUserList"></a>
+                    <span class="name">
+                        <span ><b>openUserList</b></span>
+                        <a href="#openUserList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openUserList()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>開啟活動成員列表頁</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setJoinUser"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>setJoinUser</b></span>
+                        <a href="#setJoinUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setJoinUser()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>設定活動參加成員</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="share"></a>
+                    <span class="name">
+                        <span ><b>share</b></span>
+                        <a href="#share"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>share()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>分享活動</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="signUp"></a>
+                    <span class="name">
+                        <span ><b>signUp</b></span>
+                        <a href="#signUp"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>signUp()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>活動報名/加入活動</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="start"></a>
+                    <span class="name">
+                        <span ><b>start</b></span>
+                        <a href="#start"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>start()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>開始活動</p>
+<ul>
+<li>進入活動碼錶頁</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="swiperInit"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>swiperInit</b></span>
+                        <a href="#swiperInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>swiperInit()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>活動圖片輪播初始化</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="activity"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>activity</b></span>
+                        <a href="#activity"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Activity.html" target="_self" >Activity</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>活動資料</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actStatus"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>actStatus</b></span>
+                        <a href="#actStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/enumerations.html#ActivityStatus" target="_self" >ActivityStatus</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>使用者在活動的狀態</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actStatusEnum"></a>
+                    <span class="name">
+                        <span ><b>actStatusEnum</b></span>
+                        <a href="#actStatusEnum"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>ActivityStatus</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>使用者在活動的狀態列舉物件</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="difficultyType"></a>
+                    <span class="name">
+                        <span ><b>difficultyType</b></span>
+                        <a href="#difficultyType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>ActivityDifficultyType</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>運動程度列舉物件</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="footerIconImage"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>footerIconImage</b></span>
+                        <a href="#footerIconImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>SafeResourceUrl | string</code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>下方狀態圖示連結</p>
+<ul>
+<li>會依照使用者  加入/等待審核 呈現不同圖示</li>
+</ul>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="inviteCode"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>inviteCode</b></span>
+                        <a href="#inviteCode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>即時騎乘夥伴邀請碼</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="inviteValid"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>inviteValid</b></span>
+                        <a href="#inviteValid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>判斷即時騎乘夥伴邀請是否失效</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isApp"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>isApp</b></span>
+                        <a href="#isApp"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>是否 App</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isCreator"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>isCreator</b></span>
+                        <a href="#isCreator"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>使用者是否活動建立者</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="joinUsers"></a>
+                    <span class="name">
+                        <span ><b>joinUsers</b></span>
+                        <a href="#joinUsers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/User.html" target="_self" >User[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>已加入的成員名單</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="leaderText"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>leaderText</b></span>
+                        <a href="#leaderText"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>領騎手訊息</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="map"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>map</b></span>
+                        <a href="#map"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>GoogleMap</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;map&#x27;, {static: false})<br />
+                        </code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>google map 參考</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapInit"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>mapInit</b></span>
+                        <a href="#mapInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>地圖是否初始化</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapOption"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>mapOption</b></span>
+                        <a href="#mapOption"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>google.maps.MapOptions</code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Google 地圖設定</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="noBorder"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>noBorder</b></span>
+                        <a href="#noBorder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @HostBinding(&#x27;class.hbtn-noborder&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>是否不顯示上方的外框</p>
+<ul>
+<li>會依據活動是否有上傳圖片 以及</li>
+<li>往下滑動的高度判斷</li>
+</ul>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="readyUsers"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>readyUsers</b></span>
+                        <a href="#readyUsers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ActivityUser[]</code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>已就緒的用戶清單, 不包含自己</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registTime"></a>
+                    <span class="name">
+                        <span ><b>registTime</b></span>
+                        <a href="#registTime"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>距離註冊結束時間的秒數</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="scrollmain"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>scrollmain</b></span>
+                        <a href="#scrollmain"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef&lt;HTMLDivElement&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;scrollmain&#x27;, {static: false})<br />
+                        </code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>內容滑動區塊元素參考</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="shareUrl"></a>
+                    <span class="name">
+                        <span ><b>shareUrl</b></span>
+                        <a href="#shareUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>分享連結</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="slopeText"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>slopeText</b></span>
+                        <a href="#slopeText"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>平均爬升坡度文字</p>
+<ul>
+<li>會判斷活動路線的平均爬升坡度是否有值 (如果活動有設定路線)</li>
+</ul>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="subText"></a>
+                    <span class="name">
+                        <span ><b>subText</b></span>
+                        <a href="#subText"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>整合顯示字串</p>
+<ul>
+<li>顯示路線名稱 (如果活動有路線) 與</li>
+<li>顯示運動程度</li>
+</ul>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="swiperContainer"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>swiperContainer</b></span>
+                        <a href="#swiperContainer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>SwiperContainer</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;swiperContainer&#x27;, {static: false})<br />
+                        </code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>活動圖片輪播區塊參考</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="time"></a>
+                    <span class="name">
+                        <span ><b>time</b></span>
+                        <a href="#time"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>距離開始時間剩餘秒數, 當為負數時表示已開始</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="timeout"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>timeout</b></span>
+                        <a href="#timeout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>檢查開始時間與註冊時間的計時器</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="uid"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>uid</b></span>
+                        <a href="#uid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>使用者Id</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="user"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>user</b></span>
+                        <a href="#user"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/ActivityUser.html" target="_self" >ActivityUser</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>使用者在活動的身分</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="errors"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>errors</b></span>
+                        <a href="#errors"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new ErrorHelper()</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>錯誤訊息存放物件</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroy"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>destroy</b></span>
+                        <a href="#destroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;void&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.destroySubject.asObservable()</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>元件銷毀通知 Observable，可供訂閱</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroySubject"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>destroySubject</b></span>
+                        <a href="#destroySubject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subject&lt;void&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;void&gt;()</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>元件銷毀通知主體</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="imageSlides"></a>
+                        <span class="name"><b>imageSlides</b><a href="#imageSlides"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>imageSlides()</code></span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>取得活動圖片字串陣列</p>
+</div>
+
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;lib-header [isDialog]&#x3D;&quot;true&quot; [show]&#x3D;&quot;true&quot; [backNotShow]&#x3D;&quot;true&quot;&gt;
+    &lt;ng-container ngProjectAs&#x3D;&quot;[h-left]&quot;&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-circle&quot; (click)&#x3D;&quot;back()&quot;&gt;
+            &lt;mat-icon svgIcon&#x3D;&quot;back&quot;&gt;&lt;/mat-icon&gt;
+        &lt;/button&gt;
+    &lt;/ng-container&gt;
+
+    &lt;ng-container ngProjectAs&#x3D;&quot;[h-right]&quot;&gt;
+        @if(activity){
+        &lt;ng-container&gt;
+            @if(!!activity.Id &amp;&amp; !(isApp &amp;&amp; !!uid &amp;&amp; (user?.JoinTime || ( uid !&#x3D; activity.TeamUpCreatedBy)))){
+            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-circle&quot; (click)&#x3D;&quot;share()&quot;&gt;
+                &lt;mat-icon svgIcon&#x3D;&quot;upload&quot;&gt;&lt;/mat-icon&gt;
+            &lt;/button&gt;
+            }
+            @if(user?.JoinTime){
+            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-circle&quot; (click)&#x3D;&quot;openChat()&quot;&gt;
+                &lt;mat-icon svgIcon&#x3D;&quot;chat-team&quot;&gt;&lt;/mat-icon&gt;
+            &lt;/button&gt;
+            }
+
+            @if(isApp &amp;&amp; !!uid &amp;&amp; !!activity.Id &amp;&amp; (user?.JoinTime || ( uid !&#x3D; activity.TeamUpCreatedBy))){
+            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-circle&quot; (click)&#x3D;&quot;more()&quot;&gt;
+                &lt;mat-icon svgIcon&#x3D;&quot;more&quot;&gt;&lt;/mat-icon&gt;
+            &lt;/button&gt;
+            }
+        &lt;/ng-container&gt;
+        }
+
+    &lt;/ng-container&gt;
+&lt;/lib-header&gt;
+
+@if(activity){
+&lt;div class&#x3D;&quot;scroll-main&quot; #scrollmain&gt;
+    @if(imageSlides.length){
+    &lt;div class&#x3D;&quot;swiper-area&quot;&gt;
+        &lt;swiper-container #swiperContainer class&#x3D;&quot;slider&quot; init&#x3D;&quot;false&quot; pagination&#x3D;&quot;true&quot;&gt;
+            @for(item of imageSlides; track item){
+            &lt;swiper-slide&gt;
+                &lt;div class&#x3D;&quot;slider__wrap&quot; [isApiImage]&#x3D;&quot;true&quot; [appBackgroundImage]&#x3D;&quot;item&quot;&gt;
+                &lt;/div&gt;
+            &lt;/swiper-slide&gt;
+            }
+
+        &lt;/swiper-container&gt;
+
+        &lt;div class&#x3D;&quot;swiper-pagination-area row tmup-center&quot;&gt;
+            &lt;div class&#x3D;&quot;page row&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    }
+
+
+
+    &lt;div class&#x3D;&quot;info column&quot;&gt;
+        @if(subText.length){
+        &lt;div class&#x3D;&quot;sub&quot;&gt;
+            {{subText}}
+        &lt;/div&gt;
+        }
+
+        &lt;div class&#x3D;&quot;name t-bold&quot;&gt;
+            {{activity.Name}}
+        &lt;/div&gt;
+
+        @if(activity.Desc?.length){
+        &lt;div class&#x3D;&quot;desc&quot; [libTextReadMore]&#x3D;&quot;activity.Desc&quot;&gt;&lt;/div&gt;
+        }
+
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;groups column&quot;&gt;
+        @if(activity.Team){
+        &lt;div class&#x3D;&quot;item row&quot; (click)&#x3D;&quot;openTeam()&quot;&gt;
+            &lt;div class&#x3D;&quot;icon&quot;&gt;
+                &lt;lib-team-logo [logo]&#x3D;&quot;activity.Team.Logo&quot;&gt;&lt;/lib-team-logo&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;name-info column&quot;&gt;
+                &lt;div class&#x3D;&quot;title t-bold-500&quot;&gt;
+                    {{ &#x27;pages.activity-detail.main-team&#x27; |translate}}
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;text&quot;&gt;
+                    {{activity.Team.Name}}
+                &lt;/div&gt;
+            &lt;/div&gt;
+            @if(isApp){
+            &lt;div class&#x3D;&quot;right row tmup-align-center&quot;&gt;
+                &lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;arrow_right&quot;&gt;&lt;/mat-icon&gt;
+            &lt;/div&gt;
+            }
+
+        &lt;/div&gt;
+        }
+
+        @if(activity.TeamUpCreatedByUser){
+        &lt;div class&#x3D;&quot;item row&quot; (click)&#x3D;&quot;openCreator()&quot;&gt;
+            &lt;div class&#x3D;&quot;icon&quot;&gt;
+                &lt;lib-user-avatar [avatar]&#x3D;&quot;activity.TeamUpCreatedByUser.Avatar&quot;
+                    [firstName]&#x3D;&quot;activity.TeamUpCreatedByUser.FirstName&quot;
+                    [lastName]&#x3D;&quot;activity.TeamUpCreatedByUser.LastName&quot;&gt;&lt;/lib-user-avatar&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;name-info column&quot;&gt;
+                &lt;div class&#x3D;&quot;title t-bold-500&quot;&gt;
+                    {{ &#x27;pages.activity-detail.creator&#x27; |translate}}
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;text&quot;&gt;
+                    {{activity.TeamUpCreatedByUser | displayName }}
+                &lt;/div&gt;
+            &lt;/div&gt;
+            @if(isApp){
+            &lt;div class&#x3D;&quot;right row tmup-align-center&quot;&gt;
+                &lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;arrow_right&quot;&gt;&lt;/mat-icon&gt;
+            &lt;/div&gt;
+            }
+
+        &lt;/div&gt;
+        }
+
+
+        &lt;div class&#x3D;&quot;item row&quot;&gt;
+            &lt;div class&#x3D;&quot;icon&quot;&gt;
+                &lt;mat-icon svgIcon&#x3D;&quot;activity-time&quot;&gt;&lt;/mat-icon&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;name-info column&quot;&gt;
+                &lt;div class&#x3D;&quot;title t-bold-500&quot;&gt;
+                    {{activity.StartTime | localDate: &#x27;date&#x27;}} ({{activity.StartTime | localDate: &#x27;EEEE&#x27;}})
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;text&quot;&gt;
+                    {{activity.StartTime | localDate: &#x27;time&#x27;}}
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;item row c-pointer&quot; (click)&#x3D;&quot;openUserList()&quot;&gt;
+            &lt;div class&#x3D;&quot;icon&quot;&gt;
+                &lt;mat-icon svgIcon&#x3D;&quot;handshake&quot;&gt;&lt;/mat-icon&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;name-info column&quot;&gt;
+                &lt;div class&#x3D;&quot;title t-bold-500&quot;&gt;
+                    {{&#x27;pages.activity-detail.join-users&#x27; | translate:({count: (activity.UserCount ?? 0) })}}
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;text&quot;&gt;
+                    &lt;lib-user-avater-group [maxItem]&#x3D;&quot;5&quot; [users]&#x3D;&quot;joinUsers&quot;&gt;&lt;/lib-user-avater-group&gt;
+                &lt;/div&gt;
+                @if(leaderText?.length){
+                &lt;div class&#x3D;&quot;text&quot; [innerHTML]&#x3D;&quot;&#x27;pages.activity-detail.leader-users&#x27; | translate: ({name: leaderText })&quot;&gt;
+                &lt;/div&gt;
+                }
+
+            &lt;/div&gt;
+            @if(!!activity.Id){
+            &lt;div class&#x3D;&quot;right row tmup-align-center&quot;&gt;
+                &lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;arrow_right&quot;&gt;&lt;/mat-icon&gt;
+            &lt;/div&gt;
+            }
+
+        &lt;/div&gt;
+        @if(activity.MapRoute){
+        &lt;div class&#x3D;&quot;item row&quot; (click)&#x3D;&quot;openRoute()&quot;&gt;
+            &lt;div class&#x3D;&quot;icon&quot;&gt;
+                &lt;mat-icon svgIcon&#x3D;&quot;route&quot;&gt;&lt;/mat-icon&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;name-info column&quot;&gt;
+                &lt;div class&#x3D;&quot;title t-bold-500&quot;&gt;
+                    {{activity.MapRoute.Name}}
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;text&quot;&gt;
+                    &lt;span&gt;
+                        {{activity.MapRoute.Distance | metricConversion: &#x27;km&#x27; }}
+                        {{ &#x27;km&#x27; | metricUnitConversion }}
+                    &lt;/span&gt;
+                    &lt;span&gt; · &lt;/span&gt;
+                    &lt;span&gt;
+                        {{activity.MapRoute.ClimbHeight | metricConversion: &#x27;m&#x27; }}
+                        {{ &#x27;m&#x27; | metricUnitConversion }}
+                    &lt;/span&gt;
+                    @if(slopeText?.length ){
+                    &lt;span&gt; · &lt;/span&gt;
+                    &lt;span&gt;
+                        {{ slopeText }} %
+                    &lt;/span&gt;
+                    }
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;right row tmup-align-center&quot;&gt;
+                &lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;arrow_right&quot;&gt;&lt;/mat-icon&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        }
+
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;map column&quot; [hidden]&#x3D;&quot;!activity.MapRoute &amp;&amp; !activity.StartPoint &amp;&amp; !activity.StopPoints?.length&quot;&gt;
+        &lt;div class&#x3D;&quot;title&quot;&gt;
+            {{&#x27;pages.activity-detail.points&#x27; | translate}}
+        &lt;/div&gt;
+
+        @if(mapInit &amp;&amp; mapOption){
+        &lt;google-map #map [options]&#x3D;&quot;mapOption&quot;&gt;
+        &lt;/google-map&gt;
+        }
+
+
+        &lt;div class&#x3D;&quot;groups column&quot;&gt;
+            @if(activity.StartPoint){
+            &lt;div class&#x3D;&quot;item row&quot;&gt;
+                &lt;div class&#x3D;&quot;icon&quot;&gt;
+                    &lt;mat-icon svgIcon&#x3D;&quot;startPoint&quot;&gt;&lt;/mat-icon&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;name-info column&quot;&gt;
+                    &lt;div class&#x3D;&quot;title t-bold-500&quot;&gt;
+                        {{ activity.StartPointName}}
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;text&quot;&gt;
+                        {{activity.StartPointAddress }}
+                    &lt;/div&gt;
+
+                    &lt;div class&#x3D;&quot;text blue&quot;&gt;
+                        {{&#x27;pages.activity-form.step-4.startpoint2&#x27; | translate }}
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            }
+
+            @for(point of activity.StopPoints; track $index){
+            &lt;div class&#x3D;&quot;item row&quot;&gt;
+                &lt;div class&#x3D;&quot;icon&quot;&gt;
+                    &lt;div class&#x3D;&quot;number row tmup-center&quot;&gt;{{($index+1)}}&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;name-info column&quot;&gt;
+                    &lt;div class&#x3D;&quot;title t-bold-500&quot;&gt;
+                        {{ point.Name}}
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;text&quot;&gt;
+                        {{ point.Address}}
+                    &lt;/div&gt;
+                    @if(point.Distance){
+                    &lt;div class&#x3D;&quot;text gray&quot;&gt;
+                        {{ point.Distance | metricConversion: &#x27;km&#x27; }}
+                        {{ &#x27;km&#x27; | metricUnitConversion }}
+                    &lt;/div&gt;
+                    }
+
+                &lt;/div&gt;
+            &lt;/div&gt;
+            }
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- act status  switch start --&gt;
+@switch (actStatus) {
+
+&lt;!-- 活動尚未報名, 且可以報名 --&gt;
+@case (actStatusEnum[&#x27;None&#x27;]) {
+&lt;div class&#x3D;&quot;footer row&quot;&gt;
+    @if(inviteCode?.length){
+    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-l&quot; (click)&#x3D;&quot;signUp()&quot;&gt;
+        {{&#x27;pages.activity-detail.join&#x27; | translate}}
+    &lt;/button&gt;
+    }@else{
+    &lt;div class&#x3D;&quot;info column&quot;&gt;
+        &lt;div class&#x3D;&quot;date&quot;&gt;
+            {{&#x27;pages.activity-detail.registration-deadline&#x27; | translate:({date: (activity.StartTime | localDate:
+            &#x27;date&#x27;)})}}
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;time t-bold&quot;&gt;
+            {{ registTime | secondsHhmmss }}
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;btns&quot;&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-l&quot; (click)&#x3D;&quot;signUp()&quot;&gt;
+            {{&#x27;pages.activity-detail.sign-up&#x27; | translate}}
+        &lt;/button&gt;
+    &lt;/div&gt;
+    }
+
+&lt;/div&gt;
+}
+&lt;!-- 活動已結束 --&gt;
+@case (actStatusEnum[&#x27;Finish&#x27;]) {
+&lt;div class&#x3D;&quot;footer row&quot;&gt;
+    &lt;div class&#x3D;&quot;info row tmup-center disable t-bold-500&quot;&gt;
+        {{&#x27;pages.activity-detail.finish&#x27;| translate }}
+    &lt;/div&gt;
+&lt;/div&gt;
+}
+&lt;!-- 報名已截止 --&gt;
+@case (actStatusEnum[&#x27;RegistEnded&#x27;]) {
+&lt;div class&#x3D;&quot;footer row&quot;&gt;
+    &lt;div class&#x3D;&quot;info row tmup-center disable t-bold-500&quot;&gt;
+        {{&#x27;pages.activity-detail.registration-ended&#x27;| translate }}
+    &lt;/div&gt;
+&lt;/div&gt;
+}
+&lt;!-- 已報名, 等待審核中 --&gt;
+@case (actStatusEnum[&#x27;IsApply&#x27;]) {
+&lt;div class&#x3D;&quot;footer black row&quot;&gt;
+    &lt;img [src]&#x3D;&quot;footerIconImage&quot; alt&#x3D;&quot;register-wait&quot; /&gt;
+    &lt;div class&#x3D;&quot;info column&quot;&gt;
+        &lt;div class&#x3D;&quot;text&quot;&gt;
+            {{ &#x27;pages.activity-detail.registered-wait&#x27; | translate}}
+        &lt;/div&gt;
+        @if(time &gt;&#x3D; 0){
+        &lt;div class&#x3D;&quot;date&quot;&gt;
+            {{&#x27;pages.activity-detail.countdown-begins&#x27; | translate:({time: (time | secondsHhmmss)})}}
+        &lt;/div&gt;
+        }
+
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;btns&quot;&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-ss-gray&quot; (click)&#x3D;&quot;cancelApply()&quot;&gt;
+            {{&#x27;common.more&#x27; | translate}}
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+}
+&lt;!-- 已報名, 等待活動開始 --&gt;
+@case (actStatusEnum[&#x27;IsJoin&#x27;]) {
+&lt;div class&#x3D;&quot;footer black row&quot;&gt;
+    &lt;img [src]&#x3D;&quot;footerIconImage&quot; alt&#x3D;&quot;register-ok&quot; /&gt;
+    &lt;div class&#x3D;&quot;info column&quot;&gt;
+        &lt;div class&#x3D;&quot;text&quot;&gt;
+            {{ &#x27;pages.activity-detail.joined&#x27; | translate}}
+        &lt;/div&gt;
+        @if(time &gt;&#x3D; 0){
+        &lt;div class&#x3D;&quot;date&quot;&gt;
+            {{&#x27;pages.activity-detail.countdown-begins&#x27; | translate:({time: (time | secondsHhmmss)})}}
+        &lt;/div&gt;
+        }
+
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;btns&quot;&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-circle&quot; (click)&#x3D;&quot;cancelApply()&quot;&gt;
+            &lt;mat-icon svgIcon&#x3D;&quot;chat&quot;&gt;&lt;/mat-icon&gt;
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+}
+&lt;!-- 活動開始1小時內, 可進入活動就緒 --&gt;
+@case (actStatusEnum[&#x27;StartBefore&#x27;]) {
+&lt;div class&#x3D;&quot;footer teal row&quot;&gt;
+    @if(this.readyUsers?.length){
+    &lt;div class&#x3D;&quot;info column&quot;&gt;
+        &lt;div class&#x3D;&quot;text&quot;&gt;
+            {{&#x27;pages.activity-detail.participants-are-ready&#x27; | translate:({count: (this.readyUsers?.length)})}}
+        &lt;/div&gt;
+    &lt;/div&gt;
+    }@else{
+    &lt;div class&#x3D;&quot;info column&quot;&gt;
+        &lt;div class&#x3D;&quot;title t-bold&quot;&gt;
+            {{ &#x27;pages.activity-detail.start-before-title&#x27; | translate }}
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;text&quot;&gt;
+            {{&#x27;pages.activity-detail.start-before-text&#x27; | translate }}
+        &lt;/div&gt;
+    &lt;/div&gt;
+    }
+
+    &lt;div class&#x3D;&quot;btns&quot;&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-l&quot; (click)&#x3D;&quot;start()&quot;&gt;
+            {{&#x27;pages.activity-detail.start-activity&#x27; | translate}}
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+}
+
+&lt;!-- 活動開始1小時內, 可進入活動就緒 --&gt;
+@case (actStatusEnum[&#x27;Start&#x27;]) {
+&lt;div class&#x3D;&quot;footer teal row&quot;&gt;
+    &lt;div class&#x3D;&quot;info column&quot;&gt;
+        &lt;div class&#x3D;&quot;title t-bold&quot;&gt;
+            {{ &#x27;pages.activity-detail.start-title&#x27; | translate}}
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;btns&quot;&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-l&quot; (click)&#x3D;&quot;start()&quot;&gt;
+            {{&#x27;pages.activity-detail.start-activity&#x27; | translate}}
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+}
+
+&lt;!-- 參加者已完賽 --&gt;
+@case (actStatusEnum[&#x27;JoinFinish&#x27;]) {
+&lt;div class&#x3D;&quot;footer row&quot;&gt;
+    &lt;div class&#x3D;&quot;info row tmup-center disable t-bold-500&quot;&gt;
+        {{&#x27;pages.activity-detail.finish&#x27;| translate }}
+    &lt;/div&gt;
+&lt;/div&gt;
+}
+
+}
+&lt;!-- switch end --&gt;
+
+}</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><lib-header [isDialog]="true" [show]="true" [backNotShow]="true">    <ng-container ngProjectAs="[h-left]">        <button type="button" class="tmup-btn-circle" (click)="back()">            <mat-icon svgIcon="back"></mat-icon>        </button>    </ng-container>    <ng-container ngProjectAs="[h-right]">        @if(activity){        <ng-container>            @if(!!activity.Id && !(isApp && !!uid && (user?.JoinTime || ( uid != activity.TeamUpCreatedBy)))){            <button type="button" class="tmup-btn-circle" (click)="share()">                <mat-icon svgIcon="upload"></mat-icon>            </button>            }            @if(user?.JoinTime){            <button type="button" class="tmup-btn-circle" (click)="openChat()">                <mat-icon svgIcon="chat-team"></mat-icon>            </button>            }            @if(isApp && !!uid && !!activity.Id && (user?.JoinTime || ( uid != activity.TeamUpCreatedBy))){            <button type="button" class="tmup-btn-circle" (click)="more()">                <mat-icon svgIcon="more"></mat-icon>            </button>            }        </ng-container>        }    </ng-container></lib-header>@if(activity){<div class="scroll-main" #scrollmain>    @if(imageSlides.length){    <div class="swiper-area">        <swiper-container #swiperContainer class="slider" init="false" pagination="true">            @for(item of imageSlides; track item){            <swiper-slide>                <div class="slider__wrap" [isApiImage]="true" [appBackgroundImage]="item">                </div>            </swiper-slide>            }        </swiper-container>        <div class="swiper-pagination-area row tmup-center">            <div class="page row"></div>        </div>    </div>    }    <div class="info column">        @if(subText.length){        <div class="sub">            {{subText}}        </div>        }        <div class="name t-bold">            {{activity.Name}}        </div>        @if(activity.Desc?.length){        <div class="desc" [libTextReadMore]="activity.Desc"></div>        }    </div>    <div class="groups column">        @if(activity.Team){        <div class="item row" (click)="openTeam()">            <div class="icon">                <lib-team-logo [logo]="activity.Team.Logo"></lib-team-logo>            </div>            <div class="name-info column">                <div class="title t-bold-500">                    {{ \'pages.activity-detail.main-team\' |translate}}                </div>                <div class="text">                    {{activity.Team.Name}}                </div>            </div>            @if(isApp){            <div class="right row tmup-align-center">                <mat-icon class="fs-16" svgIcon="arrow_right"></mat-icon>            </div>            }        </div>        }        @if(activity.TeamUpCreatedByUser){        <div class="item row" (click)="openCreator()">            <div class="icon">                <lib-user-avatar [avatar]="activity.TeamUpCreatedByUser.Avatar"                    [firstName]="activity.TeamUpCreatedByUser.FirstName"                    [lastName]="activity.TeamUpCreatedByUser.LastName"></lib-user-avatar>            </div>            <div class="name-info column">                <div class="title t-bold-500">                    {{ \'pages.activity-detail.creator\' |translate}}                </div>                <div class="text">                    {{activity.TeamUpCreatedByUser | displayName }}                </div>            </div>            @if(isApp){            <div class="right row tmup-align-center">                <mat-icon class="fs-16" svgIcon="arrow_right"></mat-icon>            </div>            }        </div>        }        <div class="item row">            <div class="icon">                <mat-icon svgIcon="activity-time"></mat-icon>            </div>            <div class="name-info column">                <div class="title t-bold-500">                    {{activity.StartTime | localDate: \'date\'}} ({{activity.StartTime | localDate: \'EEEE\'}})                </div>                <div class="text">                    {{activity.StartTime | localDate: \'time\'}}                </div>            </div>        </div>        <div class="item row c-pointer" (click)="openUserList()">            <div class="icon">                <mat-icon svgIcon="handshake"></mat-icon>            </div>            <div class="name-info column">                <div class="title t-bold-500">                    {{\'pages.activity-detail.join-users\' | translate:({count: (activity.UserCount ?? 0) })}}                </div>                <div class="text">                    <lib-user-avater-group [maxItem]="5" [users]="joinUsers"></lib-user-avater-group>                </div>                @if(leaderText?.length){                <div class="text" [innerHTML]="\'pages.activity-detail.leader-users\' | translate: ({name: leaderText })">                </div>                }            </div>            @if(!!activity.Id){            <div class="right row tmup-align-center">                <mat-icon class="fs-16" svgIcon="arrow_right"></mat-icon>            </div>            }        </div>        @if(activity.MapRoute){        <div class="item row" (click)="openRoute()">            <div class="icon">                <mat-icon svgIcon="route"></mat-icon>            </div>            <div class="name-info column">                <div class="title t-bold-500">                    {{activity.MapRoute.Name}}                </div>                <div class="text">                    <span>                        {{activity.MapRoute.Distance | metricConversion: \'km\' }}                        {{ \'km\' | metricUnitConversion }}                    </span>                    <span> · </span>                    <span>                        {{activity.MapRoute.ClimbHeight | metricConversion: \'m\' }}                        {{ \'m\' | metricUnitConversion }}                    </span>                    @if(slopeText?.length ){                    <span> · </span>                    <span>                        {{ slopeText }} %                    </span>                    }                </div>            </div>            <div class="right row tmup-align-center">                <mat-icon class="fs-16" svgIcon="arrow_right"></mat-icon>            </div>        </div>        }    </div>    <div class="map column" [hidden]="!activity.MapRoute && !activity.StartPoint && !activity.StopPoints?.length">        <div class="title">            {{\'pages.activity-detail.points\' | translate}}        </div>        @if(mapInit && mapOption){        <google-map #map [options]="mapOption">        </google-map>        }        <div class="groups column">            @if(activity.StartPoint){            <div class="item row">                <div class="icon">                    <mat-icon svgIcon="startPoint"></mat-icon>                </div>                <div class="name-info column">                    <div class="title t-bold-500">                        {{ activity.StartPointName}}                    </div>                    <div class="text">                        {{activity.StartPointAddress }}                    </div>                    <div class="text blue">                        {{\'pages.activity-form.step-4.startpoint2\' | translate }}                    </div>                </div>            </div>            }            @for(point of activity.StopPoints; track $index){            <div class="item row">                <div class="icon">                    <div class="number row tmup-center">{{($index+1)}}</div>                </div>                <div class="name-info column">                    <div class="title t-bold-500">                        {{ point.Name}}                    </div>                    <div class="text">                        {{ point.Address}}                    </div>                    @if(point.Distance){                    <div class="text gray">                        {{ point.Distance | metricConversion: \'km\' }}                        {{ \'km\' | metricUnitConversion }}                    </div>                    }                </div>            </div>            }        </div>    </div></div><!-- act status  switch start -->@switch (actStatus) {<!-- 活動尚未報名, 且可以報名 -->@case (actStatusEnum[\'None\']) {<div class="footer row">    @if(inviteCode?.length){    <button type="button" class="tmup-btn-l" (click)="signUp()">        {{\'pages.activity-detail.join\' | translate}}    </button>    }@else{    <div class="info column">        <div class="date">            {{\'pages.activity-detail.registration-deadline\' | translate:({date: (activity.StartTime | localDate:            \'date\')})}}        </div>        <div class="time t-bold">            {{ registTime | secondsHhmmss }}        </div>    </div>    <div class="btns">        <button type="button" class="tmup-btn-l" (click)="signUp()">            {{\'pages.activity-detail.sign-up\' | translate}}        </button>    </div>    }</div>}<!-- 活動已結束 -->@case (actStatusEnum[\'Finish\']) {<div class="footer row">    <div class="info row tmup-center disable t-bold-500">        {{\'pages.activity-detail.finish\'| translate }}    </div></div>}<!-- 報名已截止 -->@case (actStatusEnum[\'RegistEnded\']) {<div class="footer row">    <div class="info row tmup-center disable t-bold-500">        {{\'pages.activity-detail.registration-ended\'| translate }}    </div></div>}<!-- 已報名, 等待審核中 -->@case (actStatusEnum[\'IsApply\']) {<div class="footer black row">    <img [src]="footerIconImage" alt="register-wait" />    <div class="info column">        <div class="text">            {{ \'pages.activity-detail.registered-wait\' | translate}}        </div>        @if(time >= 0){        <div class="date">            {{\'pages.activity-detail.countdown-begins\' | translate:({time: (time | secondsHhmmss)})}}        </div>        }    </div>    <div class="btns">        <button type="button" class="tmup-btn-ss-gray" (click)="cancelApply()">            {{\'common.more\' | translate}}        </button>    </div></div>}<!-- 已報名, 等待活動開始 -->@case (actStatusEnum[\'IsJoin\']) {<div class="footer black row">    <img [src]="footerIconImage" alt="register-ok" />    <div class="info column">        <div class="text">            {{ \'pages.activity-detail.joined\' | translate}}        </div>        @if(time >= 0){        <div class="date">            {{\'pages.activity-detail.countdown-begins\' | translate:({time: (time | secondsHhmmss)})}}        </div>        }    </div>    <div class="btns">        <button type="button" class="tmup-btn-circle" (click)="cancelApply()">            <mat-icon svgIcon="chat"></mat-icon>        </button>    </div></div>}<!-- 活動開始1小時內, 可進入活動就緒 -->@case (actStatusEnum[\'StartBefore\']) {<div class="footer teal row">    @if(this.readyUsers?.length){    <div class="info column">        <div class="text">            {{\'pages.activity-detail.participants-are-ready\' | translate:({count: (this.readyUsers?.length)})}}        </div>    </div>    }@else{    <div class="info column">        <div class="title t-bold">            {{ \'pages.activity-detail.start-before-title\' | translate }}        </div>        <div class="text">            {{\'pages.activity-detail.start-before-text\' | translate }}        </div>    </div>    }    <div class="btns">        <button type="button" class="tmup-btn-l" (click)="start()">            {{\'pages.activity-detail.start-activity\' | translate}}        </button>    </div></div>}<!-- 活動開始1小時內, 可進入活動就緒 -->@case (actStatusEnum[\'Start\']) {<div class="footer teal row">    <div class="info column">        <div class="title t-bold">            {{ \'pages.activity-detail.start-title\' | translate}}        </div>    </div>    <div class="btns">        <button type="button" class="tmup-btn-l" (click)="start()">            {{\'pages.activity-detail.start-activity\' | translate}}        </button>    </div></div>}<!-- 參加者已完賽 -->@case (actStatusEnum[\'JoinFinish\']) {<div class="footer row">    <div class="info row tmup-center disable t-bold-500">        {{\'pages.activity-detail.finish\'| translate }}    </div></div>}}<!-- switch end -->}</div>'
+    var COMPONENTS = [{'name': 'ActivityApplyListComponent', 'selector': 'lib-activity-apply-list'},{'name': 'ActivityCancelDialogComponent', 'selector': 'lib-activity-cancel-dialog'},{'name': 'ActivityComponent', 'selector': 'app-activity'},{'name': 'ActivityDetailComponent', 'selector': 'lib-activity-detail'},{'name': 'ActivityFormComponent', 'selector': 'app-activity-form'},{'name': 'ActivityGpsShareComponent', 'selector': 'lib-activity-gps-share'},{'name': 'ActivityGpsShareDialogComponent', 'selector': 'lib-activity-gps-share-dialog'},{'name': 'ActivityInvitingListComponent', 'selector': 'lib-activity-inviting-list'},{'name': 'ActivityItemComponent', 'selector': 'lib-activity-item'},{'name': 'ActivityJoinListComponent', 'selector': 'lib-activity-join-list'},{'name': 'ActivityLogListComponent', 'selector': 'lib-activity-log-list'},{'name': 'ActivityOnMapComponent', 'selector': 'lib-activity-on-map'},{'name': 'ActivityParticipantListDialogComponent', 'selector': 'lib-activity-participant-list-dialog'},{'name': 'ActivityPointsSelectDialogComponent', 'selector': 'lib-activity-points-select-dialog'},{'name': 'ActivitySearchComponent', 'selector': 'lib-activity-search'},{'name': 'ActivitySelectDialogComponent', 'selector': 'lib-activity-select-dialog'},{'name': 'ActivityUserListComponent', 'selector': 'lib-activity-user-list'},{'name': 'AddressInputComponent', 'selector': 'lib-address-input'},{'name': 'AlertDialogComponent', 'selector': 'lib-alert-dialog'},{'name': 'ArrangePointsDialogComponent', 'selector': 'lib-arrange-points-dialog'},{'name': 'BackgroundChooseComponent', 'selector': 'lib-background-choose'},{'name': 'BlocklistComponent', 'selector': 'lib-blocklist'},{'name': 'CalorieExchangeComponent', 'selector': 'lib-calorie-exchange'},{'name': 'ChatAvatarComponent', 'selector': 'lib-chat-avatar'},{'name': 'ChatComponent', 'selector': 'lib-chat'},{'name': 'ChatItemComponent', 'selector': 'lib-chat-item'},{'name': 'ChatListComponent', 'selector': 'lib-chat-list'},{'name': 'ChatReplyMessageItemComponent', 'selector': 'lib-chat-reply-message-item'},{'name': 'ChatRoomComponent', 'selector': 'lib-chat-room'},{'name': 'ChatRoomItemComponent', 'selector': 'lib-chat-room-item'},{'name': 'ChatRoomItemTemplateComponent', 'selector': 'lib-chat-room-item-template'},{'name': 'ChatRoomMediaListComponent', 'selector': 'lib-chat-room-media-list'},{'name': 'ChatSelectDialogComponent', 'selector': 'lib-chat-select-dialog'},{'name': 'ChatUserComponent', 'selector': 'lib-chat-user'},{'name': 'ConfirmDialogComponent', 'selector': 'lib-confirm-dialog'},{'name': 'CreateActivitySuccessDialogComponent', 'selector': 'lib-create-activity-success-dialog'},{'name': 'CreateRouteSuccessDialogComponent', 'selector': 'lib-create-route-success-dialog'},{'name': 'CreateSuccessComponent', 'selector': 'lib-create-success'},{'name': 'CustomPageComponent', 'selector': 'lib-custom-page'},{'name': 'DateInputComponent', 'selector': 'lib-date-input'},{'name': 'DatetimeInputComponent', 'selector': 'lib-datetime-input'},{'name': 'DeviceSeekingComponent', 'selector': 'lib-device-seeking'},{'name': 'DownloadAppDialogComponent', 'selector': 'lib-download-app-dialog'},{'name': 'DownloadComponent', 'selector': 'lib-download'},{'name': 'DraggableListComponent', 'selector': 'lib-draggable-list'},{'name': 'EmptyDataComponent', 'selector': 'lib-empty-data'},{'name': 'ErrorDialogComponent', 'selector': 'lib-error-dialog'},{'name': 'ErrorSummaryComponent', 'selector': 'lib-error-summary'},{'name': 'ExerciseReadyStartComponent', 'selector': 'lib-exercise-ready-start'},{'name': 'FaqComponent', 'selector': 'lib-faq'},{'name': 'FileComponent', 'selector': 'lib-file'},{'name': 'FindResultComponent', 'selector': 'lib-find-result'},{'name': 'FollowComponent', 'selector': 'app-follow'},{'name': 'FollowersComponent', 'selector': 'lib-followers'},{'name': 'FollowReqComponent', 'selector': 'lib-follow-req'},{'name': 'FooterMenuComponent', 'selector': 'lib-footer-menu'},{'name': 'HeaderComponent', 'selector': 'lib-header'},{'name': 'HomeActivityInviteComponent', 'selector': 'lib-home-activity-invite'},{'name': 'HomeAddBtnComponent', 'selector': 'lib-home-add-btn'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeMenuComponent', 'selector': 'lib-home-menu'},{'name': 'ImageCropperDialogComponent', 'selector': 'lib-image-cropper-dialog'},{'name': 'ImageListDialogComponent', 'selector': 'lib-image-list-dialog'},{'name': 'InviteFriendsComponent', 'selector': 'lib-invite-friends'},{'name': 'LeadRiderForRouteDialogComponent', 'selector': 'lib-lead-rider-for-route-dialog'},{'name': 'LikeCommentDialogComponent', 'selector': 'lib-like-comment-dialog'},{'name': 'LoadingComponent', 'selector': 'lib-loading'},{'name': 'LocationDialogComponent', 'selector': 'lib-location-dialog'},{'name': 'LocationSelectDialogComponent', 'selector': 'lib-location-select-dialog'},{'name': 'LocationShareComponent', 'selector': 'lib-location-share'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapClMarkerComponent', 'selector': 'lib-map-cl-marker'},{'name': 'MapCompassComponent', 'selector': 'lib-map-compass'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'MoreMenuComponent', 'selector': 'lib-more-menu'},{'name': 'MyRouteCollectionComponent', 'selector': 'lib-my-route-collection'},{'name': 'NoticeMsgItemComponent', 'selector': 'lib-notice-msg-item'},{'name': 'NotifyMessageListComponent', 'selector': 'lib-notify-message-list'},{'name': 'OptionComponent', 'selector': 'lib-option'},{'name': 'PageDialogComponent', 'selector': 'lib-page-dialog'},{'name': 'PositionFilterDialogComponent', 'selector': 'lib-position-filter-dialog'},{'name': 'PostAttachmentItemComponent', 'selector': 'lib-post-attachment-item'},{'name': 'PostCommentListComponent', 'selector': 'lib-post-comment-list'},{'name': 'PostFormComponent', 'selector': 'lib-post-form'},{'name': 'PostItemComponent', 'selector': 'lib-post-item'},{'name': 'PostLikeListComponent', 'selector': 'lib-post-like-list'},{'name': 'ProgressBarComponent', 'selector': 'lib-progress-bar'},{'name': 'RecommendTeamListComponent', 'selector': 'lib-recommend-team-list'},{'name': 'RecommendUserListComponent', 'selector': 'lib-recommend-user-list'},{'name': 'RecordSelectDialogComponent', 'selector': 'lib-record-select-dialog'},{'name': 'ReportDialogComponent', 'selector': 'lib-report-dialog'},{'name': 'ReportListComponent', 'selector': 'lib-report-list'},{'name': 'ReportSuccessDialogComponent', 'selector': 'lib-report-success-dialog'},{'name': 'RoadDescDialogComponent', 'selector': 'lib-road-desc-dialog'},{'name': 'RouteActivityListComponent', 'selector': 'lib-route-activity-list'},{'name': 'RouteCollectComponent', 'selector': 'lib-route-collect'},{'name': 'RouteCommentFormComponent', 'selector': 'lib-route-comment-form'},{'name': 'RouteCommentItemComponent', 'selector': 'lib-route-comment-item'},{'name': 'RouteCommentListComponent', 'selector': 'lib-route-comment-list'},{'name': 'RouteDetailComponent', 'selector': 'lib-route-detail'},{'name': 'RouteDetailDialogComponent', 'selector': 'lib-route-detail-dialog'},{'name': 'RouteElevationMapComponent', 'selector': 'lib-route-elevation-map'},{'name': 'RouteExploreComponent', 'selector': 'lib-route-explore'},{'name': 'RouteFormComponent', 'selector': 'lib-route-form'},{'name': 'RouteFromFilterDialogComponent', 'selector': 'lib-route-from-filter-dialog'},{'name': 'RouteInfoComponent', 'selector': 'lib-route-info'},{'name': 'RouteItemComponent', 'selector': 'lib-route-item'},{'name': 'RouteMapExploreComponent', 'selector': 'lib-route-map-explore'},{'name': 'RouteReportInfoComponent', 'selector': 'lib-route-report-info'},{'name': 'RouteSearchComponent', 'selector': 'lib-route-search'},{'name': 'RouteSelectReportConfirmDialogComponent', 'selector': 'lib-route-select-report-confirm-dialog'},{'name': 'RouteShareDialogComponent', 'selector': 'lib-route-share-dialog'},{'name': 'RouteTagFilterDialogComponent', 'selector': 'lib-route-tag-filter-dialog'},{'name': 'SearchDialogComponent', 'selector': 'lib-search-dialog'},{'name': 'SearchInputComponent', 'selector': 'lib-search-input'},{'name': 'SearchRecordComponent', 'selector': 'lib-search-record'},{'name': 'SearchUsersComponent', 'selector': 'lib-search-users'},{'name': 'SelectDialogComponent', 'selector': 'lib-select-dialog'},{'name': 'SelectInputComponent', 'selector': 'lib-select-input'},{'name': 'ShareToDialogComponent', 'selector': 'lib-share-to-dialog'},{'name': 'SingleInputDialogComponent', 'selector': 'lib-single-input-dialog'},{'name': 'SlideToggleInputComponent', 'selector': 'lib-slide-toggle-input'},{'name': 'SportingShareItemComponent', 'selector': 'lib-sporting-share-item'},{'name': 'SportingShareListComponent', 'selector': 'lib-sporting-share-list'},{'name': 'SportLiveChatComponent', 'selector': 'lib-sport-live-chat'},{'name': 'SportLiveComponent', 'selector': 'lib-sport-live'},{'name': 'StepProcessComponent', 'selector': 'lib-step-process'},{'name': 'StopwatchComponent', 'selector': 'lib-stopwatch'},{'name': 'StopwatchFinishedComponent', 'selector': 'lib-stopwatch-finished'},{'name': 'StopwatchInfoSelectDialogComponent', 'selector': 'lib-stopwatch-info-select-dialog'},{'name': 'StopwatchSettingComponent', 'selector': 'lib-stopwatch-setting'},{'name': 'StreamimgChatDialogComponent', 'selector': 'lib-streamimg-chat-dialog'},{'name': 'TagUserInputComponent', 'selector': 'lib-tag-user-input'},{'name': 'TeamActivityDialogComponent', 'selector': 'lib-team-activity-dialog'},{'name': 'TeamAliasEditComponent', 'selector': 'lib-team-alias-edit'},{'name': 'TeamBaseareaEditComponent', 'selector': 'lib-team-basearea-edit'},{'name': 'TeamComponent', 'selector': 'lib-team'},{'name': 'TeamCreateFinishComponent', 'selector': 'lib-team-create-finish'},{'name': 'TeamDetailsComponent', 'selector': 'lib-team-details'},{'name': 'TeamFormComponent', 'selector': 'lib-team-form'},{'name': 'TeamFormEditComponent', 'selector': 'lib-team-form-edit'},{'name': 'TeamIntroDialogComponent', 'selector': 'lib-team-intro-dialog'},{'name': 'TeamItemComponent', 'selector': 'lib-team-item'},{'name': 'TeamLogoComponent', 'selector': 'lib-team-logo'},{'name': 'TeamMapComponent', 'selector': 'lib-team-map'},{'name': 'TeamMemberAliasComponent', 'selector': 'lib-team-member-alias'},{'name': 'TeamMemberComponent', 'selector': 'lib-team-member'},{'name': 'TeamMemberCtrlDialogComponent', 'selector': 'lib-team-member-ctrl-dialog'},{'name': 'TeamOnMapComponent', 'selector': 'lib-team-on-map'},{'name': 'TeamSearchComponent', 'selector': 'lib-team-search'},{'name': 'TeamSettingComponent', 'selector': 'lib-team-setting'},{'name': 'TeamTagEditComponent', 'selector': 'lib-team-tag-edit'},{'name': 'TextareaInputComponent', 'selector': 'lib-textarea-input'},{'name': 'TextboxInputComponent', 'selector': 'lib-textbox-input'},{'name': 'ThirdAuthComponent', 'selector': 'lib-third-auth'},{'name': 'TimeInputComponent', 'selector': 'lib-time-input'},{'name': 'TimePeriodFilterDialogComponent', 'selector': 'lib-time-period-filter-dialog'},{'name': 'TipInfoDialogComponent', 'selector': 'lib-tip-info-dialog'},{'name': 'UpdateScreenComponent', 'selector': 'lib-update-screen'},{'name': 'UserAccountComponent', 'selector': 'lib-user-account'},{'name': 'UserAccountFormComponent', 'selector': 'lib-user-account-form'},{'name': 'UserApplyTeamDialogComponent', 'selector': 'lib-user-apply-team-dialog'},{'name': 'UserAvatarComponent', 'selector': 'lib-user-avatar'},{'name': 'UserAvaterGroupComponent', 'selector': 'lib-user-avater-group'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserFormComponent', 'selector': 'app-user-form'},{'name': 'UserItemComponent', 'selector': 'lib-user-item'},{'name': 'UserNotificationSettingComponent', 'selector': 'lib-user-notification-setting'},{'name': 'UserPostListComponent', 'selector': 'lib-user-post-list'},{'name': 'UserRouteRecordItemComponent', 'selector': 'lib-user-route-record-item'},{'name': 'UserRouteRecordListComponent', 'selector': 'lib-user-route-record-list'},{'name': 'UserSelectDialogComponent', 'selector': 'lib-user-select-dialog'},{'name': 'UserSettingComponent', 'selector': 'app-user-setting'},{'name': 'UsersFollowingComponent', 'selector': 'lib-users-following'},{'name': 'UserShareDialogComponent', 'selector': 'lib-user-share-dialog'},{'name': 'ValidCodeInputComponent', 'selector': 'lib-valid-code-input'},{'name': 'VisitRegDialogComponent', 'selector': 'lib-visit-reg-dialog'},{'name': 'WeatherViewDialogComponent', 'selector': 'lib-weather-view-dialog'},{'name': 'WebHomeComponent', 'selector': 'lib-web-home'}];
+    var DIRECTIVES = [{'name': 'AppOnDestory', 'selector': ''},{'name': 'BackgroundImageDirective', 'selector': '[appBackgroundImage]'},{'name': 'BaseComponent', 'selector': ''},{'name': 'BaseFormComponent', 'selector': ''},{'name': 'BaseListComponent', 'selector': ''},{'name': 'HeaderTitleDirective', 'selector': '[libHeaderTitle]'},{'name': 'OpenSettingDirective', 'selector': '[libOpenSetting]'},{'name': 'PageHostDirective', 'selector': '[libPageHost]'},{'name': 'TextReadMoreDirective', 'selector': '[libTextReadMore]'}];
+    var ACTUAL_COMPONENT = {'name': 'ActivityDetailComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ActivityDetailComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

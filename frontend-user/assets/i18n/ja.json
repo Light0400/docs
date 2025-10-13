@@ -1,0 +1,2137 @@
+{
+    "notify": {
+        "types": {
+            "image": "{{name}} が {{groupName}} に画像を共有しました",
+            "text": "{{name}} が {{groupName}} に新しいメッセージを送信しました",
+            "location": "{{name}} が {{groupName}} に位置情報を共有しました"
+        }
+    },
+    "errors": {
+        "required": "必須",
+        "minlength": "最低でも{{requiredLength}}文字",
+        "maxlength": "最大{{requiredLength}}文字まで",
+        "maxFileCount": "ファイル数が制限を超えました。最大{{max}}個までです",
+        "email": "有効なEmail形式である必要があります",
+        "sameAs": "{{control}}と同じである必要があります",
+        "leastOneRequired": "{{Name}} は最低1つ以上のフィールドを入力する必要があります",
+        "duplicate": "重複しています",
+        "reference": "{{data.title}}に関連するデータがあるため、削除できません",
+        "allreference": "{{data.title}}に関連するデータが{{data.count}}件あるため、削除できません",
+        "matDatepickerParse": "日付形式である必要があります",
+        "min": "{{min}}より小さくすることはできません",
+        "max": "{{max}}より大きくすることはできません",
+        "arrayMaxLength": "最大{{max}}個まで",
+        "arrayMinLength": "最低{{min}}個以上",
+        "pattern": "形式が正しくありません",
+        "hasUse": "既に使用されています",
+        "hasExist": "既に存在します。再入力してください",
+        "notValidToken": "外部ログインのトークンが失効しました。もう一度ログインしてください",
+        "noThirdProvider": "{{Service}}のログインはまだサポートされていません",
+        "systemTimeout": "システムが混雑しています。しばらくしてから再試行してください。",
+        "notExists": "存在しません",
+        "incorrect": "正しくありません",
+        "needLogin": "ログインが必要です",
+        "serverNotConnect": "サーバーに接続できません",
+        "parametersIncorrect": "データパラメータが異常です",
+        "templateNotSetting": "{{SendType}}の{{TemplateType}}テンプレートがまだ設定されていません。管理者に連絡してください。",
+        "dateGreaterThanNow": "現在の時刻より後である必要があります",
+        "noPermission": "この操作を行う権限がありません",
+        "login-failed": {
+            "th3rd-service": "サードパーティログインに失敗しました。未登録のサードパーティアカウントをWebで直接登録・ログインすることはできません。"
+        },
+        "activity": {
+            "overStartTime": "アクティビティの開始時刻を過ぎているため、キャンセルできません。",
+            "overRegistTime": "申し込み期限を過ぎています。申し込むことはできません！",
+            "hasCancel": "このアクティビティはすでにキャンセルされています。",
+            "hasJoin": "すでにこのアクティビティに参加しています。再度参加する必要はありません。",
+            "isPrivate": "このアクティビティは招待制です。参加したい場合は招待を受けるか、主催チームのメンバーである必要があります。",
+            "running": "アクティビティはすでに進行中です。",
+            "inviteLimit": "招待可能人数が上限を超えています。",
+            "joinLimit": "参加人数がアクティビティの定員に達したため、申し込みできません。",
+            "notReject": "アクティビティ作成者はアクティビティを退出できません。",
+            "re-invite": "すでに招待を送信済みのため、再度送信できません。",
+            "re-cancel-apply": "すでに申請をキャンセルしたため、再度キャンセルする必要はありません。",
+            "start-before-cancel-apply": "開始1時間前を過ぎると、申し込みをキャンセルできません。",
+            "reapply-limit": "アクティビティの申し込みキャンセル後7日以内は再申し込みできません。",
+            "remove-creator": "主催者を参加者リストから外すことはできません。",
+            "apply-cancel": "このユーザーはすでに申請をキャンセルしています",
+            "apply-has-viewed-agree": "ほかの管理者がすでに承認しているため、重複して審査する必要はありません",
+            "apply-has-viewed-reject": "ほかの管理者がすでに却下しているため、重複して審査する必要はありません",
+            "notGuest": "このアクティビティはゲスト参加を提供していません。アプリをダウンロードして登録してください。",
+            "team-close": "そのチームは解散しており、イベントを追加または変更することはできません。",
+            "team-close-over": "そのチームはアーカイブされており、14日以内に解散する予定です。14日以上先のイベントは作成できません。アーカイブ解除についてはチームの管理者にお問い合わせください。",
+            "only-team-manager": "チームの管理者のみがチームのイベントを作成できます。",
+            "team-user": "あなたはチーム {{teamName}} のメンバーではなく、このチームのイベントを作成することはできません。",
+            "follow-invite": "招待対象者は、自分をフォローしているユーザーからの招待のみ受け入れる設定になっています。まずは相手をフォローしてから、招待を送信してください。",
+            "people-limit": "参加人数がアクティビティの定員を超えています",
+            "last-registration-over": "登録締切時刻はイベント開始時刻を超えることはできません。",
+            "invite-over-time": "このアクティビティは終了しました。ユーザーを招待できません。",
+            "finished": "イベントは終了しました。参加登録はできません！",
+            "cancel-join": "ユーザーはイベントへの参加をキャンセルしました！",
+            "isGuest": "ユーザーはゲストです！"
+        },
+        "chatMessage": {
+            "activityNotExist": "このアクティビティは存在しないため、グループチャットを開けません",
+            "notActivityUser": "アクティビティの参加者ではないため、このグループチャットを開くことができません",
+            "notExist": "このグループチャットは存在しません",
+            "notReceiveStranger": "相手は陌生者からのメッセージ受信機能を無効にしているため、チャットを開始できません。"
+        },
+        "pageNotFound": "ページが見つかりません。",
+        "serverError": "サーバーエラー。",
+        "fileSize": "ファイル {{name}} (サイズ:{{size}}KB) は上限{{max}}KBを超えています。",
+        "register": {
+            "code-validate": "登録確認メールが失効しました。再度登録して確認メールを送信してください",
+            "token-valid": "登録情報の入力時間が長すぎたため、サードパーティログインのトークンが失効しました。再度ログインして登録してください",
+            "3rd-has-binding": "{{service}}は既にアカウントに紐づけられています。登録は不要です。直接ログインしてください"
+        },
+        "forget": {
+            "code-validate": "パスワード再設定用の確認メールが失効しました。もう一度「パスワードを忘れた」から再送してください",
+            "code-error": "認証コードが間違っています。現在{{count}}回ミスしています。5回を超えると24時間アカウントがロックされ確認できません。24時間後に再度メールを送信してください。",
+            "code-error-lock": "認証コードのエラー回数が上限に達しました。24時間後に再度メールを送信し、確認してください",
+            "code-lock": "認証コード入力ミスが複数回あったため、アカウントがロックされています。24時間後に再度メールを送信してください。"
+        },
+        "email-bind": {
+            "code-validate": "Emailアカウント紐づけの確認メールが失効しました。再度メールを送信してください"
+        },
+        "badword": "不適切な語句を含む用語は使用しないでください。",
+        "spacialWord": "特殊文字「!@#$%^&*」を含めないでください",
+        "teamOnlyManager": "あなたは唯一のチーム管理者のため、チームを退出できません。",
+        "newPwdSameOld": "新しいパスワードは古いパスワードと同じにできません",
+        "nameChangeWhinIn30Days": "称号は30日以内に再度変更することはできません",
+        "team": {
+            "apply-cancel": "このユーザーはすでに申請をキャンセルしています",
+            "apply-has-viewed-agree": "ほかの管理者がすでに承認しているため、重複して審査する必要はありません",
+            "apply-has-viewed-reject": "ほかの管理者がすでに却下しているため、重複して審査する必要はありません",
+            "title-count-limit": "チーム称号は最大20件まで設定できます。これ以上追加はできません",
+            "not-remove-self": "自分自身をチームから外すことはできません",
+            "not-change-permission": "自分の権限を変更できません",
+            "location-update-limit": "チーム拠点は14日以内に1回のみ更新可能です。次回更新まで{{days}}日残っています",
+            "reapply-limit": "チーム参加申請をキャンセルしてから7日以内は再申請できません。再申請可能になるまで{{days}}日残っています",
+            "re-invite": "すでにチーム招待を送信済みのため、再送できません。リンクを共有して招待してください",
+            "follow-invite": "このユーザーはフォロワーのみチームに招待可能です"
+        },
+        "user-has-block": "ブロックリストにあるユーザーのため、フォローできません。フォローするにはブロックリストから削除してください。",
+        "private-not-share-all": "ユーザーのプライバシー設定が非公開のため、全員に位置情報を共有できません",
+        "post": {
+            "team-close": "このチームは解散済みのため、投稿できません",
+            "only-manager": "チームの管理者のみがチームの投稿を行うことができます。",
+            "not-exist": "この投稿は既に存在しません"
+        },
+        "route": {
+            "least-two-points": "ルートには少なくともスタート地点と終点が必要です"
+        },
+        "live": {
+            "close": "ユーザーのライブ配信は終了しました！"
+        },
+        "user-disabled": "アカウントは停止されており、ログインや操作ができません。ご質問がある場合は、カスタマーサービスにお問い合わせください。",
+        "user-disabled-reason": "アカウントは以下の理由により停止されており、ログインや操作ができません：{{reason}}。<br/>ご質問がある場合は、カスタマーサービスにお問い合わせください。",
+        "report": {
+            "post-exist": "この投稿はすでに報告されています。できるだけ早く対応いたします。",
+            "comment-exist": "このコメントはすでに報告されています。できるだけ早く対応いたします。",
+            "user-exist": "このユーザーはすでに報告されています。できるだけ早く対応いたします。",
+            "chat-message-exist": "このチャットメッセージはすでに報告されています。できるだけ早く対応いたします。",
+            "team-exist": "このチームはすでに報告されています。できるだけ早く対応いたします。",
+            "activity-exist": "このアクティビティはすでに報告されています。できるだけ早く対応いたします。"
+        },
+        "bluetooth": {
+            "device-not-connect": "デバイスが接続されていません。デバイスの電源が入っていて、Bluetoothが有効になっていることを確認してから、もう一度お試しください！"
+        }
+    },
+    "common": {
+        "guest": "ゲスト",
+        "yes": "はい",
+        "no": "いいえ",
+        "none": "なし",
+        "edit": "編集",
+        "save": "保存",
+        "finish": "完了",
+        "complete": "完了",
+        "confirm": "確認",
+        "cancel": "キャンセル",
+        "blockade": "ブロック",
+        "openEnable": "開く",
+        "close": "閉じる",
+        "setting": "設定",
+        "login": "ログイン",
+        "logout": "ログアウト",
+        "enroll": "登録",
+        "search": "検索",
+        "forgetPassword": "パスワードを忘れた",
+        "unlimited": "無制限",
+        "share": "共有",
+        "share-to": "共有先",
+        "copy-url": "リンクをコピー",
+        "invite-friend": "友達を招待",
+        "following": "フォロー中",
+        "follower": "フォロワー",
+        "follow-me": "ファン",
+        "follow": "フォロー",
+        "followed": "フォロー済み",
+        "followed-name": "{{name}} をフォローしました",
+        "req-follow": "フォローリクエストを送信しました",
+        "req-follow-name": "{{name}} へのフォローリクエストを送信しました。ユーザーの承認をお待ちください。",
+        "unfollow": "フォロー解除",
+        "administrator": "管理者",
+        "choose": "選択",
+        "optional": "任意",
+        "delete-user": {
+            "title": "アカウントを削除する",
+            "confirmTitle": "本当にアカウントを削除しますか？",
+            "confirmMessage": "アカウント削除は取り消せません：<br/>アカウントとデータは完全に削除されます。関連するすべてのチームやチャットから削除されます。作成したデータ（公開ルートなど）は一部保持される場合があります。"
+        },
+        "exitApp": {
+            "title": "確認メッセージ",
+            "message": "アプリケーションを終了してよろしいですか？"
+        },
+        "language": {
+            "title": "言語",
+            "zh-tw": "中文(繁體)",
+            "zh-cn": "中文(简体)",
+            "de": "Deutsch",
+            "es": "español",
+            "fr": "Français",
+            "pt": "Português",
+            "ru": "Русский",
+            "en": "English",
+            "en-gb": "English(UK)",
+            "ja": "日本語",
+            "th": "ไทย",
+            "it": "Italiano"
+        },
+        "leader": "リーダー",
+        "participant": "参加者",
+        "join": "参加する",
+        "joined": "参加済み",
+        "accepted": "承認済み",
+        "reject": "拒否",
+        "rejected": "拒否済み",
+        "newNotify": "新しい通知があります",
+        "distance": "距離",
+        "route-length": "長さ{{number}}",
+        "stop": "一時停止",
+        "manual-stop": "停止",
+        "nodata": "該当データが見つかりません",
+        "release": "公開",
+        "leave": "離脱",
+        "open-setting": "設定を開く",
+        "goto-setting": "設定に移動",
+        "after-next": "次回にする",
+        "dont-ask": "今後は表示しない",
+        "add-in": "追加",
+        "mute": "ミュート",
+        "leave-chat-group": "グループを離脱",
+        "permission": {
+            "photo": {
+                "title": "TeamUpが写真へのアクセスを許可しますか",
+                "desc": "まずアルバムへのアクセス権限を有効にしてください。<br/>「設定」→「TeamUp」でオンにできます。"
+            },
+            "camera": {
+                "desc": "まずカメラへのアクセス権限を有効にしてください。<br/>「設定」→「TeamUp」でオンにできます。"
+            },
+            "location": {
+                "desc": "位置情報を取得するには、位置情報の権限が必要です。下の「設定に移動」をタップし、権限管理で設定してください。"
+            },
+            "filesystem": {
+                "title": "ファイルへのアクセスが許可されていません",
+                "desc": "ダウンロード操作を行うには、ファイルアクセスを許可してください"
+            },
+            "bluetooth": {
+                "title": "デバイスのBluetoothをオンにする必要があります",
+                "location": "Bluetoothは位置情報権限が必要なため、まず位置情報権限をオンにしてください。"
+            },
+            "stopwatch-location": {
+                "title": "位置情報の取得許可が必要です",
+                "desc": "位置情報の許可がないと、この機能は正常に動作しません。"
+            }
+        },
+        "page-next": "次のページ",
+        "start-using": "使用開始",
+        "back": "戻る",
+        "skip": "スキップ",
+        "send-valid-mail": "確認メールを送信",
+        "setting-completed": "設定完了",
+        "skip-complete": "スキップして完了",
+        "resend": "再送",
+        "valid-email": "メールアドレスを確認",
+        "continue": "続行",
+        "view": "表示",
+        "time-label": {
+            "recently": "たった今",
+            "minute": "{{minute}}分前",
+            "hours": "{{hour}}時間前",
+            "days": "{{day}}日前"
+        },
+        "read-more": "...続きを読む",
+        "add-to": "追加",
+        "team": "チーム",
+        "remove": "削除",
+        "copied-to-clipboard": "クリップボードにコピーしました",
+        "accept": "承認",
+        "delete": "削除",
+        "total-distance": "合計距離",
+        "total-duration": "合計時間",
+        "estimated-duration": "推定時間",
+        "max-elevation-gain": "最大標高差",
+        "max-elevation": "最高標高",
+        "elevation-gain-amount": "獲得標高",
+        "max-slope": "最大勾配",
+        "average-climbing-slope": "平均登坂勾配",
+        "slope": "勾配",
+        "terrain": "路面",
+        "change": "変更",
+        "download": "ダウンロード",
+        "album-select": "アルバムから選ぶ",
+        "take-photo": "写真を撮る",
+        "take-video": "ビデオを撮る",
+        "more": "もっと見る",
+        "understand": "了解",
+        "connect": "接続",
+        "connecting": "接続中",
+        "disconnect": "切断",
+        "default": "デフォルト",
+        "ok": "OK",
+        "background": "背景",
+        "exit-team": "チームを離脱",
+        "archive-team": "チームをアーカイブ",
+        "create": "作成",
+        "apply-use": "適用",
+        "clear": "クリア",
+        "nearby": "近く",
+        "my-collection": "マイコレクション",
+        "hours": "時間",
+        "report-about-route": "このルートを報告",
+        "send-to-chat": "チャットに送る",
+        "download-gpx": "GPXをダウンロード",
+        "details": "詳細",
+        "report-route": "ルートを報告",
+        "start-exercising": "運動を開始",
+        "stay-on-page": "このページに留まる",
+        "ready": "準備完了",
+        "readied": "準備済み",
+        "checkin": "チェックイン",
+        "confirmed": "確認済み",
+        "free-download": "無料ダウンロード",
+        "bg-location": {
+            "title": "現在バックグラウンドで位置情報を使用中",
+            "message": "アプリが開いていない状態でアクティビティが進行中の場合に、自動的に現在地を判定します。アクティビティ中はオフにしないでください。アクティビティ記録に誤差が出る可能性があります！"
+        },
+        "pwa-update": {
+            "message": "新しいバージョンが利用可能です！更新しないとシステムが正常に動作しない可能性があります。OKを押すとすぐに再起動します"
+        },
+        "app-update": {
+            "title": "アップデートがあります",
+            "message": "アプリの新しいバージョンが利用可能です。更新しますか？",
+            "confirm": "更新へ進む",
+            "cancel": "今は更新しない"
+        },
+        "app-web-update": {
+            "title": "新しいバージョンの画面が検出されました。最新の内容を読み込むために更新してください。",
+            "action": "更新",
+            "downloading": "画面の内容をダウンロードしています。しばらくお待ちください"
+        },
+        "theme-mode": {
+            "title": "テーマ設定",
+            "light": "ライトモード",
+            "dark": "ダークモード",
+            "system": "システム設定"
+        },
+        "app-info": {
+            "app-version": "アプリバージョン：<br/>{{version}}（ビルド {{build}}）",
+            "content-version": "コンテンツバージョン：<br/>{{version}}",
+            "check-update": "アップデートを確認",
+            "has-checked": "バックグラウンドでアップデートを確認中",
+            "already-latest-version": "現在のバージョンは最新です"
+        }
+    },
+    "enums": {
+        "ActivityDifficultyType": {
+            "Casual": "レジャー",
+            "Beginner": "ビギナートレーニング",
+            "Advanced": "アドバンストトレーニング",
+            "Challenge": "チャレンジトレーニング"
+        },
+        "ActivityDifficultyType_short": {
+            "Casual": "レジャー",
+            "Beginner": "初級",
+            "Advanced": "上級",
+            "Challenge": "挑戦"
+        },
+        "TemperatureUnitType": {
+            "Celsius": "摂氏",
+            "Fahrenheit": "華氏"
+        },
+        "MeasureUnitType": {
+            "Metric": "メートル法",
+            "Imperial": "ヤード・ポンド法"
+        },
+        "SexType": {
+            "Male": "男性",
+            "Female": "女性",
+            "Other": "非二元/その他",
+            "Unknown": "回答しない"
+        },
+        "DayOfWeek": {
+            "Sunday": "日",
+            "Monday": "月",
+            "Tuesday": "火",
+            "Wednesday": "水",
+            "Thursday": "木",
+            "Friday": "金",
+            "Saturday": "土"
+        },
+        "DayOfWeek_weekday": {
+            "Sunday": "日曜日",
+            "Monday": "月曜日",
+            "Tuesday": "火曜日",
+            "Wednesday": "水曜日",
+            "Thursday": "木曜日",
+            "Friday": "金曜日",
+            "Saturday": "土曜日"
+        },
+        "TimePeriod": {
+            "AM": "午前(AM)",
+            "PM": "午後(PM)"
+        },
+        "CreatedBy": {
+            "Follow": "フォロー中の人",
+            "Team": "チーム"
+        },
+        "CustomPageType": {
+            "PrivacyPolicy": "プライバシーポリシー",
+            "UserTerms": "利用規約",
+            "PrivacyPolicyAndUserTerms": "プライバシーポリシーと利用規約",
+            "DeletePolicy": "アカウント削除の説明"
+        },
+        "PrivacyType": {
+            "Public": "全員",
+            "Private": "非公開",
+            "OnlyFollow": "フォロワーのみ"
+        },
+        "PrivacyTypeSelect": {
+            "Public": "全員に公開",
+            "Private": "非公開",
+            "OnlyFollow": "フォロワーのみ"
+        },
+        "TeamPermissionType": {
+            "Everyone": "全メンバー",
+            "Manager": "管理者"
+        },
+        "UserPermissionType": {
+            "None": "開放しない",
+            "Everyone": "全員",
+            "Follower": "自分をフォローしている人",
+            "FollowByUser": "自分がフォローしている人"
+        },
+        "UserPermissionType2": {
+            "None": "通知オフ",
+            "Everyone": "全員",
+            "Follower": "自分をフォローしている人",
+            "FollowByUser": "自分がフォローしている人"
+        },
+        "UserPermissionType_team": {
+            "None": "通知オフ",
+            "Everyone": "全メンバー",
+            "Follower": "自分をフォローしているメンバー",
+            "FollowByUser": "自分がフォローしているメンバー"
+        },
+        "AudienceType": {
+            "None": "なし(毎回確認)",
+            "Custom": "カスタムユーザー",
+            "Follow": "自分のファン",
+            "All": "全員"
+        },
+        "StopwatchType": {
+            "Time": "走行時間",
+            "Speed": "現在速度",
+            "AverageSpeed": "平均速度",
+            "Slope": "勾配",
+            "Distance": "移動距離",
+            "Pace": "ペース",
+            "Calorie": "カロリー",
+            "HeartRate": "心拍数",
+            "PedalingFrequency": "ケイデンス",
+            "Power": "パワー"
+        },
+        "StopwatchType-Unit-Metric": {
+            "Time": "走行時間",
+            "Speed": "速度(km/h)",
+            "AverageSpeed": "平均速度(km/h)",
+            "Slope": "勾配(%)",
+            "Distance": "距離(km)",
+            "Pace": "ペース(min/km)",
+            "Calorie": "カロリー(kcal)",
+            "HeartRate": "心拍数(bpm)",
+            "PedalingFrequency": "ケイデンス(rpm)",
+            "Power": "パワー(W)"
+        },
+        "StopwatchType-Unit-Imperial": {
+            "Time": "走行時間",
+            "Speed": "速度(mph)",
+            "AverageSpeed": "平均速度(mph)",
+            "Slope": "勾配(%)",
+            "Distance": "距離(mi)",
+            "Pace": "ペース(min/mi)",
+            "Calorie": "カロリー(kcal)",
+            "HeartRate": "心拍数(bpm)",
+            "PedalingFrequency": "ケイデンス(rpm)",
+            "Power": "パワー(W)"
+        },
+        "RouteRatingTag": {
+            "GoodRating": "スタイル",
+            "RouteMainSurface": "道路の種類",
+            "RouteDifficulty": "難易度"
+        },
+        "RouteCommentSortType": {
+            "MostLikeDesc": "いいねが多い順",
+            "TimeDesc": "新しい順"
+        }
+    },
+    "dialog": {
+        "alert": {
+            "title": "システムメッセージ"
+        },
+        "weather-view": {
+            "title": "天気状況"
+        },
+        "error-dialog": {
+            "title": "エラーメッセージ"
+        },
+        "messager": {
+            "file": "ファイルから選択",
+            "camera": "カメラを起動",
+            "leave-sent": "多忙のため、一時的にチャット機能を閉じています"
+        },
+        "activity-map": {
+            "import-btn": "ルートを読み込む",
+            "save-btn": "完了"
+        },
+        "image": {
+            "title": "画像ビューア",
+            "prev": "前へ",
+            "next": "次へ"
+        },
+        "position-filter": {
+            "distance": {
+                "Metric": "{{number}} km以内",
+                "Imperial": "{{number}} マイル以内"
+            }
+        },
+        "activity-invite": {
+            "title": "招待"
+        },
+        "activity-users": {
+            "title": "参加者",
+            "invitees": "招待者"
+        },
+        "photo-library": {
+            "dir-items": {
+                "all": "すべての画像"
+            },
+            "selectCount": "{{count}}枚選択"
+        },
+        "activity-select": {
+            "title": "アクティビティを追加",
+            "rgistered-title": "登録済み",
+            "recent-title": "最近参加した",
+            "recent-desc": "過去3か月以内に完了したアクティビティのみ表示されます",
+            "nodata": "最近アクティビティがないようです"
+        },
+        "record-select": {
+            "title": "運動記録を追加",
+            "nodata": {
+                "post": "最近の運動記録がないようです",
+                "message": "運動記録が見つかりません"
+            },
+            "memo": "*アップロードできるのは3か月以内の運動記録のみです",
+            "search-placeholder": "検索"
+        },
+        "location-select": {
+            "title": "位置情報",
+            "search-placeholder": "位置を検索",
+            "target-position": "目的地"
+        },
+        "search": {
+            "keyword-placeholder": "ユーザーを検索",
+            "search-keyword": "「{{keyword}}」を検索",
+            "maybe-you-want": "こんな検索をしてみませんか",
+            "related-users": "関連ユーザー",
+            "nodata": "「{{keyword}}」に該当する結果がありません。",
+            "result-title": "検索結果"
+        },
+        "chat": {
+            "page-title": "メッセージ",
+            "title1": "すべて",
+            "title2": "友達",
+            "title3": "アクティビティ",
+            "title4": "チーム",
+            "title5": "未知のメッセージ",
+            "menu": {
+                "option1": "通知をオフにする期限",
+                "option2": "ブロックリスト",
+                "option3": "設定",
+                "open-notify": "通知をオンにする",
+                "close-notify": "通知をオフにする"
+            },
+            "mute-title": "通知をミュート",
+            "mute-prompts": "あなたが言及されない限り、すべての通知がミュートされます。<br/>他の人はあなたがサイレントモードに入っていることを確認できます。",
+            "mute-options": {
+                "item1": "30分",
+                "item2": "2時間",
+                "item3": "6時間",
+                "item4": "再開するまで"
+            },
+            "block-list": {
+                "title": "ブロックリスト",
+                "prompts": "ブロックしたユーザーからのメッセージは受信しません。",
+                "message": "{{date}} にこのユーザーをブロックしました",
+                "unlock": "ブロックを解除しますか？",
+                "unlock-prompts": "ブロックを解除すると、相手はあなたのプロフィールを表示し、連絡を取れるようになります。解除しますか？"
+            },
+            "chat-setting": {
+                "title": "チャット設定"
+            },
+            "chat-room": {
+                "typing-msg-placeholder": "メッセージを送る...",
+                "reply-user": "{{ name }} に返信",
+                "image": "画像",
+                "record": "ライディング記録：{{name}}",
+                "location": "位置：{{name}}",
+                "route": "ルート：{{name}}",
+                "ctrl-mute": "ミュート",
+                "ctrl-unmute": "ミュート解除",
+                "ctrl-add-file": "画像を添付",
+                "ctrl-leave": "グループを離脱",
+                "ctrl-report": "報告",
+                "has-lock-user": "ブロックのお知らせ",
+                "has-lock-user-sub": "このチャットルームにはあなたがブロックしているユーザーが含まれています。続行すると、相手にあなたのメッセージが見えてしまいます。",
+                "keep-open-room": "チャットを開く",
+                "look-black-list": "ブロックリストを確認",
+                "user-not-exist": "このユーザーは存在しません",
+                "cannot-pass-msg": "メッセージを送信できません",
+                "cannot-pass-msg-sub": "このチャットルームは閉鎖されているため、メッセージを送れません。",
+                "alread-lock": "このユーザーをブロックしています",
+                "alread-lock-subtitle": "ブロックを解除するまで、個別メッセージやアクティビティ・チーム招待を送信できません。",
+                "receive-from": "{{ name }} からのメッセージを受信しますか？",
+                "receive-from-subtitle": "承認すると、相手はあなたに個別メッセージを送信し、既読を確認できます。",
+                "receive-from-reject": "ブロックして拒否",
+                "receive-from-unlock": "ブロック解除",
+                "receive-reject-title": "本当にブロックしますか？",
+                "receive-reject-subtitle": "このユーザーは解除するまでブロックされます。あなたは相手からのメッセージを受信しません。相手に通知されることはありません。",
+                "receive-from-allow": "承認",
+                "share-location": "位置情報を共有",
+                "share-sport-record": "運動記録",
+                "share-route": "ルートGPX",
+                "total-estimated-duration": "推定所要時間",
+                "total-terrain": "路面",
+                "accept-message": "{{name}} はこれであなたに個別メッセージを送ることができ、既読を確認できます。"
+            },
+            "media-list": {
+                "title": "すべての画像",
+                "cancel": "キャンセル",
+                "select": "選択",
+                "nodata": "画像がありません"
+            },
+            "instant-search": {
+                "not-enough-words": "検索するには文字数が足りません",
+                "not-enough-words-desc": "メッセージ検索には最低2文字入力してください",
+                "nodata": "「{{keyword}}」に一致するメッセージが見つかりません",
+                "nodata-desc": "他のキーワードを試してください"
+            }
+        },
+        "like-comment": {
+            "tabComment": {
+                "title": "コメント {{number}}",
+                "nodata": "まだ誰もコメントしていません",
+                "input-placeholder": "コメント..."
+            },
+            "tabLike": {
+                "title": "いいね {{number}}",
+                "nodata": "まだ誰もいいねを押していません"
+            }
+        },
+        "post-comment-list": {
+            "Body": "コメント",
+            "menu-item": {
+                "report-comment": "コメントを報告"
+            }
+        },
+        "user-share": {
+            "title": "プロフィールを共有"
+        },
+        "route-share": {
+            "title": "ルートを選択",
+            "tab-explore": "探索",
+            "tab-collect": "コレクション"
+        },
+        "route-explore": {
+            "recent": "最近",
+            "popular-route": "近くの人気ルート",
+            "location-permission": "あなたの近くの人気ルートを検索するため、位置情報が必要です。"
+        },
+        "route-from-filter": {
+            "route-count": "{{count}} ルート"
+        },
+        "route-detail": {
+            "createdTime": "作成日時",
+            "use-count-title": "有効完走回数",
+            "use-count": "{{count}} 回",
+            "created-user": "作成者",
+            "created-route-count": "このユーザーは{{count}}件のルートを作成しています"
+        },
+        "report": {
+            "title": "詳細な説明をお願いします",
+            "user-sub-title": "送信後、相手はブロックされます。ブロックリストで解除できます。",
+            "text-placeholder": "問題の説明(必須)",
+            "route-title": "このルートを報告",
+            "route-sub-title": "問題の内容について詳しく教えてください",
+            "user-title": "{{name}} を報告",
+            "user-type-sub-title": "問題の内容について詳しく教えてください。<br/>ご安心ください。相手にはあなたの情報は伝わりません。",
+            "post-title": "この投稿を報告する理由は何ですか？",
+            "post-comment-title": "この投稿のコメントを報告する理由は何ですか？",
+            "route-comment-title": "このルートのコメントを報告する理由は何ですか？",
+            "chat-message-title": "このチャットメッセージを報告する理由は何ですか？",
+            "record-comment-title": "このコメントを報告する理由は何ですか？",
+            "team-title": "このチームを報告する理由は何ですか？",
+            "activity-title": "このイベントを報告する理由は何ですか？",
+            "submit": "送信",
+            "report-user-submit": "送信してブロック",
+            "report-type-title": "ルートの問題タイプ：{{name}}",
+            "report-message": "このルートは、ほかのユーザーによって以下の問題が報告されています：",
+            "report-completed": "問題は解決済み",
+            "report-completed-memo": "上記の問題が解消されている場合、以下のボタンで報告を解除できます。コミュニティ維持へのご協力をお願いします。",
+            "route-success-info": {
+                "title": "ルートの報告を受け付けました。<br/>後ほど担当者が審査します。",
+                "message": "コミュニティに貢献していただきありがとうございます。<br/>より良いアウトドアスポーツ体験を一緒に作りましょう！"
+            },
+            "user-success-info": {
+                "title": "ご報告ありがとうございます。<br/>健全なコミュニティづくりにご協力ください！"
+            },
+            "post-success": "ご報告ありがとうございます。このコンテンツは今後表示されません。",
+            "wating-report-success": "ご報告を受け付けました。できるだけ早く対応いたします。",
+            "Message": "問題の説明"
+        },
+        "device-seeking": {
+            "title": "デバイスを接続",
+            "your-device-title": "あなたのデバイス",
+            "no-link-device": "接続中のデバイスはありません",
+            "nearby-bluetooth-device": "近くのBluetoothデバイス",
+            "not-find": "デバイスが見つかりません",
+            "seeking": "検索中...",
+            "seek-again": "再検索",
+            "your-device": "あなたのデバイス",
+            "question": {
+                "title": "Bluetoothデバイスが見つかりませんか？",
+                "resolution1": "1.デバイスとスマホが離れすぎていないか確認",
+                "resolution2": "2.Bluetoothアクセサリを一度オフにして、再度オンにする",
+                "resolution3": "3.Bluetoothアクセサリがオンで充電済み、または電源に接続されていることを確認",
+                "resolution4": "4.アクセサリが電池式の場合、電池切れでないか確認"
+            },
+            "not-linking": "接続中のデバイスはありません",
+            "nearby-device": "近くのBluetoothデバイス"
+        },
+        "stopwatch-info": {
+            "title": "ストップウォッチ情報を変更",
+            "need-link-device": "{{deviceName}}センサーの接続が必要です",
+            "linked-device": "接続済み: {{deviceName}}"
+        },
+        "share-to": {
+            "title": "共有先",
+            "nodata": "該当データが見つかりません",
+            "no-friend": "フォローリストが空です",
+            "no-friend-desc": "まだ誰もフォローしていないようです。友達を招待したり、新しいサイクリストを探して、一緒に走りの思い出を作りましょう！"
+        },
+        "user-apply": {
+            "title": "チーム加入申請"
+        },
+        "team-activity": {
+            "team": "チーム拠点",
+            "activity": "アクティビティ"
+        },
+        "invite-friends": {
+            "title": "フォロワーを招待",
+            "ride-partner-title": "ライド仲間を招待",
+            "search-placeholder": "ユーザー名を入力",
+            "invite-by-link": "リンクで招待",
+            "already-send": "送信済み",
+            "send": "送信",
+            "re-send": "招待を再送信",
+            "re-send-success": "招待通知を再送しました！"
+        },
+        "leave-team": {
+            "title": "{{teamName}} を離脱しますか？",
+            "confirm": "チームを離脱",
+            "message": "チームを離脱すると、チームのチャットチャンネルからも外れます。",
+            "toast": "{{teamName}} を離脱しました"
+        },
+        "team-only-manager": {
+            "title": "あなたは唯一の管理者です",
+            "message": "チームを離脱するには、ほかのメンバーを管理者に任命するか、チームをアーカイブしてください。",
+            "cancel": "メンバー管理",
+            "confirm": "チームをアーカイブ"
+        },
+        "team-archive": {
+            "title": "本当にチームをアーカイブしますか？",
+            "message": "アーカイブ後は新たにメンバーを追加できず、現在の参加申請も削除されます。アーカイブ後14日以内に新しいアクティビティや投稿がない場合、チームは解散されます。",
+            "confirm": "アーカイブする"
+        },
+        "main-team-set": {
+            "set": "メインチームに設定",
+            "remove": "メインチーム解除",
+            "set-main": "{{teamName}} をメインチームに設定しますか？",
+            "set-tip": "あなたの名前の下にこのチーム名が表示され、他の人があなたの代表チームを知ることができます。",
+            "finish": "{{teamName}} はあなたのメインチームになりました",
+            "finish-tip": "仲間と一緒にアウトドアを探検し、限界に挑戦して、さらなる高みを目指しましょう！",
+            "remove-main": "{{teamName}} をメインチームから外してよろしいですか？",
+            "remove-tip": "あなたの名前の下にこのチーム名は表示されなくなります"
+        },
+        "member-ctrl": {
+            "set-permissions": "権限を変更",
+            "change-alias": "称号を変更",
+            "remove-member": "メンバーを削除",
+            "ask-remove-member": "このメンバーをチームから外しますか？",
+            "ask-remove-member-tip": "削除後、このユーザーが参加したアクティビティはチームの走行距離に含まれなくなります。",
+            "remove-member-success": "{{name}} をチームから削除しました",
+            "confirm-remove": "削除を確認",
+            "setpermissions": "権限を変更",
+            "setpermissions-tip": "{{name}} の権限をどう変更しますか？",
+            "changealias": "称号を変更",
+            "changealias-tip": "{{name}} の称号をどう変更しますか？",
+            "changealias-success": "{{name}} の称号を {{alias}} に変更しました",
+            "revmoe-alias": "{{name}} の称号がリセットされました",
+            "as-administrator": "管理者に設定",
+            "as-administrator-success": "{{name}} は管理者になりました",
+            "as-memeber": "メンバーに設定",
+            "as-memeber-success": "{{name}} はメンバーになりました",
+            "empty-alias": "なし"
+        },
+        "user-select": {
+            "title": "メンバーを追加",
+            "search-placeholder": "メンバー名を検索"
+        },
+        "my-route-collection": "マイルート",
+        "lead-rider": {
+            "title": "リードライダーを追加",
+            "search-placeholder": "検索"
+        },
+        "activity-points": {
+            "title-start": "アクティビティ集合場所",
+            "title-break": "中継地点を追加",
+            "rest-points": {
+                "7-11": "コンビニ",
+                "coffee": "カフェ",
+                "view": "景勝地"
+            },
+            "too-far": "アクティビティルートから大きく離れています",
+            "tip-remove-points-on-map": "タップするとこの中継地点を削除できます"
+        },
+        "create-activity-success": {
+            "already-release": "{{name}}<br/>アクティビティが公開されました",
+            "congratulation": "おめでとうございます！このアクティビティは公開されましたので、みんなと共有しましょう！",
+            "add-to-calendar": "カレンダーに追加",
+            "share-page": "アクティビティページを共有"
+        },
+        "create-route-success": {
+            "title": "{{name}}<br/>がマイルートに追加されました",
+            "text": "このルートへのコメントを残して、ほかのユーザーがルートを見つけられるようにしましょう！",
+            "addActivity": "アクティビティを作成",
+            "leaveComment": "コメントを投稿"
+        },
+        "tip-info": {
+            "sticky-note-example-text": "付箋の内容",
+            "title": "チーム付箋とは？",
+            "message": "公開チームの管理者はチーム付箋機能を使って、チームの近況を更新できます。新しいアクティビティやメンバー募集の告知などに使えます。内容が変更されない場合は、付箋はマップ上に7日間表示されます。<br/><br/>もちろん、相互尊重のコミュニケーションという利用シーンにおいて、Team Upはチームが投稿するコンテンツを制限しません。",
+            "check-text": "今後このメッセージを表示しない"
+        },
+        "arrange-route": {
+            "title": "新しいルートを描く",
+            "ask-leave": "「新しいルートを描く」を終了しますか？",
+            "ask-leave-tip": "今退出すると、作業中のルートは保存されません。",
+            "sure-leave": "終了を確認",
+            "loading": "マップ内の位置を検索しています",
+            "point-select": "ルート座標を追加または設定するにはタップしてください",
+            "total-distance-time": "総移動時間：{{time}}（{{distance}} {{unit}}）",
+            "select-pos-name": "目的地を選択",
+            "select-pos-memo": "ピンの周囲の地図を移動・拡大縮小してください"
+        },
+        "team-intro": {
+            "view-detail": "ホームページを表示"
+        },
+        "chat-select": {
+            "title": "チャットルームを選択してください",
+            "send": "送信",
+            "search-placeholder": "チャットルームを検索",
+            "nodata": {
+                "title": "チャットルームがありません",
+                "text": "まだチームに参加していない、またはライダーをフォローしていないようです。新しいライダーやチームを探して、一緒に走る思い出を作りましょう！"
+            }
+        },
+        "road-desc": {
+            "title": {
+                "Asphalt": "アスファルト",
+                "Gravel": "グラベル",
+                "Dirt": "ダート"
+            },
+            "text": {
+                "Asphalt": "アスファルト路面は比較的滑らかで安定しており、快適で効率的なライドができます。長距離や高速走行に理想的な路面です。",
+                "Gravel": "グラベル路面は小石や砂利が多く含まれるため、より高度なコントロールと注意が必要です。滑りやすさと車体の摩耗リスクが高くなります。",
+                "Dirt": "ダート路面は湿ったり雨が降ったりすると泥状になり滑りやすくなります。ダート走行にはバランスとコントロールがより求められ、トラクションの変化にも対応する必要があります。"
+            }
+        },
+        "route-select-report-confirm": {
+            "list-title": "ユーザーから以下の問題が報告されています：",
+            "choose-another": "ほかのルートを選ぶ",
+            "confirm": "このルートを選ぶ",
+            "memo": "それでもこのルートを選ぶ場合は、安全に気を付けつつ、別の計画も用意しておくことをお勧めします。楽しいライドを！"
+        },
+        "activity-cancel": {
+            "title": "キャンセル理由",
+            "sub-title": "アクティビティをキャンセルする理由を選択してください。この内容は参加者に通知されます。",
+            "desc-title": "キャンセル理由を記述してください",
+            "cancel-reason-title": "このアクティビティは以下の理由でキャンセルされました",
+            "cancel-reason": {
+                "BadWeather": "<div style='font-size:64px;line-height: initial;'>⛈️</div><div>悪天候</div>",
+                "NotEnoughPeople": "<div style='font-size:64px;line-height: initial;'>🙈</div><div>参加人数が不足</div>",
+                "PersonalReason": "<div style='font-size:64px;line-height: initial;'>😣</div><div>個人的な理由</div>",
+                "Other": "{{reason}}"
+            },
+            "explore-more-activities": "ほかのアクティビティを探す"
+        },
+        "exercise-raedy-start": "出発準備完了",
+        "activity-participant-list": {
+            "title": "参加者 {{count}}",
+            "cancel-confirm": {
+                "title": "準備完了を解除しますか？",
+                "message": "このユーザーは現在「準備完了」です。本当に取り消しますか？",
+                "confirm": "キャンセルを確定",
+                "cancel": "準備完了を保持"
+            },
+            "guest-cancel-confirm": {
+                "title": "チェックインを解除しますか？",
+                "message": "このユーザーは現在チェックイン状態です。本当に取り消しますか？",
+                "confirm": "キャンセルを確定",
+                "cancel": "チェックインを保持"
+            },
+            "sort": {
+                "Default": "デフォルト",
+                "Speed": "スピード",
+                "Power": "パワー",
+                "HeartRate": "心拍数",
+                "PedalingFrequency": "ケイデンス"
+            },
+            "no-share": "未共有",
+            "set-leader": "リーダーに設定",
+            "set-leader-confirm": {
+                "title": "リーダーに設定しますか？",
+                "message": "「{{name}}」をリーダーに設定してもよろしいですか？<br/>設定後は変更できません！"
+            }
+        },
+        "activity-gps-share": {
+            "title": "アクティビティ位置情報共有設定"
+        },
+        "download-app": {
+            "title": "行動を起こし、あなたと私の影響力を活かす",
+            "sub-title": "共により良い未来を創る",
+            "qrcode-title": "スマホでスキャンして、今すぐダウンロード",
+            "qrcode-memo": "iOSとAndroidの両方に対応",
+            "download": "アプリをダウンロード"
+        },
+        "visit-reg": {
+            "title": "訪問者向けアクティビティ登録",
+            "sign-up": "参加申し込み",
+            "FirstNamePlaceholder": "名を入力",
+            "FirstName": "名",
+            "LastNamePlaceholder": "姓を入力",
+            "LastName": "姓",
+            "Phone": "連絡先電話番号",
+            "PhonePlaceholder": "連絡先電話番号を入力"
+        }
+    },
+    "pages": {
+        "login": {
+            "title": "ログイン / 新規登録",
+            "description": "登録またはログインすることで、<br/><span class='tmup-term link-underline c-pointer'>TeamUp利用規約</span> と <span class='tmup-private link-underline c-pointer'>プライバシーポリシー</span> に同意したことになります。",
+            "logo-memo": "楽しさを集め、美しいアウトドアライフを共有する",
+            "Code": "認証コード",
+            "Email": "メールアドレス",
+            "Password": "パスワード",
+            "FirstName": "名",
+            "FirstNamePlaceholder": "あなたの名",
+            "LastName": "姓",
+            "LastNamePlaceholder": "あなたの姓",
+            "ConfirmPassword": "パスワードを確認",
+            "EmailPlaceholder": "Emailを入力",
+            "PasswordPlaceholder": "パスワードを入力",
+            "ConfirmPasswordPlaceholder": "もう一度パスワードを入力",
+            "slide-item": {
+                "title1": "チームに参加、アクティビティを企画",
+                "title2": "交流、励まし合う",
+                "title3": "探索、発見、出発",
+                "title4": "美しいアウトドアライフを共有"
+            },
+            "btn": {
+                "facebook": "Facebookで続行",
+                "google": "Googleで続行",
+                "apple": "Appleで続行",
+                "email": "Emailで続行",
+                "wait-confirm": "承認待ち",
+                "forget-password": "パスワードを忘れましたか？",
+                "merge-account": "このアカウントを統合",
+                "create-account": "新しいアカウントを作成",
+                "merge-completed": "完了してログイン"
+            },
+            "register-1": {
+                "title": "あなたを何と呼べばいいですか？",
+                "description": "ほかのユーザーがあなたを認識できるように、ユーザー名を設定してください。<br/>安心してください、後から変更できます。"
+            },
+            "register-2": {
+                "title": "よく活動するエリアを設定",
+                "description": "あなたがよく活動するエリアを設定すると、そのエリアのアクティビティやユーザーのおすすめが表示されます。",
+                "select-empty": {
+                    "country": "国を選択",
+                    "city": "地域を選択"
+                }
+            },
+            "register-3": {
+                "title": "あなたが興味を持ちそうなユーザー"
+            },
+            "email-login": {
+                "title": "Emailで登録またはログイン",
+                "web-title": "Emailでログイン"
+            },
+            "email-register": {
+                "title": "メールアドレスを確認",
+                "description": "通知やアカウント復旧サービスを受け取るために、Emailを確認してください。"
+            },
+            "email-register-pwd": {
+                "title": "パスワードを設定",
+                "description": "ログイン用のパスワードを設定します。英数字8文字以上を入力してください。"
+            },
+            "forget": {
+                "title": "メールを通して<br/>パスワードを取得"
+            },
+            "forget-pwd": {
+                "title": "新しいパスワードを設定",
+                "description": "ログイン用のパスワードを設定します。英数字8文字以上を入力してください。",
+                "save-completed": "パスワードが変更されました。新しいパスワードでログインしてください。"
+            },
+            "email-register-valid": {
+                "title": "認証コードを入力",
+                "description": "認証メールを送信しました。<br/>メール内のコードを入力してください。(30分以内に有効)"
+            },
+            "forget-valid": {
+                "title": "認証コードを入力",
+                "description": "認証メールを送信しました。<br/>メール内のコードを入力してください。(30分以内に有効)"
+            },
+            "resend-code-title": "認証コードが届きませんか？",
+            "cancel-register-confirm": {
+                "title": "登録プロセスを終了します",
+                "message": "前の画面に戻ると、アカウント登録が中断されます。<br/>登録を続けますか？",
+                "continue": "登録を続ける"
+            },
+            "login-binding": {
+                "title": "Emailがすでに使用されています",
+                "description": "このログインアカウントのEmailはすでに紐づけ済みです。下記のEmailアカウントに統合しますか？"
+            },
+            "login-binding-pwd": {
+                "title": "パスワードを入力",
+                "description": "「{{email}}」アカウントのパスワードを入力してください。完了するとそのアカウントにログインします。"
+            },
+            "cancelDelete": "アーカイブされたアカウントに再度ログインすると、アカウントの削除が取り消されます。"
+        },
+        "home": {
+            "title": "ホーム",
+            "nodata": "投稿がありません"
+        },
+        "activity": {
+            "title": "アクティビティを探索",
+            "loc-permission-btn": "位置情報権限設定へ",
+            "location-permission": "位置情報がオフのため、近くのアクティビティを表示できません。位置を指定するか、位置情報をオンにしてください。",
+            "follow": "{{count}}人のフォローユーザーが参加中",
+            "filter": {
+                "time-period": "時間帯",
+                "multiple-time-period": "複数の時間帯",
+                "difficulty-type": "強度",
+                "multiple-difficulty": "複数の強度",
+                "popular": "人気",
+                "upcoming": "まもなく開始"
+            },
+            "accept-join": "{{name}} があなたのアクティビティ {{actName}} に参加しました"
+        },
+        "activity-form": {
+            "title": {
+                "new": "アクティビティを作成",
+                "edit": "アクティビティを編集"
+            },
+            "Name": "アクティビティ名",
+            "Desc": "アクティビティの説明",
+            "CoverImage": "カバー画像",
+            "StartTime": "アクティビティ日時",
+            "LastRegistrationTime": "申し込み締切日時",
+            "DifficultyType": "強度レベル",
+            "MapRouteId": "ルート",
+            "date-placeholder": "開催日時を選択",
+            "registrationTime-placeholder": "申し込みの締切日と時間を選択",
+            "LimitPeople": "定員",
+            "limitCount-placeholder": "定員数",
+            "unlimitCount": "無制限",
+            "level": "強度",
+            "add-host-team": "主催チームを追加",
+            "add-host-team-tip": "あなたのチームを主催として設定すると、作成完了時にチーム全員に通知され、チームのアクティビティ記録や走行距離に加算されます。",
+            "optional": "(任意)",
+            "add-host-team2": "主催チームを追加",
+            "host-team": "主催チーム",
+            "ask-remove-host-team": "本当に主催チームを外しますか？",
+            "ask-remove-host-team-tip": "削除すると、このチームにアクティビティ記録や走行距離は加算されません。",
+            "sure-remove-host-team": "チームを削除",
+            "release-event": "アクティビティを公開",
+            "step-1": {
+                "title": "アクティビティ概要",
+                "intro": "あなたのアクティビティを紹介しましょう。",
+                "activity-name-placeholder": "アクティビティ名",
+                "activity-intro-placeholder": "詳細内容、進行、準備、注意事項など"
+            },
+            "step-2": {
+                "title": "アクティビティ設定",
+                "intro": "あなたのアクティビティを紹介しましょう。",
+                "setting": "設定",
+                "privacy": {
+                    "title": "プライバシー設定",
+                    "private": "招待制",
+                    "public": "公開",
+                    "private-sub": "主催者、主催チームの参加者のみが招待でき、閲覧・申し込みが可能",
+                    "public-sub": "誰でもこのアクティビティを閲覧・参加できます"
+                },
+                "join-review": {
+                    "title": "参加承認",
+                    "true": "承認が必要",
+                    "sub-true": "参加するには主催者の承認が必要です。",
+                    "false": "承認不要",
+                    "sub-false": "申し込み後、即参加できます。"
+                },
+                "guest-join": {
+                    "title": "ゲスト参加を許可",
+                    "true": "許可する",
+                    "sub-true": "TeamUpユーザーではない人も、共有リンクから参加登録できます",
+                    "false": "許可しない",
+                    "sub-false": "TeamUpのユーザーのみ参加できます"
+                }
+            },
+            "step-3": {
+                "title": "ルート",
+                "intro": "アクティビティで使うルートを設定します。",
+                "specificRoute": {
+                    "true": "ルートを設定する",
+                    "false": "ルートなし"
+                },
+                "freeRoute": "このアクティビティは固定ルートがありませんが、開始後は参加者同士の位置を確認できます。",
+                "routeleader": "ルートリーダー",
+                "add-lead-rider": "リードライダーを追加",
+                "add-lead-rider-tip": "アクティビティにリードライダーを設定しましょう",
+                "lead-rider": "リードライダー",
+                "lead-rider-tip": "アクティビティ作成完了後、以下のユーザーにリードライダーとして招待を送ります：",
+                "route-generate": {
+                    "title": "ルートの作成方法",
+                    "myroute": "マイルート",
+                    "newroute": "新規ルート作成",
+                    "upload": "ファイルからアップロード"
+                }
+            },
+            "step-4": {
+                "title": "進行",
+                "intro": "集合場所と中継地点を設定します。",
+                "startpoint": "集合場所",
+                "startpoint2": "集合地点",
+                "breakpoint": "中継地点",
+                "add-startpoint": "集合場所を追加",
+                "add-breakpoint": "中継地点を追加",
+                "add-edit-breakpoint": "中継地点の追加または編集",
+                "set-startpoint-by-route": "ルートのスタート地点を集合場所に設定",
+                "set-startpoint-by-other": "別の集合場所を設定",
+                "drag-item-tip": "中継地点のカードを長押しすると順番を入れ替えられます。"
+            },
+            "edit-success": "アクティビティ{{name}} の情報が更新されました！"
+        },
+        "acitvity-search": {
+            "search-placeholder": "アクティビティを探す"
+        },
+        "activity-detail": {
+            "creator": "主催者",
+            "main-team": "主催チーム",
+            "join-users": "合計 {{count}}名の参加者",
+            "leader-users": "{{name}} <span class='sub-text'>リードライダーとして</span>",
+            "points": "集合・中継地点",
+            "sign-up": "参加申し込み",
+            "join": "アクティビティに参加",
+            "registration-deadline": "{{date}} に申し込み締め切り",
+            "registration-ended": "申し込みは締め切りました",
+            "registered-wait": "申し込み済み。承認待ちです",
+            "finish": "アクティビティは終了しました",
+            "verifyApply": "参加申し込みは主催者の承認待ちです。お待ちください。",
+            "cancel-apply": "申し込みをキャンセル",
+            "cancel-apply-confirm": {
+                "title": "本当にキャンセルしますか？",
+                "message": "7日以内は再度申し込みできません",
+                "cancel-text": "申し込みを保持"
+            },
+            "joined": "すでにこのアクティビティに参加しています",
+            "countdown-begins": "アクティビティ開始まであと{{time}}",
+            "start-before-title": "まもなくアクティビティが開始します",
+            "start-before-text": "参加者の準備を待っています...",
+            "participants-are-ready": "+{{count}}名が準備完了",
+            "start-title": "アクティビティが始まりました！",
+            "start-activity": "アクティビティに入る",
+            "more-item": {
+                "invite": "フォロワーを招待",
+                "share-post": "投稿で共有",
+                "share": "共有先",
+                "edit": "アクティビティを編集",
+                "location-share": "アクティビティ位置情報共有設定",
+                "cancel": "アクティビティをキャンセル",
+                "report-activity": "アクティビティを報告"
+            },
+            "cancel-confirm": {
+                "title": "{{count}}名の参加者が既に申し込み済みです。本当にこのアクティビティをキャンセルしますか？",
+                "message": "キャンセルすると、参加者に通知されます。",
+                "confirm-cancel": "アクティビティをキャンセル",
+                "close": "アクティビティを保持"
+            },
+            "joined-chat-message": "今からアクティビティのチャットを開いて交流できます！",
+            "open-chat": "チャットへ",
+            "guest-join-confirm": {
+                "title": "アプリをダウンロードしますか？",
+                "guest-message": "このアクティビティはゲスト参加が可能ですが、完全な記録や共有機能を得るには、アプリをダウンロードして登録することをおすすめします。",
+                "not-guest-message": "このアクティビティはゲスト参加を提供していません。アプリをダウンロードして登録してください。",
+                "download": "アプリをダウンロード",
+                "continue": "ゲスト参加を続行"
+            }
+        },
+        "activity-user-list": {
+            "title": "参加者",
+            "tab-title1": "参加済み",
+            "tab-title2": "招待中",
+            "tab-title3": "申し込み中"
+        },
+        "activity-join-list": {
+            "founder-title": "主催者",
+            "rider-title": "リードライダー",
+            "user-title": "メンバー",
+            "guest-title": "ゲスト",
+            "guest-join-text": "他に {{count}}名のゲストがこのアクティビティに参加",
+            "guest-no-phone": "連絡先なし",
+            "remove-user-confirm": {
+                "title": "この参加者を削除しますか？",
+                "message": "{{name}}<br/>相手には通知されません",
+                "confirm-text": "参加者を削除",
+                "cancel-text": "参加者を保持"
+            },
+            "stop": "一時停止中",
+            "running": "進行中",
+            "ended": "終了済み",
+            "not-start": "まだ開始していない"
+        },
+        "activity-inviting-list": {
+            "nodata": "招待中のユーザーはいません"
+        },
+        "activity-apply-list": {
+            "nodata": "申し込み中のユーザーはいません"
+        },
+        "route-form": {
+            "title": "ルートを作成",
+            "edit-title": "ルートを編集",
+            "Name": "ルート名",
+            "route-name-tip": "ルート名は50文字以内",
+            "create-method": "ルートの作成方法",
+            "new-route": "新規ルートを描く",
+            "upload": "ファイルからアップロード",
+            "route": "ルート",
+            "auto-collect": "追加したルートは自動的にコレクションに登録されます",
+            "public-explore": "他のユーザーがこのルートを走行すると、公開探索される場合があります",
+            "ask-leave": "「ルートを作成」から退出しますか？",
+            "ask-leave-tip": "現時点での進捗は保存されません。",
+            "sure-leave": "終了する"
+        },
+        "route-search": {
+            "search-placeholder": "ルートを探す"
+        },
+        "route-comment-form": {
+            "add-title": "コメントを投稿",
+            "edit-title": "私のコメント",
+            "Rating": "ルートの満足度",
+            "RouteDifficulty": "このルートの難易度",
+            "RouteMainSurface": "このルートの主な路面は",
+            "Desc": "感想を共有",
+            "GoodRating": "満足した理由",
+            "BadRating": "不満だった理由",
+            "Desc-placeholder": "コメントを書く",
+            "submit": "コメントを投稿",
+            "back-confirm": {
+                "new": {
+                    "title": "コメント投稿をキャンセルしますか？",
+                    "message": "コメントを編集中です。<br/>本当に内容を破棄しますか？",
+                    "confirm": "コメントをキャンセル"
+                },
+                "edit": {
+                    "title": "コメント更新をキャンセルしますか？",
+                    "message": "コメントを編集中です。<br/>本当に更新内容を破棄しますか？",
+                    "confirm": "更新をキャンセル"
+                }
+            },
+            "save": {
+                "new": {
+                    "saving": "コメント投稿中...",
+                    "saved": "コメントを投稿しました！コミュニティへのご協力ありがとうございます。"
+                },
+                "edit": {
+                    "saving": "コメント更新中...",
+                    "saved": "コメントが更新されました！コミュニティへのご協力ありがとうございます。"
+                }
+            }
+        },
+        "report-list": {
+            "route-title": "ルート報告問題"
+        },
+        "user": {
+            "title": "プロフィール",
+            "editTitle": "プロフィールを編集",
+            "tab-title1": "投稿",
+            "tab-title2": "運動記録",
+            "edit-tab-title1": "自己紹介",
+            "edit-tab-title2": "ホームページの見た目",
+            "edit-tab-title3": "活動エリア",
+            "Name": "称号",
+            "name-memo": "最近称号を変更したため、あと{{day}}日間は再度変更できません。",
+            "FirstName": "名",
+            "FirstNamePlaceholder": "名を入力してください",
+            "LastName": "姓",
+            "LastNamePlaceholder": "姓を入力してください",
+            "Intro": "自己紹介",
+            "IntroPlaceholder": "自己紹介を入力してください",
+            "Sex": "性別",
+            "Weight": "体重",
+            "CityName": "都市",
+            "Avatar": "アバター",
+            "BgImg": "背景",
+            "friendFollowingMemo": "<span class='name'>{{name}}</span><span class='text'> があなたをフォロー中</span>",
+            "teams": {
+                "title": "所属チーム"
+            },
+            "edit-back-conform": {
+                "title": "編集内容を保持しますか？",
+                "message": "このページを離れると、未保存の変更は失われます。",
+                "confirm": "このページを離れる"
+            },
+            "post-nodata": "投稿がありません",
+            "menu": {
+                "item1": "プロフィールを共有",
+                "item2": "フォロー解除",
+                "item3": "ブロック"
+            },
+            "private-lock-text": "このユーザーのアカウントは非公開です",
+            "private-lock-memo": "フォローすると、このユーザーの投稿や運動記録を閲覧できます"
+        },
+        "user-setting": {
+            "account-title": "アカウント関連",
+            "account-manager": "アカウント管理",
+            "language": "言語",
+            "sporting": "運動中",
+            "stopwatch-setting": "ストップウォッチ設定",
+            "location-share-setting": "位置情報共有設定",
+            "common-title": "一般",
+            "notification-setting": "通知管理",
+            "privacy-safe": "プライバシーとセキュリティ",
+            "privacy-setting": "プライバシー設定",
+            "private-warn": "あなたをフォローしている人だけがあなたのプロフィールを確認できます。<br/>ユーザーは承認されないとあなたをフォローできません。",
+            "blocklist": "ブロックリスト",
+            "blocklist-number": "{{number}}人",
+            "AllowStrangeMessage": "未知のメッセージ",
+            "AllowStrangeMessage-warn": "未知のユーザーからのメッセージは「未知のメッセージ」フォルダに保存されます",
+            "AllowStrangeMessage-confirm-title": "未知のメッセージ受信を無効にしますか？",
+            "AllowStrangeMessage-confirm-msg": "オフにすると、未知のメッセージを受信しなくなります。<br/>本当にオフにしますか？",
+            "InviteActivityPermission": "あなたにアクティビティ招待を送る",
+            "InviteTeamPermission": "あなたにチーム招待を送る",
+            "ViewRoutePermission": "あなたのルートコレクションを見る",
+            "isStrangeMessage": {
+                "true": "受信する",
+                "false": "オフにする"
+            },
+            "IsPublic-confirm-title": "アカウントを非公開にしますか？",
+            "IsPublic-confirm-msg": "オフにすると、あなたをフォローしている人しか@メンションできません。<br/>本当に非公開にしますか？",
+            "is-public": {
+                "true": "公共",
+                "false": "プライベート"
+            }
+        },
+        "user-notification-setting": {
+            "title": "通知設定",
+            "memo": "通知をオフにしても、通知センターで見られます。",
+            "post-title": "投稿",
+            "PostLike": "あなたの投稿に「いいね」された",
+            "PostComment": "あなたの投稿にコメントされた",
+            "PostTag": "あなたが@メンションされた",
+            "team-title": "チーム",
+            "TeamActivity": "誰かが新しいアクティビティを作成した",
+            "TeamPost": "誰かが新しい投稿を公開した",
+            "activity-title": "アクティビティ",
+            "ActivityInvite": "誰かがあなたをアクティビティに招待した",
+            "ActivityJoin": "誰かがあなたのアクティビティに参加した",
+            "ActivityTimeStart": "アクティビティ開始の通知",
+            "ActivityTimeBeforeHour": "アクティビティ開始の1日前に通知",
+            "ActivityTimeBeforeDay": "アクティビティ開始の1時間前に通知",
+            "follow-me-title": "ファン",
+            "FollowApply": "新しいフォローリクエストがある",
+            "Following": "誰かがあなたをフォローした",
+            "FollowAccept": "フォローリクエストが承認された",
+            "follower-title": "フォロー中",
+            "FollowerActivity": "フォロー中のユーザーが運動を開始した",
+            "FollowerCommentRoute": "フォロー中のユーザーがルートにコメントをした",
+            "FollowerCreateRoute": "フォロー中のユーザーがあなたの地域でルートを作成した",
+            "FollowerCreatePost": "フォロー中のユーザーが投稿を作成した",
+            "notification-title": "チャットメッセージ",
+            "TagNotice": "メンション通知",
+            "TagNotice-memo": "チャットルームをミュートや通知オフにしていても、<br/>グループ内で@メンションされた場合はリマインドが送られます。",
+            "DisplayFullMessage": "メッセージ全文を表示",
+            "DisplayFullMessage-memo": "新しいメッセージを受信した際、<br/>通知にメッセージ全文を表示します。",
+            "DisplayUnknownMessage": "未知のメッセージを表示",
+            "DisplayUnknownMessage-memo": "未知のユーザーからのメッセージ通知は非表示になります。"
+        },
+        "user-account": {
+            "title": "アカウント管理",
+            "email-account": "メールアカウント",
+            "email-account-title": "メールアカウント",
+            "email-memo": "まだメールアドレスが設定されていません。ログインや復旧に備えて設定をお勧めします。",
+            "email": "メールアドレス",
+            "pwd": "パスワード",
+            "pwd-setting-complete": "設定完了",
+            "setting-email-act": "アカウント設定へ",
+            "third3rd-title": "外部ログイン方法",
+            "third3rd-sub": "紐づけすると、そのアカウントを使ってTeamUpにログインできます。",
+            "facebook": "Facebook",
+            "google": "Google",
+            "apple": "Apple",
+            "delete": "アカウントを削除",
+            "delete-confirm-title": "このアカウントを削除しますか？",
+            "delete-confirm-msg": "削除を確定すると、アカウントは30日間のアーカイブ状態になります。<br/>もし気が変わったら、その期間内にログインして復活できます。",
+            "delete-confirm-title2": "アカウントを完全に削除しますか？",
+            "delete-confirm-msg2": "続行すると、アカウントはアーカイブ状態に入ります。<br/>他のユーザーはTeamUpであなたを検索できなくなります。<br/>アーカイブは <span class='red'>{{date}}</span> まで続き、<br/>その後データベースから完全に削除されます。",
+            "delete-confirm-text": "削除を確定",
+            "third3rd-unsync": {
+                "title": "{{service}} アカウントと同期済み",
+                "message": "{{date}} に同期完了しました。現在はそのアカウントでログインできます。",
+                "confirm": "同期を解除"
+            },
+            "third3rd-sync": {
+                "true": "同期済み",
+                "false": "同期する",
+                "title": "{{service}} アカウントとまだ同期されていません",
+                "message": "紐づけすると、そのアカウントでTeamUpにログインできます。"
+            },
+            "third3rd-unsync-fail": {
+                "message": "同期を解除できません。<br/>メールアカウントを先に設定してください。<br/>そうでないと同期解除はできません。"
+            }
+        },
+        "user-account-form": {
+            "email-title": "メールアカウント",
+            "EmailPlaceholder": "Emailを入力",
+            "Email": "メールアドレス",
+            "Code": "認証コード",
+            "email-reset-memo": "再度紐づけるには新しいメールアドレスを入力してください",
+            "pwd-reset-memo": "変更するにはパスワードを入力してください。セキュリティのため、3か月ごとの変更を推奨します。",
+            "pwd-reset-memo2": "ログイン用のパスワードを設定してください。英数字8文字以上を入力してください。",
+            "PasswordPlaceholder": "現在のパスワード",
+            "NewPassword": "新しいパスワード",
+            "NewPasswordPlaceholder": "新しいパスワードを入力",
+            "Password": "パスワード",
+            "ConfirmPassword": "パスワード確認",
+            "ConfirmNewPassword": "新しいパスワードを確認",
+            "ConfirmNewPasswordPlaceholder": "もう一度新しいパスワードを入力",
+            "email-binding-confirm": {
+                "title": "メールアカウント設定を終了しますか？",
+                "message": "前の画面に戻ると、メールアカウント設定プロセスが終了します。<br/>続行しますか？",
+                "continue": "設定を続ける"
+            }
+        },
+        "blocklist": {
+            "nodata": "現在ブロックしているユーザーはいません",
+            "menu": {
+                "show-user-profile": "ユーザープロフィールを表示",
+                "unblocking": "ブロック解除"
+            },
+            "unlock-success": "{{name}} のブロックを解除しました"
+        },
+        "message": {
+            "title": "通知センター",
+            "tabs": {
+                "all": "すべて",
+                "common": "一般",
+                "team": "チーム",
+                "activity": "アクティビティ",
+                "waiting": "未審査"
+            }
+        },
+        "followers": {
+            "title": "ファン",
+            "nodata": "ファンがいません",
+            "remove-confirm": {
+                "title": "{{name}} のフォローを解除しますか？"
+            }
+        },
+        "users-following": {
+            "title": "フォロー中",
+            "nodata": "フォローしているユーザーはいません",
+            "unfollow-confirm": {
+                "title": "{{name}} のフォローを解除しますか？",
+                "message": "{{name}} に関する情報は表示されなくなります。"
+            }
+        },
+        "follow-req": {
+            "title": "フォローリクエスト",
+            "nodata": "フォローリクエストがありません"
+        },
+        "unit-setting": {
+            "title": "表示",
+            "MeasureUnit": "単位",
+            "TemperatureUnit": "温度"
+        },
+        "faq": {
+            "title": "よくある質問"
+        },
+        "team": {
+            "search-team": "チームを検索",
+            "title": "チーム",
+            "my-team": "マイチーム",
+            "waiting-approval": "承認待ち",
+            "no-data": {
+                "title": "探索、交流<br/>チームと共に出かけよう",
+                "desc": "興味のあるチームに参加し、経験を共有しましょう。<br/>ライフとライドを愛する仲間がいるはずです。"
+            },
+            "build-team": {
+                "maybe": "または...",
+                "btn-title": "チームを作成"
+            },
+            "add-team": {
+                "title": "チームを作成",
+                "btn": {
+                    "start-create": "チーム作成を開始",
+                    "create-complete": "作成完了"
+                }
+            },
+            "Name": "チーム名",
+            "NamePlaceholder": "50文字以内でチーム名を入力",
+            "IsPublic": "公開チーム",
+            "IsPublicMemo": {
+                "false": "メンバーのみがチームの最新アクティビティや投稿を確認できます",
+                "true": "誰でもチームの最新アクティビティや投稿を確認できます"
+            },
+            "IsPublicValue": {
+                "true": "公開",
+                "false": "非公開"
+            },
+            "NeedReviewRequest": "参加承認が必要",
+            "NeedReviewRequestMemo": {
+                "false": "誰でもチームに参加できます",
+                "true": "管理者の承認が必要です"
+            },
+            "NeedReviewRequestValue": {
+                "false": "承認不要",
+                "true": "承認必須"
+            },
+            "EveryCanCreatePost": "全員が投稿可能",
+            "EveryCanCreatePostMemo": {
+                "true": "全メンバーが投稿できます",
+                "false": "管理者のみ投稿できます"
+            },
+            "EveryCanCreatePostValue": {
+                "true": "全員",
+                "false": "管理者"
+            },
+            "EveryCanCreateActivity": "全員がアクティビティを作成可能",
+            "EveryCanCreateActivityMemo": {
+                "true": "全メンバーがアクティビティを作成できます",
+                "false": "管理者のみアクティビティを作成できます"
+            },
+            "EveryCanCreateActivityValue": {
+                "true": "全員",
+                "false": "管理者"
+            },
+            "PostitNoteText": "付箋",
+            "Desc": "チーム紹介",
+            "DescMemo": "チームを他の人に紹介しましょう。",
+            "DescPlaceholder": "チームの紹介、規則、スローガンなど",
+            "TeamViewTitle": "チームの見た目",
+            "TeamViewMemo": "チームの特徴的なスタイルを設定しましょう。",
+            "TeamTagTitle": "チームタグ",
+            "TeamTagMemo": "チームの特徴を示すタグを設定することで、見つけやすくなります。",
+            "TeamLocationTitle": "チーム拠点",
+            "TeamLocation": "拠点",
+            "TeamLocationMemo": "チームが活動する地域を選択し、必要なら詳しい住所も入力してください。",
+            "Logo": "チームロゴ",
+            "Logo-Memo": "500×500以上の解像度を推奨します。<br/>チームをはっきりとアピールできます！",
+            "Color": "チームのメインカラー",
+            "BgImage": "背景",
+            "Tag": "タグ",
+            "TeamTags": "チームタグ",
+            "CountryId": "チーム拠点 - 国",
+            "CityId": "チーム拠点 - 地域",
+            "Address": "チーム拠点 - 住所",
+            "team-search-keyword": "「{{keyword}}」を検索",
+            "nodata": "「{{keyword}}」に該当する検索結果がありません。",
+            "result-title": "検索結果",
+            "featured-team": "おすすめチーム",
+            "apply-nodata": "参加申請中のユーザーはいません",
+            "differentPlace": {
+                "title": "場所を変更しますか？",
+                "message": "選択したランドマークまたは住所が上で選んだ地域と一致しません。住所の地域に合わせて地域を変更しますか？"
+            },
+            "chooseAddressPlaceHolder": "ランドマークまたは住所を選択（任意）",
+            "buildTeamSuccess": "チームが作成されました！",
+            "buildTeamSuccessInfo": "チームを作成しました！次はメンバーを招待したり、投稿を公開してスポーツの楽しさを共有しましょう！",
+            "inviteFirstMember": "最初のメンバーを招待する",
+            "postFirstMsg": "最初の投稿を公開",
+            "goToTeamPage": "チームのホームページを見る",
+            "archived-mine": "チームはアーカイブされました",
+            "archived-other": "チームはアーカイブ中",
+            "archived": "アーカイブ済み",
+            "manger": "管理者",
+            "member": "メンバー",
+            "event-count": "件のアクティビティ",
+            "season-distance": {
+                "Metric": "今シーズンの距離（km）",
+                "Imperial": "今シーズンの距離（マイル）"
+            },
+            "monthly-distance": {
+                "Metric": "今月のkm",
+                "Imperial": "今月のmi"
+            },
+            "from-joinTime": "{{date}} に参加",
+            "inviteYouJoin": "{{name}} がこのチームに参加するよう招待しています",
+            "joinTeam": "チームに参加",
+            "applying": "チーム参加申請を提出しています",
+            "verifyApplying": "管理者が申請を審査中です",
+            "verifyApplyingPlzWait": "管理者が申請を審査中です。少々お待ちください。",
+            "cancelApply": "申請をキャンセル",
+            "checkCencalApply": "本当に申請をキャンセルしますか？",
+            "checkCencalApplyTip": "7日以内は再申請できません",
+            "keepApply": "申請を保持",
+            "recently-activity": "最近のアクティビティ",
+            "tabs-post": "投稿",
+            "tabs-activity": "アクティビティ",
+            "tabs-about": "チーム情報",
+            "introduction": "紹介",
+            "requset-join": "{{number}}件の参加リクエスト",
+            "archived-team-tip": "アーカイブ状態のチームは新規メンバーを追加できません。<br/>14日以内に新しいアクティビティや投稿がなければ、<br/>チームは解散されます。",
+            "cencal-archived": "アーカイブを解除",
+            "cencal-archived-success": "アーカイブを解除しました",
+            "cencal-archived-success-tip": "新たなメンバーを招待できます。<br/>思う存分楽しんでください！",
+            "accept-join": "{{name}} がチーム {{teamName}} に参加しました",
+            "main-team": "{{teamName}} はあなたのメインチームになりました",
+            "main-team-tip": "仲間と一緒にアウトドアスポーツの無限の楽しさを堪能し、限界に挑戦してみましょう！",
+            "invite-to-team": "チームに招待",
+            "edit-team-info": "チーム情報を編集",
+            "tags": {
+                "new-activity": "新しいアクティビティ",
+                "new-post": "新しい投稿",
+                "new-join-apply": "新しい参加申請"
+            },
+            "report-team": "チームを報告"
+        },
+        "team-edit": {
+            "setting": "チーム設定",
+            "info-edit": "チーム情報を編集",
+            "privacy-setting": "プライバシー設定",
+            "public": {
+                "true": "公開",
+                "false": "非公開"
+            },
+            "public-memo": {
+                "false": "メンバーだけが投稿、アクティビティ記録、拠点情報を見られます",
+                "true": "誰でもチームの最新アクティビティや投稿を閲覧できます"
+            },
+            "join-review": "参加承認",
+            "review-need": {
+                "true": "承認必須",
+                "false": "承認不要"
+            },
+            "review-need-memo": {
+                "false": "誰でもチームに参加できます",
+                "true": "非公開チームの場合、管理者承認が必要です"
+            },
+            "tags": "タグ",
+            "basearea": "チーム拠点",
+            "management-access": "メンバーと権限設定",
+            "management-alias": "称号管理",
+            "management-member": "メンバー管理",
+            "total-member": "{{number}}名のメンバー",
+            "post-access": "誰が投稿できるか",
+            "activity-access": "誰がアクティビティを作成できるか",
+            "access-to": {
+                "everyone": "全メンバー",
+                "manager": "管理者"
+            },
+            "team-tag": "チームタグ",
+            "team-tag-tip": "チームタグを設定すると、より多くの人に見つけてもらいやすくなります。"
+        },
+        "team-basearea": {
+            "title": "チーム拠点",
+            "set-basearea-tip": "チーム拠点を設定すると、14日間は変更できません。"
+        },
+        "team-member": {
+            "title": "メンバー管理",
+            "search-placeholder": "メンバーを検索"
+        },
+        "team-member-alias": {
+            "title": "チーム称号管理",
+            "add-alias": "称号を追加"
+        },
+        "team-alias-edit": {
+            "add-title": "称号を追加",
+            "Title": "称号名",
+            "alias-input-placeholder": "称号は10文字以内",
+            "add-member": "メンバーを追加",
+            "remove": "解除",
+            "delete": "この称号を削除",
+            "ask-delete": "この称号を削除しますか？",
+            "ask-delete-tip": "削除すると、該当するメンバーの称号がリセットされます。",
+            "sure-delete": "削除を確定"
+        },
+        "post-form": {
+            "add-title": "新規投稿",
+            "edit-title": "投稿を編集",
+            "user-share": "<span>{{name}}</span> が共有",
+            "user-team-share": "<span>{{name}}</span> が <span>{{teamName}}</span> で共有",
+            "edit-exit-confirm": "投稿画面を離れようとしています。保存していない内容は消去されますが、よろしいですか？",
+            "saving": "投稿を公開中...",
+            "saved": "公開完了！",
+            "privacy-type-title": "公開設定",
+            "location-title": "位置を追加",
+            "body-placeholder": "テキストを入力（@で友達をタグ付け）",
+            "recommend-route-title": "最近の運動経験を共有しませんか？",
+            "Body": "投稿内容",
+            "Attachments": "投稿の添付ファイル"
+        },
+        "stopwatch-setting": {
+            "title": "ストップウォッチ設定",
+            "device-link": "デバイス接続",
+            "calorie-convert": "カロリー換算",
+            "unit-show": "単位表示",
+            "auto-pause": "停止中は自動一時停止",
+            "stopwatch-info": "ストップウォッチ情報"
+        },
+        "chat": {
+            "page-title": "メッセージ",
+            "title1": "すべて",
+            "title2": "個別メッセージ",
+            "title3": "アクティビティ",
+            "title4": "チーム",
+            "title5": "未知のメッセージ",
+            "search-placeholer": "メッセージを検索",
+            "instant-search": {
+                "not-enough-words": "検索文字数が足りません",
+                "not-enough-words-desc": "2文字以上入力してください",
+                "nodata": "「{{keyword}}」に該当するメッセージがありません",
+                "nodata-desc": "別のキーワードを試してください",
+                "room-count": "合計{{count}}件のチャットルームが見つかりました"
+            },
+            "nodata": "チャットルームがありません",
+            "open-mute-success": "通知をミュートしました",
+            "close-mute-success": "通知をオンにしました",
+            "silence-mode": "相手はサイレントモードをオンにしており、メッセージ通知を受信しません",
+            "leave-confirm": {
+                "title": "チャットグループ{{name}}を離脱しますか？",
+                "message": "グループを離脱しても、アクティビティやチームを離脱するわけではありません。単にこのグループからのメッセージを受け取りたくないだけです。再度参加したい場合は、アクティビティまたはチームのチャットボタンから再び参加できます。",
+                "confirm": "グループを離脱",
+                "cancel": "離脱をキャンセル"
+            },
+            "Body": "メッセージ",
+            "menu-item": {
+                "reply": "返信",
+                "report": "報告する"
+            }
+        },
+        "chat-user": {
+            "user-title": "メンバー",
+            "search-placeholder": "メンバーを検索",
+            "nodata": "該当データがありません"
+        },
+        "calorie-exchange": {
+            "title": "カロリー換算",
+            "tip-p1": "生理的情報を入力すると、より正確なカロリー計算ができます",
+            "tip-p2": "未入力の場合はデフォルト値で計算されます",
+            "tip-p3": "ご安心ください。これはカロリー計算にのみ使用されます",
+            "sex": "生物学的性別",
+            "Height": "身長",
+            "Weight": "体重",
+            "Age": "年齢",
+            "input-placeholder": "{{placeholder}}を入力",
+            "pop-up-title": "より正確なカロリーデータを取得",
+            "pop-up-subtitle": "生理情報を設定すると、運動中のカロリーデータがより正確になります。未設定の場合は平均値が使われ、結果は参考値となります。"
+        },
+        "location-share": {
+            "title": "位置情報共有",
+            "default-share-target": "デフォルトの共有相手",
+            "auto-share": "ライド中に自動共有",
+            "share-tip": "ライド中に自動的に位置やルート、リアルタイムデータを共有します",
+            "share-target": "共有の相手",
+            "share-all-tip": "プロフィールを「公開」にする必要があります。「設定 > プライバシー」から変更してください",
+            "share-cycling-memo": "一緒に参加するユーザーと運動データを共有する",
+            "ShareCyclingData": "データ",
+            "ShareSpeed": "スピード",
+            "SharePower": "パワー",
+            "ShareHeartRate": "心拍数",
+            "SharePedalingFrequency": "ケイデンス",
+            "ShareGuest": "匿名ユーザーを共有（プラットフォーム外のユーザー）"
+        },
+        "team-onmap": {
+            "open-map": "マップを開く",
+            "explore-team": "すべてのチームを見る",
+            "add-note": "チーム付箋を作成",
+            "switch-team": "チームを切り替え",
+            "search-team": "チームを検索"
+        },
+        "team-map": {
+            "title": "チームマップ"
+        },
+        "route-map-explore": {
+            "title": "ルートを探索",
+            "add-btn": "ルートを作成",
+            "filter": {
+                "from": "作成者",
+                "from-name": "作成者：{{name}}",
+                "tag": "タグ",
+                "tag-count": "タグ ({{count}})",
+                "popular": "人気ルート",
+                "recommend": "高評価"
+            }
+        },
+        "route-detail": {
+            "collect-follower": "{{count}}人のフォロワーがこのルートをコレクションしています",
+            "add-route": "ルートをコレクション",
+            "added-route": "コレクション済み",
+            "tab-title1": "コメント {{count}}",
+            "tab-title2": "アクティビティ {{count}}",
+            "comment-count": "{{count}}人がコメントしています",
+            "add-comment-text": "コメントを残す...",
+            "activity-slogen": "このルートを走ってみたいですか？ あなたも...",
+            "add-activity-text": "アクティビティを作成してみましょう...",
+            "comment-has-published": "{{date}} にコメントしました"
+        },
+        "stopwatch": {
+            "Running": "アクティビティ進行中",
+            "running-alert": "他のアクティビティが進行中です。先にそちらを終了してください。",
+            "start": "開始",
+            "set-off": "出発",
+            "not-arrive": "未到着",
+            "remaining": "ゴールまであと{{unit}}",
+            "activity-starting": "{{time}} にアクティビティが開始されました",
+            "user-has-ready": "{{count}}名が準備完了",
+            "user-has-wait": "{{count}}名が待機中",
+            "user-has-guest": "{{count}}名のゲスト",
+            "join-count": "合計{{count}}名の参加者",
+            "move-near-meeting-point": "集合地点の近くまで移動してください",
+            "wait-user-for-start": "あなたがアクティビティを開始するのを待っています...",
+            "wait-leader-for-start": "主催者がアクティビティを開始するのを待っています...",
+            "location-share-to": "位置情報共有相手",
+            "location-share-to-msg": "デフォルトの共有相手が未設定です。今設定しますか？",
+            "stopwatch-setting": "ストップウォッチ設定",
+            "location-share-setting": "位置情報共有設定",
+            "activity-location-setting": "アクティビティ位置情報設定",
+            "profile-location-setting": "プロフィールの位置情報設定",
+            "share-live-url": "ライブワークアウトのリンクを共有する",
+            "invite-riding-partner": "ライド仲間を招待する",
+            "check-join-user": "参加者を確認",
+            "set-ride-leader": "先頭ライダーを設定",
+            "close-location-share": "位置共有をオフにする",
+            "view-viewer": "閲覧者を見る",
+            "go-first": "先に進む",
+            "no-viewer-message": "コメントデータがありません",
+            "act-user-open-share": {
+                "title": "参加メンバーと位置情報を共有",
+                "message": "位置情報はアクティビティ開始時に共有され、終了時に停止します。"
+            },
+            "share-together": {
+                "title": "主催者と一緒にライブを共有",
+                "message": "主催者がライブ配信をオンにしている場合、進行中にあなたの運動状況を視聴者と共有できます（設定次第）。"
+            },
+            "activity-open-share": {
+                "title": "このアクティビティのライブ配信を有効にしますか？",
+                "message": "有効にすると、承認済みの全参加者がアクティビティ開始後に自動的にライブ共有します。視聴者は詳細情報と全参加者の位置（各ユーザーの設定による）を見ることができます。"
+            },
+            "profile-share": {
+                "title": "個人アクティビティ位置情報共有",
+                "message": "あなたの個人設定に従って、アクティビティ開始時に運動状況を共有します。",
+                "share-to": "共有先：<span class='tmup-fc-blue'>{{shareUser}}</span>"
+            },
+            "unable-complete": {
+                "title": "今アクティビティを完了できませんか？",
+                "message": "アクティビティの時間と距離が短すぎるため、完了とはなりません。引き続き行うか、やり直してください。",
+                "confirm": "アクティビティを破棄",
+                "cancel": "続行"
+            },
+            "complete-confirm": {
+                "title": "アクティビティを完了しますか？",
+                "message": "一度完了すると再開できません。本当に完了しますか？",
+                "confirm": "アクティビティを完了",
+                "cancel": "続行"
+            },
+            "leader-complete-message": "あなたはリードライダーです。アクティビティを完了すると全体が終了します。本当に完了しますか？",
+            "creator-complete-message": "あなたはアクティビティ作成者です。完了するとアクティビティは終了します。本当に完了しますか？",
+            "record-title": {
+                "evening-ride": "夜間ライド",
+                "late-night-ride": "深夜ライド",
+                "morning-ride": "早朝ライド",
+                "afternoon-ride": "午後ライド"
+            },
+            "share-live-link": {
+                "title": "ライブアクティビティリンクを共有しますか？",
+                "message": "このリンクを取得した人は、あなたの運動のライブ状況を閲覧できます。<br/>プラットフォームに登録していない相手と共有したい場合は、「匿名ユーザーを共有（プラットフォーム外のユーザー）」機能が有効になっていることを確認してください（初期設定では有効です）。<br/>「設定に移動」をタップするか、「位置情報共有設定」画面で確認・変更できます。"
+            },
+            "invite-cancel": {
+                "title": "ストップウォッチを終了しますか？",
+                "message": "すでにライド仲間を招待しています。ストップウォッチを終了すると招待はキャンセルされます。本当に終了しますか？"
+            }
+        },
+        "stopwatch-finished": {
+            "join-member": "参加メンバー",
+            "gain-encourage": "受け取った励まし",
+            "data": "データ",
+            "totalTime": "合計時間",
+            "totalDistance": "総距離 {{unit}}",
+            "climbHeight": "最大獲得標高 {{unit}}",
+            "moveDistance": "移動距離 {{unit}}",
+            "pace": "ペース {{unit}}",
+            "media-log": "映像ログ",
+            "route": "ルート",
+            "delete-record": "記録を削除",
+            "delete-record-title": "運動記録を本当に削除しますか？",
+            "delete-record-msg": "削除すると走行データはすべて失われます",
+            "Name": "運動記録名"
+        },
+        "sport-live": {
+            "tab-title1": "データ",
+            "tab-title2": "コメント",
+            "tab-title3": "プロフィール",
+            "search-placeholder": "ユーザーを検索",
+            "search-result-text": "「{{searchKey}}」の検索結果 {{count}}件",
+            "join-users": "参加者 {{count}}名",
+            "has-close": "ユーザーのライブ配信は終了しました！",
+            "close-guest": "ユーザーが「匿名ユーザーを共有（プラットフォーム外のユーザー）」をオフにしました！"
+        },
+        "web-home": {
+            "explore-app": "アプリを試す",
+            "area1": {
+                "t1": "この<div class='name'>新しいソーシャル運動</div>を共に盛り上げよう",
+                "d1": "Team Upは、ロードバイクを愛する方々がチームを作り・管理し、アウトドアアクティビティを企画・参加するためのソーシャルプラットフォームです。最高のサイクリング体験を共有しましょう。"
+            },
+            "area3": {
+                "t1": "世界中のサイクリングマップを解放<div><span class='name'>一人での運動はもう終わり</span></div>",
+                "tab1": "120k+<div>おすすめアクティビティ</div>",
+                "tab2": "45k+<div>チーム</div>",
+                "tab3": "23k+<div>ルート</div>",
+                "tab1-content": {
+                    "t1": "みんなで",
+                    "t2": "スポーツのソーシャルトレンドを作り出そう",
+                    "btn-text": "アクティビティを探す→"
+                },
+                "tab2-content": {
+                    "t1": "みんなで",
+                    "t2": "多様なチーム文化を育もう",
+                    "btn-text": "チームを探す→"
+                },
+                "tab3-content": {
+                    "t1": "みんなで",
+                    "t2": "新しいライド体験を発見しよう",
+                    "btn-text": "ルートを探す→"
+                }
+            },
+            "area4": {
+                "t1": "チーム運営やロードバイクのグループライド<br/>すべてこれ一つで簡単",
+                "item0": {
+                    "title": "チームを作ろう",
+                    "desc": "運動スタイルやエリア、目的に応じて、さまざまなタイプのチームやアクティビティを自由に組織できます"
+                },
+                "item1": {
+                    "title": "グループライドが簡単",
+                    "desc": "複数のプラットフォームを行ったり来たりせず、アクティビティ企画やイベントを簡単に管理できます。主催者にとって負担が少ないです"
+                }
+            },
+            "area5": {
+                "t1": "一人で走る、上級者と走る、<div>オンライン視聴も可能</div>",
+                "item0": {
+                    "title": "サイクルコンピューター",
+                    "desc": "走行データを完全に記録するためのサイクルコンピューター機能。多くのセンサーを接続し、必要なリアルタイム情報を自由に設定できます"
+                },
+                "item1": {
+                    "title": "ライブ配信",
+                    "desc": "フォロー中の人のライドをリアルタイムで閲覧可能。位置情報だけでなくサイクルコンピューターのデータもリアルタイム表示。本領を発揮する時です！"
+                }
+            }
+        }
+    },
+    "components": {
+        "route-comment-list": {
+            "title": "すべてのコメント",
+            "nodata": "このルートにはまだコメントがありません"
+        },
+        "route-activity-list": {
+            "title": "このルートのすべてのアクティビティ",
+            "nodata": "このルートにはまだアクティビティがありません"
+        },
+        "recommended-activity-list": {
+            "search-text": "近くのアクティビティを探索 →"
+        },
+        "recommend-user-list": {
+            "title": "知り合いかもしれない人"
+        },
+        "recommend-route-item": {
+            "distance": "長さ{{number}}"
+        },
+        "progress-bar": {
+            "resubmit": "再送"
+        },
+        "home-add-btn": {
+            "menu-item": {
+                "create-activity": "アクティビティを作成",
+                "create-post": "投稿を公開",
+                "create-sticky-note": "付箋を公開",
+                "create-route-comment": "このルートを評価する"
+            }
+        },
+        "search-record": {
+            "title": "最近検索した内容",
+            "clearAll": "すべてクリア"
+        },
+        "chat-stranger-list": {
+            "memo": "ここは未知のメッセージフォルダです。知らないユーザーからのメッセージを確認・承認できます。相手にはあなたの判断は通知されません。"
+        },
+        "chat-item": {
+            "private-msg": "あなたにメッセージを送りたいようです",
+            "no-name": "このユーザーは存在しません",
+            "message": {
+                "not-show-message": "あなたにメッセージを送りたいようです",
+                "route": "{{name}} がルートを共有しました",
+                "record": "{{name}} が運動記録を共有しました",
+                "image": "{{name}} が画像を送信しました",
+                "leave": "{{name}} がチャットルームを離脱しました",
+                "location": "{{name}} が位置情報を共有しました"
+            }
+        },
+        "home-activity-invite": {
+            "title": "新しいアクティビティの招待があります！",
+            "desc": "未読のアクティビティ招待が{{number}}件あります"
+        },
+        "post-item": {
+            "comment": {
+                "title": "<span class='name'>{{name}}</span> が <span class='route-name'>{{routeName}}</span> にコメントしました"
+            },
+            "team-post": {
+                "title": "<span class='name'>{{name}}</span> が <span class='team-name'>{{teamName}}</span> で共有しました"
+            },
+            "like-comment-text": "{{likeCount}} 件のいいね · {{commentCount}} 件のコメント",
+            "menu-item": {
+                "delete": "削除",
+                "edit": "内容を編集",
+                "post-message": "メッセージを送信",
+                "leave-team": "チームを離脱",
+                "cancel-follow": "フォローを解除",
+                "block-user": "ユーザーをブロック",
+                "report": "問題を報告",
+                "report-route-comment": "ルートコメントを報告",
+                "report-post": "投稿を報告"
+            },
+            "delete": {
+                "title": "この投稿を削除しますか？",
+                "message": "投稿を削除すると、投稿へのいいねや返信もすべて削除されます。",
+                "confirm": "削除",
+                "success": "投稿を削除しました"
+            },
+            "leave-team": {
+                "title": "{{teamName}} を本当に離脱しますか？",
+                "message": "チームを離脱すると、チームのチャットからも退出します。",
+                "confirm": "チームを離脱",
+                "success": "{{teamName}} を離脱しました"
+            },
+            "team-only-manager": {
+                "title": "あなたは唯一の管理者です",
+                "message": "チームを離脱するには、ほかのメンバーを管理者にするか、チームをアーカイブしてください。",
+                "cancel": "メンバー管理",
+                "confirm": "チームをアーカイブ"
+            },
+            "block-user": {
+                "title": "{{name}} をブロックしますか？",
+                "message": "ブロックすると、このユーザーのフォローを解除し、相手はあなたをフォロー、あなたの投稿閲覧、@メンション、アクティビティ・チーム招待ができなくなります。",
+                "success": "{{name}} をブロックしました"
+            },
+            "cancel-follow": {
+                "success": "{{name}} のフォローを解除しました"
+            }
+        },
+        "sporting-share-list": {
+            "title": "運動ライブ"
+        },
+        "team-item": {
+            "user-count": "{{count}}名のメンバー",
+            "follow-user-count": "{{count}}人のフォロワー",
+            "followers-joins": "+{{count}}人のフォロワーが参加済み"
+        },
+        "home-menu": {
+            "title": "アウトドア探索をはじめよう！",
+            "text-1": "<div class='title'>Explore<br/>Team</div><div class='subtitle'>チームマップ</div>",
+            "text-2": "<div class='title'>Explore<br/>Activity</div><div class='subtitle'>アクティビティを探す</div>",
+            "text-3": "<div class='title'>New<br/>Exercise</div><div class='subtitle'>運動を開始</div>",
+            "text-4": "<div class='title'>Explore<br/>Route</div><div class='subtitle'>ルートを探す</div>"
+        },
+        "user-item": {
+            "memo": {
+                "fb-friend": "<div class='sub'>あなたの</div><div class='text'>Facebook友達</div>",
+                "city": "<div class='sub'>同じ</div><div class='text'>{{name}}に住んでいます</div>",
+                "activity": "<div class='sub'>共通のアクティビティ:</div><div class='text'>{{name}}</div>",
+                "route": "<div class='sub'>共に走ったルート:</div><div class='text'>{{name}}</div>"
+            }
+        },
+        "background-choose": {
+            "view": "風景",
+            "illustration": "イラスト",
+            "style": "スタイル",
+            "from": "アルバムから"
+        },
+        "activity-item": {
+            "friendJoin": "フォローしている{{number}}人が参加中",
+            "startingSoon": "まもなく開始",
+            "status": {
+                "Soon": "まもなく開始",
+                "Running": "進行中",
+                "Completed": "完了"
+            }
+        },
+        "activity-log-list": {
+            "all-time": "全期間"
+        },
+        "notice-message": {
+            "focus-on-you": "<span class='notice-msg'>{{name}}</span> があなたをフォローし始めました",
+            "mention-on-teampost": "<span class='notice-msg'>{{name}}</span> が <span class='notice-msg'>{{team}}</span> チームの投稿であなたに言及しました",
+            "mention-on-post": "<span class='notice-msg'>{{name}}</span> が投稿であなたに言及しました",
+            "apply-join": "<span class='notice-msg'>{{name}}</span> が <span class='notice-msg'>{{team}}</span> に参加したいと希望しています",
+            "press-nice": "<span class='notice-msg'>{{name}}</span> があなたの投稿にいいねしました"
+        },
+        "sport-live-chat": {
+            "no-follow": "このユーザーをフォローしていないため、コメントできません",
+            "follow-user": "このユーザーをフォローする",
+            "wait-user-agree-follow": "リクエストを送信しました",
+            "msg-placeholder": "コメント..."
+        },
+        "sport-live-comment": {
+            "Body": "コメント"
+        }
+    },
+    "unit": {
+        "centimeters": "cm",
+        "kilogram": "kg",
+        "years": "歳"
+    },
+    "share-text": {
+        "user": "TeamUpで {{name}} をチェックしてください \n{{url}}",
+        "activity": "おすすめのアクティビティを共有します。チェックしてみてください！\n{{name}} ({{url}})",
+        "route": "素敵なルートを見つけました。ぜひチェックを！\n{{name}} ({{url}})",
+        "record": "（{{date}}）の運動記録を共有します！",
+        "live-record": "今やってる運動のライブをシェアするよ！ぜひ見に来てね！（{{url}}）"
+    }
+}

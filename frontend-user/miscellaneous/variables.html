@@ -1,0 +1,603 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>TeamUp 前端程式文件</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+        <link rel="stylesheet" href="../styles/Vagrant.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">TeamUp 前端程式文件</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Variables</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#BackgroundGeolocation" title="projects/common/src/lib/services/geolocation.service.ts" ><b>BackgroundGeolocation</b>&nbsp;&nbsp;&nbsp;(projects/.../geolocation.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#cal" title="src/main.ts" ><b>cal</b>&nbsp;&nbsp;&nbsp;(src/.../main.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#gap" title="projects/common/src/lib/components/user-avater-group/user-avater-group.component.ts" ><b>gap</b>&nbsp;&nbsp;&nbsp;(projects/.../user-avater-group.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#LOCALE_DATE_FORMATS" title="projects/common/src/lib/services/local-date-format.service.ts" ><b>LOCALE_DATE_FORMATS</b>&nbsp;&nbsp;&nbsp;(projects/.../local-date-format.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loginGuard" title="projects/common/src/lib/guards/login.guard.ts" ><b>loginGuard</b>&nbsp;&nbsp;&nbsp;(projects/.../login.guard.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#notGuestGuard" title="projects/common/src/lib/guards/not-guest.guard.ts" ><b>notGuestGuard</b>&nbsp;&nbsp;&nbsp;(projects/.../not-guest.guard.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#onlyAppGuard" title="projects/common/src/lib/guards/only-app.guard.ts" ><b>onlyAppGuard</b>&nbsp;&nbsp;&nbsp;(projects/.../only-app.guard.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#onlyDevGuard" title="projects/common/src/lib/guards/only-dev.guard.ts" ><b>onlyDevGuard</b>&nbsp;&nbsp;&nbsp;(projects/.../only-dev.guard.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#onlyWebGuard" title="projects/common/src/lib/guards/only-web.guard.ts" ><b>onlyWebGuard</b>&nbsp;&nbsp;&nbsp;(projects/.../only-web.guard.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>projects/common/src/lib/services/geolocation.service.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="BackgroundGeolocation"></a>
+                    <span class="name">
+                        <span ><b>BackgroundGeolocation</b></span>
+                        <a href="#BackgroundGeolocation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>registerPlugin&lt;BackgroundGeolocationPlugin&gt;(&quot;BackgroundGeolocation&quot;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/main.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cal"></a>
+                    <span class="name">
+                        <span ><b>cal</b></span>
+                        <a href="#cal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {
+  requestAnimationFrame(() &#x3D;&gt; {
+    setBodySize(window.innerHeight, window.innerWidth);
+  });
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>projects/common/src/lib/components/user-avater-group/user-avater-group.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="gap"></a>
+                    <span class="name">
+                        <span ><b>gap</b></span>
+                        <a href="#gap"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#SizeStr" target="_self" >Record&lt;SizeStr, number&gt;</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  small: -2,
+  regular: -4,
+  medium: -6,
+  big: -8
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>projects/common/src/lib/services/local-date-format.service.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="LOCALE_DATE_FORMATS"></a>
+                    <span class="name">
+                        <span ><b>LOCALE_DATE_FORMATS</b></span>
+                        <a href="#LOCALE_DATE_FORMATS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new InjectionToken&lt;LocaleDateFormats&gt;(&#x27;LOCALE_DATE_FORMATS&#x27;)</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>定義一個 InjectionToken，用來提供不同語系的日期格式設定</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>projects/common/src/lib/guards/login.guard.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginGuard"></a>
+                    <span class="name">
+                        <span ><b>loginGuard</b></span>
+                        <a href="#loginGuard"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>CanActivateFn</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(route, state) &#x3D;&gt; {
+  const lus &#x3D; inject(LoginUserService);
+  const router &#x3D; inject(Router);
+  if (lus.isLogin) {
+    return true;
+  }
+  
+  return router.createUrlTree([&#x27;/&#x27;, &#x27;login&#x27;], { queryParams: { back: state.url &#x3D;&#x3D;&#x3D; &#x27;/&#x27; ? undefined : state.url } });
+}</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>登入守衛 (Login Guard)</p>
+<p>用於路由保護，判斷使用者是否已登入。
+若已登入，允許進入對應路由。
+若未登入，會導向登入頁，並透過 queryParams 將原本路由作為回傳路徑。</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>projects/common/src/lib/guards/not-guest.guard.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="notGuestGuard"></a>
+                    <span class="name">
+                        <span ><b>notGuestGuard</b></span>
+                        <a href="#notGuestGuard"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>CanActivateFn</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(route, state) &#x3D;&gt; {
+  const lus &#x3D; inject(LoginUserService);
+  const router &#x3D; inject(Router);
+  if (lus.isLogin &amp;&amp; !lus.isGuest) {
+    return true;
+  }
+
+  return router.createUrlTree([&#x27;/&#x27;, &#x27;login&#x27;], { queryParams: { back: state.url &#x3D;&#x3D;&#x3D; &#x27;/&#x27; ? undefined : state.url } });
+}</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>非訪客守衛 (Not Guest Guard)</p>
+<p>用於路由保護，判斷使用者是否已登入且非訪客帳號。
+若使用者已登入且非訪客，允許進入對應路由。
+若使用者未登入或為訪客，會導向登入頁，並透過 queryParams 將原本路由作為回傳路徑。</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>projects/common/src/lib/guards/only-app.guard.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onlyAppGuard"></a>
+                    <span class="name">
+                        <span ><b>onlyAppGuard</b></span>
+                        <a href="#onlyAppGuard"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>CanActivateFn</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(route, state) &#x3D;&gt; {
+  const platform &#x3D; inject(PlatformService);
+  const router &#x3D; inject(Router);
+  const environment &#x3D; inject(Environment);
+  if (platform.isApp || !environment.production) {
+    return true;
+  }
+
+  return router.createUrlTree([&#x27;/&#x27;, &#x27;propaganda&#x27;]);
+}</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>只允許 App 環境訪問的守衛 (Only App Guard)</p>
+<p>用於路由保護，判斷當前環境是否為 App 或非正式環境。
+若當前平台是 App 或非正式環境，允許進入對應路由。
+否則導向宣傳頁面 (propaganda)。</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>projects/common/src/lib/guards/only-dev.guard.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onlyDevGuard"></a>
+                    <span class="name">
+                        <span ><b>onlyDevGuard</b></span>
+                        <a href="#onlyDevGuard"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>CanActivateFn</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(route, state) &#x3D;&gt; {
+  const environment &#x3D; inject(Environment);
+  const router &#x3D; inject(Router);
+  if (!environment.production) {
+    return true;
+  }
+  
+  return router.createUrlTree([&#x27;/&#x27;, &#x27;propaganda&#x27;]);
+}</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>只允許 開發環境訪問的守衛 (Only Dev Guard)</p>
+<p>用於路由保護，判斷當前環境是否非正式環境。
+若當前平台是非正式環境，允許進入對應路由。
+否則導向宣傳頁面 (propaganda)。</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>projects/common/src/lib/guards/only-web.guard.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onlyWebGuard"></a>
+                    <span class="name">
+                        <span ><b>onlyWebGuard</b></span>
+                        <a href="#onlyWebGuard"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>CanActivateFn</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(route, state) &#x3D;&gt; {
+  const platform &#x3D; inject(PlatformService);
+  const router &#x3D; inject(Router);
+  const pathPaser &#x3D; inject(PathParserService);
+
+  const isAppJump &#x3D; route.data[&#x27;AppJump&#x27;];
+
+  if (platform.isWeb) {
+    return true;
+  } else {
+    let url &#x3D; router.createUrlTree([&#x27;/&#x27;, &#x27;home&#x27;]);;
+    if (isAppJump) {
+      const back &#x3D; route.queryParamMap.get(&#x27;back&#x27;);
+      if (back) {
+        const slg &#x3D; pathPaser.getAppOpenUrl(back);
+        url &#x3D; router.createUrlTree([slg]);
+      }
+    }
+
+    return url;
+  }
+}</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>只允許 Web 環境訪問的守衛 (Only Web Guard)</p>
+<p>用於路由保護，判斷當前平台是否為 Web。</p>
+<ul>
+<li>若平台為 Web，允許進入對應路由。</li>
+<li>若平台非 Web：<ul>
+<li>若路由 data 設定 AppJump 且 queryParam 包含 back，會將路由轉成 App 導向 URL。</li>
+<li>否則導向首頁 (&#39;/home&#39;)。</li>
+</ul>
+</li>
+</ul>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
