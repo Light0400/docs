@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#styleData" class="nav-link"
-                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1400,117 +1396,6 @@
 
 
 
-    <div class="tab-pane fade " id="styleData">
-                <p class="comment">
-                    <code>./team.component.scss</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss">:host {
-
-  lib-header {
-    .search {
-      padding: 8px var(--app-x-space);
-
-      &gt;div {
-        display: flex;
-        align-items: center;
-        background-color: var(--app-secondary-gray-8);
-        position: relative;
-        padding: 8px 12px;
-        border-radius: 8px;
-        height: 100%;
-
-        &gt;mat-icon {
-          margin-right: 10px;
-          color: var(--app-secondary-gray-4);
-        }
-
-        &gt;span {
-          flex: 1;
-          padding: 0;
-          margin: 0;
-          color: var(--app-color-949494);
-          font-size: 14px;
-          font-weight: 500;
-        }
-      }
-    }
-
-    .title {
-      margin-left: var(--app-x-space);
-    }
-  }
-
-  .btns {
-    padding: 0 var(--app-x-space);
-    margin-bottom: 8px;
-
-    .create-btn {
-      .momo {
-        margin-bottom: 10px;
-        color: var(--app-color-494949);
-        font-weight: 500;
-        font-size: 14px;
-        letter-spacing: 0.28px;
-      }
-    }
-  }
-
-  .nodata {
-    overflow-y: auto;
-    .title {
-      padding: 0 var(--app-x-space) 12px var(--app-x-space);
-      color: var(--app-text-color);
-      text-shadow: 0px 4px 16px rgba(0, 0, 0, 0.04);
-      font-size: 32px;
-      font-weight: 700;
-    }
-
-    .desc {
-      padding: 10px var(--app-x-space);
-      color: var(--app-color-494949);
-      font-weight: 500;
-      font-size: 14px;
-      letter-spacing: 0.28px;
-    }
-
-
-    .btns {
-      margin-bottom: 28px;
-    }
-
-    .recommend {
-      padding: 0 var(--app-x-space);
-      margin-bottom: 8px;
-    }
-  }
-
-  .hasdata {
-    overflow-y: auto;
-    .team-group {
-      overflow-y: auto;
-      padding-bottom: 32px;
-
-      .head {
-        color: var(--app-text-color);
-        font-size: 14px;
-        font-weight: 500;
-        letter-spacing: 0.28px;
-        padding: var(--app-x-space) var(--app-x-space) 0;
-        border-top: 2px solid var(--app-secondary-gray-7);
-      }
-
-      .team {
-        overflow-y: auto;
-      }
-    }
-
-    .btns {
-      border-top: 1px solid var(--app-secondary-gray-7);
-      padding-top: 8px;
-    }
-  }
-}</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>

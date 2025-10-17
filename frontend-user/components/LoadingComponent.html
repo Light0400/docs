@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#styleData" class="nav-link"
-                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -256,63 +252,6 @@ default: ...跳動事件</p>
 
 
 
-    <div class="tab-pane fade " id="styleData">
-                <p class="comment">
-                    <code>./loading.component.scss</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss">:host {
-    .default {
-        text-align: center;
-
-        span {
-            position: relative;
-            box-sizing: border-box;
-
-            display: inline-block;
-            vertical-align: middle;
-            width: 0.625rem;
-            height: 0.625rem;
-            margin: 0.19em;
-            
-            border-radius: 200%;
-            animation: ball-zoom 1s ease infinite;
-
-            &amp;:nth-child(1) {
-                background: var(--app-text-color);
-                animation-delay: -200ms;
-            }
-
-            &amp;:nth-child(2) {
-                background: var(--app-secondary-teal-2);
-                animation-delay: -100ms;
-            }
-
-            &amp;:nth-child(3) {
-                background: var(--app-text-color);
-                animation-delay: 0ms;
-            }
-        }
-
-        
-
-        @keyframes ball-zoom {
-
-            0%,
-            60%,
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            30% {
-                opacity: 0.1;
-                transform: scale(0.01);
-            }
-        }
-
-    }
-}</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>

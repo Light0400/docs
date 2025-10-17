@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#styleData" class="nav-link"
-                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1651,104 +1647,6 @@
 
 
 
-    <div class="tab-pane fade " id="styleData">
-                <p class="comment">
-                    <code>./chat-item.component.scss</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss">:host {
-  touch-action: pan-y !important;
-  display: flex;
-  height: 70px;
-  overflow: scroll;
-  scrollbar-width: none;
-  gap: 12px;
-
-  .avatar {
-    padding: 8px 0px 0px 16px;
-  }
-
-  .info {
-    padding: 8px var(--app-x-space) 8px 0;
-    border-bottom: 1px solid var(--app-secondary-gray-7);
-    height: 100%;
-    flex-basis: calc(100% - 68px);
-    color: var(--app-text-color);
-    
-    .pin-icon {
-      font-size: 0.75rem;
-      width: 0.75rem;
-      height: 0.75rem;
-      line-height: initial;
-      margin-right: 5px;
-    }
-
-    .name {
-      font-size: 0.875rem;
-      margin-right: 6px;
-    }
-
-    .msg {
-      height: 33px;
-      font-size: 0.75rem;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      line-clamp: 2;
-      -webkit-line-clamp: 2;
-    }
-
-    .nosound {
-      color: var(--app-secondary-gray-4);
-    }
-
-    .time-count {
-      align-items: flex-end;
-    }
-
-    .time {
-      font-size: 0.625rem;
-      color: var(--app-color-949494);
-      margin-bottom: 8px;
-    }
-
-    .count {
-      font-size: 0.625rem;
-      padding: 0px 0.25rem;
-      border-radius: 12px;
-      background: var(--app-secondary-teal-2);
-      color: var(--app-white);
-      line-height: 1rem;
-      letter-spacing: 0.2px;
-    }
-  }
-
-  .btn-area {
-    height: 100%;
-
-    .btn {
-      width: 52px;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--app-secondary-teal-2);
-    }
-
-    .btn-pin {
-      background-color: var(--app-secondary-teal-7);
-    }
-
-    .btn-mute {
-      background-color: var(--app-secondary-teal-6);
-    }
-  }
-
-  &gt;* {
-    flex-shrink: 0;
-  }
-}</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>

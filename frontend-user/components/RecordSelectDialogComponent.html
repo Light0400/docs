@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#styleData" class="nav-link"
-                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1279,43 +1275,6 @@
 
 
 
-    <div class="tab-pane fade " id="styleData">
-                <p class="comment">
-                    <code>./record-select-dialog.component.scss</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss">:host {
-    lib-header {
-        padding-top: 16px;
-    }
-
-    lib-search-input {
-        padding: 8px var(--app-x-space);
-    }
-
-    .main {
-        overflow-y: auto;
-
-        lib-user-route-record-item {
-            padding: 8px 16px;
-        }
-
-        cdk-virtual-scroll-viewport {
-            .memo {
-                padding: 8px 16px;
-                margin-bottom: 20px;
-                text-align: center;
-                color: var(--app-secondary-gray-3);
-                font-size: 0.625rem;
-            }
-        }
-
-        lib-loading {
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-    }
-}</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>

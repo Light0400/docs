@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#styleData" class="nav-link"
-                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1614,83 +1610,6 @@
 
 
 
-    <div class="tab-pane fade " id="styleData">
-                <p class="comment">
-                    <code>./user-setting.component.scss</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss">:host {
-    .scroll-main {
-        .group {
-            padding-bottom: 20px;
-            color: var(--app-text-color);
-
-            &gt;.title {
-                padding: 10px var(--app-x-space);
-                font-size: 18px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: 20px;
-            }
-
-            &gt;.item {
-                padding: 16px var(--app-x-space);
-                border-bottom: 1px solid var(--app-secondary-gray-8);
-                background: var(--app-bg-color);
-
-                .title {
-                    font-size: 16px;
-                    font-style: normal;
-                    font-weight: 500;
-                    line-height: normal;
-                    letter-spacing: 0.32px;
-
-                    &gt;.sub {
-                        color: var(--app-color-949494);
-                        font-size: 12px;
-                        font-weight: 400;
-                        letter-spacing: 0.24px;
-                    }
-                }
-
-                .right {
-                    color: var(--app-secondary-gray-3);
-                    text-align: right;
-                    font-size: 14px;
-                    font-style: normal;
-                    font-weight: 500;
-                    line-height: normal;
-                    letter-spacing: 0.28px;
-                }
-            }
-        }
-
-        &gt;.item {
-            color: var(--app-text-color);
-            padding: 16px var(--app-x-space);
-            font-size: 16px;
-            font-weight: 500;
-            letter-spacing: 0.32px;
-
-            &amp;.warn {
-                color: var(--app-warn);
-            }
-
-            mat-icon {
-                margin-right: 16px;
-            }
-        }
-
-        .version {
-            padding: 16px var(--app-x-space);
-
-            span {
-                font-size: 0.875rem;
-                color: var(--app-warn);
-            }
-        }
-    }
-}</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>

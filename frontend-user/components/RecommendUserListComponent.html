@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#styleData" class="nav-link"
-                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -708,69 +704,6 @@
 
 
 
-    <div class="tab-pane fade " id="styleData">
-                <p class="comment">
-                    <code>./recommend-user-list.component.scss</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss">:host {
-
-  &amp;.horizontal {
-    .title {
-      padding: var(--app-x-space);
-      color: var(--app-text-color);
-      font-size: 1.125rem;
-      line-height: 1.25rem;
-      font-weight: 700;
-    }
-
-    .list {
-      flex-wrap: nowrap;
-      overflow-x: auto;
-
-      lib-user-item+lib-user-item {
-        margin-left: 8px;
-      }
-
-      lib-user-item {
-        &amp;:first-child {
-          margin-left: var(--app-x-space);
-        }
-
-        &amp;:last-child {
-          margin-right: var(--app-x-space);
-        }
-      }
-    }
-  }
-
-  &amp;.vertical {
-    .title {
-      padding: var(--app-x-space);
-      color: var(--app-text-color);
-      font-size: 0.875rem;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 1rem;
-    }
-
-    .list {
-      flex-wrap: nowrap;
-      overflow-y: auto;
-
-      lib-user-item {
-        margin-bottom: 16px;
-        padding: 0px var(--app-x-space);
-
-        &amp;::ng-deep {
-          .register-bottom {
-            margin: 0 16px;
-          }
-        }
-      }
-    }
-  }
-}</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>

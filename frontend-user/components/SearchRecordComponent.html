@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#styleData" class="nav-link"
-                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -999,66 +995,6 @@
 
 
 
-    <div class="tab-pane fade " id="styleData">
-                <p class="comment">
-                    <code>./search-record.component.scss</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss">:host {
-  position: absolute;
-  z-index: 2;
-  width: 100%;
-  background: var(--app-bg-color);
-
-  p {
-    color: var(--app-text-color);
-    font-style: normal;
-    font-weight: 500;
-    margin: 0;
-    padding: 0;
-  }
-
-  .header {
-    padding: 8px var(--app-x-space);
-    height: 46px;
-    font-size: 0.875rem;
-    font-weight: 500;
-    line-height: 1rem;
-    justify-content: space-between;
-
-    .clear {
-      font-weight: 400;
-      color: var(--app-secondary-gray-4);
-    }
-  }
-
-  .search-list {
-    .search-item {
-      height: 50px;
-
-      .search-icon {
-        margin: 0px 16px;
-        color: var(--app-secondary-gray-4);
-      }
-
-      .search-text {
-        height: 50px;
-        border-bottom: 1px solid var(--app-secondary-gray-7);
-
-        .text {
-          font-size: 16px;
-          line-height: normal;
-          letter-spacing: 0.32px;
-        }
-
-        mat-icon{
-          margin: 0 16px;
-          color: var(--app-secondary-gray-4);
-        }
-      }
-    }
-  }
-}</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>

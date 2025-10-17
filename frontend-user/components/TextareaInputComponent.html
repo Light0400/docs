@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#styleData" class="nav-link"
-                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1153,81 +1149,6 @@
 
 
 
-    <div class="tab-pane fade " id="styleData">
-                <p class="comment">
-                    <code>./textarea-input.component.scss</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss">:host {
-
-    ::ng-deep {
-        label {
-            padding: 13px 0px;
-            color: var(--app-text-color);
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: normal;
-            letter-spacing: 0.32px;
-        }
-    }
-
-    textarea {
-        background: var(--app-bg-color);
-        border: 1px solid var(--app-secondary-gray-5);
-        border-radius: 5px;
-        padding: 12px 16px;
-        color: var(--app-text-color);
-
-        &amp;::placeholder {
-            color: var(--app-color-949494);
-            opacity: 1;
-        }
-
-        &amp;::-ms-input-placeholder {
-            color: var(--app-color-949494);
-        }
-
-        &amp;:focus,
-        &amp;:focus-visible {
-            outline: none !important;
-            border: 1px solid var(--app-primary);
-        }
-    }
-
-    &amp;.search-style {
-        textarea {
-            background: var(--app-secondary-gray-7);
-            border: none;
-            border-radius: 18px;
-            font-size: 14px;
-            font-weight: 500;
-            padding: 10px 16px;
-            color: var(--app-text-color);
-            
-            &amp;::placeholder {
-                color: var(--app-secondary-gray-3);
-                opacity: 1;
-            }
-
-            &amp;::-ms-input-placeholder {
-                color: var(--app-secondary-gray-3);
-            }
-
-            &amp;:focus,
-            &amp;:focus-visible {
-                outline: none !important;
-                border: none;
-            }
-        }
-    }
-
-    &amp;.no-resize {
-        textarea {
-            resize: none;
-        }
-    }
-}</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>

@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#styleData" class="nav-link"
-                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -410,63 +406,6 @@
 
 
 
-    <div class="tab-pane fade " id="styleData">
-                <p class="comment">
-                    <code>./progress-bar.component.scss</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss">:host {
-  z-index: 9999;
-
-  width: 100%;
-  position: absolute;
-  bottom: var(--app-x-space);
-
-  .text-body {
-    height: 52px;
-    padding: var(--app-x-space) 0px var(--app-x-space) var(--app-x-space);
-    background-color: var(--app-bg-color);
-    border-radius: 12px;
-    box-shadow: 0px 8px 20px 0px var(--app-progress-bar-shadow-color);
-    margin: 0 var(--app-x-space);
-
-    .text {
-      color: var(--app-primary);
-      font-size: 0.875rem;
-      font-weight: 500;
-      padding-right: 8px;
-    }
-
-    .resubmit {
-      font-size: 0.5rem;
-      text-decoration-line: underline;
-    }
-
-    .cancel,
-    .completed {
-      padding: 0 var(--app-x-space);
-    }
-
-    mat-progress-bar {
-      width: 117px;
-      border-radius: 2px;
-      margin-right: var(--app-x-space);
-    }
-
-    &amp;.error {
-      background: #fde7e7;
-      box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.1);
-
-      .text {
-        color: var(--app-warn);
-      }
-
-      .cancel {
-        color: var(--app-warn);
-      }
-    }
-  }
-}</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>

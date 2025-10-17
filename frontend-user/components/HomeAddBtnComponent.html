@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#styleData" class="nav-link"
-                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -574,40 +570,6 @@
 
 
 
-    <div class="tab-pane fade " id="styleData">
-                <p class="comment">
-                    <code>./home-add-btn.component.scss</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss">:host {
-    position: absolute;
-    z-index: 1;
-    bottom: 10px;
-    right: var(--app-x-space);
-
-
-    .main-btn {
-        display: block;
-
-        img {
-
-            &amp;.dark {
-                border-radius: 200%;
-                border: 1px solid var(--app-secondary-gray-6);
-            }
-
-            transition: transform 0.3s ease;
-
-            &amp;.open {
-                transform: rotate(45deg);
-            }
-        }
-    }
-
-    button {
-        box-shadow: none;
-    }
-}</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>

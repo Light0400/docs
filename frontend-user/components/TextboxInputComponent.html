@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#styleData" class="nav-link"
-                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -2034,98 +2030,6 @@
 
 
 
-    <div class="tab-pane fade " id="styleData">
-                <p class="comment">
-                    <code>./textbox-input.component.scss</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss">:host {
-
-    &amp;.common {
-        ::ng-deep {
-            label {
-                padding: 13px 0px;
-                color: var(--app-text-color);
-                font-size: 1rem;
-                font-style: normal;
-                font-weight: 500;
-                line-height: normal;
-                letter-spacing: 0.32px;
-            }
-        }
-
-        .input-container {
-            background: var(--app-bg-color);
-            border: 1px solid var(--app-secondary-gray-5);
-            border-radius: 5px;
-            padding: 12px 16px;
-            height: 44px;
-            gap: 4px;
-
-            input {
-                background: transparent;
-                border: 0px;
-                color: var(--app-text-color);
-
-                &amp;:focus {
-                    outline: none;
-                }
-
-                &amp;::placeholder {
-                    color: var(--app-color-949494);
-                    opacity: 1;
-                }
-
-                &amp;::-ms-input-placeholder {
-                    color: var(--app-color-949494);
-                }
-            }
-
-
-        }
-
-        &amp;.input-focus {
-            .input-container {
-                border: 1px solid var(--app-primary);
-            }
-        }
-    }
-
-    &amp;.search {
-        .input-container {
-            border-radius: 8px;
-            background: var(--app-secondary-gray-8);
-            padding: 8px 12px;
-
-            input {
-                font-size: 0.875rem;
-                font-weight: 500;
-                background: transparent;
-                border: 0px;
-                color: var(--app-text-color);
-
-                &amp;:focus {
-                    outline: none;
-                }
-
-                &amp;::placeholder {
-                    color: var(--app-color-949494);
-                    opacity: 1;
-                }
-
-                &amp;::-ms-input-placeholder {
-                    color: var(--app-color-949494);
-                }
-            }
-        }
-    }
-
-    ::ng-deep {
-        mat-error {
-            margin-top: 2px;
-        }
-    }
-}</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>

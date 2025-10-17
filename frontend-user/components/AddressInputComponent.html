@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#styleData" class="nav-link"
-                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1243,52 +1239,6 @@
 
 
 
-    <div class="tab-pane fade " id="styleData">
-                <p class="comment">
-                    <code>./address-input.component.scss</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss">:host {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 8px 12px;
-    gap: 10px;
-    border-radius: 0.5rem;
-    background: var(--app-secondary-gray-8);
-    
-    .search-icon{
-        color: var(--app-secondary-gray-4);
-    }
-
-    input {
-        flex: 1;
-        font-size: 0.875rem;
-        border: 0;
-        padding: 0;
-        margin: 0;
-        border: unset;
-        background-color: transparent;
-        outline: unset;
-        &amp;::placeholder {
-            color: var(--app-color-949494);
-            opacity: 1;
-        }
-
-        &amp;::-ms-input-placeholder {
-            color: var(--app-color-949494);
-        }
-
-        &amp;:focus,
-        &amp;:focus-visible {
-            outline: none;
-        }
-    }
-
-    &gt;* {
-        flex-shrink: 0;
-    }
-}</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>

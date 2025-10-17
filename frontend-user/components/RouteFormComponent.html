@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#styleData" class="nav-link"
-                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1390,124 +1386,6 @@
 
 
 
-    <div class="tab-pane fade " id="styleData">
-                <p class="comment">
-                    <code>./route-form.component.scss</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss">:host {
-  form {
-    padding: 20px var(--app-x-space);
-    gap: 30px;
-    flex: 1;
-    overflow: auto;
-
-    .item {
-      span {
-        color: var(--app-text-color);
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 16px;
-        /* 114.286% */
-      }
-
-      lib-textbox-input {
-        margin-top: var(--app-y-space);
-      }
-
-      .forkroad {
-        margin-top: var(--app-x-space);
-        gap: var(--app-x-space);
-
-        .road {
-          align-items: center;
-          justify-content: center;
-          padding: 0 12px;
-          height: 114px;
-          flex: 1;
-
-          border-radius: 12px;
-          border: 1px solid var(--app-secondary-gray-4);
-          background: var(--app-bg-color);
-          gap: 10px;
-
-          cursor: pointer;
-
-          &amp;:hover {
-            background: var(--app-secondary-gray-8);
-          }
-
-          &amp;:active {
-            background: var(--app-secondary-gray-6);
-          }
-        }
-      }
-
-      .google-map-container {
-        width: 100%;
-
-        .view-image {
-          border-radius: 12px;
-          margin: var(--app-x-space) 0;
-          background-size: contain;
-          background-repeat: no-repeat;
-          aspect-ratio: 358 / 297;
-        }
-
-        .info {
-          flex: 1;
-          gap: var(--app-y-space);
-
-          span {
-            color: var(--app-text-color);
-            height: 18px;
-
-            &amp;:first-child {
-              font-size: 16px;
-              font-weight: 500;
-              line-height: 18px;
-              /* 112.5% */
-            }
-
-            &amp;:last-child {
-              font-size: 14px;
-              font-weight: 400;
-              line-height: 18px;
-              /* 128.571% */
-            }
-
-            &amp;.noData {
-              color: var(--app-secondary-gray-5);
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .footer {
-    padding: 0 var(--app-x-space);
-
-    ul {
-      margin: 0;
-      padding-left: 24px;
-
-      li {
-        color: var(--app-secondary-gray-4);
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 18px;
-        /* 128.571% */
-      }
-    }
-
-    button {
-      margin: var(--app-x-space) 0px;
-      color: var(--app-white);
-    }
-  }
-}</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>

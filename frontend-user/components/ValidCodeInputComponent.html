@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#styleData" class="nav-link"
-                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1558,69 +1554,6 @@
 
 
 
-    <div class="tab-pane fade " id="styleData">
-                <p class="comment">
-                    <code>./valid-code-input.component.scss</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss">:host {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    input {
-        text-align: center;
-        padding: 18px 0px;
-        font-size: 20px;
-        font-weight: 700;
-        border-radius: 5px;
-        background: var(--app-bg-color);
-        color: var(--app-text-color);
-        
-        border: 1px solid var(--app-secondary-gray-5);
-        width: 60px;
-
-
-        &amp;:focus {
-            border: 1px solid var(--app-primary);
-            outline: none !important;
-        }
-
-        &amp;.has-use{
-            border-color: var(--app-text-color);
-        }
-    }
-
-
-
-    @media screen and (min-width: 500px) {
-        justify-content: center;
-
-        input+input {
-            margin-left: 12px;
-        }
-    }
-
-    @media screen and (max-width: 300px) {
-        justify-content: center;
-
-        input {
-            flex: 1;
-            width: inherit;
-            aspect-ratio: 1/1;
-            padding: 0px;
-        }
-
-        input+input {
-            margin-left: 5px;
-        }
-    }
-
-
-    &gt;* {
-        flex-shrink: 0;
-    }
-}</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>

@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#styleData" class="nav-link"
-                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1532,68 +1528,6 @@
 
 
 
-    <div class="tab-pane fade " id="styleData">
-                <p class="comment">
-                    <code>./user-form.component.scss</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss">:host {
-
-    lib-file {
-        .text {
-            color: var(--app-primary);
-            font-size: 1rem;
-            font-weight: 500;
-            letter-spacing: 0.02rem;
-        }
-    }
-
-    .form-column {
-        padding: 0px var(--app-x-space);
-
-        lib-select-input{
-            mat-icon{
-                color: var(--app-text-color);
-            }
-        }
-
-        &amp;.location {
-            padding-top: 24px;
-        }
-
-
-        .field {
-            margin-bottom: 10px;
-        }
-
-        .title {
-            padding: 13px 0px;
-            font-size: 1rem;
-            font-weight: 500;
-            letter-spacing: 0.32px;
-        }
-
-        .memo {
-            color: var(--app-color-949494);
-            font-size: 0.75rem;
-            letter-spacing: 0.24px;
-
-            mat-icon {
-                ::ng-deep {
-                    svg {
-                        display: block;
-                    }
-                }
-
-                margin-right: 4px;
-            }
-        }
-    }
-
-    .footer {
-        padding: var(--app-x-space);
-    }
-}</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>
