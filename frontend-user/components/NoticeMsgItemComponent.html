@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1080,67 +1076,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;avatar&quot; (click)&#x3D;&quot;open()&quot;&gt;
-  @switch (item?.ImageType) {
-  @case (&#x27;Team&#x27;){
-  &lt;lib-team-logo [logo]&#x3D;&quot;item?.Team?.Logo&quot;&gt;&lt;/lib-team-logo&gt;
-  }
-  @case (&#x27;User&#x27;){
-  &lt;lib-user-avatar [avatar]&#x3D;&quot;item?.Sender?.Avatar&quot; [firstName]&#x3D;&quot;item?.Sender?.FirstName&quot;
-    [lastName]&#x3D;&quot;item?.Sender?.LastName&quot;&gt;&lt;/lib-user-avatar&gt;
-  }
-  @default {
-  &lt;div class&#x3D;&quot;image&quot;&gt;
-
-  &lt;/div&gt;
-  }
-  }
-
-  @if(item?.IconType){
-  @switch (item!.IconType) {
-  @case (&#x27;Team&#x27;){
-  &lt;lib-team-logo class&#x3D;&quot;icon&quot; [logo]&#x3D;&quot;item?.Team?.Logo&quot;&gt;&lt;/lib-team-logo&gt;
-  }
-  @case (&#x27;Live&#x27;){
-  &lt;mat-icon class&#x3D;&quot;icon fs-14&quot; [svgIcon]&#x3D;&quot;&#x27;notice-flag&#x27;&quot;&gt;&lt;/mat-icon&gt;
-  }
-  @default {
-  &lt;mat-icon class&#x3D;&quot;icon fs-14&quot; [svgIcon]&#x3D;&quot;&#x27;notice-&#x27; + item?.IconType?.toLowerCase()&quot;&gt;&lt;/mat-icon&gt;
-  }
-  }
-  }@else{
-  &lt;mat-icon class&#x3D;&quot;icon fs-14&quot; [svgIcon]&#x3D;&quot;&#x27;notice-alert&#x27;&quot;&gt;&lt;/mat-icon&gt;
-  }
-
-&lt;/div&gt;
-&lt;div class&#x3D;&quot;container flex&quot;&gt;
-  &lt;div class&#x3D;&quot;main-info&quot; (click)&#x3D;&quot;open()&quot; [innerHTML]&#x3D;&quot;item?.Title&quot;&gt;&lt;/div&gt;
-  &lt;div class&#x3D;&quot;sub-info row&quot; (click)&#x3D;&quot;open()&quot;&gt;
-    &lt;span&gt;{{ item?.CreatedTime | postDisplayTime }}&lt;/span&gt;
-    @if(subText?.length){
-    &lt;span class&#x3D;&quot;flex text&quot;&gt;·{{subText}}&lt;/span&gt;
-    }
-
-  &lt;/div&gt;
-
-  @if(showBtn){
-  &lt;div class&#x3D;&quot;ctrl row&quot;&gt;
-    &lt;div class&#x3D;&quot;flex&quot;&gt;
-      &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-ss&quot; (click)&#x3D;&quot;confirm(true)&quot;&gt;
-        {{ &quot;common.accept&quot; | translate }}
-      &lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;flex&quot;&gt;
-      &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-ss-gray&quot; (click)&#x3D;&quot;confirm(false)&quot;&gt;
-        {{ &quot;common.reject&quot; | translate }}
-      &lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  }
-
-&lt;/div&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

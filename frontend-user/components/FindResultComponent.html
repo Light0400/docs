@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -825,41 +821,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">@if((currentSearchText?.trim()?.length ?? 0) &gt;&#x3D; 2){
-&lt;div class&#x3D;&quot;find-result-search&quot; (click)&#x3D;&quot;search($event)&quot;&gt;
-  &lt;mat-icon svgIcon&#x3D;&quot;search&quot;&gt;&lt;/mat-icon&gt;
-  &lt;p&gt;
-    {{&quot;dialog.search.search-keyword&quot; | translate:({ keyword: currentSearchText }) }}
-  &lt;/p&gt;
-  &lt;mat-icon svgIcon&#x3D;&quot;arrow_right&quot;&gt;&lt;/mat-icon&gt;
-&lt;/div&gt;
-}
-
-&lt;div class&#x3D;&quot;find-result-container column flex&quot;&gt;
-
-
-  &lt;cdk-virtual-scroll-viewport [minBufferPx]&#x3D;&quot;600&quot; [maxBufferPx]&#x3D;&quot;2000&quot; [hidden]&#x3D;&quot;!userList?.length&quot; #scroller
-    [itemSize]&#x3D;&quot;itemSize&quot;&gt;
-    &lt;ng-container *cdkVirtualFor&#x3D;&quot;let item of userList;let index&#x3D;index&quot;&gt;
-      &lt;lib-user-item [style.height.px]&#x3D;&quot;itemSize&quot; [item]&#x3D;&quot;item&quot; (click)&#x3D;&quot;clickItem(item, $event)&quot;&gt;&lt;/lib-user-item&gt;
-    &lt;/ng-container&gt;
-
-  &lt;/cdk-virtual-scroll-viewport&gt;
-
-  @if(!isLoading &amp;&amp; !userList?.length){
-  &lt;lib-empty-data&gt;
-    &lt;span&gt;
-      {{ &#x27;dialog.search.nodata&#x27; |translate:({keyword: currentSearchText})}}
-    &lt;/span&gt;
-  &lt;/lib-empty-data&gt;
-  }
-
-  @if(isLoading){
-  &lt;lib-loading&gt;&lt;/lib-loading&gt;
-  }
-&lt;/div&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -971,90 +967,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-header [isDialog]&#x3D;&quot;true&quot; [show]&#x3D;&quot;true&quot; [backNotShow]&#x3D;&quot;true&quot;&gt;
-    &lt;ng-container ngProjectAs&#x3D;&quot;[h-left]&quot;&gt;
-
-        @if((list?.length??0) &gt; 1 &amp;&amp; !!selectItem){
-        &lt;button class&#x3D;&quot;tmup-btn-icon&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;backlist()&quot;&gt;
-            &lt;mat-icon svgIcon&#x3D;&quot;back&quot;&gt;&lt;/mat-icon&gt;
-        &lt;/button&gt;
-        }
-
-    &lt;/ng-container&gt;
-    &lt;ng-container ngProjectAs&#x3D;&quot;[h-title]&quot;&gt;
-        &lt;span&gt;{{ mapRoute?.Name }}&lt;/span&gt;
-    &lt;/ng-container&gt;
-&lt;/lib-header&gt;
-
-&lt;div class&#x3D;&quot;main column flex&quot; #scroller&gt;
-    @if(selectItem){
-
-    &lt;div class&#x3D;&quot;content-header column&quot;&gt;
-        &lt;div class&#x3D;&quot;title t-bold&quot;&gt;
-            {{ &#x27;dialog.report.report-type-title&#x27; | translate:({name: selectItem.Type?.Text }) }}
-        &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;div class&#x3D;&quot;content column flex&quot;&gt;
-        &lt;div class&#x3D;&quot;text t-bold-500&quot;&gt;
-            &lt;div&gt;{{ &#x27;dialog.report.report-message&#x27; | translate }}&lt;/div&gt;
-            &lt;div [libTextReadMore]&#x3D;&quot;selectItem.Message&quot;&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;images row&quot;&gt;
-            @for(item of showFiles; let index &#x3D; $index; track index) {
-            &lt;img [src]&#x3D;&quot;item.url&quot; (click)&#x3D;&quot;onImageClick(index)&quot; /&gt;
-            }
-        &lt;/div&gt;
-    &lt;/div&gt;
-
-    }@else{
-    &lt;div class&#x3D;&quot;content-header column&quot;&gt;
-        &lt;div class&#x3D;&quot;title t-bold&quot;&gt;
-            {{ &#x27;dialog.route-select-report-confirm.list-title&#x27; | translate }}
-        &lt;/div&gt;
-    &lt;/div&gt;
-    
-    @for(item of list; track item.Id){
-    &lt;div class&#x3D;&quot;item row tmup-align-center&quot; (click)&#x3D;&quot;view(item)&quot;&gt;
-        &lt;lib-user-avatar [avatar]&#x3D;&quot;item.User?.Avatar&quot; [firstName]&#x3D;&quot;item.User?.FirstName&quot;
-            [lastName]&#x3D;&quot;item.User?.LastName&quot;&gt;
-        &lt;/lib-user-avatar&gt;
-
-        &lt;div class&#x3D;&quot;info column flex&quot;&gt;
-            &lt;div class&#x3D;&quot;date&quot;&gt;
-                {{item.CreatedTime | localDate: &#x27;dateTime&#x27; }}
-            &lt;/div&gt;
-            &lt;div class&#x3D;&quot;type&quot;&gt;
-                {{item.Type?.Text }}
-            &lt;/div&gt;
-        &lt;/div&gt;
-
-        &lt;div&gt;
-            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-ss&quot;&gt;
-                {{&#x27;common.view&#x27; | translate }}
-            &lt;/button&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    }
-
-    }
-
-    &lt;div class&#x3D;&quot;memo&quot;&gt;
-        {{ &#x27;dialog.route-select-report-confirm.memo&#x27; | translate }}
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class&#x3D;&quot;footer column&quot;&gt;
-    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-l&quot; [mat-dialog-close]&#x3D;&quot;true&quot;&gt;
-        {{&#x27;dialog.route-select-report-confirm.confirm&#x27; | translate}}
-    &lt;/button&gt;
-
-    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-l-nobg&quot; [mat-dialog-close]&#x3D;&quot;false&quot;&gt;
-        {{&#x27;dialog.route-select-report-confirm.choose-another&#x27; | translate}}
-    &lt;/button&gt;
-&lt;/div&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

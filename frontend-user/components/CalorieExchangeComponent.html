@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -838,66 +834,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-header [show]&#x3D;&quot;true&quot; [isDialog]&#x3D;&quot;true&quot; (backClick)&#x3D;&quot;back()&quot;&gt;
-  &lt;ng-container ngProjectAs&#x3D;&quot;[h-title]&quot;&gt;
-    {{ &quot;pages.calorie-exchange.title&quot; | translate }}
-  &lt;/ng-container&gt;
-&lt;/lib-header&gt;
-
-&lt;main role&#x3D;&quot;main&quot;&gt;
-  &lt;section class&#x3D;&quot;tip&quot;&gt;
-    &lt;p&gt;{{ &quot;pages.calorie-exchange.tip-p1&quot; | translate }}&lt;/p&gt;
-    &lt;p&gt;{{ &quot;pages.calorie-exchange.tip-p2&quot; | translate }}&lt;/p&gt;
-    &lt;p&gt;{{ &quot;pages.calorie-exchange.tip-p3&quot; | translate }}&lt;/p&gt;
-  &lt;/section&gt;
-  &lt;section class&#x3D;&quot;menu-list p1&quot;&gt;
-    &lt;div class&#x3D;&quot;menu&quot; (click)&#x3D;&quot;chooseSex()&quot;&gt;
-      &lt;div&gt;
-        {{ &quot;pages.calorie-exchange.sex&quot; | translate }}
-      &lt;/div&gt;
-      &lt;div&gt;
-        &lt;span&gt;{{ sex | translate }}&lt;/span&gt;
-        &lt;mat-icon svgIcon&#x3D;&quot;arrow_right&quot;&gt;&lt;/mat-icon&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
-  &lt;section class&#x3D;&quot;menu-list p2&quot;&gt;
-    &lt;div class&#x3D;&quot;menu&quot; (click)&#x3D;&quot;showInputField(&#x27;Height&#x27;)&quot;&gt;
-      &lt;div&gt;
-        {{ &quot;pages.calorie-exchange.Height&quot; | translate }}({{
-          &quot;unit.centimeters&quot; | translate
-        }})
-      &lt;/div&gt;
-      &lt;div&gt;
-        &lt;span&gt;{{ userInfo.Height }}&lt;/span&gt;
-        &lt;mat-icon svgIcon&#x3D;&quot;arrow_right&quot;&gt;&lt;/mat-icon&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;menu&quot; (click)&#x3D;&quot;showInputField(&#x27;Weight&#x27;)&quot;&gt;
-      &lt;div&gt;
-        {{ &quot;pages.calorie-exchange.Weight&quot; | translate }}({{
-          &quot;unit.kilogram&quot; | translate
-        }})
-      &lt;/div&gt;
-      &lt;div&gt;
-        &lt;span&gt;{{ userInfo.Weight }}&lt;/span&gt;
-        &lt;mat-icon svgIcon&#x3D;&quot;arrow_right&quot;&gt;&lt;/mat-icon&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;menu&quot; (click)&#x3D;&quot;showInputField(&#x27;Age&#x27;)&quot;&gt;
-      &lt;div&gt;
-        {{ &quot;pages.calorie-exchange.Age&quot; | translate }}
-      &lt;/div&gt;
-      &lt;div&gt;
-        &lt;span&gt;{{ userInfo.Age }}&lt;/span&gt;
-        &lt;mat-icon svgIcon&#x3D;&quot;arrow_right&quot;&gt;&lt;/mat-icon&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
-&lt;/main&gt;
-</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

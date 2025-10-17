@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1041,43 +1037,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;header row tmup-align-center&quot;&gt;
-    &lt;div class&#x3D;&quot;title flex&quot;&gt;
-        {{ &#x27;components.route-comment-list.title&#x27; | translate}}
-    &lt;/div&gt;
-
-    &lt;div&gt;
-        &lt;lib-select-input [formControl]&#x3D;&quot;sortCtrl&quot; [type]&#x3D;&quot;&#x27;CircleTag&#x27;&quot; openType&#x3D;&quot;CircleTag&quot;&gt;
-            @for(item of sortType | enumOptions; track item.value){
-            &lt;lib-option [value]&#x3D;&quot;item.value&quot; [selectText]&#x3D;&quot;(item.text | enumTranslate: &#x27;RouteCommentSortType&#x27;)&quot;&gt;
-                {{ item.text | enumTranslate: &#x27;RouteCommentSortType&#x27; }}
-            &lt;/lib-option&gt;
-            }
-            &lt;mat-icon class&#x3D;&quot;fs-16 common-suffix&quot; svgIcon&#x3D;&quot;arrow_down&quot;&gt;
-            &lt;/mat-icon&gt;
-        &lt;/lib-select-input&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class&#x3D;&quot;scroll-main&quot; #scroller&gt;
-    @for(item of list; track item.Id){
-    &lt;lib-route-comment-item [item]&#x3D;&quot;item&quot;&gt;&lt;/lib-route-comment-item&gt;
-    }
-    @if(loading){
-    &lt;lib-loading&gt;&lt;/lib-loading&gt;
-    }
-
-    @if(noData){
-    &lt;lib-empty-data&gt;
-        &lt;span&gt;
-            {{ &#x27;components.route-comment-list.nodata&#x27; | translate}}
-        &lt;/span&gt;
-    &lt;/lib-empty-data&gt;
-    }
-
-&lt;/div&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

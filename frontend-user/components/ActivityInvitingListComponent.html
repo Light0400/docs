@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1106,26 +1102,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;cdk-virtual-scroll-viewport #scroller [itemSize]&#x3D;&quot;itemSize&quot; [maxBufferPx]&#x3D;&quot;2000&quot; [minBufferPx]&#x3D;&quot;600&quot;&gt;
-    &lt;lib-user-item *cdkVirtualFor&#x3D;&quot;let item of list&quot; [style.height.px]&#x3D;&quot;itemSize&quot; [item]&#x3D;&quot;item.User&quot;
-        (click)&#x3D;&quot;onClickUser(item)&quot;&gt;
-
-    &lt;/lib-user-item&gt;
-
-    @if(loading){
-    &lt;lib-loading&gt;&lt;/lib-loading&gt;
-    }
-&lt;/cdk-virtual-scroll-viewport&gt;
-
-@if(!list?.length &amp;&amp; noData){
-&lt;lib-empty-data&gt;
-    &lt;span&gt;
-        {{ &#x27;pages.activity-inviting-list.nodata&#x27; | translate}}
-    &lt;/span&gt;
-&lt;/lib-empty-data&gt;
-}</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

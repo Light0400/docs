@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1384,71 +1380,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-header [backNotShow]&#x3D;&quot;true&quot; [show]&#x3D;&quot;true&quot; [isDialog]&#x3D;&quot;true&quot;&gt;
-  &lt;ng-container ngProjectAs&#x3D;&quot;[h-title]&quot;&gt;
-    @if(data.recordId){
-    {{ &quot;dialog.invite-friends.ride-partner-title&quot; | translate }}
-    }@else{
-    {{ &quot;dialog.invite-friends.title&quot; | translate }}
-    }
-
-  &lt;/ng-container&gt;
-
-  &lt;ng-container ngProjectAs&#x3D;&quot;[h-right]&quot;&gt;
-    &lt;button type&#x3D;&quot;button&quot; mat-button class&#x3D;&quot;tmup-btn-text&quot; (click)&#x3D;&quot;back()&quot;&gt;
-      {{ &quot;common.close&quot; | translate }}
-    &lt;/button&gt;
-  &lt;/ng-container&gt;
-&lt;/lib-header&gt;
-
-&lt;lib-search-input [placeholder]&#x3D;&quot;&#x27;dialog.invite-friends.search-placeholder&#x27; | translate&quot;
-  (onChange)&#x3D;&quot;search($event)&quot;&gt;&lt;/lib-search-input&gt;
-
-@if(isTeam){
-&lt;div class&#x3D;&quot;row container byLink&quot;&gt;
-  &lt;mat-icon svgIcon&#x3D;&quot;link&quot;&gt;&lt;/mat-icon&gt;
-  &lt;span&gt;{{ &quot;dialog.invite-friends.invite-by-link&quot; | translate }}&lt;/span&gt;
-  &lt;div&gt;
-    &lt;button class&#x3D;&quot;tmup-btn-ss&quot; (click)&#x3D;&quot;share()&quot;&gt;
-      {{ &quot;common.share&quot; | translate }}
-    &lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-}
-
-
-&lt;cdk-virtual-scroll-viewport #scrollref [hidden]&#x3D;&quot;!list?.length&quot; [minBufferPx]&#x3D;&quot;600&quot; [maxBufferPx]&#x3D;&quot;2000&quot;
-  [itemSize]&#x3D;&quot;itemSize&quot;&gt;
-  &lt;ng-container *cdkVirtualFor&#x3D;&quot;let item of list; let index &#x3D; index&quot;&gt;
-    &lt;lib-user-item [item]&#x3D;&quot;item&quot; [style.height.px]&#x3D;&quot;itemSize&quot; [customBtn]&#x3D;&quot;true&quot;&gt;
-      &lt;div basic-right class&#x3D;&quot;select&quot;&gt;
-        &lt;button type&#x3D;&quot;button&quot; [class.tmup-btn-ss-gray-6]&#x3D;&quot;item.IsInvite&quot; [class.tmup-btn-ss-gray]&#x3D;&quot;!item.IsInvite&quot;
-          (click)&#x3D;&quot;onPress(item)&quot;&gt;
-          @if(data.recordId){
-          &lt;ng-container&gt;
-            {{ &quot;dialog.invite-friends.&quot; + (item.IsInvite ? &quot;re-send&quot; : &quot;send&quot;) | translate}}
-          &lt;/ng-container&gt;
-          }@else{
-          &lt;ng-container&gt;
-            {{ &quot;dialog.invite-friends.&quot; + (item.IsInvite ? &quot;already-send&quot; : &quot;send&quot;) | translate}}
-          &lt;/ng-container&gt;
-          }
-
-        &lt;/button&gt;
-      &lt;/div&gt;
-    &lt;/lib-user-item&gt;
-  &lt;/ng-container&gt;
-&lt;/cdk-virtual-scroll-viewport&gt;
-
-@if(noData){
-&lt;lib-empty-data [useDefault]&#x3D;&quot;true&quot;&gt;&lt;/lib-empty-data&gt;
-}
-
-@if(loading){
-&lt;lib-loading&gt;&lt;/lib-loading&gt;
-}</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

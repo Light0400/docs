@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -270,23 +266,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">@if(errors?.hasError){
-&lt;div class&#x3D;&quot;errors column&quot;&gt;
-    @for(err of errors?.errors; track $index){
-    &lt;div class&#x3D;&quot;error-item row&quot;&gt;
-        &lt;div class&#x3D;&quot;field row flex&quot;&gt;
-            @if(err.field){
-            &lt;div class&#x3D;&quot;title&quot;&gt;{{err.field | translate}}&lt;/div&gt;
-            }
-            &lt;div class&#x3D;&quot;flex&quot; [innerHTML]&#x3D;&quot;err.message|errorMessage&quot;&gt;&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    }
-
-&lt;/div&gt;
-}</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

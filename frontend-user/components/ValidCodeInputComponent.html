@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -1561,22 +1557,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;ng-container&gt;
-    &lt;input type&#x3D;&quot;tel&quot; [(ngModel)]&#x3D;&quot;code[0]&quot; [class.has-use]&#x3D;&quot;!!code[0].length&quot; #code0 [readOnly]&#x3D;&quot;control.disabled&quot; (input)&#x3D;&quot;onInputChange(0, $event, undefined, true)&quot; maxlength&#x3D;&quot;5&quot; (keydown)&#x3D;&quot;onKeydown($event, 0)&quot; (paste)&#x3D;&quot;onPaste($event, 0)&quot; (keypress)&#x3D;&quot;onKeypress($event)&quot; /&gt;
-
-    &lt;input type&#x3D;&quot;tel&quot; [(ngModel)]&#x3D;&quot;code[1]&quot; [class.has-use]&#x3D;&quot;!!code[1].length&quot; #code1 [readOnly]&#x3D;&quot;control.disabled&quot; (input)&#x3D;&quot;onInputChange(1, $event, undefined, true)&quot; maxlength&#x3D;&quot;4&quot; (keydown)&#x3D;&quot;onKeydown($event, 1)&quot; (paste)&#x3D;&quot;onPaste($event, 1)&quot; (keypress)&#x3D;&quot;onKeypress($event)&quot; /&gt;
-    
-    &lt;input type&#x3D;&quot;tel&quot; [(ngModel)]&#x3D;&quot;code[2]&quot; [class.has-use]&#x3D;&quot;!!code[2].length&quot; #code2 [readOnly]&#x3D;&quot;control.disabled&quot; (input)&#x3D;&quot;onInputChange(2, $event, undefined, true)&quot; maxlength&#x3D;&quot;3&quot; (keydown)&#x3D;&quot;onKeydown($event, 2)&quot; (paste)&#x3D;&quot;onPaste($event, 2)&quot; (keypress)&#x3D;&quot;onKeypress($event)&quot; /&gt;
-    
-    &lt;input type&#x3D;&quot;tel&quot; [(ngModel)]&#x3D;&quot;code[3]&quot; [class.has-use]&#x3D;&quot;!!code[3].length&quot; #code3 [readOnly]&#x3D;&quot;control.disabled&quot; (input)&#x3D;&quot;onInputChange(3, $event, undefined, true)&quot; maxlength&#x3D;&quot;2&quot; (keydown)&#x3D;&quot;onKeydown($event, 3)&quot; (paste)&#x3D;&quot;onPaste($event, 3)&quot; (keypress)&#x3D;&quot;onKeypress($event)&quot; /&gt;
-    
-    &lt;input type&#x3D;&quot;tel&quot; [(ngModel)]&#x3D;&quot;code[4]&quot; [class.has-use]&#x3D;&quot;!!code[4].length&quot; #code4 [readOnly]&#x3D;&quot;control.disabled&quot; (input)&#x3D;&quot;onInputChange(4, $event, undefined, true)&quot; maxlength&#x3D;&quot;1&quot; (keydown)&#x3D;&quot;onKeydown($event, 4)&quot; (paste)&#x3D;&quot;onPaste($event, 4)&quot; (keypress)&#x3D;&quot;onKeypress($event)&quot; /&gt;
-
-&lt;/ng-container&gt;
-
-</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -671,47 +667,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;title&quot;&gt;
-  {{ &quot;components.home-menu.title&quot; | translate }}
-&lt;/div&gt;
-&lt;div class&#x3D;&quot;menu row&quot;&gt;
-  &lt;div class&#x3D;&quot;left&quot;&gt;
-    &lt;div class&#x3D;&quot;item item-1 c-pointer&quot; (click)&#x3D;&quot;openTeamMaps()&quot;&gt;
-      &lt;div class&#x3D;&quot;text&quot; [innerHTML]&#x3D;&quot;&#x27;components.home-menu.text-1&#x27; | translate&quot;&gt;&lt;/div&gt;
-      &lt;div class&#x3D;&quot;team-logo&quot;&gt;
-        @for(logo of layerOne; track $index){
-        &lt;lib-team-logo [logo]&#x3D;&quot;logo&quot;&gt;&lt;/lib-team-logo&gt;
-        }
-
-      &lt;/div&gt;
-      &lt;div class&#x3D;&quot;team-logo layer space-one&quot;&gt;
-        @for(logo of layerTwo; track $index){
-        &lt;lib-team-logo [logo]&#x3D;&quot;logo&quot;&gt;&lt;/lib-team-logo&gt;
-        }
-
-      &lt;/div&gt;
-      &lt;div class&#x3D;&quot;team-logo layer space-two&quot;&gt;
-        @for(logo of layerThree; track $index){
-        &lt;lib-team-logo [logo]&#x3D;&quot;logo&quot;&gt;&lt;/lib-team-logo&gt;
-        }
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;item item-2  c-pointer&quot; (click)&#x3D;&quot;startSport()&quot;&gt;
-      &lt;div class&#x3D;&quot;text&quot; [innerHTML]&#x3D;&quot;&#x27;components.home-menu.text-3&#x27; | translate&quot;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class&#x3D;&quot;right&quot;&gt;
-    &lt;div class&#x3D;&quot;item item-1 c-pointer&quot; (click)&#x3D;&quot;openActivity()&quot;&gt;
-      &lt;div class&#x3D;&quot;text&quot; [innerHTML]&#x3D;&quot;&#x27;components.home-menu.text-2&#x27; | translate&quot;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;item item-2 c-pointer&quot; (click)&#x3D;&quot;openRouteMap()&quot;&gt;
-      &lt;div class&#x3D;&quot;routeImage&quot;&gt;&lt;/div&gt;
-      &lt;div class&#x3D;&quot;text&quot; [innerHTML]&#x3D;&quot;&#x27;components.home-menu.text-4&#x27; | translate&quot;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

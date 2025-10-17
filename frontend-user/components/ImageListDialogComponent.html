@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -941,46 +937,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row flex tmup-align-center title&quot; [hidden]&#x3D;&quot;!showHeadAndFooter&quot;&gt;
-    &lt;div class&#x3D;&quot;back-btn-block&quot;&gt;
-        &lt;button mat-icon-button type&#x3D;&quot;button&quot; mat-dialog-close&gt;
-            &lt;mat-icon svgIcon&#x3D;&quot;arrow_back&quot;&gt; &lt;/mat-icon&gt;
-        &lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;info&quot;&gt;
-        &lt;p&gt;{{ current.user | displayName }}&lt;/p&gt;
-        &lt;p&gt;{{ current.time | localDate: &#x27;dateTime&#x27; }}&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;back-btn-block&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class&#x3D;&quot;image row flex tmup-align-center&quot; (click)&#x3D;&quot;showHeadAndFooter &#x3D; !showHeadAndFooter&quot;
-    (swipeleft)&#x3D;&quot;pz.scale&#x3D;&#x3D;1?next():null&quot; (swiperight)&#x3D;&quot;pz.scale&#x3D;&#x3D;1?prev():null&quot; [appBackgroundImage]&#x3D;&quot;current.url&quot;
-    [appBackgroundImageShow]&#x3D;&quot;false&quot; (imageLoaded)&#x3D;&quot;imageLoaded($event, img)&quot;&gt;
-    &lt;pinch-zoom #pz backgroundColor&#x3D;&quot;transparent&quot;&gt;
-        &lt;img [hidden]&#x3D;&quot;loading&quot; draggable&#x3D;&quot;false&quot; #img /&gt;
-        @if(loading){
-        &lt;div class&#x3D;&quot;loading&quot;&gt;
-            &lt;mat-spinner color&#x3D;&quot;teal-2&quot;&gt;&lt;/mat-spinner&gt;
-        &lt;/div&gt;
-        }
-
-    &lt;/pinch-zoom&gt;
-&lt;/div&gt;
-
-&lt;div class&#x3D;&quot;footer&quot; [hidden]&#x3D;&quot;!data.enableShare || !showHeadAndFooter&quot;&gt;
-    @if(shareDisplay){
-    &lt;button mat-button (click)&#x3D;&quot;onShare()&quot;&gt;
-        {{ &#x27;common.share&#x27; | translate}}
-    &lt;/button&gt;
-    }
-
-    &lt;button mat-button (click)&#x3D;&quot;onDownload()&quot;&gt;
-        {{ &#x27;common.download&#x27; | translate}}
-    &lt;/button&gt;
-&lt;/div&gt;</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -1865,125 +1861,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-header [isDialog]&#x3D;&quot;true&quot; [show]&#x3D;&quot;true&quot; [backNotShow]&#x3D;&quot;true&quot;&gt;
-  &lt;ng-container ngProjectAs&#x3D;&quot;[h-left]&quot;&gt;
-    &lt;button mat-icon-button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;back()&quot;&gt;
-      &lt;mat-icon svgIcon&#x3D;&quot;close&quot;&gt;&lt;/mat-icon&gt;
-    &lt;/button&gt;
-  &lt;/ng-container&gt;
-
-  &lt;ng-container ngProjectAs&#x3D;&quot;[h-title]&quot;&gt;
-    @if(this.dataId?.length){
-    &lt;ng-container&gt;{{ &quot;pages.post-form.edit-title&quot; | translate }}&lt;/ng-container&gt;
-    }@else{
-    &lt;ng-container&gt;{{ &quot;pages.post-form.add-title&quot; | translate }}&lt;/ng-container&gt;
-    }
-  &lt;/ng-container&gt;
-&lt;/lib-header&gt;
-@if(formGroup){
-&lt;form class&#x3D;&quot;column flex&quot; [formGroup]&#x3D;&quot;formGroup&quot;&gt;
-  &lt;div class&#x3D;&quot;main flex&quot;&gt;
-    &lt;div class&#x3D;&quot;user-info row tmup-align-center&quot;&gt;
-      @if(user){
-      &lt;lib-user-avatar [avatar]&#x3D;&quot;user.Avatar&quot; [firstName]&#x3D;&quot;user.FirstName&quot; [lastName]&#x3D;&quot;user.LastName&quot;&gt;&lt;/lib-user-avatar&gt;
-      }
-
-
-      &lt;div class&#x3D;&quot;user column&quot;&gt;
-        @if(team){
-        &lt;div class&#x3D;&quot;share-text&quot;
-          [innerHTML]&#x3D;&quot;&#x27;pages.post-form.user-team-share&#x27; | translate:({ name: (user | displayName), teamName: team.Name })&quot;&gt;
-        &lt;/div&gt;
-        }@else{
-        &lt;div class&#x3D;&quot;share-text&quot;
-          [innerHTML]&#x3D;&quot;&#x27;pages.post-form.user-share&#x27; | translate: ({ name: (user | displayName) })&quot;&gt;&lt;/div&gt;
-        }
-        &lt;div class&#x3D;&quot;select-area row tmup-align-center&quot;&gt;
-          @if(!team){
-          &lt;div class&#x3D;&quot;item row tmup-align-center c-pointer&quot; (click)&#x3D;&quot;selectPrivacy()&quot;&gt;
-            &lt;mat-icon class&#x3D;&quot;fs-10 stroke-gray-1&quot; svgIcon&#x3D;&quot;privacy-select&quot;&gt;
-            &lt;/mat-icon&gt;
-            &lt;div class&#x3D;&quot;text&quot;&gt;
-              {{ privacyType[formGroup.get(&quot;PrivacyType&quot;)?.value] | enumTranslate : &quot;PrivacyType&quot; }}
-            &lt;/div&gt;
-            &lt;mat-icon class&#x3D;&quot;fs-10 stroke-gray-1&quot; svgIcon&#x3D;&quot;arrow_down&quot;&gt;
-            &lt;/mat-icon&gt;
-          &lt;/div&gt;
-          }
-
-
-          &lt;div class&#x3D;&quot;item row tmup-align-center c-pointer&quot; (click)&#x3D;&quot;selectLocation()&quot;&gt;
-            &lt;mat-icon class&#x3D;&quot;fs-10 gray-1&quot; svgIcon&#x3D;&quot;location&quot;&gt; &lt;/mat-icon&gt;
-            &lt;div class&#x3D;&quot;text position&quot;&gt;
-              @if(this.formGroup.get(&#x27;PointAddr&#x27;)?.value){
-              {{ this.formGroup.get(&quot;PointAddr&quot;)?.value }}
-              }@else{
-              {{ &quot;pages.post-form.location-title&quot; | translate }}
-              }
-            &lt;/div&gt;
-            &lt;mat-icon class&#x3D;&quot;fs-10 stroke-gray-1&quot; svgIcon&#x3D;&quot;arrow_down&quot;&gt;
-            &lt;/mat-icon&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;lib-tag-user-input #input [placeholder]&#x3D;&quot;&#x27;pages.post-form.body-placeholder&#x27; | translate&quot; [users]&#x3D;&quot;users&quot;
-      [type]&#x3D;&quot;&#x27;post&#x27;&quot; (filterChange)&#x3D;&quot;filterChange($event)&quot;&gt;&lt;/lib-tag-user-input&gt;
-    &lt;div class&#x3D;&quot;attachments row tmup-align-center&quot;&gt;
-      @for(item of attachments; let i &#x3D; $index; track $index){
-      &lt;lib-post-attachment-item [type]&#x3D;&quot;&#x27;edit&#x27;&quot; [item]&#x3D;&quot;item&quot;&gt;
-        &lt;div class&#x3D;&quot;close&quot; (click)&#x3D;&quot;removeAttachment(i)&quot;&gt;
-          &lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;close&quot;&gt;&lt;/mat-icon&gt;
-        &lt;/div&gt;
-      &lt;/lib-post-attachment-item&gt;
-      }
-
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;div class&#x3D;&quot;footer row&quot;&gt;
-    &lt;div class&#x3D;&quot;items flex row&quot;&gt;
-      &lt;lib-file (uploadAfter)&#x3D;&quot;uploadAfter($event)&quot; color&#x3D;&quot;gray&quot; [dirPath]&#x3D;&quot;&#x27;Post&#x27;&quot; [multiple]&#x3D;&quot;true&quot;
-        [multipleClearKeys]&#x3D;&quot;true&quot; type&#x3D;&quot;CustomIcon&quot; [accept]&#x3D;&quot;&#x27;image/*&#x27;&quot;&gt;
-        &lt;mat-icon icon class&#x3D;&quot;fs-20&quot; svgIcon&#x3D;&quot;image&quot;&gt; &lt;/mat-icon&gt;
-      &lt;/lib-file&gt;
-
-      &lt;button mat-mini-fab color&#x3D;&quot;gray&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;selectActivity()&quot;&gt;
-        &lt;mat-icon class&#x3D;&quot;fs-20&quot; svgIcon&#x3D;&quot;calendar&quot;&gt; &lt;/mat-icon&gt;
-      &lt;/button&gt;
-
-      &lt;button mat-mini-fab color&#x3D;&quot;gray&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;selectRecord()&quot;&gt;
-        &lt;mat-icon class&#x3D;&quot;fs-20&quot; svgIcon&#x3D;&quot;history&quot;&gt;&lt;/mat-icon&gt;
-      &lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div&gt;
-      &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;tmup-btn-s&quot; [disabled]&#x3D;&quot;!input.value?.trim()?.length&quot; (click)&#x3D;&quot;save()&quot;&gt;
-        {{ &quot;common.release&quot; | translate }}
-      &lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-  @if(showRecommend &amp;&amp; recommend){
-  &lt;div class&#x3D;&quot;recommed-route&quot;&gt;
-    &lt;div&gt;
-      &lt;div class&#x3D;&quot;header row tmup-align-center&quot;&gt;
-        &lt;div class&#x3D;&quot;title flex&quot;&gt;
-          {{ &quot;pages.post-form.recommend-route-title&quot; | translate }}
-        &lt;/div&gt;
-        &lt;mat-icon class&#x3D;&quot;fs-16 c-pointer&quot; svgIcon&#x3D;&quot;close&quot; (click)&#x3D;&quot;closeRecommend()&quot;&gt;&lt;/mat-icon&gt;
-      &lt;/div&gt;
-      &lt;lib-user-route-record-item [item]&#x3D;&quot;recommend&quot;&gt;
-        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-ss-gray&quot; (click)&#x3D;&quot;addRoute(recommend)&quot;&gt;
-          {{ &quot;common.add-to&quot; | translate }}
-        &lt;/button&gt;
-      &lt;/lib-user-route-record-item&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  }
-&lt;/form&gt;
-}</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

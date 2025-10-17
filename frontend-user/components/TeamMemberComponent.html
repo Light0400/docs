@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1236,46 +1232,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-header [isDialog]&#x3D;&quot;true&quot; [show]&#x3D;&quot;true&quot; (backClick)&#x3D;&quot;back()&quot;&gt;
-  &lt;ng-container ngProjectAs&#x3D;&quot;[h-title]&quot;&gt;{{
-    &quot;pages.team-member.title&quot; | translate
-    }}&lt;/ng-container&gt;
-&lt;/lib-header&gt;
-
-&lt;lib-search-input [placeholder]&#x3D;&quot;&#x27;pages.team-member.search-placeholder&#x27; | translate&quot;
-  (onChange)&#x3D;&quot;search($event)&quot;&gt;&lt;/lib-search-input&gt;
-
-&lt;cdk-virtual-scroll-viewport #scroller class&#x3D;&quot;list&quot; [hidden]&#x3D;&quot;!list?.length&quot; [itemSize]&#x3D;&quot;itemSize&quot; [minBufferPx]&#x3D;&quot;600&quot;
-  [maxBufferPx]&#x3D;&quot;2000&quot;&gt;
-  &lt;ng-container *cdkVirtualFor&#x3D;&quot;let item of list&quot;&gt;
-    &lt;lib-user-item [item]&#x3D;&quot;item.User&quot; [customSubText]&#x3D;&quot;true&quot; [style.height.px]&#x3D;&quot;itemSize&quot;
-      (click)&#x3D;&quot;onManagmentMember(item)&quot;&gt;
-
-      @if(item.TeamTitle?.Title?.length){
-      &lt;span basic-sub&gt;
-        {{ item.TeamTitle!.Title }}
-      &lt;/span&gt;
-      }
-
-      @if(item.IsManager){
-      &lt;div class&#x3D;&quot;position&quot; basic-right&gt;
-        {{ &#x27;common.administrator&#x27; | translate }}
-      &lt;/div&gt;
-      }
-
-    &lt;/lib-user-item&gt;
-  &lt;/ng-container&gt;
-&lt;/cdk-virtual-scroll-viewport&gt;
-
-@if(noData){
-&lt;lib-empty-data [useDefault]&#x3D;&quot;true&quot;&gt;&lt;/lib-empty-data&gt;
-}
-
-@if(loading){
-&lt;lib-loading&gt;&lt;/lib-loading&gt;
-}</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

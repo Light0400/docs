@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -872,44 +868,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-draggable-list [dialogRef]&#x3D;&quot;dialogRef&quot; [defaultListHeight]&#x3D;&quot;defaultHeight&quot; [maxDragHeight]&#x3D;&quot;maxDropHeight&quot;&gt;
-    @if(formGroup){
-    &lt;form [formGroup]&#x3D;&quot;formGroup&quot;&gt;
-        &lt;div class&#x3D;&quot;main&quot;&gt;
-            &lt;div class&#x3D;&quot;group row tmup-align-center&quot;&gt;
-                @for(item of (dayOfWeek | enumOptions); track item.value){
-                &lt;div class&#x3D;&quot;item flex c-pointer&quot; (click)&#x3D;&quot;selectItem(item.value, &#x27;Weeks&#x27;)&quot;
-                    [class.active]&#x3D;&quot;(this.formGroup.get(&#x27;Weeks&#x27;)?.value?.indexOf(item.value) &gt; -1)&quot;&gt;
-                    {{item.text | enumTranslate: &#x27;DayOfWeek&#x27;}}
-                &lt;/div&gt;
-                }
-            &lt;/div&gt;
-
-            &lt;div class&#x3D;&quot;group row tmup-align-center&quot;&gt;
-                @for(item of (timePeriod | enumOptions); track item.value){
-                &lt;div class&#x3D;&quot;item flex c-pointer&quot; (click)&#x3D;&quot;selectItem(item.text, &#x27;Times&#x27;)&quot;
-                    [class.active]&#x3D;&quot;(this.formGroup.get(&#x27;Times&#x27;)?.value?.indexOf(item.text) &gt; -1)&quot;&gt;
-                    {{item.text | enumTranslate: &#x27;TimePeriod&#x27;}}
-                &lt;/div&gt;
-                }
-            &lt;/div&gt;
-
-            &lt;div class&#x3D;&quot;group column tmup-align-center&quot;&gt;
-                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-l&quot; (click)&#x3D;&quot;search()&quot;&gt;
-                    {{ &#x27;common.apply-use&#x27; | translate}}
-                &lt;/button&gt;
-
-                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-l-warn&quot; mat-dialog-close&gt;
-                    {{ &#x27;common.cancel&#x27; | translate}}
-                &lt;/button&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/form&gt;
-    }
-
-&lt;/lib-draggable-list&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

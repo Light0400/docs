@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -624,33 +620,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">@for (user of showUsers; track user.Id; let index &#x3D; $index) {
-&lt;lib-user-avatar type&#x3D;&quot;GroupUser&quot; [avatar]&#x3D;&quot;user.Avatar&quot; [firstName]&#x3D;&quot;user.FirstName&quot; [lastName]&#x3D;&quot;user.LastName&quot;
-  [class]&#x3D;&quot;size&quot; [ngStyle]&#x3D;&quot;index !&#x3D;&#x3D; 0 ? { &#x27;margin-left&#x27;: gapSize + &#x27;px&#x27;, &#x27;z-index&#x27;: index } : {}&quot;&gt;
-&lt;/lib-user-avatar&gt;
-}
-@switch (styleType) {
-@case (&#x27;normal&#x27;) {
-
-@if(otherUserCount &gt; 0){
-&lt;div [ngClass]&#x3D;&quot;[&#x27;circle&#x27;, &#x27;row&#x27;, &#x27;tmup-center&#x27;, size]&quot; [ngStyle]&#x3D;&quot;{ &#x27;margin-left&#x27;: gapSize + &#x27;px&#x27; }&quot;&gt;
-  +{{ otherUserCount }}
-&lt;/div&gt;
-}
-
-}
-@case (&#x27;skip&#x27;) {
-
-@if(otherUserCount &gt; 0){
-&lt;mat-icon svgIcon&#x3D;&quot;more&quot; [ngClass]&#x3D;&quot;[&#x27;skip&#x27;, size]&quot;&gt;
-&lt;/mat-icon&gt;
-}
-
-}
-
-}</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

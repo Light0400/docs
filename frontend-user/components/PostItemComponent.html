@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -1059,119 +1055,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;user row tmup-align-center&quot;&gt;
-    &lt;lib-user-avatar [avatar]&#x3D;&quot;data?.User?.Avatar&quot; [lastName]&#x3D;&quot;data?.User?.LastName&quot;
-        [firstName]&#x3D;&quot;data?.User?.FirstName&quot;&gt;&lt;/lib-user-avatar&gt;
-    &lt;div class&#x3D;&quot;column flex&quot;&gt;
-        @switch (data?.PostType) {
-        @case (type[&#x27;TeamPost&#x27;]) {
-        &lt;div class&#x3D;&quot;name-info row tmup-align-center&quot;
-            [innerHTML]&#x3D;&quot;&#x27;components.post-item.team-post.title&#x27; |translate:({ name:(data?.User | displayName), teamName: (data?.Team?.Name)})&quot;&gt;
-        &lt;/div&gt;
-        }
-        @case (type[&#x27;UserMapRouteComment&#x27;]) {
-        &lt;div class&#x3D;&quot;name-info row tmup-align-center&quot;
-            [innerHTML]&#x3D;&quot;&#x27;components.post-item.comment.title&#x27; |translate:({ name:(data?.User | displayName), routeName: (data?.MapRoute?.Name)})&quot;&gt;
-        &lt;/div&gt;
-        }
-        @default {
-        &lt;div class&#x3D;&quot;name-info row tmup-align-center&quot;&gt;
-            &lt;span class&#x3D;&quot;name&quot;&gt;{{data?.User | displayName }}&lt;/span&gt;
-            @if (data?.User?.MainTeam?.Name?.length) {
-            &lt;span class&#x3D;&quot;main-team-name&quot;&gt;{{data?.User?.MainTeam?.Name }}&lt;/span&gt;
-            }
-        &lt;/div&gt;
-        }
-        }
-
-        &lt;div class&#x3D;&quot;date-location&quot;&gt;
-            &lt;span&gt;{{data?.LastUpdatedTime | postDisplayTime}}&lt;/span&gt;
-            @if(data?.Country?.Name?.length || data?.City?.Name?.length){
-            &lt;span&gt;·&lt;/span&gt;
-            @if(data?.Country?.Name?.length){
-            &lt;span&gt;{{data?.Country?.Name}}&lt;/span&gt;
-            }
-            @if(data?.City?.Name?.length){
-            @if(data?.Country?.Name?.length){
-            &lt;span&gt;,&lt;/span&gt;
-            }
-            &lt;span&gt;{{data?.City?.Name}}&lt;/span&gt;
-            }
-            }
-        &lt;/div&gt;
-    &lt;/div&gt;
-    @if(isApp){
-    &lt;lib-more-menu (click)&#x3D;&quot;openMenu()&quot;&gt;&lt;/lib-more-menu&gt;
-    }
-
-&lt;/div&gt;
-
-&lt;div class&#x3D;&quot;text-body column&quot;&gt;
-    &lt;div class&#x3D;&quot;text&quot; [cotainHtml]&#x3D;&quot;true&quot; [libTextReadMore]&#x3D;&quot;data?.Body&quot;&gt;
-
-    &lt;/div&gt;
-
-    @if(data?.PostType &#x3D;&#x3D; type[&#x27;UserMapRouteComment&#x27;] &amp;&amp; data?.MapRoute?.Tags){
-    &lt;div class&#x3D;&quot;tags row&quot;&gt;
-        &lt;div class&#x3D;&quot;tag-item&quot;&gt;
-            {{data?.MapRoute?.AverageRating?.toFixed(1)}}
-        &lt;/div&gt;
-        @for(tagItem of data?.MapRoute?.Tags; track tagItem.TagId){
-        &lt;div class&#x3D;&quot;tag-item&quot;&gt;
-            {{tagItem.Tag?.Text}}
-        &lt;/div&gt;
-        }
-    &lt;/div&gt;
-    }
-&lt;/div&gt;
-
-@if(data?.Attachments?.length || data?.MapRoute){
-&lt;div class&#x3D;&quot;post-info row tmup-align-center&quot; [class.tmup-mg-bottom-16]&#x3D;&quot;data?.PostType &#x3D;&#x3D; type.UserMapRouteComment&quot;&gt;
-    @for(item of data?.Attachments; track $index){
-    &lt;lib-post-attachment-item class&#x3D;&quot;item&quot; [item]&#x3D;&quot;item&quot;&gt;&lt;/lib-post-attachment-item&gt;
-    }
-    @if(data?.MapRoute){
-    &lt;lib-post-attachment-item class&#x3D;&quot;item&quot;
-        [item]&#x3D;&quot;{ MapRoute: data?.MapRoute, MapRouteId: data?.MapRouteId }&quot;&gt;&lt;/lib-post-attachment-item&gt;
-    }
-&lt;/div&gt;
-}
-
-
-@if(data?.PostType !&#x3D; type.UserMapRouteComment){
-
-&lt;div class&#x3D;&quot;post-evaluate row tmup-align-center&quot;&gt;
-
-    @if(isApp || !production){
-    &lt;div class&#x3D;&quot;icons row tmup-align-center&quot;&gt;
-        &lt;div class&#x3D;&quot;item c-pointer&quot; (click)&#x3D;&quot;clickLike()&quot;&gt;
-            @if(data?.Like){
-            &lt;mat-icon class&#x3D;&quot;fs-20 teal&quot; svgIcon&#x3D;&quot;liked&quot;&gt;
-
-            &lt;/mat-icon&gt;
-            }@else{
-            &lt;mat-icon class&#x3D;&quot;fs-20&quot; svgIcon&#x3D;&quot;like&quot;&gt;
-
-            &lt;/mat-icon&gt;
-            }
-        &lt;/div&gt;
-
-        &lt;div class&#x3D;&quot;item c-pointer&quot; (click)&#x3D;&quot;openComment(true)&quot;&gt;
-            &lt;mat-icon class&#x3D;&quot;fs-20&quot; svgIcon&#x3D;&quot;comment&quot;&gt;
-            &lt;/mat-icon&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    }
-
-    &lt;div class&#x3D;&quot;icon-number c-pointer flex&quot; (click)&#x3D;&quot;openComment()&quot;&gt;
-        {{ &#x27;components.post-item.like-comment-text&#x27; | translate:({ likeCount: (data?.LikeCount ?? 0),
-        commentCount:(data?.CommentCount ?? 0) }) }}
-    &lt;/div&gt;
-&lt;/div&gt;
-
-}</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

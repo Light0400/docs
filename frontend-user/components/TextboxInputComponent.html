@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -2037,42 +2033,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;ng-content select&#x3D;&quot;label&quot;&gt;&lt;/ng-content&gt;
-&lt;div class&#x3D;&quot;input-container row tmup-align-center&quot;&gt;
-    &lt;ng-content select&#x3D;&quot;.prefix&quot;&gt;&lt;/ng-content&gt;
-    &lt;input class&#x3D;&quot;flex&quot; #input [type]&#x3D;&quot;type&quot; [formControl]&#x3D;&quot;control&quot; (click)&#x3D;&quot;onInputClick()&quot;
-        [readonly]&#x3D;&quot;control.disabled || disabled || isColor&quot; [required]&#x3D;&quot;required&quot; [maxlength]&#x3D;&quot;maxlength&quot; [min]&#x3D;&quot;min&quot;
-        [max]&#x3D;&quot;max&quot; [step]&#x3D;&quot;step&quot; (keyup.enter)&#x3D;&quot;onEnter()&quot; [autocomplete]&#x3D;&quot;autocomplete&quot; [placeholder]&#x3D;&quot;placeholder&quot;
-        [cpIgnoredElements]&#x3D;&quot;[input]&quot; [(cpToggle)]&#x3D;&quot;colorPickOpen&quot; [cpSaveClickOutside]&#x3D;&quot;false&quot; [cpOKButton]&#x3D;&quot;true&quot;
-        [cpOKButtonText]&#x3D;&quot;&#x27;common.confirm&#x27;|translate&quot; [cpCancelButton]&#x3D;&quot;true&quot;
-        [cpCancelButtonText]&#x3D;&quot;&#x27;common.cancel&#x27;|translate&quot; [cpOutputFormat]&#x3D;&quot;&#x27;rgba&#x27;&quot; [cpAlphaChannel]&#x3D;&quot;&#x27;always&#x27;&quot;
-        [(colorPicker)]&#x3D;&quot;color&quot; (colorPickerSelect)&#x3D;&quot;onColorPickerSelect($event)&quot; /&gt;
-    &lt;ng-content select&#x3D;&quot;.suffix&quot;&gt;&lt;/ng-content&gt;
-    @if(showVisibility){
-    &lt;ng-container&gt;
-        @if(type &#x3D;&#x3D; &#x27;password&#x27;){
-        &lt;mat-icon class&#x3D;&quot;c-pointer&quot; (click)&#x3D;&quot;type&#x3D;&#x27;text&#x27;&quot;&gt;
-            visibility_off
-        &lt;/mat-icon&gt;
-        }
-        @if(type &#x3D;&#x3D; &#x27;text&#x27;){
-        &lt;mat-icon class&#x3D;&quot;c-pointer&quot; (click)&#x3D;&quot;type&#x3D;&#x27;password&#x27;&quot;&gt;
-            visibility
-        &lt;/mat-icon&gt;
-        }
-    &lt;/ng-container&gt;
-    }
-
-    @if(showCancel &amp;&amp; isColor &amp;&amp; !(control.disabled || disabled) &amp;&amp; control.value?.length){
-    &lt;mat-icon class&#x3D;&quot;c-pointer&quot; (click)&#x3D;&quot;clearColor()&quot;&gt;
-        close
-    &lt;/mat-icon&gt;
-    }
-
-&lt;/div&gt;
-&lt;ng-content select&#x3D;&quot;mat-error&quot;&gt;&lt;/ng-content&gt;</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

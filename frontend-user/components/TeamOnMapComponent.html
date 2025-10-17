@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -2202,64 +2198,6 @@ true: 顯示 輸入框, 讓使用者可以輸入隊伍便利貼</p>
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;maps&quot;&gt;
-  @if(mapService.loaded &amp;&amp; !!mapOption.center &amp;&amp; this.mapOption.option.mapId){
-  &lt;google-map #map [options]&#x3D;&quot;mapOption.option&quot; [zoom]&#x3D;&quot;mapOption.zoom&quot; [center]&#x3D;&quot;mapOption.center&quot;
-    (mapClick)&#x3D;&quot;onMapClick()&quot;&gt;
-
-    @for(marker of markers; track marker.team!.Id){
-    &lt;lib-map-cl-marker [map]&#x3D;&quot;map.googleMap&quot; [team]&#x3D;&quot;marker.team&quot;
-      [markerSize]&#x3D;&quot;((currentTeam?.Id &#x3D;&#x3D; marker.team?.Id) ? &#x27;l&#x27;: &#x27;s&#x27;)&quot; [position]&#x3D;&quot;marker.position&quot;
-      [zIndex]&#x3D;&quot;marker.zIndex&quot; (markerClick)&#x3D;&quot;onMarkerClick(marker.team!, marker.position!, map.googleMap)&quot;&gt;
-    &lt;/lib-map-cl-marker&gt;
-    }
-
-  &lt;/google-map&gt;
-  }
-
-&lt;/div&gt;
-
-@if(screenType &#x3D;&#x3D; &#x27;base&#x27;){
-&lt;div class&#x3D;&quot;column focus-info tmup-shadow-400&quot;&gt;
-  &lt;div class&#x3D;&quot;row&quot;&gt;
-    &lt;lib-team-logo [logo]&#x3D;&quot;currentTeam?.Logo&quot;&gt;&lt;/lib-team-logo&gt;
-    &lt;div class&#x3D;&quot;column info&quot;&gt;
-      &lt;p&gt;{{ currentTeam?.Name }}&lt;/p&gt;
-      &lt;span&gt;{{ currentTeam?.Address }}&lt;/span&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class&#x3D;&quot;row ctrlBtn&quot;&gt;
-    &lt;button mat-button (click)&#x3D;&quot;openMap()&quot;&gt;
-      {{ &quot;pages.team-onmap.open-map&quot; | translate }}
-    &lt;/button&gt;
-    &lt;button mat-button (click)&#x3D;&quot;onExploreTeam()&quot;&gt;
-      {{ &quot;pages.team-onmap.explore-team&quot; | translate }}
-    &lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-}
-
-
-&lt;div class&#x3D;&quot;row add-note c-pointer&quot; [hidden]&#x3D;&quot;!isManager&quot; [class.typeMode]&#x3D;&quot;typeMode&quot;&gt;
-
-  &lt;div class&#x3D;&quot;input-area row flex tmup-center&quot; [hidden]&#x3D;&quot;!typeMode&quot;&gt;
-    &lt;lib-search-input #searchInput [placeholder]&#x3D;&quot;&#x27;pages.team-onmap.add-note&#x27; | translate&quot; [prefixIcon]&#x3D;&quot;undefined&quot;
-      (onChange)&#x3D;&quot;onTypingNote($event)&quot; (onFocus)&#x3D;&quot;inputOnFocus()&quot; (onBlur)&#x3D;&quot;inputOnBlur()&quot;
-      (keydown.enter)&#x3D;&quot;onSendNoteText()&quot; [maxWords]&#x3D;&quot;50&quot;&gt;&lt;/lib-search-input&gt;
-    &lt;mat-icon svgIcon&#x3D;&quot;send&quot; (click)&#x3D;&quot;onSendNoteText()&quot;&gt;&lt;/mat-icon&gt;
-  &lt;/div&gt;
-
-  &lt;span (click)&#x3D;&quot;onNoteTip()&quot; [hidden]&#x3D;&quot;typeMode&quot;&gt;
-    {{ &quot;pages.team-onmap.add-note&quot; | translate }}
-  &lt;/span&gt;
-
-  &lt;div class&#x3D;&quot;row tmup-center&quot; (click)&#x3D;&quot;onChooseTeam()&quot;&gt;
-    &lt;lib-team-logo [logo]&#x3D;&quot;managerSelected?.Logo&quot;&gt;&lt;/lib-team-logo&gt;
-    &lt;mat-icon class&#x3D;&quot;fs-20&quot; svgIcon&#x3D;&quot;arrow_down_3&quot; [hidden]&#x3D;&quot;managerTeams.length &lt; 2&quot;&gt;&lt;/mat-icon&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

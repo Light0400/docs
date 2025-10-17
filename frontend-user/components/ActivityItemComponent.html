@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -954,59 +950,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;date column tmup-center&quot;&gt;
-  &lt;div class&#x3D;&quot;month&quot;&gt;{{ item?.StartTime | localDate:&#x27;month&#x27;}}&lt;/div&gt;
-  &lt;div class&#x3D;&quot;day t-bold&quot;&gt;{{ item?.StartTime | localDate:&#x27;day&#x27;}}&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class&#x3D;&quot;info column flex&quot;&gt;
-  &lt;div class&#x3D;&quot;tags row tmup-align-center&quot;&gt;
-    &lt;div class&#x3D;&quot;tag tmup-tag-item row tmup-center&quot; [class.gray-6]&#x3D;&quot;isBrayBg&quot;&gt;
-      &lt;span&gt;{{difficultyType[item?.DifficultyType!] | enumTranslate: &#x27;ActivityDifficultyType_short&#x27;}}&lt;/span&gt;
-    &lt;/div&gt;
-
-    &lt;div class&#x3D;&quot;tag tmup-tag-item row tmup-center&quot; [class.gray-6]&#x3D;&quot;isBrayBg&quot;&gt;
-      &lt;mat-icon class&#x3D;&quot;user-icon fs-10&quot; svgIcon&#x3D;&quot;user&quot;&gt;&lt;/mat-icon&gt;
-      &lt;span&gt;{{(item?.UserCount ?? 0)}}&lt;/span&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class&#x3D;&quot;title&quot;&gt;{{ item?.Name }}&lt;/div&gt;
-  &lt;div class&#x3D;&quot;sub-title&quot;&gt;{{ address }}&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class&#x3D;&quot;join column&quot;&gt;
-  @if(item?.Followers?.length){
-  &lt;lib-user-avater-group [users]&#x3D;&quot;item?.Followers!&quot;&gt;&lt;/lib-user-avater-group&gt;
-  &lt;div class&#x3D;&quot;follow-count&quot;&gt;
-    {{ &quot;components.activity-item.friendJoin&quot; | translate : ({ number: item?.Followers?.length }) }}
-  &lt;/div&gt;
-  }
-
-  @if(itemStatus &#x3D;&#x3D; activityStatus.Soon){
-  &lt;div class&#x3D;&quot;status starting-soon&quot;&gt;
-    {{ &quot;components.activity-item.status.Soon&quot; | translate }}
-  &lt;/div&gt;
-  }
-
-  @if(isCompleted){
-  &lt;div class&#x3D;&quot;status completed&quot;&gt;
-    {{ &quot;components.activity-item.status.Completed&quot; | translate }}
-  &lt;/div&gt;
-  }
-
-  @if(itemStatus &#x3D;&#x3D; activityStatus.Running){
-  &lt;div class&#x3D;&quot;status starting&quot;&gt;
-    {{ &quot;components.activity-item.status.Running&quot; | translate }}
-  &lt;/div&gt;
-  }
-
-
-
-&lt;/div&gt;
-
-&lt;ng-content&gt;&lt;/ng-content&gt;</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

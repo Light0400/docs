@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1123,39 +1119,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;search-area row&quot; [formGroup]&#x3D;&quot;formGroup&quot;&gt;
-    &lt;div&gt;
-        &lt;lib-select-input formControlName&#x3D;&quot;Year&quot; [type]&#x3D;&quot;&#x27;CircleTag&#x27;&quot; openType&#x3D;&quot;CircleTag&quot;&gt;
-            @for(item of years; track item){
-            &lt;lib-option [value]&#x3D;&quot;item&quot; [selectText]&#x3D;&quot;item.toString()&quot;&gt;
-                {{ item }}
-            &lt;/lib-option&gt;
-            }
-            &lt;mat-icon class&#x3D;&quot;fs-16 common-suffix&quot; svgIcon&#x3D;&quot;arrow_down&quot;&gt;
-            &lt;/mat-icon&gt;
-        &lt;/lib-select-input&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;cdk-virtual-scroll-viewport [minBufferPx]&#x3D;&quot;600&quot; [maxBufferPx]&#x3D;&quot;2000&quot; [hidden]&#x3D;&quot;!list?.length&quot; #scroller
-    [itemSize]&#x3D;&quot;itemSize&quot;&gt;
-    &lt;ng-container *cdkVirtualFor&#x3D;&quot;let item of list&quot;&gt;
-        &lt;lib-user-route-record-item class&#x3D;&quot;c-pointer&quot; [style.height.px]&#x3D;&quot;itemSize&quot; [item]&#x3D;&quot;item&quot;
-            (click)&#x3D;&quot;openRecord(item)&quot;&gt;
-            &lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;arrow_right&quot;&gt;&lt;/mat-icon&gt;
-        &lt;/lib-user-route-record-item&gt;
-    &lt;/ng-container&gt;
-&lt;/cdk-virtual-scroll-viewport&gt;
-
-@if(loading){
-&lt;lib-loading&gt;&lt;/lib-loading&gt;
-}
-
-@if(noData){
-&lt;lib-empty-data [useDefault]&#x3D;&quot;true&quot;&gt;&lt;/lib-empty-data&gt;
-}</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1314,74 +1310,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-header [backNotShow]&#x3D;&quot;true&quot; [show]&#x3D;&quot;true&quot; [isDialog]&#x3D;&quot;true&quot;&gt;
-  &lt;ng-container ngProjectAs&#x3D;&quot;[h-left]&quot;&gt;
-    &lt;button mat-icon-button mat-dialog-close&gt;
-      &lt;mat-icon svgIcon&#x3D;&quot;close&quot;&gt;&lt;/mat-icon&gt;
-    &lt;/button&gt;
-  &lt;/ng-container&gt;
-
-  &lt;ng-container ngProjectAs&#x3D;&quot;[h-title]&quot;&gt;
-    {{ &quot;dialog.chat-select.title&quot; | translate }}
-  &lt;/ng-container&gt;
-
-  &lt;ng-container ngProjectAs&#x3D;&quot;[h-right]&quot;&gt;
-    &lt;button type&#x3D;&quot;button&quot; mat-button class&#x3D;&quot;tmup-btn-text blue&quot; [disabled]&#x3D;&quot;!chooseList.length&quot; (click)&#x3D;&quot;complete()&quot;&gt;
-      {{ &quot;dialog.chat-select.send&quot; | translate }}
-    &lt;/button&gt;
-  &lt;/ng-container&gt;
-&lt;/lib-header&gt;
-
-@if(chooseList.length){
-&lt;section class&#x3D;&quot;shareToUser row tmup-align-center&quot;&gt;
-  @for (item of chooseList; track item.Id; let index &#x3D; $index) {
-  &lt;div class&#x3D;&quot;item column tmup-center&quot;&gt;
-    &lt;lib-chat-avatar [chat]&#x3D;&quot;item&quot; [notShowTop]&#x3D;&quot;true&quot;&gt;&lt;/lib-chat-avatar&gt;
-    &lt;div class&#x3D;&quot;name&quot;&gt;
-      {{item|chatName}}
-    &lt;/div&gt;
-    &lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;clear-2&quot; (click)&#x3D;&quot;deleteItem(item, index)&quot;&gt;&lt;/mat-icon&gt;
-  &lt;/div&gt;
-  }
-&lt;/section&gt;
-}
-
-&lt;lib-search-input #searchInput [hidden]&#x3D;&quot;noData &amp;&amp; loadEnded &amp;&amp; !searchText?.length&quot; 
-  (onChange)&#x3D;&quot;onSearch($event)&quot; [placeholder]&#x3D;&quot;&#x27;dialog.chat-select.search-placeholder&#x27; | translate&quot;&gt;&lt;/lib-search-input&gt;
-
-@if(noData &amp;&amp; !loading &amp;&amp; searchText?.length){
-&lt;lib-empty-data [useDefault]&#x3D;&quot;true&quot;&gt;&lt;/lib-empty-data&gt;
-}
-@if(noData &amp;&amp; !loading &amp;&amp; loadEnded &amp;&amp; !searchText?.length){
-&lt;div class&#x3D;&quot;nodata column&quot;&gt;
-  &lt;div class&#x3D;&quot;title t-bold&quot;&gt;
-    {{&#x27;dialog.chat-select.nodata.title&#x27; | translate}}
-  &lt;/div&gt;
-  &lt;div class&#x3D;&quot;text t-bold-500&quot;&gt;
-    {{&#x27;dialog.chat-select.nodata.text&#x27; | translate}}
-  &lt;/div&gt;
-&lt;/div&gt;
-}
-
-&lt;cdk-virtual-scroll-viewport [minBufferPx]&#x3D;&quot;600&quot; [maxBufferPx]&#x3D;&quot;2000&quot; #scroller [itemSize]&#x3D;&quot;itemSize&quot;&gt;
-  &lt;ng-container *cdkVirtualFor&#x3D;&quot;let item of list; let index &#x3D; index&quot;&gt;
-    &lt;div class&#x3D;&quot;item row tmup-center c-pointer&quot; (click)&#x3D;&quot;onSelect(item)&quot;&gt;
-      &lt;lib-chat-avatar [chat]&#x3D;&quot;item&quot;&gt;&lt;/lib-chat-avatar&gt;
-      &lt;div class&#x3D;&quot;name flex&quot;&gt;
-        {{item|chatName}}
-      &lt;/div&gt;
-      &lt;mat-icon [svgIcon]&#x3D;&quot;item.checked ? &#x27;fill-check&#x27; : &#x27;checkbox&#x27;&quot;&gt;
-      &lt;/mat-icon&gt;
-    &lt;/div&gt;
-  &lt;/ng-container&gt;
-
-  @if(loading){
-  &lt;lib-loading&gt;&lt;/lib-loading&gt;
-  }
-
-&lt;/cdk-virtual-scroll-viewport&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

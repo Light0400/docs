@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1069,49 +1065,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;table&gt;
-  @if(showName){
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;
-        @if(chatRoom?.IsPrivate &amp;&amp; (chatRoom?.User?.IsDelete || chatRoom?.User?.Block)){
-        {{ &#x27;components.chat-item.no-name&#x27; | translate}}
-        }@else{
-        {{ item.User | displayName }}
-        }
-      &lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  }
-
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;
-        @if(isOther){
-        @if(chatRoom?.IsPrivate &amp;&amp; (chatRoom?.User?.IsDelete || chatRoom?.User?.Block)){
-        &lt;lib-user-avatar type&#x3D;&quot;NoUser&quot;&gt;&lt;/lib-user-avatar&gt;
-        }@else{
-        &lt;lib-user-avatar [avatar]&#x3D;&quot;item.User?.Avatar&quot; [firstName]&#x3D;&quot;item.User?.FirstName&quot;
-          [lastName]&#x3D;&quot;item.User?.LastName&quot; (click)&#x3D;&quot;openUser(item)&quot;&gt;&lt;/lib-user-avatar&gt;
-        }
-        }
-
-      &lt;/th&gt;
-      &lt;td&gt;
-        &lt;section&gt;
-          @if(isSelf &amp;&amp; isFail){
-          &lt;mat-icon class&#x3D;&quot;resend&quot; svgIcon&#x3D;&quot;chat-resend&quot; (click)&#x3D;&quot;onResend()&quot;&gt;&lt;/mat-icon&gt;
-          }
-          &lt;lib-chat-room-item-template [item]&#x3D;&quot;item&quot; [searchValue]&#x3D;&quot;searchValue&quot;
-            (moveToReplyEvent)&#x3D;&quot;onReplyClick($event)&quot; (replyEvent)&#x3D;&quot;onReply()&quot; /&gt;
-        &lt;/section&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

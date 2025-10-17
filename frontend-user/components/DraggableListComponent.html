@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1395,22 +1391,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;ng-content select&#x3D;&quot;[headerTop]&quot;&gt;&lt;/ng-content&gt;
-&lt;div&gt;
-    &lt;div class&#x3D;&quot;header column c-pointer&quot; [hidden]&#x3D;&quot;hideDragArea&quot;  (cdkDragStarted)&#x3D;&quot;onDragStarted()&quot;
-        (cdkDragMoved)&#x3D;&quot;onDragMoved($event)&quot; (cdkDragEnded)&#x3D;&quot;onDragEnd($event)&quot; cdkDrag cdkDragLockAxis&#x3D;&quot;y&quot;
-        cdkDragHandle&gt;
-        &lt;div class&#x3D;&quot;drop-header row tmup-center&quot;&gt;
-            &lt;div class&#x3D;&quot;drop-move&quot;&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;ng-content select&#x3D;&quot;[header]&quot;&gt;&lt;/ng-content&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;main column&quot; [class.nodrop]&#x3D;&quot;dropend&quot; [style.height.px]&#x3D;&quot;(listHeight ?? 0)&quot;&gt;
-        &lt;ng-content&gt;&lt;/ng-content&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

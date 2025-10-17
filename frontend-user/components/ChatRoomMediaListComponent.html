@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1700,70 +1696,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-header [isDialog]&#x3D;&quot;true&quot; [show]&#x3D;&quot;true&quot; (backClick)&#x3D;&quot;back()&quot;&gt;
-  &lt;ng-container ngProjectAs&#x3D;&quot;[h-title]&quot;&gt;
-    {{ &quot;dialog.chat.media-list.title&quot; | translate }}
-  &lt;/ng-container&gt;
-
-  &lt;ng-container ngProjectAs&#x3D;&quot;[h-right]&quot;&gt;
-    @if(list?.length){
-    &lt;ng-container&gt;
-      &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-text&quot; mat-button (click)&#x3D;&quot;onScreenModeChange()&quot;&gt;
-        {{
-        (screenMode &#x3D;&#x3D;&#x3D; &quot;none&quot;
-        ? &quot;dialog.chat.media-list.select&quot;
-        : &quot;dialog.chat.media-list.cancel&quot;
-        ) | translate
-        }}
-      &lt;/button&gt;
-    &lt;/ng-container&gt;
-    }
-
-  &lt;/ng-container&gt;
-&lt;/lib-header&gt;
-
-&lt;div class&#x3D;&quot;list flex&quot; #scroller&gt;
-  @for (item of list; let groupIndex &#x3D; $index; track groupIndex) {
-  &lt;div class&#x3D;&quot;group column&quot;&gt;
-    &lt;div class&#x3D;&quot;date&quot;&gt;
-      {{ item.date }}
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;files row&quot;&gt;
-      @for (img of item.list; let index &#x3D; $index; track index) {
-      &lt;div class&#x3D;&quot;file&quot; [appBackgroundImage]&#x3D;&quot;img.url&quot; (click)&#x3D;&quot;onChoose(img, groupIndex, index)&quot;&gt;
-        &lt;div [hidden]&#x3D;&quot;screenMode &#x3D;&#x3D;&#x3D; &#x27;none&#x27;&quot; class&#x3D;&quot;circle&quot; [class.choose]&#x3D;&quot;img.selected&quot;&gt;
-          {{ img.selected ? (selectItems.indexOf(img) + 1): &#x27;&#x27; }}
-        &lt;/div&gt;
-      &lt;/div&gt;
-      }
-    &lt;/div&gt;
-  &lt;/div&gt;
-  }@empty {
-  @if(noData){
-  &lt;lib-empty-data&gt;
-    &lt;span&gt;
-      {{ &#x27;dialog.chat.media-list.nodata&#x27; |translate}}
-    &lt;/span&gt;
-  &lt;/lib-empty-data&gt;
-  }
-  }
-&lt;/div&gt;
-
-@if(hasChoose){
-&lt;div class&#x3D;&quot;row tmup-center action&quot;&gt;
-  @if(shareDisplay){
-  &lt;button class&#x3D;&quot;tmup-btn-m-gray-7 flex&quot; (click)&#x3D;&quot;onShare()&quot;&gt;
-    {{ &quot;common.share&quot; | translate }}
-  &lt;/button&gt;
-  }
-
-  &lt;button class&#x3D;&quot;tmup-btn-m-gray-7 flex&quot; (click)&#x3D;&quot;onDownload()&quot;&gt;
-    {{ &quot;common.download&quot; | translate }}
-  &lt;/button&gt;
-&lt;/div&gt;
-}</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -1187,64 +1183,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;left row tmup-align-center&quot;&gt;
-    @if((isDialog || hs.canBack) &amp;&amp; !backNotShow){
-
-    @if(backType &#x3D;&#x3D;&#x3D;&#x27;Big&#x27;){
-    &lt;button class&#x3D;&quot;tmup-btn-icon fs-20&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;back()&quot;&gt;
-        &lt;mat-icon class&#x3D;&quot;fs-20&quot; svgIcon&#x3D;&quot;arrow_back&quot;&gt;&lt;/mat-icon&gt;
-    &lt;/button&gt;
-    }
-
-    @if(backType &#x3D;&#x3D;&#x3D;&#x27;Small&#x27;){
-    &lt;button class&#x3D;&quot;tmup-btn-icon&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;back()&quot;&gt;
-        &lt;mat-icon svgIcon&#x3D;&quot;back&quot;&gt;&lt;/mat-icon&gt;
-    &lt;/button&gt;
-    }
-
-    }
-
-    &lt;div class&#x3D;&quot;logo row&quot; [hidden]&#x3D;&quot;!showLogo&quot;&gt;
-        @if(isDark){
-        &lt;img src&#x3D;&quot;./assets/logo.svg&quot; /&gt;
-        }@else{
-        &lt;img src&#x3D;&quot;./assets/logo-black.svg&quot; /&gt;
-        }
-    &lt;/div&gt;
-    &lt;ng-content select&#x3D;&quot;[h-left]&quot;&gt;&lt;/ng-content&gt;
-&lt;/div&gt;
-
-&lt;div class&#x3D;&quot;title row tmup-center&quot;&gt;
-    &lt;ng-content select&#x3D;&quot;[h-title]&quot;&gt;&lt;/ng-content&gt;
-    @if(!isDialog){
-    &lt;ng-container *ngTemplateOutlet&#x3D;&quot;titleTemplate&quot;&gt;
-
-    &lt;/ng-container&gt;
-    }
-&lt;/div&gt;
-
-&lt;div class&#x3D;&quot;right row tmup-align-center&quot;&gt;
-    &lt;ng-content select&#x3D;&quot;[h-right]&quot;&gt;&lt;/ng-content&gt;
-
-    @if(showDefaultRight){
-    &lt;div class&#x3D;&quot;default-right&quot;&gt;
-        &lt;button class&#x3D;&quot;tmup-btn-icon&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;openSearch()&quot;&gt;
-            &lt;mat-icon svgIcon&#x3D;&quot;user-round-search&quot;&gt;&lt;/mat-icon&gt;
-        &lt;/button&gt;
-
-        &lt;button class&#x3D;&quot;tmup-btn-icon chat&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;openMessage()&quot;&gt;
-            @if(existNotReadNotify){
-            &lt;mat-icon svgIcon&#x3D;&quot;bell-dot&quot;&gt;&lt;/mat-icon&gt;
-            }@else{
-            &lt;mat-icon svgIcon&#x3D;&quot;bell&quot;&gt;&lt;/mat-icon&gt;
-            }
-        &lt;/button&gt;
-    &lt;/div&gt;
-    }
-
-&lt;/div&gt;</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

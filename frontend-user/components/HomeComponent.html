@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -1125,34 +1121,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-header [isDialog]&#x3D;&quot;true&quot; [show]&#x3D;&quot;true&quot; [showLogo]&#x3D;&quot;true&quot; [backNotShow]&#x3D;&quot;true&quot;
-  [showDefaultRight]&#x3D;&quot;true&quot;&gt;&lt;/lib-header&gt;
-
-
-&lt;ngx-pull-to-refresh [isHorizontal]&#x3D;&quot;false&quot; [isEnable]&#x3D;&quot;true&quot; [spinnerColor]&#x3D;&quot;loadingService.color&quot; [spinnerSize]&#x3D;&quot;30&quot;
-  (refresh)&#x3D;&quot;refreshEvent($event)&quot; (loadMore)&#x3D;&quot;loadMore()&quot; [targetElement]&#x3D;&quot;targetElement&quot;&gt;
-  @if(activityInvites?.length){
-  &lt;lib-home-activity-invite [list]&#x3D;&quot;activityInvites&quot;&gt;&lt;/lib-home-activity-invite&gt;
-  }
-
-  &lt;lib-home-menu [exploreLogos]&#x3D;&quot;exploreLogos&quot;&gt;&lt;/lib-home-menu&gt;
-
-  @if(onlineSports?.length){
-  &lt;lib-sporting-share-list [list]&#x3D;&quot;onlineSports&quot;&gt;&lt;/lib-sporting-share-list&gt;
-  }
-  @for (item of postList; track item.Id; let index &#x3D; $index) {
-  &lt;lib-post-item [data]&#x3D;&quot;item&quot;&gt; &lt;/lib-post-item&gt;
-
-    @if(recommendUserList?.length &amp;&amp; index &#x3D;&#x3D; 4) {
-      &lt;lib-recommend-user-list [list]&#x3D;&quot;recommendUserList&quot;&gt;&lt;/lib-recommend-user-list&gt;
-    }
-  }
-  @if(recommendUserList?.length &amp;&amp; (!postList?.length || postList!.length &lt; 5)){
-    &lt;lib-recommend-user-list [list]&#x3D;&quot;recommendUserList&quot;&gt;&lt;/lib-recommend-user-list&gt;
-  }
-&lt;/ngx-pull-to-refresh&gt;</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

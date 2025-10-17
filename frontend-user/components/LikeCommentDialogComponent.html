@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -719,28 +715,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-draggable-list [dialogRef]&#x3D;&quot;dialogRef&quot;  [defaultListHeight]&#x3D;&quot;defaultHeight&quot; [maxDragHeight]&#x3D;&quot;maxDropHeight&quot;&gt;
-    &lt;mat-tab-group preserveContent mat-stretch-tabs&#x3D;&quot;false&quot; fitInkBarToContent  mat-align-tabs&#x3D;&quot;start&quot; [animationDuration]&#x3D;&quot;0&quot;&gt;
-        &lt;mat-tab labelClass&#x3D;&quot;tab-header&quot;&gt;
-            &lt;ng-template mat-tab-label&gt;
-                {{&#x27;dialog.like-comment.tabComment.title&#x27; | translate:({number: totalCommentCount})}}
-            &lt;/ng-template&gt;
-            &lt;ng-template matTabContent&gt;
-                &lt;lib-post-comment-list [dataId]&#x3D;&quot;data.dataId&quot;&gt;&lt;/lib-post-comment-list&gt;
-            &lt;/ng-template&gt;
-        &lt;/mat-tab&gt;
-        &lt;mat-tab labelClass&#x3D;&quot;tab-header&quot;&gt;
-            &lt;ng-template mat-tab-label&gt;
-                {{&#x27;dialog.like-comment.tabLike.title&#x27; | translate:({number: totalLikeCount})}}
-            &lt;/ng-template&gt;
-            &lt;ng-template matTabContent&gt;
-                &lt;lib-post-like-list [dataId]&#x3D;&quot;data.dataId&quot;&gt;&lt;/lib-post-like-list&gt;
-            &lt;/ng-template&gt;
-        &lt;/mat-tab&gt;
-    &lt;/mat-tab-group&gt;
-&lt;/lib-draggable-list&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

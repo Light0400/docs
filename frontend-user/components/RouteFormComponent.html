@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -1393,82 +1389,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-header [isDialog]&#x3D;&quot;true&quot; [show]&#x3D;&quot;true&quot; [backNotShow]&#x3D;&quot;true&quot;&gt;
-    &lt;ng-container ngProjectAs&#x3D;&quot;[h-left]&quot;&gt;
-        &lt;button mat-icon-button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;back()&quot;&gt;
-            &lt;mat-icon svgIcon&#x3D;&quot;close&quot;&gt; &lt;/mat-icon&gt;
-        &lt;/button&gt;
-    &lt;/ng-container&gt;
-    &lt;ng-container ngProjectAs&#x3D;&quot;[h-title]&quot;&gt;
-        {{ &quot;pages.route-form.&quot;+ (state &#x3D;&#x3D; &quot;edit&quot; ? &quot;edit-title&quot;: &quot;title&quot;) | translate }}
-    &lt;/ng-container&gt;
-&lt;/lib-header&gt;
-@if(formGroup){
-&lt;form class&#x3D;&quot;column&quot; [formGroup]&#x3D;&quot;formGroup&quot;&gt;
-    &lt;div class&#x3D;&quot;column item&quot;&gt;
-        &lt;span&gt;{{ &quot;pages.route-form.Name&quot; | translate }}&lt;/span&gt;
-        &lt;lib-textbox-input [placeholder]&#x3D;&quot;&#x27;pages.route-form.route-name-tip&#x27; | translate&quot;
-            formControlName&#x3D;&quot;Name&quot;&gt;&lt;/lib-textbox-input&gt;
-    &lt;/div&gt;
-    @if(mapRoute){
-    &lt;div class&#x3D;&quot;column item&quot;&gt;
-        &lt;span&gt;{{ &quot;pages.route-form.route&quot; | translate }}&lt;/span&gt;
-        &lt;div class&#x3D;&quot;column google-map-container&quot;&gt;
-            &lt;div class&#x3D;&quot;view-image c-pointer&quot; [isApiImage]&#x3D;&quot;true&quot; [appBackgroundImage]&#x3D;&quot;mapRoute.Image&quot;
-                (click)&#x3D;&quot;openMap()&quot;&gt;
-
-            &lt;/div&gt;
-            &lt;div class&#x3D;&quot;row tmup-center&quot;&gt;
-                &lt;div class&#x3D;&quot;column info&quot;&gt;
-                    &lt;span [class.noData]&#x3D;&quot;!formGroup.get(&#x27;Name&#x27;)?.value&quot;&gt;
-                        {{ formGroup.get(&quot;Name&quot;)?.value || (&quot;pages.route-form.route-name-tip&quot; | translate)}}
-                    &lt;/span&gt;
-                    &lt;span&gt;
-                        {{ subText }}
-                    &lt;/span&gt;
-                &lt;/div&gt;
-                &lt;div&gt;
-                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-ss-warn-bg&quot; (click)&#x3D;&quot;onRemoveRoute()&quot;&gt;
-                        {{ &quot;common.remove&quot; | translate }}
-                    &lt;/button&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    } @else {
-    &lt;div class&#x3D;&quot;column item&quot;&gt;
-        &lt;span&gt;{{ &quot;pages.route-form.create-method&quot; | translate }}&lt;/span&gt;
-        &lt;div class&#x3D;&quot;row forkroad&quot;&gt;
-            &lt;div class&#x3D;&quot;column road&quot; (click)&#x3D;&quot;openMap()&quot;&gt;
-                &lt;mat-icon svgIcon&#x3D;&quot;edit&quot; class&#x3D;&quot;fs-20&quot;&gt;&lt;/mat-icon&gt;
-                &lt;span&gt;{{ &quot;pages.route-form.new-route&quot; | translate }}&lt;/span&gt;
-            &lt;/div&gt;
-            &lt;input type&#x3D;&quot;file&quot; #uploadRoute accept&#x3D;&quot;.gpx,.fit&quot; [hidden]&#x3D;&quot;true&quot; (change)&#x3D;&quot;uploadGpx($event)&quot; /&gt;
-            &lt;div class&#x3D;&quot;column road&quot; (click)&#x3D;&quot;uploadRoute.value&#x3D;&#x27;&#x27;;uploadRoute.click()&quot;&gt;
-                &lt;mat-icon svgIcon&#x3D;&quot;upload&quot; class&#x3D;&quot;fs-20&quot;&gt;&lt;/mat-icon&gt;
-                &lt;span&gt;{{ &quot;pages.route-form.upload&quot; | translate }}&lt;/span&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    }
-&lt;/form&gt;
-}
-
-@if(mapRoute){
-&lt;div class&#x3D;&quot;column footer&quot;&gt;
-    &lt;ul&gt;
-        &lt;li&gt;{{ &quot;pages.route-form.auto-collect&quot; | translate }}&lt;/li&gt;
-        &lt;li&gt;{{ &quot;pages.route-form.public-explore&quot; | translate }}&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;button mat-button class&#x3D;&quot;tmup-btn-l&quot; [disabled]&#x3D;&quot;!formGroup?.get(&#x27;Name&#x27;)?.value?.length || !mapRoute.Line?.length&quot;
-        (click)&#x3D;&quot;onSubmit()&quot;&gt;
-        {{ &quot;common.&quot;+ (state &#x3D;&#x3D; &quot;edit&quot;?&quot;save&quot;:&quot;create&quot;) | translate }}
-    &lt;/button&gt;
-&lt;/div&gt;
-}</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

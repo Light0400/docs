@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -951,39 +947,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">@if(data?.teamUser){
-&lt;ng-container&gt;
-  &lt;lib-user-avatar [avatar]&#x3D;&quot;data?.teamUser?.User?.Avatar&quot; [firstName]&#x3D;&quot;data?.teamUser?.User?.FirstName&quot;
-    [lastName]&#x3D;&quot;data?.teamUser?.User?.LastName&quot;&gt;
-  &lt;/lib-user-avatar&gt;
-  &lt;div class&#x3D;&quot;column tmup-align-center user-info&quot;&gt;
-    &lt;span&gt;{{ data?.teamUser?.User | displayName }}&lt;/span&gt;
-    &lt;span&gt;
-      {{ subText }}
-    &lt;/span&gt;
-    &lt;span&gt;
-      {{ &#x27;pages.team.from-joinTime&#x27; | translate: ({ date: (data?.teamUser?.JoinTime | localDate) })}}
-    &lt;/span&gt;
-  &lt;/div&gt;
-
-  @if(!isSelf &amp;&amp; isManager){
-  &lt;button class&#x3D;&quot;tmup-btn-l&quot; (click)&#x3D;&quot;openAccessDialog()&quot;&gt;
-    {{ &quot;dialog.member-ctrl.set-permissions&quot; | translate }}
-  &lt;/button&gt;
-
-  &lt;button class&#x3D;&quot;tmup-btn-l-gray-7&quot; (click)&#x3D;&quot;openAliasDialog()&quot;&gt;
-    {{ &quot;dialog.member-ctrl.change-alias&quot; | translate }}
-  &lt;/button&gt;
-
-  &lt;button class&#x3D;&quot;tmup-btn-l-warn&quot; (click)&#x3D;&quot;openRemoveDialog()&quot;&gt;
-    {{ &quot;dialog.member-ctrl.remove-member&quot; | translate }}
-  &lt;/button&gt;
-  }
-
-&lt;/ng-container&gt;
-}</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

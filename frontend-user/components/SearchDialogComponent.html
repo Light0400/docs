@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -1229,55 +1225,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-header [isDialog]&#x3D;&quot;true&quot; [show]&#x3D;&quot;true&quot; [backNotShow]&#x3D;&quot;true&quot;&gt;
-  &lt;ng-container ngProjectAs&#x3D;&quot;[h-title]&quot;&gt;
-    &lt;div class&#x3D;&quot;search-bar-tool&quot;&gt;
-      &lt;div class&#x3D;&quot;back-btn-block&quot;&gt;
-        &lt;button mat-icon-button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;back()&quot;&gt;
-          &lt;mat-icon svgIcon&#x3D;&quot;arrow_back&quot;&gt; &lt;/mat-icon&gt;
-        &lt;/button&gt;
-      &lt;/div&gt;
-      &lt;div class&#x3D;&quot;search-form-block&quot;&gt;
-        &lt;label htmlFor&#x3D;&quot;label-serach-input&quot;&gt;
-          &lt;mat-icon class&#x3D;&quot;serach-icon&quot; svgIcon&#x3D;&quot;search&quot;&gt;&lt;/mat-icon&gt;
-          &lt;input id&#x3D;&quot;label-serach-input&quot; #searchInput type&#x3D;&quot;text&quot;
-            [placeholder]&#x3D;&quot;&#x27;dialog.search.keyword-placeholder&#x27; | translate&quot; (focus)&#x3D;&quot;onFocus()&quot;
-            [formControl]&#x3D;&quot;searchCtrl&quot; (keyup.enter)&#x3D;&quot;searchInput.blur(); search(searchInput.value)&quot; /&gt;
-          &lt;div [hidden]&#x3D;&quot;!searchCtrl.value?.length&quot; (click)&#x3D;&quot;clearSearch()&quot;&gt;
-            &lt;mat-icon svgIcon&#x3D;&quot;clear&quot;&gt;&lt;/mat-icon&gt;
-          &lt;/div&gt;
-        &lt;/label&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/ng-container&gt;
-&lt;/lib-header&gt;
-
-&lt;div class&#x3D;&quot;search-context column&quot; (click)&#x3D;&quot;onBlur()&quot;&gt;
-  @if(searchType &#x3D;&#x3D; &#x27;recommend&#x27;){
-  &lt;ng-container&gt;
-    @if(promoteInfo.isLoading){
-    &lt;lib-loading&gt;&lt;/lib-loading&gt;
-    }@else if(promoteInfo.users?.length){
-    &lt;lib-recommend-user-list [dirction]&#x3D;&quot;&#x27;vertical&#x27;&quot; [list]&#x3D;&quot;promoteInfo.users&quot;&gt;&lt;/lib-recommend-user-list&gt;
-    }
-  &lt;/ng-container&gt;
-  }
-
-  &lt;lib-search-record [hidden]&#x3D;&quot;searchType !&#x3D; &#x27;search-record&#x27;&quot; #record [sessionKey]&#x3D;&quot;&#x27;search-search-record&#x27;&quot;
-    (itemClick)&#x3D;&quot;search($event)&quot;&gt;&lt;/lib-search-record&gt;
-
-  @if(searchType &#x3D;&#x3D; &#x27;search-recommend&#x27;){
-  &lt;lib-find-result class&#x3D;&quot;flex&quot; [currentSearchText]&#x3D;&quot;searchInput.value&quot;
-    (confirmSearch)&#x3D;&quot;search(searchInput.value)&quot; [isLoading]&#x3D;&quot;findResult.isLoading&quot; [userList]&#x3D;&quot;findResult.users&quot;
-    (loadMore)&#x3D;&quot;instantSearchLoadMore()&quot;&gt;&lt;/lib-find-result&gt;
-  }
-
-  @if(searchType &#x3D;&#x3D; &#x27;search-result&#x27;){
-  &lt;lib-search-users [keyword]&#x3D;&quot;searchCtrl.value&quot;&gt;&lt;/lib-search-users&gt;
-  }
-&lt;/div&gt;</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

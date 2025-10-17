@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1048,79 +1044,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;map&quot;&gt;
-    @if(showReport){
-    &lt;lib-route-report-info [mapRoute]&#x3D;&quot;mapRoute&quot;&gt;&lt;/lib-route-report-info&gt;
-    }
-
-    @if(mapLoaded &amp;&amp; this.mapSetting.option.mapId){
-    &lt;google-map #map [options]&#x3D;&quot;mapSetting.option!&quot;&gt;
-
-        @if(mapSetting.startPoint){
-        &lt;lib-map-cl-marker [map]&#x3D;&quot;map.googleMap&quot; [iconType]&#x3D;&quot;&#x27;start&#x27;&quot; [position]&#x3D;&quot;mapSetting.startPoint&quot;&gt;
-        &lt;/lib-map-cl-marker&gt;
-        }
-
-        @if(mapSetting.endPoint){
-        &lt;lib-map-cl-marker [map]&#x3D;&quot;map.googleMap&quot; [position]&#x3D;&quot;mapSetting.endPoint&quot; [iconType]&#x3D;&quot;&#x27;end&#x27;&quot;&gt;
-        &lt;/lib-map-cl-marker&gt;
-        }
-
-        @if(mapSetting.chartPoint){
-        &lt;lib-map-cl-marker [map]&#x3D;&quot;map.googleMap&quot; [position]&#x3D;&quot;mapSetting.chartPoint&quot; [iconType]&#x3D;&quot;&#x27;circle&#x27;&quot;
-            [zIndex]&#x3D;&quot;1000&quot;&gt;
-        &lt;/lib-map-cl-marker&gt;
-        }
-
-        @if(mapSetting.polyline){
-        &lt;map-polyline [options]&#x3D;&quot;mapSetting.polyline&quot;&gt;&lt;/map-polyline&gt;
-        }
-
-    &lt;/google-map&gt;
-    }
-&lt;/div&gt;
-
-&lt;lib-route-elevation-map [point]&#x3D;&quot;mapSetting.chartPoint&quot; [chartDataSource]&#x3D;&quot;chartDataSource&quot;
-    (onPointChange)&#x3D;&quot;onChartPointChange($event)&quot;&gt;&lt;/lib-route-elevation-map&gt;
-
-&lt;div class&#x3D;&quot;info&quot;&gt;
-    &lt;div&gt;
-        &lt;p&gt;{{ &quot;common.total-distance&quot; | translate }}&lt;/p&gt;
-        &lt;p&gt;{{ mapRoute?.Distance | metricConversion:&#x27;km&#x27; }}&lt;/p&gt;
-        &lt;p&gt;{{&#x27;km&#x27; | metricUnitConversion}}&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div&gt;
-        &lt;p&gt;{{ &quot;common.elevation-gain-amount&quot; | translate }}&lt;/p&gt;
-        &lt;p&gt;{{ mapRoute?.ClimbHeight | metricConversion:&#x27;m&#x27; }}&lt;/p&gt;
-        &lt;p&gt;{{&#x27;m&#x27; | metricUnitConversion}}&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div&gt;
-        &lt;p&gt;{{ &quot;common.average-climbing-slope&quot; | translate }}&lt;/p&gt;
-        &lt;p&gt;{{ mapRoute?.Slope?.toFixed(0) }}&lt;/p&gt;
-        &lt;p&gt;%&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div&gt;
-        &lt;p&gt;{{ &quot;common.max-elevation&quot; | translate }}&lt;/p&gt;
-        &lt;p&gt;{{ mapRoute?.HighestAltitude | metricConversion:&#x27;m&#x27; }}&lt;/p&gt;
-        &lt;p&gt;{{&#x27;m&#x27; | metricUnitConversion}}&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div&gt;
-        &lt;p&gt;{{ &quot;common.estimated-duration&quot; | translate }}&lt;/p&gt;
-        &lt;p&gt;{{ mapRoute?.DistanceTime | secondsHours }}&lt;/p&gt;
-        &lt;p&gt;{{&#x27;common.hours&#x27; | translate}}&lt;/p&gt;
-    &lt;/div&gt;
-    
-    @if(mapRoute?.RoadSurface){
-    &lt;div class&#x3D;&quot;c-pointer&quot; (click)&#x3D;&quot;openRoad()&quot;&gt;
-        &lt;p&gt;{{ &quot;common.terrain&quot; | translate }}&lt;/p&gt;
-        &lt;p&gt;{{ mapRoute?.RoadSurface?.Text }}&lt;/p&gt;
-        &lt;p&gt;&lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;info&quot;&gt;&lt;/mat-icon&gt;&lt;/p&gt;
-    &lt;/div&gt;
-    }
-
-&lt;/div&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

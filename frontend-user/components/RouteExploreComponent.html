@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1321,74 +1317,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;scroll-main&quot; #scroller&gt;
-
-    @if(recentList?.length){
-    &lt;div class&#x3D;&quot;group&quot;&gt;
-        &lt;div class&#x3D;&quot;title&quot;&gt;
-            {{ &#x27;dialog.route-explore.recent&#x27; |translate}}
-        &lt;/div&gt;
-
-        &lt;div class&#x3D;&quot;list&quot;&gt;
-            @for (item of recentList; track $index) {
-            &lt;lib-route-item [item]&#x3D;&quot;item&quot; (click)&#x3D;&quot;selectItem(item)&quot;&gt;
-                &lt;div item-right&gt;
-                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-ss-gray&quot;&gt;
-                        {{&quot;common.choose&quot; | translate}}
-                    &lt;/button&gt;
-                &lt;/div&gt;
-            &lt;/lib-route-item&gt;
-            }
-        &lt;/div&gt;
-    &lt;/div&gt;
-    }
-
-
-    &lt;div class&#x3D;&quot;group&quot; [hidden]&#x3D;&quot;point &amp;&amp; !list?.length&quot;&gt;
-        &lt;div class&#x3D;&quot;title&quot;&gt;
-            {{ &#x27;dialog.route-explore.popular-route&#x27; |translate}}
-        &lt;/div&gt;
-
-        @if(gpsPermiss){
-        &lt;div class&#x3D;&quot;list&quot;&gt;
-            @for (item of list; track $index) {
-            &lt;lib-route-item [item]&#x3D;&quot;item&quot; (click)&#x3D;&quot;selectItem(item)&quot;&gt;
-                &lt;div item-right&gt;
-                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-ss-gray&quot;&gt;
-                        {{&quot;common.choose&quot; | translate}}
-                    &lt;/button&gt;
-                &lt;/div&gt;
-            &lt;/lib-route-item&gt;
-            }
-        &lt;/div&gt;
-        }@else{
-
-        &lt;div class&#x3D;&quot;permission&quot;&gt;
-            &lt;div class&#x3D;&quot;message&quot;&gt;
-                {{ &#x27;dialog.route-explore.location-permission&#x27; | translate }}
-            &lt;/div&gt;
-            @if(isApp){
-            &lt;div class&#x3D;&quot;row&quot;&gt;
-                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-l&quot; libOpenSetting&gt;
-                    {{ &#x27;pages.activity.loc-permission-btn&#x27; | translate }}
-                &lt;/button&gt;
-            &lt;/div&gt;
-            }
-
-        &lt;/div&gt;
-        }
-    &lt;/div&gt;
-
-    @if(noData){
-    &lt;lib-empty-data [useDefault]&#x3D;&quot;true&quot;&gt;&lt;/lib-empty-data&gt;
-    }
-
-    @if(loading){
-    &lt;lib-loading&gt;&lt;/lib-loading&gt;
-    }
-&lt;/div&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

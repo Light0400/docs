@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -898,82 +894,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;item row c-pointer&quot;&gt;
-    &lt;div class&#x3D;&quot;icon row&quot;&gt;
-        &lt;mat-icon svgIcon&#x3D;&quot;start&quot;&gt;&lt;/mat-icon&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;column tmup-gap-4 flex&quot;&gt;
-        &lt;div class&#x3D;&quot;tmup-fs-14 t-bold-500&quot;&gt;
-            {{ &#x27;pages.stopwatch.act-user-open-share.title&#x27; | translate}}
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;tmup-fs-12 tmup-fc-warn&quot;&gt;
-            {{ &#x27;pages.stopwatch.act-user-open-share.message&#x27; | translate}}
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;icon row tmup-center&quot;&gt;
-        &lt;lib-slide-toggle-input [formControl]&#x3D;&quot;openShareWithUserCtrl&quot;&gt;&lt;/lib-slide-toggle-input&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-@if(actUser?.IsOrganizer || actUser?.IsLeadRider){
-&lt;div class&#x3D;&quot;item row c-pointer&quot;&gt;
-    &lt;div class&#x3D;&quot;icon row&quot;&gt;
-        &lt;mat-icon svgIcon&#x3D;&quot;location-share&quot;&gt;&lt;/mat-icon&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;column tmup-gap-4 flex&quot;&gt;
-        &lt;div class&#x3D;&quot;tmup-fs-14 t-bold-500&quot;&gt;
-            {{ &#x27;pages.stopwatch.activity-open-share.title&#x27; | translate}}
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;tmup-fs-12 tmup-fc-gray-3&quot;&gt;
-            {{ &#x27;pages.stopwatch.activity-open-share.message&#x27; | translate}}
-        &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;div class&#x3D;&quot;icon row tmup-center&quot;&gt;
-        &lt;lib-slide-toggle-input [formControl]&#x3D;&quot;openShareWithOrgCtrl&quot;&gt;&lt;/lib-slide-toggle-input&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-}@else{
-&lt;div class&#x3D;&quot;item row c-pointer&quot;&gt;
-    &lt;div class&#x3D;&quot;icon row&quot;&gt;
-        &lt;mat-icon svgIcon&#x3D;&quot;location-share&quot;&gt;&lt;/mat-icon&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;column tmup-gap-4 flex&quot;&gt;
-        &lt;div class&#x3D;&quot;tmup-fs-14 t-bold-500&quot;&gt;
-            {{ &#x27;pages.stopwatch.share-together.title&#x27; | translate}}
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;tmup-fs-12 tmup-fc-gray-3&quot;&gt;
-            {{ &#x27;pages.stopwatch.share-together.message&#x27; | translate}}
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;icon row tmup-center&quot;&gt;
-        &lt;lib-slide-toggle-input [formControl]&#x3D;&quot;openShareWithOrgCtrl&quot;&gt;&lt;/lib-slide-toggle-input&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-}
-
-&lt;div class&#x3D;&quot;item row c-pointer&quot;&gt;
-    &lt;div class&#x3D;&quot;icon row&quot;&gt;
-        &lt;mat-icon svgIcon&#x3D;&quot;location-share&quot;&gt;&lt;/mat-icon&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;column tmup-gap-4 flex&quot;&gt;
-        &lt;div class&#x3D;&quot;tmup-fs-14 t-bold-500&quot;&gt;
-            {{ &#x27;pages.stopwatch.profile-share.title&#x27; | translate}}
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;tmup-fs-12 tmup-fc-gray-3&quot;&gt;
-            {{ &#x27;pages.stopwatch.profile-share.message&#x27; | translate}}
-        &lt;/div&gt;
-        @if(this.shareUserType !&#x3D; audienceType.None &amp;&amp; profileShareCtrl.value){
-        &lt;div class&#x3D;&quot;tmup-fs-12 tmup-fc-gray-3&quot;
-            [innerHTML]&#x3D;&quot;&#x27;pages.stopwatch.profile-share.share-to&#x27; | translate: ({shareUser: (audienceType[this.shareUserType] | enumTranslate: &#x27;AudienceType&#x27;)})&quot;&gt;
-        &lt;/div&gt;
-        }
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;icon row tmup-center&quot;&gt;
-        &lt;lib-slide-toggle-input [formControl]&#x3D;&quot;profileShareCtrl&quot;&gt;&lt;/lib-slide-toggle-input&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

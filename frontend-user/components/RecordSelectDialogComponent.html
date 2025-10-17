@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -1282,75 +1278,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-header [show]&#x3D;&quot;true&quot; [isDialog]&#x3D;&quot;true&quot; [backNotShow]&#x3D;&quot;true&quot;&gt;
-    &lt;ng-container ngProjectAs&#x3D;&quot;[h-left]&quot;&gt;
-        &lt;button type&#x3D;&quot;button&quot; mat-button class&#x3D;&quot;tmup-btn-text&quot; (click)&#x3D;&quot;back()&quot;&gt;
-            {{ &#x27;common.cancel&#x27; |translate}}
-        &lt;/button&gt;
-    &lt;/ng-container&gt;
-
-    &lt;ng-container ngProjectAs&#x3D;&quot;[h-title]&quot;&gt;
-        &lt;ng-container&gt;
-            {{ &#x27;dialog.record-select.title&#x27; |translate}}
-        &lt;/ng-container&gt;
-    &lt;/ng-container&gt;
-
-    &lt;ng-container ngProjectAs&#x3D;&quot;[h-right]&quot;&gt;
-        &lt;button type&#x3D;&quot;button&quot; color&#x3D;&quot;primary&quot; mat-button class&#x3D;&quot;tmup-btn-text&quot; [disabled]&#x3D;&quot;!selected&quot; (click)&#x3D;&quot;add()&quot;&gt;
-            {{ &#x27;common.complete&#x27; |translate}}
-        &lt;/button&gt;
-    &lt;/ng-container&gt;
-&lt;/lib-header&gt;
-
-&lt;lib-search-input #searchInput [hidden]&#x3D;&quot;data.type &#x3D;&#x3D; &#x27;post&#x27;&quot; (onChange)&#x3D;&quot;search($event)&quot;
-    [placeholder]&#x3D;&quot;&#x27;dialog.record-select.search-placeholder&#x27; |translate&quot;&gt;
-&lt;/lib-search-input&gt;
-
-&lt;div class&#x3D;&quot;main flex column&quot;&gt;
-    &lt;cdk-virtual-scroll-viewport [minBufferPx]&#x3D;&quot;600&quot; [maxBufferPx]&#x3D;&quot;2000&quot; [hidden]&#x3D;&quot;!list?.length&quot; #scroller
-        [itemSize]&#x3D;&quot;itemSize&quot;&gt;
-        &lt;ng-container *cdkVirtualFor&#x3D;&quot;let item of list;&quot;&gt;
-            &lt;lib-user-route-record-item [style.height.px]&#x3D;&quot;itemSize&quot; [item]&#x3D;&quot;item&quot; (click)&#x3D;&quot;check(item)&quot;&gt;
-                &lt;div class&#x3D;&quot;tmup-check-icon row tmup-center&quot; [class.selected]&#x3D;&quot;(item.checked)&quot;&gt;
-                    &lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;check&quot;&gt;&lt;/mat-icon&gt;
-                &lt;/div&gt;
-            &lt;/lib-user-route-record-item&gt;
-        &lt;/ng-container&gt;
-
-        @if(data.type &#x3D;&#x3D; &#x27;post&#x27; &amp;&amp; loadEnded){
-        &lt;div class&#x3D;&quot;memo&quot;&gt;
-            {{ &#x27;dialog.record-select.memo&#x27; |translate}}
-        &lt;/div&gt;
-        }
-
-    &lt;/cdk-virtual-scroll-viewport&gt;
-
-    @if(loading){
-    &lt;lib-loading [ngClass]&#x3D;&quot;{ &#x27;row flex tmup-center&#x27;: !list?.length }&quot;&gt;&lt;/lib-loading&gt;
-    }
-    @if(!loading &amp;&amp; noData){
-    &lt;lib-empty-data&gt;
-        &lt;span&gt;
-            @switch (data.type) {
-            @case (&#x27;post&#x27;){
-            &lt;ng-container&gt;
-                {{ &#x27;dialog.record-select.nodata.post&#x27; |translate}}
-            &lt;/ng-container&gt;
-            }
-            @default {
-            &lt;ng-container&gt;
-                {{ &#x27;dialog.record-select.nodata.message&#x27; |translate}}
-            &lt;/ng-container&gt;
-
-            }
-            }
-        &lt;/span&gt;
-    &lt;/lib-empty-data&gt;
-    }
-
-&lt;/div&gt;</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

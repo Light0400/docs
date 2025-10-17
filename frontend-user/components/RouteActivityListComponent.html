@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1057,38 +1053,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;header row tmup-align-center&quot;&gt;
-    &lt;div class&#x3D;&quot;title flex&quot;&gt;
-        {{ &#x27;components.route-activity-list.title&#x27; | translate}}
-    &lt;/div&gt;
-&lt;/div&gt;
-
-
-
-&lt;div class&#x3D;&quot;scroll-main&quot;&gt;
-    &lt;cdk-virtual-scroll-viewport #scroller [itemSize]&#x3D;&quot;itemSize&quot; [maxBufferPx]&#x3D;&quot;2000&quot; [minBufferPx]&#x3D;&quot;600&quot;&gt;
-        &lt;ng-container *cdkVirtualFor&#x3D;&quot;let item of list&quot;&gt;
-            &lt;div class&#x3D;&quot;item c-pointer&quot; [style.height.px]&#x3D;&quot;itemSize&quot; (click)&#x3D;&quot;onItemClick(item)&quot;&gt;
-                &lt;lib-activity-item [item]&#x3D;&quot;item&quot;&gt;
-                &lt;/lib-activity-item&gt;
-            &lt;/div&gt;
-        &lt;/ng-container&gt;
-        @if(loading){
-        &lt;lib-loading&gt;&lt;/lib-loading&gt;
-        }
-
-        @if(noData){
-        &lt;lib-empty-data&gt;
-            &lt;span&gt;
-                {{ &#x27;components.route-activity-list.nodata&#x27; | translate}}
-            &lt;/span&gt;
-        &lt;/lib-empty-data&gt;
-        }
-
-    &lt;/cdk-virtual-scroll-viewport&gt;
-&lt;/div&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

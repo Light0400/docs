@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -879,74 +875,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;user row tmup-align-center&quot;&gt;
-    &lt;lib-user-avatar [avatar]&#x3D;&quot;item?.User?.Avatar&quot; [firstName]&#x3D;&quot;item?.User?.FirstName&quot;
-        [lastName]&#x3D;&quot;item?.User?.LastName&quot;&gt;&lt;/lib-user-avatar&gt;
-    &lt;div class&#x3D;&quot;name-time column flex&quot;&gt;
-        &lt;div class&#x3D;&quot;name t-bold-500&quot;&gt;
-            {{item?.User | displayName}}
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;time&quot;&gt;
-            {{ item?.LastUpdatedTime | postDisplayTime }}
-        &lt;/div&gt;
-    &lt;/div&gt;
-    @if(!isSelf){
-    &lt;div class&#x3D;&quot;menu c-pointer&quot; (click)&#x3D;&quot;openMenu()&quot;&gt;
-        &lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;more&quot;&gt;
-        &lt;/mat-icon&gt;
-    &lt;/div&gt;
-    }
-
-&lt;/div&gt;
-
-&lt;div class&#x3D;&quot;info column&quot;&gt;
-    &lt;div class&#x3D;&quot;tags row tmup-align-center&quot;&gt;
-        &lt;div class&#x3D;&quot;item row tmup-center&quot;&gt;
-            &lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;star-solid&quot;&gt;&lt;/mat-icon&gt;
-            &lt;span&gt;{{item?.Rating}}&lt;/span&gt;
-        &lt;/div&gt;
-
-        @for(tagItem of item?.Tags; track tagItem.TagId){
-        &lt;div class&#x3D;&quot;item row tmup-center&quot;&gt;
-            {{tagItem.Tag?.Text}}
-        &lt;/div&gt;
-        }
-    &lt;/div&gt;
-
-    &lt;div class&#x3D;&quot;desc&quot; [libTextReadMore]&#x3D;&quot;item?.Desc&quot;&gt;
-
-    &lt;/div&gt;
-
-    &lt;div class&#x3D;&quot;like row tmup-align-center&quot;&gt;
-        &lt;div class&#x3D;&quot;add row tmup-center c-pointer&quot; (click)&#x3D;&quot;openEmojiBtn &#x3D; true&quot; [hidden]&#x3D;&quot;!isLogin || openEmojiBtn&quot;&gt;
-            &lt;mat-icon svgIcon&#x3D;&quot;add-like&quot;&gt;&lt;/mat-icon&gt;
-        &lt;/div&gt;
-
-        @for(item of emojiCodes; track item){
-
-        @if(emojiCodeMap[item].count &gt; 0){
-        &lt;div class&#x3D;&quot;item row tmup-center&quot; [hidden]&#x3D;&quot;openEmojiBtn&quot; [class.isSelf]&#x3D;&quot;emojiCodeMap[item].isSelf&quot;&gt;
-            &lt;span class&#x3D;&quot;emoji&quot;&gt;{{item}}&lt;/span&gt;
-            &lt;span&gt;{{emojiCodeMap[item].count}}&lt;/span&gt;
-        &lt;/div&gt;
-        }
-
-        }
-
-        &lt;div class&#x3D;&quot;edit row tmup-center&quot; [class.liked]&#x3D;&quot;hasLike&quot; [hidden]&#x3D;&quot;!openEmojiBtn&quot;&gt;
-            @for(item of emojiCodes; track item){
-            &lt;div class&#x3D;&quot;item row tmup-center c-pointer&quot; (click)&#x3D;&quot;like(item)&quot; [class.isSelf]&#x3D;&quot;emojiCodeMap[item].isSelf&quot;&gt;
-                &lt;span class&#x3D;&quot;emoji&quot;&gt;{{item}}&lt;/span&gt;
-            &lt;/div&gt;
-            }
-            &lt;div class&#x3D;&quot;item warn row tmup-center c-pointer&quot; (click)&#x3D;&quot;openEmojiBtn &#x3D; false&quot;&gt;
-                &lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;close&quot;&gt;&lt;/mat-icon&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

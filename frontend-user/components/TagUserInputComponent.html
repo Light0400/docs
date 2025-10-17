@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -2068,37 +2064,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;input flex&quot; #input matAutocompleteOrigin #origind&#x3D;&quot;matAutocompleteOrigin&quot;
-    [attr.placeholder]&#x3D;&quot;(placeholder ?? &#x27;&#x27;)&quot; contenteditable&#x3D;&quot;true&quot; (focus)&#x3D;&quot;onFocus()&quot; (blur)&#x3D;&quot;onBlur()&quot;
-    (input)&#x3D;&quot;onInput($event)&quot; 
-    (keydown)&#x3D;&quot;onKeydown($event)&quot;
-    (paste)&#x3D;&quot;onPaste($event)&quot;
-    
-    &gt;
-&lt;/div&gt;
-
-
-&lt;input type&#x3D;&quot;text&quot; [hidden]&#x3D;&quot;true&quot; #autoTrigger&#x3D;&quot;matAutocompleteTrigger&quot; [matAutocomplete]&#x3D;&quot;auto&quot;
-    [formControl]&#x3D;&quot;autocompleteFilter&quot; [matAutocompleteConnectedTo]&#x3D;&quot;origin!&quot; /&gt;
-
-&lt;mat-autocomplete class&#x3D;&quot;auto-user-select&quot; [hideSingleSelectionIndicator]&#x3D;&quot;true&quot; #auto&#x3D;&quot;matAutocomplete&quot;
-    (optionSelected)&#x3D;&quot;optionSelected($event)&quot;&gt;
-    @if(checkShowAll()){
-    &lt;mat-option class&#x3D;&quot;option-all&quot; [value]&#x3D;&quot;{Id: &#x27;All&#x27;, FirstName: &#x27;All&#x27;}&quot;&gt;
-        &lt;mat-icon svgIcon&#x3D;&quot;at-sign&quot;&gt;&lt;/mat-icon&gt;
-        &lt;span [innerHTML]&#x3D;&quot;&#x27;All&#x27; | highlight: autocompleteFilter.value&quot;&gt;&lt;/span&gt;
-    &lt;/mat-option&gt;
-    }
-    @for (option of users ; track option.Id) {
-    &lt;mat-option [value]&#x3D;&quot;option&quot;&gt;
-        &lt;lib-user-avatar [avatar]&#x3D;&quot;option?.Avatar&quot; [lastName]&#x3D;&quot;option?.LastName&quot;
-            [firstName]&#x3D;&quot;option?.FirstName&quot;&gt;&lt;/lib-user-avatar&gt;
-        &lt;span [innerHTML]&#x3D;&quot;(option | displayName)  | highlight: autocompleteFilter.value&quot;&gt;&lt;/span&gt;
-    &lt;/mat-option&gt;
-    }
-&lt;/mat-autocomplete&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

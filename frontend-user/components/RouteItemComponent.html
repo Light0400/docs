@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -656,61 +652,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">@if(item){
-&lt;div class&#x3D;&quot;item row tmup-align-center&quot;&gt;
-    &lt;div class&#x3D;&quot;map-view&quot; [isApiImage]&#x3D;&quot;true&quot; [appBackgroundImage]&#x3D;&quot;item.Thumbnail&quot;&gt;
-
-        &lt;div class&#x3D;&quot;icon row tmup-center&quot;&gt;
-            &lt;mat-icon class&#x3D;&quot;fs-10&quot; svgIcon&#x3D;&quot;route&quot;&gt;
-
-            &lt;/mat-icon&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;name-info column flex&quot;&gt;
-
-        @if((item.AverageRating !&#x3D; undefined &amp;&amp; item.AverageRating !&#x3D; null) || item.Tags?.length){
-        &lt;div class&#x3D;&quot;tags row tmup-align-center&quot;&gt;
-            @if((item.AverageRating !&#x3D; undefined &amp;&amp; item.AverageRating !&#x3D; null)){
-            &lt;div class&#x3D;&quot;item row tmup-center&quot;&gt;
-                &lt;mat-icon class&#x3D;&quot;fs-10&quot; svgIcon&#x3D;&quot;star-solid&quot;&gt;&lt;/mat-icon&gt;
-                &lt;span class&#x3D;&quot;rating&quot;&gt;
-                    {{item.AverageRating}}
-                &lt;/span&gt;
-            &lt;/div&gt;
-            }
-
-
-            @for (item of item.Tags; let index &#x3D; $index; track item.TagId) {
-            &lt;div class&#x3D;&quot;item row tmup-center&quot;&gt;
-                &lt;span&gt;
-                    {{item.Tag?.Text}}
-                &lt;/span&gt;
-            &lt;/div&gt;
-            }
-        &lt;/div&gt;
-        }
-
-
-        &lt;div class&#x3D;&quot;name row tmup-align-center&quot;&gt;
-            @if(item.ExistReport){
-            &lt;div class&#x3D;&quot;circle&quot;&gt;
-            &lt;/div&gt;
-            }
-            &lt;span&gt;
-                {{ item.Name }}
-            &lt;/span&gt;
-        &lt;/div&gt;
-
-        &lt;div class&#x3D;&quot;sub-info&quot;&gt;
-            {{subMessage}}
-        &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;ng-content select&#x3D;&quot;[item-right]&quot;&gt;&lt;/ng-content&gt;
-&lt;/div&gt;
-}</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -825,37 +821,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-header [isDialog]&#x3D;&quot;true&quot; [show]&#x3D;&quot;true&quot; (backClick)&#x3D;&quot;back()&quot;&gt;
-  &lt;ng-container ngProjectAs&#x3D;&quot;[h-title]&quot;&gt;{{
-    &quot;pages.team-member-alias.title&quot; | translate
-    }}&lt;/ng-container&gt;
-&lt;/lib-header&gt;
-
-&lt;cdk-virtual-scroll-viewport [itemSize]&#x3D;&quot;56&quot; [maxBufferPx]&#x3D;&quot;2000&quot; [minBufferPx]&#x3D;&quot;600&quot;&gt;
-  &lt;ng-container *cdkVirtualFor&#x3D;&quot;let item of aliasList&quot;&gt;
-    &lt;div class&#x3D;&quot;row tmup-align-center item c-pointer&quot; (click)&#x3D;&quot;gotoEdit(item)&quot;&gt;
-      &lt;span&gt;{{ item.Title }}&lt;/span&gt;
-
-      @if(item.users?.length){
-      &lt;lib-user-avater-group [users]&#x3D;&quot;item.users!&quot; [style]&#x3D;&quot;&#x27;skip&#x27;&quot; [size]&#x3D;&quot;&#x27;medium&#x27;&quot;
-        [maxItem]&#x3D;&quot;4&quot;&gt;&lt;/lib-user-avater-group&gt;
-      }
-      &lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;arrow_right&quot;&gt;&lt;/mat-icon&gt;
-    &lt;/div&gt;
-  &lt;/ng-container&gt;
-
-
-
-
-  @if(aliasList.length &lt; 20) { &lt;div class&#x3D;&quot;row tmup-align-center add-btn c-pointer&quot; (click)&#x3D;&quot;gotoEdit()&quot;&gt;
-    &lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;add-post&quot;&gt;&lt;/mat-icon&gt;
-    {{ &quot;pages.team-member-alias.add-alias&quot; | translate }}
-    &lt;/div&gt;
-    }
-
-&lt;/cdk-virtual-scroll-viewport&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

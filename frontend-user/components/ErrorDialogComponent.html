@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -586,29 +582,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;h2 mat-dialog-title translate&gt;dialog.error-dialog.title&lt;/h2&gt;
-&lt;mat-dialog-content class&#x3D;&quot;error-content&quot;&gt;
-    @switch (type) {
-
-    @case (&#x27;text/html&#x27;) {
-    &lt;iframe [src]&#x3D;&quot;value&quot;&gt;&lt;/iframe&gt;
-    }
-    @case (&#x27;text/plain&#x27;) {
-    &lt;div class&#x3D;&quot;exception&quot;&gt;
-        {{value}}
-    &lt;/div&gt;
-    }
-    @case (&#x27;application/json&#x27;) {
-    &lt;lib-error-summary [errors]&#x3D;&quot;errors&quot;&gt;&lt;/lib-error-summary&gt;
-    }
-
-    }
-&lt;/mat-dialog-content&gt;
-&lt;mat-dialog-actions&gt;
-    &lt;button class&#x3D;&quot;tmup-btn-l&quot; type&#x3D;&quot;button&quot; [mat-dialog-close]&#x3D;&quot;null&quot;&gt;{{&#x27;common.close&#x27;|translate}}&lt;/button&gt;
-&lt;/mat-dialog-actions&gt;</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

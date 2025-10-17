@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -421,24 +417,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-user-avatar type&#x3D;&quot;ShareCircle&quot; [avatar]&#x3D;&quot;item?.User?.Avatar&quot; [lastName]&#x3D;&quot;item?.User?.LastName&quot;
-    [firstName]&#x3D;&quot;item?.User?.FirstName&quot;&gt;
-
-    @if(item?.Stop){
-    &lt;div class&#x3D;&quot;stop&quot;&gt;
-        &lt;img src&#x3D;&quot;./assets/stop.svg&quot; /&gt;
-    &lt;/div&gt;
-    }@else{
-    &lt;div class&#x3D;&quot;live&quot;&gt;
-        Live
-    &lt;/div&gt;
-    }
-&lt;/lib-user-avatar&gt;
-&lt;div class&#x3D;&quot;name&quot;&gt;
-    {{item?.User | displayName}}
-&lt;/div&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

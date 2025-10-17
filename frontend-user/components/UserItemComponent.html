@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -964,113 +960,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">@if(type &#x3D;&#x3D; &#x27;Basic&#x27;){
-&lt;div class&#x3D;&quot;row tmup-align-center&quot;&gt;
-  &lt;lib-user-avatar [avatar]&#x3D;&quot;item?.Avatar&quot; [lastName]&#x3D;&quot;item?.LastName&quot; [firstName]&#x3D;&quot;item?.FirstName&quot;&gt;&lt;/lib-user-avatar&gt;
-
-  &lt;div class&#x3D;&quot;info column flex&quot;&gt;
-    &lt;div class&#x3D;&quot;name row&quot;&gt;
-      {{ item | displayName }}
-
-      @if(item?.IsGuest){
-      &lt;span&gt;
-        ({{ &#x27;common.guest&#x27; |translate}})
-      &lt;/span&gt;
-      }
-
-      &lt;ng-content select&#x3D;&quot;[name-right]&quot;&gt;&lt;/ng-content&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;team-location tmup-text-over-ellipsis&quot;&gt;
-      @if(!customSubText){
-      @if (item?.City) {
-      &lt;span&gt;{{ item?.City?.Name }}&lt;/span&gt;
-      } @if (item?.City &amp;&amp; item?.MainTeam) {
-      &lt;span&gt;·&lt;/span&gt;
-      } @if (item?.MainTeam) {
-      &lt;span&gt;{{ item?.MainTeam?.Name }}&lt;/span&gt;
-      }
-      }
-      &lt;ng-content select&#x3D;&quot;[basic-sub]&quot;&gt;&lt;/ng-content&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;ng-content select&#x3D;&quot;[basic-right]&quot;&gt;
-
-  &lt;/ng-content&gt;
-
-  @if(!customBtn){
-  &lt;div class&#x3D;&quot;move&quot;&gt;
-    &lt;mat-icon class&#x3D;&quot;fs-16 stroke-gray-3&quot; svgIcon&#x3D;&quot;arrow_right&quot;&gt;&lt;/mat-icon&gt;
-  &lt;/div&gt;
-  }
-&lt;/div&gt;
-&lt;ng-content select&#x3D;&quot;[basic-bottom]&quot;&gt;
-
-&lt;/ng-content&gt;
-}
-
-@if((type &#x3D;&#x3D; &#x27;Register&#x27; || type&#x3D;&#x3D; &#x27;Search-Recommend&#x27;) &amp;&amp; item){
-
-@if(type &#x3D;&#x3D; &#x27;Search-Recommend&#x27;){
-&lt;div class&#x3D;&quot;memo row&quot; [innerHTML]&#x3D;&quot;getMemo(item)&quot;&gt;&lt;/div&gt;
-}
-
-
-&lt;div class&#x3D;&quot;info row tmup-align-center&quot;&gt;
-  &lt;lib-user-avatar [avatar]&#x3D;&quot;item.Avatar&quot; type&#x3D;&quot;Reg-Recommend&quot; [lastName]&#x3D;&quot;item.LastName&quot; [firstName]&#x3D;&quot;item.FirstName&quot;&gt;
-  &lt;/lib-user-avatar&gt;
-
-  &lt;div class&#x3D;&quot;user-info row flex tmup-align-center&quot;&gt;
-    &lt;div class&#x3D;&quot;column flex&quot;&gt;
-      &lt;div class&#x3D;&quot;name t-bold tmup-text-over-ellipsis&quot;&gt;
-        {{item | displayName}}
-      &lt;/div&gt;
-      &lt;div class&#x3D;&quot;team tmup-text-over-ellipsis&quot;&gt;
-        @if(item.MainTeam?.Name){
-        &lt;ng-container&gt;{{item.MainTeam?.Name}}&lt;/ng-container&gt;
-        }
-      &lt;/div&gt;
-      &lt;div class&#x3D;&quot;city tmup-text-over-ellipsis&quot;&gt;
-        @if(item.City){
-        &lt;ng-container&gt;{{item.City.Name}}&lt;/ng-container&gt;
-        }
-      &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;ng-content select&#x3D;&quot;.register-bottom&quot;&gt;
-
-    &lt;/ng-content&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-}
-
-@if(item &amp;&amp; type &#x3D;&#x3D; &#x27;Home-Recommend&#x27;){
-&lt;div class&#x3D;&quot;memo&quot; [innerHTML]&#x3D;&quot;getMemo(item)&quot;&gt;&lt;/div&gt;
-&lt;lib-user-avatar [type]&#x3D;&quot;type&quot; [avatar]&#x3D;&quot;item.Avatar&quot; [lastName]&#x3D;&quot;item.LastName&quot;
-  [firstName]&#x3D;&quot;item.FirstName&quot;&gt;&lt;/lib-user-avatar&gt;
-&lt;div class&#x3D;&quot;info row tmup-gap-4 tmup-align-center&quot;&gt;
-  &lt;div class&#x3D;&quot;column flex&quot;&gt;
-    &lt;div class&#x3D;&quot;name tmup-text-over-ellipsis&quot;&gt;{{item | displayName}}&lt;/div&gt;
-    &lt;div class&#x3D;&quot;team&quot;&gt;{{(item.MainTeam?.Name ?? &#x27;&#x27;)}}&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-    &lt;button class&#x3D;&quot;tmup-btn-ss&quot; type&#x3D;&quot;button&quot; [class.active]&#x3D;&quot;item.Follow&quot; (click)&#x3D;&quot;follow(item)&quot;&gt;
-      @if(!item.Follow){
-      &lt;ng-container&gt;
-        {{ &#x27;common.follow&#x27; |translate}}
-      &lt;/ng-container&gt;
-      }@else{
-      &lt;ng-container&gt;
-        {{ &quot;common.followed&quot; | translate }}
-      &lt;/ng-container&gt;
-      }
-    &lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;ng-content select&#x3D;&quot;.register-bottom&quot;&gt; &lt;/ng-content&gt;
-}</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

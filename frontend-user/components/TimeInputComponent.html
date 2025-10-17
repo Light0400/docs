@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -920,20 +916,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;ng-content select&#x3D;&quot;label&quot;&gt;&lt;/ng-content&gt;
-&lt;div class&#x3D;&quot;input-box&quot;&gt;
-    &lt;input [matDatetimepicker]&#x3D;&quot;datePicker&quot; [formControl]&#x3D;&quot;control&quot; (click)&#x3D;&quot;onTouched()&quot;
-        [readonly]&#x3D;&quot;control.disabled || onlySelect&quot; [required]&#x3D;&quot;required&quot;&gt;
-    &lt;mat-datetimepicker-toggle matSuffix [for]&#x3D;&quot;datePicker&quot;&gt;&lt;/mat-datetimepicker-toggle&gt;
-    &lt;mat-datetimepicker #datePicker type&#x3D;&quot;time&quot; [openOnFocus]&#x3D;&quot;true&quot; [touchUi]&#x3D;&quot;true&quot;&gt;
-    &lt;/mat-datetimepicker&gt;
-    @if(onlySelect &amp;&amp; !control.disabled){
-    &lt;div class&#x3D;&quot;hiddenMask&quot; (click)&#x3D;&quot;datePicker.open()&quot;&gt;
-    &lt;/div&gt;
-    }
-&lt;/div&gt;</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

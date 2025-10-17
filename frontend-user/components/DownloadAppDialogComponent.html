@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -468,44 +464,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;header&quot;&gt;
-    &lt;div class&#x3D;&quot;right&quot;&gt;
-        &lt;button class&#x3D;&quot;tmup-btn-icon&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;back()&quot;&gt;
-            &lt;mat-icon svgIcon&#x3D;&quot;close&quot;&gt;&lt;/mat-icon&gt;
-        &lt;/button&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class&#x3D;&quot;main column tmup-center&quot;&gt;
-    &lt;div class&#x3D;&quot;text-info column tmup-center&quot;&gt;
-        &lt;div class&#x3D;&quot;title&quot;&gt;
-            {{ &#x27;dialog.download-app.title&#x27; |translate}}
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;sub-title t-bold&quot;&gt;
-            {{ &#x27;dialog.download-app.sub-title&#x27; |translate}}
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;qrcode-info column tmup-center&quot;&gt;
-        &lt;div class&#x3D;&quot;text-info column tmup-center&quot;&gt;
-            &lt;div class&#x3D;&quot;title t-bold-500&quot;&gt;
-                {{ &#x27;dialog.download-app.qrcode-title&#x27; |translate}}
-            &lt;/div&gt;
-            &lt;div class&#x3D;&quot;sub-title&quot;&gt;
-                {{ &#x27;dialog.download-app.qrcode-memo&#x27; |translate}}
-            &lt;/div&gt;
-        &lt;/div&gt;
-
-        @if(qrdata){
-        &lt;div class&#x3D;&quot;qrcode&quot;&gt;
-            &lt;qrcode [qrdata]&#x3D;&quot;qrdata&quot; title&#x3D;&quot;app download&quot; (click)&#x3D;&quot;downloadApp()&quot; [imageSrc]&#x3D;&quot;qrcode_logo&quot;
-                [width]&#x3D;&quot;320&quot; [margin]&#x3D;&quot;5&quot; [errorCorrectionLevel]&#x3D;&quot;&#x27;M&#x27;&quot;&gt;&lt;/qrcode&gt;
-        &lt;/div&gt;
-        }
-
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

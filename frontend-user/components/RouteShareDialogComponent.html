@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -838,62 +834,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-header [show]&#x3D;&quot;true&quot; [isDialog]&#x3D;&quot;true&quot; [backNotShow]&#x3D;&quot;true&quot;&gt;
-  &lt;ng-container ngProjectAs&#x3D;&quot;[h-left]&quot;&gt;
-    &lt;button type&#x3D;&quot;button&quot; mat-button class&#x3D;&quot;tmup-btn-text&quot; (click)&#x3D;&quot;back()&quot;&gt;
-      {{ &quot;common.cancel&quot; | translate }}
-    &lt;/button&gt;
-  &lt;/ng-container&gt;
-
-  &lt;ng-container ngProjectAs&#x3D;&quot;[h-title]&quot;&gt;
-    @if(selectItem){
-    &lt;ng-container&gt;
-      {{ selectItem.Name }}
-    &lt;/ng-container&gt;
-
-    }@else{
-    &lt;ng-container&gt;
-      {{ &quot;dialog.route-share.title&quot; | translate }}
-    &lt;/ng-container&gt;
-    }
-  &lt;/ng-container&gt;
-
-  &lt;ng-container ngProjectAs&#x3D;&quot;[h-right]&quot;&gt;
-    &lt;button type&#x3D;&quot;button&quot; color&#x3D;&quot;primary&quot; mat-button class&#x3D;&quot;tmup-btn-text blue&quot; [disabled]&#x3D;&quot;!selectItem&quot;
-      (click)&#x3D;&quot;save()&quot;&gt;
-      {{ &quot;common.choose&quot; | translate }}
-    &lt;/button&gt;
-  &lt;/ng-container&gt;
-&lt;/lib-header&gt;
-
-&lt;div class&#x3D;&quot;main column flex&quot; [hidden]&#x3D;&quot;selectItem&quot;&gt;
-  &lt;lib-search-input #searchInput [placeholder]&#x3D;&quot;&#x27;common.search&#x27;|translate&quot; (onChange)&#x3D;&quot;search($event)&quot;&gt;
-  &lt;/lib-search-input&gt;
-
-  &lt;mat-tab-group mat-stretch-tabs&#x3D;&quot;false&quot; mat-align-tabs&#x3D;&quot;start&quot; [animationDuration]&#x3D;&quot;0&quot;&gt;
-    &lt;mat-tab labelClass&#x3D;&quot;tab-header&quot;&gt;
-      &lt;ng-template mat-tab-label&gt;
-        {{ &quot;dialog.route-share.tab-explore&quot; | translate }}
-      &lt;/ng-template&gt;
-      &lt;ng-template matTabContent&gt;
-        &lt;lib-route-explore [keyword]&#x3D;&quot;keyword&quot; (onSelectItem)&#x3D;&quot;onSelectItem($event)&quot;&gt;&lt;/lib-route-explore&gt;
-      &lt;/ng-template&gt;
-    &lt;/mat-tab&gt;
-    &lt;mat-tab labelClass&#x3D;&quot;tab-header&quot;&gt;
-      &lt;ng-template mat-tab-label&gt;
-        {{ &quot;dialog.route-share.tab-collect&quot; | translate }}
-      &lt;/ng-template&gt;
-      &lt;ng-template matTabContent&gt;
-        &lt;lib-route-collect [keyword]&#x3D;&quot;keyword&quot; (onSelectItem)&#x3D;&quot;onSelectItem($event)&quot;&gt;&lt;/lib-route-collect&gt;
-      &lt;/ng-template&gt;
-    &lt;/mat-tab&gt;
-  &lt;/mat-tab-group&gt;
-&lt;/div&gt;
-
-&lt;lib-route-info class&#x3D;&quot;flex&quot; [hidden]&#x3D;&quot;!selectItem&quot; [mapRoute]&#x3D;&quot;selectItem&quot;
-  [showReport]&#x3D;&quot;selectItem?.ExistReport&quot;&gt;&lt;/lib-route-info&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

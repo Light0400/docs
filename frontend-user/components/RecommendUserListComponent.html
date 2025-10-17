@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -711,33 +707,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;title&quot;&gt;
-  {{ &quot;components.recommend-user-list.title&quot; | translate }}
-&lt;/div&gt;
-
-&lt;div class&#x3D;&quot;list tmup-align-center&quot; [class.row]&#x3D;&quot;horizontal&quot; [class.column]&#x3D;&quot;vertical&quot;&gt;
-  @for(item of list; let x &#x3D; $index; track item.Id){
-  &lt;lib-user-item [item]&#x3D;&quot;item&quot; [type]&#x3D;&quot;horizontal? &#x27;Home-Recommend&#x27;: &#x27;Search-Recommend&#x27;&quot;&gt;
-    @if(vertical){
-    &lt;div class&#x3D;&quot;register-bottom&quot;&gt;
-      &lt;button class&#x3D;&quot;tmup-btn-ss&quot; type&#x3D;&quot;button&quot; [class.active]&#x3D;&quot;item.Follow&quot; (click)&#x3D;&quot;follow(item)&quot;&gt;
-        @if(item.Follow){
-        &lt;ng-container&gt;
-          {{ &#x27;common.followed&#x27; |translate}}
-        &lt;/ng-container&gt;
-        }@else{
-        &lt;ng-container&gt;
-          {{ &#x27;common.follow&#x27; |translate}}
-        &lt;/ng-container&gt;
-        }
-      &lt;/button&gt;
-    &lt;/div&gt;
-    }
-  &lt;/lib-user-item&gt;
-  }
-&lt;/div&gt;</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

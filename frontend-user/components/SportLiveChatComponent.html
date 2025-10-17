@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1395,62 +1391,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;scroll-main flex&quot; #scroller&gt;
-
-
-    @for (item of list; track $index) {
-    &lt;div class&#x3D;&quot;row chat-item&quot;&gt;
-        &lt;lib-user-avatar [avatar]&#x3D;&quot;item.User?.Avatar&quot; [lastName]&#x3D;&quot;item.User?.LastName&quot;
-            [firstName]&#x3D;&quot;item.User?.FirstName&quot;&gt;&lt;/lib-user-avatar&gt;
-        &lt;div class&#x3D;&quot;column msg flex tmup-gap-4 tmup-fs-14&quot;&gt;
-            &lt;span class&#x3D;&quot;t-bold-500&quot; [class.tmup-fc-blue]&#x3D;&quot;item.UserId &#x3D;&#x3D; userId&quot;&gt;
-                {{ item.User | displayName }}
-            &lt;/span&gt;
-            &lt;span&gt;{{ item.Body }}&lt;/span&gt;
-        &lt;/div&gt;
-        @if(item.User?.Id !&#x3D; userId &amp;&amp; !checkLike(item.Body)){
-        &lt;div class&#x3D;&quot;menu&quot;&gt;
-            &lt;lib-more-menu (click)&#x3D;&quot;openMenu(item)&quot;&gt;&lt;/lib-more-menu&gt;
-        &lt;/div&gt;
-        }
-    &lt;/div&gt;
-    }
-
-    @if(loading){
-    &lt;lib-loading&gt;&lt;/lib-loading&gt;
-    }
-
-    @if(noData){
-    &lt;lib-empty-data&gt;
-        &lt;span&gt;{{ &#x27;pages.stopwatch.no-viewer-message&#x27; |translate}}&lt;/span&gt;
-    &lt;/lib-empty-data&gt;
-    }
-
-&lt;/div&gt;
-
-&lt;div class&#x3D;&quot;footer column&quot;&gt;
-    &lt;div class&#x3D;&quot;emoji-list row&quot;&gt;
-        @for(emoji of emojiList; track emoji){
-        &lt;div class&#x3D;&quot;item flex row tmup-center&quot;&gt;
-            &lt;div class&#x3D;&quot;emoji tmup-fs-14 t-bold-500 row tmup-center c-pointer&quot; (click)&#x3D;&quot;sendText(emoji)&quot;&gt;
-                {{emoji}}
-            &lt;/div&gt;
-        &lt;/div&gt;
-        }
-    &lt;/div&gt;
-
-    &lt;div class&#x3D;&quot;input-area row tmup-align-center&quot;&gt;
-        &lt;lib-textarea-input [height]&#x3D;&quot;36&quot; [noResize]&#x3D;&quot;true&quot;
-            [placeholder]&#x3D;&quot;(&#x27;components.sport-live-chat.msg-placeholder&#x27; | translate)&quot; [styleType]&#x3D;&quot;&#x27;search&#x27;&quot;
-            [formControl]&#x3D;&quot;textCtrl&quot;&gt;
-        &lt;/lib-textarea-input&gt;
-        &lt;button [hidden]&#x3D;&quot;!textCtrl.value?.length&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-circle&quot; (click)&#x3D;&quot;onSend()&quot;&gt;
-            &lt;mat-icon svgIcon&#x3D;&quot;send&quot;&gt; &lt;/mat-icon&gt;
-        &lt;/button&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

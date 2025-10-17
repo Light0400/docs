@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1436,97 +1432,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;scroll-main&quot; #scroller&gt;
-    @if(founderList?.length){
-    &lt;div class&#x3D;&quot;group&quot;&gt;
-        &lt;div class&#x3D;&quot;title t-bold-500&quot;&gt;
-            {{&#x27;pages.activity-join-list.founder-title&#x27; | translate }}
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;list&quot;&gt;
-            @for(item of founderList; track item.UserId){
-            &lt;lib-user-item [item]&#x3D;&quot;item.User&quot; (click)&#x3D;&quot;onClickUser(item)&quot;&gt;&lt;/lib-user-item&gt;
-            }
-
-        &lt;/div&gt;
-    &lt;/div&gt;
-    }
-
-    @if(riderList?.length){
-    &lt;div class&#x3D;&quot;group&quot;&gt;
-        &lt;div class&#x3D;&quot;title t-bold-500&quot;&gt;
-            {{&#x27;pages.activity-join-list.rider-title&#x27; | translate }}
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;list&quot;&gt;
-            @for(item of riderList; track item.UserId){
-            &lt;lib-user-item [item]&#x3D;&quot;item.User&quot; (click)&#x3D;&quot;onClickUser(item)&quot;&gt;&lt;/lib-user-item&gt;
-            }
-        &lt;/div&gt;
-    &lt;/div&gt;
-    }
-
-    @if(userList?.length){
-    &lt;div class&#x3D;&quot;group&quot;&gt;
-        &lt;div class&#x3D;&quot;title t-bold-500&quot;&gt;
-            {{&#x27;pages.activity-join-list.user-title&#x27; | translate }}
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;list&quot;&gt;
-            @for(item of userList; track item.UserId){
-            &lt;lib-user-item [item]&#x3D;&quot;item.User&quot; (click)&#x3D;&quot;onClickUser(item)&quot;&gt;&lt;/lib-user-item&gt;
-            }
-
-        &lt;/div&gt;
-    &lt;/div&gt;
-    }
-
-
-    @if(user?.IsOrganizer || user?.IsLeadRider){
-    @if(guestList?.length){
-    &lt;div class&#x3D;&quot;group&quot;&gt;
-        &lt;div class&#x3D;&quot;title t-bold-500&quot;&gt;
-            {{&#x27;pages.activity-join-list.guest-title&#x27; | translate }}
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;list&quot;&gt;
-            @for(item of guestList; track item.UserId){
-            &lt;div class&#x3D;&quot;guest-item row tmup-align-center&quot;&gt;
-                &lt;div class&#x3D;&quot;info column flex&quot;&gt;
-                    &lt;div class&#x3D;&quot;name t-bold-500&quot;&gt;
-                        {{ item.User | displayName }}
-                    &lt;/div&gt;
-                    &lt;div class&#x3D;&quot;phone&quot;&gt;
-                        @if(item.User?.Phone?.length){
-                        &lt;a target&#x3D;&quot;_blank&quot; [href]&#x3D;&quot;&#x27;tel:&#x27;+ item.User?.Phone&quot;&gt;
-                            {{item.User?.Phone}}
-                        &lt;/a&gt;
-                        }@else{
-                        {{ &#x27;pages.activity-join-list.guest-no-phone&#x27; | translate}}
-                        }
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class&#x3D;&quot;right&quot;&gt;
-                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-ss-gray&quot; (click)&#x3D;&quot;removeUser(item)&quot;&gt;
-                        {{ &#x27;common.remove&#x27; | translate }}
-                    &lt;/button&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-            }
-
-        &lt;/div&gt;
-    &lt;/div&gt;
-    }
-
-    }@else if(guestCount){
-    &lt;div class&#x3D;&quot;group&quot;&gt;
-        &lt;div class&#x3D;&quot;title t-bold-500&quot;&gt;
-            {{&#x27;pages.activity-join-list.guest-join-text&#x27; | translate:({count: guestCount }) }}
-        &lt;/div&gt;
-    &lt;/div&gt;
-    }
-    @if(loading){
-    &lt;lib-loading&gt;&lt;/lib-loading&gt;
-    }
-&lt;/div&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

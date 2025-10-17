@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -788,22 +784,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-draggable-list [defaultListHeight]&#x3D;&quot;defaultHeight&quot; (drogEnd)&#x3D;&quot;onDrogEnd($event)&quot;&gt;
-    &lt;lib-header header [isDialog]&#x3D;&quot;true&quot; [show]&#x3D;&quot;true&quot; [backNotShow]&#x3D;&quot;true&quot;&gt;
-        &lt;ng-container ngProjectAs&#x3D;&quot;[h-title]&quot;&gt;
-            {{ &#x27;dialog.activity-gps-share.title&#x27; | translate}}
-        &lt;/ng-container&gt;
-
-        &lt;ng-container ngProjectAs&#x3D;&quot;[h-right]&quot;&gt;
-            &lt;button class&#x3D;&quot;tmup-btn-icon&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;back()&quot;&gt;
-                &lt;mat-icon svgIcon&#x3D;&quot;close&quot;&gt;&lt;/mat-icon&gt;
-            &lt;/button&gt;
-        &lt;/ng-container&gt;
-    &lt;/lib-header&gt;
-    &lt;lib-activity-gps-share #setting [activity]&#x3D;&quot;data.activity&quot; [actUser]&#x3D;&quot;data.actUser&quot;&gt;&lt;/lib-activity-gps-share&gt;
-&lt;/lib-draggable-list&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

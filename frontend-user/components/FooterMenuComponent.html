@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -639,52 +635,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;nav&quot;&gt;
-    &lt;div class&#x3D;&quot;btn row tmup-center flex&quot;&gt;
-        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-icon fs-20&quot; [title]&#x3D;&quot;&#x27;pages.home.title&#x27; | translate&quot;
-            [routerLink]&#x3D;&quot;[&#x27;/&#x27;, &#x27;home&#x27;]&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;
-            &lt;mat-icon class&#x3D;&quot;home&quot; svgIcon&#x3D;&quot;map&quot;&gt;&lt;/mat-icon&gt;
-        &lt;/button&gt;
-    &lt;/div&gt;
-
-    &lt;div class&#x3D;&quot;btn row tmup-center flex&quot;&gt;
-        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-icon fs-20&quot; [title]&#x3D;&quot;&#x27;common.team&#x27; | translate&quot;
-            [routerLink]&#x3D;&quot;[ &#x27;/&#x27;, &#x27;team&#x27;]&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;
-            &lt;mat-icon svgIcon&#x3D;&quot;teams&quot;&gt;&lt;/mat-icon&gt;
-        &lt;/button&gt;
-    &lt;/div&gt;
-
-    &lt;div class&#x3D;&quot;btn row tmup-center flex&quot;&gt;
-        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-icon fs-20&quot; [title]&#x3D;&quot;&#x27;pages.activity.title&#x27; | translate&quot;
-            [routerLink]&#x3D;&quot;[&#x27;/&#x27;, &#x27;activity&#x27;]&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;
-            &lt;mat-icon svgIcon&#x3D;&quot;start&quot;&gt;&lt;/mat-icon&gt;
-        &lt;/button&gt;
-    &lt;/div&gt;
-
-    &lt;div class&#x3D;&quot;btn row tmup-center flex&quot;&gt;
-        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-icon fs-20&quot; [title]&#x3D;&quot;&#x27;dialog.chat.page-title&#x27; | translate&quot;
-            [routerLink]&#x3D;&quot;[&#x27;/&#x27;, &#x27;chat&#x27;]&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;
-            &lt;mat-icon svgIcon&#x3D;&quot;chat&quot;&gt;
-            &lt;/mat-icon&gt;
-
-            @if(existNotRead){
-            &lt;div class&#x3D;&quot;red-dot&quot;&gt;&lt;/div&gt;
-            }
-
-        &lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;btn row tmup-center flex&quot;&gt;
-        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;user tmup-btn-icon fs-20&quot; [routerLink]&#x3D;&quot;[&#x27;/&#x27;, &#x27;athlete&#x27;]&quot;
-            routerLinkActive&#x3D;&quot;active&quot;&gt;
-            &lt;div class&#x3D;&quot;user-avatar&quot;&gt;
-                &lt;lib-user-avatar [avatar]&#x3D;&quot;user?.Avatar&quot; [lastName]&#x3D;&quot;user?.LastName&quot;
-                    [firstName]&#x3D;&quot;user?.FirstName&quot;&gt;&lt;/lib-user-avatar&gt;
-            &lt;/div&gt;
-        &lt;/button&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

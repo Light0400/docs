@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -920,58 +916,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">@if(isCommon &amp;&amp; item){
-&lt;ng-container&gt;
-  &lt;lib-team-logo [logo]&#x3D;&quot;item.Logo&quot;&gt;&lt;/lib-team-logo&gt;
-  @if(showMain){
-  &lt;img class&#x3D;&quot;main-icon&quot; [src]&#x3D;&quot;mainIcon&quot; /&gt;
-  }
-
-  &lt;div class&#x3D;&quot;info column flex&quot;&gt;
-    &lt;div class&#x3D;&quot;name t-bold-500&quot;&gt;
-      {{ item.Name ?? &quot;&quot; }}
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;sub-info&quot;&gt;
-      {{ subMessage }}
-    &lt;/div&gt;
-    @if(tags.length){
-    &lt;div class&#x3D;&quot;tags&quot;&gt;
-      @for (tag of tags; track $index) {
-      &lt;span&gt;{{ tag }}&lt;/span&gt;
-      }
-    &lt;/div&gt;
-    }
-
-  &lt;/div&gt;
-
-  @if(type &#x3D;&#x3D;&#x3D; &#x27;basic&#x27;){
-  &lt;div class&#x3D;&quot;move&quot;&gt;
-    &lt;mat-icon class&#x3D;&quot;fs-16 stroke-gray-3&quot; svgIcon&#x3D;&quot;arrow_right&quot;&gt;&lt;/mat-icon&gt;
-  &lt;/div&gt;
-  }
-&lt;/ng-container&gt;
-}
-
-@if(isRecommend &amp;&amp; item){
-&lt;ng-container&gt;
-  @if(item.UserCount){
-  &lt;div class&#x3D;&quot;count&quot;&gt;
-    &lt;mat-icon class&#x3D;&quot;fs-10&quot; svgIcon&#x3D;&quot;user&quot;&gt;&lt;/mat-icon&gt;
-    &lt;span&gt;{{ item.UserCount }}&lt;/span&gt;
-  &lt;/div&gt;
-  }
-
-
-  &lt;lib-team-logo [logo]&#x3D;&quot;item.Logo&quot;&gt;&lt;/lib-team-logo&gt;
-
-  &lt;div class&#x3D;&quot;name-info&quot;&gt;
-    &lt;div class&#x3D;&quot;tmup-text-over-ellipsis&quot;&gt;{{ item.Name }}&lt;/div&gt;
-    &lt;div&gt;{{ subMessage }}&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/ng-container&gt;
-}</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

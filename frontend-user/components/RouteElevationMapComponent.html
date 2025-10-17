@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -996,34 +992,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;line-info&quot; [hidden]&#x3D;&quot;!point&quot; #info&gt;
-    &lt;div class&#x3D;&quot;column tmup-align-center&quot;&gt;
-        &lt;div class&#x3D;&quot;ele&quot;&gt;
-            {{point?.y }} {{&#x27;m&#x27;| metricUnitConversion}}
-        &lt;/div&gt;
-
-        &lt;div class&#x3D;&quot;distance&quot;&gt;
-            {{point?.x }} {{&#x27;km&#x27;| metricUnitConversion}}
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class&#x3D;&quot;space row flex&quot;&gt;
-    @if(showDistance &amp;&amp; !point &amp;&amp; chartDataSource.length &gt; 1){
-    &lt;div class&#x3D;&quot;item&quot;&gt;
-        {{ totalAdcent?.ascent ?? 0 }} {{&#x27;m&#x27;| metricUnitConversion}}
-    &lt;/div&gt;
-
-    &lt;div class&#x3D;&quot;item&quot;&gt;
-        {{chartDataSource[chartDataSource.length - 1].x }} {{&#x27;km&#x27;| metricUnitConversion}}
-    &lt;/div&gt;
-    }
-&lt;/div&gt;
-&lt;div class&#x3D;&quot;chat&quot;&gt;
-    &lt;canvas baseChart #chartCanvas [data]&#x3D;&quot;data&quot; [options]&#x3D;&quot;setting&quot; [legend]&#x3D;&quot;false&quot; [type]&#x3D;&quot;&#x27;line&#x27;&quot;&gt;
-    &lt;/canvas&gt;
-&lt;/div&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

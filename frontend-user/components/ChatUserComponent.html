@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1493,73 +1489,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-header [isDialog]&#x3D;&quot;true&quot; [show]&#x3D;&quot;true&quot; [backNotShow]&#x3D;&quot;true&quot;&gt;
-    &lt;ng-container ngProjectAs&#x3D;&quot;[h-title]&quot;&gt;
-        &lt;div class&#x3D;&quot;row flex tmup-align-center&quot;&gt;
-            &lt;button class&#x3D;&quot;tmup-btn-icon&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;back()&quot;&gt;
-                &lt;mat-icon svgIcon&#x3D;&quot;back&quot;&gt;&lt;/mat-icon&gt;
-            &lt;/button&gt;
-
-            &lt;div class&#x3D;&quot;room-name row flex tmup-align-center&quot;&gt;
-                &lt;div class&#x3D;&quot;title&quot;&gt;{{ chatRoom | chatName }}&lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/ng-container&gt;
-&lt;/lib-header&gt;
-
-&lt;label class&#x3D;&quot;search-bar row tmup-align-center&quot;&gt;
-    &lt;mat-icon class&#x3D;&quot;serach-icon&quot; svgIcon&#x3D;&quot;search&quot;&gt;&lt;/mat-icon&gt;
-    &lt;input class&#x3D;&quot;flex&quot; #searchInput type&#x3D;&quot;text&quot; [placeholder]&#x3D;&quot;&#x27;pages.chat-user.search-placeholder&#x27; | translate&quot;
-        [formControl]&#x3D;&quot;searchCtrl&quot; (keyup.enter)&#x3D;&quot;searchInput.blur(); search()&quot; /&gt;
-    @if(searchCtrl.value?.length){
-    &lt;mat-icon svgIcon&#x3D;&quot;clear&quot; (click)&#x3D;&quot;clearSearch()&quot;&gt;&lt;/mat-icon&gt;
-    }
-
-&lt;/label&gt;
-
-&lt;div class&#x3D;&quot;main flex&quot; #scroller&gt;
-    @if(team){
-    &lt;div class&#x3D;&quot;group&quot;&gt;
-        &lt;div class&#x3D;&quot;title&quot;&gt;
-            {{ &#x27;common.team&#x27; | translate }}
-        &lt;/div&gt;
-        &lt;lib-team-item [item]&#x3D;&quot;team&quot; (click)&#x3D;&quot;teamClick(team)&quot;&gt;&lt;/lib-team-item&gt;
-    &lt;/div&gt;
-    }
-
-    @if(followUsers.length){
-    &lt;div class&#x3D;&quot;group&quot;&gt;
-        &lt;div class&#x3D;&quot;title&quot;&gt;
-            {{ &#x27;common.follower&#x27; | translate }}
-        &lt;/div&gt;
-        @for (item of followUsers; track item.Id) {
-        &lt;lib-user-item [item]&#x3D;&quot;item&quot; (click)&#x3D;&quot;userClick(item)&quot;&gt;&lt;/lib-user-item&gt;
-        }
-    &lt;/div&gt;
-    }
-
-    @if(users.length){
-    &lt;div class&#x3D;&quot;group&quot;&gt;
-        &lt;div class&#x3D;&quot;title&quot;&gt;
-            {{&#x27;pages.chat-user.user-title&#x27; | translate}}
-        &lt;/div&gt;
-        @for (item of users; track item.Id) {
-        &lt;lib-user-item [item]&#x3D;&quot;item&quot; (click)&#x3D;&quot;userClick(item)&quot; [customBtn]&#x3D;&quot;item.IsGuest&quot;&gt;&lt;/lib-user-item&gt;
-        }
-    &lt;/div&gt;
-    }
-
-    @if(noData){
-    &lt;lib-empty-data&gt;
-        &lt;span&gt;
-            {{ &#x27;pages.chat-user.nodata&#x27; | translate }}
-        &lt;/span&gt;
-    &lt;/lib-empty-data&gt;
-    }
-
-&lt;/div&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

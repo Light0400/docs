@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -1654,58 +1650,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;avatar&quot;&gt;
-  &lt;lib-chat-avatar [chat]&#x3D;&quot;item&quot;&gt;&lt;/lib-chat-avatar&gt;
-&lt;/div&gt;
-
-&lt;div class&#x3D;&quot;info row flex&quot;&gt;
-  &lt;div class&#x3D;&quot;column name-msg flex&quot;&gt;
-    &lt;div class&#x3D;&quot;row tmup-align-center&quot;&gt;
-      &lt;div class&#x3D;&quot;name t-bold&quot;&gt;
-        {{item | chatName}}
-      &lt;/div&gt;
-      @if(isMute){
-      &lt;mat-icon class&#x3D;&quot;nosound fs-14&quot; svgIcon&#x3D;&quot;bell-close&quot;&gt;
-      &lt;/mat-icon&gt;
-      }
-    &lt;/div&gt;
-    @if(lastMessage){
-
-    @if(screenIsSearch){
-    &lt;div class&#x3D;&quot;msg flex&quot; [innerHTML]&#x3D;&quot;(item | displayLastMsg) | highlight: (searchText)&quot;&gt;
-    &lt;/div&gt;
-    }@else{
-    &lt;div class&#x3D;&quot;msg flex&quot; [innerHTML]&#x3D;&quot;(item | displayLastMsg)&quot;&gt;
-    &lt;/div&gt;
-    }
-
-    }
-  &lt;/div&gt;
-
-  &lt;div class&#x3D;&quot;column time-count&quot;&gt;
-    &lt;div class&#x3D;&quot;time&quot;&gt;{{ lastMessage?.MessageTime | chatDisplayTime }}&lt;/div&gt;
-    @if(count &amp;&amp; count &gt; 0){
-    &lt;div class&#x3D;&quot;count t-bold&quot;&gt;
-      {{ count | displayNumber : 99 }}
-    &lt;/div&gt;
-    }
-  &lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;div class&#x3D;&quot;btn-area row&quot;&gt;
-  &lt;div class&#x3D;&quot;btn btn-pin c-pointer&quot; (click)&#x3D;&quot;controlSwitch(&#x27;pintop&#x27;, $event)&quot;&gt;
-    &lt;mat-icon class&#x3D;&quot;svg-icon&quot; [svgIcon]&#x3D;&quot;isTop ? &#x27;unpin-border&#x27; : &#x27;pin-border&#x27;&quot;&gt;
-    &lt;/mat-icon&gt;
-  &lt;/div&gt;
-
-  &lt;div class&#x3D;&quot;btn btn-mute c-pointer&quot; (click)&#x3D;&quot;controlSwitch(&#x27;mute&#x27;, $event)&quot;&gt;
-    &lt;mat-icon class&#x3D;&quot;icon-f&quot; [svgIcon]&#x3D;&quot;isMute ? &#x27;bell-open&#x27; : &#x27;bell-close&#x27;&quot;&gt;
-    &lt;/mat-icon&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -534,36 +530,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;section class&#x3D;&quot;header column&quot;&gt;
-  &lt;button mat-icon-button (click)&#x3D;&quot;back()&quot;&gt;
-    &lt;mat-icon svgIcon&#x3D;&quot;close&quot;&gt;&lt;/mat-icon&gt;
-  &lt;/button&gt;
-&lt;/section&gt;
-&lt;section class&#x3D;&quot;content column&quot;&gt;
-  &lt;lib-team-logo [logo]&#x3D;&quot;team?.Logo&quot;&gt;&lt;/lib-team-logo&gt;
-  &lt;span class&#x3D;&quot;name&quot;&gt;{{ team?.Name }}&lt;/span&gt;
-  &lt;span class&#x3D;&quot;build&quot;&gt;{{ &quot;pages.team.buildTeamSuccess&quot; | translate }}&lt;/span&gt;
-  &lt;span class&#x3D;&quot;build-tip&quot;&gt;
-    {{ &quot;pages.team.buildTeamSuccessInfo&quot; | translate }}
-  &lt;/span&gt;
-  &lt;button mat-fab extended (click)&#x3D;&quot;onInvite()&quot;&gt;
-    &lt;mat-icon svgIcon&#x3D;&quot;invite&quot;&gt;&lt;/mat-icon&gt;
-    {{ &quot;pages.team.inviteFirstMember&quot; | translate }}
-  &lt;/button&gt;
-  &lt;button mat-fab extended (click)&#x3D;&quot;onPost()&quot;&gt;
-    &lt;mat-icon svgIcon&#x3D;&quot;post&quot;&gt;&lt;/mat-icon&gt;
-    {{ &quot;pages.team.postFirstMsg&quot; | translate }}
-  &lt;/button&gt;
-  &lt;button mat-fab extended (click)&#x3D;&quot;onGoto()&quot;&gt;
-    &lt;mat-icon class&#x3D;&quot;special&quot;&gt;
-      &lt;lib-team-logo [logo]&#x3D;&quot;team?.Logo&quot;&gt;&lt;/lib-team-logo&gt;
-    &lt;/mat-icon&gt;
-    {{ &quot;pages.team.goToTeamPage&quot; | translate }}
-  &lt;/button&gt;
-&lt;/section&gt;
-</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

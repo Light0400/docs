@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -1157,32 +1153,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;result-title&quot;&gt;
-    {{ &quot;dialog.search.result-title&quot; | translate }}
-&lt;/div&gt;
-
-&lt;div class&#x3D;&quot;main column flex&quot;&gt;
-    &lt;cdk-virtual-scroll-viewport [minBufferPx]&#x3D;&quot;600&quot; [maxBufferPx]&#x3D;&quot;2000&quot; [hidden]&#x3D;&quot;!list?.length&quot; #scroller
-        [itemSize]&#x3D;&quot;itemSize&quot;&gt;
-        &lt;ng-container *cdkVirtualFor&#x3D;&quot;let item of list;let index&#x3D;index&quot;&gt;
-            &lt;lib-user-item [style.height.px]&#x3D;&quot;itemSize&quot; [item]&#x3D;&quot;item&quot; (click)&#x3D;&quot;clickItem(item)&quot;&gt;&lt;/lib-user-item&gt;
-        &lt;/ng-container&gt;
-    &lt;/cdk-virtual-scroll-viewport&gt;
-
-    @if(!loading &amp;&amp; !list?.length){
-    &lt;lib-empty-data&gt;
-        &lt;span&gt;
-            {{ &#x27;dialog.search.nodata&#x27; |translate:({ keyword: searchText })}}
-        &lt;/span&gt;
-    &lt;/lib-empty-data&gt;
-    }
-
-    @if(loading){
-    &lt;lib-loading&gt;&lt;/lib-loading&gt;
-    }
-&lt;/div&gt;</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

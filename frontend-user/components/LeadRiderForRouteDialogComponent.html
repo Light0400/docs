@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1276,62 +1272,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-header [backNotShow]&#x3D;&quot;true&quot; [show]&#x3D;&quot;true&quot; [isDialog]&#x3D;&quot;true&quot;&gt;
-  &lt;ng-container ngProjectAs&#x3D;&quot;[h-left]&quot;&gt;
-    &lt;button mat-icon-button mat-dialog-close&gt;
-      &lt;mat-icon svgIcon&#x3D;&quot;close&quot;&gt;&lt;/mat-icon&gt;
-    &lt;/button&gt;
-  &lt;/ng-container&gt;
-
-  &lt;ng-container ngProjectAs&#x3D;&quot;[h-title]&quot;&gt;
-    {{ &quot;dialog.lead-rider.title&quot; | translate }}
-  &lt;/ng-container&gt;
-
-  &lt;ng-container ngProjectAs&#x3D;&quot;[h-right]&quot;&gt;
-    &lt;button type&#x3D;&quot;button&quot; mat-button class&#x3D;&quot;tmup-btn-text blue&quot; (click)&#x3D;&quot;complete()&quot;&gt;
-      {{ &quot;common.complete&quot; | translate }}
-    &lt;/button&gt;
-  &lt;/ng-container&gt;
-&lt;/lib-header&gt;
-
-@if(chooseMembers.length){
-&lt;section class&#x3D;&quot;shareToUser row tmup-align-center&quot;&gt;
-  @for (member of chooseMembers; track member.Id; let index &#x3D; $index) {
-  &lt;div class&#x3D;&quot;column tmup-center&quot;&gt;
-    &lt;lib-user-avatar [avatar]&#x3D;&quot;member.Avatar&quot; [firstName]&#x3D;&quot;member.FirstName&quot;
-      [lastName]&#x3D;&quot;member.FirstName&quot;&gt;&lt;/lib-user-avatar&gt;
-    &lt;div&gt;{{ member | displayName }}&lt;/div&gt;
-    &lt;mat-icon class&#x3D;&quot;clear fs-16&quot; svgIcon&#x3D;&quot;clear-2&quot; (click)&#x3D;&quot;deleteUser(member, index)&quot;&gt;&lt;/mat-icon&gt;
-  &lt;/div&gt;
-  }
-&lt;/section&gt;
-}
-
-&lt;lib-search-input #searchInput showClearBtn (onChange)&#x3D;&quot;onChange($event)&quot;
-  [placeholder]&#x3D;&quot;&#x27;dialog.lead-rider.search-placeholder&#x27; | translate&quot;&gt;&lt;/lib-search-input&gt;
-
-@if(noData &amp;&amp; !loading){
-&lt;lib-empty-data [useDefault]&#x3D;&quot;true&quot;&gt;&lt;/lib-empty-data&gt;
-}
-
-
-&lt;cdk-virtual-scroll-viewport class&#x3D;&quot;totalUser column flex&quot; [minBufferPx]&#x3D;&quot;600&quot; [maxBufferPx]&#x3D;&quot;2000&quot;
-  [hidden]&#x3D;&quot;!list?.length&quot; #scroller [itemSize]&#x3D;&quot;itemSize&quot;&gt;
-  &lt;ng-container *cdkVirtualFor&#x3D;&quot;let item of list; let index &#x3D; index&quot;&gt;
-    &lt;lib-user-item [style.height.px]&#x3D;&quot;itemSize&quot; class&#x3D;&quot;c-pointer&quot; [item]&#x3D;&quot;item&quot; [customBtn]&#x3D;&quot;true&quot;
-      (click)&#x3D;&quot;onCtrl(item)&quot;&gt;
-      &lt;div basic-right class&#x3D;&quot;select&quot;&gt;
-        &lt;mat-icon [svgIcon]&#x3D;&quot;item.checked ? &#x27;fill-check&#x27; : &#x27;checkbox&#x27;&quot;&gt;&lt;/mat-icon&gt;
-      &lt;/div&gt;
-    &lt;/lib-user-item&gt;
-  &lt;/ng-container&gt;
-&lt;/cdk-virtual-scroll-viewport&gt;
-
-@if(loading){
-&lt;lib-loading&gt;&lt;/lib-loading&gt;
-}</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

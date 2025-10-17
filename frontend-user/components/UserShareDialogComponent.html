@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -796,44 +792,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-draggable-list [dialogRef]&#x3D;&quot;dialogRef&quot; [defaultListHeight]&#x3D;&quot;defaultHeight&quot; [maxDragHeight]&#x3D;&quot;maxDropHeight&quot;&gt;
-    &lt;div class&#x3D;&quot;main column flex&quot;&gt;
-        &lt;div class&#x3D;&quot;header&quot;&gt;
-            {{ &#x27;dialog.user-share.title&#x27; | translate }}
-        &lt;/div&gt;
-
-        &lt;div class&#x3D;&quot;share-info column flex&quot;&gt;
-            &lt;div class&#x3D;&quot;avatar column tmup-center&quot;&gt;
-                &lt;lib-user-avatar [avatar]&#x3D;&quot;data.user?.Avatar&quot; [firstName]&#x3D;&quot;data.user?.FirstName&quot;
-                    [lastName]&#x3D;&quot;data.user?.LastName&quot;&gt;&lt;/lib-user-avatar&gt;
-                &lt;div class&#x3D;&quot;name&quot;&gt;{{ data.user | displayName }}&lt;/div&gt;
-            &lt;/div&gt;
-            @if(qrdata){
-            &lt;div class&#x3D;&quot;qrcode column tmup-center&quot;&gt;
-                &lt;qrcode [qrdata]&#x3D;&quot;qrdata&quot; [width]&#x3D;&quot;220&quot; [margin]&#x3D;&quot;0&quot; [errorCorrectionLevel]&#x3D;&quot;&#x27;M&#x27;&quot;&gt;&lt;/qrcode&gt;
-                &lt;div class&#x3D;&quot;url&quot;&gt;
-                    {{ qrdata }}
-                &lt;/div&gt;
-            &lt;/div&gt;
-            }
-
-        &lt;/div&gt;
-
-        &lt;div class&#x3D;&quot;footer&quot;&gt;
-            &lt;button class&#x3D;&quot;tmup-btn-l row tmup-center&quot; (click)&#x3D;&quot;share()&quot;&gt;
-                &lt;mat-icon svgIcon&#x3D;&quot;upload&quot;&gt;&lt;/mat-icon&gt;
-                &lt;span&gt;{{&#x27;common.share-to&#x27; | translate}}&lt;/span&gt;
-            &lt;/button&gt;
-
-            &lt;button class&#x3D;&quot;tmup-btn-l-gray-7 row tmup-center&quot; (click)&#x3D;&quot;copy()&quot;&gt;
-                &lt;mat-icon svgIcon&#x3D;&quot;copy&quot;&gt;&lt;/mat-icon&gt;
-                &lt;span&gt;{{&#x27;common.copy-url&#x27; | translate}}&lt;/span&gt;
-            &lt;/button&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/lib-draggable-list&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

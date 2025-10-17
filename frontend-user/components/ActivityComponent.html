@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -2521,123 +2517,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-header [show]&#x3D;&quot;true&quot; [isDialog]&#x3D;&quot;true&quot; (backClick)&#x3D;&quot;back()&quot;&gt;
-  &lt;ng-container ngProjectAs&#x3D;&quot;[h-title]&quot;&gt;
-    {{ &quot;pages.activity.title&quot; | translate }}
-  &lt;/ng-container&gt;
-
-  &lt;ng-container ngProjectAs&#x3D;&quot;[h-right]&quot;&gt;
-    &lt;button class&#x3D;&quot;tmup-btn-icon&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;search()&quot;&gt;
-      &lt;mat-icon svgIcon&#x3D;&quot;search&quot;&gt;&lt;/mat-icon&gt;
-    &lt;/button&gt;
-    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-icon&quot; (click)&#x3D;&quot;add()&quot;&gt;
-      &lt;mat-icon svgIcon&#x3D;&quot;add-activity&quot;&gt;&lt;/mat-icon&gt;
-    &lt;/button&gt;
-  &lt;/ng-container&gt;
-&lt;/lib-header&gt;
-
-&lt;div class&#x3D;&quot;row filter-container&quot;&gt;
-  &lt;div class&#x3D;&quot;row item tmup-center c-pointer&quot; [class.active]&#x3D;&quot;!!filter?.Point&quot; (click)&#x3D;&quot;onFilter(&#x27;nearby&#x27;)&quot;&gt;
-    &lt;span&gt;{{ filterText.Point }}&lt;/span&gt;
-    &lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;arrow_down&quot;&gt;&lt;/mat-icon&gt;
-  &lt;/div&gt;
-  &lt;div class&#x3D;&quot;row item tmup-center c-pointer&quot; [class.active]&#x3D;&quot;(filter?.Times?.length || filter?.Weeks?.length)&quot;
-    (click)&#x3D;&quot;onFilter(&#x27;time-period&#x27;)&quot;&gt;
-    &lt;span&gt;{{ filterText.WeekTime }}&lt;/span&gt;
-    &lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;arrow_down&quot;&gt;&lt;/mat-icon&gt;
-  &lt;/div&gt;
-
-  &lt;div class&#x3D;&quot;row item tmup-center c-pointer&quot; [class.active]&#x3D;&quot;filter?.Difficulty?.length&quot;
-    (click)&#x3D;&quot;onFilter(&#x27;difficulty-type&#x27;)&quot;&gt;
-    &lt;span&gt;
-      {{ filterText.Difficulty }}
-    &lt;/span&gt;
-    &lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;arrow_down&quot;&gt;&lt;/mat-icon&gt;
-  &lt;/div&gt;
-
-  &lt;div class&#x3D;&quot;row item tmup-center c-pointer&quot; [class.active]&#x3D;&quot;filter?.Popular&quot; (click)&#x3D;&quot;onFilter(&#x27;popular&#x27;)&quot;&gt;
-    &lt;span&gt;{{ &#x27;pages.activity.filter.popular&#x27; | translate }}&lt;/span&gt;
-  &lt;/div&gt;
-
-  &lt;div class&#x3D;&quot;row item tmup-center c-pointer&quot; [class.active]&#x3D;&quot;filter?.Upcoming&quot; (click)&#x3D;&quot;onFilter(&#x27;upcoming&#x27;)&quot;&gt;
-    &lt;span&gt;{{ &#x27;pages.activity.filter.upcoming&#x27; | translate }}&lt;/span&gt;
-  &lt;/div&gt;
-
-  &lt;div class&#x3D;&quot;row clear-btn tmup-center&quot;&gt;
-    &lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;clearFilter()&quot;&gt;
-      {{ &#x27;common.clear&#x27; |translate}}
-    &lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-@if(mapsInit){
-&lt;google-map #map [hidden]&#x3D;&quot;!(filter?.Point || !loaded)&quot; [options]&#x3D;&quot;googleMapsOptions&quot;&gt;
-  @if(follows?.length){
-  &lt;div class&#x3D;&quot;row follows c-pointer&quot; (click)&#x3D;&quot;followFilter()&quot;&gt;
-    &lt;div class&#x3D;&quot;row tmup-align-center&quot;&gt;
-      &lt;lib-user-avater-group [users]&#x3D;&quot;follows!&quot;&gt;&lt;/lib-user-avater-group&gt;
-      &lt;div class&#x3D;&quot;text flex&quot;&gt;
-        {{ &#x27;pages.activity.follow&#x27; |translate: ({ count: follows?.length })}}
-      &lt;/div&gt;
-      &lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;arrow_right&quot;&gt;&lt;/mat-icon&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  }
-
-
-  @if(userMarker.position &amp;&amp; !isOpenDrapList){
-  &lt;div class&#x3D;&quot;my-location row tmup-center c-pointer&quot; (click)&#x3D;&quot;goSelf()&quot;&gt;
-    &lt;mat-icon svgIcon&#x3D;&quot;crosshair&quot;&gt;&lt;/mat-icon&gt;
-  &lt;/div&gt;
-  }
-
-&lt;/google-map&gt;
-}
-
-
-&lt;lib-map-cl-marker #userMarker [map]&#x3D;&quot;map?.googleMap&quot; [self]&#x3D;&quot;true&quot; [iconHasDirection]&#x3D;&quot;true&quot; [zIndex]&#x3D;&quot;0&quot;
-  (positionChange)&#x3D;&quot;onPositionChange($event)&quot;&gt;
-&lt;/lib-map-cl-marker&gt;
-
-&lt;div class&#x3D;&quot;permission column flex&quot; [hidden]&#x3D;&quot;filter?.Point || !loaded&quot;&gt;
-  &lt;div class&#x3D;&quot;desc&quot; [innerHTML]&#x3D;&quot;&#x27;pages.activity.location-permission&#x27; | translate&quot;&gt;
-
-  &lt;/div&gt;
-  &lt;div&gt;
-    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-s&quot; libOpenSetting&gt;
-      {{ &#x27;pages.activity.loc-permission-btn&#x27; | translate}}
-    &lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;lib-draggable-list #dragList [defaultListHeight]&#x3D;&quot;defaultHeight&quot; [maxDragHeight]&#x3D;&quot;maxDropHeight&quot;
-  [hidden]&#x3D;&quot;!isOpenDrapList&quot; (drogEnd)&#x3D;&quot;onDragEnd($event)&quot; (drogMove)&#x3D;&quot;onDragMove($event)&quot;&gt;
-
-  @if(myLocDisplay){
-  &lt;div header class&#x3D;&quot;my-location row tmup-center c-pointer&quot; (click)&#x3D;&quot;goSelf()&quot;&gt;
-    &lt;mat-icon svgIcon&#x3D;&quot;crosshair&quot;&gt;&lt;/mat-icon&gt;
-  &lt;/div&gt;
-  }
-
-  &lt;cdk-virtual-scroll-viewport #scroller [itemSize]&#x3D;&quot;itemSize&quot; [maxBufferPx]&#x3D;&quot;2000&quot; [minBufferPx]&#x3D;&quot;600&quot;&gt;
-    &lt;div class&#x3D;&quot;row item&quot; [style.height.px]&#x3D;&quot;itemSize&quot; *cdkVirtualFor&#x3D;&quot;let item of dropDataList&quot;
-      (click)&#x3D;&quot;openActivity(item)&quot;&gt;
-      &lt;lib-activity-item class&#x3D;&quot;flex&quot; [item]&#x3D;&quot;item&quot;&gt;
-      &lt;/lib-activity-item&gt;
-    &lt;/div&gt;
-  &lt;/cdk-virtual-scroll-viewport&gt;
-&lt;/lib-draggable-list&gt;
-
-&lt;div class&#x3D;&quot;footer-btn row tmup-center&quot; [hidden]&#x3D;&quot;!gpsPermission&quot;&gt;
-  &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-l row tmup-center&quot; (click)&#x3D;&quot;add()&quot;&gt;
-    &lt;mat-icon svgIcon&#x3D;&quot;add-activity&quot;&gt;&lt;/mat-icon&gt;
-    &lt;span&gt;
-      {{&quot;components.home-add-btn.menu-item.create-activity&quot; | translate }}
-    &lt;/span&gt;
-  &lt;/button&gt;
-&lt;/div&gt;</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

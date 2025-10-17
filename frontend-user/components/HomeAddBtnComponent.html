@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -577,16 +573,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;a class&#x3D;&quot;main-btn link-noline&quot; [matMenuTriggerFor]&#x3D;&quot;homeAddMenu&quot; (menuOpened)&#x3D;&quot;menuOpen(true)&quot;
-    (menuClosed)&#x3D;&quot;menuOpen(false)&quot;&gt;
-    &lt;img [class.open]&#x3D;&quot;menuIsOpen&quot; [class.dark]&#x3D;&quot;isDark&quot; src&#x3D;&quot;./assets/add-circle.svg&quot; /&gt;
-&lt;/a&gt;
-&lt;mat-menu #homeAddMenu&#x3D;&quot;matMenu&quot; backdropClass&#x3D;&quot;mask-bg-color&quot; class&#x3D;&quot;menu-circle-border&quot; yPosition&#x3D;&quot;above&quot;
-    xPosition&#x3D;&quot;before&quot;&gt;
-    &lt;ng-content&gt;&lt;/ng-content&gt;
-&lt;/mat-menu&gt;</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

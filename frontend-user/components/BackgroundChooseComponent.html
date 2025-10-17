@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1118,72 +1114,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;title row tmup-align-center&quot;&gt;
-    &lt;label class&#x3D;&quot;flex&quot;&gt;{{ &#x27;common.background&#x27; | translate}}&lt;/label&gt;
-&lt;/div&gt;
-
-&lt;div class&#x3D;&quot;bgtype row tmup-align-center&quot;&gt;
-    @for (item of bgTypes; track item.Id){
-
-    @if(item.Code &#x3D;&#x3D; &#x27;File&#x27;){
-
-    &lt;lib-file [formControl]&#x3D;&quot;fileCtrl&quot; [dirPath]&#x3D;&quot;dirPath&quot; [maxResolution]&#x3D;&quot;500&quot;
-        [cropperSettings]&#x3D;&quot;{aspectRatio: (352/140)}&quot; type&#x3D;&quot;Custom&quot; [accept]&#x3D;&quot;&#x27;image/*&#x27;&quot;&gt;
-        &lt;div custom-file-input class&#x3D;&quot;item row tmup-align-center c-pointer&quot; [class.active]&#x3D;&quot;item.Id &#x3D;&#x3D; bgType?.Id&quot;&gt;
-            &lt;span&gt;{{item.Text}}&lt;/span&gt;
-            &lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;add&quot;&gt;&lt;/mat-icon&gt;
-        &lt;/div&gt;
-    &lt;/lib-file&gt;
-
-    }@else{
-
-    @if(existImage(item)){
-
-    &lt;div class&#x3D;&quot;item row tmup-align-center c-pointer&quot; [class.active]&#x3D;&quot;item.Id &#x3D;&#x3D; bgType?.Id&quot;
-        (click)&#x3D;&quot;changeType(item)&quot;&gt;
-        &lt;span&gt;{{item.Text}}&lt;/span&gt;
-    &lt;/div&gt;
-
-    }
-
-    }
-
-    }
-&lt;/div&gt;
-
-&lt;div class&#x3D;&quot;bgimages column&quot;&gt;
-    &lt;div class&#x3D;&quot;row items tmup-align-center&quot; #scrollDiv&gt;
-        @for (item of bgImages; track item.Id) {
-
-        @if(item.TypeId &#x3D;&#x3D; bgType?.Id){
-        &lt;div class&#x3D;&quot;item c-pointer&quot; [class.active]&#x3D;&quot;item.checked&quot; [isApiImage]&#x3D;&quot;true&quot;
-            [appBackgroundImage]&#x3D;&quot;item.Image&quot; (click)&#x3D;&quot;selectImage(item)&quot;&gt;
-            &lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;fill-check&quot; [hidden]&#x3D;&quot;!item.checked&quot;&gt;&lt;/mat-icon&gt;
-        &lt;/div&gt;
-        }
-
-        }
-
-        @if(bgType?.Code &#x3D;&#x3D; &#x27;File&#x27; &amp;&amp; customImage?.length){
-        &lt;div class&#x3D;&quot;item c-pointer&quot; [isApiImage]&#x3D;&quot;true&quot; [appBackgroundImage]&#x3D;&quot;customImage&quot;&gt;
-        &lt;/div&gt;
-        }
-    &lt;/div&gt;
-    @if(bgType?.Code &#x3D;&#x3D; &#x27;File&#x27;){
-    &lt;div class&#x3D;&quot;row file-input&quot;&gt;
-        &lt;label class&#x3D;&quot;flex&quot;&gt;&lt;/label&gt;
-        &lt;lib-file [formControl]&#x3D;&quot;fileCtrl&quot; [dirPath]&#x3D;&quot;dirPath&quot; [maxResolution]&#x3D;&quot;500&quot;
-            [cropperSettings]&#x3D;&quot;{aspectRatio: (352/140)}&quot; type&#x3D;&quot;Custom&quot; [accept]&#x3D;&quot;&#x27;image/*&#x27;&quot;&gt;
-            &lt;span class&#x3D;&quot;text c-pointer&quot; custom-file-input&gt;
-                {{ &#x27;common.change&#x27; | translate}}
-            &lt;/span&gt;
-        &lt;/lib-file&gt;
-    &lt;/div&gt;
-    }
-
-&lt;/div&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

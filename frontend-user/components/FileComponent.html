@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -2482,61 +2478,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;file-input column flex&quot; [class.disabled]&#x3D;&quot;disabled&quot; (click)&#x3D;&quot;openFile()&quot;&gt;
-  @if(type &#x3D;&#x3D;&#x3D; &#x27;Basic&#x27; || type&#x3D;&#x3D;&#x3D;&#x27;CustomIcon&#x27;){
-  &lt;button mat-mini-fab title&#x3D;&quot;add&quot; type&#x3D;&quot;button&quot; [color]&#x3D;&quot;color&quot;&gt;
-
-    @if(type &#x3D;&#x3D;&#x3D; &#x27;Basic&#x27;){
-    &lt;mat-icon&gt;add&lt;/mat-icon&gt;
-    }
-
-    &lt;ng-content select&#x3D;&quot;[icon]&quot;&gt;&lt;/ng-content&gt;
-  &lt;/button&gt;
-  }
-
-  @if(type &#x3D;&#x3D;&#x3D;&#x27;Custom&#x27;){
-  &lt;ng-container&gt;
-    &lt;ng-content select&#x3D;&quot;[custom-file-input]&quot;&gt;&lt;/ng-content&gt;
-  &lt;/ng-container&gt;
-  }
-
-&lt;/div&gt;
-
-&lt;span [matMenuTriggerFor]&#x3D;&quot;fileImputMenu&quot;&gt;&lt;/span&gt;
-
-&lt;mat-menu #fileImputMenu&#x3D;&quot;matMenu&quot; [overlapTrigger]&#x3D;&quot;false&quot;&gt;
-  &lt;ng-content select&#x3D;&quot;[menuStart]&quot;&gt;&lt;/ng-content&gt;
-  @if(!disabled){
-  &lt;button type&#x3D;&quot;button&quot; [title]&#x3D;&quot;&#x27;common.album-select&#x27; |translate&quot; mat-menu-item (click)&#x3D;&quot;addFile(fileInput)&quot;&gt;
-    &lt;mat-icon&gt;add_photo_alternate&lt;/mat-icon&gt;
-    {{ &#x27;common.album-select&#x27; |translate}}
-  &lt;/button&gt;
-  }
-  @if(!disabled &amp;&amp; !isWeb){
-  &lt;button type&#x3D;&quot;button&quot; [title]&#x3D;&quot;&#x27;common.take-photo&#x27; |translate&quot; mat-menu-item (click)&#x3D;&quot;addFile(fileInputCapture)&quot;&gt;
-    &lt;mat-icon&gt;add_a_photo&lt;/mat-icon&gt;
-    {{ &#x27;common.take-photo&#x27; |translate}}
-  &lt;/button&gt;
-  }
-
-
-  @if(!disabled &amp;&amp; !isWeb &amp;&amp; enableVideo){
-  &lt;button type&#x3D;&quot;button&quot; [title]&#x3D;&quot;&#x27;common.take-video&#x27; |translate&quot; mat-menu-item (click)&#x3D;&quot;addFile(fileInputVideo)&quot;&gt;
-    &lt;mat-icon&gt;add_a_photo&lt;/mat-icon&gt;
-    {{ &#x27;common.take-video&#x27; |translate}}
-  &lt;/button&gt;
-  }
-
-  &lt;ng-content select&#x3D;&quot;[menuEnd]&quot;&gt;&lt;/ng-content&gt;
-&lt;/mat-menu&gt;
-
-&lt;div style&#x3D;&quot;display: none&quot;&gt;
-  &lt;input type&#x3D;&quot;file&quot; #fileInput [accept]&#x3D;&quot;accept&quot; [multiple]&#x3D;&quot;multiple&quot; /&gt;
-  &lt;input type&#x3D;&quot;file&quot; #fileInputCapture accept&#x3D;&quot;image/*&quot; capture&#x3D;&quot;camera&quot; /&gt;
-  &lt;input type&#x3D;&quot;file&quot; #fileInputVideo accept&#x3D;&quot;video/*&quot; capture&#x3D;&quot;camcorder&quot; /&gt;
-&lt;/div&gt;</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

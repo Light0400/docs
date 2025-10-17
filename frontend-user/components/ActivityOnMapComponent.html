@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1941,42 +1937,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;maps&quot;&gt;
-  @if(mapOption.option.mapId &amp;&amp; mapOption.center){
-  &lt;google-map #map [options]&#x3D;&quot;mapOption.option&quot; [zoom]&#x3D;&quot;mapOption.zoom&quot; [center]&#x3D;&quot;mapOption.center&quot;&gt;
-  &lt;/google-map&gt;
-  }
-
-&lt;/div&gt;
-
-&lt;div class&#x3D;&quot;right-side&quot;&gt;
-  &lt;span&gt;{{(team?.ActivityCount ?? 0)}}&lt;/span&gt;
-  &lt;p&gt;{{ &quot;pages.team.event-count&quot; | translate }}&lt;/p&gt;
-  &lt;div&gt;&lt;/div&gt;
-  &lt;span&gt;{{(team?.MonthDistance ?? 0) | metricConversion:&#x27;km&#x27;}}&lt;/span&gt;
-  &lt;p&gt;{{ &quot;pages.team.monthly-distance.&quot;+ mearsureUnitTypes[unitType] | translate }}&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div class&#x3D;&quot;row footer&quot; #scrollMore&gt;
-  @for(item of list; track item.Id){
-  &lt;lib-activity-item styleType&#x3D;&quot;whiteBg&quot; [item]&#x3D;&quot;item&quot; (click)&#x3D;&quot;openActivity(item)&quot;&gt;&lt;/lib-activity-item&gt;
-  }
-
-&lt;/div&gt;
-
-&lt;lib-draggable-list #dragList [defaultListHeight]&#x3D;&quot;defaultHeight&quot; [maxDragHeight]&#x3D;&quot;maxDropHeight&quot;
-  [hidden]&#x3D;&quot;!isOpenDrapList&quot; (drogEnd)&#x3D;&quot;onDragEnd($event)&quot;&gt;
-
-  &lt;cdk-virtual-scroll-viewport #scroller [itemSize]&#x3D;&quot;itemSize&quot; [maxBufferPx]&#x3D;&quot;2000&quot; [minBufferPx]&#x3D;&quot;600&quot;&gt;
-    &lt;div class&#x3D;&quot;row item&quot; [style.height.px]&#x3D;&quot;itemSize&quot; *cdkVirtualFor&#x3D;&quot;let item of dropDataList&quot;
-      (click)&#x3D;&quot;openActivity(item)&quot;&gt;
-      &lt;lib-activity-item class&#x3D;&quot;flex&quot; [item]&#x3D;&quot;item&quot;&gt;
-      &lt;/lib-activity-item&gt;
-    &lt;/div&gt;
-  &lt;/cdk-virtual-scroll-viewport&gt;
-&lt;/lib-draggable-list&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

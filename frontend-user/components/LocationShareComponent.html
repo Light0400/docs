@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1342,126 +1338,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-header [show]&#x3D;&quot;true&quot; [isDialog]&#x3D;&quot;true&quot; (backClick)&#x3D;&quot;back()&quot;&gt;
-  &lt;ng-container ngProjectAs&#x3D;&quot;[h-title]&quot;&gt;
-    {{ &quot;pages.location-share.title&quot; | translate }}
-  &lt;/ng-container&gt;
-&lt;/lib-header&gt;
-
-&lt;div class&#x3D;&quot;main column flex&quot; [formGroup]&#x3D;&quot;formGroup&quot;&gt;
-  @if(setting){
-  &lt;section&gt;
-    &lt;div class&#x3D;&quot;memo&quot;&gt;
-      {{ &quot;pages.location-share.share-cycling-memo&quot; | translate }}
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;theme-item tmup-gap-4 row tmup-align-center&quot;&gt;
-      &lt;div class&#x3D;&quot;flex column&quot;&gt;
-        &lt;div&gt;{{ &quot;pages.location-share.ShareCyclingData&quot; | translate }}&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-        &lt;lib-slide-toggle-input formControlName&#x3D;&quot;ShareCyclingData&quot;&gt;&lt;/lib-slide-toggle-input&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;div [hidden]&#x3D;&quot;!formGroup.get(&#x27;ShareCyclingData&#x27;)?.value&quot;&gt;
-      &lt;div class&#x3D;&quot;theme-item sub-item tmup-gap-4 row tmup-align-center&quot;&gt;
-        &lt;div class&#x3D;&quot;flex column&quot;&gt;
-          &lt;div&gt;{{ &quot;pages.location-share.ShareSpeed&quot; | translate }}&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div&gt;
-          &lt;lib-slide-toggle-input formControlName&#x3D;&quot;ShareSpeed&quot;&gt;&lt;/lib-slide-toggle-input&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-
-      &lt;div class&#x3D;&quot;theme-item sub-item tmup-gap-4 row tmup-align-center&quot;&gt;
-        &lt;div class&#x3D;&quot;flex column&quot;&gt;
-          &lt;div&gt;{{ &quot;pages.location-share.SharePower&quot; | translate }}&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div&gt;
-          &lt;lib-slide-toggle-input formControlName&#x3D;&quot;SharePower&quot;&gt;&lt;/lib-slide-toggle-input&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-
-      &lt;div class&#x3D;&quot;theme-item sub-item tmup-gap-4 row tmup-align-center&quot;&gt;
-        &lt;div class&#x3D;&quot;flex column&quot;&gt;
-          &lt;div&gt;{{ &quot;pages.location-share.ShareHeartRate&quot; | translate }}&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div&gt;
-          &lt;lib-slide-toggle-input formControlName&#x3D;&quot;ShareHeartRate&quot;&gt;&lt;/lib-slide-toggle-input&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-
-      &lt;div class&#x3D;&quot;theme-item sub-item tmup-gap-4 row tmup-align-center&quot;&gt;
-        &lt;div class&#x3D;&quot;flex column&quot;&gt;
-          &lt;div&gt;{{ &quot;pages.location-share.SharePedalingFrequency&quot; | translate }}&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div&gt;
-          &lt;lib-slide-toggle-input formControlName&#x3D;&quot;SharePedalingFrequency&quot;&gt;&lt;/lib-slide-toggle-input&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
-
-
-  &lt;section&gt;
-    &lt;div class&#x3D;&quot;theme-item tmup-gap-4 row tmup-align-center c-pointer&quot; (click)&#x3D;&quot;onShareTarget()&quot;&gt;
-      &lt;div class&#x3D;&quot;flex&quot;&gt;{{ &quot;pages.location-share.default-share-target&quot; | translate }}&lt;/div&gt;
-      &lt;div class&#x3D;&quot;right row tmup-align-center&quot;&gt;
-        {{ audienceType[setting.AudienceType!] | enumTranslate: &#x27;AudienceType&#x27; }}
-        &lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;arrow_right&quot;&gt;&lt;/mat-icon&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
-
-  &lt;section&gt;
-    &lt;div class&#x3D;&quot;theme-item tmup-gap-4 row tmup-align-center c-pointer&quot;&gt;
-      &lt;div class&#x3D;&quot;flex&quot;&gt;{{ &quot;pages.location-share.ShareGuest&quot; | translate }}&lt;/div&gt;
-      &lt;div&gt;
-        &lt;lib-slide-toggle-input formControlName&#x3D;&quot;ShareGuest&quot;&gt;&lt;/lib-slide-toggle-input&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
-
-  &lt;section&gt;
-    &lt;div class&#x3D;&quot;theme-item tmup-gap-4 row tmup-align-center&quot;&gt;
-      &lt;div class&#x3D;&quot;flex&quot;&gt;{{ &quot;pages.location-share.auto-share&quot; | translate }}&lt;/div&gt;
-      &lt;div&gt;
-        &lt;lib-slide-toggle-input formControlName&#x3D;&quot;RideAutoShare&quot;&gt;&lt;/lib-slide-toggle-input&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
-  &lt;div class&#x3D;&quot;share-tip&quot;&gt;
-    {{ &quot;pages.location-share.share-tip&quot; | translate }}
-  &lt;/div&gt;
-
-  @if(isCustom){
-  &lt;div class&#x3D;&quot;custom-share column&quot;&gt;
-    &lt;div class&#x3D;&quot;share-header row tmup-align-center&quot;&gt;
-      &lt;div&gt;{{ &quot;pages.location-share.share-target&quot; | translate }}&lt;/div&gt;
-      &lt;button type&#x3D;&quot;button&quot; mat-button class&#x3D;&quot;tmup-btn-text blue&quot; (click)&#x3D;&quot;onEditCustomShare()&quot;&gt;
-        {{ &quot;common.edit&quot; | translate }}
-      &lt;/button&gt;
-    &lt;/div&gt;
-
-    @if(list?.length) {
-    &lt;section class&#x3D;&quot;custom-share-section flex&quot;&gt;
-      @for (user of list; track $index) {
-      &lt;div class&#x3D;&quot;theme-item row user tmup-align-center&quot;&gt;
-        &lt;lib-user-item class&#x3D;&quot;flex&quot; [item]&#x3D;&quot;user&quot; [customBtn]&#x3D;&quot;true&quot;&gt;
-          &lt;div basic-right class&#x3D;&quot;user-close c-pointer&quot; (click)&#x3D;&quot;onRemove(user, $index)&quot;&gt;
-            &lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;close&quot;&gt;&lt;/mat-icon&gt;
-          &lt;/div&gt;
-        &lt;/lib-user-item&gt;
-      &lt;/div&gt;
-      }
-    &lt;/section&gt;
-    }
-  &lt;/div&gt;
-  }
-  }
-&lt;/div&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

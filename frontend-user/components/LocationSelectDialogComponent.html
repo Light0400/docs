@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -1708,123 +1704,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">@if(!pageLoaded){
-&lt;ng-container&gt;
-    &lt;div class&#x3D;&quot;flex row tmup-center&quot;&gt;
-        &lt;mat-spinner color&#x3D;&quot;teal-2&quot;&gt;&lt;/mat-spinner&gt;
-    &lt;/div&gt;
-&lt;/ng-container&gt;
-}@else{
-&lt;ng-container&gt;
-
-    &lt;lib-header [isDialog]&#x3D;&quot;true&quot; [show]&#x3D;&quot;true&quot; [backNotShow]&#x3D;&quot;true&quot;&gt;
-        &lt;ng-container ngProjectAs&#x3D;&quot;[h-left]&quot;&gt;
-            &lt;button mat-icon-button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;back()&quot;&gt;
-                &lt;mat-icon svgIcon&#x3D;&quot;close&quot;&gt;
-                &lt;/mat-icon&gt;
-            &lt;/button&gt;
-        &lt;/ng-container&gt;
-
-        &lt;ng-container ngProjectAs&#x3D;&quot;[h-title]&quot;&gt;
-            {{&#x27;dialog.location-select.title&#x27; | translate}}
-        &lt;/ng-container&gt;
-
-        &lt;ng-container ngProjectAs&#x3D;&quot;[h-right]&quot;&gt;
-            &lt;button type&#x3D;&quot;button&quot; color&#x3D;&quot;primary&quot; mat-button class&#x3D;&quot;tmup-btn-text&quot; [disabled]&#x3D;&quot;!selected&quot;
-                (click)&#x3D;&quot;add()&quot;&gt;
-                {{ &#x27;common.complete&#x27; |translate}}
-            &lt;/button&gt;
-        &lt;/ng-container&gt;
-    &lt;/lib-header&gt;
-
-    @if(this.mapOption.center){
-    &lt;google-map class&#x3D;&quot;map&quot; #map [options]&#x3D;&quot;mapOption.option&quot; [zoom]&#x3D;&quot;mapOption.zoom&quot; [center]&#x3D;&quot;mapOption.center&quot;
-        (mapDragend)&#x3D;&quot;mapDragend()&quot; (zoomChanged)&#x3D;&quot;zoomChanged()&quot; (mapDrag)&#x3D;&quot;mapDrag()&quot;&gt;
-        &lt;lib-map-cl-marker #selfMarker [map]&#x3D;&quot;map.googleMap&quot; [self]&#x3D;&quot;true&quot; [zIndex]&#x3D;&quot;1&quot;
-            (positionChange)&#x3D;&quot;selfPositionChange($event)&quot;&gt;
-        &lt;/lib-map-cl-marker&gt;
-
-        @if(mapOption.markerPosition &amp;&amp; mapOption.markerContent){
-        &lt;lib-map-cl-marker [map]&#x3D;&quot;map.googleMap&quot; [markerContent]&#x3D;&quot;mapOption.markerContent&quot;
-            [position]&#x3D;&quot;mapOption.markerPosition&quot; [zIndex]&#x3D;&quot;2&quot;&gt;
-        &lt;/lib-map-cl-marker&gt;
-        }
-
-        @if(selfMarker.position){
-        &lt;div class&#x3D;&quot;location row tmup-center c-pointer&quot; (click)&#x3D;&quot;goSelf()&quot;&gt;
-            &lt;mat-icon svgIcon&#x3D;&quot;crosshair&quot;&gt;&lt;/mat-icon&gt;
-        &lt;/div&gt;
-        }
-
-    &lt;/google-map&gt;
-    }
-
-
-    &lt;lib-draggable-list [defaultListHeight]&#x3D;&quot;defaultHeight&quot; [maxDragHeight]&#x3D;&quot;maxDropHeight&quot; [minHeight]&#x3D;&quot;minDropHeight&quot;&gt;
-        &lt;div header class&#x3D;&quot;search-text row&quot;&gt;
-            &lt;lib-textbox-input styleType&#x3D;&quot;search&quot; [formControl]&#x3D;&quot;searchCtrl&quot; (keydown.enter)&#x3D;&quot;search()&quot;
-                [placeholder]&#x3D;&quot;&#x27;dialog.location-select.search-placeholder&#x27; | translate&quot;&gt;
-                &lt;mat-icon class&#x3D;&quot;prefix fs-20 stroke-gray-4&quot; svgIcon&#x3D;&quot;search&quot;&gt;&lt;/mat-icon&gt;
-            &lt;/lib-textbox-input&gt;
-
-            @if(searchCtrl.value?.length){
-            &lt;button type&#x3D;&quot;button&quot; mat-button class&#x3D;&quot;tmup-btn-text&quot; (click)&#x3D;&quot;clearSearch()&quot;&gt;
-                {{ &#x27;common.cancel&#x27; |translate}}
-            &lt;/button&gt;
-            }
-        &lt;/div&gt;
-
-        &lt;div class&#x3D;&quot;list flex&quot; #scroll&gt;
-            @if(!permission &amp;&amp; !list?.length &amp;&amp; !loading){
-            &lt;div class&#x3D;&quot;permission column flex&quot;&gt;
-                &lt;div class&#x3D;&quot;desc&quot; [innerHTML]&#x3D;&quot;&#x27;common.permission.location.desc&#x27; | translate&quot;&gt;
-
-                &lt;/div&gt;
-                &lt;div&gt;
-                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-s&quot; libOpenSetting&gt;
-                        {{ &#x27;common.goto-setting&#x27; | translate}}
-                    &lt;/button&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-            }
-
-
-            @if(loading){
-            &lt;div class&#x3D;&quot;loading row tmup-center&quot;&gt;
-                &lt;lib-loading&gt;&lt;/lib-loading&gt;
-            &lt;/div&gt;
-            }@else{
-            @for(item of list; let index &#x3D; $index; track $index){
-            &lt;ng-container&gt;
-                &lt;div class&#x3D;&quot;item row tmup-align-center&quot; (click)&#x3D;&quot;check(item, index)&quot;&gt;
-                    &lt;div class&#x3D;&quot;location column flex&quot;&gt;
-                        &lt;div class&#x3D;&quot;name row tmup-align-center&quot;&gt;
-                            @if(!textSearch &amp;&amp; index &#x3D;&#x3D; 0){
-                            &lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;location&quot;&gt;&lt;/mat-icon&gt;
-                            &lt;span&gt;{{&#x27;dialog.location-select.target-position&#x27; | translate}}&lt;/span&gt;
-                            }@else{
-                            {{item.name}}
-                            }
-                        &lt;/div&gt;
-                        &lt;div class&#x3D;&quot;address&quot;&gt;
-                            {{item.address}}
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                    &lt;div class&#x3D;&quot;tmup-check-icon row tmup-center&quot;
-                        [class.selected]&#x3D;&quot;(selected &amp;&amp; selected.id &#x3D;&#x3D; index)&quot;&gt;
-                        &lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;check&quot;&gt;&lt;/mat-icon&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/ng-container&gt;
-            }
-
-            }
-        &lt;/div&gt;
-    &lt;/lib-draggable-list&gt;
-&lt;/ng-container&gt;
-}</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

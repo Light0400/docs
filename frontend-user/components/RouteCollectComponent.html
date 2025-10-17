@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1220,27 +1216,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;main column flex&quot;&gt;
-    &lt;cdk-virtual-scroll-viewport #scroller [hidden]&#x3D;&quot;!list?.length&quot; [minBufferPx]&#x3D;&quot;600&quot; [maxBufferPx]&#x3D;&quot;2000&quot;
-        [itemSize]&#x3D;&quot;itemSize&quot;&gt;
-        &lt;lib-route-item [style.height.px]&#x3D;&quot;itemSize&quot; *cdkVirtualFor&#x3D;&quot;let item of list&quot; [item]&#x3D;&quot;item&quot;
-            (click)&#x3D;&quot;selectItem(item)&quot;&gt;
-            &lt;div item-right&gt;
-                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-ss-gray&quot;&gt;
-                    {{&quot;common.choose&quot; | translate}}
-                &lt;/button&gt;
-            &lt;/div&gt;
-        &lt;/lib-route-item&gt;
-        @if(loading){
-        &lt;lib-loading&gt;&lt;/lib-loading&gt;
-        }
-    &lt;/cdk-virtual-scroll-viewport&gt;
-    @if(noData){
-    &lt;lib-empty-data [useDefault]&#x3D;&quot;true&quot;&gt;&lt;/lib-empty-data&gt;
-    }
-&lt;/div&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

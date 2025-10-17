@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -837,107 +833,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">@if(item){
-@switch (item.Type)
-{
-@case (&quot;text&quot;) {
-&lt;div class&#x3D;&quot;text&quot; [innerHTML]&#x3D;&quot;item.Data&quot;&gt;
-&lt;/div&gt;
-}
-@case (&quot;image&quot;) {
-&lt;div class&#x3D;&quot;image row tmup-align-center&quot;&gt;
-    @for (img of imageList; let index &#x3D; $index; track index) {
-    &lt;div class&#x3D;&quot;img&quot; [isApiImage]&#x3D;&quot;true&quot; [appBackgroundImage]&#x3D;&quot;img&quot;&gt;&lt;/div&gt;
-    }
-&lt;/div&gt;
-}
-@case (&quot;route&quot;) {
-&lt;div class&#x3D;&quot;showMap route&quot;&gt;
-    &lt;div class&#x3D;&quot;map&quot; [isApiImage]&#x3D;&quot;true&quot; [appBackgroundImage]&#x3D;&quot;route?.Image&quot;&gt;
-        &lt;span&gt;{{ &quot;dialog.chat.chat-room.share-route&quot; | translate }}&lt;/span&gt;
-        &lt;div class&#x3D;&quot;data-name&quot;&gt;
-            &lt;div class&#x3D;&quot;name&quot;&gt;
-                {{route?.Name}}
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;info&quot;&gt;
-        &lt;div&gt;
-            &lt;p&gt;{{ route?.Distance | metricConversion:&#x27;km&#x27;}}&lt;span&gt;{{&#x27;km&#x27; | metricUnitConversion}}&lt;/span&gt;&lt;/p&gt;
-            &lt;p&gt;{{ &quot;common.total-distance&quot; | translate }}&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div&gt;
-            &lt;p&gt;{{ route?.ClimbHeight | metricConversion:&#x27;m&#x27; }}&lt;span&gt;{{&#x27;m&#x27; | metricUnitConversion}}&lt;/span&gt;&lt;/p&gt;
-            &lt;p&gt;
-                {{ &quot;common.elevation-gain-amount&quot; | translate }}
-            &lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div&gt;
-            &lt;p&gt;{{ route?.DistanceTime| secondsHhmmss }}&lt;/p&gt;
-            &lt;p&gt;{{ &quot;common.total-duration&quot; | translate }}&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-}
-@case (&quot;record&quot;) {
-&lt;div class&#x3D;&quot;showMap record&quot;&gt;
-    &lt;div class&#x3D;&quot;map&quot; [isApiImage]&#x3D;&quot;true&quot; [appBackgroundImage]&#x3D;&quot;record?.CompletedImage&quot;&gt;
-        &lt;span&gt;{{ &quot;dialog.chat.chat-room.share-sport-record&quot; | translate }}&lt;/span&gt;
-        &lt;div class&#x3D;&quot;data-name&quot;&gt;
-            &lt;div class&#x3D;&quot;date&quot;&gt;
-                {{record?.StartTime | postDisplayTime: true}}
-            &lt;/div&gt;
-            &lt;div class&#x3D;&quot;name&quot;&gt;
-                {{record?.Name}}
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;info&quot;&gt;
-        &lt;div&gt;
-            &lt;p&gt;{{record?.Distance | metricConversion:&#x27;km&#x27;}}&lt;span&gt;{{&#x27;km&#x27; | metricUnitConversion}}&lt;/span&gt;&lt;/p&gt;
-            &lt;p&gt;{{ &quot;common.total-distance&quot; | translate }}&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div&gt;
-            &lt;p&gt;{{ record?.ClimbHeight | metricConversion:&#x27;m&#x27; }}&lt;span&gt;{{&#x27;m&#x27; | metricUnitConversion}}&lt;/span&gt;&lt;/p&gt;
-            &lt;p&gt;{{ &quot;common.max-elevation-gain&quot; | translate }}&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div&gt;
-            &lt;p&gt;{{ record?.ExerciseTime | millisecondsHhmmss }}&lt;/p&gt;
-            &lt;p&gt;{{ &quot;common.total-duration&quot; | translate }}&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-}
-@case (&quot;location&quot;) {
-    
-@if(shareLocation){
-&lt;div class&#x3D;&quot;showMap location&quot;&gt;
-    &lt;div class&#x3D;&quot;map&quot; [isApiImage]&#x3D;&quot;true&quot; [appBackgroundImage]&#x3D;&quot;shareLocation.url&quot;&gt;
-        &lt;span&gt;{{ &quot;dialog.chat.chat-room.share-location&quot; | translate }}&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;info&quot;&gt;
-        &lt;p&gt;{{ shareLocation.title }}&lt;/p&gt;
-        &lt;p&gt;{{ shareLocation.subtitle }}&lt;/p&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-}
-
-}
-@case (&quot;mute&quot;) {
-&lt;div class&#x3D;&quot;mute row tmup-center&quot;&gt;
-    &lt;mat-icon class&#x3D;&quot;fs-16&quot; svgIcon&#x3D;&quot;silence_mode&quot;&gt;&lt;/mat-icon&gt;
-    &lt;span&gt;
-        {{ &#x27;pages.chat.silence-mode&#x27; | translate}}
-    &lt;/span&gt;
-&lt;/div&gt;
-}
-@case(&quot;leave&quot;) {
-&lt;div&gt;{{ item.Data }}&lt;/div&gt;
-}
-}
-}</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

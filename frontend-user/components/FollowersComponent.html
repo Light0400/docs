@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -1356,39 +1352,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;label class&#x3D;&quot;search-bar row tmup-align-center&quot;&gt;
-    &lt;mat-icon class&#x3D;&quot;serach-icon&quot; svgIcon&#x3D;&quot;search&quot;&gt;&lt;/mat-icon&gt;
-    &lt;input class&#x3D;&quot;flex&quot; #searchInput type&#x3D;&quot;text&quot; [placeholder]&#x3D;&quot;&#x27;common.search&#x27; | translate&quot; [formControl]&#x3D;&quot;searchCtrl&quot;
-        (keyup.enter)&#x3D;&quot;searchInput.blur(); search()&quot; /&gt;
-    &lt;mat-icon [hidden]&#x3D;&quot;!searchCtrl.value?.length&quot; svgIcon&#x3D;&quot;clear&quot; (click)&#x3D;&quot;clearSearch()&quot;&gt;&lt;/mat-icon&gt;
-&lt;/label&gt;
-
-&lt;cdk-virtual-scroll-viewport [minBufferPx]&#x3D;&quot;600&quot; [maxBufferPx]&#x3D;&quot;2000&quot; [hidden]&#x3D;&quot;!list?.length&quot; #scroller
-    [itemSize]&#x3D;&quot;itemSize&quot; [class.noData]&#x3D;&quot;noData&quot;&gt;
-    &lt;ng-container *cdkVirtualFor&#x3D;&quot;let item of list;let index&#x3D;index&quot;&gt;
-        &lt;lib-user-item [item]&#x3D;&quot;item&quot; [customBtn]&#x3D;&quot;(isSelf ? true: false)&quot; (click)&#x3D;&quot;openUserProfile(item)&quot;&gt;
-
-            @if(isSelf){
-            &lt;div basic-right (click)&#x3D;&quot;remove(item, index, $event)&quot;&gt;
-                &lt;button class&#x3D;&quot;tmup-btn-ss-gray-6&quot;&gt;
-                    {{&#x27;common.remove&#x27; | translate}}
-                &lt;/button&gt;
-            &lt;/div&gt;
-            }
-
-        &lt;/lib-user-item&gt;
-    &lt;/ng-container&gt;
-&lt;/cdk-virtual-scroll-viewport&gt;
-
-@if(noData &amp;&amp; loadEnded){
-&lt;lib-empty-data&gt;
-    &lt;span&gt;
-        {{ &#x27;pages.followers.nodata&#x27; | translate}}
-    &lt;/span&gt;
-&lt;/lib-empty-data&gt;
-}</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -631,48 +627,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-header [isDialog]&#x3D;&quot;true&quot; [show]&#x3D;&quot;true&quot; [backNotShow]&#x3D;&quot;true&quot;&gt;
-  &lt;ng-container ngProjectAs&#x3D;&quot;[h-title]&quot;&gt;
-    {{ &quot;dialog.user-apply.title&quot; | translate }}
-  &lt;/ng-container&gt;
-
-  &lt;ng-container ngProjectAs&#x3D;&quot;[h-right]&quot;&gt;
-    &lt;button type&#x3D;&quot;button&quot; mat-button class&#x3D;&quot;tmup-btn-text blue&quot; mat-dialog-close&gt;
-      {{ &quot;common.complete&quot; | translate }}
-    &lt;/button&gt;
-  &lt;/ng-container&gt;
-&lt;/lib-header&gt;
-
-&lt;cdk-virtual-scroll-viewport #scrollref [hidden]&#x3D;&quot;!users?.length&quot; [minBufferPx]&#x3D;&quot;600&quot; [maxBufferPx]&#x3D;&quot;2000&quot;
-  [itemSize]&#x3D;&quot;itemSize&quot;&gt;
-  &lt;ng-container *cdkVirtualFor&#x3D;&quot;let item of users; let index &#x3D; index&quot;&gt;
-    &lt;lib-user-item [item]&#x3D;&quot;item&quot; [style.height.px]&#x3D;&quot;itemSize&quot; [customBtn]&#x3D;&quot;true&quot;&gt;
-      &lt;div basic-right class&#x3D;&quot;select row&quot;&gt;
-        &lt;div class&#x3D;&quot;btn&quot;&gt;
-          &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-ss-gray&quot; (click)&#x3D;&quot;onConfirm(item, false)&quot;&gt;
-            {{ &quot;common.reject&quot; | translate }}
-          &lt;/button&gt;
-        &lt;/div&gt;
-
-        &lt;div class&#x3D;&quot;btn&quot;&gt;
-          &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-ss&quot; (click)&#x3D;&quot;onConfirm(item, true)&quot;&gt;
-            {{ &quot;common.accept&quot; | translate }}
-          &lt;/button&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/lib-user-item&gt;
-  &lt;/ng-container&gt;
-&lt;/cdk-virtual-scroll-viewport&gt;
-
-@if(!users?.length){
-&lt;lib-empty-data&gt;
-  &lt;span&gt;
-    {{ &#x27;pages.team.apply-nodata&#x27; |translate}}
-  &lt;/span&gt;
-&lt;/lib-empty-data&gt;
-}</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

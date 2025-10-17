@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -542,25 +538,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-create-success [title]&#x3D;&quot;&#x27;dialog.create-activity-success.already-release&#x27; | translate:({name: data.activity.Name})&quot;
-  [message]&#x3D;&quot;&#x27;dialog.create-activity-success.congratulation&#x27; | translate&quot;&gt;
-  &lt;ng-container ngProjectAs&#x3D;&quot;[btns]&quot;&gt;
-    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-l row tmup-center&quot; (click)&#x3D;&quot;shareEventPage()&quot;&gt;
-      &lt;mat-icon svgIcon&#x3D;&quot;share&quot;&gt;&lt;/mat-icon&gt;
-      &lt;span&gt;
-        {{ &quot;dialog.create-activity-success.share-page&quot; | translate }}
-      &lt;/span&gt;
-    &lt;/button&gt;
-
-    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-l row tmup-center&quot; (click)&#x3D;&quot;back()&quot;&gt;
-      &lt;span&gt;
-        {{ &quot;common.close&quot; | translate }}
-      &lt;/span&gt;
-    &lt;/button&gt;
-  &lt;/ng-container&gt;
-&lt;/lib-create-success&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

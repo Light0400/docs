@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -641,54 +637,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-header [isDialog]&#x3D;&quot;true&quot; [show]&#x3D;&quot;true&quot; [backNotShow]&#x3D;&quot;true&quot;&gt;
-    &lt;ng-container ngProjectAs&#x3D;&quot;[h-left]&quot;&gt;
-        &lt;button mat-icon-button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;back()&quot;&gt;
-            &lt;mat-icon svgIcon&#x3D;&quot;close&quot;&gt; &lt;/mat-icon&gt;
-        &lt;/button&gt;
-    &lt;/ng-container&gt;
-
-    &lt;ng-container ngProjectAs&#x3D;&quot;[h-title]&quot;&gt;
-        {{ &quot;dialog.visit-reg.title&quot; | translate }}
-    &lt;/ng-container&gt;
-
-    &lt;ng-container ngProjectAs&#x3D;&quot;[h-right]&quot;&gt;
-        &lt;button type&#x3D;&quot;button&quot; mat-button class&#x3D;&quot;tmup-btn-text blue&quot;
-            [disabled]&#x3D;&quot;!formGroup.value.FirstName?.length || !formGroup.value.LastName?.length&quot; (click)&#x3D;&quot;save()&quot;&gt;
-            {{ &quot;dialog.visit-reg.sign-up&quot; | translate }}
-        &lt;/button&gt;
-    &lt;/ng-container&gt;
-&lt;/lib-header&gt;
-
-@if(formGroup){
-&lt;div class&#x3D;&quot;main&quot; [formGroup]&#x3D;&quot;formGroup&quot;&gt;
-    &lt;div class&#x3D;&quot;row&quot;&gt;
-        &lt;lib-textbox-input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;FirstName&quot;
-            [placeholder]&#x3D;&quot;&#x27;dialog.visit-reg.FirstNamePlaceholder&#x27; | translate&quot;&gt;
-            &lt;label&gt;{{ &#x27;dialog.visit-reg.FirstName&#x27; | translate}}&lt;/label&gt;
-        &lt;/lib-textbox-input&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;row&quot;&gt;
-        &lt;lib-textbox-input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;LastName&quot;
-            [placeholder]&#x3D;&quot;&#x27;dialog.visit-reg.LastNamePlaceholder&#x27; | translate&quot;&gt;
-            &lt;label&gt;{{ &#x27;dialog.visit-reg.LastName&#x27; | translate}}&lt;/label&gt;
-        &lt;/lib-textbox-input&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;row&quot;&gt;
-        &lt;lib-textbox-input type&#x3D;&quot;tel&quot; formControlName&#x3D;&quot;Phone&quot;
-            [placeholder]&#x3D;&quot;&#x27;dialog.visit-reg.PhonePlaceholder&#x27; | translate&quot;&gt;
-            &lt;label&gt;
-                {{ &#x27;dialog.visit-reg.Phone&#x27; | translate}}
-                &lt;span&gt;
-                    ({{ &quot;common.optional&quot; | translate }})
-                &lt;/span&gt;
-            &lt;/label&gt;
-        &lt;/lib-textbox-input&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-}</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

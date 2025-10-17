@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -955,87 +951,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-draggable-list [dialogRef]&#x3D;&quot;dialogRef&quot; [defaultListHeight]&#x3D;&quot;defaultHeight&quot; [maxDragHeight]&#x3D;&quot;maxDropHeight&quot;&gt;
-    @if(team){
-    &lt;ng-container&gt;
-        &lt;div class&#x3D;&quot;info column flex&quot;&gt;
-            &lt;div class&#x3D;&quot;column basic tmup-center&quot;&gt;
-                @if(postitNote?.length){
-                &lt;div class&#x3D;&quot;stickyNotes row tmup-center &quot;&gt;
-                    &lt;div class&#x3D;&quot;row tmup-center flex&quot;&gt;
-                        {{ postitNote }}
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                }
-
-
-                &lt;lib-team-logo [logo]&#x3D;&quot;team.Logo&quot;&gt;&lt;/lib-team-logo&gt;
-
-                &lt;div class&#x3D;&quot;name&quot;&gt;
-                    {{team.Name}}
-                &lt;/div&gt;
-
-                @if(team.Address){
-                &lt;div class&#x3D;&quot;row address tmup-center&quot;&gt;
-                    &lt;mat-icon class&#x3D;&quot;fs-10&quot; svgIcon&#x3D;&quot;location&quot;&gt;&lt;/mat-icon&gt;
-                    &lt;span&gt;{{ team.Address }}&lt;/span&gt;
-                &lt;/div&gt;
-                }
-
-            &lt;/div&gt;
-
-            &lt;div class&#x3D;&quot;row normal-info&quot; (click)&#x3D;&quot;openTeam()&quot;&gt;
-                &lt;div class&#x3D;&quot;column&quot;&gt;
-                    &lt;lib-user-avater-group [users]&#x3D;&quot;managers!&quot;&gt;&lt;/lib-user-avater-group&gt;
-                    &lt;span&gt;{{ &quot;pages.team.manger&quot; | translate }}&lt;/span&gt;
-                &lt;/div&gt;
-                &lt;div class&#x3D;&quot;column&quot;&gt;
-                    &lt;span class&#x3D;&quot;point&quot;&gt;{{ (team.UserCount ?? 0) }}&lt;/span&gt;
-                    &lt;span&gt;{{ &quot;pages.team.member&quot; | translate }}&lt;/span&gt;
-                &lt;/div&gt;
-                @if(!team.IsPrivate || !!user?.JoinTime){
-                &lt;ng-container&gt;
-                    &lt;div class&#x3D;&quot;column&quot;&gt;
-                        &lt;span class&#x3D;&quot;point&quot;&gt;{{ (team.ActivityCount ?? 0) }}&lt;/span&gt;
-                        &lt;span&gt;{{ &quot;pages.team.event-count&quot; | translate }}&lt;/span&gt;
-                    &lt;/div&gt;
-                    &lt;div class&#x3D;&quot;column&quot;&gt;
-                        &lt;span class&#x3D;&quot;point&quot;&gt;{{ (team.SeasonDistance ?? 0) | metricConversion:&#x27;km&#x27; }}&lt;/span&gt;
-                        &lt;span&gt;{{ &quot;pages.team.season-distance.&quot;+ mearsureUnitTypes[unitType] | translate }}&lt;/span&gt;
-                    &lt;/div&gt;
-                    &lt;div class&#x3D;&quot;column&quot;&gt;
-                        &lt;span class&#x3D;&quot;point&quot;&gt;{{ (team.MonthDistance ?? 0) | metricConversion:&#x27;km&#x27; }}&lt;/span&gt;
-                        &lt;span&gt;{{ &quot;pages.team.monthly-distance.&quot;+ mearsureUnitTypes[unitType] | translate }}&lt;/span&gt;
-                    &lt;/div&gt;
-                &lt;/ng-container&gt;
-                }
-
-            &lt;/div&gt;
-
-            @if(team.Desc?.length){
-            &lt;div class&#x3D;&quot;introduction&quot; [libTextReadMore]&#x3D;&quot;team.Desc&quot;&gt;&lt;/div&gt;
-            }
-
-            @if(tags?.length){
-            &lt;div class&#x3D;&quot;row tags&quot;&gt;
-                @for (tag of tags; track $index) {
-                &lt;span&gt;{{ tag.Text }}&lt;/span&gt;
-                }
-            &lt;/div&gt;
-            }
-
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;footer&quot;&gt;
-            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-m&quot; (click)&#x3D;&quot;openTeam()&quot;&gt;
-                {{ &quot;dialog.team-intro.view-detail&quot; | translate }}
-            &lt;/button&gt;
-        &lt;/div&gt;
-    &lt;/ng-container&gt;
-    }
-
-&lt;/lib-draggable-list&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

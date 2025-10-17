@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1531,101 +1527,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;lib-header [isDialog]&#x3D;&quot;true&quot; [show]&#x3D;&quot;true&quot; [backNotShow]&#x3D;&quot;true&quot;&gt;
-    &lt;ng-container ngProjectAs&#x3D;&quot;[h-right]&quot;&gt;
-        &lt;button mat-icon-button type&#x3D;&quot;button&quot; mat-dialog-close&gt;
-            &lt;mat-icon svgIcon&#x3D;&quot;close&quot;&gt; &lt;/mat-icon&gt;
-        &lt;/button&gt;
-    &lt;/ng-container&gt;
-&lt;/lib-header&gt;
-
-@if(formGroup){
-&lt;div class&#x3D;&quot;main column&quot; [formGroup]&#x3D;&quot;formGroup&quot;&gt;
-    @if(isLoaded){
-    @if(isReadonly &amp;&amp; orignalModel &amp;&amp; !isCompleted){
-    &lt;div class&#x3D;&quot;content-header column&quot;&gt;
-        &lt;div class&#x3D;&quot;title t-bold&quot;&gt;
-            {{ &#x27;dialog.report.report-type-title&#x27; | translate:({name: orignalModel.Type?.Text }) }}
-        &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;div class&#x3D;&quot;content column flex&quot;&gt;
-        &lt;div class&#x3D;&quot;text t-bold-500&quot;&gt;
-            &lt;div&gt;{{ &#x27;dialog.report.report-message&#x27; | translate }}&lt;/div&gt;
-            &lt;div [libTextReadMore]&#x3D;&quot;orignalModel.Message&quot;&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;images row&quot;&gt;
-            @for(item of showFiles; let index &#x3D; $index; track index) {
-            &lt;img [src]&#x3D;&quot;item.url&quot; (click)&#x3D;&quot;onImageClick(index)&quot; /&gt;
-            }
-        &lt;/div&gt;
-
-        &lt;div class&#x3D;&quot;memo&quot;&gt;
-            {{ &#x27;dialog.report.report-completed-memo&#x27; | translate }}
-        &lt;/div&gt;
-    &lt;/div&gt;
-    @if(isLogin &amp;&amp; (isApp || !production)){
-    &lt;div class&#x3D;&quot;foolter&quot;&gt;
-        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-l&quot; (click)&#x3D;&quot;onCompleted()&quot;&gt;
-            {{ &#x27;dialog.report.report-completed&#x27; |translate}}
-        &lt;/button&gt;
-    &lt;/div&gt;
-    }
-    }@else{
-    &lt;div class&#x3D;&quot;content-header column tmup-center&quot;&gt;
-        &lt;div class&#x3D;&quot;title t-bold&quot;&gt;
-            {{ &#x27;dialog.report.title&#x27; | translate }}
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;text t-bold-500&quot;&gt;
-            @if(reportUser){
-            {{ &#x27;dialog.report.user-sub-title&#x27; | translate }}
-            }
-        &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;div class&#x3D;&quot;content column flex&quot;&gt;
-        &lt;div class&#x3D;&quot;input-container row&quot;&gt;
-            &lt;textarea #textarea class&#x3D;&quot;flex&quot; type&#x3D;&quot;text&quot; [placeholder]&#x3D;&quot;&#x27;dialog.report.text-placeholder&#x27; | translate&quot;
-                formControlName&#x3D;&quot;Message&quot;&gt;&lt;/textarea&gt;
-
-            @if(!!reportMapRoute){
-            &lt;lib-file type&#x3D;&quot;Custom&quot; formControlName&#x3D;&quot;File&quot; [maxResolution]&#x3D;&quot;500&quot; [multiple]&#x3D;&quot;true&quot; dirPath&#x3D;&quot;Report&quot;
-                [maxFileCount]&#x3D;&quot;10&quot;&gt;
-                &lt;button type&#x3D;&quot;button&quot; custom-file-input mat-icon-button&gt;
-                    &lt;mat-icon svgIcon&#x3D;&quot;image&quot;&gt;&lt;/mat-icon&gt;
-                &lt;/button&gt;
-            &lt;/lib-file&gt;
-            }
-
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;row item uploadImgsView&quot;&gt;
-            @for (img of editFiles; track $index) {
-            &lt;div class&#x3D;&quot;image&quot; [isApiImage]&#x3D;&quot;true&quot; [appBackgroundImage]&#x3D;&quot;img&quot;&gt;
-                &lt;mat-icon svgIcon&#x3D;&quot;clear&quot; class&#x3D;&quot;fs-16&quot; (click)&#x3D;&quot;onRemoveFile(img, $index)&quot;&gt;&lt;/mat-icon&gt;
-            &lt;/div&gt;
-            }
-        &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;div class&#x3D;&quot;foolter&quot;&gt;
-        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;tmup-btn-l&quot; [disabled]&#x3D;&quot;!formGroup.get(&#x27;Message&#x27;)?.value?.length&quot;
-            (click)&#x3D;&quot;onSubmit()&quot;&gt;
-            @if(reportUser){
-            {{ &#x27;dialog.report.report-user-submit&#x27; |translate}}
-            }@else{
-            {{ &#x27;dialog.report.submit&#x27; |translate}}
-            }
-        &lt;/button&gt;
-    &lt;/div&gt;
-    }
-    }
-    @if(isLoading){
-    &lt;lib-loading&gt;&lt;/lib-loading&gt;
-    }
-&lt;/div&gt;
-}</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

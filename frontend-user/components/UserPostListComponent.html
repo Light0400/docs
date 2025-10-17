@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1034,25 +1030,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;list flex&quot; [hidden]&#x3D;&quot;!list?.length&quot; #scroller&gt;
-    @for(item of list; track item.Id){
-    &lt;lib-post-item [data]&#x3D;&quot;item&quot;&gt;&lt;/lib-post-item&gt;
-    }
-&lt;/div&gt;
-
-@if(loading){
-&lt;lib-loading&gt;&lt;/lib-loading&gt;
-}
-
-@if(noData){
-&lt;lib-empty-data&gt;
-    &lt;span&gt;
-        {{ &#x27;pages.user.post-nodata&#x27; |translate}}
-    &lt;/span&gt;
-&lt;/lib-empty-data&gt;
-}</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

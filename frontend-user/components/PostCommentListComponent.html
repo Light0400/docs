@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1481,60 +1477,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div #scroller class&#x3D;&quot;list flex&quot;&gt;
-    @for(item of list; track item.Id){
-    &lt;div class&#x3D;&quot;item row tmup-align-center&quot;&gt;
-        &lt;lib-user-avatar [avatar]&#x3D;&quot;item.User?.Avatar&quot; [lastName]&#x3D;&quot;item.User?.LastName&quot;
-            [firstName]&#x3D;&quot;item.User?.FirstName&quot;&gt;&lt;/lib-user-avatar&gt;
-        &lt;div class&#x3D;&quot;info column flex&quot;&gt;
-            &lt;div class&#x3D;&quot;name&quot;&gt;
-                {{item.User | displayName}}
-            &lt;/div&gt;
-            &lt;div class&#x3D;&quot;content&quot; [innerHTML]&#x3D;&quot;item.Body&quot;&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;column more right&quot;&gt;
-            @if(isApp &amp;&amp; item.User?.Id !&#x3D; uid){
-            &lt;lib-more-menu (click)&#x3D;&quot;openMenu(item)&quot;&gt;&lt;/lib-more-menu&gt;
-            }
-
-            &lt;div class&#x3D;&quot;like column tmup-center&quot; (click)&#x3D;&quot;like(item)&quot;&gt;
-                @if(item.Like){
-                &lt;mat-icon class&#x3D;&quot;fs-16 teal&quot; svgIcon&#x3D;&quot;liked&quot;&gt;&lt;/mat-icon&gt;
-                }@else{
-                &lt;mat-icon class&#x3D;&quot;fs-16 teal&quot; svgIcon&#x3D;&quot;like&quot;&gt;&lt;/mat-icon&gt;
-                }
-                &lt;div class&#x3D;&quot;number&quot;&gt;
-                    {{item.LikeCount ?? 0}}
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    }
-
-    @if(loadEnded &amp;&amp; noData){
-    &lt;lib-empty-data&gt;
-        &lt;span&gt;
-            {{&#x27;dialog.like-comment.tabComment.nodata&#x27; | translate}}
-        &lt;/span&gt;
-    &lt;/lib-empty-data&gt;
-    }
-    @if(loading){
-    &lt;lib-loading&gt;&lt;/lib-loading&gt;
-    }
-&lt;/div&gt;
-&lt;form class&#x3D;&quot;footer row tmup-align-center&quot; [hidden]&#x3D;&quot;!isApp&quot; matAutocompleteOrigin #origin&#x3D;&quot;matAutocompleteOrigin&quot;&gt;
-    &lt;lib-tag-user-input #input (filterChange)&#x3D;&quot;autoLoad($event)&quot; [origin]&#x3D;&quot;origin&quot;
-        [placeholder]&#x3D;&quot;&#x27;dialog.like-comment.tabComment.input-placeholder&#x27; |translate&quot;
-        [users]&#x3D;&quot;friends&quot;&gt;&lt;/lib-tag-user-input&gt;
-    &lt;div class&#x3D;&quot;send&quot; [hidden]&#x3D;&quot;!input.value?.length &amp;&amp; !input.isFocus&quot;&gt;
-        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;send&quot; (click)&#x3D;&quot;send($event)&quot;&gt;
-            &lt;mat-icon class&#x3D;&quot;fs-20 stroke-white&quot; svgIcon&#x3D;&quot;send&quot;&gt;&lt;/mat-icon&gt;
-        &lt;/button&gt;
-    &lt;/div&gt;
-&lt;/form&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

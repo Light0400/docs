@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#styleData" class="nav-link"
                 role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
@@ -439,98 +435,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">@if(data.title || data.user){
-&lt;div mat-dialog-title&gt;
-
-  @if(data.user || data.team){
-  &lt;ng-container&gt;
-    &lt;div class&#x3D;&quot;row img tmup-center&quot; [class.binding]&#x3D;&quot;data.service?.length &amp;&amp; data.sync&quot;
-      [class.unbind]&#x3D;&quot;data.service?.length &amp;&amp; !data.sync&quot;&gt;
-      @if(data.user){
-      &lt;lib-user-avatar [avatar]&#x3D;&quot;data.user.Avatar&quot; [firstName]&#x3D;&quot;data.user.FirstName&quot;
-        [lastName]&#x3D;&quot;data.user.LastName&quot;&gt;&lt;/lib-user-avatar&gt;
-      }
-
-      @if(data.team){
-      &lt;div class&#x3D;&quot;lib-team-logo&quot;&gt;
-
-        @if(data.showMainIcon){
-        &lt;img class&#x3D;&quot;main-icon&quot; src&#x3D;&quot;/assets/main-team.png&quot; /&gt;
-        }
-
-        &lt;lib-team-logo [logo]&#x3D;&quot;data.team.Logo&quot;&gt;&lt;/lib-team-logo&gt;
-      &lt;/div&gt;
-      }
-
-      @if(data.service){
-      &lt;ng-container&gt;
-        &lt;mat-icon [svgIcon]&#x3D;&quot;data.service&quot;&gt;&lt;/mat-icon&gt;
-      &lt;/ng-container&gt;
-      }
-
-    &lt;/div&gt;
-  &lt;/ng-container&gt;
-  }
-
-  @if(data.showUserName &amp;&amp; data.user){
-  &lt;div class&#x3D;&quot;img-name&quot;&gt;
-    {{ data.user | displayName }}
-  &lt;/div&gt;
-  }
-  @if(data.title?.length){
-  &lt;span [innerHTML]&#x3D;&quot;data.title! | safeHtml&quot;&gt;&lt;/span&gt;
-  }
-
-&lt;/div&gt;
-}
-
-&lt;mat-dialog-content [innerHtml]&#x3D;&quot;data.message | safeHtml&quot;&gt;
-&lt;/mat-dialog-content&gt;
-&lt;mat-dialog-actions&gt;
-  @if(topRadius){
-  @for (item of data.btns; track $index) {
-  &lt;button [class]&#x3D;&quot;item.style || &#x27;tmup-btn-l&#x27;&quot; [mat-dialog-close]&#x3D;&quot;item.value&quot; type&#x3D;&quot;button&quot;&gt;
-    {{ item.text }}
-  &lt;/button&gt;
-  } @empty {
-  &lt;button class&#x3D;&quot;tmup-btn-l&quot; [mat-dialog-close]&#x3D;&quot;false&quot; type&#x3D;&quot;button&quot;&gt;
-    {{ data.cancel || (&quot;common.no&quot; | translate) }}
-  &lt;/button&gt;
-
-  &lt;button class&#x3D;&quot;tmup-btn-l-warn&quot; [mat-dialog-close]&#x3D;&quot;true&quot; type&#x3D;&quot;button&quot;&gt;
-    {{ data.confirm || (&quot;common.yes&quot; | translate) }}
-  &lt;/button&gt;
-  }
-  } @else {
-
-  @if(data.btns?.length){
-  &lt;ng-container&gt;
-    &lt;div class&#x3D;&quot;btns-area column flex&quot;&gt;
-      @for (item of data.btns; track $index)
-      {
-      &lt;button [class]&#x3D;&quot;item.style || &#x27;tmup-btn-l&#x27;&quot; [mat-dialog-close]&#x3D;&quot;item.value&quot; type&#x3D;&quot;button&quot;&gt;
-        {{ item.text }}
-      &lt;/button&gt;
-      }
-    &lt;/div&gt;
-  &lt;/ng-container&gt;
-  }@else{
-  &lt;ng-container&gt;
-    &lt;button mat-stroked-button [mat-dialog-close]&#x3D;&quot;false&quot; type&#x3D;&quot;button&quot;&gt;
-      {{ data.cancel || (&quot;common.no&quot; | translate) }}
-    &lt;/button&gt;
-    &lt;button mat-stroked-button [mat-dialog-close]&#x3D;&quot;true&quot; type&#x3D;&quot;button&quot; color&#x3D;&quot;warn&quot;&gt;
-      {{ data.confirm || (&quot;common.yes&quot; | translate) }}
-    &lt;/button&gt;
-  &lt;/ng-container&gt;
-  }
-
-
-
-  }
-&lt;/mat-dialog-actions&gt;</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">

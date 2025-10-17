@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -615,37 +611,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;mat-tab-group preserveContent mat-stretch-tabs&#x3D;&quot;false&quot; mat-align-tabs&#x3D;&quot;start&quot; [selectedIndex]&#x3D;&quot;tabSelectIndex&quot;
-  (selectedIndexChange)&#x3D;&quot;onChangeTab($event)&quot; [animationDuration]&#x3D;&quot;0&quot;&gt;
-
-  @if(data.team?.AddressPoint){
-  &lt;mat-tab labelClass&#x3D;&quot;tab-header&quot;&gt;
-    &lt;ng-template mat-tab-label&gt;
-      {{ &quot;dialog.team-activity.team&quot; | translate }}
-    &lt;/ng-template&gt;
-    &lt;ng-template matTabContent&gt;
-      &lt;lib-team-on-map [team]&#x3D;&quot;data.team&quot;
-        [isManager]&#x3D;&quot;(data.teamUser?.JoinTime &amp;&amp; data.teamUser?.IsManager)&quot;&gt;&lt;/lib-team-on-map&gt;
-    &lt;/ng-template&gt;
-  &lt;/mat-tab&gt;
-  }
-
-  @if(data.team){
-  &lt;mat-tab labelClass&#x3D;&quot;tab-header&quot;&gt;
-    &lt;ng-template mat-tab-label&gt;
-      {{ &quot;dialog.team-activity.activity&quot; | translate }}
-    &lt;/ng-template&gt;
-    &lt;ng-template matTabContent&gt;
-      &lt;lib-activity-on-map [team]&#x3D;&quot;data.team&quot;&gt;&lt;/lib-activity-on-map&gt;
-    &lt;/ng-template&gt;
-  &lt;/mat-tab&gt;
-  }
-
-&lt;/mat-tab-group&gt;
-
-&lt;mat-icon class&#x3D;&quot;fs-16 close-btn&quot; svgIcon&#x3D;&quot;close&quot; mat-dialog-close&gt;&lt;/mat-icon&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

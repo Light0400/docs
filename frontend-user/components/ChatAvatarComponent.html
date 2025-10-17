@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -289,37 +285,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">@if(chat?.IsPrivate){
-
-@if(chat?.User?.Block || chat?.User?.IsDelete){
-&lt;lib-user-avatar type&#x3D;&quot;NoUser&quot;&gt;&lt;/lib-user-avatar&gt;
-}@else{
-&lt;lib-user-avatar [avatar]&#x3D;&quot;chat?.User?.Avatar&quot; [firstName]&#x3D;&quot;chat?.User?.FirstName&quot; [lastName]&#x3D;&quot;chat?.User?.LastName&quot;&gt;
-&lt;/lib-user-avatar&gt;
-}
-
-}
-
-@if(chat?.ActivityId){
-
-&lt;div class&#x3D;&quot;activity-img column tmup-center&quot;&gt;
-    &lt;div class&#x3D;&quot;month&quot;&gt;{{ chat?.Activity?.StartTime | localDate:&#x27;month&#x27;}}&lt;/div&gt;
-    &lt;div class&#x3D;&quot;day&quot;&gt;{{ chat?.Activity?.StartTime | localDate:&#x27;day&#x27;}}&lt;/div&gt;
-&lt;/div&gt;
-
-}
-
-@if(chat?.TeamId){
-&lt;lib-team-logo [logo]&#x3D;&quot;(chat?.Team?.Logo ?? chat?.CoverImage)&quot;&gt;&lt;/lib-team-logo&gt;
-}
-
-
-
-@if(chat?.IsTop &amp;&amp; !notShowTop){
-&lt;mat-icon svgIcon&#x3D;&quot;pin-contained&quot; class&#x3D;&quot;pin fs-16&quot;&gt; &lt;/mat-icon&gt;
-}</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

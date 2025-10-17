@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -1220,28 +1216,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;label [htmlFor]&#x3D;&quot;&#x27;label-search-input-&#x27; + id&quot;&gt;
-  @if(prefixIcon){
-  &lt;mat-icon class&#x3D;&quot;search-icon&quot; [svgIcon]&#x3D;&quot;prefixIcon&quot;&gt;&lt;/mat-icon&gt;
-  }
-
-  &lt;input [id]&#x3D;&quot;&#x27;label-search-input-&#x27; + id&quot; #searchInput type&#x3D;&quot;text&quot; [placeholder]&#x3D;&quot;placeholder ?? &#x27;&#x27;&quot;
-    [formControl]&#x3D;&quot;searchCtrl&quot; (focus)&#x3D;&quot;_onFocus($event)&quot; (blur)&#x3D;&quot;_onBlur($event)&quot; /&gt;
-    
-  @if(maxWords !&#x3D; null &amp;&amp; maxWords &gt; 0){
-  &lt;div class&#x3D;&quot;max-words&quot;&gt;
-    {{ searchCtrl.value?.trim()?.length }}/{{ maxWords }}
-  &lt;/div&gt;
-  }
-
-  @if(showClearBtn){
-  &lt;div [hidden]&#x3D;&quot;!searchCtrl.value?.trim()?.length&quot; (click)&#x3D;&quot;onClearSearch()&quot;&gt;
-    &lt;mat-icon svgIcon&#x3D;&quot;clear&quot; class&#x3D;&quot;fs-16&quot;&gt;&lt;/mat-icon&gt;
-  &lt;/div&gt;
-  }
-&lt;/label&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">

@@ -117,10 +117,6 @@
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -594,33 +590,6 @@
 
 
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;map&quot; [isApiImage]&#x3D;&quot;true&quot; [appBackgroundImage]&#x3D;&quot;item?.CompletedImage&quot;&gt;
-    &lt;div class&#x3D;&quot;icon row tmup-center&quot;&gt;
-        &lt;img [src]&#x3D;&quot;&#x27;./assets/history.svg&#x27;&quot; /&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class&#x3D;&quot;name-info column tmup-justify-center flex&quot;&gt;
-    &lt;div class&#x3D;&quot;name&quot;&gt;
-        {{item?.Name}}
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;date-distance&quot;&gt;
-        &lt;span&gt;{{item?.StartTime | postDisplayTime: true}}&lt;/span&gt;
-        @if(routeDist?.length){
-        &lt;ng-container&gt;
-            &lt;span&gt;·&lt;/span&gt;
-            &lt;span&gt;{{ &#x27;common.route-length&#x27; |translate:({number: routeDist})}}&lt;/span&gt;
-            &lt;span&gt;{{ &#x27;km&#x27; |metricUnitConversion}}&lt;/span&gt;
-        &lt;/ng-container&gt;
-        }
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class&#x3D;&quot;row tmup-center&quot;&gt;
-    &lt;ng-content&gt;
-
-    &lt;/ng-content&gt;
-&lt;/div&gt;</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="tree">
