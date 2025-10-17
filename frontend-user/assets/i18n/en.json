@@ -821,7 +821,6 @@
                 "coffee": "Cafe",
                 "view": "Scenic Spot"
             },
-            "too-far": "Currently too far from the activity route",
             "tip-remove-points-on-map": "Tap to remove this stop"
         },
         "create-activity-success": {

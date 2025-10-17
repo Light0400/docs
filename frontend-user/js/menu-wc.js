@@ -162,9 +162,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/CreateActivitySuccessDialogComponent.html" data-type="entity-link" >CreateActivitySuccessDialogComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/CreateRouteSuccessDialogComponent.html" data-type="entity-link" >CreateRouteSuccessDialogComponent</a>
-                            </li>
-                            <li class="link">
                                 <a href="components/CreateSuccessComponent.html" data-type="entity-link" >CreateSuccessComponent</a>
                             </li>
                             <li class="link">
@@ -585,9 +582,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/VisitRegDialogComponent.html" data-type="entity-link" >VisitRegDialogComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/WeatherViewDialogComponent.html" data-type="entity-link" >WeatherViewDialogComponent</a>
-                            </li>
-                            <li class="link">
                                 <a href="components/WebHomeComponent.html" data-type="entity-link" >WebHomeComponent</a>
                             </li>
                         </ul>
@@ -776,9 +770,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/RouteSelectReportConfirmData.html" data-type="entity-link" >RouteSelectReportConfirmData</a>
                             </li>
                             <li class="link">
-                                <a href="classes/SelectButtonItem.html" data-type="entity-link" >SelectButtonItem</a>
-                            </li>
-                            <li class="link">
                                 <a href="classes/SelectDialogData.html" data-type="entity-link" >SelectDialogData</a>
                             </li>
                             <li class="link">
@@ -849,9 +840,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="classes/UserShareDialogData.html" data-type="entity-link" >UserShareDialogData</a>
-                            </li>
-                            <li class="link">
-                                <a href="classes/WeatherViewDialogData.html" data-type="entity-link" >WeatherViewDialogData</a>
                             </li>
                         </ul>
                     </li>

@@ -324,10 +324,6 @@
                                     <span class="modifier">Public</span>
                                 <a href="#openVisitReg" >openVisitReg</a>
                             </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#showWeather" >showWeather</a>
-                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -509,6 +505,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>開啟活動取消視窗</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -519,6 +517,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -533,16 +532,21 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>傳遞的資料</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>視窗關閉callback</p>
+
                             </div>
                 </td>
             </tr>
@@ -637,7 +641,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>活動領騎者維護</p>
+                        <div class="io-description"><p>開啟活動領騎者邀請維護視窗</p>
 </div>
 
                             <div class="io-description">
@@ -649,6 +653,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -663,6 +668,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>已邀請的領騎者</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -702,7 +711,9 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>開啟活動的馬錶參加人員名單</p>
+                        <div class="io-description"><p>開啟
+活動碼表的參加人員名單 或
+活動碼表即時設定領騎手畫面</p>
 </div>
 
                             <div class="io-description">
@@ -714,6 +725,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -728,16 +740,21 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>傳入的資料參數</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>視窗關閉 callback</p>
+
                             </div>
                 </td>
             </tr>
@@ -962,6 +979,11 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>開啟聊天室選擇視窗</p>
+<ul>
+<li>要將資訊分享至聊天室而使用</li>
+</ul>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
@@ -1181,7 +1203,12 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>活動集合點 / 休憩點視窗</p>
+                        <div class="io-description"><p>開啟 活動中途點設置 或 活動集合點設置 視窗</p>
+<ul>
+<li>依照傳入參數 options.type 判斷顯示的視窗類型</li>
+<li>options.type == &#39;start&#39; 為 活動集合點設定視窗 (單選)</li>
+<li>options.type == &#39;break&#39; 為 活動中途點設定視窗 (多選)</li>
+</ul>
 </div>
 
                             <div class="io-description">
@@ -1193,6 +1220,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -1207,6 +1235,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>傳遞參數</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -1246,7 +1278,12 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>邀請朋友加入隊伍</p>
+                        <div class="io-description"><p>邀請用戶視窗</p>
+<ul>
+<li>活動邀請關注對象</li>
+<li>碼表邀請騎乘夥伴</li>
+<li>隊伍邀請關注對象</li>
+</ul>
 </div>
 
                             <div class="io-description">
@@ -1258,6 +1295,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -1272,6 +1310,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>傳遞參數</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -1376,7 +1418,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>打開運動實況的評論視窗</p>
+                        <div class="io-description"><p>開啟運動實況的留言視窗</p>
 </div>
 
                         <div class="io-description">
@@ -1411,7 +1453,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>開啟地點查詢視窗</p>
+                        <div class="io-description"><p>開啟 地址查詢輸入自動完成選擇視窗 (給探索活動與探索路線的地點選擇使用)</p>
 </div>
 
                         <div class="io-description">
@@ -1437,7 +1479,7 @@
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>openLocationSelectDialog(options)</code>
+                    <code>openLocationSelectDialog(options: <a href="../classes/LocationSelectDialogData.html" target="_self">LocationSelectDialogData</a>)</code>
                 </td>
             </tr>
 
@@ -1446,7 +1488,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>開啟位置分享視窗</p>
+                        <div class="io-description"><p>開啟 地圖的位置選擇視窗</p>
 </div>
 
                             <div class="io-description">
@@ -1456,18 +1498,27 @@
                                     <thead>
                                         <tr>
                                             <td>Name</td>
+                                                <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                                 <td>options</td>
+                                            <td>
+                                                            <code><a href="../classes/LocationSelectDialogData.html" target="_self" >LocationSelectDialogData</a></code>
+                                            </td>
 
                                             <td>
                                                     No
                                             </td>
 
 
+                                            <td>
+                                                    <p>傳遞參數</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -1672,6 +1723,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>開啟頁面元件 (以彈出視窗方式)</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -1682,6 +1735,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -1696,6 +1750,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>傳遞的參數</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -1735,7 +1793,11 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>開啟附近位置查詢視窗</p>
+                        <div class="io-description"><p>開啟 探索路線 或 探索活動的 附近位置查詢選擇視窗</p>
+<ul>
+<li>依照 optionData.isRoute == true 表示為探索路線的位置條件視窗</li>
+<li>依照 optionData.isRoute != true 表示為探索活動的位置條件視窗</li>
+</ul>
 </div>
 
                             <div class="io-description">
@@ -1747,6 +1809,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -1761,6 +1824,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>傳遞參數</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -1900,7 +1967,8 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>開啟回報視窗畫面</p>
+                        <div class="io-description"><p>開啟 回報問題/檢舉 的描述輸入視窗畫面
+依照傳入的參數決定顯示的畫面</p>
 </div>
 
                             <div class="io-description">
@@ -1912,6 +1980,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -1926,6 +1995,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>傳遞參數</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -1965,6 +2038,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>開啟 問題回報/檢舉 建立成功視窗畫面</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -1975,6 +2050,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -1989,12 +2065,16 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>視窗資料</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
 
                         </div>
                             <div class="io-description">
@@ -2028,7 +2108,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>檢視隊伍的加入請求</p>
+                        <div class="io-description"><p>開啟隊伍的用戶加入請求清單視窗畫面</p>
 </div>
 
                             <div class="io-description">
@@ -2040,6 +2120,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -2054,6 +2135,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>視窗傳遞資料</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -2093,7 +2178,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>開啟路面說明畫面</p>
+                        <div class="io-description"><p>開啟路線的路面說明視窗</p>
 </div>
 
                             <div class="io-description">
@@ -2105,6 +2190,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -2119,6 +2205,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>路線資料</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -2223,7 +2313,13 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>開啟路線詳細資訊畫面</p>
+                        <div class="io-description"><p>開啟路線詳細資訊視窗
+顯示</p>
+<ul>
+<li>路線建立時間</li>
+<li>路線建立者</li>
+<li>有效完成次數</li>
+</ul>
 </div>
 
                             <div class="io-description">
@@ -2235,6 +2331,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -2249,6 +2346,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>傳遞參數</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -2323,7 +2424,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>開啟路線選擇, 路線存在回報問題的確認視窗</p>
+                        <div class="io-description"><p>開啟路線選擇並存在回報問題的確認視窗</p>
 </div>
 
                             <div class="io-description">
@@ -2335,6 +2436,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -2349,16 +2451,21 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>傳入的視窗資料</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                            <b>Returns : </b>        <code><a href="../classes/MapRoute.html" target="_self" >Promise&lt;MapRoute | undefined&gt;</a></code>
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>選擇的路線</p>
+
                             </div>
                 </td>
             </tr>
@@ -2388,7 +2495,12 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>開啟路線分享的視窗</p>
+                        <div class="io-description"><p>開啟「路線分享視窗」或「碼表路線選擇視窗」</p>
+<p>視傳入的 <code>optionData.type</code> 而定：</p>
+<ul>
+<li><code>&#39;share&#39;</code>：開啟路線分享視窗。</li>
+<li><code>&#39;stopwatch&#39;</code>：開啟碼表路線選擇視窗。</li>
+</ul>
 </div>
 
                             <div class="io-description">
@@ -2400,6 +2512,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -2414,16 +2527,21 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>視窗初始化參數，包含視窗類型與相關資料。</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                            <b>Returns : </b>        <code><a href="../classes/MapRoute.html" target="_self" >Promise&lt;MapRoute | undefined&gt;</a></code>
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>使用者選取的路線資料，或在關閉時回傳 undefined。</p>
+
                             </div>
                 </td>
             </tr>
@@ -2453,7 +2571,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>路線的標籤查詢</p>
+                        <div class="io-description"><p>開啟探索路線的標籤條件選擇視窗</p>
 </div>
 
                         <div class="io-description">
@@ -2714,7 +2832,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>開啟隊伍簡介視窗</p>
+                        <div class="io-description"><p>開啟隊伍簡介小視窗</p>
 </div>
 
                             <div class="io-description">
@@ -2726,6 +2844,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -2740,6 +2859,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>傳遞的資料物件</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -2814,7 +2937,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>開啟活動時段查詢視窗</p>
+                        <div class="io-description"><p>開啟探險活動的時段查詢條件視窗</p>
 </div>
 
                         <div class="io-description">
@@ -2849,7 +2972,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>選擇隊伍成員</p>
+                        <div class="io-description"><p>開啟隊伍成員選擇畫面</p>
 </div>
 
                             <div class="io-description">
@@ -2861,6 +2984,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -2875,16 +2999,21 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>彈出視窗資料參數</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                            <b>Returns : </b>    <code>Promise&lt;[] | undefined&gt;</code>
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>選擇的成員名單</p>
+
                             </div>
                 </td>
             </tr>
@@ -2979,6 +3108,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>開啟訪客報名活動的資料填寫視窗</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -2989,6 +3120,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -3003,77 +3135,16 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>活動資料</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                        </div>
-                            <div class="io-description">
-                                
-                            </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="showWeather"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                        <span ><b>showWeather</b></span>
-                        <a href="#showWeather"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>showWeather(data: <a href="../classes/WeatherViewDialogData.html" target="_self">WeatherViewDialogData</a>)</code>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-description"><p>顯示地圖視窗</p>
-</div>
-
-                            <div class="io-description">
-                                <b>Parameters :</b>
-                                
-                                <table class="params">
-                                    <thead>
-                                        <tr>
-                                            <td>Name</td>
-                                                <td>Type</td>
-                                            <td>Optional</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                                <td>data</td>
-                                            <td>
-                                                            <code><a href="../classes/WeatherViewDialogData.html" target="_self" >WeatherViewDialogData</a></code>
-                                            </td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        <div class="io-description">
-                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
 
                         </div>
                             <div class="io-description">

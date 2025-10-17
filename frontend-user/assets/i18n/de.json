@@ -821,7 +821,6 @@
                 "coffee": "Café",
                 "view": "Sehenswürdigkeit"
             },
-            "too-far": "Der Punkt liegt momentan zu weit von der Aktivitätsroute entfernt",
             "tip-remove-points-on-map": "Zum Entfernen diesen Stopp antippen"
         },
         "create-activity-success": {

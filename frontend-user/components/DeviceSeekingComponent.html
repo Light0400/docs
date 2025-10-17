@@ -135,6 +135,15 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>藍牙裝置搜尋連線視窗元件</p>
+<p>此元件負責搜尋附近可連線的藍牙感測器（如心率帶、功率計、踏頻計等），
+並提供使用者連線、斷線與刪除已儲存裝置的操作。</p>
+
+    </p>
 
     <p class="comment">
         <h3>Extends</h3>
@@ -177,7 +186,6 @@
             <tr>
                 <td class="col-md-3">imports</td>
                 <td class="col-md-9">
-                            <code>CommonModule</code>
                             <code>TranslatePipe</code>
                             <code>MatButtonModule</code>
                                 <code><a href="../components/HeaderComponent.html" target="_self" >HeaderComponent</a></code>
@@ -256,6 +264,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#back" >back</a>
+                            </li>
+                            <li>
                                     <span class="modifier">Async</span>
                                 <a href="#connect" >connect</a>
                             </li>
@@ -265,9 +276,6 @@
                             </li>
                             <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
-                            </li>
-                            <li>
-                                <a href="#onClose" >onClose</a>
                             </li>
                             <li>
                                 <a href="#onPress" >onPress</a>
@@ -451,6 +459,39 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="back"></a>
+                    <span class="name">
+                        <span ><b>back</b></span>
+                        <a href="#back"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>back()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>關閉對話框</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="connect"></a>
                     <span class="name">
                             <span class="modifier">Async</span>
@@ -471,6 +512,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>連線至指定藍牙裝置</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -481,6 +524,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -495,6 +539,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>要連線的藍牙裝置</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>e</td>
@@ -507,6 +555,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>點擊事件，用於阻止事件冒泡</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>index</td>
@@ -519,6 +571,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>若從 nearby 清單連線則提供索引</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -558,6 +614,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>斷開指定裝置連線</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -568,6 +626,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -582,6 +641,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>點擊事件，用於阻止事件冒泡</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>device</td>
@@ -594,6 +657,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>要斷線的藍牙裝置</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -631,37 +698,12 @@
 
             <tr>
                 <td class="col-md-4">
-
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                        </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="onClose"></a>
-                    <span class="name">
-                        <span ><b>onClose</b></span>
-                        <a href="#onClose"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>onClose()</code>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-4">
+                        <div class="io-description"><p>Angular 元件生命週期：初始化事件</p>
+<ul>
+<li>啟動搜尋裝置</li>
+<li>訂閱已儲存裝置變更事件</li>
+</ul>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -693,6 +735,9 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>長按裝置項目（顯示操作選單）
+目前提供刪除裝置選項</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -766,6 +811,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>重新掃描可連線的藍芽裝置結果</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -799,6 +846,12 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>掃描藍牙裝置</p>
+<ul>
+<li>行動端使用 <code>requestLEScan</code> 進行背景掃描（5 秒）</li>
+<li>瀏覽器則使用 <code>requestDevice</code> 直接顯示選擇器</li>
+</ul>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
@@ -832,6 +885,12 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>掃描結果檢查與後續處理</p>
+<ul>
+<li>避免重複裝置</li>
+<li>若為立即連線模式則直接嘗試連線</li>
+</ul>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -940,6 +999,13 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>藍牙服務過濾條件，只掃描指定服務的裝置
+限定搜尋服務種類（心率、功率、踏頻）</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -966,6 +1032,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>是否正在掃描裝置中，用於控制 UI loading 狀態</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -992,6 +1064,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>附近可搜尋到的藍牙裝置清單</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -1018,6 +1096,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>使用者先前已連線或儲存的裝置清單</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -1127,7 +1211,7 @@
   &lt;/ng-container&gt;
 
   &lt;ng-container ngProjectAs&#x3D;&quot;[h-right]&quot;&gt;
-    &lt;button type&#x3D;&quot;button&quot; mat-button class&#x3D;&quot;tmup-btn-text blue&quot; (click)&#x3D;&quot;onClose()&quot;&gt;
+    &lt;button type&#x3D;&quot;button&quot; mat-button class&#x3D;&quot;tmup-btn-text blue&quot; (click)&#x3D;&quot;back()&quot;&gt;
       {{ &quot;common.complete&quot; | translate }}
     &lt;/button&gt;
   &lt;/ng-container&gt;
@@ -1241,8 +1325,8 @@
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><lib-header [show]="true" [isDialog]="true" [backNotShow]="true">  <ng-container ngProjectAs="[h-title]">    {{ "dialog.device-seeking.title" | translate }}  </ng-container>  <ng-container ngProjectAs="[h-right]">    <button type="button" mat-button class="tmup-btn-text blue" (click)="onClose()">      {{ "common.complete" | translate }}    </button>  </ng-container></lib-header><main role="main">  <span class="title">    {{ "dialog.device-seeking.your-device-title" | translate }}  </span>  @if(savedDevices.length > 0) {  <section class="device your tmup-no-select">    @for (item of savedDevices; track $index) {    <div class="theme-item tmup-no-select" (press)="onPress(item, $event)">      <p class="tmup-no-select">{{ item.name }}</p>      <div class="tmup-no-select">        @if(item.connected){        <button type="button" class="tmup-btn-ss-gray" (click)="disconnect($event, item)">          {{ "common.disconnect" | translate }}        </button>        }@else if(item.connecting){        <button type="button" class="tmup-btn-ss" disabled>          <span class="loading-dots">{{ "common.connecting" | translate }}</span>        </button>        }@else{        <button type="button" class="tmup-btn-ss" (click)="connect(item, $event)">          {{ "common.connect" | translate }}        </button>        }      </div>    </div>    }  </section>  } @else {  <span class="empty">    {{ "dialog.device-seeking.no-link-device" | translate }}  </span>  }  <div class="divid"></div>  <span class="title">    {{ "dialog.device-seeking.nearby-bluetooth-device" | translate }}  </span>  @if(nearByDevices.length > 0) {  <section class="device nearby">    @for (item of nearByDevices; let index = $index; track item.deviceId) {    <div class="theme-item">      <p>{{ item.name }}</p>      <div>        @if(item.connecting){        <button type="button" class="tmup-btn-ss" disabled>          <span class="loading-dots">{{ "common.connecting" | translate }}</span>        </button>        }@else{        <button type="button" class="tmup-btn-ss" (click)="connect(item, $event, index)">          {{ "common.connect" | translate }}        </button>        }      </div>    </div>    }  </section>  } @else {  <span class="empty">{{    (isSearching    ? "dialog.device-seeking.seeking"    : "dialog.device-seeking.not-find"    ) | translate    }}</span>  }  @if(!isSearching){  <div class="bluetooth-info">    <p class="btn" (click)="onRefresh()">      {{ "dialog.device-seeking.seek-again" | translate }}    </p>    <p>{{ "dialog.device-seeking.question.title" | translate }}</p>    <p>{{ "dialog.device-seeking.question.resolution1" | translate }}</p>    <p>{{ "dialog.device-seeking.question.resolution2" | translate }}</p>    <p>{{ "dialog.device-seeking.question.resolution3" | translate }}</p>    <p>{{ "dialog.device-seeking.question.resolution4" | translate }}</p>  </div>  }</main></div>'
-    var COMPONENTS = [{'name': 'ActivityApplyListComponent', 'selector': 'lib-activity-apply-list'},{'name': 'ActivityCancelDialogComponent', 'selector': 'lib-activity-cancel-dialog'},{'name': 'ActivityComponent', 'selector': 'app-activity'},{'name': 'ActivityDetailComponent', 'selector': 'lib-activity-detail'},{'name': 'ActivityFormComponent', 'selector': 'app-activity-form'},{'name': 'ActivityGpsShareComponent', 'selector': 'lib-activity-gps-share'},{'name': 'ActivityGpsShareDialogComponent', 'selector': 'lib-activity-gps-share-dialog'},{'name': 'ActivityInvitingListComponent', 'selector': 'lib-activity-inviting-list'},{'name': 'ActivityItemComponent', 'selector': 'lib-activity-item'},{'name': 'ActivityJoinListComponent', 'selector': 'lib-activity-join-list'},{'name': 'ActivityLogListComponent', 'selector': 'lib-activity-log-list'},{'name': 'ActivityOnMapComponent', 'selector': 'lib-activity-on-map'},{'name': 'ActivityParticipantListDialogComponent', 'selector': 'lib-activity-participant-list-dialog'},{'name': 'ActivityPointsSelectDialogComponent', 'selector': 'lib-activity-points-select-dialog'},{'name': 'ActivitySearchComponent', 'selector': 'lib-activity-search'},{'name': 'ActivitySelectDialogComponent', 'selector': 'lib-activity-select-dialog'},{'name': 'ActivityUserListComponent', 'selector': 'lib-activity-user-list'},{'name': 'AddressInputComponent', 'selector': 'lib-address-input'},{'name': 'AlertDialogComponent', 'selector': 'lib-alert-dialog'},{'name': 'ArrangePointsDialogComponent', 'selector': 'lib-arrange-points-dialog'},{'name': 'BackgroundChooseComponent', 'selector': 'lib-background-choose'},{'name': 'BlocklistComponent', 'selector': 'lib-blocklist'},{'name': 'CalorieExchangeComponent', 'selector': 'lib-calorie-exchange'},{'name': 'ChatAvatarComponent', 'selector': 'lib-chat-avatar'},{'name': 'ChatComponent', 'selector': 'lib-chat'},{'name': 'ChatItemComponent', 'selector': 'lib-chat-item'},{'name': 'ChatListComponent', 'selector': 'lib-chat-list'},{'name': 'ChatReplyMessageItemComponent', 'selector': 'lib-chat-reply-message-item'},{'name': 'ChatRoomComponent', 'selector': 'lib-chat-room'},{'name': 'ChatRoomItemComponent', 'selector': 'lib-chat-room-item'},{'name': 'ChatRoomItemTemplateComponent', 'selector': 'lib-chat-room-item-template'},{'name': 'ChatRoomMediaListComponent', 'selector': 'lib-chat-room-media-list'},{'name': 'ChatSelectDialogComponent', 'selector': 'lib-chat-select-dialog'},{'name': 'ChatUserComponent', 'selector': 'lib-chat-user'},{'name': 'ConfirmDialogComponent', 'selector': 'lib-confirm-dialog'},{'name': 'CreateActivitySuccessDialogComponent', 'selector': 'lib-create-activity-success-dialog'},{'name': 'CreateRouteSuccessDialogComponent', 'selector': 'lib-create-route-success-dialog'},{'name': 'CreateSuccessComponent', 'selector': 'lib-create-success'},{'name': 'CustomPageComponent', 'selector': 'lib-custom-page'},{'name': 'DateInputComponent', 'selector': 'lib-date-input'},{'name': 'DatetimeInputComponent', 'selector': 'lib-datetime-input'},{'name': 'DeviceSeekingComponent', 'selector': 'lib-device-seeking'},{'name': 'DownloadAppDialogComponent', 'selector': 'lib-download-app-dialog'},{'name': 'DownloadComponent', 'selector': 'lib-download'},{'name': 'DraggableListComponent', 'selector': 'lib-draggable-list'},{'name': 'EmptyDataComponent', 'selector': 'lib-empty-data'},{'name': 'ErrorDialogComponent', 'selector': 'lib-error-dialog'},{'name': 'ErrorSummaryComponent', 'selector': 'lib-error-summary'},{'name': 'ExerciseReadyStartComponent', 'selector': 'lib-exercise-ready-start'},{'name': 'FaqComponent', 'selector': 'lib-faq'},{'name': 'FileComponent', 'selector': 'lib-file'},{'name': 'FindResultComponent', 'selector': 'lib-find-result'},{'name': 'FollowComponent', 'selector': 'app-follow'},{'name': 'FollowersComponent', 'selector': 'lib-followers'},{'name': 'FollowReqComponent', 'selector': 'lib-follow-req'},{'name': 'FooterMenuComponent', 'selector': 'lib-footer-menu'},{'name': 'HeaderComponent', 'selector': 'lib-header'},{'name': 'HomeActivityInviteComponent', 'selector': 'lib-home-activity-invite'},{'name': 'HomeAddBtnComponent', 'selector': 'lib-home-add-btn'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeMenuComponent', 'selector': 'lib-home-menu'},{'name': 'ImageCropperDialogComponent', 'selector': 'lib-image-cropper-dialog'},{'name': 'ImageListDialogComponent', 'selector': 'lib-image-list-dialog'},{'name': 'InviteFriendsComponent', 'selector': 'lib-invite-friends'},{'name': 'LeadRiderForRouteDialogComponent', 'selector': 'lib-lead-rider-for-route-dialog'},{'name': 'LikeCommentDialogComponent', 'selector': 'lib-like-comment-dialog'},{'name': 'LoadingComponent', 'selector': 'lib-loading'},{'name': 'LocationDialogComponent', 'selector': 'lib-location-dialog'},{'name': 'LocationSelectDialogComponent', 'selector': 'lib-location-select-dialog'},{'name': 'LocationShareComponent', 'selector': 'lib-location-share'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapClMarkerComponent', 'selector': 'lib-map-cl-marker'},{'name': 'MapCompassComponent', 'selector': 'lib-map-compass'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'MoreMenuComponent', 'selector': 'lib-more-menu'},{'name': 'MyRouteCollectionComponent', 'selector': 'lib-my-route-collection'},{'name': 'NoticeMsgItemComponent', 'selector': 'lib-notice-msg-item'},{'name': 'NotifyMessageListComponent', 'selector': 'lib-notify-message-list'},{'name': 'OptionComponent', 'selector': 'lib-option'},{'name': 'PageDialogComponent', 'selector': 'lib-page-dialog'},{'name': 'PositionFilterDialogComponent', 'selector': 'lib-position-filter-dialog'},{'name': 'PostAttachmentItemComponent', 'selector': 'lib-post-attachment-item'},{'name': 'PostCommentListComponent', 'selector': 'lib-post-comment-list'},{'name': 'PostFormComponent', 'selector': 'lib-post-form'},{'name': 'PostItemComponent', 'selector': 'lib-post-item'},{'name': 'PostLikeListComponent', 'selector': 'lib-post-like-list'},{'name': 'ProgressBarComponent', 'selector': 'lib-progress-bar'},{'name': 'RecommendTeamListComponent', 'selector': 'lib-recommend-team-list'},{'name': 'RecommendUserListComponent', 'selector': 'lib-recommend-user-list'},{'name': 'RecordSelectDialogComponent', 'selector': 'lib-record-select-dialog'},{'name': 'ReportDialogComponent', 'selector': 'lib-report-dialog'},{'name': 'ReportListComponent', 'selector': 'lib-report-list'},{'name': 'ReportSuccessDialogComponent', 'selector': 'lib-report-success-dialog'},{'name': 'RoadDescDialogComponent', 'selector': 'lib-road-desc-dialog'},{'name': 'RouteActivityListComponent', 'selector': 'lib-route-activity-list'},{'name': 'RouteCollectComponent', 'selector': 'lib-route-collect'},{'name': 'RouteCommentFormComponent', 'selector': 'lib-route-comment-form'},{'name': 'RouteCommentItemComponent', 'selector': 'lib-route-comment-item'},{'name': 'RouteCommentListComponent', 'selector': 'lib-route-comment-list'},{'name': 'RouteDetailComponent', 'selector': 'lib-route-detail'},{'name': 'RouteDetailDialogComponent', 'selector': 'lib-route-detail-dialog'},{'name': 'RouteElevationMapComponent', 'selector': 'lib-route-elevation-map'},{'name': 'RouteExploreComponent', 'selector': 'lib-route-explore'},{'name': 'RouteFormComponent', 'selector': 'lib-route-form'},{'name': 'RouteFromFilterDialogComponent', 'selector': 'lib-route-from-filter-dialog'},{'name': 'RouteInfoComponent', 'selector': 'lib-route-info'},{'name': 'RouteItemComponent', 'selector': 'lib-route-item'},{'name': 'RouteMapExploreComponent', 'selector': 'lib-route-map-explore'},{'name': 'RouteReportInfoComponent', 'selector': 'lib-route-report-info'},{'name': 'RouteSearchComponent', 'selector': 'lib-route-search'},{'name': 'RouteSelectReportConfirmDialogComponent', 'selector': 'lib-route-select-report-confirm-dialog'},{'name': 'RouteShareDialogComponent', 'selector': 'lib-route-share-dialog'},{'name': 'RouteTagFilterDialogComponent', 'selector': 'lib-route-tag-filter-dialog'},{'name': 'SearchDialogComponent', 'selector': 'lib-search-dialog'},{'name': 'SearchInputComponent', 'selector': 'lib-search-input'},{'name': 'SearchRecordComponent', 'selector': 'lib-search-record'},{'name': 'SearchUsersComponent', 'selector': 'lib-search-users'},{'name': 'SelectDialogComponent', 'selector': 'lib-select-dialog'},{'name': 'SelectInputComponent', 'selector': 'lib-select-input'},{'name': 'ShareToDialogComponent', 'selector': 'lib-share-to-dialog'},{'name': 'SingleInputDialogComponent', 'selector': 'lib-single-input-dialog'},{'name': 'SlideToggleInputComponent', 'selector': 'lib-slide-toggle-input'},{'name': 'SportingShareItemComponent', 'selector': 'lib-sporting-share-item'},{'name': 'SportingShareListComponent', 'selector': 'lib-sporting-share-list'},{'name': 'SportLiveChatComponent', 'selector': 'lib-sport-live-chat'},{'name': 'SportLiveComponent', 'selector': 'lib-sport-live'},{'name': 'StepProcessComponent', 'selector': 'lib-step-process'},{'name': 'StopwatchComponent', 'selector': 'lib-stopwatch'},{'name': 'StopwatchFinishedComponent', 'selector': 'lib-stopwatch-finished'},{'name': 'StopwatchInfoSelectDialogComponent', 'selector': 'lib-stopwatch-info-select-dialog'},{'name': 'StopwatchSettingComponent', 'selector': 'lib-stopwatch-setting'},{'name': 'StreamimgChatDialogComponent', 'selector': 'lib-streamimg-chat-dialog'},{'name': 'TagUserInputComponent', 'selector': 'lib-tag-user-input'},{'name': 'TeamActivityDialogComponent', 'selector': 'lib-team-activity-dialog'},{'name': 'TeamAliasEditComponent', 'selector': 'lib-team-alias-edit'},{'name': 'TeamBaseareaEditComponent', 'selector': 'lib-team-basearea-edit'},{'name': 'TeamComponent', 'selector': 'lib-team'},{'name': 'TeamCreateFinishComponent', 'selector': 'lib-team-create-finish'},{'name': 'TeamDetailsComponent', 'selector': 'lib-team-details'},{'name': 'TeamFormComponent', 'selector': 'lib-team-form'},{'name': 'TeamFormEditComponent', 'selector': 'lib-team-form-edit'},{'name': 'TeamIntroDialogComponent', 'selector': 'lib-team-intro-dialog'},{'name': 'TeamItemComponent', 'selector': 'lib-team-item'},{'name': 'TeamLogoComponent', 'selector': 'lib-team-logo'},{'name': 'TeamMapComponent', 'selector': 'lib-team-map'},{'name': 'TeamMemberAliasComponent', 'selector': 'lib-team-member-alias'},{'name': 'TeamMemberComponent', 'selector': 'lib-team-member'},{'name': 'TeamMemberCtrlDialogComponent', 'selector': 'lib-team-member-ctrl-dialog'},{'name': 'TeamOnMapComponent', 'selector': 'lib-team-on-map'},{'name': 'TeamSearchComponent', 'selector': 'lib-team-search'},{'name': 'TeamSettingComponent', 'selector': 'lib-team-setting'},{'name': 'TeamTagEditComponent', 'selector': 'lib-team-tag-edit'},{'name': 'TextareaInputComponent', 'selector': 'lib-textarea-input'},{'name': 'TextboxInputComponent', 'selector': 'lib-textbox-input'},{'name': 'ThirdAuthComponent', 'selector': 'lib-third-auth'},{'name': 'TimeInputComponent', 'selector': 'lib-time-input'},{'name': 'TimePeriodFilterDialogComponent', 'selector': 'lib-time-period-filter-dialog'},{'name': 'TipInfoDialogComponent', 'selector': 'lib-tip-info-dialog'},{'name': 'UpdateScreenComponent', 'selector': 'lib-update-screen'},{'name': 'UserAccountComponent', 'selector': 'lib-user-account'},{'name': 'UserAccountFormComponent', 'selector': 'lib-user-account-form'},{'name': 'UserApplyTeamDialogComponent', 'selector': 'lib-user-apply-team-dialog'},{'name': 'UserAvatarComponent', 'selector': 'lib-user-avatar'},{'name': 'UserAvaterGroupComponent', 'selector': 'lib-user-avater-group'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserFormComponent', 'selector': 'app-user-form'},{'name': 'UserItemComponent', 'selector': 'lib-user-item'},{'name': 'UserNotificationSettingComponent', 'selector': 'lib-user-notification-setting'},{'name': 'UserPostListComponent', 'selector': 'lib-user-post-list'},{'name': 'UserRouteRecordItemComponent', 'selector': 'lib-user-route-record-item'},{'name': 'UserRouteRecordListComponent', 'selector': 'lib-user-route-record-list'},{'name': 'UserSelectDialogComponent', 'selector': 'lib-user-select-dialog'},{'name': 'UserSettingComponent', 'selector': 'app-user-setting'},{'name': 'UsersFollowingComponent', 'selector': 'lib-users-following'},{'name': 'UserShareDialogComponent', 'selector': 'lib-user-share-dialog'},{'name': 'ValidCodeInputComponent', 'selector': 'lib-valid-code-input'},{'name': 'VisitRegDialogComponent', 'selector': 'lib-visit-reg-dialog'},{'name': 'WeatherViewDialogComponent', 'selector': 'lib-weather-view-dialog'},{'name': 'WebHomeComponent', 'selector': 'lib-web-home'}];
+        var COMPONENT_TEMPLATE = '<div><lib-header [show]="true" [isDialog]="true" [backNotShow]="true">  <ng-container ngProjectAs="[h-title]">    {{ "dialog.device-seeking.title" | translate }}  </ng-container>  <ng-container ngProjectAs="[h-right]">    <button type="button" mat-button class="tmup-btn-text blue" (click)="back()">      {{ "common.complete" | translate }}    </button>  </ng-container></lib-header><main role="main">  <span class="title">    {{ "dialog.device-seeking.your-device-title" | translate }}  </span>  @if(savedDevices.length > 0) {  <section class="device your tmup-no-select">    @for (item of savedDevices; track $index) {    <div class="theme-item tmup-no-select" (press)="onPress(item, $event)">      <p class="tmup-no-select">{{ item.name }}</p>      <div class="tmup-no-select">        @if(item.connected){        <button type="button" class="tmup-btn-ss-gray" (click)="disconnect($event, item)">          {{ "common.disconnect" | translate }}        </button>        }@else if(item.connecting){        <button type="button" class="tmup-btn-ss" disabled>          <span class="loading-dots">{{ "common.connecting" | translate }}</span>        </button>        }@else{        <button type="button" class="tmup-btn-ss" (click)="connect(item, $event)">          {{ "common.connect" | translate }}        </button>        }      </div>    </div>    }  </section>  } @else {  <span class="empty">    {{ "dialog.device-seeking.no-link-device" | translate }}  </span>  }  <div class="divid"></div>  <span class="title">    {{ "dialog.device-seeking.nearby-bluetooth-device" | translate }}  </span>  @if(nearByDevices.length > 0) {  <section class="device nearby">    @for (item of nearByDevices; let index = $index; track item.deviceId) {    <div class="theme-item">      <p>{{ item.name }}</p>      <div>        @if(item.connecting){        <button type="button" class="tmup-btn-ss" disabled>          <span class="loading-dots">{{ "common.connecting" | translate }}</span>        </button>        }@else{        <button type="button" class="tmup-btn-ss" (click)="connect(item, $event, index)">          {{ "common.connect" | translate }}        </button>        }      </div>    </div>    }  </section>  } @else {  <span class="empty">{{    (isSearching    ? "dialog.device-seeking.seeking"    : "dialog.device-seeking.not-find"    ) | translate    }}</span>  }  @if(!isSearching){  <div class="bluetooth-info">    <p class="btn" (click)="onRefresh()">      {{ "dialog.device-seeking.seek-again" | translate }}    </p>    <p>{{ "dialog.device-seeking.question.title" | translate }}</p>    <p>{{ "dialog.device-seeking.question.resolution1" | translate }}</p>    <p>{{ "dialog.device-seeking.question.resolution2" | translate }}</p>    <p>{{ "dialog.device-seeking.question.resolution3" | translate }}</p>    <p>{{ "dialog.device-seeking.question.resolution4" | translate }}</p>  </div>  }</main></div>'
+    var COMPONENTS = [{'name': 'ActivityApplyListComponent', 'selector': 'lib-activity-apply-list'},{'name': 'ActivityCancelDialogComponent', 'selector': 'lib-activity-cancel-dialog'},{'name': 'ActivityComponent', 'selector': 'app-activity'},{'name': 'ActivityDetailComponent', 'selector': 'lib-activity-detail'},{'name': 'ActivityFormComponent', 'selector': 'app-activity-form'},{'name': 'ActivityGpsShareComponent', 'selector': 'lib-activity-gps-share'},{'name': 'ActivityGpsShareDialogComponent', 'selector': 'lib-activity-gps-share-dialog'},{'name': 'ActivityInvitingListComponent', 'selector': 'lib-activity-inviting-list'},{'name': 'ActivityItemComponent', 'selector': 'lib-activity-item'},{'name': 'ActivityJoinListComponent', 'selector': 'lib-activity-join-list'},{'name': 'ActivityLogListComponent', 'selector': 'lib-activity-log-list'},{'name': 'ActivityOnMapComponent', 'selector': 'lib-activity-on-map'},{'name': 'ActivityParticipantListDialogComponent', 'selector': 'lib-activity-participant-list-dialog'},{'name': 'ActivityPointsSelectDialogComponent', 'selector': 'lib-activity-points-select-dialog'},{'name': 'ActivitySearchComponent', 'selector': 'lib-activity-search'},{'name': 'ActivitySelectDialogComponent', 'selector': 'lib-activity-select-dialog'},{'name': 'ActivityUserListComponent', 'selector': 'lib-activity-user-list'},{'name': 'AddressInputComponent', 'selector': 'lib-address-input'},{'name': 'AlertDialogComponent', 'selector': 'lib-alert-dialog'},{'name': 'ArrangePointsDialogComponent', 'selector': 'lib-arrange-points-dialog'},{'name': 'BackgroundChooseComponent', 'selector': 'lib-background-choose'},{'name': 'BlocklistComponent', 'selector': 'lib-blocklist'},{'name': 'CalorieExchangeComponent', 'selector': 'lib-calorie-exchange'},{'name': 'ChatAvatarComponent', 'selector': 'lib-chat-avatar'},{'name': 'ChatComponent', 'selector': 'lib-chat'},{'name': 'ChatItemComponent', 'selector': 'lib-chat-item'},{'name': 'ChatListComponent', 'selector': 'lib-chat-list'},{'name': 'ChatReplyMessageItemComponent', 'selector': 'lib-chat-reply-message-item'},{'name': 'ChatRoomComponent', 'selector': 'lib-chat-room'},{'name': 'ChatRoomItemComponent', 'selector': 'lib-chat-room-item'},{'name': 'ChatRoomItemTemplateComponent', 'selector': 'lib-chat-room-item-template'},{'name': 'ChatRoomMediaListComponent', 'selector': 'lib-chat-room-media-list'},{'name': 'ChatSelectDialogComponent', 'selector': 'lib-chat-select-dialog'},{'name': 'ChatUserComponent', 'selector': 'lib-chat-user'},{'name': 'ConfirmDialogComponent', 'selector': 'lib-confirm-dialog'},{'name': 'CreateActivitySuccessDialogComponent', 'selector': 'lib-create-activity-success-dialog'},{'name': 'CreateSuccessComponent', 'selector': 'lib-create-success'},{'name': 'CustomPageComponent', 'selector': 'lib-custom-page'},{'name': 'DateInputComponent', 'selector': 'lib-date-input'},{'name': 'DatetimeInputComponent', 'selector': 'lib-datetime-input'},{'name': 'DeviceSeekingComponent', 'selector': 'lib-device-seeking'},{'name': 'DownloadAppDialogComponent', 'selector': 'lib-download-app-dialog'},{'name': 'DownloadComponent', 'selector': 'lib-download'},{'name': 'DraggableListComponent', 'selector': 'lib-draggable-list'},{'name': 'EmptyDataComponent', 'selector': 'lib-empty-data'},{'name': 'ErrorDialogComponent', 'selector': 'lib-error-dialog'},{'name': 'ErrorSummaryComponent', 'selector': 'lib-error-summary'},{'name': 'ExerciseReadyStartComponent', 'selector': 'lib-exercise-ready-start'},{'name': 'FaqComponent', 'selector': 'lib-faq'},{'name': 'FileComponent', 'selector': 'lib-file'},{'name': 'FindResultComponent', 'selector': 'lib-find-result'},{'name': 'FollowComponent', 'selector': 'app-follow'},{'name': 'FollowersComponent', 'selector': 'lib-followers'},{'name': 'FollowReqComponent', 'selector': 'lib-follow-req'},{'name': 'FooterMenuComponent', 'selector': 'lib-footer-menu'},{'name': 'HeaderComponent', 'selector': 'lib-header'},{'name': 'HomeActivityInviteComponent', 'selector': 'lib-home-activity-invite'},{'name': 'HomeAddBtnComponent', 'selector': 'lib-home-add-btn'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeMenuComponent', 'selector': 'lib-home-menu'},{'name': 'ImageCropperDialogComponent', 'selector': 'lib-image-cropper-dialog'},{'name': 'ImageListDialogComponent', 'selector': 'lib-image-list-dialog'},{'name': 'InviteFriendsComponent', 'selector': 'lib-invite-friends'},{'name': 'LeadRiderForRouteDialogComponent', 'selector': 'lib-lead-rider-for-route-dialog'},{'name': 'LikeCommentDialogComponent', 'selector': 'lib-like-comment-dialog'},{'name': 'LoadingComponent', 'selector': 'lib-loading'},{'name': 'LocationDialogComponent', 'selector': 'lib-location-dialog'},{'name': 'LocationSelectDialogComponent', 'selector': 'lib-location-select-dialog'},{'name': 'LocationShareComponent', 'selector': 'lib-location-share'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapClMarkerComponent', 'selector': 'lib-map-cl-marker'},{'name': 'MapCompassComponent', 'selector': 'lib-map-compass'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'MoreMenuComponent', 'selector': 'lib-more-menu'},{'name': 'MyRouteCollectionComponent', 'selector': 'lib-my-route-collection'},{'name': 'NoticeMsgItemComponent', 'selector': 'lib-notice-msg-item'},{'name': 'NotifyMessageListComponent', 'selector': 'lib-notify-message-list'},{'name': 'OptionComponent', 'selector': 'lib-option'},{'name': 'PageDialogComponent', 'selector': 'lib-page-dialog'},{'name': 'PositionFilterDialogComponent', 'selector': 'lib-position-filter-dialog'},{'name': 'PostAttachmentItemComponent', 'selector': 'lib-post-attachment-item'},{'name': 'PostCommentListComponent', 'selector': 'lib-post-comment-list'},{'name': 'PostFormComponent', 'selector': 'lib-post-form'},{'name': 'PostItemComponent', 'selector': 'lib-post-item'},{'name': 'PostLikeListComponent', 'selector': 'lib-post-like-list'},{'name': 'ProgressBarComponent', 'selector': 'lib-progress-bar'},{'name': 'RecommendTeamListComponent', 'selector': 'lib-recommend-team-list'},{'name': 'RecommendUserListComponent', 'selector': 'lib-recommend-user-list'},{'name': 'RecordSelectDialogComponent', 'selector': 'lib-record-select-dialog'},{'name': 'ReportDialogComponent', 'selector': 'lib-report-dialog'},{'name': 'ReportListComponent', 'selector': 'lib-report-list'},{'name': 'ReportSuccessDialogComponent', 'selector': 'lib-report-success-dialog'},{'name': 'RoadDescDialogComponent', 'selector': 'lib-road-desc-dialog'},{'name': 'RouteActivityListComponent', 'selector': 'lib-route-activity-list'},{'name': 'RouteCollectComponent', 'selector': 'lib-route-collect'},{'name': 'RouteCommentFormComponent', 'selector': 'lib-route-comment-form'},{'name': 'RouteCommentItemComponent', 'selector': 'lib-route-comment-item'},{'name': 'RouteCommentListComponent', 'selector': 'lib-route-comment-list'},{'name': 'RouteDetailComponent', 'selector': 'lib-route-detail'},{'name': 'RouteDetailDialogComponent', 'selector': 'lib-route-detail-dialog'},{'name': 'RouteElevationMapComponent', 'selector': 'lib-route-elevation-map'},{'name': 'RouteExploreComponent', 'selector': 'lib-route-explore'},{'name': 'RouteFormComponent', 'selector': 'lib-route-form'},{'name': 'RouteFromFilterDialogComponent', 'selector': 'lib-route-from-filter-dialog'},{'name': 'RouteInfoComponent', 'selector': 'lib-route-info'},{'name': 'RouteItemComponent', 'selector': 'lib-route-item'},{'name': 'RouteMapExploreComponent', 'selector': 'lib-route-map-explore'},{'name': 'RouteReportInfoComponent', 'selector': 'lib-route-report-info'},{'name': 'RouteSearchComponent', 'selector': 'lib-route-search'},{'name': 'RouteSelectReportConfirmDialogComponent', 'selector': 'lib-route-select-report-confirm-dialog'},{'name': 'RouteShareDialogComponent', 'selector': 'lib-route-share-dialog'},{'name': 'RouteTagFilterDialogComponent', 'selector': 'lib-route-tag-filter-dialog'},{'name': 'SearchDialogComponent', 'selector': 'lib-search-dialog'},{'name': 'SearchInputComponent', 'selector': 'lib-search-input'},{'name': 'SearchRecordComponent', 'selector': 'lib-search-record'},{'name': 'SearchUsersComponent', 'selector': 'lib-search-users'},{'name': 'SelectDialogComponent', 'selector': 'lib-select-dialog'},{'name': 'SelectInputComponent', 'selector': 'lib-select-input'},{'name': 'ShareToDialogComponent', 'selector': 'lib-share-to-dialog'},{'name': 'SingleInputDialogComponent', 'selector': 'lib-single-input-dialog'},{'name': 'SlideToggleInputComponent', 'selector': 'lib-slide-toggle-input'},{'name': 'SportingShareItemComponent', 'selector': 'lib-sporting-share-item'},{'name': 'SportingShareListComponent', 'selector': 'lib-sporting-share-list'},{'name': 'SportLiveChatComponent', 'selector': 'lib-sport-live-chat'},{'name': 'SportLiveComponent', 'selector': 'lib-sport-live'},{'name': 'StepProcessComponent', 'selector': 'lib-step-process'},{'name': 'StopwatchComponent', 'selector': 'lib-stopwatch'},{'name': 'StopwatchFinishedComponent', 'selector': 'lib-stopwatch-finished'},{'name': 'StopwatchInfoSelectDialogComponent', 'selector': 'lib-stopwatch-info-select-dialog'},{'name': 'StopwatchSettingComponent', 'selector': 'lib-stopwatch-setting'},{'name': 'StreamimgChatDialogComponent', 'selector': 'lib-streamimg-chat-dialog'},{'name': 'TagUserInputComponent', 'selector': 'lib-tag-user-input'},{'name': 'TeamActivityDialogComponent', 'selector': 'lib-team-activity-dialog'},{'name': 'TeamAliasEditComponent', 'selector': 'lib-team-alias-edit'},{'name': 'TeamBaseareaEditComponent', 'selector': 'lib-team-basearea-edit'},{'name': 'TeamComponent', 'selector': 'lib-team'},{'name': 'TeamCreateFinishComponent', 'selector': 'lib-team-create-finish'},{'name': 'TeamDetailsComponent', 'selector': 'lib-team-details'},{'name': 'TeamFormComponent', 'selector': 'lib-team-form'},{'name': 'TeamFormEditComponent', 'selector': 'lib-team-form-edit'},{'name': 'TeamIntroDialogComponent', 'selector': 'lib-team-intro-dialog'},{'name': 'TeamItemComponent', 'selector': 'lib-team-item'},{'name': 'TeamLogoComponent', 'selector': 'lib-team-logo'},{'name': 'TeamMapComponent', 'selector': 'lib-team-map'},{'name': 'TeamMemberAliasComponent', 'selector': 'lib-team-member-alias'},{'name': 'TeamMemberComponent', 'selector': 'lib-team-member'},{'name': 'TeamMemberCtrlDialogComponent', 'selector': 'lib-team-member-ctrl-dialog'},{'name': 'TeamOnMapComponent', 'selector': 'lib-team-on-map'},{'name': 'TeamSearchComponent', 'selector': 'lib-team-search'},{'name': 'TeamSettingComponent', 'selector': 'lib-team-setting'},{'name': 'TeamTagEditComponent', 'selector': 'lib-team-tag-edit'},{'name': 'TextareaInputComponent', 'selector': 'lib-textarea-input'},{'name': 'TextboxInputComponent', 'selector': 'lib-textbox-input'},{'name': 'ThirdAuthComponent', 'selector': 'lib-third-auth'},{'name': 'TimeInputComponent', 'selector': 'lib-time-input'},{'name': 'TimePeriodFilterDialogComponent', 'selector': 'lib-time-period-filter-dialog'},{'name': 'TipInfoDialogComponent', 'selector': 'lib-tip-info-dialog'},{'name': 'UpdateScreenComponent', 'selector': 'lib-update-screen'},{'name': 'UserAccountComponent', 'selector': 'lib-user-account'},{'name': 'UserAccountFormComponent', 'selector': 'lib-user-account-form'},{'name': 'UserApplyTeamDialogComponent', 'selector': 'lib-user-apply-team-dialog'},{'name': 'UserAvatarComponent', 'selector': 'lib-user-avatar'},{'name': 'UserAvaterGroupComponent', 'selector': 'lib-user-avater-group'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserFormComponent', 'selector': 'app-user-form'},{'name': 'UserItemComponent', 'selector': 'lib-user-item'},{'name': 'UserNotificationSettingComponent', 'selector': 'lib-user-notification-setting'},{'name': 'UserPostListComponent', 'selector': 'lib-user-post-list'},{'name': 'UserRouteRecordItemComponent', 'selector': 'lib-user-route-record-item'},{'name': 'UserRouteRecordListComponent', 'selector': 'lib-user-route-record-list'},{'name': 'UserSelectDialogComponent', 'selector': 'lib-user-select-dialog'},{'name': 'UserSettingComponent', 'selector': 'app-user-setting'},{'name': 'UsersFollowingComponent', 'selector': 'lib-users-following'},{'name': 'UserShareDialogComponent', 'selector': 'lib-user-share-dialog'},{'name': 'ValidCodeInputComponent', 'selector': 'lib-valid-code-input'},{'name': 'VisitRegDialogComponent', 'selector': 'lib-visit-reg-dialog'},{'name': 'WebHomeComponent', 'selector': 'lib-web-home'}];
     var DIRECTIVES = [{'name': 'AppOnDestory', 'selector': ''},{'name': 'BackgroundImageDirective', 'selector': '[appBackgroundImage]'},{'name': 'BaseComponent', 'selector': ''},{'name': 'BaseFormComponent', 'selector': ''},{'name': 'BaseListComponent', 'selector': ''},{'name': 'HeaderTitleDirective', 'selector': '[libHeaderTitle]'},{'name': 'OpenSettingDirective', 'selector': '[libOpenSetting]'},{'name': 'PageHostDirective', 'selector': '[libPageHost]'},{'name': 'TextReadMoreDirective', 'selector': '[libTextReadMore]'}];
     var ACTUAL_COMPONENT = {'name': 'DeviceSeekingComponent'};
 </script>

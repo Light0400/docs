@@ -821,7 +821,6 @@
                 "coffee": "Cafetería",
                 "view": "Mirador"
             },
-            "too-far": "Actualmente muy lejos de la ruta de la actividad",
             "tip-remove-points-on-map": "Toca para eliminar esta parada"
         },
         "create-activity-success": {

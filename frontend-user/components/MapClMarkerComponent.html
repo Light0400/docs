@@ -139,6 +139,17 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>客製化地圖標記(marker) 元件</p>
+<ul>
+<li>用戶位置的標記</li>
+<li>隊伍地圖的標記</li>
+</ul>
+
+    </p>
 
     <p class="comment">
         <h3>Extends</h3>
@@ -226,10 +237,6 @@
                                     <span class="modifier">Private</span>
                                     <span class="modifier">Optional</span>
                                 <a href="#_position" >_position</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Optional</span>
-                                <a href="#currentPosition" >currentPosition</a>
                             </li>
                             <li>
                                     <span class="modifier">Optional</span>
@@ -324,9 +331,6 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
-                            <li>
-                                <a href="#enableBg" >enableBg</a>
-                            </li>
                             <li>
                                 <a href="#iconHasDirection" >iconHasDirection</a>
                             </li>
@@ -565,27 +569,6 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="enableBg"></a>
-                        <b>enableBg</b>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>false</code>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="iconHasDirection"></a>
                         <b>iconHasDirection</b>
                     </td>
@@ -599,6 +582,12 @@
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>標記圖示是否有方向</p>
+</div>
                     </td>
                 </tr>
             </tbody>
@@ -617,6 +606,12 @@
 
                     </td>
                 </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>標記圖示類型(&#39;circle&#39; | &#39;start&#39; | &#39;end&#39;)</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
         <table class="table table-sm table-bordered">
@@ -631,6 +626,12 @@
                     <td class="col-md-4">
                         <i>Type : </i>    <code>google.maps.Map | undefined</code>
 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>設定 Google Map 參考</p>
+</div>
                     </td>
                 </tr>
             </tbody>
@@ -649,6 +650,12 @@
 
                     </td>
                 </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>此地圖標記的元素內容</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
         <table class="table table-sm table-bordered">
@@ -665,6 +672,12 @@
 
                     </td>
                 </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>設定標記的大小 (&#39;l&#39; | &#39;s&#39;)</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
         <table class="table table-sm table-bordered">
@@ -679,6 +692,12 @@
                     <td class="col-md-4">
                         <i>Type : </i>    <code>google.maps.LatLngLiteral | undefined</code>
 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>設定標記座標位置</p>
+</div>
                     </td>
                 </tr>
             </tbody>
@@ -702,6 +721,12 @@
                         <i>Default value : </i><code>false</code>
                     </td>
                 </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>是否使用者自己位置</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
         <table class="table table-sm table-bordered">
@@ -718,6 +743,12 @@
 
                     </td>
                 </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>此地圖標記的對應隊伍</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
         <table class="table table-sm table-bordered">
@@ -732,6 +763,12 @@
                     <td class="col-md-4">
                         <i>Type : </i>        <code><a href="../classes/User.html" target="_self" >User</a></code>
 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>此地圖標記的對應用戶</p>
+</div>
                     </td>
                 </tr>
             </tbody>
@@ -755,6 +792,12 @@
                         <i>Default value : </i><code>0</code>
                     </td>
                 </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>標記預設的元素層級 index</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -774,6 +817,12 @@
 
                     </td>
                 </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>此標記被點擊的事件</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
         <table class="table table-sm table-bordered">
@@ -788,6 +837,12 @@
                     <td class="col-md-4">
                         <i>Type : </i>    <code>EventEmitter</code>
 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>此地圖標記的位置異動事件</p>
+</div>
                     </td>
                 </tr>
             </tbody>
@@ -820,6 +875,45 @@
 
 
 
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>監聽裝置方向變化（deviceorientationabsolute）事件，
+當 icon 具有方向屬性（iconHasDirection）時，
+呼叫 setIconRotate() 更新圖示方向。</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>裝置方向事件物件</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                </td>
+            </tr>
         </tbody>
     </table>
 </section>
@@ -852,6 +946,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>判斷隊伍的地圖標記是否需要呈現便利貼文字</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -862,6 +958,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -876,6 +973,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>元素</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -915,6 +1016,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>判斷隊伍的地圖標記元素的顯示顏色</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -925,6 +1028,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -939,6 +1043,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>元素</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -978,6 +1086,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>判斷隊伍的地圖標記元素的顯示圖示</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -988,6 +1098,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -1002,6 +1113,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>元素</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -1048,6 +1163,10 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>監聽裝置方向變化（deviceorientationabsolute）事件，
+當 icon 具有方向屬性（iconHasDirection）時，
+呼叫 setIconRotate() 更新圖示方向。</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -1058,6 +1177,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -1072,6 +1192,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>裝置方向事件物件</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -1111,6 +1237,13 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Angular 元件生命週期: 銷毀事件</p>
+<ul>
+<li>判斷是否有GPS監聽，若有必須移除監聽</li>
+<li>判斷是否有裝置方向的監聽，若有必須移除</li>
+<li>將地圖標記從地圖上清除</li>
+</ul>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -1142,6 +1275,16 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Angular 元件生命週期: 初始化事件</p>
+<ul>
+<li>監聽 team 資料更新（包含便利貼、隊伍顏色與 Logo 變更）。</li>
+<li>等待 Google Map 載入完成後初始化 marker。</li>
+<li>根據情境建立 markerContent（隊伍、使用者或方向圖示）。</li>
+<li>若為自己位置，處理定位權限請求與方位角感應器事件。</li>
+<li>在 App resume 後重新檢查定位權限並啟動定位。</li>
+<li>最終建立 AdvancedMarkerElement 並監聽點擊事件。</li>
+</ul>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -1175,6 +1318,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>設定標記圖示的旋轉角度</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -1185,6 +1330,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -1199,6 +1345,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>裝置方向異動事件</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -1238,6 +1388,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>設定地圖標記的旋轉角度</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -1248,6 +1400,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -1262,6 +1415,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>角度</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -1301,6 +1458,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>增加GPS 位置監聽</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
@@ -1336,6 +1495,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>google map 參考</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -1362,6 +1527,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>標記的大小 (&#39;l&#39; | &#39;s&#39;)</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -1385,28 +1556,12 @@
                     </td>
                 </tr>
 
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="currentPosition"></a>
-                    <span class="name">
-                            <span class="modifier">Optional</span>
-                        <span ><b>currentPosition</b></span>
-                        <a href="#currentPosition"><span class="icon ion-ios-link"></span></a>
-                    </span>
+                    <div class="io-description"><p>該標記的座標位置</p>
+</div>
                 </td>
             </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>    <code>Position</code>
-
-                    </td>
-                </tr>
-
 
         </tbody>
     </table>
@@ -1451,6 +1606,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>此地圖標記的物件</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -1473,6 +1634,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>裝置方向監聽處理</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -1496,6 +1663,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>判斷是否需要GPS 權限</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -1518,6 +1691,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>方向角度</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -1541,6 +1720,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>GPS 位置監聽Id</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -1630,6 +1815,17 @@
                         <span class="accessor"><b>get</b><code>position()</code></span>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>取得標記座標位置</p>
+</div>
+
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>google.maps.LatLngLiteral | undefined</code>
+
+                                </div>
+                        </td>
+                    </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -1638,6 +1834,8 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
+                                <div class="io-description"><p>設定標記座標位置</p>
+</div>
 
                                 <div class="io-description">
                                         <b>Parameters :</b>
@@ -1689,6 +1887,17 @@
                         <span class="accessor"><b>get</b><code>map()</code></span>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>取得 Google map 參考</p>
+</div>
+
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>google.maps.Map | undefined</code>
+
+                                </div>
+                        </td>
+                    </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -1697,6 +1906,8 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
+                                <div class="io-description"><p>設定 Google Map 參考</p>
+</div>
 
                                 <div class="io-description">
                                         <b>Parameters :</b>
@@ -1751,6 +1962,8 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
+                                <div class="io-description"><p>設定標記的大小 (&#39;l&#39; | &#39;s&#39;)</p>
+</div>
 
                                 <div class="io-description">
                                         <b>Parameters :</b>
@@ -1830,7 +2043,7 @@
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div></div>'
-    var COMPONENTS = [{'name': 'ActivityApplyListComponent', 'selector': 'lib-activity-apply-list'},{'name': 'ActivityCancelDialogComponent', 'selector': 'lib-activity-cancel-dialog'},{'name': 'ActivityComponent', 'selector': 'app-activity'},{'name': 'ActivityDetailComponent', 'selector': 'lib-activity-detail'},{'name': 'ActivityFormComponent', 'selector': 'app-activity-form'},{'name': 'ActivityGpsShareComponent', 'selector': 'lib-activity-gps-share'},{'name': 'ActivityGpsShareDialogComponent', 'selector': 'lib-activity-gps-share-dialog'},{'name': 'ActivityInvitingListComponent', 'selector': 'lib-activity-inviting-list'},{'name': 'ActivityItemComponent', 'selector': 'lib-activity-item'},{'name': 'ActivityJoinListComponent', 'selector': 'lib-activity-join-list'},{'name': 'ActivityLogListComponent', 'selector': 'lib-activity-log-list'},{'name': 'ActivityOnMapComponent', 'selector': 'lib-activity-on-map'},{'name': 'ActivityParticipantListDialogComponent', 'selector': 'lib-activity-participant-list-dialog'},{'name': 'ActivityPointsSelectDialogComponent', 'selector': 'lib-activity-points-select-dialog'},{'name': 'ActivitySearchComponent', 'selector': 'lib-activity-search'},{'name': 'ActivitySelectDialogComponent', 'selector': 'lib-activity-select-dialog'},{'name': 'ActivityUserListComponent', 'selector': 'lib-activity-user-list'},{'name': 'AddressInputComponent', 'selector': 'lib-address-input'},{'name': 'AlertDialogComponent', 'selector': 'lib-alert-dialog'},{'name': 'ArrangePointsDialogComponent', 'selector': 'lib-arrange-points-dialog'},{'name': 'BackgroundChooseComponent', 'selector': 'lib-background-choose'},{'name': 'BlocklistComponent', 'selector': 'lib-blocklist'},{'name': 'CalorieExchangeComponent', 'selector': 'lib-calorie-exchange'},{'name': 'ChatAvatarComponent', 'selector': 'lib-chat-avatar'},{'name': 'ChatComponent', 'selector': 'lib-chat'},{'name': 'ChatItemComponent', 'selector': 'lib-chat-item'},{'name': 'ChatListComponent', 'selector': 'lib-chat-list'},{'name': 'ChatReplyMessageItemComponent', 'selector': 'lib-chat-reply-message-item'},{'name': 'ChatRoomComponent', 'selector': 'lib-chat-room'},{'name': 'ChatRoomItemComponent', 'selector': 'lib-chat-room-item'},{'name': 'ChatRoomItemTemplateComponent', 'selector': 'lib-chat-room-item-template'},{'name': 'ChatRoomMediaListComponent', 'selector': 'lib-chat-room-media-list'},{'name': 'ChatSelectDialogComponent', 'selector': 'lib-chat-select-dialog'},{'name': 'ChatUserComponent', 'selector': 'lib-chat-user'},{'name': 'ConfirmDialogComponent', 'selector': 'lib-confirm-dialog'},{'name': 'CreateActivitySuccessDialogComponent', 'selector': 'lib-create-activity-success-dialog'},{'name': 'CreateRouteSuccessDialogComponent', 'selector': 'lib-create-route-success-dialog'},{'name': 'CreateSuccessComponent', 'selector': 'lib-create-success'},{'name': 'CustomPageComponent', 'selector': 'lib-custom-page'},{'name': 'DateInputComponent', 'selector': 'lib-date-input'},{'name': 'DatetimeInputComponent', 'selector': 'lib-datetime-input'},{'name': 'DeviceSeekingComponent', 'selector': 'lib-device-seeking'},{'name': 'DownloadAppDialogComponent', 'selector': 'lib-download-app-dialog'},{'name': 'DownloadComponent', 'selector': 'lib-download'},{'name': 'DraggableListComponent', 'selector': 'lib-draggable-list'},{'name': 'EmptyDataComponent', 'selector': 'lib-empty-data'},{'name': 'ErrorDialogComponent', 'selector': 'lib-error-dialog'},{'name': 'ErrorSummaryComponent', 'selector': 'lib-error-summary'},{'name': 'ExerciseReadyStartComponent', 'selector': 'lib-exercise-ready-start'},{'name': 'FaqComponent', 'selector': 'lib-faq'},{'name': 'FileComponent', 'selector': 'lib-file'},{'name': 'FindResultComponent', 'selector': 'lib-find-result'},{'name': 'FollowComponent', 'selector': 'app-follow'},{'name': 'FollowersComponent', 'selector': 'lib-followers'},{'name': 'FollowReqComponent', 'selector': 'lib-follow-req'},{'name': 'FooterMenuComponent', 'selector': 'lib-footer-menu'},{'name': 'HeaderComponent', 'selector': 'lib-header'},{'name': 'HomeActivityInviteComponent', 'selector': 'lib-home-activity-invite'},{'name': 'HomeAddBtnComponent', 'selector': 'lib-home-add-btn'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeMenuComponent', 'selector': 'lib-home-menu'},{'name': 'ImageCropperDialogComponent', 'selector': 'lib-image-cropper-dialog'},{'name': 'ImageListDialogComponent', 'selector': 'lib-image-list-dialog'},{'name': 'InviteFriendsComponent', 'selector': 'lib-invite-friends'},{'name': 'LeadRiderForRouteDialogComponent', 'selector': 'lib-lead-rider-for-route-dialog'},{'name': 'LikeCommentDialogComponent', 'selector': 'lib-like-comment-dialog'},{'name': 'LoadingComponent', 'selector': 'lib-loading'},{'name': 'LocationDialogComponent', 'selector': 'lib-location-dialog'},{'name': 'LocationSelectDialogComponent', 'selector': 'lib-location-select-dialog'},{'name': 'LocationShareComponent', 'selector': 'lib-location-share'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapClMarkerComponent', 'selector': 'lib-map-cl-marker'},{'name': 'MapCompassComponent', 'selector': 'lib-map-compass'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'MoreMenuComponent', 'selector': 'lib-more-menu'},{'name': 'MyRouteCollectionComponent', 'selector': 'lib-my-route-collection'},{'name': 'NoticeMsgItemComponent', 'selector': 'lib-notice-msg-item'},{'name': 'NotifyMessageListComponent', 'selector': 'lib-notify-message-list'},{'name': 'OptionComponent', 'selector': 'lib-option'},{'name': 'PageDialogComponent', 'selector': 'lib-page-dialog'},{'name': 'PositionFilterDialogComponent', 'selector': 'lib-position-filter-dialog'},{'name': 'PostAttachmentItemComponent', 'selector': 'lib-post-attachment-item'},{'name': 'PostCommentListComponent', 'selector': 'lib-post-comment-list'},{'name': 'PostFormComponent', 'selector': 'lib-post-form'},{'name': 'PostItemComponent', 'selector': 'lib-post-item'},{'name': 'PostLikeListComponent', 'selector': 'lib-post-like-list'},{'name': 'ProgressBarComponent', 'selector': 'lib-progress-bar'},{'name': 'RecommendTeamListComponent', 'selector': 'lib-recommend-team-list'},{'name': 'RecommendUserListComponent', 'selector': 'lib-recommend-user-list'},{'name': 'RecordSelectDialogComponent', 'selector': 'lib-record-select-dialog'},{'name': 'ReportDialogComponent', 'selector': 'lib-report-dialog'},{'name': 'ReportListComponent', 'selector': 'lib-report-list'},{'name': 'ReportSuccessDialogComponent', 'selector': 'lib-report-success-dialog'},{'name': 'RoadDescDialogComponent', 'selector': 'lib-road-desc-dialog'},{'name': 'RouteActivityListComponent', 'selector': 'lib-route-activity-list'},{'name': 'RouteCollectComponent', 'selector': 'lib-route-collect'},{'name': 'RouteCommentFormComponent', 'selector': 'lib-route-comment-form'},{'name': 'RouteCommentItemComponent', 'selector': 'lib-route-comment-item'},{'name': 'RouteCommentListComponent', 'selector': 'lib-route-comment-list'},{'name': 'RouteDetailComponent', 'selector': 'lib-route-detail'},{'name': 'RouteDetailDialogComponent', 'selector': 'lib-route-detail-dialog'},{'name': 'RouteElevationMapComponent', 'selector': 'lib-route-elevation-map'},{'name': 'RouteExploreComponent', 'selector': 'lib-route-explore'},{'name': 'RouteFormComponent', 'selector': 'lib-route-form'},{'name': 'RouteFromFilterDialogComponent', 'selector': 'lib-route-from-filter-dialog'},{'name': 'RouteInfoComponent', 'selector': 'lib-route-info'},{'name': 'RouteItemComponent', 'selector': 'lib-route-item'},{'name': 'RouteMapExploreComponent', 'selector': 'lib-route-map-explore'},{'name': 'RouteReportInfoComponent', 'selector': 'lib-route-report-info'},{'name': 'RouteSearchComponent', 'selector': 'lib-route-search'},{'name': 'RouteSelectReportConfirmDialogComponent', 'selector': 'lib-route-select-report-confirm-dialog'},{'name': 'RouteShareDialogComponent', 'selector': 'lib-route-share-dialog'},{'name': 'RouteTagFilterDialogComponent', 'selector': 'lib-route-tag-filter-dialog'},{'name': 'SearchDialogComponent', 'selector': 'lib-search-dialog'},{'name': 'SearchInputComponent', 'selector': 'lib-search-input'},{'name': 'SearchRecordComponent', 'selector': 'lib-search-record'},{'name': 'SearchUsersComponent', 'selector': 'lib-search-users'},{'name': 'SelectDialogComponent', 'selector': 'lib-select-dialog'},{'name': 'SelectInputComponent', 'selector': 'lib-select-input'},{'name': 'ShareToDialogComponent', 'selector': 'lib-share-to-dialog'},{'name': 'SingleInputDialogComponent', 'selector': 'lib-single-input-dialog'},{'name': 'SlideToggleInputComponent', 'selector': 'lib-slide-toggle-input'},{'name': 'SportingShareItemComponent', 'selector': 'lib-sporting-share-item'},{'name': 'SportingShareListComponent', 'selector': 'lib-sporting-share-list'},{'name': 'SportLiveChatComponent', 'selector': 'lib-sport-live-chat'},{'name': 'SportLiveComponent', 'selector': 'lib-sport-live'},{'name': 'StepProcessComponent', 'selector': 'lib-step-process'},{'name': 'StopwatchComponent', 'selector': 'lib-stopwatch'},{'name': 'StopwatchFinishedComponent', 'selector': 'lib-stopwatch-finished'},{'name': 'StopwatchInfoSelectDialogComponent', 'selector': 'lib-stopwatch-info-select-dialog'},{'name': 'StopwatchSettingComponent', 'selector': 'lib-stopwatch-setting'},{'name': 'StreamimgChatDialogComponent', 'selector': 'lib-streamimg-chat-dialog'},{'name': 'TagUserInputComponent', 'selector': 'lib-tag-user-input'},{'name': 'TeamActivityDialogComponent', 'selector': 'lib-team-activity-dialog'},{'name': 'TeamAliasEditComponent', 'selector': 'lib-team-alias-edit'},{'name': 'TeamBaseareaEditComponent', 'selector': 'lib-team-basearea-edit'},{'name': 'TeamComponent', 'selector': 'lib-team'},{'name': 'TeamCreateFinishComponent', 'selector': 'lib-team-create-finish'},{'name': 'TeamDetailsComponent', 'selector': 'lib-team-details'},{'name': 'TeamFormComponent', 'selector': 'lib-team-form'},{'name': 'TeamFormEditComponent', 'selector': 'lib-team-form-edit'},{'name': 'TeamIntroDialogComponent', 'selector': 'lib-team-intro-dialog'},{'name': 'TeamItemComponent', 'selector': 'lib-team-item'},{'name': 'TeamLogoComponent', 'selector': 'lib-team-logo'},{'name': 'TeamMapComponent', 'selector': 'lib-team-map'},{'name': 'TeamMemberAliasComponent', 'selector': 'lib-team-member-alias'},{'name': 'TeamMemberComponent', 'selector': 'lib-team-member'},{'name': 'TeamMemberCtrlDialogComponent', 'selector': 'lib-team-member-ctrl-dialog'},{'name': 'TeamOnMapComponent', 'selector': 'lib-team-on-map'},{'name': 'TeamSearchComponent', 'selector': 'lib-team-search'},{'name': 'TeamSettingComponent', 'selector': 'lib-team-setting'},{'name': 'TeamTagEditComponent', 'selector': 'lib-team-tag-edit'},{'name': 'TextareaInputComponent', 'selector': 'lib-textarea-input'},{'name': 'TextboxInputComponent', 'selector': 'lib-textbox-input'},{'name': 'ThirdAuthComponent', 'selector': 'lib-third-auth'},{'name': 'TimeInputComponent', 'selector': 'lib-time-input'},{'name': 'TimePeriodFilterDialogComponent', 'selector': 'lib-time-period-filter-dialog'},{'name': 'TipInfoDialogComponent', 'selector': 'lib-tip-info-dialog'},{'name': 'UpdateScreenComponent', 'selector': 'lib-update-screen'},{'name': 'UserAccountComponent', 'selector': 'lib-user-account'},{'name': 'UserAccountFormComponent', 'selector': 'lib-user-account-form'},{'name': 'UserApplyTeamDialogComponent', 'selector': 'lib-user-apply-team-dialog'},{'name': 'UserAvatarComponent', 'selector': 'lib-user-avatar'},{'name': 'UserAvaterGroupComponent', 'selector': 'lib-user-avater-group'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserFormComponent', 'selector': 'app-user-form'},{'name': 'UserItemComponent', 'selector': 'lib-user-item'},{'name': 'UserNotificationSettingComponent', 'selector': 'lib-user-notification-setting'},{'name': 'UserPostListComponent', 'selector': 'lib-user-post-list'},{'name': 'UserRouteRecordItemComponent', 'selector': 'lib-user-route-record-item'},{'name': 'UserRouteRecordListComponent', 'selector': 'lib-user-route-record-list'},{'name': 'UserSelectDialogComponent', 'selector': 'lib-user-select-dialog'},{'name': 'UserSettingComponent', 'selector': 'app-user-setting'},{'name': 'UsersFollowingComponent', 'selector': 'lib-users-following'},{'name': 'UserShareDialogComponent', 'selector': 'lib-user-share-dialog'},{'name': 'ValidCodeInputComponent', 'selector': 'lib-valid-code-input'},{'name': 'VisitRegDialogComponent', 'selector': 'lib-visit-reg-dialog'},{'name': 'WeatherViewDialogComponent', 'selector': 'lib-weather-view-dialog'},{'name': 'WebHomeComponent', 'selector': 'lib-web-home'}];
+    var COMPONENTS = [{'name': 'ActivityApplyListComponent', 'selector': 'lib-activity-apply-list'},{'name': 'ActivityCancelDialogComponent', 'selector': 'lib-activity-cancel-dialog'},{'name': 'ActivityComponent', 'selector': 'app-activity'},{'name': 'ActivityDetailComponent', 'selector': 'lib-activity-detail'},{'name': 'ActivityFormComponent', 'selector': 'app-activity-form'},{'name': 'ActivityGpsShareComponent', 'selector': 'lib-activity-gps-share'},{'name': 'ActivityGpsShareDialogComponent', 'selector': 'lib-activity-gps-share-dialog'},{'name': 'ActivityInvitingListComponent', 'selector': 'lib-activity-inviting-list'},{'name': 'ActivityItemComponent', 'selector': 'lib-activity-item'},{'name': 'ActivityJoinListComponent', 'selector': 'lib-activity-join-list'},{'name': 'ActivityLogListComponent', 'selector': 'lib-activity-log-list'},{'name': 'ActivityOnMapComponent', 'selector': 'lib-activity-on-map'},{'name': 'ActivityParticipantListDialogComponent', 'selector': 'lib-activity-participant-list-dialog'},{'name': 'ActivityPointsSelectDialogComponent', 'selector': 'lib-activity-points-select-dialog'},{'name': 'ActivitySearchComponent', 'selector': 'lib-activity-search'},{'name': 'ActivitySelectDialogComponent', 'selector': 'lib-activity-select-dialog'},{'name': 'ActivityUserListComponent', 'selector': 'lib-activity-user-list'},{'name': 'AddressInputComponent', 'selector': 'lib-address-input'},{'name': 'AlertDialogComponent', 'selector': 'lib-alert-dialog'},{'name': 'ArrangePointsDialogComponent', 'selector': 'lib-arrange-points-dialog'},{'name': 'BackgroundChooseComponent', 'selector': 'lib-background-choose'},{'name': 'BlocklistComponent', 'selector': 'lib-blocklist'},{'name': 'CalorieExchangeComponent', 'selector': 'lib-calorie-exchange'},{'name': 'ChatAvatarComponent', 'selector': 'lib-chat-avatar'},{'name': 'ChatComponent', 'selector': 'lib-chat'},{'name': 'ChatItemComponent', 'selector': 'lib-chat-item'},{'name': 'ChatListComponent', 'selector': 'lib-chat-list'},{'name': 'ChatReplyMessageItemComponent', 'selector': 'lib-chat-reply-message-item'},{'name': 'ChatRoomComponent', 'selector': 'lib-chat-room'},{'name': 'ChatRoomItemComponent', 'selector': 'lib-chat-room-item'},{'name': 'ChatRoomItemTemplateComponent', 'selector': 'lib-chat-room-item-template'},{'name': 'ChatRoomMediaListComponent', 'selector': 'lib-chat-room-media-list'},{'name': 'ChatSelectDialogComponent', 'selector': 'lib-chat-select-dialog'},{'name': 'ChatUserComponent', 'selector': 'lib-chat-user'},{'name': 'ConfirmDialogComponent', 'selector': 'lib-confirm-dialog'},{'name': 'CreateActivitySuccessDialogComponent', 'selector': 'lib-create-activity-success-dialog'},{'name': 'CreateSuccessComponent', 'selector': 'lib-create-success'},{'name': 'CustomPageComponent', 'selector': 'lib-custom-page'},{'name': 'DateInputComponent', 'selector': 'lib-date-input'},{'name': 'DatetimeInputComponent', 'selector': 'lib-datetime-input'},{'name': 'DeviceSeekingComponent', 'selector': 'lib-device-seeking'},{'name': 'DownloadAppDialogComponent', 'selector': 'lib-download-app-dialog'},{'name': 'DownloadComponent', 'selector': 'lib-download'},{'name': 'DraggableListComponent', 'selector': 'lib-draggable-list'},{'name': 'EmptyDataComponent', 'selector': 'lib-empty-data'},{'name': 'ErrorDialogComponent', 'selector': 'lib-error-dialog'},{'name': 'ErrorSummaryComponent', 'selector': 'lib-error-summary'},{'name': 'ExerciseReadyStartComponent', 'selector': 'lib-exercise-ready-start'},{'name': 'FaqComponent', 'selector': 'lib-faq'},{'name': 'FileComponent', 'selector': 'lib-file'},{'name': 'FindResultComponent', 'selector': 'lib-find-result'},{'name': 'FollowComponent', 'selector': 'app-follow'},{'name': 'FollowersComponent', 'selector': 'lib-followers'},{'name': 'FollowReqComponent', 'selector': 'lib-follow-req'},{'name': 'FooterMenuComponent', 'selector': 'lib-footer-menu'},{'name': 'HeaderComponent', 'selector': 'lib-header'},{'name': 'HomeActivityInviteComponent', 'selector': 'lib-home-activity-invite'},{'name': 'HomeAddBtnComponent', 'selector': 'lib-home-add-btn'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeMenuComponent', 'selector': 'lib-home-menu'},{'name': 'ImageCropperDialogComponent', 'selector': 'lib-image-cropper-dialog'},{'name': 'ImageListDialogComponent', 'selector': 'lib-image-list-dialog'},{'name': 'InviteFriendsComponent', 'selector': 'lib-invite-friends'},{'name': 'LeadRiderForRouteDialogComponent', 'selector': 'lib-lead-rider-for-route-dialog'},{'name': 'LikeCommentDialogComponent', 'selector': 'lib-like-comment-dialog'},{'name': 'LoadingComponent', 'selector': 'lib-loading'},{'name': 'LocationDialogComponent', 'selector': 'lib-location-dialog'},{'name': 'LocationSelectDialogComponent', 'selector': 'lib-location-select-dialog'},{'name': 'LocationShareComponent', 'selector': 'lib-location-share'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapClMarkerComponent', 'selector': 'lib-map-cl-marker'},{'name': 'MapCompassComponent', 'selector': 'lib-map-compass'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'MoreMenuComponent', 'selector': 'lib-more-menu'},{'name': 'MyRouteCollectionComponent', 'selector': 'lib-my-route-collection'},{'name': 'NoticeMsgItemComponent', 'selector': 'lib-notice-msg-item'},{'name': 'NotifyMessageListComponent', 'selector': 'lib-notify-message-list'},{'name': 'OptionComponent', 'selector': 'lib-option'},{'name': 'PageDialogComponent', 'selector': 'lib-page-dialog'},{'name': 'PositionFilterDialogComponent', 'selector': 'lib-position-filter-dialog'},{'name': 'PostAttachmentItemComponent', 'selector': 'lib-post-attachment-item'},{'name': 'PostCommentListComponent', 'selector': 'lib-post-comment-list'},{'name': 'PostFormComponent', 'selector': 'lib-post-form'},{'name': 'PostItemComponent', 'selector': 'lib-post-item'},{'name': 'PostLikeListComponent', 'selector': 'lib-post-like-list'},{'name': 'ProgressBarComponent', 'selector': 'lib-progress-bar'},{'name': 'RecommendTeamListComponent', 'selector': 'lib-recommend-team-list'},{'name': 'RecommendUserListComponent', 'selector': 'lib-recommend-user-list'},{'name': 'RecordSelectDialogComponent', 'selector': 'lib-record-select-dialog'},{'name': 'ReportDialogComponent', 'selector': 'lib-report-dialog'},{'name': 'ReportListComponent', 'selector': 'lib-report-list'},{'name': 'ReportSuccessDialogComponent', 'selector': 'lib-report-success-dialog'},{'name': 'RoadDescDialogComponent', 'selector': 'lib-road-desc-dialog'},{'name': 'RouteActivityListComponent', 'selector': 'lib-route-activity-list'},{'name': 'RouteCollectComponent', 'selector': 'lib-route-collect'},{'name': 'RouteCommentFormComponent', 'selector': 'lib-route-comment-form'},{'name': 'RouteCommentItemComponent', 'selector': 'lib-route-comment-item'},{'name': 'RouteCommentListComponent', 'selector': 'lib-route-comment-list'},{'name': 'RouteDetailComponent', 'selector': 'lib-route-detail'},{'name': 'RouteDetailDialogComponent', 'selector': 'lib-route-detail-dialog'},{'name': 'RouteElevationMapComponent', 'selector': 'lib-route-elevation-map'},{'name': 'RouteExploreComponent', 'selector': 'lib-route-explore'},{'name': 'RouteFormComponent', 'selector': 'lib-route-form'},{'name': 'RouteFromFilterDialogComponent', 'selector': 'lib-route-from-filter-dialog'},{'name': 'RouteInfoComponent', 'selector': 'lib-route-info'},{'name': 'RouteItemComponent', 'selector': 'lib-route-item'},{'name': 'RouteMapExploreComponent', 'selector': 'lib-route-map-explore'},{'name': 'RouteReportInfoComponent', 'selector': 'lib-route-report-info'},{'name': 'RouteSearchComponent', 'selector': 'lib-route-search'},{'name': 'RouteSelectReportConfirmDialogComponent', 'selector': 'lib-route-select-report-confirm-dialog'},{'name': 'RouteShareDialogComponent', 'selector': 'lib-route-share-dialog'},{'name': 'RouteTagFilterDialogComponent', 'selector': 'lib-route-tag-filter-dialog'},{'name': 'SearchDialogComponent', 'selector': 'lib-search-dialog'},{'name': 'SearchInputComponent', 'selector': 'lib-search-input'},{'name': 'SearchRecordComponent', 'selector': 'lib-search-record'},{'name': 'SearchUsersComponent', 'selector': 'lib-search-users'},{'name': 'SelectDialogComponent', 'selector': 'lib-select-dialog'},{'name': 'SelectInputComponent', 'selector': 'lib-select-input'},{'name': 'ShareToDialogComponent', 'selector': 'lib-share-to-dialog'},{'name': 'SingleInputDialogComponent', 'selector': 'lib-single-input-dialog'},{'name': 'SlideToggleInputComponent', 'selector': 'lib-slide-toggle-input'},{'name': 'SportingShareItemComponent', 'selector': 'lib-sporting-share-item'},{'name': 'SportingShareListComponent', 'selector': 'lib-sporting-share-list'},{'name': 'SportLiveChatComponent', 'selector': 'lib-sport-live-chat'},{'name': 'SportLiveComponent', 'selector': 'lib-sport-live'},{'name': 'StepProcessComponent', 'selector': 'lib-step-process'},{'name': 'StopwatchComponent', 'selector': 'lib-stopwatch'},{'name': 'StopwatchFinishedComponent', 'selector': 'lib-stopwatch-finished'},{'name': 'StopwatchInfoSelectDialogComponent', 'selector': 'lib-stopwatch-info-select-dialog'},{'name': 'StopwatchSettingComponent', 'selector': 'lib-stopwatch-setting'},{'name': 'StreamimgChatDialogComponent', 'selector': 'lib-streamimg-chat-dialog'},{'name': 'TagUserInputComponent', 'selector': 'lib-tag-user-input'},{'name': 'TeamActivityDialogComponent', 'selector': 'lib-team-activity-dialog'},{'name': 'TeamAliasEditComponent', 'selector': 'lib-team-alias-edit'},{'name': 'TeamBaseareaEditComponent', 'selector': 'lib-team-basearea-edit'},{'name': 'TeamComponent', 'selector': 'lib-team'},{'name': 'TeamCreateFinishComponent', 'selector': 'lib-team-create-finish'},{'name': 'TeamDetailsComponent', 'selector': 'lib-team-details'},{'name': 'TeamFormComponent', 'selector': 'lib-team-form'},{'name': 'TeamFormEditComponent', 'selector': 'lib-team-form-edit'},{'name': 'TeamIntroDialogComponent', 'selector': 'lib-team-intro-dialog'},{'name': 'TeamItemComponent', 'selector': 'lib-team-item'},{'name': 'TeamLogoComponent', 'selector': 'lib-team-logo'},{'name': 'TeamMapComponent', 'selector': 'lib-team-map'},{'name': 'TeamMemberAliasComponent', 'selector': 'lib-team-member-alias'},{'name': 'TeamMemberComponent', 'selector': 'lib-team-member'},{'name': 'TeamMemberCtrlDialogComponent', 'selector': 'lib-team-member-ctrl-dialog'},{'name': 'TeamOnMapComponent', 'selector': 'lib-team-on-map'},{'name': 'TeamSearchComponent', 'selector': 'lib-team-search'},{'name': 'TeamSettingComponent', 'selector': 'lib-team-setting'},{'name': 'TeamTagEditComponent', 'selector': 'lib-team-tag-edit'},{'name': 'TextareaInputComponent', 'selector': 'lib-textarea-input'},{'name': 'TextboxInputComponent', 'selector': 'lib-textbox-input'},{'name': 'ThirdAuthComponent', 'selector': 'lib-third-auth'},{'name': 'TimeInputComponent', 'selector': 'lib-time-input'},{'name': 'TimePeriodFilterDialogComponent', 'selector': 'lib-time-period-filter-dialog'},{'name': 'TipInfoDialogComponent', 'selector': 'lib-tip-info-dialog'},{'name': 'UpdateScreenComponent', 'selector': 'lib-update-screen'},{'name': 'UserAccountComponent', 'selector': 'lib-user-account'},{'name': 'UserAccountFormComponent', 'selector': 'lib-user-account-form'},{'name': 'UserApplyTeamDialogComponent', 'selector': 'lib-user-apply-team-dialog'},{'name': 'UserAvatarComponent', 'selector': 'lib-user-avatar'},{'name': 'UserAvaterGroupComponent', 'selector': 'lib-user-avater-group'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserFormComponent', 'selector': 'app-user-form'},{'name': 'UserItemComponent', 'selector': 'lib-user-item'},{'name': 'UserNotificationSettingComponent', 'selector': 'lib-user-notification-setting'},{'name': 'UserPostListComponent', 'selector': 'lib-user-post-list'},{'name': 'UserRouteRecordItemComponent', 'selector': 'lib-user-route-record-item'},{'name': 'UserRouteRecordListComponent', 'selector': 'lib-user-route-record-list'},{'name': 'UserSelectDialogComponent', 'selector': 'lib-user-select-dialog'},{'name': 'UserSettingComponent', 'selector': 'app-user-setting'},{'name': 'UsersFollowingComponent', 'selector': 'lib-users-following'},{'name': 'UserShareDialogComponent', 'selector': 'lib-user-share-dialog'},{'name': 'ValidCodeInputComponent', 'selector': 'lib-valid-code-input'},{'name': 'VisitRegDialogComponent', 'selector': 'lib-visit-reg-dialog'},{'name': 'WebHomeComponent', 'selector': 'lib-web-home'}];
     var DIRECTIVES = [{'name': 'AppOnDestory', 'selector': ''},{'name': 'BackgroundImageDirective', 'selector': '[appBackgroundImage]'},{'name': 'BaseComponent', 'selector': ''},{'name': 'BaseFormComponent', 'selector': ''},{'name': 'BaseListComponent', 'selector': ''},{'name': 'HeaderTitleDirective', 'selector': '[libHeaderTitle]'},{'name': 'OpenSettingDirective', 'selector': '[libOpenSetting]'},{'name': 'PageHostDirective', 'selector': '[libPageHost]'},{'name': 'TextReadMoreDirective', 'selector': '[libTextReadMore]'}];
     var ACTUAL_COMPONENT = {'name': 'MapClMarkerComponent'};
 </script>

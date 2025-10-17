@@ -136,6 +136,15 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>路線規劃指令管理器：
+管理所有可撤銷與重做的命令（Insert/Delete/Move 等）
+並在變更後觸發更新回調。</p>
+
+            </p>
 
 
 
@@ -416,6 +425,9 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>檢查命令執行前後的座標點是否相同。
+僅比較 lat/lng 與 isReturnPoint。</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
@@ -449,6 +461,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>建立深拷貝，排除 lat/lng 為 null 的點</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>    <code>{}</code>
@@ -480,6 +494,9 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>執行命令並加入 Undo 堆疊。
+特殊處理 MovePointCommand 以避免重複觸發。</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -541,6 +558,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>重做上一步被撤銷的操作</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -572,6 +591,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>撤銷上一步操作</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -605,6 +626,13 @@
                         <span class="accessor"><b>get</b><code>canUndo()</code></span>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>是否可撤銷</p>
+</div>
+
+                        </td>
+                    </tr>
 
             </tbody>
         </table>
@@ -622,6 +650,13 @@
                         <span class="accessor"><b>get</b><code>canRedo()</code></span>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>是否可重做</p>
+</div>
+
+                        </td>
+                    </tr>
 
             </tbody>
         </table>

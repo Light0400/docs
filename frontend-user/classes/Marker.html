@@ -136,6 +136,19 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Google 地圖標記封裝類別，提供自訂樣式與互動控制。</p>
+<p>用途：</p>
+<ul>
+<li>建立具備自訂圖示與文字標籤的地圖標記</li>
+<li>支援「提示文字」(tip) 顯示與切換</li>
+<li>支援選取、取消選取、開關控制與焦點管理</li>
+</ul>
+
+            </p>
 
 
 
@@ -259,6 +272,8 @@
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>建構子</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -267,6 +282,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -281,6 +297,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>代表地點的資料</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>map</td>
@@ -293,6 +313,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>要顯示標記的 Google 地圖實例</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>callBack</td>
@@ -305,6 +329,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>標記被點擊時的回呼函式</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>option</td>
@@ -317,6 +345,10 @@
                                                             Yes
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>額外選項，可指定是否顯示提示文字</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -351,6 +383,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Google Maps AdvancedMarkerElement 實例，用於顯示標記</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -373,6 +411,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>點擊事件回呼函式</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -400,6 +444,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>標記被選取時的圖示路徑</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -422,6 +472,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>標記的容器元素（包含圖示與文字）</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -444,6 +500,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>標記的圖示元素</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -466,6 +528,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>關聯的 Google 地圖實例</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -493,6 +561,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>預設的地圖標記圖示路徑</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -515,6 +589,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>標記所代表的地點資料</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -537,6 +617,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>標記的經緯度位置</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -560,6 +646,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>額外提示元素（可選）</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -592,7 +684,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>加入提示元素</p>
+                        <div class="io-description"><p>加入提示元素 (tip)</p>
 </div>
 
                             <div class="io-description">
@@ -604,6 +696,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -618,6 +711,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>要顯示的提示文字</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -655,6 +752,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>標記 zIndex 設定為 2</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -785,6 +884,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>標記 zIndex 設定為 1000</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>

@@ -821,7 +821,6 @@
                 "coffee": "咖啡店",
                 "view": "景点"
             },
-            "too-far": "当前距离活动路线太远",
             "tip-remove-points-on-map": "点击即可移除此休息点"
         },
         "create-activity-success": {

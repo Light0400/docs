@@ -821,7 +821,6 @@
                 "coffee": "Caffetteria",
                 "view": "Punto panoramico"
             },
-            "too-far": "Attualmente troppo lontano dal percorso dell'attività",
             "tip-remove-points-on-map": "Tocca per rimuovere questa sosta"
         },
         "create-activity-success": {

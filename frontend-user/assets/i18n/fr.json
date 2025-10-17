@@ -821,7 +821,6 @@
                 "coffee": "Café",
                 "view": "Point de vue"
             },
-            "too-far": "Actuellement trop éloigné de l'itinéraire de l'activité",
             "tip-remove-points-on-map": "Appuyez pour retirer cette halte"
         },
         "create-activity-success": {

@@ -139,7 +139,19 @@
         <h3>Description</h3>
     </p>
     <p class="comment">
-        <p>繪製路線元件</p>
+        <p>路線繪製的視窗元件</p>
+<p>此元件提供使用者在地圖上建立、編輯與預覽路線的互動式介面。
+使用者可在 Google Maps 上選擇地點、查看等高線圖、規劃路線、
+拖曳排序路徑點、設定折返點，最後匯出完整路線資料。</p>
+<p>主要功能包含：</p>
+<ul>
+<li>Google Maps 互動式地圖控制</li>
+<li>路線規劃與距離時間計算</li>
+<li>路線快取以避免重複計算</li>
+<li>高度圖 (elevation map) 分析</li>
+<li>拖放排序與命令復原/重作</li>
+<li>位置搜尋與標記顯示</li>
+</ul>
 
     </p>
 
@@ -419,6 +431,7 @@
                                 <a href="#isSamePointWithLast" >isSamePointWithLast</a>
                             </li>
                             <li>
+                                    <span class="modifier">Private</span>
                                     <span class="modifier">Async</span>
                                 <a href="#loadData" >loadData</a>
                             </li>
@@ -430,9 +443,6 @@
                             </li>
                             <li>
                                 <a href="#mapDragend" >mapDragend</a>
-                            </li>
-                            <li>
-                                <a href="#ngAfterViewChecked" >ngAfterViewChecked</a>
                             </li>
                             <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
@@ -803,6 +813,11 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>離開繪製路線視窗</p>
+<ul>
+<li>會先跳確認訊息，確認後才關閉</li>
+</ul>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -944,7 +959,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>移除地圖上顯示的高程圖上座標</p>
+                        <div class="io-description"><p>移除地圖上顯示的高程圖上座標標記</p>
 </div>
 
                         <div class="io-description">
@@ -1047,6 +1062,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>關閉編輯路線座標列表中的特定位置地點</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -1341,6 +1358,9 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>路線座標排序拖曳移動
+-重新排序路線座標</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -1404,6 +1424,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>初始化 Google Maps 並載入現有路線資料</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
@@ -1437,6 +1459,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>判斷是否空的路線座標點</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -1447,6 +1471,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -1461,6 +1486,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>路線座標點</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -1547,6 +1576,7 @@
                 <td class="col-md-4">
                     <a name="loadData"></a>
                     <span class="name">
+                            <span class="modifier">Private</span>
                             <span class="modifier">Async</span>
                         <span ><b>loadData</b></span>
                         <a href="#loadData"><span class="icon ion-ios-link"></span></a>
@@ -1565,6 +1595,12 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>載入地點清單</p>
+<ul>
+<li>若有查詢文字則依照地圖中心與查詢附近相關名稱的地點</li>
+<li>若無查詢文字則依照地圖中心顯示附近地點</li>
+</ul>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
@@ -1596,6 +1632,11 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>地圖點擊事件</p>
+<ul>
+<li>移除地圖上顯示的高程圖上座標標記</li>
+</ul>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -1627,6 +1668,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>地圖拖曳事件</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -1658,37 +1701,8 @@
 
             <tr>
                 <td class="col-md-4">
-
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                        </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="ngAfterViewChecked"></a>
-                    <span class="name">
-                        <span ><b>ngAfterViewChecked</b></span>
-                        <a href="#ngAfterViewChecked"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngAfterViewChecked()</code>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-4">
+                        <div class="io-description"><p>地圖拖曳結束事件</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -1720,6 +1734,11 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Angular 元件生命週期: 初始化事件</p>
+<ul>
+<li>初始化 Google Maps 並載入現有路線資料</li>
+</ul>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -1751,6 +1770,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>高程圖上的檢視座標移動事件</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -1761,6 +1782,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -1775,6 +1797,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>使用者檢視的位置</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -1812,6 +1838,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>關閉地點搜尋介面</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -1845,6 +1873,11 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>確認路線</p>
+<ul>
+<li>依照繪製路線結果產生路線資料回傳並關閉視窗</li>
+</ul>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
@@ -1876,6 +1909,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>開啟地點搜尋介面</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -1907,6 +1942,11 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>查詢輸入框 enter</p>
+<ul>
+<li>載入查詢結果</li>
+</ul>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -1938,6 +1978,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>開啟編輯路線座標列表中的特定位置地點</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -1948,6 +1990,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -1962,6 +2005,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>要編輯的特定位置地點列表索引</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -1999,6 +2046,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>開啟或關閉路線座標清單</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -2099,6 +2148,11 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>在查詢結果列表項目點擊事件</p>
+<ul>
+<li>判斷加入該地點為路線節點</li>
+</ul>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -2109,6 +2163,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -2123,6 +2178,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>地點項目</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -2160,6 +2219,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>重作上一步操作</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -2191,6 +2252,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>移除指定索引的路線點</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -2252,6 +2315,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>切換折返模式</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -2283,6 +2348,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>復原上一步操作</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -2314,6 +2381,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>地圖縮放變化事件</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -2388,7 +2457,7 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>管理已繪製的標記</p>
+                    <div class="io-description"><p>已繪製的地圖標記元素</p>
 </div>
                 </td>
             </tr>
@@ -2421,7 +2490,7 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>快取路線結果</p>
+                    <div class="io-description"><p>快取路線結果，避免重複規劃相同路徑</p>
 </div>
                 </td>
             </tr>
@@ -2445,6 +2514,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>是否可以完成路線（至少兩點）</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -2467,6 +2542,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>中心標記物件</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -2491,7 +2572,7 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>等高圖資料</p>
+                    <div class="io-description"><p>高程圖的資料來源</p>
 </div>
                 </td>
             </tr>
@@ -2519,7 +2600,7 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>等高圖標記</p>
+                    <div class="io-description"><p>高程圖上某點座標標記</p>
 </div>
                 </td>
             </tr>
@@ -2545,6 +2626,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>目前正在設定的點索引</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -2566,6 +2653,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>可拖曳視窗預設高度</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -2587,6 +2680,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Google Maps 的設定選項</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -2607,6 +2706,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>搜尋框是否開啟</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -2633,6 +2738,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>搜尋結果清單</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -2653,6 +2764,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>是否正在載入中</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -2673,6 +2790,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>載入事件</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -2705,6 +2828,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Google Map 參考實例</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -2747,6 +2876,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Google Maps 是否初始化完成</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -2773,6 +2908,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>地圖預設縮放層級</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -2794,6 +2935,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>可拖曳視窗的最大高度</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -2815,6 +2962,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>可拖曳視窗的最小高度</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -2835,6 +2988,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>是否已取得地理權限</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -2864,7 +3023,7 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>管理已繪製的路線</p>
+                    <div class="io-description"><p>已繪製的路線資料</p>
 </div>
                 </td>
             </tr>
@@ -2890,6 +3049,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>路線命令管理器，用於 Undo / Redo</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -2912,6 +3077,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>路線總距離與時間</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -2940,7 +3111,7 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>所有的中繼點</p>
+                    <div class="io-description"><p>路線的所有點位（含中繼點）</p>
 </div>
                 </td>
             </tr>
@@ -2964,6 +3135,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>搜尋輸入控制項</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -2996,6 +3173,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>查詢輸入框的元件參考</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -3022,6 +3205,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>是否顯示清單面板</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -3138,6 +3327,17 @@
                         <span class="accessor"><b>get</b><code>routePointNotEmpty()</code></span>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>僅回傳經緯度非空的有效點位</p>
+</div>
+
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="../classes/PlaceResult.html" target="_self" >PlaceResult[]</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
 
             </tbody>
         </table>
@@ -3155,6 +3355,17 @@
                         <span class="accessor"><b>get</b><code>displayItems()</code></span>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>顯示用的清單資料，包含順序編號</p>
+</div>
+
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="../classes/PlaceResult.html" target="_self" >PlaceResult[]</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
 
             </tbody>
         </table>
@@ -3172,6 +3383,13 @@
                         <span class="accessor"><b>get</b><code>canReturn()</code></span>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>是否允許設定折返路線（路線座標點 &gt; 1 點時啟用）</p>
+</div>
+
+                        </td>
+                    </tr>
 
             </tbody>
         </table>
@@ -3189,6 +3407,13 @@
                         <span class="accessor"><b>get</b><code>hasEnableReturn()</code></span>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>路線中是否有啟用折返點</p>
+</div>
+
+                        </td>
+                    </tr>
 
             </tbody>
         </table>
@@ -3414,7 +3639,7 @@
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><lib-header [hidden]="showlist || currIndex != undefined" [isDialog]="true" [show]="true" [backNotShow]="true">  <ng-container ngProjectAs="[h-left]">    <button mat-icon-button type="button" (click)="back()">      <mat-icon svgIcon="close"> </mat-icon>    </button>  </ng-container>  <ng-container ngProjectAs="[h-title]">    {{ "dialog.arrange-route.title" | translate }}  </ng-container>  @if(canComplete){  <ng-container ngProjectAs="[h-right]">    <button type="button" mat-button class="tmup-btn-text blue" (click)="onComplete()">      {{ "common.complete" | translate }}    </button>  </ng-container>  }</lib-header>@if(mapsInit){<div class="route-list-area column" [hidden]="!showlist">  <div class="route-item-area row tmup-gap-16">    <mat-icon class="c-pointer" (click)="openList(false)">      west    </mat-icon>    <div class="route-list column flex" cdkDropList cdkDropListOrientation="vertical" [cdkDropListData]="displayItems"      (cdkDropListDropped)="drop($event)">      @for(item of displayItems; let index = $index; track index){      @if(index > 0){      <div class="separator"><span>⋯</span></div>      }      <div class="tmup-route-item row tmup-align-center tmup-gap-8" cdkDrag cdkDragLockAxis="y"        cdkDragBoundary=".route-list">        @if(item.sort != null){        <div class="point-number row tmup-center" [class.warn]="item.isReturnPoint">          {{item.sort}}        </div>        <div class="name flex">          {{item.name}}        </div>        <div class="tmup-drag-icon" cdkDragHandle>        </div>        <div class="close-icon row tmup-center">          <mat-icon class="c-pointer" (click)="removePoint(index)">            close          </mat-icon>        </div>        }@else{        <div class="point-number row tmup-center">        </div>        <div class="tmup-text-over-ellipsis name placeholder flex" (click)="openCurrentChoose(index)">          {{ \'dialog.arrange-route.point-select\' |translate}}        </div>        <div class="tmup-drag-icon" cdkDragHandle>        </div>        <div class="close-icon row tmup-center">        </div>        }      </div>      }    </div>  </div>  @if(routeInfo){  <div class="route-footer">    <div>      {{ \'dialog.arrange-route.total-distance-time\' |translate:({time: ( routeInfo.time | secondsHhmmss), distance:      (routeInfo.distance | metricConversion: \'km\'), unit: (\'km\' | metricUnitConversion) })}}    </div>  </div>  }</div><div class="select-pos-area row tmup-gap-16" [hidden]="currIndex == undefined">  <mat-icon class="c-pointer tmup-gap-16" (click)="closeCurrentChoose()">    west  </mat-icon>  <div class="info-name column flex">    <div class="name">      {{ \'dialog.arrange-route.select-pos-name\' | translate}}    </div>    <div class="memo">      {{ \'dialog.arrange-route.select-pos-memo\' | translate}}    </div>  </div>  <button type="button" mat-button class="tmup-btn-text" [hidden]="isOpenSearch" (click)="checkPlace()">    {{ \'common.confirm\' | translate}}  </button></div><google-map class="map" #map [options]="googleMapsOptions" [zoom]="mapsZoom" (mapClick)="mapClick()"  (mapDragend)="mapDragend()" (zoomChanged)="zoomChanged()" (mapDrag)="mapDrag()">  <button type="button" class="show-list-btn tmup-btn-circle" [hidden]="showlist || currIndex != undefined"    (click)="openList()">    <mat-icon>      dehaze    </mat-icon>  </button>  @if(chartPoint){  <lib-map-cl-marker [map]="map.googleMap" [position]="chartPoint" [iconType]="\'circle\'" [zIndex]="1000">  </lib-map-cl-marker>  }  <div class="row ctrl" [hidden]="!!chartPoint">    <div class="row">      <button type="button" mat-icon-button [disabled]="!routeCmdManager?.canUndo" (click)="undo()">        <mat-icon svgIcon="step-prev"></mat-icon>      </button>      <button type="button" mat-icon-button [disabled]="!routeCmdManager?.canRedo" (click)="redo()">        <mat-icon svgIcon="step-next"></mat-icon>      </button>      <button type="button" mat-icon-button [hidden]="showlist || currIndex != undefined"        [class.active]="hasEnableReturn" [disabled]="!canReturn" (click)="toggleReturn()">        <mat-icon>          u_turn_right        </mat-icon>      </button>      <button type="button" mat-icon-button [hidden]="showlist" (click)="onOpenSearch()">        <mat-icon svgIcon="search"></mat-icon>      </button>    </div>    <button type="button" mat-icon-button [hidden]="showlist || currIndex != undefined || isOpenSearch"      (click)="checkPlace()">      <mat-icon>add_location_alt</mat-icon>    </button>  </div></google-map><lib-route-elevation-map [hidden]="showlist || currIndex != undefined" [point]="chartPoint" [showDistance]="true"  [chartDataSource]="chartDataSource" (onPointChange)="onChartPointChange($event)"></lib-route-elevation-map>@if(isOpenSearch){<lib-draggable-list [defaultListHeight]="defaultHeight" [maxDragHeight]="maxDropHeight" [minHeight]="minDropHeight">  <div header class="search-text row">    <lib-textbox-input #searchInput [formControl]="searchCtrl" styleType="search" (keydown.enter)="onSearch()"      [placeholder]="\'dialog.location-select.search-placeholder\' | translate">      <mat-icon class="prefix fs-20 stroke-gray-4" svgIcon="search"></mat-icon>    </lib-textbox-input>    <button type="button" mat-button class="tmup-btn-text" (click)="onCloseSearch()">      {{ "common.cancel" | translate }}    </button>  </div>  <div class="list flex">    @if(loading){    <div class="loading column tmup-center">      <lib-loading></lib-loading>      <span>{{ "dialog.arrange-route.loading" | translate }}</span>    </div>    } @else{    @for(item of list; track $index){    <div class="item row tmup-align-center">      <div class="location column flex" (click)="pressListItem(item)">        <div class="name row tmup-align-center">          {{ item.name }}        </div>        <div class="address">          {{ item.address }}        </div>      </div>    </div>    }    }  </div></lib-draggable-list>}}</div>'
-    var COMPONENTS = [{'name': 'ActivityApplyListComponent', 'selector': 'lib-activity-apply-list'},{'name': 'ActivityCancelDialogComponent', 'selector': 'lib-activity-cancel-dialog'},{'name': 'ActivityComponent', 'selector': 'app-activity'},{'name': 'ActivityDetailComponent', 'selector': 'lib-activity-detail'},{'name': 'ActivityFormComponent', 'selector': 'app-activity-form'},{'name': 'ActivityGpsShareComponent', 'selector': 'lib-activity-gps-share'},{'name': 'ActivityGpsShareDialogComponent', 'selector': 'lib-activity-gps-share-dialog'},{'name': 'ActivityInvitingListComponent', 'selector': 'lib-activity-inviting-list'},{'name': 'ActivityItemComponent', 'selector': 'lib-activity-item'},{'name': 'ActivityJoinListComponent', 'selector': 'lib-activity-join-list'},{'name': 'ActivityLogListComponent', 'selector': 'lib-activity-log-list'},{'name': 'ActivityOnMapComponent', 'selector': 'lib-activity-on-map'},{'name': 'ActivityParticipantListDialogComponent', 'selector': 'lib-activity-participant-list-dialog'},{'name': 'ActivityPointsSelectDialogComponent', 'selector': 'lib-activity-points-select-dialog'},{'name': 'ActivitySearchComponent', 'selector': 'lib-activity-search'},{'name': 'ActivitySelectDialogComponent', 'selector': 'lib-activity-select-dialog'},{'name': 'ActivityUserListComponent', 'selector': 'lib-activity-user-list'},{'name': 'AddressInputComponent', 'selector': 'lib-address-input'},{'name': 'AlertDialogComponent', 'selector': 'lib-alert-dialog'},{'name': 'ArrangePointsDialogComponent', 'selector': 'lib-arrange-points-dialog'},{'name': 'BackgroundChooseComponent', 'selector': 'lib-background-choose'},{'name': 'BlocklistComponent', 'selector': 'lib-blocklist'},{'name': 'CalorieExchangeComponent', 'selector': 'lib-calorie-exchange'},{'name': 'ChatAvatarComponent', 'selector': 'lib-chat-avatar'},{'name': 'ChatComponent', 'selector': 'lib-chat'},{'name': 'ChatItemComponent', 'selector': 'lib-chat-item'},{'name': 'ChatListComponent', 'selector': 'lib-chat-list'},{'name': 'ChatReplyMessageItemComponent', 'selector': 'lib-chat-reply-message-item'},{'name': 'ChatRoomComponent', 'selector': 'lib-chat-room'},{'name': 'ChatRoomItemComponent', 'selector': 'lib-chat-room-item'},{'name': 'ChatRoomItemTemplateComponent', 'selector': 'lib-chat-room-item-template'},{'name': 'ChatRoomMediaListComponent', 'selector': 'lib-chat-room-media-list'},{'name': 'ChatSelectDialogComponent', 'selector': 'lib-chat-select-dialog'},{'name': 'ChatUserComponent', 'selector': 'lib-chat-user'},{'name': 'ConfirmDialogComponent', 'selector': 'lib-confirm-dialog'},{'name': 'CreateActivitySuccessDialogComponent', 'selector': 'lib-create-activity-success-dialog'},{'name': 'CreateRouteSuccessDialogComponent', 'selector': 'lib-create-route-success-dialog'},{'name': 'CreateSuccessComponent', 'selector': 'lib-create-success'},{'name': 'CustomPageComponent', 'selector': 'lib-custom-page'},{'name': 'DateInputComponent', 'selector': 'lib-date-input'},{'name': 'DatetimeInputComponent', 'selector': 'lib-datetime-input'},{'name': 'DeviceSeekingComponent', 'selector': 'lib-device-seeking'},{'name': 'DownloadAppDialogComponent', 'selector': 'lib-download-app-dialog'},{'name': 'DownloadComponent', 'selector': 'lib-download'},{'name': 'DraggableListComponent', 'selector': 'lib-draggable-list'},{'name': 'EmptyDataComponent', 'selector': 'lib-empty-data'},{'name': 'ErrorDialogComponent', 'selector': 'lib-error-dialog'},{'name': 'ErrorSummaryComponent', 'selector': 'lib-error-summary'},{'name': 'ExerciseReadyStartComponent', 'selector': 'lib-exercise-ready-start'},{'name': 'FaqComponent', 'selector': 'lib-faq'},{'name': 'FileComponent', 'selector': 'lib-file'},{'name': 'FindResultComponent', 'selector': 'lib-find-result'},{'name': 'FollowComponent', 'selector': 'app-follow'},{'name': 'FollowersComponent', 'selector': 'lib-followers'},{'name': 'FollowReqComponent', 'selector': 'lib-follow-req'},{'name': 'FooterMenuComponent', 'selector': 'lib-footer-menu'},{'name': 'HeaderComponent', 'selector': 'lib-header'},{'name': 'HomeActivityInviteComponent', 'selector': 'lib-home-activity-invite'},{'name': 'HomeAddBtnComponent', 'selector': 'lib-home-add-btn'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeMenuComponent', 'selector': 'lib-home-menu'},{'name': 'ImageCropperDialogComponent', 'selector': 'lib-image-cropper-dialog'},{'name': 'ImageListDialogComponent', 'selector': 'lib-image-list-dialog'},{'name': 'InviteFriendsComponent', 'selector': 'lib-invite-friends'},{'name': 'LeadRiderForRouteDialogComponent', 'selector': 'lib-lead-rider-for-route-dialog'},{'name': 'LikeCommentDialogComponent', 'selector': 'lib-like-comment-dialog'},{'name': 'LoadingComponent', 'selector': 'lib-loading'},{'name': 'LocationDialogComponent', 'selector': 'lib-location-dialog'},{'name': 'LocationSelectDialogComponent', 'selector': 'lib-location-select-dialog'},{'name': 'LocationShareComponent', 'selector': 'lib-location-share'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapClMarkerComponent', 'selector': 'lib-map-cl-marker'},{'name': 'MapCompassComponent', 'selector': 'lib-map-compass'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'MoreMenuComponent', 'selector': 'lib-more-menu'},{'name': 'MyRouteCollectionComponent', 'selector': 'lib-my-route-collection'},{'name': 'NoticeMsgItemComponent', 'selector': 'lib-notice-msg-item'},{'name': 'NotifyMessageListComponent', 'selector': 'lib-notify-message-list'},{'name': 'OptionComponent', 'selector': 'lib-option'},{'name': 'PageDialogComponent', 'selector': 'lib-page-dialog'},{'name': 'PositionFilterDialogComponent', 'selector': 'lib-position-filter-dialog'},{'name': 'PostAttachmentItemComponent', 'selector': 'lib-post-attachment-item'},{'name': 'PostCommentListComponent', 'selector': 'lib-post-comment-list'},{'name': 'PostFormComponent', 'selector': 'lib-post-form'},{'name': 'PostItemComponent', 'selector': 'lib-post-item'},{'name': 'PostLikeListComponent', 'selector': 'lib-post-like-list'},{'name': 'ProgressBarComponent', 'selector': 'lib-progress-bar'},{'name': 'RecommendTeamListComponent', 'selector': 'lib-recommend-team-list'},{'name': 'RecommendUserListComponent', 'selector': 'lib-recommend-user-list'},{'name': 'RecordSelectDialogComponent', 'selector': 'lib-record-select-dialog'},{'name': 'ReportDialogComponent', 'selector': 'lib-report-dialog'},{'name': 'ReportListComponent', 'selector': 'lib-report-list'},{'name': 'ReportSuccessDialogComponent', 'selector': 'lib-report-success-dialog'},{'name': 'RoadDescDialogComponent', 'selector': 'lib-road-desc-dialog'},{'name': 'RouteActivityListComponent', 'selector': 'lib-route-activity-list'},{'name': 'RouteCollectComponent', 'selector': 'lib-route-collect'},{'name': 'RouteCommentFormComponent', 'selector': 'lib-route-comment-form'},{'name': 'RouteCommentItemComponent', 'selector': 'lib-route-comment-item'},{'name': 'RouteCommentListComponent', 'selector': 'lib-route-comment-list'},{'name': 'RouteDetailComponent', 'selector': 'lib-route-detail'},{'name': 'RouteDetailDialogComponent', 'selector': 'lib-route-detail-dialog'},{'name': 'RouteElevationMapComponent', 'selector': 'lib-route-elevation-map'},{'name': 'RouteExploreComponent', 'selector': 'lib-route-explore'},{'name': 'RouteFormComponent', 'selector': 'lib-route-form'},{'name': 'RouteFromFilterDialogComponent', 'selector': 'lib-route-from-filter-dialog'},{'name': 'RouteInfoComponent', 'selector': 'lib-route-info'},{'name': 'RouteItemComponent', 'selector': 'lib-route-item'},{'name': 'RouteMapExploreComponent', 'selector': 'lib-route-map-explore'},{'name': 'RouteReportInfoComponent', 'selector': 'lib-route-report-info'},{'name': 'RouteSearchComponent', 'selector': 'lib-route-search'},{'name': 'RouteSelectReportConfirmDialogComponent', 'selector': 'lib-route-select-report-confirm-dialog'},{'name': 'RouteShareDialogComponent', 'selector': 'lib-route-share-dialog'},{'name': 'RouteTagFilterDialogComponent', 'selector': 'lib-route-tag-filter-dialog'},{'name': 'SearchDialogComponent', 'selector': 'lib-search-dialog'},{'name': 'SearchInputComponent', 'selector': 'lib-search-input'},{'name': 'SearchRecordComponent', 'selector': 'lib-search-record'},{'name': 'SearchUsersComponent', 'selector': 'lib-search-users'},{'name': 'SelectDialogComponent', 'selector': 'lib-select-dialog'},{'name': 'SelectInputComponent', 'selector': 'lib-select-input'},{'name': 'ShareToDialogComponent', 'selector': 'lib-share-to-dialog'},{'name': 'SingleInputDialogComponent', 'selector': 'lib-single-input-dialog'},{'name': 'SlideToggleInputComponent', 'selector': 'lib-slide-toggle-input'},{'name': 'SportingShareItemComponent', 'selector': 'lib-sporting-share-item'},{'name': 'SportingShareListComponent', 'selector': 'lib-sporting-share-list'},{'name': 'SportLiveChatComponent', 'selector': 'lib-sport-live-chat'},{'name': 'SportLiveComponent', 'selector': 'lib-sport-live'},{'name': 'StepProcessComponent', 'selector': 'lib-step-process'},{'name': 'StopwatchComponent', 'selector': 'lib-stopwatch'},{'name': 'StopwatchFinishedComponent', 'selector': 'lib-stopwatch-finished'},{'name': 'StopwatchInfoSelectDialogComponent', 'selector': 'lib-stopwatch-info-select-dialog'},{'name': 'StopwatchSettingComponent', 'selector': 'lib-stopwatch-setting'},{'name': 'StreamimgChatDialogComponent', 'selector': 'lib-streamimg-chat-dialog'},{'name': 'TagUserInputComponent', 'selector': 'lib-tag-user-input'},{'name': 'TeamActivityDialogComponent', 'selector': 'lib-team-activity-dialog'},{'name': 'TeamAliasEditComponent', 'selector': 'lib-team-alias-edit'},{'name': 'TeamBaseareaEditComponent', 'selector': 'lib-team-basearea-edit'},{'name': 'TeamComponent', 'selector': 'lib-team'},{'name': 'TeamCreateFinishComponent', 'selector': 'lib-team-create-finish'},{'name': 'TeamDetailsComponent', 'selector': 'lib-team-details'},{'name': 'TeamFormComponent', 'selector': 'lib-team-form'},{'name': 'TeamFormEditComponent', 'selector': 'lib-team-form-edit'},{'name': 'TeamIntroDialogComponent', 'selector': 'lib-team-intro-dialog'},{'name': 'TeamItemComponent', 'selector': 'lib-team-item'},{'name': 'TeamLogoComponent', 'selector': 'lib-team-logo'},{'name': 'TeamMapComponent', 'selector': 'lib-team-map'},{'name': 'TeamMemberAliasComponent', 'selector': 'lib-team-member-alias'},{'name': 'TeamMemberComponent', 'selector': 'lib-team-member'},{'name': 'TeamMemberCtrlDialogComponent', 'selector': 'lib-team-member-ctrl-dialog'},{'name': 'TeamOnMapComponent', 'selector': 'lib-team-on-map'},{'name': 'TeamSearchComponent', 'selector': 'lib-team-search'},{'name': 'TeamSettingComponent', 'selector': 'lib-team-setting'},{'name': 'TeamTagEditComponent', 'selector': 'lib-team-tag-edit'},{'name': 'TextareaInputComponent', 'selector': 'lib-textarea-input'},{'name': 'TextboxInputComponent', 'selector': 'lib-textbox-input'},{'name': 'ThirdAuthComponent', 'selector': 'lib-third-auth'},{'name': 'TimeInputComponent', 'selector': 'lib-time-input'},{'name': 'TimePeriodFilterDialogComponent', 'selector': 'lib-time-period-filter-dialog'},{'name': 'TipInfoDialogComponent', 'selector': 'lib-tip-info-dialog'},{'name': 'UpdateScreenComponent', 'selector': 'lib-update-screen'},{'name': 'UserAccountComponent', 'selector': 'lib-user-account'},{'name': 'UserAccountFormComponent', 'selector': 'lib-user-account-form'},{'name': 'UserApplyTeamDialogComponent', 'selector': 'lib-user-apply-team-dialog'},{'name': 'UserAvatarComponent', 'selector': 'lib-user-avatar'},{'name': 'UserAvaterGroupComponent', 'selector': 'lib-user-avater-group'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserFormComponent', 'selector': 'app-user-form'},{'name': 'UserItemComponent', 'selector': 'lib-user-item'},{'name': 'UserNotificationSettingComponent', 'selector': 'lib-user-notification-setting'},{'name': 'UserPostListComponent', 'selector': 'lib-user-post-list'},{'name': 'UserRouteRecordItemComponent', 'selector': 'lib-user-route-record-item'},{'name': 'UserRouteRecordListComponent', 'selector': 'lib-user-route-record-list'},{'name': 'UserSelectDialogComponent', 'selector': 'lib-user-select-dialog'},{'name': 'UserSettingComponent', 'selector': 'app-user-setting'},{'name': 'UsersFollowingComponent', 'selector': 'lib-users-following'},{'name': 'UserShareDialogComponent', 'selector': 'lib-user-share-dialog'},{'name': 'ValidCodeInputComponent', 'selector': 'lib-valid-code-input'},{'name': 'VisitRegDialogComponent', 'selector': 'lib-visit-reg-dialog'},{'name': 'WeatherViewDialogComponent', 'selector': 'lib-weather-view-dialog'},{'name': 'WebHomeComponent', 'selector': 'lib-web-home'}];
+    var COMPONENTS = [{'name': 'ActivityApplyListComponent', 'selector': 'lib-activity-apply-list'},{'name': 'ActivityCancelDialogComponent', 'selector': 'lib-activity-cancel-dialog'},{'name': 'ActivityComponent', 'selector': 'app-activity'},{'name': 'ActivityDetailComponent', 'selector': 'lib-activity-detail'},{'name': 'ActivityFormComponent', 'selector': 'app-activity-form'},{'name': 'ActivityGpsShareComponent', 'selector': 'lib-activity-gps-share'},{'name': 'ActivityGpsShareDialogComponent', 'selector': 'lib-activity-gps-share-dialog'},{'name': 'ActivityInvitingListComponent', 'selector': 'lib-activity-inviting-list'},{'name': 'ActivityItemComponent', 'selector': 'lib-activity-item'},{'name': 'ActivityJoinListComponent', 'selector': 'lib-activity-join-list'},{'name': 'ActivityLogListComponent', 'selector': 'lib-activity-log-list'},{'name': 'ActivityOnMapComponent', 'selector': 'lib-activity-on-map'},{'name': 'ActivityParticipantListDialogComponent', 'selector': 'lib-activity-participant-list-dialog'},{'name': 'ActivityPointsSelectDialogComponent', 'selector': 'lib-activity-points-select-dialog'},{'name': 'ActivitySearchComponent', 'selector': 'lib-activity-search'},{'name': 'ActivitySelectDialogComponent', 'selector': 'lib-activity-select-dialog'},{'name': 'ActivityUserListComponent', 'selector': 'lib-activity-user-list'},{'name': 'AddressInputComponent', 'selector': 'lib-address-input'},{'name': 'AlertDialogComponent', 'selector': 'lib-alert-dialog'},{'name': 'ArrangePointsDialogComponent', 'selector': 'lib-arrange-points-dialog'},{'name': 'BackgroundChooseComponent', 'selector': 'lib-background-choose'},{'name': 'BlocklistComponent', 'selector': 'lib-blocklist'},{'name': 'CalorieExchangeComponent', 'selector': 'lib-calorie-exchange'},{'name': 'ChatAvatarComponent', 'selector': 'lib-chat-avatar'},{'name': 'ChatComponent', 'selector': 'lib-chat'},{'name': 'ChatItemComponent', 'selector': 'lib-chat-item'},{'name': 'ChatListComponent', 'selector': 'lib-chat-list'},{'name': 'ChatReplyMessageItemComponent', 'selector': 'lib-chat-reply-message-item'},{'name': 'ChatRoomComponent', 'selector': 'lib-chat-room'},{'name': 'ChatRoomItemComponent', 'selector': 'lib-chat-room-item'},{'name': 'ChatRoomItemTemplateComponent', 'selector': 'lib-chat-room-item-template'},{'name': 'ChatRoomMediaListComponent', 'selector': 'lib-chat-room-media-list'},{'name': 'ChatSelectDialogComponent', 'selector': 'lib-chat-select-dialog'},{'name': 'ChatUserComponent', 'selector': 'lib-chat-user'},{'name': 'ConfirmDialogComponent', 'selector': 'lib-confirm-dialog'},{'name': 'CreateActivitySuccessDialogComponent', 'selector': 'lib-create-activity-success-dialog'},{'name': 'CreateSuccessComponent', 'selector': 'lib-create-success'},{'name': 'CustomPageComponent', 'selector': 'lib-custom-page'},{'name': 'DateInputComponent', 'selector': 'lib-date-input'},{'name': 'DatetimeInputComponent', 'selector': 'lib-datetime-input'},{'name': 'DeviceSeekingComponent', 'selector': 'lib-device-seeking'},{'name': 'DownloadAppDialogComponent', 'selector': 'lib-download-app-dialog'},{'name': 'DownloadComponent', 'selector': 'lib-download'},{'name': 'DraggableListComponent', 'selector': 'lib-draggable-list'},{'name': 'EmptyDataComponent', 'selector': 'lib-empty-data'},{'name': 'ErrorDialogComponent', 'selector': 'lib-error-dialog'},{'name': 'ErrorSummaryComponent', 'selector': 'lib-error-summary'},{'name': 'ExerciseReadyStartComponent', 'selector': 'lib-exercise-ready-start'},{'name': 'FaqComponent', 'selector': 'lib-faq'},{'name': 'FileComponent', 'selector': 'lib-file'},{'name': 'FindResultComponent', 'selector': 'lib-find-result'},{'name': 'FollowComponent', 'selector': 'app-follow'},{'name': 'FollowersComponent', 'selector': 'lib-followers'},{'name': 'FollowReqComponent', 'selector': 'lib-follow-req'},{'name': 'FooterMenuComponent', 'selector': 'lib-footer-menu'},{'name': 'HeaderComponent', 'selector': 'lib-header'},{'name': 'HomeActivityInviteComponent', 'selector': 'lib-home-activity-invite'},{'name': 'HomeAddBtnComponent', 'selector': 'lib-home-add-btn'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeMenuComponent', 'selector': 'lib-home-menu'},{'name': 'ImageCropperDialogComponent', 'selector': 'lib-image-cropper-dialog'},{'name': 'ImageListDialogComponent', 'selector': 'lib-image-list-dialog'},{'name': 'InviteFriendsComponent', 'selector': 'lib-invite-friends'},{'name': 'LeadRiderForRouteDialogComponent', 'selector': 'lib-lead-rider-for-route-dialog'},{'name': 'LikeCommentDialogComponent', 'selector': 'lib-like-comment-dialog'},{'name': 'LoadingComponent', 'selector': 'lib-loading'},{'name': 'LocationDialogComponent', 'selector': 'lib-location-dialog'},{'name': 'LocationSelectDialogComponent', 'selector': 'lib-location-select-dialog'},{'name': 'LocationShareComponent', 'selector': 'lib-location-share'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapClMarkerComponent', 'selector': 'lib-map-cl-marker'},{'name': 'MapCompassComponent', 'selector': 'lib-map-compass'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'MoreMenuComponent', 'selector': 'lib-more-menu'},{'name': 'MyRouteCollectionComponent', 'selector': 'lib-my-route-collection'},{'name': 'NoticeMsgItemComponent', 'selector': 'lib-notice-msg-item'},{'name': 'NotifyMessageListComponent', 'selector': 'lib-notify-message-list'},{'name': 'OptionComponent', 'selector': 'lib-option'},{'name': 'PageDialogComponent', 'selector': 'lib-page-dialog'},{'name': 'PositionFilterDialogComponent', 'selector': 'lib-position-filter-dialog'},{'name': 'PostAttachmentItemComponent', 'selector': 'lib-post-attachment-item'},{'name': 'PostCommentListComponent', 'selector': 'lib-post-comment-list'},{'name': 'PostFormComponent', 'selector': 'lib-post-form'},{'name': 'PostItemComponent', 'selector': 'lib-post-item'},{'name': 'PostLikeListComponent', 'selector': 'lib-post-like-list'},{'name': 'ProgressBarComponent', 'selector': 'lib-progress-bar'},{'name': 'RecommendTeamListComponent', 'selector': 'lib-recommend-team-list'},{'name': 'RecommendUserListComponent', 'selector': 'lib-recommend-user-list'},{'name': 'RecordSelectDialogComponent', 'selector': 'lib-record-select-dialog'},{'name': 'ReportDialogComponent', 'selector': 'lib-report-dialog'},{'name': 'ReportListComponent', 'selector': 'lib-report-list'},{'name': 'ReportSuccessDialogComponent', 'selector': 'lib-report-success-dialog'},{'name': 'RoadDescDialogComponent', 'selector': 'lib-road-desc-dialog'},{'name': 'RouteActivityListComponent', 'selector': 'lib-route-activity-list'},{'name': 'RouteCollectComponent', 'selector': 'lib-route-collect'},{'name': 'RouteCommentFormComponent', 'selector': 'lib-route-comment-form'},{'name': 'RouteCommentItemComponent', 'selector': 'lib-route-comment-item'},{'name': 'RouteCommentListComponent', 'selector': 'lib-route-comment-list'},{'name': 'RouteDetailComponent', 'selector': 'lib-route-detail'},{'name': 'RouteDetailDialogComponent', 'selector': 'lib-route-detail-dialog'},{'name': 'RouteElevationMapComponent', 'selector': 'lib-route-elevation-map'},{'name': 'RouteExploreComponent', 'selector': 'lib-route-explore'},{'name': 'RouteFormComponent', 'selector': 'lib-route-form'},{'name': 'RouteFromFilterDialogComponent', 'selector': 'lib-route-from-filter-dialog'},{'name': 'RouteInfoComponent', 'selector': 'lib-route-info'},{'name': 'RouteItemComponent', 'selector': 'lib-route-item'},{'name': 'RouteMapExploreComponent', 'selector': 'lib-route-map-explore'},{'name': 'RouteReportInfoComponent', 'selector': 'lib-route-report-info'},{'name': 'RouteSearchComponent', 'selector': 'lib-route-search'},{'name': 'RouteSelectReportConfirmDialogComponent', 'selector': 'lib-route-select-report-confirm-dialog'},{'name': 'RouteShareDialogComponent', 'selector': 'lib-route-share-dialog'},{'name': 'RouteTagFilterDialogComponent', 'selector': 'lib-route-tag-filter-dialog'},{'name': 'SearchDialogComponent', 'selector': 'lib-search-dialog'},{'name': 'SearchInputComponent', 'selector': 'lib-search-input'},{'name': 'SearchRecordComponent', 'selector': 'lib-search-record'},{'name': 'SearchUsersComponent', 'selector': 'lib-search-users'},{'name': 'SelectDialogComponent', 'selector': 'lib-select-dialog'},{'name': 'SelectInputComponent', 'selector': 'lib-select-input'},{'name': 'ShareToDialogComponent', 'selector': 'lib-share-to-dialog'},{'name': 'SingleInputDialogComponent', 'selector': 'lib-single-input-dialog'},{'name': 'SlideToggleInputComponent', 'selector': 'lib-slide-toggle-input'},{'name': 'SportingShareItemComponent', 'selector': 'lib-sporting-share-item'},{'name': 'SportingShareListComponent', 'selector': 'lib-sporting-share-list'},{'name': 'SportLiveChatComponent', 'selector': 'lib-sport-live-chat'},{'name': 'SportLiveComponent', 'selector': 'lib-sport-live'},{'name': 'StepProcessComponent', 'selector': 'lib-step-process'},{'name': 'StopwatchComponent', 'selector': 'lib-stopwatch'},{'name': 'StopwatchFinishedComponent', 'selector': 'lib-stopwatch-finished'},{'name': 'StopwatchInfoSelectDialogComponent', 'selector': 'lib-stopwatch-info-select-dialog'},{'name': 'StopwatchSettingComponent', 'selector': 'lib-stopwatch-setting'},{'name': 'StreamimgChatDialogComponent', 'selector': 'lib-streamimg-chat-dialog'},{'name': 'TagUserInputComponent', 'selector': 'lib-tag-user-input'},{'name': 'TeamActivityDialogComponent', 'selector': 'lib-team-activity-dialog'},{'name': 'TeamAliasEditComponent', 'selector': 'lib-team-alias-edit'},{'name': 'TeamBaseareaEditComponent', 'selector': 'lib-team-basearea-edit'},{'name': 'TeamComponent', 'selector': 'lib-team'},{'name': 'TeamCreateFinishComponent', 'selector': 'lib-team-create-finish'},{'name': 'TeamDetailsComponent', 'selector': 'lib-team-details'},{'name': 'TeamFormComponent', 'selector': 'lib-team-form'},{'name': 'TeamFormEditComponent', 'selector': 'lib-team-form-edit'},{'name': 'TeamIntroDialogComponent', 'selector': 'lib-team-intro-dialog'},{'name': 'TeamItemComponent', 'selector': 'lib-team-item'},{'name': 'TeamLogoComponent', 'selector': 'lib-team-logo'},{'name': 'TeamMapComponent', 'selector': 'lib-team-map'},{'name': 'TeamMemberAliasComponent', 'selector': 'lib-team-member-alias'},{'name': 'TeamMemberComponent', 'selector': 'lib-team-member'},{'name': 'TeamMemberCtrlDialogComponent', 'selector': 'lib-team-member-ctrl-dialog'},{'name': 'TeamOnMapComponent', 'selector': 'lib-team-on-map'},{'name': 'TeamSearchComponent', 'selector': 'lib-team-search'},{'name': 'TeamSettingComponent', 'selector': 'lib-team-setting'},{'name': 'TeamTagEditComponent', 'selector': 'lib-team-tag-edit'},{'name': 'TextareaInputComponent', 'selector': 'lib-textarea-input'},{'name': 'TextboxInputComponent', 'selector': 'lib-textbox-input'},{'name': 'ThirdAuthComponent', 'selector': 'lib-third-auth'},{'name': 'TimeInputComponent', 'selector': 'lib-time-input'},{'name': 'TimePeriodFilterDialogComponent', 'selector': 'lib-time-period-filter-dialog'},{'name': 'TipInfoDialogComponent', 'selector': 'lib-tip-info-dialog'},{'name': 'UpdateScreenComponent', 'selector': 'lib-update-screen'},{'name': 'UserAccountComponent', 'selector': 'lib-user-account'},{'name': 'UserAccountFormComponent', 'selector': 'lib-user-account-form'},{'name': 'UserApplyTeamDialogComponent', 'selector': 'lib-user-apply-team-dialog'},{'name': 'UserAvatarComponent', 'selector': 'lib-user-avatar'},{'name': 'UserAvaterGroupComponent', 'selector': 'lib-user-avater-group'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserFormComponent', 'selector': 'app-user-form'},{'name': 'UserItemComponent', 'selector': 'lib-user-item'},{'name': 'UserNotificationSettingComponent', 'selector': 'lib-user-notification-setting'},{'name': 'UserPostListComponent', 'selector': 'lib-user-post-list'},{'name': 'UserRouteRecordItemComponent', 'selector': 'lib-user-route-record-item'},{'name': 'UserRouteRecordListComponent', 'selector': 'lib-user-route-record-list'},{'name': 'UserSelectDialogComponent', 'selector': 'lib-user-select-dialog'},{'name': 'UserSettingComponent', 'selector': 'app-user-setting'},{'name': 'UsersFollowingComponent', 'selector': 'lib-users-following'},{'name': 'UserShareDialogComponent', 'selector': 'lib-user-share-dialog'},{'name': 'ValidCodeInputComponent', 'selector': 'lib-valid-code-input'},{'name': 'VisitRegDialogComponent', 'selector': 'lib-visit-reg-dialog'},{'name': 'WebHomeComponent', 'selector': 'lib-web-home'}];
     var DIRECTIVES = [{'name': 'AppOnDestory', 'selector': ''},{'name': 'BackgroundImageDirective', 'selector': '[appBackgroundImage]'},{'name': 'BaseComponent', 'selector': ''},{'name': 'BaseFormComponent', 'selector': ''},{'name': 'BaseListComponent', 'selector': ''},{'name': 'HeaderTitleDirective', 'selector': '[libHeaderTitle]'},{'name': 'OpenSettingDirective', 'selector': '[libOpenSetting]'},{'name': 'PageHostDirective', 'selector': '[libPageHost]'},{'name': 'TextReadMoreDirective', 'selector': '[libTextReadMore]'}];
     var ACTUAL_COMPONENT = {'name': 'ArrangePointsDialogComponent'};
 </script>
