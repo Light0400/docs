@@ -1713,7 +1713,11 @@
             "calorie-convert": "カロリー換算",
             "unit-show": "単位表示",
             "auto-pause": "停止中は自動一時停止",
-            "stopwatch-info": "ストップウォッチ情報"
+            "stopwatch-info": "ストップウォッチ情報",
+            "close-bluetooth-device": {
+                "title": "このセクションのデータ表示をオフにしますか？",
+                "message": "このセクションのデータ表示をオフにすると、関連するBluetoothデバイスの接続も切断されます。オフにしてもよろしいですか？"
+            }
         },
         "chat": {
             "page-title": "メッセージ",

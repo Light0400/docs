@@ -1713,7 +1713,11 @@
             "calorie-convert": "Calorie Conversion",
             "unit-show": "Unit Display",
             "auto-pause": "Auto Pause When Stationary",
-            "stopwatch-info": "Stopwatch Information"
+            "stopwatch-info": "Stopwatch Information",
+            "close-bluetooth-device": {
+                "title": "Are you sure you want to turn off data display for this section?",
+                "message": "Turning off the data display for this section will also disconnect the related Bluetooth device. Do you want to proceed?"
+            }
         },
         "chat": {
             "page-title": "Messages",

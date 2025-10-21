@@ -1713,7 +1713,11 @@
             "calorie-convert": "Conversion des calories",
             "unit-show": "Affichage des unités",
             "auto-pause": "Pause automatique à l'arrêt",
-            "stopwatch-info": "Informations du chronomètre"
+            "stopwatch-info": "Informations du chronomètre",
+            "close-bluetooth-device": {
+                "title": "Voulez-vous vraiment désactiver l’affichage des données de cette section ?",
+                "message": "La désactivation de l’affichage des données de cette section entraînera également la déconnexion de l’appareil Bluetooth associé. Voulez-vous continuer ?"
+            }
         },
         "chat": {
             "page-title": "Messages",

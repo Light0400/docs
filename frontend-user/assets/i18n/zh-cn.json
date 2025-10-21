@@ -1713,7 +1713,11 @@
             "calorie-convert": "卡路里换算",
             "unit-show": "单位显示",
             "auto-pause": "停下时自动暂停",
-            "stopwatch-info": "码表信息"
+            "stopwatch-info": "码表信息",
+            "close-bluetooth-device": {
+                "title": "确定要关闭此区域的数据展示吗？",
+                "message": "关闭此区域的数据展示将同时断开与相关蓝牙设备的连接，是否确认关闭？"
+            }
         },
         "chat": {
             "page-title": "消息",
