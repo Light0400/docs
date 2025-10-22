@@ -1085,6 +1085,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/IRouteCommand.html" data-type="entity-link" >IRouteCommand</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/IRouteLineWithRBush.html" data-type="entity-link" >IRouteLineWithRBush</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/ISegmentBox.html" data-type="entity-link" >ISegmentBox</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/ISqlChatMessage.html" data-type="entity-link" >ISqlChatMessage</a>
                             </li>
                             <li class="link">
